@@ -1,44 +1,43 @@
-# 真实Agent开发冒烟
+# Real-agent development smoke test
 
-用户已授权无人值守执行并设置active goal。项目根目录不变，模型与环境全部复用本项目；本机8×PRO6000空闲，仅计划用GPU0–3，不访问已交还5090。
+The user authorized unattended execution and set an active goal. The project root is unchanged, and all models/environments reuse this project. All 8 local PRO6000 GPUs are free, with only GPU0–3 planned for use; do not access the returned 5090.
 
-当前阶段1/4：任务和隔离环境已实现。24主任务（files/data/code，每类4/12要求各4实例）+6单要求能力任务生成，task-manifest与registration锁定。任务是开发生成器，只有三类模板，不能冒充24独立研究题型。代码任务目前是多模块纯函数实现，不能声称已涵盖大型仓库修改或长程依赖。允许Python批量处理，不强制多次工具调用。
+Current stage 1/4: tasks and isolation are implemented. Generated 24 main tasks (files/data/code, each with 4 instances at 4/12 requirements) plus 6 single-requirement capability tasks; task-manifest and registration are locked. These are development generators with only three template families, not 24 independent research task types. Code tasks currently implement pure functions across modules, not large-repository edits or long dependencies. Python batch processing is allowed without forcing multiple tool calls.
 
-隔离：chroot内标准库Python，降权65534、seccomp禁网络/子进程/硬链接等，运行8秒CPU/512MiB/12秒墙钟限制。模型看不到研究验证器或其他任务。因共享文件系统不支持硬链接，运行环境采用复制，每worker复用隔离根、每轨迹重置work；原失败log保留。初次动态链接器执行权限修正后，普通代码、越界/网络/进程/运行环境写入五项实测通过（sandbox-check.json）。
+Isolation: standard-library Python in chroot, privilege drop to 65534, seccomp blocking network/subprocesses/hard links, with 8-second CPU/512MiB/12-second wall limits. The model cannot see research graders or other tasks. Because shared storage does not support hard links, runtimes are copied; each worker reuses its isolation root and resets work per trajectory. Original failure logs are retained. After correcting initial dynamic-linker execution permissions, all five checks passed: normal code and rejection of out-of-bounds/network/process/runtime writes (sandbox-check.json).
 
-运行句柄：任务验证session71962，PID2418071，logs/task-validation.log。验证正确解、初始未解及每个要求删除后的失败；完成才生成task-validation.json。launcher session58387正在等待上述真实验证进程，logs/launch.log；不要重复启动。其后自动运行calibration GPU0六条，必须6/6通过；不通过写CALIBRATION_FAILED并停止主队列待诊断。通过后按固定随机顺序分4worker×24条运行96轨迹。calibration wall cap1800秒、各主worker5400秒，总预算8GPU小时内。tool/meta协议及全部任务在第一次模型轨迹前锁定。
+Run handles: task validation session71962, PID2418071, logs/task-validation.log. Check reference solutions, unsolved initial states, and failure after deleting each requirement; write task-validation.json only after completion. Launcher session58387 waits for this actual verification process, logging to logs/launch.log; do not launch duplicates. Then automatically run six GPU0 calibrations, requiring 6/6. Otherwise write CALIBRATION_FAILED and stop the main queue for diagnosis. On success, run 96 trajectories in fixed randomized order across 4 workers×24. Calibration wall cap 1800 seconds, each main worker 5400 seconds, within 8 GPU-hours. Tool/meta protocol and all tasks are locked before the first model trajectory.
 
-Agent每轮输出JSON status/tool/args，支持list/read/write/run_python/finish。由模型自主finish；环境不阻止不完整结束、不反馈隐藏验收。原始messages/trajectory包含输入输出token、每轮最终token ID和确切EOS/length-limit证据。结束后复制final-workspace并独立评分。当前未开始SFT或RL。
+Each agent turn emits JSON status/tool/args, supporting list/read/write/run_python/finish. The model finishes voluntarily; the environment neither blocks incomplete termination nor reveals hidden acceptance checks. Raw messages/trajectory include input/output tokens, final token ID per turn, and exact EOS/length-limit evidence. After termination, copy final-workspace and grade independently. No SFT or RL has started.
 
-正常长任务约15分钟检查；下一步检查task-validation和校准实际进展。主队列结束自动analyze，但仍需人工阅读全部失败、复核grader、成本、状态协议遵循、继续/放弃判断及最终报告，goal不会自动标完成。
+Check normal long jobs approximately every 15 minutes. Next inspect actual task-validation and calibration progress. Main-queue completion automatically runs analyze, but all failures, graders, costs, status-protocol adherence, continue/stop decisions, and final reports still require review; the goal is not automatically marked complete.
 
-## 已进入阶段3/4：96条主轨迹运行中
+## Entered stage 3/4: 96 main trajectories running
 
-原calibration耗时480.59 GPU秒，4/6通过，data两个失败属于猜错路径/字段、未遵守聚合JSON输出要求后误报完成。未启动v1主队列。保留registration-v1、task-manifest-v1、task-validation-v1及runs/calibration原始轨迹。
+Original calibration took 480.59 GPU-seconds and passed 4/6. Both data failures guessed paths/fields, violated aggregate JSON output requirements, and falsely reported completion. The v1 main queue was not started. registration-v1, task-manifest-v1, task-validation-v1, and raw runs/calibration trajectories are retained.
 
-registration-v2说明：仅统一澄清data输入CSV路径、字段、输出聚合结构（不提供正确数值）；24主任务加v2后缀保留原fixture；换新single-task seeds2/3，六项全部通过。30任务参考解与每项遗漏检测均再次通过。最新launcher session75776，日志launch-v2.log；validation session44679已成功。当前GPU0–3进程2471030/2471031/2471032/2471043，四个main worker共96轨迹在运行。不要启动原launcher/session58387或旧calibration；初版calibration失败marker是历史证据，不是当前阻塞。
+registration-v2 only clarifies data CSV paths, fields, and aggregate output structure uniformly, without supplying correct values. The 24 main tasks add a v2 suffix while retaining original fixtures. New single-task seeds2/3 pass all six checks. Reference solutions and every omission detector pass again for all 30 tasks. Latest launcher session75776 writes launch-v2.log; validation session44679 succeeded. GPU0–3 processes 2471030/2471031/2471032/2471043 are running 96 trajectories across four main workers. Do not start original launcher/session58387 or old calibration; the original calibration-failure marker is historical evidence, not a current blocker.
 
-最新注册source/task hash见registration-v2.json；实际四组顺序main-order.json。长任务按15分钟检查。预算须包括旧校准480.59秒、新校准、四个主worker，不能仅统计成功轨迹。模型保持冻结、未做SFT/RL。下一步读运行结果，审核所有失败、真实结束原因和status字段的实际遵循（baseline也可能自然复述任务身份，不能假定处理严格分离）；结束后做固定工作副本的独立重验、阶段性完成后空转诊断和成本汇总，再写结论。
+Latest registered source/task hashes are in registration-v2.json; actual condition order is in main-order.json. Check long jobs every 15 minutes. Budget must include the earlier 480.59-second calibration, new calibration, and all four main workers, not only successful trajectories. The model remains frozen, without SFT/RL. Next inspect results, all failures, actual stopping reasons, and status-field adherence: baseline may naturally restate identities, so conditions cannot be assumed strictly separated. Afterward, independently recheck fixed workspaces, diagnose post-completion idling, summarize costs, and write conclusions.
 
-## 阶段3进展与分析准备
+## Stage 3 progress and analysis preparation
 
-一次低频检查已有91/96主轨迹完成，GPU1–3 worker已完成24条，GPU0仍运行最后5条（PID2471030）。不重启正常作业。
+A low-frequency check found 91/96 main trajectories complete. GPU1–3 workers each finished 24; GPU0 still runs its last 5 (PID2471030). Do not restart healthy jobs.
 
-analysis-only新增audit.py核对注册执行/任务hash、消息与轨迹一致性、token计数及从final-workspace重验全部96；replay.py按原动作重放，定位首次真实完成与之后动作，不能把完成后验证都叫空转。原analyze.py执行结束后会自动调用这两个CPU审核；修改未触及正在运行的Agent。完整valid JSON多对象输出被单对象解析器拒绝的情况单独做离线执行诊断，绝不当作新真实Agent成功率。
+New analysis-only audit.py checks registered execution/task hashes, message/trajectory consistency, token counts, and all 96 final-workspaces. replay.py replays original actions to locate first actual completion and later actions; post-completion verification is not automatically idling. Original analyze.py will invoke both CPU audits after execution. Running agents are untouched. Complete valid multi-object JSON outputs rejected by the single-object parser receive separate offline execution diagnostics, never a new real-agent success rate.
 
-已读两条失败：data-n12-s2 reminder创建12报告但区域/阈值配对错误，仅2项通过；code-n04-s0 identity一次输出4个写文件对象和finish被整体拒绝，随后误称已完成，实际4个文件均未改。不能把这些全归入“长程中途停止”的同一机制，也不能忽略custom JSON协议影响。基线可自行写status任务ID，需要量化处理条件的实际分离。
+Two failures reviewed: data-n12-s2 reminder created 12 reports with wrong region/threshold pairs, passing only 2 requirements; code-n04-s0 identity emitted 4 writes plus finish together, all rejected, then falsely claimed completion with all 4 files unchanged. These cannot all be assigned one long-horizon early-stopping mechanism, and custom-JSON effects cannot be ignored. Baselines may write task IDs in status on their own; actual separation between conditions needs quantification.
 
-下一步主队列结束自动审核，可能需处理重放差异；然后阅读全部失败、统计协议因素、生成图/最终报告、核算包括两次校准的GPU预算，并判断是否需要在预算内做执行协议稳健性修复验证。未做SFT/RL。
+Next run automatic audits after main-queue completion, address any replay discrepancies, review all failures, quantify protocol factors, produce figures/final report, account for GPU budget including both calibrations, and decide whether execution-protocol robustness repairs need checking within budget. No SFT/RL has been done.
 
-## 原96已完成并验收；执行兼容性复核启动
+## Original 96 completed and accepted; compatibility check started
 
-全部96原主轨迹完成，52失败；audit和replay均通过，96重放最终文件与原始归档逐字一致，原主线含两次校准总2.7266446927520964 GPU小时。完成率plan9/24、reminder16/24、identity9/24、todo10/24；不支持名称优势。29个多JSON批次离线执行中23个可通过，但这不是新Agent rollout成功率。全部原始数据不修改。
+All 96 original main trajectories completed, with 52 failures. Audit and replay passed; all 96 replayed final files match archives byte for byte. Original main work including two calibrations totaled 2.7266446927520964 GPU-hours. Completion: plan 9/24, reminder 16/24, identity 9/24, todo 10/24, without a name advantage. Of 29 multi-JSON batches executed offline,23 pass, but this is not a new agent-rollout success rate. All original data remain unchanged.
 
-具体执行干扰：单对象parser会拒绝完整多调用；每轮1536上限截断长JSON；Python-I不含cwd导致正常jobs包导入失败。用户授权无人值守修复，当前在独立`../agent-study-v3`开展兼容性复核，不能混合两批。统一支持完整JSON对象序列按顺序执行（整批截断仍拒绝）、agent Python加入/work import路径（隐藏grader仍isolated）、每轮cap3072；累计token/上下文/调用等其他预算不变。四组全部应用相同更改；这三项合并修复不允许各自归因因果效应。
+Specific interference: the single-object parser rejects complete multiple calls; a per-turn 1536 cap truncates long JSON; Python-I excludes cwd and breaks normal jobs-package imports. The user authorized unattended repair. A separate `../agent-study-v3` compatibility check now supports sequential execution of complete JSON-object sequences while still rejecting truncated batches; agent Python adds /work to imports while the hidden grader stays isolated; per-turn cap is 3072. Other cumulative token/context/call budgets are unchanged. All four conditions receive the same changes; separate causal effects cannot be attributed to the three combined repairs.
 
-v3复用同24任务，新增3个四要求能力样本（每家族一个），参考解、正常工作目录import、完整batch解析/截断拒绝已实测通过。v3 registration在模型输出前锁定。v3 launcher session90663，logs/launch.log，先GPU0校准3/3，成功后自动4GPU×24；cap校准900秒+main每worker3600秒，连同原2.73小时保守总上限约7.15GPU小时。若校准失败，诊断marker，不盲目继续。原goal保持active，此时不要按原96已完成就关闭目标；需纳入协议复核及最终解释。
+v3 reuses the same 24 tasks and adds 3 four-requirement capability examples, one per family. Reference solutions, normal working-directory imports, complete-batch parsing, and truncated-batch rejection all pass checks. v3 registration is locked before model output. Launcher session90663 logs to logs/launch.log, first requiring GPU0 calibration 3/3, then automatically 4 GPUs×24. Calibration cap 900 seconds plus 3600 seconds per main worker, together with the earlier 2.73 hours, gives a conservative total cap of approximately 7.15 GPU-hours. If calibration fails, diagnose the marker rather than continue blindly. Keep the original goal active until protocol checks and final interpretation are included; original 96 completion alone is insufficient.
 
+## Goal delivered
 
-## 本goal交付完成
-
-原96主轨迹+12单项校准+3修复后多要求校准共111条均核验。修复校准2/3未通过预设3/3门槛，故第二批96未运行；这是登记的停止分支，不是未结束作业。原主96全部重验/重放、所有52失败逐要求归因、全部25首次完成后动作分类。结论/限制/协议偏差/训练建议见CONCLUSIONS.md，逐项验收COMPLETION_AUDIT.md，交付hash为analysis/delivery-manifest.json。总2.800671GPU小时，GPU无计算任务。未做SFT或RL，等待用户研究结果审核，不把开发冒烟写成方法有效或已解决真实Agent早停。此前进行中状态以本条为准。
+All 111 trajectories were verified: original 96 main +12 single-requirement calibration +3 repaired multi-requirement calibration. Repaired calibration scored 2/3 against the 3/3 threshold, so the second 96 was not run. This is the registered stopping branch, not an unfinished job. Original 96 were all regraded/replayed; all 52 failures analyzed requirement by requirement; all 25 actions after first completion classified. See CONCLUSIONS.md for findings/limits/protocol deviations/training recommendations, COMPLETION_AUDIT.md for itemized checks, and analysis/delivery-manifest.json for delivery hashes. Total 2.800671 GPU-hours; no GPU compute jobs remain. No SFT or RL was performed. Awaiting user research review; this development smoke test is not claimed as method validation or a solution to real-agent early stopping. This entry supersedes earlier in-progress statuses.

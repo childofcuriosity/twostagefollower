@@ -42,12 +42,12 @@ fig.text(.5,.015,'32 shared questions per length; greedy; no adapters. L2/L5 reu
 fig.tight_layout(rect=(0,.055,1,.96))
 for ext in ['png','pdf','svg']:fig.savefig(R/f'accuracy-vs-length-2-9.{ext}',dpi=200)
 plt.close(fig)
-lines=['# 7B/14B纯Prompt L2–9短测','','原始权重，无adapter，STEP/NAME Prompt、工具定义、数据规则、chat模板、贪心解码与严格评分不变。每点32道共享题；L2/L5复用旧探索，其余6档本次新增，共768条新输出。旧正式512题及GRPO输出均未混入。','','![长度曲线](accuracy-vs-length-2-9.png)','','| L | 7B STEP | 7B NAME | 14B STEP | 14B NAME | 来源 |','|---:|---:|---:|---:|---:|---|']
+lines=['# 7B/14B prompt-only short evaluation at lengths 2–9','','Original weights without adapters. STEP/NAME prompts, tool definitions, data rules, chat templates, greedy decoding, and strict scoring are unchanged. Each point uses 32 shared examples. L2/L5 reuse earlier exploration; the other six lengths add 768 new outputs. Neither the old 512-example formal evaluation nor GRPO outputs are included.','','![Accuracy by length](accuracy-vs-length-2-9.png)','','| L | 7B STEP | 7B NAME | 14B STEP | 14B NAME | Source |','|---:|---:|---:|---:|---:|---|']
 for L in range(2,10):
  cells=[]
  for m,c in [('7b','STEP'),('7b','NAME'),('14b','STEP'),('14b','NAME')]:
   x=next(x for x in rows if x['model']==m and x['condition']==c and x['length']==L);cells.append(f'{x["correct"]}/32 ({x["rate"]:.1%})')
- lines.append('| '+str(L)+' | '+' | '.join(cells)+' | '+('复用' if L in [2,5] else '新增')+' |')
-lines+=['',f'新增输出结束原因：{dict(ends)}。16个作业正常退出；原始输出和token IDs、逐题严格评分、容量预检、配置、日志及失败现场保存在各模型子目录。标题合规另计，没有把旧辅助首错标签当作可靠调用遗漏/增加分类。','', '生成上限沿用原先根据正确目标长度确定的公式：L3/L4为256，L6–9为512；每档两个模型、两条件上限相同。只是短测探索，每点32题，0/32不证明总体成功率为0；不得把局部差值当作独立正式确认。这仍不是GRPO训练后的长度曲线。']
+ lines.append('| '+str(L)+' | '+' | '.join(cells)+' | '+('Reused' if L in [2,5] else 'New')+' |')
+lines+=['',f'Termination reasons for new outputs: {dict(ends)}. All 16 jobs exited normally. Raw outputs and token IDs, example-level strict scores, capacity prechecks, configurations, logs, and failure records are retained in the model subdirectories. Header compliance is scored separately. Old auxiliary first-error labels are not treated as reliable omitted/extra-call classifications.','', 'Generation limits follow the existing formula based on correct target length: 256 for L3/L4 and 512 for L6–9, identical across models and conditions at each length. This is an exploratory short evaluation with 32 examples per point. A score of 0/32 does not establish zero population accuracy, and local differences are not independent formal confirmation. These are not post-GRPO length curves.']
 (R/'REPORT.md').write_text('\n'.join(lines)+'\n')
 print(json.dumps(dict(new_outputs=count,endings=dict(ends),rates=[(x['model'],x['condition'],x['length'],x['correct']) for x in rows]),indent=2))

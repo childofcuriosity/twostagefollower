@@ -1,26 +1,26 @@
-# 7B/14B纯Prompt L2–9短测
+# 7B/14B prompt-only short evaluation at lengths 2–9
 
-原始权重，无adapter，STEP/NAME Prompt、工具定义、数据规则、chat模板、贪心解码与严格评分不变。每点32道共享题；L2/L5复用旧探索，其余6档本次新增，共768条新输出。旧正式512题及GRPO输出均未混入。
+Original weights without adapters. STEP/NAME prompts, tool definitions, data rules, chat templates, greedy decoding, and strict scoring are unchanged. Each point uses 32 shared examples. L2/L5 reuse earlier exploration; the other six lengths add 768 new outputs. Neither the old 512-example formal evaluation nor GRPO outputs are included.
 
-![长度曲线](accuracy-vs-length-2-9.png)
+![Accuracy by length](accuracy-vs-length-2-9.png)
 
-| L | 7B STEP | 7B NAME | 14B STEP | 14B NAME | 来源 |
+| L | 7B STEP | 7B NAME | 14B STEP | 14B NAME | Source |
 |---:|---:|---:|---:|---:|---|
-| 2 | 3/32 (9.4%) | 7/32 (21.9%) | 21/32 (65.6%) | 20/32 (62.5%) | 复用 |
-| 3 | 2/32 (6.2%) | 1/32 (3.1%) | 4/32 (12.5%) | 10/32 (31.2%) | 新增 |
-| 4 | 0/32 (0.0%) | 1/32 (3.1%) | 5/32 (15.6%) | 6/32 (18.8%) | 新增 |
-| 5 | 0/32 (0.0%) | 0/32 (0.0%) | 3/32 (9.4%) | 5/32 (15.6%) | 复用 |
-| 6 | 0/32 (0.0%) | 0/32 (0.0%) | 0/32 (0.0%) | 1/32 (3.1%) | 新增 |
-| 7 | 0/32 (0.0%) | 0/32 (0.0%) | 0/32 (0.0%) | 1/32 (3.1%) | 新增 |
-| 8 | 0/32 (0.0%) | 0/32 (0.0%) | 0/32 (0.0%) | 1/32 (3.1%) | 新增 |
-| 9 | 0/32 (0.0%) | 0/32 (0.0%) | 0/32 (0.0%) | 0/32 (0.0%) | 新增 |
+| 2 | 3/32 (9.4%) | 7/32 (21.9%) | 21/32 (65.6%) | 20/32 (62.5%) | Reused |
+| 3 | 2/32 (6.2%) | 1/32 (3.1%) | 4/32 (12.5%) | 10/32 (31.2%) | New |
+| 4 | 0/32 (0.0%) | 1/32 (3.1%) | 5/32 (15.6%) | 6/32 (18.8%) | New |
+| 5 | 0/32 (0.0%) | 0/32 (0.0%) | 3/32 (9.4%) | 5/32 (15.6%) | Reused |
+| 6 | 0/32 (0.0%) | 0/32 (0.0%) | 0/32 (0.0%) | 1/32 (3.1%) | New |
+| 7 | 0/32 (0.0%) | 0/32 (0.0%) | 0/32 (0.0%) | 1/32 (3.1%) | New |
+| 8 | 0/32 (0.0%) | 0/32 (0.0%) | 0/32 (0.0%) | 1/32 (3.1%) | New |
+| 9 | 0/32 (0.0%) | 0/32 (0.0%) | 0/32 (0.0%) | 0/32 (0.0%) | New |
 
-新增输出结束原因：{'eos': 768}。16个作业正常退出；原始输出和token IDs、逐题严格评分、容量预检、配置、日志及失败现场保存在各模型子目录。标题合规另计，没有把旧辅助首错标签当作可靠调用遗漏/增加分类。
+Termination reasons for new outputs: {'eos': 768}. All 16 jobs exited normally. Raw outputs and token IDs, example-level strict scores, capacity prechecks, configurations, logs, and failure records are retained in the model subdirectories. Header compliance is scored separately. Old auxiliary first-error labels are not treated as reliable omitted/extra-call classifications.
 
-生成上限沿用原先根据正确目标长度确定的公式：L3/L4为256，L6–9为512；每档两个模型、两条件上限相同。只是短测探索，每点32题，0/32不证明总体成功率为0；不得把局部差值当作独立正式确认。这仍不是GRPO训练后的长度曲线。
+Generation limits follow the existing formula based on correct target length: 256 for L3/L4 and 512 for L6–9, identical across models and conditions at each length. This is an exploratory short evaluation with 32 examples per point. A score of 0/32 does not establish zero population accuracy, and local differences are not independent formal confirmation. These are not post-GRPO length curves.
 
-## 快速读数
+## Quick reading
 
-14B L3差距最大：STEP4/32=12.5%，NAME10/32=31.25%，配对差+18.75个百分点；其中NAME独对7题、STEP独对1题。L4为5对6题、L5为3对5题；L6–8 NAME每档仅1题成功。7B从L3起已接近地板。L3值得独立扩大样本确认，但本次查看了多个长度，每档只有32题，不能直接当稳定方法收益或新的正式确认；也不说明GRPO训练后会保持这些差距。
+The largest 14B gap is at L3: STEP 4/32 = 12.5%, NAME 10/32 = 31.25%, a paired difference of +18.75 points, with seven NAME-only and one STEP-only success. L4 has five versus six successes, and L5 three versus five; NAME succeeds on only one example at each of L6–8. The 7B model is near the floor from L3 onward. L3 merits independent confirmation with a larger sample, but several lengths were inspected and each has only 32 examples. These results establish neither stable method gains nor new formal confirmation, and do not predict persistence after GRPO training.
 
-模型作业并行墙钟89.62秒，记录的进程分配GPU时间0.275小时（含加载/保存，非内核活动时间）。全部输出EOS结束，无生成上限截断。阶段完成后本机及两远程共16卡显存均0MiB，记录于resources-final.json。本轮未启动新训练。
+Parallel model-job wall time is 89.62 seconds; recorded process allocation is 0.275 GPU-hours including loading/saving, not kernel-active time. Every output ends with EOS, with no generation-limit truncation. At completion, all 16 GPUs across the local and two remote machines show 0 MiB, as recorded in resources-final.json. No new training was launched.

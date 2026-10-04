@@ -1,6 +1,6 @@
-# 训练暴露与资源口径
-本轮复用已训练权重，没有为主矩阵重新训练。下表是原训练的实际计数；每条件完整512步看16384条样本。
-|模型|seed|一起训练512步监督tokens|顺序占比|操作占比|各专用256步监督tokens合计|单adapter可训练参数|
+# Training exposure and resource accounting
+This study reuses trained weights, with no retraining for the main matrix. The table gives actual counts from the original training; each full 512-step condition sees 16384 examples.
+|Model|Seed|Joint 512-step supervised tokens|Sequence fraction|Operation fraction|Total supervised tokens for two 256-step specialists|Trainable parameters per adapter|
 |---|---:|---:|---:|---:|---:|---:|
 |qwen3b|11|1001552|11.14%|88.86%|500776|29933568|
 |qwen3b|22|1001552|11.14%|88.86%|500776|29933568|
@@ -9,11 +9,11 @@
 |qwen32b|22|1001552|11.14%|88.86%|500776|134217728|
 |qwen32b|33|1001552|11.14%|88.86%|500776|134217728|
 
-一起训练按有效目标token平均损失；专用模型按各自被监督部分平均。顺序占比是目标token数量占比，不是实测梯度贡献比例，不能单凭它证明梯度冲突或学习稀释。
-两专用各256步与一起训练512步，累计样本/优化步数相同，但训练样本的重复分配、监督token数量及参数存储不同。两个专用adapter参数总量为一个的两倍。仍需权重平衡或容量匹配实验才能排除这些解释。
-当前已结束的新评测作业合计分配GPU墙钟时间：31.62 GPU小时（包含加载、首轮归档校准及失败作业，不包含尚未结束作业；不是GPU内核活跃时间）。
+Joint training averages loss over valid target tokens; specialists average over their own supervised components. Sequence fraction is a target-token count fraction, not measured gradient contribution, and alone does not establish gradient conflict or diluted learning.
+Two 256-step specialists and one 512-step joint model have equal cumulative example exposure/optimizer steps, but differ in repeated-example allocation, supervised-token counts, and parameter storage. Two specialist adapters contain twice the parameters of one adapter. Weight-balanced or capacity-matched experiments are still needed to exclude these explanations.
+Total allocated GPU wall time for completed new evaluation jobs: 31.62 GPU-hours, including loading, initial archived calibration, and failed jobs, but excluding unfinished jobs. This is not active GPU-kernel time.
 
-|阶段|已结束作业数|分配GPU小时|
+|Stage|Completed jobs|Allocated GPU-hours|
 |---|---:|---:|
 |main|26|22.31|
 |context|26|5.49|

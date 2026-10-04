@@ -1,7 +1,7 @@
-# 第二次调用之后是否继续
-按已登记的段数/提前结束指标补充描述；不是注意力机制或编号外推失败的独立因果证明。分母均为旧独立480题×3seed。
+# Does execution continue after the second call?
+Supplementary description using the registered segment-count/early-stopping metrics. This is not independent causal evidence for an attention mechanism or failure to extrapolate numbering. Every denominator is the earlier independent 480 examples x 3 seeds.
 
-|模型|条件|输出至少第三个段标签|正确完成两工具后提前Answer|完整轨迹|
+|Model|Condition|Emits at least a third segment label|Early Answer after correctly completing two tools|Full trajectory|
 |---|---|---:|---:|---:|
 |qwen1.5b|flat|0.00%|81.04%|0.00%|
 |qwen1.5b|macro|80.35%|17.50%|16.25%|
@@ -20,4 +20,4 @@
 |qwen32b|position|97.99%|2.01%|39.17%|
 |qwen32b|alias|88.82%|10.90%|31.18%|
 
-所有seed、段数直方图及标签正确后的完整轨迹分层见analysis/boundary-diagnostics.json。条件于模型输出的分层有选择偏差，不能据此估计无偏训练效果。
+All seeds, segment-count histograms, and full-trajectory rates stratified by correct labels are in analysis/boundary-diagnostics.json. Stratification conditional on model output introduces selection bias and cannot estimate an unbiased training effect.

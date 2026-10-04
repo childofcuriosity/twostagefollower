@@ -1,20 +1,20 @@
-# 操作部分的局部上下文究竟改了什么
+# What changes in local operation context?
 
-以下是协议示意，不是实验结果或筛选出来的成功案例。
+This is a protocol illustration, not an experimental result or a selected success case.
 
-原任务给四个数字和工具顺序，例如输入`1 2 3 4`，要求`red blue black`。工具是固定的：`red`表示先左移再全部加一；`blue`表示反转、左移、全部加一；`black`表示全部加一再交换前两个数字。模型必须输出每一步操作及数字。
+The task supplies four digits and tool order, for example input `1 2 3 4` with `red blue black`. Tools are fixed: `red` rotates left then increments every digit; `blue` reverses, rotates left, then increments; `black` increments then swaps the first two digits. The model must output every operation and numerical state.
 
-训练前后使用同一批已有模型权重。本次干预只改变操作生成时送入的上下文。
+The same existing model weights are used before and after intervention. Only context supplied during operation generation changes.
 
-## 名称部分仍看完整任务
+## Names still see the full task
 
-模型看最初的四个数字、用户给定的完整工具列表，以及此前真实输出。假设它先输出`red:`，再执行得到`3 4 5 2`，之后输出`blue:`。
+The model sees the original four digits, complete user-supplied tool list, and prior actual outputs. Suppose it first emits `red:`, executes it to obtain `3 4 5 2`, then emits `blue:`.
 
-名称部分不会由程序替它选择下一个工具。若模型下一步输出`black:`而非`blue:`，程序也不会替换成正确名称。
+The program does not choose the next tool for the name component. If the model emits `black:` instead of `blue:`, it is not replaced with the correct name.
 
-## 操作部分只收到模型刚选的工具和真实当前状态
+## Operations receive only the selected tool and actual current state
 
-普通版本会把所有先前历史继续交给操作模型。新版本把操作部分的输入整理成一个单工具任务：
+The ordinary version passes all previous history to the operation model. The new version constructs a single-tool input:
 
 ```text
 Input: 3 4 5 2
@@ -23,9 +23,9 @@ Trace:
 blue:
 ```
 
-实际输入仍包含原协议中的基础操作说明及格式要求，这里只展示发生变化的任务部分。`blue`来自模型刚才输出的名称，`3 4 5 2`来自上一工具真实输出的末状态。
+Actual inputs still include primitive-operation descriptions and format requirements from the original protocol; only the changed task portion is shown here. `blue` comes from the newly emitted name, and `3 4 5 2` is the final state actually output by the preceding tool.
 
-模型接下来应生成：
+The model should next generate:
 
 ```text
 rev 2 5 4 3
@@ -34,18 +34,18 @@ inc 6 5 4 3
 EndTool
 ```
 
-这段正确操作只是本文的说明，推理程序不会预先提供这些行。模型输出什么就记录什么，并拼回全局历史；名称模型再决定下一步或结束。
+These correct operations illustrate the protocol; inference never supplies them in advance. Actual model outputs are recorded and appended to global history, after which the name model chooses the next call or termination.
 
-## 算错时也不帮忙
+## Errors receive no correction
 
-如果前一步实际输出的是`9 9 9 9`，操作部分就收到`Input: 9 9 9 9`。脚本不把它改回正确状态。即使后面算对，前面的错误仍使整题判错。若提前生成`Done`，也照常结束并判错；不会强制继续到用户要求的长度。
+If the previous output is actually `9 9 9 9`, the operation component receives `Input: 9 9 9 9`. The script does not restore the correct state. Even if later computation is correct, the earlier error fails the whole task. Early `Done` terminates normally and fails; execution is not forced to the requested length.
 
-程序负责的是读取已生成文本、整理下一次输入及检查格式；不在推理过程中执行正确算式来替模型补答案。
+The program reads generated text, constructs the next input, and checks format. It does not calculate correct operations during inference to fill in answers.
 
-## 这能回答什么
+## What this can answer
 
-同一个一起训练模型也接受这个输入整理，因此如果它同样恢复，不能把恢复全归功于分开训练。若专用模型在相同输入整理后仍更好，才是两者互补的证据。
+The same joint model also receives this input construction. If it recovers too, recovery cannot all be credited to separate training. Specialist gains after matching input construction would instead support complementarity.
 
-这个改动同时去除了操作部分看到的过往轨迹与完整后续工具列表，并把输入变成训练中见过的单工具格式。因此它检验的是操作上下文范围，不能单独称为“上下文token长度”的因果效应。
+The intervention removes both prior trajectories and the full remaining-tool list from the operation component, while converting input to the single-tool format seen in training. It tests operation-context scope, not the isolated causal effect of context token length.
 
-这仍是输入已经给出正确工具顺序的受控任务。它不等同于真实Agent自主规划，更不等同于证明AI已经学会研究创新。
+This remains a controlled task with correct tool order supplied in advance. It neither tests real-agent autonomous planning nor proves that AI has learned scientific innovation.

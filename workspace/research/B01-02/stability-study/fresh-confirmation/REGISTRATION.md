@@ -1,11 +1,11 @@
-# 新工具组合确认集：运行前登记
+# New tool-composition confirmation set: preregistration
 
-主矩阵和上下文干预使用过往已有题目，因此增加一个预先冻结的新程序集合，检查观察到的效果是否只适用于反复查看过的题。
+The main matrix and context intervention use earlier examples. Add a preregistered frozen new program set to test whether observed effects are confined to repeatedly inspected examples.
 
-在任何真实模型局部上下文推理前生成：固定随机种子2026092501，每长度3/4/5/6/8选20条工具组合，每组合4个不同四位数字输入，共100个程序、400题。工具组合排除oracle-study全部train/dev/test/independent输入已经出现的组合；工具本身仍是原来的九个，并非新工具迁移。文件和哈希见data/independent.jsonl与analysis/dataset-manifest.json。数据生成不读取模型预测。
+Generate before any actual local-context model inference: fixed random seed2026092501;20 tool compositions per length3/4/5/6/8;4 distinct four-digit inputs per composition;100 programs and 400 examples total. Exclude every tool composition seen in oracle-study train/dev/test/independent inputs. Tools remain the original nine, so this is not transfer to new tools. Files/hashes are data/independent.jsonl and analysis/dataset-manifest.json. Generation does not read model predictions.
 
-固定模型3B/32B，seed11/22/33，512步。只比较两种训练方式：一起训练模型负责全部输出，以及两个专用模型实际组合。每种各测全历史与操作局部上下文，共2尺度×3seed×2路线×2上下文×400题=9600条新推理。不根据已有确认结果选择检查点、种子或路线，也不以该集合再调方法。
+Fix3B/32B, seeds11/22/33,512 steps. Compare only joint models generating all outputs and actual composition of two specialists, each with full history and local operation context:2 scales x3 seeds x2 routes x2 contexts x400 examples =9600 new inferences. Do not select checkpoints, seeds, or routes based on existing confirmation results or tune methods on this set.
 
-主要比较：同训练方式局部上下文对全历史，以及局部上下文中分开训练对一起训练。报告三个seed、全部长度、两子任务准确率、整题准确率与配对增益/损失。上下文范围的变化不能单独称为token长度效应；两专用模型的参数存储和原训练成本更高，照常披露。
+Primary comparisons: local versus full context within training type, and separate versus joint training within local context. Report all three seeds, lengths, subtask accuracies, full-task accuracy, and paired gains/losses. Context-scope changes are not token-length-only effects. Disclose the greater parameter storage and original training costs of two specialists.
 
-等待主矩阵和第一批上下文干预完成及审计通过后运行，复用同一经过真实模型校准的评测器；逐条重建实际生成输入并审计评分。全部结果均报告，不能只保留改善的尺度。源码、输入、原始轨迹与运行日志均在本目录。此确认集不用于训练或挑方法。
+Run after the main matrix and first context intervention finish and pass audits, reusing the same evaluator calibrated with actual models. Reconstruct actual generation inputs and audit scores record by record. Report all results, not only improved scales. Source, inputs, raw trajectories, and logs remain here. This set is not used for training or method selection.

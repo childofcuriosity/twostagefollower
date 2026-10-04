@@ -1,15 +1,14 @@
-# 真实文件/数据/代码Agent冒烟结果
+# File/data/code agent smoke-test results
 
-已完成 96/96 条主轨迹。这是开发冒烟，不是确认性实验。
+Completed 96/96 main trajectories. This is a development smoke test, not a confirmatory experiment.
 
-| 条件 | 完成率 | 未完成主动结束 | 平均输出token | 平均工具/结束轮次 |
+| Condition | Completion rate | Voluntary termination while incomplete | Mean output tokens | Mean tool/termination rounds |
 |---|---:|---:|---:|---:|
 | plan | 37.5% | 12.5% | 1582 | 3.5 |
 | reminder | 66.7% | 16.7% | 1855 | 4.8 |
 | identity | 37.5% | 29.2% | 1278 | 3.8 |
 | todo | 41.7% | 20.8% | 1079 | 3.1 |
 
-各任务家族、长度、配对差及原始路径见analysis/results.json，所有逐题判定见analysis/cases.jsonl。全部原始轨迹已独立重验和重放；科学判断见[完整结论](CONCLUSIONS.md)。本批未显示身份复述优势，后续兼容性修复未通过能力门槛，没有开展第二批主对照或训练。
+See analysis/results.json for all task families, lengths, paired differences, and raw paths, and analysis/cases.jsonl for per-example judgments. All raw trajectories have been independently verified and replayed. See the [full conclusions](CONCLUSIONS.md) for interpretation. This batch showed no advantage from identity restatement. Subsequent compatibility repairs failed the capability threshold, so neither a second main comparison nor training was conducted.
 
-
-![开发冒烟结果与成本](figures/agent-smoke.png)
+![Development smoke-test results and costs](figures/agent-smoke.png)

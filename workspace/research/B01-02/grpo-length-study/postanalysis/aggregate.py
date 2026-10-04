@@ -41,17 +41,17 @@ for ax,model in zip(axes,['7b','14b']):
 axes[0].set_ylabel('Strict test success (%)');fig.tight_layout()
 for ext in ['png','pdf','svg']:fig.savefig(R/f'figures/test-success-vs-length.{ext}',dpi=180)
 plt.close(fig)
-lines=['# 二值GRPO：模型×长度扩展完整结果','','所有6组合均完成STEP/NAME×3配对seed，每run100更新。主指标严格完整轨迹成功率。下列均为新测试集512题的预定端点；误差为seed样本SD，不是题目抽样置信区间。','','| 组合 | STEP step0→100均值±SD | NAME step0→100均值±SD | 配对NAME−STEP均值±SD(pp) | 正/负/平seed | STEP验证终点 | 20%–90%候选窗口 |','|---|---:|---:|---:|---|---:|---|']
+lines=['# Binary GRPO: full model-by-length results','','All 6 settings completed STEP/NAME × 3 paired seeds, with 100 updates per run. The primary metric is strict full-trajectory success. Values below are the scheduled endpoints on 512 fresh test examples; uncertainty is the sample SD across seeds, not an example-sampling confidence interval.','','| Setting | STEP step0→100 mean±SD | NAME step0→100 mean±SD | Paired NAME−STEP mean±SD(pp) | Positive/negative/tied seeds | STEP validation endpoint | 20%–90% candidate window |','|---|---:|---:|---:|---|---:|---|']
 for x in summary:
  s=x['summary']['STEP'];n=x['summary']['NAME'];p=x['summary']['paired'];pairs=x['paired'];counts=[sum(y['NAME_minus_STEP']>0 for y in pairs),sum(y['NAME_minus_STEP']<0 for y in pairs),sum(y['NAME_minus_STEP']==0 for y in pairs)]
- lines.append(f'| {x["task"]} | {s["step0"]:.2%}→{s["step100_mean"]:.2%} ±{s["step100_sample_sd"]*100:.2f}pp | {n["step0"]:.2%}→{n["step100_mean"]:.2%} ±{n["step100_sample_sd"]*100:.2f}pp | {p["mean"]*100:+.2f} ±{p["sample_sd"]*100:.2f} | {counts[0]}/{counts[1]}/{counts[2]} | {x["validation_step100_mean"]["STEP"]:.2%} | {"是" if x["STEP_validation_candidate_20_to_90"] else "否"} |')
-lines+=['','候选窗口按运行前登记的STEP固定验证集step100三seed均值20%–90%判断，不按NAME差值大小挑组，不据测试挑checkpoint。全部连续值及seed波动保留，候选仍须独立确认。每个组合的原始step0按条件评测一次供3seed共享，不算3次独立模型证据。','','![训练前后长度曲线](figures/test-success-vs-length.png)','','![全部学习曲线](figures/all-learning-curves.png)','','## 全部预定门槛','','| 组合 | 条件 | seed | 60% | 70% | 80% | 90% |','|---|---|---:|---:|---:|---:|---:|']
+ lines.append(f'| {x["task"]} | {s["step0"]:.2%}→{s["step100_mean"]:.2%} ±{s["step100_sample_sd"]*100:.2f}pp | {n["step0"]:.2%}→{n["step100_mean"]:.2%} ±{n["step100_sample_sd"]*100:.2f}pp | {p["mean"]*100:+.2f} ±{p["sample_sd"]*100:.2f} | {counts[0]}/{counts[1]}/{counts[2]} | {x["validation_step100_mean"]["STEP"]:.2%} | {"Yes" if x["STEP_validation_candidate_20_to_90"] else "No"} |')
+lines+=['','The candidate window uses the preregistered 20%–90% range for three-seed mean STEP success on the fixed validation set at step100. Settings are not selected by the NAME difference, nor checkpoints by test results. All continuous values and seed variation are retained; candidates still require independent confirmation. Original step0 is evaluated once per condition in each setting and shared across 3 seeds, rather than counted as 3 independent model evaluations.','','![Length curves before and after training](figures/test-success-vs-length.png)','','![All learning curves](figures/all-learning-curves.png)','','## All prespecified thresholds','','| Setting | Condition | seed | 60% | 70% | 80% | 90% |','|---|---|---:|---:|---:|---:|---:|']
 for task,d in all_data.items():
  for curve in d['curves']:
-  vals=[str(curve['thresholds'][str(v)]['step']) if curve['thresholds'][str(v)] is not None else '未达到' for v in [.6,.7,.8,.9]]
+  vals=[str(curve['thresholds'][str(v)]['step']) if curve['thresholds'][str(v)] is not None else 'Not reached' for v in [.6,.7,.8,.9]]
   lines.append('| '+task+' | '+curve['condition']+' | '+str(curve['seed'])+' | '+' | '.join(vals)+' |')
-lines+=['','阈值仅在step0/10/.../100固定评测点判断；所有门槛与全部曲线共同解释，未达到不补任意更新数。训练GPU时间和输出token轴的曲线见各组合报告，不把等更新视为等计算。','','## 每组证据','']
-for task in TASKS:lines.append(f'- [{task}完整报告]({task}/REPORT.md)：逐seed端点、基准提升、配对差、曲线、采样/成本/错误及标题。')
-lines+=['','整体判断、故障和资源验收见CONCLUSIONS.md与COMPLETION_AUDIT.md。固定L5两模型共享底层数据；整个六组合是探索性组合筛查，不是六次独立正式确认。']
+lines+=['','Thresholds are checked only at fixed evaluation points step0/10/.../100. Interpret all thresholds together with the complete curves; unreached thresholds are not assigned arbitrary update counts. Each setting report also plots curves against training GPU time and output tokens. Equal update counts are not treated as equal compute.','','## Evidence for each setting','']
+for task in TASKS:lines.append(f'- [{task} full report]({task}/REPORT.md): per-seed endpoints, gains over baseline, paired differences, curves, sampling, costs, errors, and headings.')
+lines+=['','See CONCLUSIONS.md and COMPLETION_AUDIT.md for overall interpretation, failures, and resource checks. The two models share underlying data at fixed L5. These six settings form an exploratory screen, not six independent confirmatory experiments.']
 (R/'REPORT.md').write_text('\n'.join(lines)+'\n')
 print(json.dumps(summary,indent=2))

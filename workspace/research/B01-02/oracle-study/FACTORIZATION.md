@@ -1,6 +1,6 @@
-# Oracle子任务乘积校验
-每长度24个程序×4输入×3训练seed。先在每seed求A×B，再平均；同题均对来自两次oracle测试，未实际运行组合模型。下表是“同题均对−A×B”，百分数单位为百分点。区间按程序成簇重采样2000次，条件于已有三个seed；不包含训练seed总体的不确定性。区间包含0不能证明独立或等价。
-|模型|调用数|差值|程序bootstrap 95%区间|seed11 / 22 / 33差值|
+# Checking oracle subtask products
+Each length has 24 programs x 4 inputs x 3 training seeds. Compute A x B within each seed, then average. Both-correct on the same example is measured from two oracle evaluations, not an executed composed model. The table reports both-correct minus A x B, in percentage points. Intervals use 2000 program-cluster bootstrap resamples, conditional on the three observed seeds; they exclude population uncertainty over training seeds. An interval containing 0 does not establish independence or equivalence.
+|Model|Calls|Difference|Program bootstrap 95% interval|Seed11 / 22 / 33 differences|
 |---|---:|---:|---|---|
 |qwen1.5b|3|+0.18|[-0.20, +0.74]|+0.00 / +0.00 / +0.54|
 |qwen1.5b|4|+1.87|[-0.87, +5.03]|+0.00 / +2.65 / +2.95|
@@ -23,4 +23,4 @@
 |qwen32b|6|-0.19|[-0.61, +0.00]|-0.10 / -0.48 / +0.00|
 |qwen32b|8|-0.20|[-1.06, +0.47]|-0.26 / -0.33 / +0.00|
 
-A、B和联合自由执行的准确率见ORACLE_PRODUCTS.md。两类差异必须区分：同题均对与乘积的差，是oracle子任务输出的统计关联；乘积与联合自由执行的差，还包含训练方式和推理环境改变，不能只归为相关性。
+See ORACLE_PRODUCTS.md for A, B, and joint free-execution accuracy. Distinguish two differences: both-correct versus the product measures statistical association between oracle subtask outputs; the product versus joint free execution additionally changes training and inference environments and cannot be attributed only to correlation.

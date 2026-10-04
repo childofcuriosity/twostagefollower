@@ -1,10 +1,10 @@
-# 长任务按规模与长度分解
+# Long-task decomposition by scale and length
 
-独立确认集；每个规模、每个长度24个程序×4组输入×3个训练种子，共288条轨迹。A按所有要求调用位置统计，缺失计错；B按实际输出的合法名称段统计，检查相应操作与数字，不含不可观测的未生成段。预测为已有按程序5折留出、同长度同seed的(pA*pB)^L结果汇总；实际整题为完整轨迹正确。
+Independent confirmation: 24 programs × four inputs × three training seeds = 288 trajectories per scale and length. A covers every required call position, with missing names scored incorrect. B checks operations and numbers within emitted valid-name segments, excluding unobserved missing segments. Predictions aggregate existing five-fold program-held-out (pA*pB)^L estimates within length and seed. Actual whole-task scores require complete correct trajectories.
 
 ## qwen1.5b
 
-| 调用数 | A名称正确 | B展开正确 | 连乘预测整题 | 名称组实际整题 | step组实际整题 |
+| Calls | A: correct name | B: correct expansion | Product whole-task prediction | Actual name-condition whole task | Actual step whole task |
 |---|---:|---:|---:|---:|---:|
 | 3 | 82.06% | 99.59% | 56.03% | 52.43% | 0.00% |
 | 4 | 71.09% | 96.24% | 22.25% | 21.18% | 0.00% |
@@ -14,7 +14,7 @@
 
 ## qwen3b
 
-| 调用数 | A名称正确 | B展开正确 | 连乘预测整题 | 名称组实际整题 | step组实际整题 |
+| Calls | A: correct name | B: correct expansion | Product whole-task prediction | Actual name-condition whole task | Actual step whole task |
 |---|---:|---:|---:|---:|---:|
 | 3 | 93.63% | 99.03% | 81.82% | 83.68% | 0.00% |
 | 4 | 91.75% | 95.26% | 59.09% | 60.76% | 0.00% |
@@ -24,7 +24,7 @@
 
 ## qwen7b
 
-| 调用数 | A名称正确 | B展开正确 | 连乘预测整题 | 名称组实际整题 | step组实际整题 |
+| Calls | A: correct name | B: correct expansion | Product whole-task prediction | Actual name-condition whole task | Actual step whole task |
 |---|---:|---:|---:|---:|---:|
 | 3 | 95.60% | 98.57% | 85.00% | 86.81% | 60.76% |
 | 4 | 90.54% | 95.07% | 56.05% | 52.08% | 0.00% |
@@ -34,7 +34,7 @@
 
 ## qwen32b
 
-| 调用数 | A名称正确 | B展开正确 | 连乘预测整题 | 名称组实际整题 | step组实际整题 |
+| Calls | A: correct name | B: correct expansion | Product whole-task prediction | Actual name-condition whole task | Actual step whole task |
 |---|---:|---:|---:|---:|---:|
 | 3 | 98.03% | 100.00% | 94.24% | 94.10% | 87.85% |
 | 4 | 92.27% | 99.53% | 72.18% | 71.53% | 35.42% |

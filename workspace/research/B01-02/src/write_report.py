@@ -17,80 +17,80 @@ sec_table='\n'.join(f"| {c} | {pc(statistics.mean(second['conditions'][c]['iid']
 core_table='\n'.join(f"| {c} | {pc(mean(c,'iid'))} | {pc(mean(c,'ood'))} |" for c in ['flat','macro','natural','shuffled'])
 files=list((ROOT/'runs').glob('*/predictions.jsonl'))+list((ROOT/'secondary/runs').glob('*/predictions.jsonl'))+list((ROOT/'analysis/routing-probe').glob('*.jsonl'))
 raw_count=sum(sum(1 for _ in p.open()) for p in files)
-report=f'''# B01-02 结果审核报告
+report=f'''# B01-02 results review
 
-状态：已完成本轮机制分析与实验，等待用户统一审核。生成时间（UTC）：{time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())}。
+Status: mechanism analysis and experiments for this round are complete, awaiting consolidated user review. Generated at (UTC): {time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())}.
 
-## 我的判断
+## Judgment
 
-**发现了可重复的训练表示效应，但还没有证明“模型学会了创新”。建议暂不把当前题目推进为论文主线，保留机制观察及实验资产。**
+**A repeatable training-representation effect is observed, but learning to innovate is not established. Do not yet promote this topic to the main paper direction; retain the mechanism observation and experimental assets.**
 
-主实验通过预设的3个百分点筛选阈值：按宏名称组织轨迹，比等信息、等训练token的平坦轨迹提高 **{comparison['mean_difference']*100:.2f} 个百分点**。不过失败主要发生在长链组织/提前停止；外部逐步路由能让两组都达到100%，已有内容寻址和组合泛化文献又非常接近。因此“大幅涨分”不能直接转换为新颖的抽象发现结论。新颖性判断在实验期间因补充查新而下调，这个变化保留在记录中。
+The primary experiment passes the prespecified three-point screen. Macro-name-organized traces outperform information- and training-token-matched flat traces by **{comparison['mean_difference']*100:.2f} percentage points**. Failures mainly concern long-chain organization/early stopping; external stepwise routing brings both groups to 100%, and existing content-addressing/compositional-generalization work is close. Large score gains do not directly establish novel abstraction discovery. Additional literature review lowered the novelty assessment during the experiment; that change remains documented.
 
-## 实际做了什么
+## What was run
 
-- 基座：Qwen/Qwen2.5-1.5B，固定revision `8faed761d45a263340a0528343f099c05c9a4323`；更新18,464,768个LoRA参数，rank16、alpha32。不是全参数预训练，也不是完整SPEE复现。
-- 每个正式训练：512个优化步，batch32，16,384个训练样本呈现（4,096条数据重复4轮），种子11/22/33。原始主组每次2,430,112个非padding输入token，其中1,055,432个监督target token。
-- 全部在本项目`.training-venv`运行：torch2.7.1+cu128、transformers4.51.3、peft0.15.2。利用本机RTX PRO 6000 Blackwell分卡运行独立作业；没有宣称完成NCCL多卡训练验收。
-- 12个主对照训练、6个名称/语义干预、6个事后对齐对照、6个第二环境复核，共30个正式训练；另有1次训练校准、2个冻结模型基线、7个外部路由诊断。检查点和失败日志保留。
-- 合计保留 **{raw_count:,} 条逐题原始记录**，包含同一评测题在不同模型/种子下的重复测量，不能当成同样多的独立测试题。
+- Base: Qwen/Qwen2.5-1.5B, revision `8faed761d45a263340a0528343f099c05c9a4323`; update 18,464,768 LoRA parameters, rank 16/alpha 32. This is not full-parameter pretraining or complete SPEE replication.
+- Each formal run: 512 steps, batch 32, 16,384 example presentations (four passes over 4,096 examples), seeds 11/22/33. Each original primary run has 2,430,112 nonpadding input tokens, including 1,055,432 supervised targets.
+- All runs use project `.training-venv`: torch 2.7.1+cu128, transformers 4.51.3, peft 0.15.2. Independent jobs use separate local RTX PRO6000 Blackwell GPUs; NCCL distributed-training acceptance is not claimed.
+- Twelve primary runs, six name/semantic interventions, six post hoc alignment controls, and six second-environment replications: 30 formal training runs. Also one calibration, two frozen baselines, and seven external-routing diagnostics. Checkpoints/failure logs remain.
+- Retained **{raw_count:,} raw example-level records**, including repeated evaluations across models/seeds rather than equally many independent tests.
 
-## 主实验结果
+## Primary results
 
-训练宏组合深度1–2，测试深度3–5；测试时不提供宏函数库，只保留各组相同的原语说明。最终OOD有384题，但只有96个不同程序组合，每个4个输入。精确仿射signature排除了与训练程序等价的测试函数。
+Train macro-composition depth 1–2 and test 3–5. Tests omit macro definitions while sharing primitive instructions. OOD has 384 examples from only 96 programs, each with four inputs. Exact affine signatures exclude test functions equivalent to training.
 
-| 条件 | 同分布IID均值 | 未见组合OOD均值 |
+| Condition | Mean IID | Mean unseen-composition OOD |
 |---|---:|---:|
 {core_table}
 
-macro的三个OOD结果：30.73%、37.76%、20.83%；flat：0.26%、0%、0%。macro-flat配对差值均为正，均值29.69个百分点，按三个训练种子的t区间约 **8.60–50.78个百分点**。按程序聚类、条件于这三个checkpoint的描述性bootstrap约22.13–37.15个百分点。两种区间含义不同，不能将后者作为增加训练种子数的替代。
+Macro OOD scores are 30.73%, 37.76%, 20.83%; flat scores are 0.26%, 0%, 0%. All paired differences are positive, averaging 29.69 points, with a three-training-seed t interval approximately **8.60–50.78 points**. Descriptive program-clustered bootstrap conditional on the three checkpoints gives approximately 22.13–37.15 points. These intervals differ in meaning; the latter does not replace more training seeds.
 
-flat/macro/shuffled的真实累计训练输入token、监督token、样本数逐项完全相同。natural有更多监督token（1,312,060），属于次要对照。所有组推理上限同为256 token，但实际平均生成长度不同：flat约67.1、macro约90.7 token/题，**不能声称总推理算力相同**。
+Actual cumulative input tokens, supervised tokens, and example counts match exactly across flat/macro/shuffled. Natural has more supervised tokens (1,312,060) and is secondary. Every group has a 256-token inference cap, but mean actual generation differs: approximately 67.1 for flat and 90.7 for macro. **Total inference compute is not matched.**
 
-## 理论分析与干预说明了什么
+## What theory and interventions show
 
-1. **信息等价。** flat与macro的展开原语、每一步状态、最终答案、分组边界相同；macro标签可由输入里的函数调用顺序确定性恢复。故差异是有限训练下的表示组织/优化效应，不是新增监督信息。
-2. **模块会执行，长链不一定会组织。** 原始flat种子11的383个OOD失败中，375个是正确前缀之后提前停止。外部循环按题面调用顺序逐个请求宏，后一步只用模型前一步输出、不喂oracle状态：flat和macro三个种子均100%（每次96个独立程序），冻结模型0%。这是不同推理流程和成本的事后诊断，不能替换自主OOD分数。
-3. **改名不等于严格不变。** 名称循环置换后macro平均OOD为{pc(mean('macro','ood','renamed'))}，原始为{pc(mean('macro','ood'))}，种子间变化较大。可排除只依赖某一固定名字才能工作，但不能宣称名称不变性已充分成立。
-4. **行为跟随训练语义。** 对新旧答案不同的550题，语义置换模型三个种子按新语义准确率45.09%–70.00%，旧语义匹配率均0%。这支持参数行为依赖新训练定义；置换也改变部分展开长度，不能把跨世界分数差纯归为语义因素。
-5. **对齐替代解释仍存在。** 追加共享call-tags输入的配对训练：稳定宏标签平均OOD {pc(mean('macro','ood',tag='-tagged-stable'))}，每例随机调用标签平均 {pc(mean('macro','ood',tag='-tagged-call'))}。后者没有固定的输出标签→宏语义对应，也能有部分迁移，但种子波动大，不能宣称两者等价或确定谁更好。此实验改变了共同输入，不能直接与原flat作单因素比较。
+1. **Information equivalence.** Flat/macro share expanded primitives, every state, answers, and group boundaries. Macro labels are deterministically recoverable from input call order. Differences concern representation organization/optimization under finite training, not added supervision information.
+2. **Executing modules does not guarantee organizing long chains.** Of 383 original flat seed-11 OOD failures, 375 stop after correct prefixes. An external loop requests macros in the supplied order using only preceding model outputs, without oracle states. Flat/macro score 100% across all three seeds (96 independent programs each); frozen base scores 0%. This post hoc diagnostic changes inference procedure/cost and does not replace autonomous OOD scores.
+3. **Renaming does not establish strict invariance.** After cyclic name permutation, mean macro OOD is {pc(mean('macro','ood','renamed'))}, versus original {pc(mean('macro','ood'))}, with substantial seed variation. Results exclude dependence on one fixed name assignment but do not establish full name invariance.
+4. **Behavior follows trained semantics.** On 550 examples with different old/new answers, semantically permuted models score 45.09%–70.00% against new semantics and 0% against old semantics across all seeds. Behavior depends on new training definitions, but permutation also changes some expansion lengths, so cross-world differences do not isolate semantics.
+5. **Alignment remains an alternative.** Additional paired training with shared call-tags inputs gives mean OOD for stable macro labels {pc(mean('macro','ood',tag='-tagged-stable'))}, versus per-example random call labels {pc(mean('macro','ood',tag='-tagged-call'))}. Random labels lack a fixed output-label-to-macro mapping yet transfer partly, with large seed variation. Neither equivalence nor a definitive winner is established. Shared inputs change, preventing a direct single-factor comparison with original flat.
 
-完整推导、可识别性边界及480函数闭包分析见[MECHANISM.md](MECHANISM.md)。有限输入输出证据不能唯一确定神经网络内部算法；本轮没有做激活干预或神经概念定位。
+See [MECHANISM.md](MECHANISM.md) for derivations, identifiability limits, and the 480-function closure. Finite input/output evidence cannot uniquely determine internal neural algorithms. No activation interventions or neural concept localization were performed.
 
-## 第二个独立生成器（事后复核）
+## Second independent generator: post hoc replication
 
-变长a/b字符串，独立原语实现与验证器。训练输入长度3–6，额外压力测试长度7–8；OOD仍为96程序×4输入。沿用模型提出的宏结构，在新的原语语义下分别训练；**不是零样本跨域迁移**。所有宏在长度3–8的全部二元字符串上验证仿射重建。
+Variable-length a/b strings use independently implemented primitives/verifier. Train input lengths 3–6, stress-test 7–8; OOD still has 96 programs × four inputs. Reuse model-proposed macro structures but train separately under new semantics; **this is not zero-shot domain transfer**. Affine reconstruction of every macro is checked over all binary strings of lengths 3–8.
 
-| 条件 | IID均值 | OOD种子11/22/33 | OOD均值 | 更长输入压力集 |
+| Condition | Mean IID | OOD seeds 11/22/33 | Mean OOD | Longer-input stress |
 |---|---:|---|---:|---:|
 {sec_table}
 
-该环境macro-flat平均差值为{second['mean_difference']*100:.2f}个百分点。短二元字符串容易偶然匹配答案，需同时查看[第二环境统计](secondary/analysis/results.json)中的精确原语序列和四个输入全对的程序比例，不能只看答案正确率。其中四个输入全对的程序比例：flat三个种子均为0%，macro为29.17%、13.54%、22.92%；因此收益不完全由偶然答案匹配解释。更长输入压力集macro仅6.94%，长度泛化仍弱。它仍是人工DSL，不能替代自然代码/数学任务。
+Mean macro−flat difference in this environment is {second['mean_difference']*100:.2f} percentage points. Short strings allow chance-correct answers, so inspect exact primitive sequences and the fraction of programs correct on all four inputs in [second-environment statistics](secondary/analysis/results.json). That fraction is 0% for all flat seeds and 29.17%, 13.54%, 22.92% for macro, so chance matches do not explain all gains. Macro scores only 6.94% on longer-input stress, indicating weak length generalization. This artificial DSL does not substitute for natural code/math tasks.
 
-## 为什么不建议直接写成论文
+## Why this is not yet a paper recommendation
 
-最早“自发现”的证据本身很弱：128次逆向解题仅1次成功；160次提案仅17次格式有效，得到9个不同非恒等函数。132次提案首行无法按协议解析，11次长度不符，所以失败混有基座模型指令格式问题。选中的8个正压缩分数是相对于包含错解的轨迹频次，不能当成真实学习效用。
+Initial self-discovery evidence is weak: one success in 128 inverse-solving attempts; 17 format-valid outputs among 160 proposals, yielding nine distinct nonidentity functions. First lines fail protocol parsing in 132 proposals and 11 have wrong lengths, mixing capability with base-model instruction-format failures. Eight selected positive compression scores are measured against frequencies in traces containing wrong solutions, not actual learning utility.
 
-实际9个宏不含ends，闭包只有480种函数；库固定一次后再训练，没有证明迭代后更擅长在新领域提出有用抽象。我们还没有完成大规模基模训练、自然任务迁移、多模型家族复核或学习发现策略的比较。
+The nine macros omit ends and generate a closure of only 480 functions. The library is fixed once before training, without showing better useful-abstraction proposals in new domains after iteration. Large-scale base training, natural-task transfer, cross-family replication, and discovery-policy learning comparisons are not yet complete.
 
-最近邻越来越近：[Notes to Self](https://arxiv.org/html/2607.20372v1)和[SPEE](https://arxiv.org/html/2608.02139v1)已有经验抽象训练/内化；[From Reasoning Traces to Reusable Modules](https://arxiv.org/html/2606.18089v1)已研究组合模块及训练干预；[Your Context Is Not an Array](https://arxiv.org/html/2408.05506v1)已研究内容寻址标记和对齐如何影响长度泛化。我们当前的宏标注效果尚不足以和这些工作形成明确的新研究贡献。
+Nearby work is close: [Notes to Self](https://arxiv.org/html/2607.20372v1) and [SPEE](https://arxiv.org/html/2608.02139v1) study experience abstraction/internalization; [From Reasoning Traces to Reusable Modules](https://arxiv.org/html/2606.18089v1) studies compositional modules/training interventions; [Your Context Is Not an Array](https://arxiv.org/html/2408.05506v1) studies content-addressing markers/alignment in length generalization. Current macro-label effects do not yet establish a distinct contribution.
 
-**推荐决策：不扩到大模型或昂贵RL，不把本轮写成“AI学会创新”的论文。保留“模块能力与自主路由分离”的可复现观察，用于下一轮选题；若继续此题，应先找到现有内容寻址/路由文献未覆盖的问题，并把“在未见域提出更有用抽象”设为独立指标。后续方向等待本次审核。**
+**Recommendation: do not expand to large models or costly RL, or frame this round as AI learning innovation. Retain the reproducible separation between module execution and autonomous routing for future topic selection. Continuing requires a question beyond existing content-addressing/routing work and a separate metric for useful abstractions in unseen domains. Further direction awaits review.**
 
-## 失败、验证与成本
+## Failures, verification, and costs
 
-- 保留原始安装网络慢请求、首次同步Tavily失败（项目先前冒烟）、本轮冻结基线参数启动失败、初始测试语义容量不足的失败记录；本轮协议修订按时间写在[amendments.md](analysis/amendments.md)。
-- 冻结无库基线存在大量继续续写、多个Answer行的格式问题，不能当强基线。主训练组严格整行答案审计未发现由宽松解析造成的正确性虚增；最终审计见[parser-audit-final.json](analysis/parser-audit-final.json)。
-- 独立重新计算逐题真值、检查数据隔离与真实训练token匹配，记录基础模型及适配器SHA256。主环境见[artifact-verification.json](analysis/artifact-verification.json)，第二环境见[verification.json](secondary/analysis/verification.json)。
-- 按作业墙钟累计的设备预留估计约 **{cost['total']:.2f} GPU·小时**，含基线、干预、追加对照、路由诊断、第二环境、发现与校准；不是GPU内核busy time，也不含安装/下载等待。原48–120 GPU·小时是粗规划，本轮短序列LoRA筛选实际远低于它，不为用满预算而扩大实验。详见[compute-cost.json](analysis/compute-cost.json)。
+- Retain slow installation/network requests, initial synchronous Tavily failure from earlier smoke checks, frozen-baseline argument launch failures, and inadequate initial test semantic capacity. Chronological revisions: [amendments.md](analysis/amendments.md).
+- Frozen no-library baselines often continue text or emit multiple Answer lines and are not strong baselines. Strict whole-line answer audits find no inflated correctness from loose parsing in trained primary groups; see [parser-audit-final.json](analysis/parser-audit-final.json).
+- Independently recompute truth, data separation, and actual training-token matching, recording base/adapter SHA256. See [artifact-verification.json](analysis/artifact-verification.json) and second-environment [verification.json](secondary/analysis/verification.json).
+- Device reservation estimated from summed job wall time is approximately **{cost['total']:.2f} GPU-hours**, including baselines, interventions, added controls, routing, second environment, discovery, and calibration. It excludes installation/download waits and is not kernel-active time. The original 48–120 GPU-hour estimate was rough; actual short-sequence LoRA screening uses far less. Experiments are not expanded merely to spend the budget. See [compute-cost.json](analysis/compute-cost.json).
 
-## 审核入口与复现
+## Review and reproduction
 
-- [完整表格](analysis/RESULT_TABLES.md)、[机器可读主统计](analysis/results.json)、[第二环境统计](secondary/analysis/results.json)。
-- [事前协议](PROTOCOL.md)、[机制分析](MECHANISM.md)、[全部修订及事后分析声明](analysis/amendments.md)。
-- `runs/*/predictions.jsonl`及`secondary/runs/*/predictions.jsonl`：逐题原始输出；各运行目录包含`config.json`、`train.jsonl`、`summary.json`和`adapter/`。
-- `data/discovery-traces.jsonl`、`data/proposals.jsonl`：真实解题与提案，包含失败；`analysis/routing-probe/`：外部路由全部调用记录。
-- 根目录`training-env.sh`、`install-training-env.sh`与`training-requirements.lock.txt`保存项目内环境。按README运行脚本；官方EvoSkills仍在原项目安装目录。所有新增环境、模型、缓存、结果均在当前根目录，未发布或提交论文。
+- [Complete tables](analysis/RESULT_TABLES.md), [primary statistics](analysis/results.json), [second-environment statistics](secondary/analysis/results.json).
+- [Prerun protocol](PROTOCOL.md), [mechanism analysis](MECHANISM.md), [amendments/post hoc declarations](analysis/amendments.md).
+- `runs/*/predictions.jsonl` and `secondary/runs/*/predictions.jsonl` contain raw example outputs; run directories retain `config.json`, `train.jsonl`, `summary.json`, and `adapter/`.
+- `data/discovery-traces.jsonl` and `data/proposals.jsonl` retain actual solving/proposals including failures; `analysis/routing-probe/` contains all external-routing calls.
+- Root `training-env.sh`, `install-training-env.sh`, and `training-requirements.lock.txt` preserve the project environment. Follow README scripts; official EvoSkills remain in the original installation. All new environments, models, caches, and results stay in the root. No paper has been published/submitted.
 '''
 (ROOT/'REPORT.md').write_text(report)
 print('Wrote report',len(report),'characters;',raw_count,'raw records;',cost['total'],'reserved GPU-hours')

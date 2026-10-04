@@ -1,11 +1,11 @@
-# 确认集的数据边界
+# Dataset scope of the confirmation set
 
-原有480题的生成器按最终仿射函数去重，并排除此前训练/开发/测试函数；本轮新确认集按工具名称序列排重，与登记一致。两种条件不同，不能把“新工具序列”自动叫作“新最终函数”。
+The earlier 480-example generator deduplicates final affine functions and excludes functions from earlier training/development/test sets. The new confirmation set deduplicates tool-name sequences as registered. These are different conditions; new tool sequences are not automatically new final functions.
 
-新确认集有100个不同工具序列、400道题，对应85个不同最终函数。其中18个序列的最终函数与训练集中的函数等价，72个与本阶段此前任一输入集（含旧独立集）中的函数等价。
+The new confirmation set has 100 distinct tool sequences and 400 examples, corresponding to 85 distinct final functions. Of these sequences, 18 have final functions equivalent to training-set functions, and 72 have final functions equivalent to functions in any earlier input set at this stage, including the old independent set.
 
-这不表示这些长工具序列或完整操作轨迹出现在训练中；本任务严格评分要求全部规定的操作和逐步状态正确，单纯得到相同末状态不够。它限制的是“新函数迁移”这一说法。
+This does not mean the long tool sequences or full operation trajectories appeared in training. Strict scoring requires every specified operation and intermediate state; reaching the same final state alone is insufficient. The limitation concerns claims of transfer to new functions.
 
-主分析保留全部预先冻结的400题，两批题目分别报告。数据不因输出成绩重新挑选。程序级标签及每长度计数见上一级analysis/dataset-semantics.json。
+The primary analysis retains all 400 preregistered frozen examples and reports the two batches separately. Data are not reselected based on output scores. Program-level labels and counts by length are in the parent analysis/dataset-semantics.json.
 
-该数据范围核查发生在新确认集部分作业已完成之后，未修改数据、方法或评分。
+This scope check occurred after some new-confirmation jobs had completed, without changing data, methods, or scoring.

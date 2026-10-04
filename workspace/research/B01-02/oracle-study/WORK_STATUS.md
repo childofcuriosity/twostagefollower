@@ -1,11 +1,11 @@
-# 当前任务状态
+# Current task status
 
-2026-09-25：用户指定的第二阶段oracle消融已全部完成并通过验收。
+2026-09-25: the user-specified second-stage oracle ablation is complete and has passed acceptance checks.
 
-- 4尺度×3条件×3seed，共36项训练，每项512步；60检查点/推理模式组合、62400条正式评测。
-- 62400条独立评分与token上下文重放通过；四尺度共480条新进程模型复跑完整记录一致。
-- 已交付全尺度/长度/seed对照、两个子任务准确率与乘积、配对同题成功、错误归因、反例、成本、复现环境和图表。
-- 六台5090已交还，本机8卡也已清空；所有本轮训练/评测/watch进程结束。原始数据和环境留在本目录。
-- 研究结论和建议见CONCLUSIONS.md，完整验收见COMPLETION_AUDIT.md。第二阶段无待办，等待用户审核本轮结果；不自动重启旧工单研究。
+- 4 scales x 3 conditions x 3 seeds =36 training jobs, each 512 steps;60 checkpoint/inference-mode combinations and 62400 main evaluations.
+- Independent scoring and token-context replay passed for all 62400 outputs;480 new-process model reruns across four scales matched complete records.
+- Deliverables include every scale/length/seed comparison, both subtask accuracies and their products, paired same-example success, error attribution, counterexamples, costs, reproduction environment, and figures.
+- All six 5090 servers were returned and all 8 local GPUs cleared. Every training/evaluation/watch process from this study has ended. Raw data and environments remain here.
+- See CONCLUSIONS.md for findings and recommendations and COMPLETION_AUDIT.md for full acceptance checks. No second-stage work remains; awaiting user review of these results. Do not automatically restart the older ticket study.
 
-Goal工具仍保存更早的、暂停的广泛Agent研究objective，工具不支持恢复/改写该objective。没有把那个不同目标虚假标为完成。用户本轮明确的新范围及实际完成证据记录在SECOND_STAGE_GOAL.json；不能将工具旧状态误读为本轮未执行或只完成资源登记。
+The Goal tool still stores an earlier paused broad agent-research objective and cannot resume/rewrite that objective. That different goal was not falsely marked complete. The explicit new scope and actual completion evidence for this study are in SECOND_STAGE_GOAL.json. The old tool state must not be read as evidence that this study was not run or only registered resources.

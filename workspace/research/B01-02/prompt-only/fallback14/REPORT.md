@@ -1,14 +1,14 @@
-> 本文件为自动生成初版。辅助首错类别已复核修正，严格分数未变；最终结论、错误表及成本解释请阅读[顶层正式报告](../REPORT.md)。原始自动稿另存REPORT.generated.md。
+> This is the initial automatically generated report. Auxiliary first-error categories were subsequently reviewed and corrected; strict scores are unchanged. See the [top-level formal report](../REPORT.md) for final conclusions, error tables, and cost interpretation. The original automatic draft is also saved as REPORT.generated.md.
 
-# 纯 Prompt 下复述工具身份：正式结果
+# Repeating tool identities with prompting alone: formal results
 
-模型：Qwen/Qwen2.5-14B-Instruct 原始权重，无adapter、无训练。主比较NAME−STEP；完整操作序列、全部中间状态及最终Answer均须正确。
+Model: Qwen/Qwen2.5-14B-Instruct Original weights, without adapters or training. The primary comparison is NAME−STEP. Success requires the complete operation sequence, every intermediate state, and the final Answer to be correct.
 
-## 选长与探索
+## Length selection and exploration
 
-正式长度只依据STEP选出：2。取20%–90%范围内最短与最长档。
+Formal lengths selected using STEP alone:2.Select the shortest and longest lengths within the 20%–90% range.
 
-| 调用长度 | STEP | NAME |
+| Call length | STEP | NAME |
 |---:|---:|---:|
 | 2 | 21/32 (65.62%) | 20/32 (62.50%) |
 | 5 | 3/32 (9.38%) | 5/32 (15.62%) |
@@ -18,36 +18,36 @@
 | 30 | 0/32 (0.00%) | 0/32 (0.00%) |
 | 40 | 0/32 (0.00%) | 0/32 (0.00%) |
 
-## 正式四组
+## Four formal conditions
 
-| L | 标题 | 严格成功率 | 相对STEP配对差，95%区间（百分点） | 标题全符合 | 输出token/题 | 输入token/题 | generate秒 |
+| L | Header | Strict success | Paired difference from STEP, 95% interval (percentage points) | All headers compliant | Output tokens/example | Input tokens/example | Generate time (seconds) |
 |---:|---|---:|---|---:|---:|---:|---:|
 | 2 | STEP | 235/512 (45.90%) | — | 100.00% | 67.99 | 473.00 | 101.47 |
 | 2 | POSITION | 245/512 (47.85%) | +1.95 [-2.34, +6.25] | 97.07% | 68.34 | 493.00 | 105.81 |
 | 2 | ALIAS | 294/512 (57.42%) | +11.52 [+6.84, +16.41] | 100.00% | 68.10 | 492.00 | 103.32 |
 | 2 | NAME | 231/512 (45.12%) | -0.78 [-4.88, +3.32] | 95.31% | 67.47 | 477.00 | 100.57 |
 
-每题每组仅一次贪心生成，四组共享底层题目。95%区间来自10,000次逐题配对bootstrap（seed740001），仅反映固定模型、Prompt及题目分布下的抽样不确定性。没有把重复推理当作seed；辅助比较不作多重校正后的确认性宣称。
+Each example receives one greedy generation per condition, with the same underlying examples across all four conditions. The 95% intervals use 10,000 paired example-level bootstrap samples (seed 740001) and describe sampling uncertainty conditional on the fixed model, prompts, and example distribution. Repeated inference is not treated as training seeds. Auxiliary comparisons are not claimed as multiplicity-adjusted confirmatory findings.
 
-## 主比较及成本
+## Primary comparison and costs
 
-- L2：NAME−STEP -0.78个百分点；仅NAME成功55题、仅STEP成功59题。输出-0.52 token/题（-0.77%）；批量generate总耗时-0.90秒（-0.89%）。
+- L2: NAME−STEP -0.78 percentage points; NAME-only successes: 55; STEP-only successes: 59. Output: -0.52 tokens/example (-0.77%); total batch generate time: -0.90 seconds (-0.89%).
 
-## 首错与结束原因
+## First errors and termination reasons
 
-| L | 条件 | 首错计数 | 结束原因 |
+| L | Condition | First-error counts | Termination reasons |
 |---:|---|---|---|
 | 2 | STEP | {"none": 235, "numeric": 182, "tool_or_order": 50, "extra_call": 37, "omitted_call": 7, "format": 1} | {"eos": 512} |
 | 2 | POSITION | {"none": 245, "numeric": 207, "extra_call": 27, "omitted_call": 26, "tool_or_order": 7} | {"eos": 512} |
 | 2 | ALIAS | {"none": 294, "numeric": 214, "tool_or_order": 2, "extra_call": 1, "format": 1} | {"eos": 512} |
 | 2 | NAME | {"none": 231, "numeric": 227, "tool_or_order": 38, "extra_call": 15, "format": 1} | {"eos": 512} |
 
-首错标签：numeric=数字计算/最终数字错误；tool_or_order=原始操作展开或顺序错误；omitted_call/extra_call=提前Answer、缺失/多出原始操作或可识别的整调用删除/插入；format=格式错误；none=没有严格轨迹错误。这里的遗漏/增加是可观测输出分类，并非模型内部原因；标题数量另有非互斥统计。标题不符合不自动计入主指标失败。
+First-error labels: numeric = arithmetic or final-number error; tool_or_order = incorrect primitive expansion or order; omitted_call/extra_call = premature Answer, missing/extra primitive operations, or identifiable deletion/insertion of complete calls; format = formatting error; none = no strict trajectory error. Omission/addition labels classify observable outputs, not internal causes. Header counts are reported separately and can overlap. Header noncompliance does not automatically fail the primary metric.
 
-## 解释边界与证据
+## Scope and evidence
 
-本实验只检验给定九工具和四位状态的合成执行任务；没有训练长度范围，不使用域内/域外术语。ALIAS同时更改输入输出名称，不能被解释成只改输出标题。标签词形、token化、Prompt及示例选择未做独立重复，不能唯一归因于身份信息或推断真实Agent收益。
+This experiment tests a synthetic execution task with nine supplied tools and four-digit states. With no training-length range, in-domain/out-of-domain terminology does not apply. ALIAS changes names in both inputs and outputs, so it is not an output-header-only intervention. Label forms, tokenization, prompts, and demonstration choices lack independent replication. Effects cannot be attributed uniquely to identity information or generalized to real agents.
 
-输出token包括生成的EOS（另存text_tokens）；generate耗时为GPU同步后的批量墙钟，不能等同单题独立延迟。各卡并行负载和序列长度影响实际成本。调度台账另含加载、保存等分配GPU时长。
+Output-token counts include generated EOS tokens (text_tokens are stored separately). Generate time is GPU-synchronized batch wall time, not independent per-example latency. Concurrent GPU workloads and sequence lengths affect costs. The dispatch ledger also records allocated GPU time for loading, saving, and other work.
 
-证据：REGISTRATION.md（顶层）；prompts/四组模板；data/冻结配置与题目；runs/原始文本、token IDs、停止原因与完整性标记；analysis/scores-*、graded-*、length-selection.json、completion-audit.json；logs/运行日志。跨模型验证与真实任务迁移留待后续，未对外发布。
+Evidence: top-level REGISTRATION.md; four templates in prompts/; frozen configurations and examples in data/; raw text, token IDs, termination reasons, and completeness markers in runs/; analysis/scores-*, graded-*, length-selection.json, and completion-audit.json; and logs/. Cross-model validation and real-task transfer remain future work. Results have not been externally published.

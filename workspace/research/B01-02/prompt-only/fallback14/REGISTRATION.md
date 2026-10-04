@@ -1,24 +1,24 @@
-# B01-02 纯 Prompt 工具身份复述：运行前登记
+# B01-02 prompt-only tool-identity repetition: preregistration
 
-2026-09-28。用户明确授权本方案及持续Goal。本目录独立保存，旧训练实验只读。
+2026-09-28. The user explicitly authorized this plan and an ongoing goal. Store this study separately; earlier training experiments are read-only.
 
-## 问题与条件
-Qwen2.5-7B-Instruct官方原始权重，无adapter、无训练。九工具、四位数字、给定调用计划，输出每个原始操作及操作后状态，最终Answer。主比较NAME−STEP；POSITION、ALIAS为辅助。STEP/POSITION/NAME仅改变标题指令和示例标题；ALIAS用既有固定映射同时转换定义、调用计划、示例与输出标题。全部条件使用一个相同底层示例，不增加组别特有的执行提示。使用官方chat template，单user消息，无额外system消息，greedy、BF16、SDPA；不采样、不重试择优。
+## Question and conditions
+Use official original Qwen2.5-7B-Instruct weights, without adapters or training. Given nine tools, a four-digit state, and a call plan, output every primitive operation and resulting state, then Answer. NAME−STEP is primary; POSITION and ALIAS are auxiliary. STEP/POSITION/NAME change only header instructions and example headers. ALIAS applies the existing fixed mapping to definitions, call plans, examples, and output headers. All conditions share one underlying example, without group-specific execution hints. Use the official chat template with one user message and no additional system message, greedy decoding, BF16, and SDPA. No sampling or best-of-retry selection.
 
-## 探索及选长
-先在独立预检题核验实现；只有定义/示例/解析/预算等实现问题才修复，记录版本，重新冻结后探索。探索L=2,5,10,15,20,30,40，每档32道，STEP/NAME。只依STEP选长：20%–90%（含端点）的最短和最长；只有一档取一档。L40仍>90%则补50和60。若相邻已测档从>90%到<20%，在该区间补最多两档：区间三等分位置四舍五入到整数，去除重复和端点；如多区间符合，优先最短区间。若无合适档，取STEP最接近50%的已测长度，平局取最短。不得以NAME效果选长。L2和L5均<20%视为短题地板，先诊断实现；排除后才可换14B重新完整执行，保留7B全部结果。
+## Exploration and length selection
+First validate implementation on independent precheck examples. Repair only implementation issues involving definitions, examples, parsing, or budgets; record versions and refreeze before exploration. Explore L=2,5,10,15,20,30,40 with 32 examples each in STEP and NAME. Select solely from STEP: the shortest and longest lengths with accuracy in the inclusive 20%–90% range, or the sole qualifying length. If L40 exceeds 90%, add L50 and L60. If adjacent tested lengths cross from above 90% to below 20%, add at most two lengths at rounded integer trisection points, removing duplicates and endpoints; prioritize the shortest qualifying interval if several exist. If none qualify, select the tested STEP length closest to 50%, breaking ties toward shorter length. Do not use NAME effects for selection. STEP below 20% at both L2 and L5 triggers an implementation diagnosis. Only after excluding defects may the full procedure restart with 14B. Retain all 7B results.
 
-## 数据与冻结
-工具独立均匀抽取，四位数字独立均匀抽取。示例固定为输入9 0 4 7、链[0,1]；预检、探索、正式的（链，输入）两两不重叠，重复重抽。数据种子分别610000+L、620000+L、630000+L，不是模型seed重复。预检每L=2,5,10各4题。每个正式长度512道新题，四条件共享底层题。选长后冻结模型revision、四组Prompt、代码/评分器、规则、解码参数，并在首次正式推理前保存正式清单与哈希。正式结果不得改变条件、Prompt、选长或解码。
+## Data and freezing
+Draw tools and each of the four digits independently and uniformly. Fix the demonstration at input 9 0 4 7 and chain [0,1]. Precheck, exploration, and formal (chain, input) pairs are mutually disjoint; resample duplicates. Their data seeds are 610000+L, 620000+L, and 630000+L, not replicated model seeds. Precheck uses four examples at each L=2,5,10. Each formal length has 512 new examples shared across conditions. After selecting lengths, freeze model revision, four prompts, code/scorer, rules, and decoding parameters, saving the formal manifest and hashes before the first formal inference. Formal results cannot change conditions, prompts, selected lengths, or decoding.
 
-预算：每档在所有四组正确目标上计算token数，生成上限为至少1.25×最大正确目标token数+64的最小256整数倍。四组一致；同时检查完整chat输入+生成上限不超模型上下文。预检与探索也按同一规则。允许为OOM修改推理batch，不修改实验条件；每次异常保留日志和版本，不择优续跑。
+At each length, count correct-target tokens across all four conditions. Set the shared generation limit to the smallest multiple of 256 at least as large as 1.25 × maximum correct-target tokens + 64. Check that the full chat input plus generation limit fits context. Apply the same rule to prechecks and exploration. Batch size may change to resolve OOM without changing experimental conditions. Retain logs and versions for every exception; do not selectively resume favorable outputs.
 
-## 评分与分析
-严格完整轨迹沿用旧评分器的操作、所有中间状态、Answer及额外行限制。标题先统一归一为step:以免将标题遵循混入主指标；标题遵循率另按每次调用的实际标题与要求匹配。记录旧评分器结果，并用独立逐行真值核验严格分数。首错采用输出行顺序的首个实质错误；缺少/增加调用、工具或顺序错误、数字计算错误、格式错误；对无法从文本唯一确定的错因明确使用操作序列的可观测规则，不推断模型内部原因。并行报告非互斥错误标志、输出段数、首错位置和完整输出。保存实际token IDs及EOS/上限结束证据，区分主动EOS与截断。
+## Scoring and analysis
+Use the existing strict scorer for operations, all intermediate states, Answer, and extra-line restrictions. Normalize headers to step: before primary scoring so header compliance remains separate. Score compliance by matching actual headers to the requirement for each call. Retain original scorer results and verify strict scores independently against line-by-line truth. The first error is the first substantive output error: missing/extra call, tool/order, arithmetic, or formatting. When text cannot identify a unique cause, use explicit observable operation-sequence rules rather than inferring internal causes. Also report overlapping flags, output segment counts, first-error positions, and full outputs. Save actual token IDs and EOS/limit evidence to distinguish voluntary EOS from truncation.
 
-正式配对差按每题同长度condition−STEP的{-1,0,1}差，固定分析seed740001，10000次逐题配对bootstrap百分位95%区间；同时报告discordant数量。不以seed间波动估计区间。区间仅覆盖固定模型、Prompt和测试生成分布的题目抽样不确定性，不覆盖Prompt/模型/工具映射选择；辅助比较不做独立确认性宣称。
+For each length, form paired condition−STEP differences in {-1,0,1}. Use fixed analysis seed 740001 and 10000 example-level paired bootstrap samples for percentile 95% intervals, alongside discordant counts. Do not estimate intervals from seed variation. These intervals cover test-example sampling uncertainty conditional on the model, prompt, and generation distribution, not prompt/model/mapping selection. Auxiliary comparisons are not independent confirmatory claims.
 
-报告输出token、输入token、批量推理墙钟/分配GPU时间、吞吐及相对STEP成本。GPU时间包含加载与保存的总时长另列，纯generate时间单列，非GPU内核活跃时间或单题独立延迟。仅本机.69的8卡；正式推理约每小时巡检，完成/异常及时处理。
+Report output/input tokens, batch inference wall time, allocated GPU time, throughput, and cost relative to STEP. Report total allocation including loading and saving separately from generate time. Neither is kernel-active time or independent per-example latency. Use only the eight GPUs on local host .69; inspect formal inference approximately hourly and handle completion or exceptions promptly.
 
-## 完成标准
-完成探索、按规则选择长度、正式四组、逐题分析、全部证据和最终报告才完成。不要求正结果。无训练域内/域外分类。跨模型独立复核、真实任务迁移及对外发布不属本轮。
+## Completion criteria
+Completion requires exploration, rule-based length selection, all four formal conditions, example-level analysis, complete evidence, and the final report. Positive results are not required. There is no training in-domain/out-of-domain classification. Independent cross-model replication, real-task transfer, and external publication are outside this round.

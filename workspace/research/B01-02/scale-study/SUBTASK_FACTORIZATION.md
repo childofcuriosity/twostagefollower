@@ -1,29 +1,29 @@
-# 已有轨迹的单工具分解与乘积预测
+# Single-tool decomposition and product predictions from existing trajectories
 
-本次只离线读取已有输出，无推理、无训练。四个Qwen2.5 Base尺度，各三个训练种子。分析10368条名称组轨迹及对应10368条step轨迹；名称组含48384个要求调用位置、40119个实际输出段。原测试384题×3seed/模型，独立确认480题×3seed/模型。不是所有轨迹均为独立程序。
+This offline analysis reads existing outputs without inference or training. It covers four Qwen2.5 Base scales and three seeds each: 10368 name-condition trajectories and 10368 corresponding step trajectories. Name outputs contain 48384 required call positions and 40119 emitted segments. Per model, the original test has 384 examples × three seeds and independent confirmation has 480 × three seeds. These trajectories are not all independent programs.
 
-## 评分与预测
+## Scoring and prediction
 
-- A：第i个实际输出的名称等于输入要求的第i个名称。缺失计错，不能只在输出过的段里算。
-- B：一个实际输出的合法名称之后，基本操作序列完整对应这个名称，数字转换正确。即使名称选错但按该名称正确展开，B仍正确。数字正确性以实际输入状态计算；不能当作oracle的正确状态测量。
-- 未输出名称的后续B不可观测，不计成失败或成功；因此B有幸存样本选择，不能直接解释为独立调用准确率。
-- 主要预测：同模型、同seed、同长度估计pA与pB，对长度L预测(pA×pB)^L。5折按完整工具序列分组，在其他4折估计，预测留出折。原题不同数字输入和三个seed对同序列使用相同折。
-- 敏感性：逐位置pA(L,i)乘以逐工具pB(tool)，再连乘；另存逐位置联合成功率连乘。这些估计对有限样本和条件分组敏感，不能挑最接近的一个当独立性证明。
-- 整体主评分：指定操作轨迹和全部数字、最终答案均正确；区别于仅最终答案正确。10368条重组结果与已有严格评分全部一致。额外段、最终回答和格式也检查；乘积模型没有单独拟合最终结束，属于其适用边界。
-- 最小评分检查覆盖名称错误但展开正确、缺段、工具内部截断、算术错误四种情况。
+- A: the name in emitted position i equals the requested name at position i. Missing names fail; the denominator includes unfilled positions.
+- B: after an emitted valid name, the full primitive sequence matches that name and numeric transitions are correct. A wrong selected name can still have correct B if expanded correctly. Numeric checks use the actual input state, not an oracle-correct state.
+- B is unobserved for calls whose names were never emitted; these are neither successes nor failures. This survivor selection prevents direct interpretation as independent call accuracy.
+- Primary prediction: estimate pA and pB within model, seed, and length, then predict (pA×pB)^L. Use five folds grouped by complete tool sequence, fitting on four folds and predicting the held-out fold. Numeric variants and all three seeds for a sequence share a fold.
+- Sensitivity analyses multiply position-specific pA(L, i) by tool-specific pB(tool), then across calls, and separately retain products of position-specific joint success. Estimates depend on finite samples and conditioning; selecting the closest prediction cannot establish independence.
+- The primary whole-task score requires the specified operation trajectory, every number, and the final answer, rather than only the answer. All 10368 reconstructed scores match existing strict scores. Extra segments, final answers, and formatting are checked. The product model does not separately fit final termination, a limitation of its scope.
+- Minimal scoring checks cover a wrong name with correct expansion, a missing segment, within-tool truncation, and arithmetic errors.
 
-## 原3–5调用题
+## Original 3–5-call examples
 
-| 模型 | 单位置名称正确 | 已输出名称的展开正确 | 完整名称序列正确 | 简单乘积预测整题 | 实际名称组整题 | 实际step整题 |
+| Model | Name accuracy per position | Correct expansion of emitted names | Complete name sequence correct | Simple product whole-task prediction | Actual name-condition whole task | Actual step whole task |
 |---|---:|---:|---:|---:|---:|---:|
 | qwen1.5b | 69.94% | 97.88% | 32.64% | 30.35% | 29.77% | 0.00% |
 | qwen3b | 88.95% | 94.65% | 73.18% | 57.39% | 59.72% | 0.00% |
 | qwen7b | 88.52% | 95.96% | 69.53% | 60.32% | 57.90% | 17.97% |
 | qwen32b | 90.56% | 99.55% | 74.65% | 71.95% | 73.00% | 44.27% |
 
-## 32B按长度：简单乘积与更细分乘积
+## 32B by length: simple and stratified products
 
-| 数据集 | 调用数 | 简单乘积 | 位置/工具细分乘积 | 实际名称组 | 实际step |
+| Dataset | Calls | Simple product | Position/tool-stratified product | Actual name condition | Actual step |
 |---|---:|---:|---:|---:|---:|
 | main | 3 | 96.32% | 94.61% | 96.09% | 94.79% |
 | main | 4 | 72.95% | 69.20% | 73.18% | 32.81% |
@@ -34,22 +34,22 @@
 | independent | 6 | 21.01% | 15.53% | 32.64% | 0.69% |
 | independent | 8 | 9.54% | 7.64% | 24.65% | 0.00% |
 
-## 判断
+## Interpretation
 
-原3–5调用题的简单乘积预测与实际名称组整体差距为约0.6–2.4个百分点；在这个汇总层面，用户提出的两部分分解有定量支持。32B已输出名称后的完整展开约99.6%，名称序列完整正确约74.7%，完整执行约73.0%，描述性上主要损失在名称序列完整性/选择，而非给定已生成名称后的数字运算。
+On the original 3–5-call examples, simple product predictions differ from actual name-condition accuracy by approximately 0.6–2.4 percentage points. This aggregate agreement quantitatively supports the proposed two-part decomposition. For 32B, complete expansion after emitted names is approximately 99.6%, complete name-sequence accuracy 74.7%, and complete execution 73.0%. Descriptively, most loss concerns name-sequence completeness/selection rather than arithmetic after generated names.
 
-但独立确认集32B在5/6/8调用上简单乘积明显低估：47.35/21.01/9.54%对57.99/32.64/24.65%。说明不能把原测试的接近推广为普遍独立；细分位置和工具后的预测仍低估。失败可能在整条轨迹内聚集，包含提前停止后后续名称均缺失这一结构依赖，也可能来自程序/状态难度差异及不可观测B的选择偏差。当前只支持概率近似在部分长度有效，不识别内部独立学习机制。
+On independent 32B confirmation at 5/6/8 calls, however, the simple product substantially underpredicts: 47.35/21.01/9.54% versus 57.99/32.64/24.65% actual accuracy. Agreement on the original test therefore does not establish general independence. Position/tool stratification still underpredicts. Failures may cluster within trajectories, including the structural dependence created by missing all subsequent names after early stopping, as well as program/state difficulty and selection on unobserved B. The approximation is useful at some lengths but does not identify independent internal learning.
 
-更细分乘积在原测试四尺度上预测22.83/52.59/55.47/69.09%，对实际29.77/59.72/57.90/73.00%；说明总体接近会受到概率估计方式影响，不能只展示较有利的汇总公式。
+The more stratified product predicts 22.83/52.59/55.47/69.09% across the four scales on the original test, versus 29.77/59.72/57.90/73.00% actual accuracy. Aggregate agreement depends on probability estimation; the more favorable formula cannot be shown alone.
 
-无名称的step输出没有独立可观测的名称选择事件，不能从轨迹强行造出与名称组同义的A、B。此次将其严格整题成绩作为基线，而不把它的每段操作当作模型显式选择了某名称。
+Nameless step outputs contain no independently observable name-selection event, so equivalent A/B events cannot be manufactured from those trajectories. Their strict whole-task scores serve as baselines; operation segments are not treated as explicit name choices.
 
-该分析不是oracle实验：既没有纠正名称也没有补齐未发生的工具执行。需要oracle干预才能补齐这些反事实能力证据。
+This is not an oracle experiment: names are not corrected and unperformed executions are not supplied. Oracle interventions are needed to measure those counterfactual capabilities.
 
-## 可复核文件
+## Auditable files
 
-- `src/subtask_factorization.py`：读取原始文件、核验哈希、段落评分、程序分组交叉预测。
-- `analysis/subtask-factorization.json`：数据来源、逐seed/长度指标、汇总与条件bootstrap区间（仅固定预测残差的程序重采样，不覆盖拟合不确定性，不据此断言统计等价）。
-- `analysis/subtask-factorization-segments.jsonl`：所有名称、基本操作、状态与A/B逐项评分。
-- `analysis/subtask-factorization-predictions.jsonl`：每题留出预测和实际成绩。
-- `analysis/subtask-factorization-checks.json`：评分边界检查。
+- `src/subtask_factorization.py`: raw-file reading, hash verification, segment scoring, and program-grouped cross-prediction.
+- `analysis/subtask-factorization.json`: sources, seed/length metrics, summaries, and conditional bootstrap intervals. These resample programs with fixed prediction residuals, omit fitting uncertainty, and do not establish statistical equivalence.
+- `analysis/subtask-factorization-segments.jsonl`: all names, primitives, states, and itemized A/B scores.
+- `analysis/subtask-factorization-predictions.jsonl`: held-out predictions and outcomes per example.
+- `analysis/subtask-factorization-checks.json`: scoring-boundary checks.

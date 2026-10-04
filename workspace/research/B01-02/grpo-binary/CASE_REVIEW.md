@@ -1,8 +1,8 @@
-# 评分边界案例与补充错误归类
+# Scoring boundary cases and supplementary error categories
 
-严格评分同时要求正确操作、全部状态和最终Answer；标题是独立合规指标。下表只解释已保存的原始输出，不改变评分。
+Strict scoring requires correct operations, all states, and the final Answer. Headings are an independent compliance metric. The table below interprets saved raw outputs without changing scores.
 
-| 条件/seed | 严格失败 | 数字步骤 | 操作序列 | 仅最终Answer | 额外Trace标题（主分不扣） |
+| Condition/seed | Strict failures | Numerical steps | Operation sequence | Final Answer only | Extra Trace heading (no primary-score penalty) |
 |---|---:|---:|---:|---:|---:|
 | STEP/301 | 13 | 12 | 0 | 1 | 0 |
 | STEP/302 | 2 | 1 | 1 | 0 | 0 |
@@ -11,12 +11,12 @@
 | NAME/302 | 6 | 6 | 0 | 0 | 49 |
 | NAME/303 | 4 | 4 | 0 | 0 | 4 |
 
-NAME seed302的49条、seed303的4条标题不合规，全部由额外`Trace:`造成；删除这一额外标题后，工具身份和顺序均符合要求。原评分器允许一般标题行，因此这里不会算作未知额外行或扣二值奖励。不能把90.43%的全标题合规率解释为只有90.43%的工具名称正确。
+All 49 heading-noncompliant outputs for NAME seed302 and 4 for seed303 result from an extra `Trace:` heading. Removing that heading leaves compliant tool identities and order. The original scorer permits generic heading lines, so these are not unknown extra lines and incur no binary-reward penalty. A fully compliant heading rate of 90.43% must not be interpreted as only 90.43% correct tool names.
 
-## STEP seed301，test-00474
-严格轨迹=0；标题全合规=1。输入[3, 2, 1, 3]，工具索引[4, 3]。
+## STEP seed301, test-00474
+Strict trajectory=0; full heading compliance=1. Input [3, 2, 1, 3], tool indices [4, 3].
 
-实际输出：
+Actual output:
 ```text
 step:
 rot 2 1 3 3
@@ -28,7 +28,7 @@ rev 5 5 4 3
 Answer: 3 4 5 5
 ```
 
-标准输出：
+Reference output:
 ```text
 step:
 rot 2 1 3 3
@@ -41,10 +41,10 @@ Answer: 5 5 4 3
 
 ```
 
-## NAME seed302，test-00039
-严格轨迹=1；标题全合规=0。输入[0, 1, 4, 4]，工具索引[8, 6]。
+## NAME seed302, test-00039
+Strict trajectory=1; full heading compliance=0. Input [0, 1, 4, 4], tool indices [8, 6].
 
-实际输出：
+Actual output:
 ```text
 Trace:
 brown:
@@ -58,7 +58,7 @@ inc 7 6 3 3
 Answer: 7 6 3 3
 ```
 
-标准输出：
+Reference output:
 ```text
 brown:
 inc 1 2 5 5

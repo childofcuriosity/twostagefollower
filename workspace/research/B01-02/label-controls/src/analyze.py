@@ -79,19 +79,19 @@ for model in ROOTS:
     comparisons.append(dict(model=model,dataset=dataset,group=group,a=a,b=b,seeds=seeds,mean_delta=sum(s['delta'] for s in seeds)/3,conditional_program_bootstrap95=np.quantile(boot,[.025,.975]).tolist(),programs=len(v)))
 write(R/'analysis/results.json',dict(summary=summary,comparisons=comparisons,notes='Original strict trajectory endpoint preserved; labels separately graded. Bootstrap resamples programs holding the three trained seeds fixed, not a seed-population guarantee. Existing datasets reused, no new blind test.'))
 write(R/'analysis/completion-audit.json',dict(complete=True,formal_records=len(records),new_formal_records=24960,reused_records=24960,new_training_jobs=len(training),source_sha256=hashes,training=training,source_data_frozen=True,legacy_scoring_equivalent=True))
-labels={'flat':'原STEP','macro':'原名称','position':'新增位置编号','alias':'新增固定改名'}
-lines=['# 标签对照完整结果','全部新训练固定512步。四尺度×三seed×两新增条件=24训练，原两条件只读复用。主要评分沿原指定操作/每步数字/最终Answer正确，标签序列单列，不把新增标签身份要求混入旧主指标。','', '## 旧独立480题：完整轨迹成功','', '|模型|工具数|原STEP|原名称|位置编号|固定改名|','|---|---|---:|---:|---:|---:|']
+labels={'flat':'Original STEP','macro':'Original NAME','position':'Added position numbering','alias':'Added fixed aliases'}
+lines=['# Complete label-control results','All new training runs use a fixed 512 steps. Four scales x three seeds x two added conditions = 24 runs; the two original conditions are reused read-only. Primary scoring retains the original requirements for operations, every numerical state, and the final Answer. Label sequences are reported separately, without adding label-identity requirements to the original primary metric.','', '## Earlier independent 480-example set: full-trajectory success','', '|Model|Tool count|Original STEP|Original NAME|Position numbering|Fixed aliases|','|---|---|---:|---:|---:|---:|']
 for model in ROOTS:
  for group in ['all',3,4,5,6,8]:
   vals=[next(x for x in summary if (x['model'],x['dataset'],x['condition'],x['group'])==(model,'independent',c,group))['mean']['strict_trace'] for c in labels]
   lines.append('|'+model+'|'+str(group)+'|'+'|'.join(f'{v*100:.2f}%' for v in vals)+'|')
-lines+=['','## 所有原测试子集与子任务指标','','“已输出段操作全对”按该段在要求列表中的位置核对操作，不假设STEP具有身份；漏段由标签序列/完整轨迹指标体现。它不是oracle全部要求操作能力。内部提前结束指已输出段是该位置要求操作的非空正确短前缀，是行为描述非因果归因。','','|模型|集合|子集/长度|条件|完整轨迹|最终答案|标签序列|已输出段操作全对|正确前缀早答|内部短段|','|---|---|---|---|---:|---:|---:|---:|---:|---:|']
+lines+=['','## All original test subsets and subtask metrics','','All emitted-segment operations correct compares operations with the required segment at that position, without assuming STEP carries an identity. Missing segments are reflected in label-sequence/full-trajectory metrics. This is not oracle ability on all required operations. Within-segment early stopping means that an emitted segment is a nonempty proper prefix of the required operations at that position; it describes behavior rather than attributing a cause.','','|Model|Set|Subset/length|Condition|Full trajectory|Final answer|Label sequence|All emitted-segment operations correct|Early answer after correct prefix|Short internal segment|','|---|---|---|---|---:|---:|---:|---:|---:|---:|']
 for x in summary:
  m=x['mean'];lines.append('|'+ '|'.join([x['model'],x['dataset'],str(x['group']),labels[x['condition']]]+[f'{m[k]*100:.2f}%' for k in ['strict_trace','accuracy','label_sequence_correct','all_emitted_segments_correct','correct_prefix_early_answer','internal_short_any']])+'|')
-lines+=['','## 配对比较：不隐藏负向seed','','|模型|集合|子集/长度|新增/对照|平均差pp|三seed差pp|程序bootstrap95%pp|','|---|---|---|---|---:|---|---|']
+lines+=['','## Paired comparisons: negative seeds retained','','|Model|Set|Subset/length|Added/control|Mean difference pp|Three seed differences pp|Program bootstrap 95% pp|','|---|---|---|---|---:|---|---|']
 for x in comparisons:
  lo,hi=x['conditional_program_bootstrap95'];lines.append('|'+ '|'.join([x['model'],x['dataset'],str(x['group']),labels[x['a']]+' − '+labels[x['b']],f'{100*x["mean_delta"]:+.2f}',' / '.join(f'{100*s["delta"]:+.2f}' for s in x['seeds']),f'[{100*lo:+.2f}, {100*hi:+.2f}]'])+'|')
-lines+=['','总样本49,920含新24,960与复用24,960，不是独立题目数。Bootstrap未校正多重比较，不能替代更多训练seed。主矩阵与所有seed完成不等于具体机制已证实。','运行成本与完整训练日志在analysis/completion-audit.json及各run；最终科学判断由人工复核后写CONCLUSIONS.md。']
+lines+=['','The 49,920 total samples include 24,960 new and 24,960 reused trajectories, not that many independent examples. Bootstrap intervals are not corrected for multiple comparisons and do not replace more training seeds. Completing the main matrix and all seeds does not establish a specific mechanism.','Run costs and complete training logs are in analysis/completion-audit.json and each run directory. Final scientific interpretation is written to CONCLUSIONS.md after human review.']
 (R/'REPORT.md').write_text('\n'.join(lines)+'\n');print('Analysis complete',len(records),'rows,',len(comparisons),'paired comparisons',flush=True)
 
 import subprocess,sys

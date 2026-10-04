@@ -17,7 +17,7 @@ for r in e['summary']:
  extable.append(f"| {r['model']} | {r['condition']} | {r['split']} | {fmt(r['accuracy'])} | {fmt(r['strict_trace'])} | {fmt(r['exact_two_tools_early_answer'])} |")
 intervals=[]
 for model,c in ci['comparisons'].items():
- x=c['ood']['accuracy'];intervals.append(f"| {model} | {100*x['mean']:+.2f} | {' / '.join(f'{100*v:+.2f}' for v in x['seed_differences'])} | {' 至 '.join(f'{100*v:+.2f}' for v in x['seed_t95'])} | {' 至 '.join(f'{100*v:+.2f}' for v in x['program_bootstrap95'])} |")
+ x=c['ood']['accuracy'];intervals.append(f"| {model} | {100*x['mean']:+.2f} | {' / '.join(f'{100*v:+.2f}' for v in x['seed_differences'])} | {' to '.join(f'{100*v:+.2f}' for v in x['seed_t95'])} | {' to '.join(f'{100*v:+.2f}' for v in x['program_bootstrap95'])} |")
 cal=[];cost=[]
 for model in ['qwen7b','qwen32b']:
  z=json.loads((R/f'analysis/{model}-calibration.json').read_text());m=z['microbatch'];p=R/f'{model}/runs/flat-original-s11-probe-m{m}/summary.json';v=json.loads(p.read_text());cal.append(f"| {model} | {m} | {32//m} | {v['training']['peak_memory_bytes']/1024**3:.2f} | {v['training']['seconds']/2:.2f} |")
@@ -35,84 +35,84 @@ for lane in ['lr','instruct']:
  supplement_cost+=sum(x['wall_seconds'] for x in records)
 cost.append(supplement_cost)
 (R/'analysis/cost.json').write_text(json.dumps({'gpu_reserved_hours_approx':sum(cost)/3600,'primary_and_confirmation_process_hours':primary_cost/3600,'supplement_process_hours':supplement_cost/3600,'note':'single-GPU subprocess wall times for new training, calibration, checkpoint evaluation; extended model loading omitted; pre-launch queue waiting and downloads excluded, but early checkpoint subprocesses may include waiting for saved weights; not GPU kernel busy time; includes completed supplement lane records; excludes unmeasured failed-start overhead and separate sharded smoke probe'},indent=2))
-text=f'''# 模型规模与两段早停：第一阶段结果
+text=f'''# Model scale and stopping after two segments: stage-one results
 
-生成UTC：{time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())}。自动汇总已完成，科学判断需结合CONCLUSIONS.md的人工审核。执行者为Codex直接运行脚本，非EvoScientist聊天驱动。
+Generated at (UTC): {time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())}. Automatic aggregation is complete; scientific interpretation requires the review in CONCLUSIONS.md. Codex executed scripts directly, rather than through EvoScientist chat.
 
-## 设计与完成范围
+## Design and completed scope
 
-同系列Qwen2.5 Base的1.5/3/7/32B，flat与macro各3训练seed。原1.5/3B复用旧适配器，7/32B各新增6次512步LoRA；4,096训练题、有效batch32，16,384次样例呈现。两组输入、基本操作与正确状态相同，仅输出段首step或对应工具名称不同。
+Qwen2.5 Base 1.5/3/7/32B, with three training seeds each for flat and macro. Reuse existing 1.5/3B adapters; add six 512-step LoRA runs each for 7/32B. Use 4,096 training examples, effective batch size 32, and 16,384 example presentations. Inputs, primitive operations, and correct states are identical; only output segment headers differ between step and the corresponding tool name.
 
-原训练90.38%是两次调用，没有超过两次的训练题。所有原测试560条：IID128、长组合384、压力48；本报告分析全量输出，不以macro对flat错筛选。单模型seed为重复训练，同一道题多次测量不是独立样本。
+Two-call examples account for 90.38% of original training; none contain more than two calls. The original test contains 560 examples: 128 IID, 384 long compositions, and 48 stress examples. This report analyzes every output, without conditioning on macro success and flat failure. Training seeds are repeated training runs; repeated evaluation of one example does not create independent examples.
 
-注册检查点0/16/64/128/256/512，保存全部权重；在线开发集评测，训练完成后统一测试固定检查点，不据测试选最佳轮次。模型revision和SHA在models/*/download-manifest.json。
+Registered checkpoints are 0/16/64/128/256/512, with all weights saved. Development evaluation runs during training; fixed checkpoints are tested after training, without test-based checkpoint selection. Model revisions and SHA hashes are in models/*/download-manifest.json.
 
-独立确认集480条：3/4/5/6/8调用各24个程序、每程序4个输入，共120个程序；精确功能与旧train/dev/test不重合。新测试最大生成512token，旧题256token。新题的冻结基线提供完整工具定义，不提供定义则基座不可能知道人为颜色映射；给定义与不给定义的成绩分开解释。
+The independent confirmation set contains 480 examples: 24 programs at each call length 3/4/5/6/8 and four inputs per program, totaling 120 programs. Exact functions are disjoint from old train/dev/test functions. New tests allow 512 generated tokens; old examples allow 256. Frozen baselines on new examples receive full tool definitions, since the base cannot know artificial color mappings without them. Interpret conditions with and without definitions separately.
 
-## 原测试：未见3–5调用，三个seed平均
+## Original test: unseen 3–5 calls, means over three seeds
 
-| 模型 | 标签 | 答案正确率 | 完整轨迹正确率 | 正确前缀后提前回答 | 正确前两工具后结束 | 恰好输出两段 |
+| Model | Label | Answer accuracy | Complete trajectory accuracy | Early answer after correct prefix | Stops after first two correct tools | Exactly two segments |
 |---|---|---:|---:|---:|---:|---:|
 {chr(10).join(table)}
 
-“正确前两工具后结束”严格要求操作和数字前缀正确、主动写出对应中间状态答案，属于可直接验证的早停子集。其他操作错误/漏项不强行归入该类。“两段”只是输出行为，不代表过程正确。原始程序只保存非EOS token数，未保存末尾token ID：小于长度上限减一可根据生成配置推断在上限前遇到EOS；恰为上限减一则边界不确定；达到上限记为长度耗尽。这是推断证据，不冒充直接记录的停止原因。EOS不等于完成任务，主动写出中间答案也需结合完整轨迹判断。答案正确但轨迹不正确的情况不计入完整轨迹指标。
+“Stops after first two correct tools” requires a correct operation/numeric prefix and a voluntary answer matching that intermediate state. This is a directly verifiable subset of early stopping; other operation errors or omissions are not forced into it. Two segments describe output behavior, not process correctness. Original code saved non-EOS token counts without final token IDs. Counts below the limit minus one imply EOS before the cap under the generation configuration; exactly limit-minus-one is ambiguous, and reaching the cap indicates exhaustion. These are inferences, not directly logged stop reasons. EOS does not imply task completion, and intermediate answers must be assessed against the full trajectory. Correct answers with incorrect trajectories fail the complete-trajectory metric.
 
-## 局部操作与格式错误
+## Local operation and formatting errors
 
-以下指标可以重叠，不能相加作为互斥原因占比。“操作选错”要求已输出的某个操作偏离应有顺序（或多出操作）；仅少执行后缀不计入此项。“数值算错”根据前一个已报告状态检查当前操作，避免把上游错误重复算成每一步算术错误。这些是行为证据，不是机制因果证明。
+The following metrics overlap and cannot be summed into mutually exclusive cause shares. Wrong operation means an emitted operation differs from the required order or is extra; simply omitting a suffix does not count here. Numeric errors are checked against the preceding reported state, avoiding repeated attribution of propagated upstream errors as fresh arithmetic mistakes. These are behavioral observations, not causal mechanism evidence.
 
-| 模型 | 标签 | 操作选错 | 数值算错 | 额外格式行 | 缺失或多个答案 |
+| Model | Label | Wrong operation | Wrong arithmetic | Extra formatting lines | Missing or multiple answers |
 |---|---|---:|---:|---:|---:|
 {chr(10).join(error_table)}
 
-## 配对差异与区间
+## Paired differences and intervals
 
-下表为macro−flat答案正确率，单位百分点。seed区间以三个训练seed计算t区间，程序区间为固定这三个seed后按完整调用链聚类bootstrap，两个区间口径不同。
+The table reports macro−flat answer accuracy in percentage points. Seed intervals are t intervals over three training seeds. Program intervals bootstrap complete call-chain clusters conditional on those seeds. The intervals describe different uncertainty.
 
-| 模型 | 均值差 | 三seed差 | seed 95% t | 程序聚类95% |
+| Model | Mean difference | Three seed differences | Seed 95% t interval | Program-clustered 95% interval |
 |---|---:|---|---|---|
 {chr(10).join(intervals)}
 
-## 新确认集与更长调用
+## Fresh confirmation and longer call sequences
 
-frozen指未微调基座，提供工具定义；其他条件为训练后、不给定义。不能将此跨提示差直接归为训练增益/退化。
+Frozen means the untuned base with tool definitions. Other conditions are trained models without definitions. These prompt differences prevent direct interpretation as training gains or losses.
 
-| 模型 | 条件 | 长度组 | 答案正确率 | 完整轨迹正确率 | 正确前两工具后结束 |
+| Model | Condition | Length group | Answer accuracy | Complete trajectory accuracy | Stops after first two correct tools |
 |---|---|---|---:|---:|---:|
 {chr(10).join(extable)}
 
-## 资源实测与实现检查
+## Measured resources and implementation checks
 
-| 模型 | microbatch | 累积次数 | 两步校准峰值GiB | 校准秒/优化步 |
+| Model | Microbatch | Accumulation steps | Two-step calibration peak GiB | Calibration seconds/optimization step |
 |---|---:|---:|---:|---:|
 {chr(10).join(cal)}
 
-约{sum(cost)/3600:.2f} GPU小时，见analysis/cost.json口径，包括补充训练/评测进程，不含网络下载、启动前排队、未完整计时的失败启动及单独跨卡冒烟；提前检查点评测的进程耗时可能包含等待权重就绪，不是纯GPU核忙碌时间。数据和缓存均在项目目录。
+Approximately {sum(cost)/3600:.2f} GPU-hours; see analysis/cost.json for the accounting definition. This includes supplementary training/evaluation processes but excludes downloads, prelaunch queues, incompletely timed failed starts, and separate cross-GPU smoke checks. Early-checkpoint evaluation processes may include waiting for weights and do not measure pure GPU kernel activity. Data and caches remain in the project directory.
 
-原microbatch16拆到4的BF16梯度测试未达到事先选择的3%相对差容差，保留失败记录；使用原microbatch16、仅启用梯度检查点的1.5B核对损失/梯度一致。各模型实际microbatch列在表中；若发生回退须承认浮点计算实现差异。主线未量化。
+Splitting microbatch 16 into four failed the prespecified 3% relative BF16 gradient tolerance; failed records remain. A 1.5B check retaining microbatch 16 and enabling only gradient checkpointing matched loss/gradients. Actual microbatches are listed above; fallbacks require acknowledging floating-point implementation differences. The primary study uses no quantization.
 
-## 解释边界与未完成的研究分支
+## Interpretation limits and unfinished research branches
 
-这是同系列规模相关性，不是参数规模的完全随机因果实验。不同预训练过程、架构与LoRA比例不能完全控制。模型更大不自动等于先验更稳定。
+This is within-family scale association, not fully randomized causal identification of parameter count. Pretraining, architecture, and LoRA proportions are not completely controlled. Larger models do not automatically have more stable priors.
 
-已完成3B/32B对称低学习率1e-4与32B-Instruct三个seed的flat/macro补充训练、固定最终测试及Instruct冻结基线，见[补充报告](SUPPLEMENT.md)。这仍不是真实Agent交互验证。冻结模型在当前协议下未建立可靠的初始长执行能力，先验保护/破坏仍无法据此识别。相同提示信息的训练前后比较见analysis/matched-context.json。
+Symmetric 1e-4 learning-rate supplements for 3B/32B and three-seed flat/macro 32B-Instruct training, fixed final evaluation, and the frozen Instruct baseline are complete; see [SUPPLEMENT.md](SUPPLEMENT.md). This is still not real-agent interaction validation. Frozen models do not establish reliable initial long-execution capability under this protocol, so prior preservation/destruction remains unidentified. Same-information pre/post-training comparisons are in analysis/matched-context.json.
 
-[结论与限制](CONCLUSIONS.md)报告全部主要发现、LoRA比例与协议偏差；analysis/outcome-diagnostics.json补充全量等价轨迹/偶然正确分类。固定曲线不按测试挑选检查点；开发集掌握阈值未在预登记中数值化，后补阈值只能作为探索性分析。
+[CONCLUSIONS.md](CONCLUSIONS.md) reports major findings, LoRA proportions, and protocol deviations. analysis/outcome-diagnostics.json adds complete classifications of equivalent trajectories and chance-correct answers. Fixed curves do not select checkpoints using test scores. Development mastery thresholds were not numerically preregistered; later thresholds are exploratory only.
 
-## 图表
+## Figures
 
-![规模与两种停止指标](figures/scale-comparison.png)
+![Scale and two stopping metrics](figures/scale-comparison.png)
 
-![独立程序长度外推](figures/independent-lengths.png)
+![Independent-program length extrapolation](figures/independent-lengths.png)
 
-![完整固定检查点曲线](figures/learning-curves.png)
+![Complete fixed-checkpoint curves](figures/learning-curves.png)
 
-图像另提供同名SVG/PDF。三个图组已目视检查；曲线连接固定检查点均值，不代表未测量中间步骤的数值。
+Matching SVG/PDF files are provided. All three figure groups were visually checked. Lines connect fixed-checkpoint means and do not establish values at unmeasured intermediate steps.
 
-## 复现资料
+## Reproduction materials
 
-- [逐题最终审计](analysis/final-case-audit.jsonl)、[原测试统计](analysis/results.json)、[独立确认统计](analysis/extended-results.json)。
-- [配对区间](analysis/paired-inference.json)、[数据登记](analysis/extended-data-registration.json)、[注册与修订](WORK_STATUS.md)。
-- 原始输出在各模型runs/和extended/，最终与中途LoRA适配器完整保留。
+- [Final example-level audit](analysis/final-case-audit.jsonl), [original-test statistics](analysis/results.json), and [independent-confirmation statistics](analysis/extended-results.json).
+- [Paired intervals](analysis/paired-inference.json), [data registration](analysis/extended-data-registration.json), and [registration and amendments](WORK_STATUS.md).
+- Raw outputs in each model runs/ and extended/ directory; final and intermediate LoRA adapters retained in full.
 '''
 (R/'REPORT.md').write_text(text);print('Report draft generated; manual conclusion required',flush=True)

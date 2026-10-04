@@ -1,29 +1,29 @@
-# Qwen2.5-0.5B 固定长度标签复核：运行前登记
+# Qwen2.5-0.5B fixed-length label replication: preregistration
 
-日期：2026-09-27。用户授权。原四标签实验的模型、工具、提示、目标、LoRA、优化器、512步、16×2 batch、贪心解码和严格完整轨迹标准沿用。每档训练和测试均**恰好**L次调用；每档四组共享4096底层训练题和512测试题，链与四位数字输入组合无重复。
+Date: 2026-09-27. User-authorized study. Retain the original four-label model, tools, prompts, targets, LoRA, optimizer, 512 steps, 16×2 batch, greedy decoding, and strict complete-trajectory criterion. Training and testing at each level contain **exactly** L calls. Four groups share 4096 underlying training examples and 512 test examples, without duplicate chain/four-digit-input pairs.
 
-## 探索和正式复核的隔离
+## Separating exploration and formal replication
 
-探索从L=10、15、20、25、30逐级运行，每档3个配对训练seed（11、22、33），先比较统一STEP（flat）和原工具名称（macro）。若仍饱和按5增加；若性能骤降，允许补中间长度。每档测试独立冻结，不删除不利结果。候选优先满足STEP平均完整轨迹成功率介于10%和90%（含边界）、原工具名较STEP的3 seed平均差至少5个百分点且至少2/3 seed改善。这个探索规则只用于选择下一步，并不构成确证证据。若这些条件不同时满足，可以继续预定长度并按实际结果与成本选择最有信息的档位，公开选择过程。持续地板效应或成本失控则停止并报告。
+Explore L=10,15,20,25,30 sequentially with three paired training seeds (11,22,33), initially comparing uniform STEP (flat) and original names (macro). Continue in increments of five if saturated; intermediate lengths may be added after abrupt performance drops. Freeze independent tests per level and retain unfavorable results. Prefer candidates with STEP mean strict success in the inclusive 10%–90% range, original-name mean gain of at least five points, and improvement in at least 2/3 seeds. This exploratory rule selects the next step and is not confirmatory evidence. If criteria do not jointly hold, continue planned lengths and select the most informative level from observed results/costs, disclosing selection. Stop and report persistent floors or uncontrolled costs.
 
-正式复核的20个**新**配对训练seed定为200–219，与探索seed不相交。训练题沿用候选长度已冻结的4096条底层题，以隔离长度和题目改变；正式测试题重新生成512条，确保与探索测试及训练均无“调用链＋输入数字”重复。正式四标签在同一批新测试题评分。正式训练完成后正常运行约每小时巡检一次；阶段完成、失败即时处理。
+Formal replication uses 20 **new** paired training seeds, 200–219, disjoint from exploration. Reuse the selected level of 4096 frozen training examples to isolate length/example changes. Generate 512 fresh formal tests with no chain/input overlap with training or exploration. Score all four labels on the same new tests. During normal formal runs, inspect approximately hourly; handle stage completion and failure immediately.
 
-## 数据与容量
+## Data and capacity
 
-固定长度L的调用链从9个工具中独立均匀抽L次；四位输入数字各自均匀抽样；遇到同一调用链与输入组合重复则重抽。探索训练数据seed为10000+L，探索测试seed为20000+L，正式测试seed为30000+L。训练4096、测试512；数据与生成脚本hash在训练前冻结。
+Draw each fixed-length chain independently and uniformly from nine tools, and each input digit uniformly. Resample duplicate chain/input pairs. Exploration training seed: 10000+L; exploration test seed: 20000+L; formal test seed: 30000+L. Use 4096 training and 512 test examples, freezing data and generator hashes before training.
 
-训练器仅替换模型/数据目录、四标签目标和必要的长度容量断言；不改变512步等算法。生成长度上限统一选择能容纳四条件所有512个正确目标的最小预定档位（256、512、1024、1536、2048、3072、4096），并对四组相同；记录任何运行上限问题。严格完整轨迹仍调用旧评分器；另外记录少做/多做工具、展开和数字错误、达到生成上限、生成token及分配GPU时长。不得以测试结果调整解码或训练。
+Change only model/data directories, four-label targets, and necessary length-capacity assertions in the trainer; preserve the 512-step algorithm. Use the smallest predefined generation limit (256,512,1024,1536,2048,3072,4096) fitting every correct target across 512 tests and four conditions, shared across groups. Record any cap issues. Retain the old strict scorer and additionally record missing/extra tools, expansion/numeric errors, cap hits, generated tokens, and allocated GPU time. Do not tune decoding or training on test results.
 
-纯prompt对照、实际任务扩展、论文发表均不在本轮启动。
+Prompt-only controls, real-task extensions, and publication are outside this round.
 
-## 资源更新（2026-09-27，探索长度30运行中）
+## Resource update, 2026-09-27, during length-30 exploration
 
-用户收回远程`.70`、`.65`两台服务器。本轮未在两台服务器启动任务；后续仅使用本机`.69`的8张RTX PRO6000。此资源变化不改变训练、评测或正式复核设计。
+The user reclaimed remote servers `.70` and `.65`. No jobs from this round ran on them. Continue only on the eight local `.69` RTX PRO6000 GPUs. This resource change does not alter training, evaluation, or formal-replication design.
 
-## 长度40的显存兼容调整
+## Length-40 memory compatibility adjustment
 
-长度40探索首次运行microbatch16/accum2时，flat-s11与macro-s11在约第20步CUDA OOM，失败run和日志原样保留；同批其余4个run完成。对该长度失败的两run使用新`-retry1`目录，统一改microbatch8/accum4；有效batch仍32、512步和16384样本暴露不变。长度40的探索因此含两种microbatch实现，不能把其3 seed波动当严格同配方估计。若选择长度40正式复核，四条件20新seed统一使用8/4。长度40以上亦从8/4起步，并记录进一步兼容调整。用户授权在必要时调整长度容量，训练变更只限这一显存修复。
+Initial length-40 microbatch16/accum2 exploration hit CUDA OOM near step 20 for flat-s11 and macro-s11. Retain failed runs/logs; the other four completed. Retry the two failures in new `-retry1` directories with microbatch8/accum4, preserving effective batch 32, 512 steps, and 16384 examples. Length-40 exploration therefore mixes two microbatch implementations, so its three-seed variation is not a strict same-recipe estimate. If chosen for formal replication, all four conditions and 20 new seeds use 8/4. Lengths above 40 also begin at 8/4, documenting further adjustments. User-authorized capacity changes are limited here to the necessary memory repair.
 
-## 正式候选冻结（长度40探索评分完成后，正式测试生成前）
+## Formal candidate freeze after length-40 exploration scoring and before formal-test generation
 
-探索L10/15/20/25/30/35的STEP均值分别为99.93/100/98.89/99.02/96.48/92.90%；L40为74.02%，原工具名98.96%，配对差+24.93个百分点、3/3 seed改善。L40首次符合登记的STEP 10–90%、原名差≥5个百分点且至少2/3改善，故选择L40，不继续探索更长档位，也不以正式结果再改长度。正式20新seed为200–219；正式新512题使用预定seed30040并在任何正式训练前冻结。四标签全部统一8×4、512步、同一训练底层题与正式测试题、生成上限1536。
+STEP means at L10/15/20/25/30/35 are 99.93/100/98.89/99.02/96.48/92.90%. At L40, STEP is 74.02% and original names 98.96%, a paired +24.93-point difference with 3/3 seeds improving. L40 first satisfies STEP 10%–90%, name gain ≥5 points, and at least 2/3 improving seeds. Select L40 without exploring longer levels or reselecting from formal results. Formal seeds are 200–219; freeze 512 fresh tests using prespecified seed 30040 before any formal training. All four labels use 8×4, 512 steps, shared underlying training/formal tests, and generation limit 1536.

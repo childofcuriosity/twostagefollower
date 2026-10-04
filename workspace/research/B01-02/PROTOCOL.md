@@ -1,47 +1,47 @@
-# B01-02：机制分析与预注册（结果出现前）
+# B01-02: mechanism analysis and preregistration before results
 
-用户已授权机制分析和实验完成后统一审核。研究问题：模型从自身程序轨迹提出的可执行抽象，能否通过参数更新带来超出等信息平坦轨迹训练的无库组合泛化？本轮是受控机制筛选，不是论文稿，不证明一般创新。
+The user authorized combined mechanism analysis and experiments followed by review. Question: can executable abstractions proposed from model-generated program traces yield library-free compositional generalization through parameter updates beyond information-matched flat-trace training? This is controlled mechanism screening, not a paper or proof of general innovation.
 
-## 可识别的命题
+## Identifiable claims
 
-H1 内化：不给外部函数库时，更新后的参数能够执行学习过的宏及未训练过的宏组合。
-H2 结构效用：相同基础模型、任务、展开程序、正确中间状态和答案，按宏边界组织监督能比平坦监督改善未见组合。
-H3 语义依赖：对训练世界里的宏定义做置换，模型行为随对应新语义改变；对名称做一致置换，能力基本保持。
+H1, internalization: updated parameters execute learned macros and untrained macro compositions without an external library.
+H2, structural utility: with matched base, tasks, expanded programs, correct intermediate states, and answers, macro-boundary-organized supervision improves unseen composition over flat supervision.
+H3, semantic dependence: permuting training-world macro definitions changes behavior toward the new semantics; consistent name permutations largely preserve capability.
 
-可证伪标准：核心组合准确率差异达到3个百分点、三个配对种子方向一致，才认为有值得继续的H2信号；区间很宽则是不确定。没有达到或仅优于错误/随机标签对照，不算通过。只在训练组合或提供库时有效，不能支持无库组合泛化。
+Falsification criterion: an accuracy difference of at least three points with consistent direction across three paired seeds establishes an H2 signal worth pursuing; wide intervals remain uncertain. Falling short or beating only incorrect/random labels does not pass. Gains only on training compositions or with supplied libraries do not support library-free generalization.
 
-逻辑边界：有限输入输出观测无法唯一确定内部算法。查表模型与规则模型可在有限测试集行为一致，所以H1/H3只提供操作性证据，不是神经表征的唯一机制证明。若要提出神经机制结论，后续需另做表征干预。本轮不声称创造训练语言之外的新原语、一般科学创新或递归自我改进。
+Finite input/output observations cannot uniquely identify internal algorithms: lookup and rule-based models may behave identically on finite tests. H1/H3 provide operational evidence, not unique neural-mechanism identification. Neural claims require later representation interventions. This round does not claim new primitives beyond the training language, general scientific innovation, or recursive improvement.
 
-## 因果比较
+## Causal comparisons
 
-共同信息 I = 输入、宏调用序列、每一步展开原语、全部正确状态、最终答案。执行器为各组提供同一I。主要处理变量G仅是每个宏边界上的标签：macro组为正确宏名，flat组为中性词，shuffled组为不相关的宏名。边界数量和位置一样，不将更多步骤归因于抽象。
+Shared information I comprises inputs, macro-call order, every expanded primitive, all correct states, and the answer. The executor supplies identical I. Treatment G is only each boundary label: correct macro name, neutral flat word, or unrelated shuffled macro name. Boundary counts/positions match, preventing added steps from being attributed to abstraction.
 
-natural组用由同一展开程序确定的自然语言描述组织轨迹，是次要表示对照；文本token数可能不同，单独报告成本，不以其差异单独证明因果优势。主比较macro vs flat要求边界标签token长度一致；若tokenizer不能满足则停止并修正序列化，而非忽略差异。
+Natural-language descriptions derived from the same expansions form a secondary representation control. Their token counts may differ; report costs separately without treating differences alone as causal superiority. Macro versus flat must match boundary-label token length; if the tokenizer prevents this, stop and repair serialization rather than ignore the mismatch.
 
-同时报告训练有效token、生成token、实际时长和占用GPU·小时。三个主组执行相同样本顺序与更新次数。主因果比较共享初始化/种子和样本；natural不是严格token匹配对照。shuffled为负对照，不替代flat基线。
+Report effective training tokens, generated tokens, actual duration, and allocated GPU-hours. Three primary groups share example order and update counts. Primary causal comparisons share initialization/seeds/examples. Natural is not strictly token-matched; shuffled is a negative control, not a replacement for flat.
 
-## 模型与抽象来源
+## Model and abstraction source
 
-Qwen/Qwen2.5-1.5B开放基座，固定Hub revision和文件哈希，项目内独立训练环境。模型先尝试DSL解题并保留原始生成与成功/失败判定，再从自身轨迹提出长度2–3的原语组合。语法解析采用白名单，不执行生成的任意Python。所有候选穷举有限输入域验证、去除语义重复，按独立发现语料压缩效用排序。若自提案失败，不用人工宏冒充；记录失败并据此缩小结论。
+Use open-base Qwen/Qwen2.5-1.5B with frozen Hub revision/file hashes and a project-local training environment. First attempt DSL solving, retaining raw success/failure outputs, then propose length-2–3 primitive combinations from those traces. Parse with a whitelist; do not execute arbitrary generated Python. Exhaustively validate candidates over the finite input domain, remove semantic duplicates, and rank by compression on separate discovery data. Failed self-proposals must not be replaced with hand-authored macros presented as discoveries; record failure and narrow claims.
 
-本轮只固定一次模型提出的库，以便隔离表示因素；不把后续任务围绕该库构造所得结果解释为“发现策略优于随机策略”。完整多轮自我演化及自然任务迁移不属于本轮可证明结论。
+Freeze one proposed library to isolate representation. Tasks built around that library do not establish superiority of discovery policy over random policy. Complete multi-round evolution and natural-task transfer are outside demonstrable scope.
 
-## 任务与隔离
+## Tasks and separation
 
-四位数字列表，确定性原语：reverse、rotate-left、increment-mod10、negate-mod10、swap-first-two、increment-ends-mod10。组合从左到右执行。发现、训练、校准/开发、最终测试分开；最终测试宏组合深度3–5，训练深度1–2，展开AST去重。额外按语义signature审计等价程序泄漏，若完全语义隔离使任务空间过小则报告并停止相应claim。
+Inputs are four-digit lists with deterministic reverse, rotate-left, increment-mod10, negate-mod10, swap-first-two, and increment-ends-mod10 primitives, composed left to right. Separate discovery, training, calibration/development, and final tests. Train macro depth 1–2 and test 3–5, deduplicating expanded ASTs. Audit equivalent-program leakage using semantic signatures. If exact separation leaves insufficient capacity, report it and stop the corresponding claim.
 
-保留同分布未见输入集用于区分“根本没学会”与组合泛化失败；深度3–5分别报告，不只报均值。另一个输入分布（重复数字/回文/边界数字）作为分布压力测试，不能当第二自然任务领域。
+Retain IID unseen-input tests to distinguish failure to learn from failed composition. Report depths 3–5 separately. Repeated digits, palindromes, and boundary digits form a distribution stress test, not another natural domain.
 
-## 运行计划
+## Run plan
 
-1. 验证器属性检查、AST/语义隔离审计、真实模型推理与训练吞吐校准。
-2. 冻结模型无库/有库评估，作为起点与提示基线（有库不是理论上界）。
-3. flat/macro/natural/shuffled × 3 seeds（11/22/33），小模型参数更新。根据20步吞吐一次确定所有组共用步数；最初上限512步、batch32、sequence256。使用LoRA则必须明确仅是适配器参数更新，不冒充全参数基模训练。
-4. 名称置换、语义置换各3种子macro组；若核心任务未学会，不扩展到更大模型，用同预算诊断失败原因。对照始终在其实际训练语义下评分，额外提供旧语义评分作反事实比较。
-5. 原始逐例生成、正确性、输入输出、数据哈希、训练曲线、配置、失败日志、最终checkpoint和分析脚本全部保留。
+1. Verifier property checks, AST/semantic separation audit, and actual model inference/training throughput calibration.
+2. Frozen-base evaluation with/without libraries as initialization/prompt baselines; supplied-library performance is not a theoretical upper bound.
+3. flat/macro/natural/shuffled × seeds 11/22/33 with small-model updates. Use 20-step throughput to fix common steps once, initially capped at 512 steps, batch 32, sequence 256. LoRA must be described as adapter updates, not full-parameter base training.
+4. Three-seed macro runs for name and semantic permutations. If the core task is unlearned, diagnose at matched budget rather than expand models. Score each control under its actual training semantics and additionally against old semantics counterfactually.
+5. Retain every raw generation, score, input/output, data hash, curve, configuration, failure log, final checkpoint, and analysis script.
 
-## 统计与决策
+## Statistics and decisions
 
-训练种子是主要独立重复单位，不能把数千测试题当成数千独立训练重复。报告每种子准确率和配对差异、三种子的均值及t区间（明确n=3的局限），另做按AST聚类的描述性bootstrap。仅一次最终评价，不按测试选择checkpoint。校准只访问开发集；调整协议均注明时间与是否已见结果。
+Training seeds are primary independent repetitions; thousands of test examples are not independent training runs. Report seed accuracies/paired differences, means, and t intervals with explicit n=3 limits, plus descriptive AST-clustered bootstrap. Use one final evaluation without test-based checkpoint selection. Calibration sees development only; timestamp protocol changes and state whether results were visible.
 
-初始预算沿用候选卡48–120 GPU·小时规划区间，不要求为了用满预算而延长无效训练；实测决定首轮规模。全流程独立任务分卡运行，不把独立并行任务说成NCCL分布式训练验证。
+The candidate-card 48–120 GPU-hour range is an initial plan, not a spending requirement. Measure first-round scope rather than prolong ineffective training. Independent jobs run on separate GPUs and do not constitute NCCL distributed-training validation.

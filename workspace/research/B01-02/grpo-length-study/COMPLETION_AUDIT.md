@@ -1,39 +1,39 @@
-# 完成审计
+﻿# Completion audit
 
-结论：用户指定的六个模型/长度组合、36个正式run及全部预定评测、分析已完成。未缩减低分组，未追加模型、长度、seed、局部奖励或真实任务。本轮得到正负结果，完成不以正结果为条件。
+Conclusion: all six user-specified model/length settings, 36 main runs, and scheduled evaluations and analyses are complete. Low-scoring settings were retained. No models, lengths, seeds, local rewards, or real tasks were added. The study produced both positive and negative results; completion did not depend on obtaining a positive result.
 
-| 要求 | 当前实物证据与核验结果 |
+| Requirement | Artifacts and verification results |
 |---|---|
-| 7B L3/L4/L5，14B L5/L6/L7，仅STEP/NAME×3seed | 六任务配置、18个配对作业exit0；36个run完成记录，各100更新。 |
-| 原始Instruct权重及固定revision，无SFT/旧adapter | [原模型与数据审计](analysis/data-model-final-audit.json)：7B的13文件、14B的17文件全部大小和SHA256匹配原下载登记；revision与六冻结配置一致。 |
-| 真正从原起点开始，配对初始化 | [优化器审计](analysis/optimizer-audit.json)：36个step0的LoRA B全零、优化器状态为空；任务分析核验同seed两组初始化哈希一致，正式resume均为空。 |
-| 原九工具、四位输入、原Prompt/例子/chat/严格评分 | 模板在六任务config中；原Prompt、DSL、工具库、评分器归档于snapshots/reference-inputs；[生命周期审计](analysis/lifecycle-audit.json)核验原件及快照哈希。tokenizer全部原文件哈希匹配。评分语义边界在[METHOD.md](METHOD.md)明确。 |
-| 4096训练/256验证/512新测试/64预检，分组及历史去重 | [原模型与数据审计](analysis/data-model-final-audit.json)逐条重建29个历史来源的调用链+初值集合，核验各集合内部唯一、集合之间及与旧题互斥；L5两模型数据逐字节一致。 |
-| 同seed题序、16题×8候选、有效batch和采样预算一致 | 六任务analysis/results.json逐update/rank核验实际候选题目ID与固定order-s*.json一致，每更新128候选。配置继承审计与冻结配置确认除指定模型/长度/生成上限及元数据外沿用旧超参数。 |
-| 只有完整轨迹0/1任务奖励，标题独立，无局部奖励 | 每任务implementation-tests.json：128正确轨迹及每条3变异、1968历史输出奖励精确一致；全部460800正式候选和119808实际评测重新评分，保存分数与重算一致。 |
-| 整回答优势、prompt/padding无策略梯度、EOS有效 | 单元核验优势、mask、真实EOS梯度及逐回答均值聚合；实际候选优势逐条与同题8奖励重算匹配。[token审计](analysis/cost-and-token-audit.json)核验所有output_ids长度、EOS位置和截断上限，与loss记录token总数一致。 |
-| 预检、冻结、恢复可用，配置不按NAME收益选择 | 12组预检原始4更新及step2→4恢复，候选一致、adapter最大差0、优化器状态精确一致；全部测试通过后统一冻结。正式作业启动时间均晚于冻结时间。 |
-| 100次真实更新，数值正常 | 36个run的两rank日志均完整1…100；小时健康记录未见非有限值。优化器端点全部参数状态step=100，adapter/优化器张量全部有限、LoRA为FP32。 |
-| step0/10/…/100 checkpoint含可恢复状态 | 396个固定checkpoint：adapter文件哈希、更新数、配置哈希核验，两rank RNG与优化器均存在；12组独立恢复预检证明恢复路径可用。 |
-| 固定验证全曲线；测试只step0/100，无择优端点 | 每任务280评测分片，全组1680；所有测试元数据step仅0/100。原始step0每条件任务生成一次供三个seed引用，36个零增量adapter支持此复用。实际输出119808，未把引用冒充新增输出。 |
-| 全部逐seed、配对差、均值/波动、四固定门槛 | [REPORT.md](REPORT.md)及六任务REPORT.md、analysis/results.json；固定60/70/80/90门槛，未达到不补造步数。完整更新/计算量曲线保留，PNG/PDF/SVG可独立导出。 |
-| 错误、标题、主动结束、额外输出、截断 | 六任务CASE_REVIEW.md与analysis/error-details.json；重叠错误标志在results.json。9条正式候选及2条评测上限截断保留，其他均EOS；EOS不等于成功。标题错误不混成调用错误。 |
-| 实际采样量、输出token、GPU成本 | [COSTS.md](COSTS.md)、[token审计](analysis/cost-and-token-audit.json)、[端点推理成本](analysis/endpoint-costs.json)、[生命周期审计](analysis/lifecycle-audit.json)。正式67172424训练输出token、17552357评测输出token；累计分配135.998 GPUh。嵌套计时不重复相加。 |
-| 全部原始产物独立保留，旧实验不改 | 新目录下冻结配置、独立数据、原始候选/奖励、所有checkpoint、原始评测、日志与分析齐全。历史数据、模型、评分器和Prompt仅只读引用并校验哈希，没有旧实验重训或覆盖。 |
-| 故障与资源调度留档 | 无正式训练/评测失败标记。旧调度器因计划内资源重分配被主动SIGTERM，训练未中断；所有18正式配对作业、12预检作业及8评测worker均exit0。原/替代控制器和v2/v3资源记录保留。 |
-| 完整释放资源 | [现场资源核验](analysis/resource-release.json)：本机8卡及两远程各4卡全部0 MiB，三机均无本轮train/evaluate进程。CPU分析作业也exit0。 |
-| 限制与后续不越界 | [CONCLUSIONS.md](CONCLUSIONS.md)区分训练收益、初始Prompt差异、地板、seed波动及机制假设。只将14B L5按预登记STEP验证窗口列为下一轮候选，不声称独立确认、创新性或真实任务迁移已完成；没有启动后续实验或发布。 |
+| 7B L3/L4/L5, 14B L5/L6/L7, STEP/NAME × 3 seeds only | Six task configurations; 18 paired jobs exited with code 0; completion records for 36 runs, each with 100 updates. |
+| Original Instruct weights and fixed revisions, no SFT/old adapters | [Model and data audit](analysis/data-model-final-audit.json): all 13 files for 7B and 17 files for 14B match the original download registration in size and SHA256; revisions match all six frozen configurations. |
+| Fresh initialization and paired starting weights | [Optimizer audit](analysis/optimizer-audit.json): all 36 step0 adapters have all-zero LoRA B and empty optimizer states. Task analyses verify matching initialization hashes for the two conditions at each seed; all main-run resume fields are empty. |
+| Original nine tools, four-digit inputs, prompts/examples/chat templates/strict scoring | Templates are in the six task config directories. Original prompts, DSL, tool library, and scorer are archived in snapshots/reference-inputs. The [lifecycle audit](analysis/lifecycle-audit.json) verifies original and snapshot hashes. All original tokenizer file hashes match. Scoring boundaries are specified in [METHOD.md](METHOD.md). |
+| 4096 training/256 validation/512 fresh test/64 precheck examples, within-study and historical deduplication | The [model and data audit](analysis/data-model-final-audit.json) reconstructs call-chain/initial-state sets record by record from 29 historical sources, verifies uniqueness within each set and disjointness across sets and from old examples, and confirms byte-identical L5 data across the two models. |
+| Matched seed-wise example order, 16 examples × 8 candidates, effective batch, and sampling budget | Each task's analysis/results.json checks candidate example IDs against fixed order-s*.json files for every update/rank, with 128 candidates per update. Configuration-inheritance audits and frozen configs confirm that prior hyperparameters are retained except for the specified model/length/generation cap and metadata. |
+| Full-trajectory 0/1 task reward only; headings separate; no local reward | Each task's implementation-tests.json verifies 128 correct trajectories and 3 mutations per trajectory, plus exactly matching rewards on 1968 historical outputs. All 460800 main candidates and 119808 actual evaluation outputs are rescored, matching saved scores. |
+| Full-response advantages, no prompt/padding policy gradient, valid EOS | Unit checks cover advantages, masks, actual EOS gradients, and per-response mean aggregation. Actual candidate advantages match recomputation from each example's 8 rewards. The [token audit](analysis/cost-and-token-audit.json) checks every output_ids length, EOS position, and truncation cap against the token totals in loss records. |
+| Working prechecks, freezing, and recovery; no configuration selection by NAME gain | All 12 precheck groups run an original 4 updates and recover step2→4, with identical candidates, maximum adapter difference 0, and exactly matching optimizer states. Configurations are frozen together after all tests pass. All main jobs start after the freeze. |
+| 100 actual updates with finite values | Both rank logs are complete from 1…100 for all 36 runs. Hourly health records show no nonfinite values. Every optimizer endpoint parameter state has step=100; all adapter/optimizer tensors are finite, and LoRA uses FP32. |
+| Recoverable state at step0/10/…/100 | All 396 fixed checkpoints have verified adapter hashes, update counts, and config hashes; optimizer and both ranks' RNG states are present. The 12 independent recovery prechecks validate the recovery path. |
+| Complete fixed-validation curves; testing only at step0/100; no endpoint selection | Each task has 280 evaluation shards, totaling 1680. All test metadata have step 0/100 only. Original step0 is generated once per condition/task and referenced by three seeds, supported by the 36 zero-increment adapters. Actual outputs total 119808; references are not counted as new outputs. |
+| All seeds, paired differences, means/variation, and four fixed thresholds | [REPORT.md](REPORT.md), the six task REPORT.md files, and analysis/results.json report fixed 60/70/80/90 thresholds, with no invented step counts for unreached thresholds. Complete update/compute curves are retained, with standalone PNG/PDF/SVG exports. |
+| Errors, headings, voluntary stopping, extra output, and truncation | Six CASE_REVIEW.md files and analysis/error-details.json; overlapping error flags in results.json. All 9 main-candidate and 2 evaluation cap truncations are retained; other outputs end with EOS, which does not imply success. Heading errors are distinguished from tool-call errors. |
+| Actual sampling, output tokens, and GPU costs | [COSTS.md](COSTS.md), [token audit](analysis/cost-and-token-audit.json), [endpoint inference costs](analysis/endpoint-costs.json), and [lifecycle audit](analysis/lifecycle-audit.json). Main training produced 67172424 output tokens and evaluation 17552357; total allocated time was 135.998 GPUh. Nested timings are not double-counted. |
+| All raw artifacts stored independently; earlier experiments unchanged | The new directory contains frozen configs, independent data, raw candidates/rewards, all checkpoints, raw evaluations, logs, and analyses. Historical data, models, scorers, and prompts are referenced read-only and hash-checked; no previous experiment was retrained or overwritten. |
+| Recorded failures and resource scheduling | No main-training/evaluation failure markers. The old scheduler was deliberately SIGTERM'd for planned resource reallocation, without interrupting training. All 18 main paired jobs, 12 precheck jobs, and 8 evaluation workers exited with code 0. Original/replacement controllers and v2/v3 resource records are retained. |
+| Full resource release | [Resource verification](analysis/resource-release.json): all 8 local GPUs and 4 GPUs on each remote machine show 0 MiB; no train/evaluate processes from this study remain on any of the three machines. CPU analysis jobs also exited with code 0. |
+| Scope limits and follow-up boundaries | [CONCLUSIONS.md](CONCLUSIONS.md) distinguishes training gains, initial prompt differences, floor effects, seed variation, and mechanism hypotheses. Only 14B L5 is listed as a next-round candidate under the preregistered STEP validation window. Independent confirmation, novelty, and real-task transfer are not claimed as complete; no follow-up experiments or publication were started. |
 
-## 数量核对
+## Count reconciliation
 
-- 36正式run×100更新×16题×8候选＝460800候选。
-- 36run×11固定checkpoint＝396 checkpoint。
-- 每任务：原模型2条件×(256验证+512测试)＋6run×(10×256验证+512测试)＝19968实际输出；6任务＝119808。
-- 原模型12个条件任务×2数据分片类型×4 shard＝96任务；正式36run×11次评测×4 shard＝1584；合计1680评测分片。
-- 预检及恢复实际候选另为12×(4+2)×128＝9216，不并入正式候选，不作为额外seed。
+- 36 main runs × 100 updates × 16 examples × 8 candidates = 460800 candidates.
+- 36 runs × 11 fixed checkpoints = 396 checkpoints.
+- Per task: original model, 2 conditions × (256 validation + 512 test), plus 6 runs × (10×256 validation + 512 test) = 19968 actual outputs; 6 tasks = 119808.
+- Original model: 12 condition/tasks × 2 data-split types × 4 shards = 96 jobs. Main runs: 36 runs × 11 evaluations × 4 shards = 1584; total 1680 evaluation shards.
+- Prechecks and recovery generate an additional 12×(4+2)×128 = 9216 candidates. These are excluded from main candidates and are not additional seeds.
 
-## 审计方式与剩余事项
+## Audit procedure and remaining work
 
-全组分析守护进程已正常完成，所有六任务的候选、原始评测和checkpoint均已全量复核，不仅依靠完成标记。额外审计重新检查原始模型文件、历史去重、实际优化器端点和token流。最终交付清单与文档哈希保存在`analysis/final-audit.json`。
+The combined analysis daemon completed normally. Candidates, raw evaluations, and checkpoints for all six tasks were fully checked, rather than relying only on completion markers. Additional audits rechecked original-model files, historical deduplication, actual optimizer endpoints, and token streams. The final deliverable inventory and document hashes are stored in `analysis/final-audit.json`.
 
-本轮无剩余实验或分析事项。后续独立重复、机制对照、奖励改进、真实任务迁移及论文创新性调研属于新的工作范围，不包含在本轮完成声明内。
+No experiments or analyses remain within this study's scope. Independent replication, mechanism controls, reward improvements, real-task transfer, and investigation of paper novelty are separate future work and are excluded from this completion statement.

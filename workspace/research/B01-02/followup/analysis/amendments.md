@@ -1,8 +1,8 @@
-# 结果查看后的敏感性分析声明
+# Post-result sensitivity-analysis declaration
 
-完成并查看预注册主结果后，发现两个需要单列的解释问题，追加分析而不修改主结果或生成新提案：
+After completing and inspecting preregistered primary results, two interpretation issues motivated added analyses without changing primary results or generating proposals:
 
-1. 原选库器先按语义去重并保留首个写法，而压缩指标要求字面连续匹配。这使全枚举候选的字典序代表可能不适合任务，解释了其不一定优于频次启发式。追加“先比较全部候选写法的支持收益，选中后再排除同语义候选”的选库器，仍最多3个不同语义宏。
-2. 原搜索预算是3,000次动作扩展，宏动作含2–3次基本操作。追加3,000次基本操作执行预算，排除仅由变长动作成本产生的收益；它仍不是实际CPU墙钟或神经token预算。
+1. Original selection deduplicated semantics first and retained the first spelling, while compression requires literal contiguous matching. Lexicographic representatives from full enumeration can therefore fit a task poorly, explaining why enumeration need not beat frequency heuristics. Add a selector that first compares support gains for all spellings, then excludes semantic equivalents after selection, still choosing at most three distinct macros.
+2. Original search budgets 3,000 action expansions, with 2–3 primitives per macro. Add a 3,000-primitive-execution budget to check gains due solely to variable action cost. This still does not match CPU wall time or neural tokens.
 
-两个因素做2×2对照，全部使用原来的提案、支持集、测试集；原主结果、阈值和判定保留。没有根据测试结果重新训练或调提案prompt。
+Cross both factors in a 2×2 design using original proposals/support/tests. Retain primary results, thresholds, and decisions. No retraining or prompt tuning follows test results.

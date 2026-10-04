@@ -1,42 +1,42 @@
-# 工具身份标签与长执行：初步查新
+﻿# Tool-identity labels and long execution: preliminary novelty review
 
-日期：2026-09-27。性质：针对当前想法的初步最近邻核查，不是系统综述、新颖性认证或发表判断。检索过arXiv网页的工具名称、函数调用、长任务、计划执行等词，并核对下列论文在arXiv的一手摘要、标题和日期。arXiv站内搜索随后触发429，OpenAlex公共额度用尽，Semantic Scholar API返回429；因此未完成穷尽查新。不能把“没找到完全相同论文”当成新颖性证据。
+Date: 2026-09-27. This is a preliminary nearest-neighbor check for the current idea, not a systematic review, novelty certification, or publication judgment. Searches on arXiv webpages used terms related to tool names, function calling, long tasks, and plan execution. Titles, dates, and primary arXiv abstracts were checked for the papers below. Subsequent arXiv searches returned 429, the public OpenAlex quota was exhausted, and the Semantic Scholar API returned 429, so the search was not exhaustive. Failure to find an identical paper is not evidence of novelty.
 
-## 用户想法与当前证据
+## The user idea and current evidence
 
-想法：让一个可复用的工具/子任务称号与实际操作定义稳定对应，在输出/执行轨迹中显式标明当前称号，帮助Agent长任务执行。
+Idea: establish a stable correspondence between a reusable tool/subtask name and its operation definition, then explicitly name the current tool/subtask in output/execution trajectories to help agents complete long tasks.
 
-当前实验是Qwen2.5 Base LoRA、固定9工具、给定顺序、训练1–2次调用、测试3–8次调用。1.5B/3B/7B每条件20训练seed，原480题长测试中固定改名相对位置编号20/20 seed同向更好；原工具名相对统一step 20/20同向更好。固定改名对原工具名仅3B有比较明确的当前映射优势，1.5B/7B未分清。参考[本轮结论](CONCLUSIONS.md)。训练并未让模型自主规划，也未验证真实Agent。
+Current experiments use Qwen2.5 Base LoRA with 9 fixed tools, supplied order, 1–2 training calls, and 3–8 test calls. At 1.5B/3B/7B with 20 training seeds per condition, fixed aliases outperform position numbering in 20/20 seeds on the original 480-example long-task test, and original tool names outperform uniform step in 20/20 seeds. Only 3B shows a relatively clear fixed-alias advantage over original tool names under the current mapping; 1.5B/7B remain unresolved. See [the study conclusions](CONCLUSIONS.md). Training does not teach autonomous planning, and real agents have not been evaluated.
 
-## 最近邻一手文献
+## Closest primary literature
 
-|工作|已做的相关事情|与当前证据的关系|
+|Work|Related work already done|Relation to the current evidence|
 |---|---|---|
-|[ReAct, 2022](https://arxiv.org/abs/2210.03629)|交错生成推理轨迹与行动，用轨迹追踪、更新行动计划并处理例外|“行动轨迹/当前行动帮助执行”的广义构思已有；本文未把固定工具身份标签vs位置标题作为独立训练变量|
-|[Toolformer, 2023](https://arxiv.org/abs/2302.04761)|训练模型选择何时调用哪个有名API及其参数|名称与工具功能映射是工具学习的已有基础，不可把“有称号对应操作”本身称为新发现|
-|[Gorilla, 2023](https://arxiv.org/abs/2305.15334)|模型连接大量API，研究正确API调用和参数生成|工具名称/接口语义影响调用是成熟问题；其主问题偏API选择与参数|
-|[Voyager, 2023](https://arxiv.org/abs/2305.16291)|可执行技能库存储、检索复用复杂行为，并迭代改进|“稳定技能名→可执行行为”作为Agent组织方式已有，不能据此声称首创|
-|[From Fixed Keys to Readable Schemas, 2026](https://arxiv.org/abs/2609.09476)|在小模型函数调用中比较专用功能token与提示内可读schema，含已见/未见函数|非常接近“身份表示形式影响函数调用”；其摘要主终点是单轮函数调用，本项目关注短训练向长组合的完整轨迹，但须阅读全文核对细节|
-|[Attributing Structured-Output Gains, 2026](https://arxiv.org/abs/2607.02595)|区分函数调用成绩中的接口格式对齐和真正程序性迁移，做格式控制与可携带性检验|直接提醒我们：位置/名字的分数差不能未经控制就称为操作机制或Agent能力改善|
-|[Atomic Task Graph, 2026](https://arxiv.org/abs/2607.01942)|显式表示子任务及依赖，执行时追踪、验证与复用中间结果|“给子任务明确身份和执行结构”在Agent框架层面已有；阅读全文的图节点定义包含具体工具调用，未见独立操纵输出标题词形；我们的区别若成立，应是身份标签的独立因果贡献|
-|[Subagents vs Agent Skills, 2026](https://arxiv.org/abs/2609.09233)|比较技能包直接放入上下文与子Agent独立执行，关注清晰输入输出契约和长任务|当前工具＋实际状态的局部输入启发与已有子任务隔离/技能执行重叠；不能包装成全新Agent架构|
-|[Long-Horizon State Tracking, 2026](https://arxiv.org/abs/2609.00012)|受控深工具链、逐调用状态跟踪与完整轨迹验证|长链条受控评分和排除终态碰巧正确不是我们独有；要讲清额外变量是输出身份表示与训练外推|
-|[Harness Engineering in LLM Tool Use, 2026](https://arxiv.org/abs/2609.01736)|用可复用工具原语和工具库支撑多步、多轮工具调用|可复用工具抽象和接口设计已有，实际Agent迁移需与这类harness对照|
+|[ReAct, 2022](https://arxiv.org/abs/2210.03629)|Interleaves reasoning trajectories and actions, using trajectories to track/update action plans and handle exceptions|The broad idea that action trajectories/current actions help execution already exists. This paper does not isolate fixed tool-identity labels versus position headings as a training variable.|
+|[Toolformer, 2023](https://arxiv.org/abs/2302.04761)|Trains models to select when to call named APIs and with which arguments|Mappings between names and tool functions are already foundational to tool learning; a name corresponding to operations is not itself a new discovery.|
+|[Gorilla, 2023](https://arxiv.org/abs/2305.15334)|Connects models to many APIs and studies correct API calls and argument generation|The influence of tool names/interface semantics on calls is an established topic; its main focus is API selection and arguments.|
+|[Voyager, 2023](https://arxiv.org/abs/2305.16291)|Stores, retrieves, reuses, and iteratively improves complex behaviors in an executable skill library|Stable skill names mapped to executable behaviors already organize agents, so this alone cannot support a first-of-its-kind claim.|
+|[From Fixed Keys to Readable Schemas, 2026](https://arxiv.org/abs/2609.09476)|Compares dedicated function tokens with readable in-prompt schemas for small-model function calling, including seen/unseen functions|Very close to the question of how identity representations affect function calling. The abstract focuses on single-turn function calling, whereas this project tests full trajectories under short-to-long composition generalization; full-text details still require checking.|
+|[Attributing Structured-Output Gains, 2026](https://arxiv.org/abs/2607.02595)|Separates interface-format alignment from procedural transfer in function-calling scores, with format controls and portability tests|Directly cautions against calling position/name score differences improvements in operation mechanisms or agent ability without controls.|
+|[Atomic Task Graph, 2026](https://arxiv.org/abs/2607.01942)|Explicitly represents subtasks and dependencies, tracking, verifying, and reusing intermediate results during execution|Explicit subtask identities and execution structure already exist at the agent-framework level. Full-text graph nodes include concrete tool calls, but no independent manipulation of output-heading word forms was found. Any valid distinction here should concern the independent causal contribution of identity labels.|
+|[Subagents vs Agent Skills, 2026](https://arxiv.org/abs/2609.09233)|Compares skill packages placed directly in context with independent subagent execution, emphasizing clear input/output contracts and long tasks|Local inputs containing the current tool and actual state overlap with existing subtask isolation/skill execution. This should not be framed as an entirely new agent architecture.|
+|[Long-Horizon State Tracking, 2026](https://arxiv.org/abs/2609.00012)|Uses controlled deep tool chains, per-call state tracking, and full-trajectory verification|Controlled long-chain scoring and excluding accidentally correct final states are not unique to this project. The added variables should be made explicit: output-identity representation and training extrapolation.|
+|[Harness Engineering in LLM Tool Use, 2026](https://arxiv.org/abs/2609.01736)|Supports multistep, multiturn tool calling with reusable tool primitives and libraries|Reusable tool abstractions and interface design already exist. Real-agent transfer should be compared with such harnesses.|
 
-## 当前可守住的研究增量
+## The research contribution currently supported
 
-1. **方法层面：**同一固定工具组合任务中，比较输出边界、调用位置、稳定任意身份、原工具名；短任务训练、长任务完整轨迹测试；前三个规模扩为20个训练seed，并逐seed配对。它是较细的表征消融和稳健性证据，而不是创造了工具命名概念。
-2. **观测层面：**稳定身份标签在此实验中相对位置编号有一致优势；但“词形无关”“信息量单调递进”“内部注意力机制”“真实Agent完成率提升”均未证实。
-3. **现有缺口：**一个alias映射、已使用过的旧测试题、位置标题step3以后训练缺席、新标签监督token比原名称多2.96%、alias输入变长。这些足以阻止强因果或广泛新颖性声明。
+1. **Method:** within one fixed tool-composition task, compare output boundaries, call positions, stable arbitrary identities, and original tool names. Train on short tasks and test full trajectories on long tasks. Extend the first three scales to 20 training seeds with seed-wise pairing. This is a detailed representation ablation and robustness study, not the invention of tool naming.
+2. **Observation:** stable identity labels consistently outperform position numbering in this experiment. Independence from word form, monotonically increasing information content, an internal attention mechanism, and improved real-agent completion are all unestablished.
+3. **Remaining gaps:** one alias mapping, previously used test examples, no training exposure to position headings step3 and later, 2.96% more supervised tokens for new labels than original names, and longer alias inputs. These gaps preclude strong causal or broad novelty claims.
 
-## 若想形成更有竞争力的论文命题
+## Toward a more competitive paper question
 
-候选窄命题：**在固定工具知识与训练预算下，输出当前工具的稳定身份能否独立改善长执行外推，且改善能否迁移到真实Agent的待办完成？**
+A narrow candidate question is: **With fixed tool knowledge and training budget, can outputting the current tool's stable identity independently improve extrapolation to long execution, and can that improvement transfer to real-agent task completion?**
 
-最小关键验证先把表示控制做好：多套预先固定的任意名称映射；匹配标签的token数和长度；设计让位置标题与身份标题有可比的训练暴露；保留同题同seed配对和新的长测试程序。再用冻结Agent同一批真实长任务比较稳定任务ID、仅位置编号、语义任务名和等长度普通标题，固定任务内容、工具定义、预算与验收器，测完整完成、遗漏、提前结束、错误步骤与成本。若身份优势在匹配条件、新映射/新题或真实Agent里消失，应收缩到“特定表示对特定玩具训练有影响”。
+The minimum key validation should first improve representation controls: multiple preregistered arbitrary-name mappings, matched label token counts and lengths, comparable training exposure for position and identity headings, same-example/same-seed pairing, and new long test programs. Then, with a frozen agent on the same real long tasks, compare stable task IDs, position numbering alone, semantic task names, and equal-length generic headings. Fix task content, tool definitions, budgets, and acceptance checks; measure complete success, omissions, early stopping, incorrect steps, and costs. If the identity advantage disappears under matched conditions, new mappings/examples, or real agents, narrow the claim to an effect of a particular representation in a particular toy training setup.
 
-当前判断：**有值得继续验证的细分问题，但“稳定称号帮助Agent”作为宽泛主张创新性弱；现有结果尚不足以主张发表级新颖性。**
+Current judgment: **There is a focused question worth further testing, but the broad claim that stable names help agents has limited novelty. Current results do not yet support a publication-level novelty claim.**
 
-## 核查深度补充
+## Additional verification depth
 
-已进一步阅读全文的[Attributing Structured-Output Gains](https://arxiv.org/abs/2607.02595)和[Atomic Task Graph](https://arxiv.org/abs/2607.01942)的ar5iv版本。前者明确把“函数名字段的包装键变化”和“工具身份本身错误”区分开，采用格式控制避免把接口合规误认为程序能力；这与本项目评分/格式混杂很相关。后者把具体工具调用表示为任务图节点，并跨规划与执行保留输入输出依赖；其主要贡献是图控制与局部修复，不等于本项目的输出标签训练对照。[From Fixed Keys to Readable Schemas](https://arxiv.org/abs/2609.09476)目前核对了一手完整摘要，原文全文仍需复核才能做更强的逐项新颖性判断。
+The ar5iv full-text versions of [Attributing Structured-Output Gains](https://arxiv.org/abs/2607.02595) and [Atomic Task Graph](https://arxiv.org/abs/2607.01942) were also read. The former explicitly distinguishes changes to wrapper keys around a function-name field from errors in tool identity itself, using format controls to avoid confusing interface compliance with procedural ability. This is closely related to scoring/format confounds in this project. The latter represents concrete tool calls as task-graph nodes and preserves input/output dependencies across planning and execution. Its main contributions are graph control and local repair, distinct from the output-label training comparison here. For [From Fixed Keys to Readable Schemas](https://arxiv.org/abs/2609.09476), the complete primary abstract has been checked; stronger item-by-item novelty judgments still require full-text review.

@@ -1,36 +1,36 @@
-# 执行学习与改进能力分离：扩展研究协议
+# Execution learning and improvement capability: extended-study protocol
 
-用户授权：做深做大该RSI相关课题，自主完成研究与实验后审核。所有环境和输出在当前项目。协议创建时尚未运行本轮新模型/数据/干预。
+The user authorized deeper and larger RSI-related research, with autonomous execution followed by review. All environments and outputs stay in the project. No new models, data, or interventions had run when this protocol was written.
 
-## 核心命题与反证
-H1：执行训练提高任务执行表现，但降低新任务上的提案效用。必须配对比较相同初始化，报告提示和采样预算敏感性；执行未提高的模型不能算支持分离。
-H2：提案能力降低会通过后续训练数据影响下一轮执行收益。必须对同一学习器起点干预提案源；只测符号压缩或搜索不等于证明这一因果链。
-H3：保留/训练提案目标可在执行学习过程中恢复提案能力或循环收益。正向干预失败也完整报告。
+## Core hypotheses and falsification
+H1: Execution training improves execution but reduces proposal utility on new tasks. Pair identical initializations and report prompt/budget sensitivity. Models without execution improvement do not support separation.
+H2: Reduced proposal capability affects next-round execution gains through training data. Intervene on proposal source from identical learner starts. Symbolic compression/search alone does not establish this causal chain.
+H3: Preserving/training the proposal objective can recover proposing or loop gains during execution learning. Report failed recovery interventions fully.
 
-主张分层：人工DSL现象 → 跨模型/任务复核 → 有限轮闭环及反事实干预。未见稳定H2/H3不称RSI机制已证实。有限轮人设验证器系统不等于开放式递归智能提升。
+Claims progress from artificial-DSL observations to cross-model/task replication and finite-round loops with counterfactual interventions. Without stable H2/H3, do not claim an established RSI mechanism. Finite rounds with human-designed verifiers are not open-ended recursive intelligence improvement.
 
-## A：现象稳健性与规模复核
-原始1.5B三种子flat/macro适配器复用；新增Qwen2.5-3B与SmolLM2-1.7B各三种子flat/macro，沿用第一轮训练数据、512步、batch32、LoRA16、学习率3e-4。不同tokenizer可能导致监督token数不同，逐项报告，不声称跨模型等token。
+## A: robustness and model-scale replication
+Reuse original three-seed 1.5B flat/macro adapters. Add Qwen2.5-3B and SmolLM2-1.7B flat/macro runs with three seeds each, retaining original data, 512 steps, batch 32, LoRA 16, and LR 3e-4. Tokenizers may change supervised-token counts; report them without claiming cross-model token matching.
 
-每个模型增加冻结基座三采样seed比较。执行评测用第一轮相同IID/OOD评测及格式审计。新提案评测使用单独生成的32个任务家族：12训练、4开发、16测试，每家族3个独特隐含宏，隐含宏跨划分精确语义不同且不与原9个库宏等价；12条支持程序、64条保留评测程序，家族内支持/评测语义隔离。测试家族不用于新干预训练。
+Add frozen-base comparisons with three sampling seeds per model. Use original IID/OOD execution tests and format audits. Proposal evaluation uses 32 new families: 12 train, four development, 16 test. Each has three distinct hidden macros, exactly semantically disjoint across splits and from the original nine macros, 12 support programs, and 64 held-out programs with within-family semantic separation. Test families never enter intervention training.
 
-提案使用3种预固定提示（说明、简洁、两示例）、温度1；另对说明提示温度1.5复核。每个支持集采64次，前缀K=4/16/64评估同一选库器，报告3个预算完整曲线；默认主比较说明提示T1/K16。语法约束同252候选，报告重复率、语义多样性和零效用率。使用上轮敏感性验证过的“先比较字面收益、选中后去除语义等价”选库器。
+Use fixed instruction, concise, and two-example prompts at temperature 1, plus instruction at 1.5. Sample 64 proposals per support set and evaluate prefixes K=4/16/64 with the same selector and complete curves. Primary setting: instruction T1/K16. Constrain the same 252 candidates and report duplicates, semantic diversity, and zero utility. Use the earlier sensitivity-validated selector that compares literal gains before removing semantic equivalents after selection.
 
-## B：三轮闭环
-先在1.5B从相同基座开始，以三种子执行3轮，每轮128个优化步、batch16、学习率1e-4、LoRA16，共384步。每轮在12个训练家族上提出候选，选择至多3个宏。被选库决定下一轮执行样本的操作分布：有库时80%按所选宏拼接、20%均匀基本操作；空库时全为基本操作。每条2–3次片段调用。正确步骤由执行器生成；这属于环境提供可验监督，不称零外部监督。
+## B: three-round closed loop
+Start 1.5B from the same base across three seeds. Train three rounds of 128 steps, batch 16, LR 1e-4, LoRA 16, totaling 384 steps. Each round proposes candidates on 12 training families and selects up to three macros. Selected libraries shape next-round operations: 80% selected-macro concatenations and 20% uniform primitives; empty libraries use only primitives. Each example has 2–3 fragment calls. The executor supplies correct steps, so supervision is environment-provided rather than zero external supervision.
 
-条件：shared（同一更新模型提案和执行）；frozen（固定初始基座提案、更新执行模型）；replay（shared并加入初始化模型的训练家族提案回放）；joint（shared并加入本轮经过支持集筛选的提案监督）；shuffled（与replay相同提案目标文本和提示集合，但打乱配对）。每step执行样本相同数量，辅助条件增加独立提案损失，系数0.2；明确额外计算量，另保存执行与提案监督token数。全程不在测试集挑轮次。
+shared updates one proposer/executor; frozen keeps the initial proposer and updates the executor; replay adds initial-model proposals on training families; joint adds current support-selected proposal supervision; shuffled uses identical replay prompt/target sets with shuffled pairings. Every step has equal execution-example counts. Auxiliary conditions add proposal loss weighted 0.2. Disclose added compute and save execution/proposal tokens separately. Never select rounds on test results.
 
-主要指标：固定未见程序上的执行正确率、测试家族提案净压缩、提案分布多样性、每轮实际新增学习收益。每轮评估完成后继续训练，不依据测试分数调超参。轮次0及1/2/3均保存适配器和逐题输出。
+Primary metrics: fixed unseen-program execution, test-family net proposal compression, proposal diversity, and actual incremental learning gains each round. Continue after evaluation without test-based hyperparameter changes. Save adapters and example-level outputs at rounds 0/1/2/3.
 
-## C：中介因果与任务复核
-从shared轮1的同一适配器出发，冻结其初始状态并复制两条128步训练支路：分别由轮1更新模型和冻结基座提供训练候选，执行器/学习器/种子/训练预算一致；比较固定测试执行增益。无差异或方向相反则H2不成立，不用压缩指标替代。
+## C: causal mediation and task replication
+Copy two 128-step branches from the identical shared round-1 adapter, using either the updated model or frozen base for training proposals. Match executor, learner, seed, and budget; compare fixed-test execution gains. No difference or reversed direction does not support H2; compression cannot substitute.
 
-在独立变长二元字符串原语语义下复核主要shared/frozen/joint三轮流程，三种子；沿用相同抽象语法但分别训练、执行及评估，不声称零样本跨域。
+Replicate shared/frozen/joint three-round procedures across three seeds under separate variable-length binary-string semantics. Share syntax but train, execute, and evaluate separately; do not claim zero-shot domain transfer.
 
-## 判读、资源与交付
-各比较以配对seed及测试家族为单位；少量seed置信区间宽必须报告，不按题数扩大独立样本量。提示/预算及所有轮次完整呈现，测试不用于挑最好设置。
+## Interpretation, resources, and delivery
+Compare paired seeds and test families. Report wide intervals from few seeds without inflating sample counts with examples. Show all prompts/budgets and rounds rather than choosing favorable test settings.
 
-预计数十个独立GPU作业，先测吞吐，阶段性推进，估计10–40 GPU小时（以实测修订）；本机8×RTX PRO6000每卡约96GiB，不申请外部付费资源。下载模型锁定revision和哈希，不修改全局环境。长任务按阶段低频检查。
+Expect dozens of independent GPU jobs. Measure throughput and proceed in stages, initially estimating 10–40 GPU-hours subject to measurement. Use eight local RTX PRO6000 GPUs, approximately 96 GiB each, without paid external resources. Freeze model revisions/hashes, avoid global-environment changes, and inspect long tasks infrequently by stage.
 
-若新近邻已覆盖宽泛现象，收窄到实测的可识别差异，不预先宣称首创。若出现反例/失败，保留并据此修正主张，仍交付完整证据。最终成果为研究报告和可复现实验资产，未经用户审核不投稿或包装成已发表工作。
+If nearby work covers broad observations, narrow claims to measured identifiable differences rather than assuming novelty. Retain failures/counterexamples, revise claims, and deliver complete evidence. Outputs are a report and reproducible assets; do not submit or present them as published work before user review.

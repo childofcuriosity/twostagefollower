@@ -1,76 +1,76 @@
-# B01-02 机制分析：能证明什么，不能证明什么
+# B01-02 mechanism analysis: supported and unsupported claims
 
-状态：实验前分析。用户授权理论与实验共同完成后审核。
+Status: pre-experiment analysis. The user authorized joint theory/experiment completion followed by review.
 
-## 1. 形式化
+## 1. Formalization
 
-输入域 X = (Z/10Z)^4。六个原语为坐标排列、统一取负、统一加一或端点加一，因此每个程序对应仿射映射 f(x)=Ax+b (mod 10)。库中的抽象 a_i 是模型提出的长度2–3的原语序列，不引入新原语。给定宏调用链 c=(i1,...,ik)，目标为 y=f_ik∘...∘f_i1(x)。训练k∈{1,2}，主测试k∈{3,4,5}。
+Input domain X = (Z/10Z)^4. Six primitives permute coordinates, negate uniformly, add one uniformly, or add one at endpoints. Every program is affine: f(x)=Ax+b (mod 10). Abstraction a_i is a model-proposed length-2–3 primitive sequence, with no new primitive. For chain c=(i1,..., ik), target y=f_ik∘...∘f_i1(x). Training k∈{1,2}; primary tests k∈{3,4,5}.
 
-闭域验证器只是本研究环境的数学定义。它能可靠判定该环境里的程序输出、总定义性和等价性；不能验证自然语言“这个抽象有研究价值”的判断。
+The closed-domain verifier defines the mathematical environment. It reliably checks program outputs, totality, and equivalence there, not natural-language judgments of research value.
 
-## 2. 精确语义去重为何成立
+## 2. Why exact semantic deduplication works
 
-对上述仿射函数，只要知道 f(0) 和 f(e_j)-f(0), j=1..4，就知道b及A的每一列。两个程序具有相同这五组值，当且仅当它们在全部10^4个输入上相同。代码signature()利用这个性质，不是用少量测试输入近似判等。
+For these affine functions, f(0) and f(e_j)-f(0), j=1..4 determine b and every column of A. Two programs share these five values exactly when they agree on all 10^4 inputs. signature() uses this property, not approximate equivalence from a small sample.
 
-该结论依赖所有原语确实仿射。新增排序、条件分支、乘法等操作后不再自动成立，必须改验证器。独立属性检查比较了signature重建输出与直接执行输出，避免把这个推导误用在实现错误上。
+This requires genuinely affine primitives. Sorting, branching, multiplication, or other additions require a revised verifier. Independent property checks compare reconstructed signature outputs with direct execution to guard against implementation errors.
 
-仅AST隔离不足：rev;rev与空程序不同AST但同语义，inc;neg与其他序列也可能抵消。因此主测试排除与全部训练调用链等价的语义signature，且在原始/语义置换两个世界都检查。IID测试允许训练调用链，但输入未重复；两类结果明确分开。
+AST separation alone fails: rev; rev and an empty program differ syntactically but coincide semantically; inc; neg and other sequences can cancel. Primary tests exclude signatures equivalent to any training chain in both original and permuted worlds. IID tests permit training chains with fresh inputs and are reported separately.
 
-## 3. 主要对照并没有增加信息
+## 3. Primary controls add no information
 
-设输入提示P已列出宏名调用顺序。平坦轨迹T_flat在每个宏边界放中性标签step，并保留每个原语及状态；结构轨迹T_macro仅把第j个中性标签替换为P中第j个宏名。因边界位置不变，两种表示可由(P,T)确定性互相转换，最终答案完全相同。
+Prompt P specifies macro-call order. T_flat inserts neutral step labels at boundaries while retaining every primitive/state; T_macro replaces boundary j with macro name j from P. Boundaries are unchanged, so (P, T) deterministically converts either representation into the other, with identical answers.
 
-因此它们没有信息论上的监督优势：在无限容量和理想优化下，不能由这组处理推导更高的Bayes最优准确率。若有限预算出现差异，应解释为表示组织、辅助预测与优化路径的效果；不能声称结构组“获得更多真理”。这反而使对照适合筛查有限训练下的结构效用。
+There is no information-theoretic supervision advantage. With unlimited capacity/ideal optimization, this treatment does not imply better Bayes-optimal accuracy. Finite-budget differences concern representation organization, auxiliary prediction, and optimization paths, not additional truth. This makes the control suitable for screening structural utility under finite training.
 
-但处理不只改内部表征：它也改变监督token身份及梯度。即使token数量严格一致，也不能直接归因为某一个神经机制。后续要分辨表示形成与简单名称复制，可加入边界标签不计loss的控制、隐藏状态探测与激活干预；本轮先保留shuffled负对照，若核心效应成立再考虑这些细化。
+The treatment also changes supervised-token identities and gradients, not just internal representations. Equal token counts do not identify a specific neural mechanism. Later boundary-label loss masking, hidden-state probes, or activation interventions could distinguish representation formation from simple name copying. Retain shuffled controls here and consider refinements if the core effect holds.
 
-## 4. 干预预测
+## 4. Intervention predictions
 
-名称干预：选一个固定置换π，将训练和测试中a_i的名字统一替换为π(name_i)，定义及输入分布不变。若结果大幅改变，说明token先验/名称捷径或优化不稳定可能占重要作用。不能只在测试时突然改名而不告知模型，再将失败解释为“没学会语义”。
+Name intervention applies fixed permutation π consistently to training/test a_i names, preserving definitions and input distributions. Large changes implicate token priors, name shortcuts, or unstable optimization. Unannounced test-only renaming cannot fairly establish failure to learn semantics.
 
-语义干预：固定名字，把每个名字对应的原语定义循环置换，重新训练配对模型，并按新世界真值评分。对新旧真值不同的题目分别统计新语义准确率与旧语义匹配率；与名称实验分开。该实验检验训练语义对行为的影响，不证明定位了可独立编辑的神经概念。
+Semantic intervention fixes names and cyclically permutes their primitive definitions, retraining paired models and scoring new-world truth. Where targets differ, report new-semantic accuracy and old-semantic matching separately. This tests training-semantics effects on behavior, not independently editable neural concepts.
 
-结构效用与内化分开：无库正确率提高支持操作意义上的参数学习；宏组织组胜过等信息flat才支持额外结构效用。模型能生成已学定义不等于能在未知领域发明有价值的概念。
+Separate structural utility from internalization. Higher no-library accuracy supports operational parameter learning; outperforming information-matched flat supports additional structural utility. Reproducing learned definitions does not establish useful concept invention in unknown domains.
 
-## 5. 自我提出的证据及局限
+## 5. Evidence and limits of self-proposal
 
-抽象必须出现在该基座模型的真实proposal输出中，保存提示、输出、解析、总定义验证及发现轨迹频次。助手/人不手填一个“成功提案”替代失败输出。名称由实验协议中性指定，以便匹配token并做置换。
+Abstractions must appear in actual base-model proposal outputs, with prompts, raw text, parsing, totality checks, and discovery-trace frequencies retained. Neither assistant nor human may fill in successful proposals to replace failures. Protocol-assigned neutral names support token matching/permutation.
 
-本轮固定一次提案库，再研究其参数内化，不评估多轮提案策略是否越学越好。用该库构造任务，会使这些抽象天然可用；所以不能据此证明“模型发现策略优于随机/人工策略”。这是一项有意限制范围的机制筛选；若要回答完整的“学会创新”，还需要固定独立任务分布，让经过训练的模型在新域提出抽象，与相同搜索预算的未训练模型比较。
+Fixing one proposal library and studying internalization does not test improving proposal policies over rounds. Constructing tasks around that library makes it naturally useful and cannot establish better discovery than random/manual strategies. This deliberately bounded mechanism screen would need independent task distributions and matched-search-budget trained/untrained proposals in new domains to address learning innovation.
 
-## 6. 结果判读表
+## 6. Reading results
 
-| 观测 | 支持的判断 | 不支持的判断 |
+| Observation | Supported interpretation | Unsupported interpretation |
 |---|---|---|
-| IID也很低 | 当前训练/任务设置不可学或不足 | 创新能力不存在 |
-| IID高、语义隔离OOD低 | 学会短链但组合外推失败 | 已掌握可组合抽象 |
-| macro≈flat | 这项宏边界监督缺乏额外收益 | 所有抽象内化方法无效 |
-| macro只胜shuffled | 去除噪声有益 | 优于有效的直接轨迹训练 |
-| macro稳定胜flat且改名保持 | 有值得继续的结构效用信号 | 已证明内部概念机制 |
-| 新语义干预跟随新定义 | 参数行为依赖训练语义 | 一般科学创新或多轮递归提升 |
+| Low IID too | Current training/task is unlearnable or insufficient | Innovation capability does not exist |
+| High IID, low semantically isolated OOD | Short chains learned; composition extrapolation fails | Composable abstractions mastered |
+| macro≈flat | This boundary supervision adds little benefit | Every abstraction-internalization method fails |
+| Macro beats only shuffled | Removing noise helps | Superiority to valid direct-trace training |
+| Macro consistently beats flat and survives renaming | Structural-utility signal worth pursuing | Internal concept mechanism proved |
+| Semantic intervention follows new definitions | Parameter behavior depends on training semantics | General innovation or multi-round recursive gains |
 
-## 7. 理论来源与差异
+## 7. Theoretical context and differences
 
-[LILO](https://arxiv.org/html/2310.19791v2)提供自生成程序、库压缩和命名的近邻；[Notes to Self](https://arxiv.org/html/2607.20372v1)已考察训练抽象、推理无抽象；[SPEE](https://arxiv.org/html/2608.02139v1)已有特权经验内化；[Rethinking Continual Experience Internalization](https://arxiv.org/html/2606.04703v1)已有内化稳定性分析。本轮的可交付增量是严格控制信息、程序语义和训练世界的机制实验记录，尚不宣称达到论文所需新颖性。
+[LILO](https://arxiv.org/html/2310.19791v2) covers self-generated programs, library compression, and naming; [Notes to Self](https://arxiv.org/html/2607.20372v1) studies abstractions at training but not inference; [SPEE](https://arxiv.org/html/2608.02139v1) studies privileged experience internalization; [Rethinking Continual Experience Internalization](https://arxiv.org/html/2606.04703v1) analyzes stability. This round delivers controlled records of information, semantics, and training-world interventions, without claiming publication-level novelty.
 
-## 8. 实现期间补充查新：新颖性风险上调
+## 8. Additional literature review during implementation: higher novelty risk
 
-进一步查询找到[From Reasoning Traces to Reusable Modules (2606.18089)](https://arxiv.org/html/2606.18089v1)：已在合成字符串任务中研究模块与路由的识别、训练组合到未见组合的迁移，并比较SFT/RL的作用。因此“轨迹变成可复用模块”“合成组合任务”“组合长度外推”也不能作为本项目首创。我们目前尚保留的具体比较是同信息量、同token数的宏边界组织和自提出库的训练世界干预；这一小区别能否形成研究价值，要看效应和后续检索，不能预先承诺论文。
+[From Reasoning Traces to Reusable Modules (2606.18089)](https://arxiv.org/html/2606.18089v1) already studies module/routing identification on synthetic strings, transfer to unseen compositions, and SFT/RL roles. Reusable modules from traces, synthetic composition, and length extrapolation are not original here. The remaining narrow comparison is information/token-matched macro-boundary organization and training-world interventions with a self-proposed library. Its value depends on effects and further review, not a promised paper.
 
-更早的[Lake & Baroni, Nature 2023](https://www.nature.com/articles/s41586-023-06668-3)已研究通过元学习获得系统组合泛化。随机名称置换是控制工具，不应被包装成新概念。
+[Lake & Baroni, Nature 2023](https://www.nature.com/articles/s41586-023-06668-3) already studies systematic composition through meta-learning. Random name permutation is a control, not a new concept.
 
-基于补充查新，本轮只开展预注册的小模型筛选，不扩展为昂贵RL或大模型实验。若主效应弱，建议直接淘汰目前的监督组织方案；即使有信号，也先确认区别，不能直接写成论文。
+Following this review, run only preregistered small-model screening rather than costly RL/large-model expansion. Weak primary effects warrant dropping this supervision scheme; even positive signals require clarifying the difference before paper development.
 
-## 9. 实际提案库的闭包分析
+## 9. Closure of the actual proposed library
 
-真实模型提案没有保留下端点单独加一的ends操作。所选9个宏都属于f(x)=sPx+b·1（mod 10），其中s∈{±1}、P为4个坐标的排列、b∈Z_10。因此最多有2×24×10=480个不同函数。用精确signature做闭包遍历，实际恰为480个，最短宏深度0/1/2/3/4/5分别有1/9/52/166/198/54个函数。
+Actual proposals retain no ends operation for endpoint-only increments. All nine macros have f(x)=sPx+b·1 (mod 10), with s∈{±1}, coordinate permutation P, and b∈Z_10. At most 2×24×10=480 functions exist. Exact-signature closure reaches all 480; shortest macro depths 0/1/2/3/4/5 contain 1/9/52/166/198/54 functions.
 
-训练覆盖的深度≤2语义数为62，正好对应前三项之和。最初测试量失败不是网络或GPU问题，而是要求的跨世界独立语义数超过了实际库容量。改为每个组合多个不同输入后保留了隔离，但统计有效单位必须是组合，不能仍按题目数声称独立样本。
+Training depth ≤2 covers 62 semantics, the sum of the first three counts. Initial test construction failed because requested cross-world independent semantics exceeded library capacity, not from network/GPU issues. Multiple inputs per composition preserve separation but require composition-level statistical units rather than claims of independent examples.
 
-这也限制外推：最终实验是在一个有限480函数空间里筛查训练组织的效果，不应被描述为开放式概念发现。
+This bounds extrapolation: the final experiment screens training organization in a finite 480-function space, not open-ended concept discovery.
 
-## 10. 事后机制查新：内容寻址是已有解释
+## 10. Post hoc mechanism literature: content addressing is an existing explanation
 
-[Your Context Is Not an Array (COLM 2024)](https://arxiv.org/html/2408.05506v1)已将长度泛化失败与上下文索引/随机访问联系起来，用助记标记实现基于内容的寻址，并检查常量、错位、循环标记等变化。另有[Exploring Length Generalization (2022)](https://arxiv.org/abs/2207.04901)和[Show Your Work (2021)](https://arxiv.org/abs/2112.00114)研究scratchpad与长度泛化。因此，本轮“相同函数名连接输入与轨迹、减少提前停止”的解释与既有研究关系很近，不应命名成新的通用创新机制。
+[Your Context Is Not an Array (COLM 2024)](https://arxiv.org/html/2408.05506v1) connects length-generalization failures to indexing/random access, using mnemonic content-addressing markers and constant, misaligned, and cyclic variants. [Exploring Length Generalization (2022)](https://arxiv.org/abs/2207.04901) and [Show Your Work (2021)](https://arxiv.org/abs/2112.00114) study scratchpads/length generalization. Matching function names across input/traces and reduced early stopping are close to existing work, not a new general innovation mechanism.
 
-观测到外部路由补足flat的能力，以及随机调用标签产生部分泛化，将支持进一步区分内部函数映射与自主路由，但不能唯一定位神经电路。本轮没有训练模型在新领域变得更擅长提出抽象；关于学会创新的主命题仍未成立。
+External routing restoring flat performance and partial generalization from random call tags motivate distinguishing internal function mapping from autonomous routing without identifying neural circuits uniquely. Models were not trained to propose better abstractions in new domains here; the central learning-innovation claim remains unestablished.

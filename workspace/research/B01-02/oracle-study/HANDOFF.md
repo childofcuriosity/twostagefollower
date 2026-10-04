@@ -1,3 +1,3 @@
-# 第二阶段已完成
+﻿# Second stage complete
 
-本轮无运行中作业、无待补评测。请先读CONCLUSIONS.md与COMPLETION_AUDIT.md。原始输出不得覆盖；新研究以用户审核后的范围为准。资源和旧goal工具状态说明见WORK_STATUS.md。
+No jobs are running and no evaluations remain. Read CONCLUSIONS.md and COMPLETION_AUDIT.md first. Do not overwrite raw outputs. New research follows the scope reviewed by the user. See WORK_STATUS.md for resources and the older goal-tool state.

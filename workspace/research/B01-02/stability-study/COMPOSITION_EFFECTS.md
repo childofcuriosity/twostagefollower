@@ -1,6 +1,6 @@
-# 实际完整执行：配对比较
-J=一起训练，S=只训练顺序，E=只训练操作。S/E表示S写名称、E写操作。全部结果无程序正确答案帮助。差值单位百分点；括号是三个seed各自差值。下表汇总五种长度共480题，逐长度见JSON及主报告。
-|模型|执行模型|各adapter步数|一起训练基准步数|平均差值|三个seed差值|最差seed差值|
+# Actual complete execution: paired comparisons
+J=joint training, S=sequence-only training, E=operation-only training. S/E uses S for names and E for operations. All results exclude program-supplied correct answers. Differences are in percentage points, with three seed-wise differences in parentheses. The table aggregates 480 examples over five lengths; see JSON and the main report for each length.
+|Model|Execution models|Steps per adapter|Joint-baseline steps|Mean difference|Three seed differences|Worst seed difference|
 |---|---|---:|---:|---:|---|---:|
 |qwen3b|SE|256|256|+13.12|+11.88 / +3.54 / +23.96|+3.54|
 |qwen3b|SJ|256|256|+11.81|+26.67 / -5.21 / +13.96|-5.21|

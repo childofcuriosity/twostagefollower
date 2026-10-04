@@ -1,12 +1,12 @@
-# 固定随机抽样：工具标签正确、统一标签错误的三条长调用案例
+# Fixed random sample: three long-call cases where tool labels succeed and uniform labels fail
 
-模型Qwen2.5-1.5B，训练seed=11；抽样seed=20260924。候选池117条，按题目ID排序后无放回抽3条。只按OOD、macro答案正确、flat答案错误筛选，未按错误类型挑选。
+Model: Qwen2.5-1.5B, training seed 11; sampling seed 20260924. Sort the 117 eligible examples by ID and sample three without replacement. Eligibility uses OOD, correct macro answer, and incorrect flat answer, without selecting error types.
 
-“统一标签”仍包含step:和全部生成步骤，不是没有任何标签。两组同题同输入。执行器重算真值，并严格解析完整Answer行；三条macro的完整原语顺序和每步状态也均正确。条件抽样不能代表所有错误比例。
+Uniform labels still contain step: and all generated steps. Both groups use identical examples/inputs. The executor recomputes truth and strictly parses full Answer lines. All three macro primitive sequences and intermediate states are also correct. Conditional sampling does not estimate overall error shares.
 
-## 题目 4354
+## Example 4354
 
-输入：
+Input:
 ```text
 Execute functions from left to right on four digits. Show the primitive steps and final Answer.
 Primitives: rev reverses; rot rotates left; inc adds 1 mod 10 to all; neg negates mod 10; swap swaps first two; ends adds 1 mod 10 to first and last.
@@ -15,14 +15,14 @@ Functions: black white red
 Trace:
 ```
 
-工具定义（供审核，实际题面不提供）：
-- black: inc,swap
-- white: inc,neg,inc
-- red: rot,inc
+Tool definitions for review; absent from the actual prompt:
+- black: inc, swap
+- white: inc, neg, inc
+- red: rot, inc
 
-正确答案：`5 5 2 1`
+Correct answer: `5 5 2 1`
 
-macro原始输出：
+Raw macro output:
 ```text
 black:
 inc 6 0 6 9
@@ -37,9 +37,9 @@ inc 5 5 2 1
 Answer: 5 5 2 1
 ```
 
-执行步骤数 7/7；首次操作偏离位置 None；相对于所生成操作的算术错误位置 []。
+Executed steps 7/7; first operation divergence: None; arithmetic error positions relative to emitted operations: [].
 
-flat原始输出：
+Raw flat output:
 ```text
 step:
 inc 6 0 6 9
@@ -51,11 +51,11 @@ inc 0 4 4 1
 Answer: 0 4 4 1
 ```
 
-执行步骤数 5/7；首次操作偏离位置 6；相对于所生成操作的算术错误位置 []。
+Executed steps 5/7; first operation divergence: 6; arithmetic error positions relative to emitted operations: [].
 
-## 题目 4617
+## Example 4617
 
-输入：
+Input:
 ```text
 Execute functions from left to right on four digits. Show the primitive steps and final Answer.
 Primitives: rev reverses; rot rotates left; inc adds 1 mod 10 to all; neg negates mod 10; swap swaps first two; ends adds 1 mod 10 to first and last.
@@ -64,15 +64,15 @@ Functions: red pink white brown
 Trace:
 ```
 
-工具定义（供审核，实际题面不提供）：
-- red: rot,inc
-- pink: rot,inc,swap
-- white: inc,neg,inc
-- brown: inc,inc,inc
+Tool definitions for review; absent from the actual prompt:
+- red: rot, inc
+- pink: rot, inc, swap
+- white: inc, neg, inc
+- brown: inc, inc, inc
 
-正确答案：`4 1 7 7`
+Correct answer: `4 1 7 7`
 
-macro原始输出：
+Raw macro output:
 ```text
 red:
 rot 4 0 7 4
@@ -92,9 +92,9 @@ inc 4 1 7 7
 Answer: 4 1 7 7
 ```
 
-执行步骤数 11/11；首次操作偏离位置 None；相对于所生成操作的算术错误位置 []。
+Executed steps 11/11; first operation divergence: None; arithmetic error positions relative to emitted operations: [].
 
-flat原始输出：
+Raw flat output:
 ```text
 step:
 rot 4 0 7 4
@@ -106,11 +106,11 @@ swap 9 2 6 6
 Answer: 9 2 6 6
 ```
 
-执行步骤数 5/11；首次操作偏离位置 6；相对于所生成操作的算术错误位置 []。
+Executed steps 5/11; first operation divergence: 6; arithmetic error positions relative to emitted operations: [].
 
-## 题目 4475
+## Example 4475
 
-输入：
+Input:
 ```text
 Execute functions from left to right on four digits. Show the primitive steps and final Answer.
 Primitives: rev reverses; rot rotates left; inc adds 1 mod 10 to all; neg negates mod 10; swap swaps first two; ends adds 1 mod 10 to first and last.
@@ -119,14 +119,14 @@ Functions: blue white pink
 Trace:
 ```
 
-工具定义（供审核，实际题面不提供）：
-- blue: rev,rot,inc
-- white: inc,neg,inc
-- pink: rot,inc,swap
+Tool definitions for review; absent from the actual prompt:
+- blue: rev, rot, inc
+- white: inc, neg, inc
+- pink: rot, inc, swap
 
-正确答案：`3 0 1 6`
+Correct answer: `3 0 1 6`
 
-macro原始输出：
+Raw macro output:
 ```text
 blue:
 rev 9 4 0 7
@@ -143,9 +143,9 @@ swap 3 0 1 6
 Answer: 3 0 1 6
 ```
 
-执行步骤数 9/9；首次操作偏离位置 None；相对于所生成操作的算术错误位置 []。
+Executed steps 9/9; first operation divergence: None; arithmetic error positions relative to emitted operations: [].
 
-flat原始输出：
+Raw flat output:
 ```text
 step:
 rev 9 4 0 7
@@ -158,4 +158,4 @@ inc 5 9 2 0
 Answer: 5 9 2 0
 ```
 
-执行步骤数 6/9；首次操作偏离位置 7；相对于所生成操作的算术错误位置 []。
+Executed steps 6/9; first operation divergence: 7; arithmetic error positions relative to emitted operations: [].

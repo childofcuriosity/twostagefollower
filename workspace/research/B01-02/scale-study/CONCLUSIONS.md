@@ -1,35 +1,35 @@
-# 模型规模与短训练后的长执行：第一阶段结果
+# Model scale and long execution after short-task training: stage-one results
 
-当前状态：第一阶段规模验证已完成，等待用户审核研究结果。全部预定训练、冻结/固定检查点评测、独立确认及学习率/Instruct补充均已结束；174个原始输出文件、95,200条记录通过题目覆盖、逐条计算和哈希验收。此处是受控任务的研究结果，不是论文或真实Agent方法已验证的声明。
+Stage-one scale validation is complete and awaits user review. All planned training, frozen/fixed-checkpoint evaluations, independent confirmation, and learning-rate/Instruct supplements have ended. Coverage, example-level computation, and hash checks passed for 174 raw-output files containing 95,200 records. These are controlled-task findings, not a claim of paper readiness or validated real-agent methods.
 
-## 我们实际检验了什么
+## What was tested
 
-使用Qwen2.5 Base 1.5B、3B、7B、32B。模型面对四个数字和一串工具名称，按顺序输出每个基本操作后的数字，再给最终答案。9个工具由6种确定性基本操作组合而成，所有答案可由解释器精确复算。这是文本执行的受控任务，尚不是真实编码Agent的长时间交互。
+Models are Qwen2.5 Base 1.5B, 3B, 7B, and 32B. Given four numbers and a sequence of tool names, the model outputs the numbers after each primitive operation, then a final answer. Nine tools compose six deterministic primitives; an interpreter recomputes every answer exactly. This is controlled text execution, not extended interaction by a real coding agent.
 
-两组训练只改变每段轨迹前的标签：flat总写`step:`，macro写本段工具的名称。输入、执行操作、目标答案、训练题目与顺序、目标token数量均配对；不是在推理时临时加一句提示。4,096训练题中约90.38%需要两次调用，其余一次。固定512步、有效batch32、LoRA rank16/alpha32、学习率3e-4，每个条件seed11/22/33。原测试560题中128短调用、384未见3–5次调用、48压力题；另有独立的480题确认集，涵盖3/4/5/6/8次调用。
+Training conditions differ only in trajectory-segment headers: flat always writes `step:`, while macro writes the current tool name. Inputs, operations, answers, example order, and target-token counts are paired. This is a training intervention, not a prompt added at inference. Of 4,096 training examples, approximately 90.38% require two calls and the remainder one. Settings are fixed at 512 steps, effective batch 32, LoRA rank 16/alpha 32, learning rate 3e-4, and seeds 11/22/33 per condition. The original 560 tests contain 128 short examples, 384 unseen 3–5-call examples, and 48 stress examples. A separate 480-example confirmation set covers 3/4/5/6/8 calls.
 
-“正确前缀后提前回答”要求：已经执行的操作及数字都正确，但没有执行完要求的操作，直接把当前状态作为最终答案。它是可可靠识别的提前结束子集，不包括所有中途出错后结束。另保留“恰好完成前两工具后回答”、输出段数、错误操作、算术错误及长度上限；这些指标不能互相替代。
+“Early answer after a correct prefix” requires every emitted operation and number to be correct, followed by an answer equal to the current state before all required operations are completed. This reliably identifiable subset excludes termination after earlier errors. Also retain stopping after exactly two correct tools, segment counts, wrong operations, arithmetic errors, and generation-limit evidence. These metrics are not interchangeable.
 
-## 规模问题：用户的质疑部分成立
+## Scale: the user concern is partly supported
 
-原384长调用题、每组3个训练seed均值：
+Means over three training seeds on the original 384 long-call examples:
 
-| Base模型 | flat答案正确 | macro答案正确 | flat正确前缀后提前回答 | macro正确前缀后提前回答 | flat恰好两工具后提前回答 |
+| Base model | Flat answer accuracy | Macro answer accuracy | Flat early answer after correct prefix | Macro early answer after correct prefix | Flat early answer after exactly two tools |
 |---|---:|---:|---:|---:|---:|
 | 1.5B | 0.09% | 29.77% | 87.59% | 43.23% | 86.89% |
 | 3B | 0.09% | 60.76% | 89.15% | 20.57% | 88.19% |
 | 7B | 18.06% | 58.94% | 58.68% | 26.39% | 23.00% |
 | 32B | 44.36% | 73.70% | 38.37% | 21.70% | 0.26% |
 
-32B几乎不再机械地执行两工具就结束，说明不能把小模型的固定“两段停止”原样推广到几十B。但更长任务依然困难，名称标签的完成收益也没有消失。32B原测试在3/4/5调用上的flat答案正确率为94.79%/33.07%/5.21%，macro为96.09%/73.18%/51.82%。
+The 32B model rarely stops mechanically after two tools, so the fixed two-segment behavior in small models does not generalize unchanged to tens of billions of parameters. Longer tasks remain difficult and name-label gains persist. At 3/4/5 calls, 32B flat answer accuracy is 94.79%/33.07%/5.21%, versus 96.09%/73.18%/51.82% for macro.
 
-32B三个seed的macro−flat答案增益分别为23.18、26.04、38.80个百分点，均值29.34个百分点，三seed t区间为[8.68,50.00]个百分点。正确前缀提前回答率的差值却并非三个seed都改善，其均值差−16.67个百分点的区间跨零。不能宣称所有准确率收益都由减少早停造成；错误操作也发生变化。
+Across seeds, 32B macro−flat answer gains are 23.18, 26.04, and 38.80 percentage points, averaging 29.34, with a three-seed t interval of [8.68,50.00]. Correct-prefix early-answer rates do not improve in all seeds; the interval for the mean −16.67-point difference crosses zero. Not all accuracy gains can be attributed to reduced early stopping; operation errors also change.
 
-## 独立确认：收益保留，长度外推仍有限
+## Independent confirmation: gains persist, but length extrapolation remains limited
 
-独立集在正式结果可见前锁定，每种长度24个独立程序、每程序4个输入，排除与原训练/开发/测试完全相同的仿射函数。不是把同一程序的不同输入当作独立程序。
+The independent set was frozen before formal results were visible. Each length contains 24 independent programs and four inputs per program, excluding exact affine functions in the original train/dev/test sets. Numeric variants of one program are not counted as independent programs.
 
-| 要求调用数 | 32B flat完整轨迹正确 | 32B macro完整轨迹正确 |
+| Required calls | 32B flat complete-trajectory accuracy | 32B macro complete-trajectory accuracy |
 |---|---:|---:|
 | 3 | 87.85% | 94.10% |
 | 4 | 35.42% | 71.53% |
@@ -37,43 +37,43 @@
 | 6 | 0.69% | 32.64% |
 | 8 | 0.00% | 24.65% |
 
-名称收益并非只出现在原测试程序上，但它不是无限长度泛化。在8调用上，macro的正确前缀提前回答率反而高于flat（41.32%对17.71%），同时完成率更高：flat常常更早发生其他错误，使“正确前缀”指标降低。这直接说明，只看该指标下降会误判方法效果。
+Name-label gains extend beyond original test programs but do not establish unlimited length generalization. At eight calls, macro has a higher correct-prefix early-answer rate than flat (41.32% versus 17.71%) alongside higher completion. Flat often encounters other errors earlier, reducing the correct-prefix metric. A decrease in that metric alone can therefore misrepresent method quality.
 
-## 学习率、定义与指令版本改变解释
+## Learning rate, definitions, and instruction tuning change the interpretation
 
-32B把学习率从3e-4降到预先登记的1e-4后，flat/macro原长题准确率从44.36%/73.70%变为30.38%/55.56%。两组正确前缀提前回答减少，但总体正确率也下降。低学习率不是本任务已验证的修复方法。
+Reducing the 32B learning rate from 3e-4 to the preregistered 1e-4 changes original long-task flat/macro accuracy from 44.36%/73.70% to 30.38%/55.56%. Correct-prefix early answers decrease in both groups, yet overall accuracy also falls. A lower learning rate is not a validated fix for this task.
 
-给出工具定义后，32B低学习率的flat/macro准确率为87.50%/79.17%，名称优势反转；原学习率则为63.54%/71.96%。因此“工具名称永远更好”不成立，收益依赖训练剂量和推理时可见的信息。给定义是额外测试条件，不能和不提供定义的原协议混为同一处理。
+With tool definitions supplied, low-learning-rate 32B flat/macro accuracy is 87.50%/79.17%, reversing the name advantage; at the original learning rate it is 63.54%/71.96%. Tool names are therefore not always better: effects depend on training dose and inference information. Supplying definitions is an additional test condition, distinct from the original no-definition protocol.
 
-32B-Instruct使用官方chat模板，训练与测试一致。无定义时flat/macro为34.64%/65.19%；提供定义时为57.47%/59.11%。指令后训练没有自动消除该受控任务中的差异，但Base与Instruct的模板和权重历史均不同，不能把差异只归因于先验稳定性。3B低学习率在5090上执行、原3B在PRO6000执行，存在额外硬件混淆；32B两档均为PRO6000。
+32B-Instruct uses the official chat template consistently in training and testing. Without definitions, flat/macro accuracy is 34.64%/65.19%; with definitions, 57.47%/59.11%. Instruction post-training does not automatically eliminate the difference. Base and Instruct differ in templates and weight history, preventing attribution solely to prior stability. Low-learning-rate 3B runs use a 5090 versus PRO6000 for original 3B, introducing hardware confounding. Both 32B learning-rate groups use PRO6000.
 
-冻结7B/32B，以及32B-Instruct，在本次提示与严格答案协议下，即使提供定义也没有获得原长题正确答案；独立确认的各尺度冻结模型亦未得到完整正确轨迹。这不能证明它们一般执行能力差，更不能建立“原来会做、微调后被训坏”的前提。当前证据主要支持短训练后的结构泛化差异，而不是既有长任务能力被破坏。
+Frozen 7B/32B and 32B-Instruct produce no correct original long-task answers under this prompt and strict-answer protocol even with definitions. Frozen models at every scale also produce no fully correct independent-confirmation trajectories. This does not establish generally poor execution or a premise of preexisting capability damaged by fine-tuning. Evidence mainly supports structural-generalization differences after short-task training.
 
-## 训练强度和评分的实际边界
+## Training intensity and scoring limits
 
-| 模型 | 可训练LoRA参数 | 占含adapter总参数 |
+| Model | Trainable LoRA parameters | Share of total parameters including adapter |
 |---|---:|---:|
 | 1.5B | 18,464,768 | 1.1820% |
 | 3B | 29,933,568 | 0.9607% |
 | 7B | 40,370,176 | 0.5273% |
 | 32B | 134,217,728 | 0.4080% |
 
-相同步数、样本量、rank不等于相同FLOPs或相同比例的权重扰动。不能将同系列的规模相关性解读为只改变参数量的随机因果实验。
+Equal steps, examples, and rank do not imply equal FLOPs or proportional weight perturbation. Within-family scale associations are not randomized experiments changing only parameter count.
 
-对主测试13,440条输出全量复核：6,772条答案和指定轨迹均正确；另有23条不同轨迹在所有输入上与目标函数等价，32条只在当前输入碰巧得到正确答案。独立确认13,440条和补充21,280条也全部作相同分类，记录于`analysis/outcome-diagnostics.jsonl`。等价判定使用完整仿射变换签名，不是随机抽样。宽口径的少执行操作即回答及完整段数分布另见[停止诊断](STOPPING_DIAGNOSTICS.md)。主表保留严格指定轨迹指标，同时另报最终答案指标，不把偶然答对当作完整执行。
+Full review of 13,440 main-test outputs finds 6,772 with correct answers and prescribed trajectories, 23 with different trajectories equivalent to the target function on every input, and 32 with correct answers only by coincidence on the current input. The 13,440 independent-confirmation and 21,280 supplementary outputs receive the same classification in `analysis/outcome-diagnostics.jsonl`. Equivalence uses complete affine signatures rather than random input sampling. Broader early-answer counts and complete segment-count distributions are in [STOPPING_DIAGNOSTICS.md](STOPPING_DIAGNOSTICS.md). Primary tables retain strict prescribed-trajectory scores and separately report final-answer scores; chance-correct answers are not complete execution.
 
-旧生成记录保存了非EOS token数而没有最终token ID；EOS/PAD共用ID。停止证据据此分为长度耗尽、边界不确定及长度耗尽前EOS推断，不能声称直接记录了每条底层停止原因。
+Old generation records retain non-EOS token counts but no final token IDs, with a shared EOS/PAD ID. Stop evidence therefore distinguishes cap exhaustion, boundary ambiguity, and inferred EOS before the cap. It does not directly log every underlying termination reason.
 
-计划曾提出按预设开发集短题阈值选择掌握程度匹配检查点，但登记材料没有数值阈值。不能在看到结果后补一个阈值并冒充预先规定。因此另做明确标注为探索性的90%/95%/99%开发集阈值敏感性，全部阈值保留，选点不读取测试成绩；这不能补救原预登记缺项。
+The plan proposed mastery-matched checkpoints selected using a predefined short-development threshold, but registration omitted its numeric value. A threshold chosen after observing results cannot become preregistered. Explicitly exploratory 90%/95%/99% threshold sensitivity analyses retain every threshold and select checkpoints without test scores. They do not repair the original preregistration omission.
 
-95%阈值下，7B/32B的两种标签、三个seed均首次选择第64步。此时7B flat/macro长题准确率为13.37%/55.73%，32B为35.24%/55.38%。名称收益在双方都掌握短题时已出现，但三seed区间很宽，不能据此排除所有学习速度差异。尤其32B此时macro正确前缀提前回答率为38.72%，高于flat的31.77%，再次说明准确率提升不等于该早停子集必然下降。所有阈值与逐seed结果见`analysis/mastery-diagnostics.json`。99%阈值下仅32B flat seed33首次达到阈值的时间改为第128步，其余仍为第64步，完整比较已保存。
+At the 95% threshold, both labels and all three seeds for 7B/32B first select step 64. Long-task flat/macro accuracy is then 13.37%/55.73% for 7B and 35.24%/55.38% for 32B. Name gains appear when both groups have mastered short tasks, but wide three-seed intervals do not exclude every learning-speed explanation. In particular, 32B macro correct-prefix early answering is 38.72%, above flat at 31.77%, again separating accuracy gains from this stopping subset. See all thresholds and seeds in `analysis/mastery-diagnostics.json`. At 99%, only 32B flat seed 33 shifts its first qualifying checkpoint to step 128; all others remain at step 64. Complete comparisons are saved.
 
-## 判断和下一步推荐
+## Interpretation and recommended next steps
 
-可以成立的发现是：在这个短调用微调的受控执行任务中，输出工具身份与更好的长组合完成率相关，配对训练使标签处理的影响可被检验；32B和独立程序集上仍有收益。规模扩大显著缓解固定两段停止，却没有消除更长组合上的失败。
+In this controlled execution task fine-tuned on short call sequences, outputting tool identity is associated with better long-composition completion. Paired training permits testing the label intervention, and gains persist at 32B and on independent programs. Scale substantially reduces fixed two-segment stopping but does not eliminate longer-composition failures.
 
-还不能成立的是：复述计划已被证明能防止Codex半途停止；模型因缺乏创新能力而失败；大模型已有的长任务能力被当前训练破坏；工具名仅通过停止机制起作用。
+The study does not establish that repeating plans prevents Codex from stopping midway, that failures reflect missing innovation ability, that training damages preexisting long-task capability, or that tool names act only through stopping behavior.
 
-推荐下一阶段先在强指令模型的真实交互任务上建立可执行的基线，再配对比较统一标记、当前工具身份、序号/剩余量、无关但同长度标签。分别衡量完成、错误操作、提前结束、重复空转和token成本。必须确认基线确实存在用户关心的中途停止，且干预没有通过增加预算或换任务偷换问题。真实Agent阶段仍需用户审核本轮完整结果后推进。
+For the next stage, establish an executable baseline on real interactive tasks with a strong instruction model, then compare a common marker, current tool identity, position/remaining-count markers, and irrelevant length-matched labels. Measure completion, wrong operations, premature stopping, repeated unproductive actions, and token costs separately. Verify that the baseline exhibits the stopping problem of interest and that interventions do not alter the question by adding budget or changing tasks. Proceed to real-agent experiments after user review of the complete results.
 
-证据入口：`analysis/results.json`、`analysis/paired-inference.json`、`analysis/extended-results.json`、`analysis/matched-context.json`、`SUPPLEMENT.md`及`analysis/supplement-results.json`。完整[主报告](REPORT.md)、[验收矩阵](COMPLETION_AUDIT.md)和[固定训练曲线](figures/learning-curves.png)均已完成。记录的进程耗时合计约59.61 GPU小时，包含部分等待，不等于GPU核心实际忙碌时间；详细口径见`analysis/cost.json`。所有原始轨迹、适配器、失败记录和环境均保留在本项目内。
+Evidence: `analysis/results.json`, `analysis/paired-inference.json`, `analysis/extended-results.json`, `analysis/matched-context.json`, `SUPPLEMENT.md`, and `analysis/supplement-results.json`. The [main report](REPORT.md), [acceptance matrix](COMPLETION_AUDIT.md), and [fixed training curves](figures/learning-curves.png) are complete. Recorded process durations total approximately 59.61 GPU-hours, including some waiting rather than only kernel activity; see `analysis/cost.json`. All raw trajectories, adapters, failures, and environments remain in the project.

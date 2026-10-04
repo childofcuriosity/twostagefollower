@@ -1,76 +1,76 @@
-# 标签对照：最终研究判断
+# Label controls: final research conclusions
 
-本轮限定目标完成：仅新增位置编号与固定任意改名两条件，完成四尺度、三训练种子的24次训练及评测。原STEP与原名称两组只读复用。目标是检验长执行收益究竟需要输出进度、稳定工具身份，还是还依赖名称形式的可利用性；不预设身份解释成立。
+The bounded goal is complete: only position numbering and fixed arbitrary aliases were added, with 24 training/evaluation runs across four scales and three training seeds. Original STEP and Original NAME were reused read-only. The aim was to test whether gains on long execution require output progress cues, stable tool identity, or usable name forms, without assuming an identity explanation.
 
-## 做了什么
+## What we ran
 
-同系列Qwen2.5 Base 1.5B/3B/7B/32B；沿原第一阶段训练配置，4096条训练数据、512更新步、microbatch16×累积2、LoRA r16/alpha32、学习率3e-4。训练只有1–2工具调用，输入已给工具顺序。模型学习逐项执行固定九种工具，并非自主规划或造工具。
+Qwen2.5 Base models at 1.5B/3B/7B/32B, using the original first-stage training configuration: 4096 training examples, 512 update steps, microbatch16 x accumulation 2, LoRA r16/alpha32, and learning rate 3e-4. Training contains only 1–2 tool calls, with the tool order supplied in the input. Models learn to execute nine fixed tools in sequence, rather than plan autonomously or invent tools.
 
-- 原STEP：每次输出 `step:`，有边界，无输出身份。
-- 原名称：输出 `red:` 等，有边界与身份。
-- 新位置：输出 `step1:`、`step2:` 等，有边界与位置，无输出身份。训练没有第三次调用，因此没有训练过 `step3:` 这个调用标题的使用。
-- 新改名：工具一一对应固定随机名称 `toolA` 至 `toolI`，输入和输出一起改名，保持身份；所有尺度和训练seed共用一个映射。
+- Original STEP outputs `step:` for every call: a boundary without output identity.
+- Original NAME outputs `red:` and similar names: a boundary with identity.
+- New position labels output `step1:`, `step2:`, and so on: boundaries and positions without output identity. Training has no third call, so use of `step3:` as a call heading is untrained.
+- New aliases assign each tool a fixed random name from `toolA` to `toolI`, consistently renaming both input and output while preserving identity. One mapping is shared across all scales and training seeds.
 
-所有组仍以原 `Answer:` 结束，不加EndTool/Done，不给oracle正确内容，不改训练算法。两新增条件每轮监督目标token均为271656，比旧名称组多2.96%；改名输入也变长。这是表示变化伴随的差异，不可声称完全排除了token长度与分词影响。
+All conditions still end with the original `Answer:`, without EndTool/Done, oracle-correct content, or changes to the training algorithm. Both added conditions have 271656 supervised target tokens per pass, 2.96% more than the original-name condition; alias inputs are longer too. These differences accompany the representation change, so token-length and tokenization effects are not fully excluded.
 
-## 完整任务结果
+## Complete-task results
 
-下表为旧独立测试集480题（长度3/4/5/6/8各96题）、三个训练seed的平均完整轨迹准确率。要求原始操作序列、每步数字状态、最终Answer全部正确；标签本身另计。下表的额外“标签也正确”完整分数与主分数相同。480题是24程序×4输入×5长度，不能把同程序输入、三个seed全当独立抽样；这也是已经使用过的测试集，不是新盲测。
+The table reports mean full-trajectory accuracy across three training seeds on the earlier independent 480-example test set: 96 examples each at lengths 3/4/5/6/8. Correctness requires the raw operation sequence, every numerical state, and the final Answer; labels are scored separately. The additional label-correct full-success score equals the primary score in this table. The 480 examples are 24 programs x 4 inputs x 5 lengths; inputs sharing a program and the three seeds are not all independent samples. This is also a previously used test set, not a fresh blind test.
 
-|模型|原STEP|原名称|位置编号|固定改名|
+|Model|Original STEP|Original NAME|Position numbering|Fixed aliases|
 |---|---:|---:|---:|---:|
 |1.5B|0.00%|16.25%|0.00%|16.81%|
 |3B|0.00%|36.88%|0.97%|52.92%|
 |7B|12.15%|37.01%|19.86%|58.33%|
 |32B|25.63%|56.18%|39.17%|31.18%|
 
-长度8时：
+At length 8:
 
-|模型|原STEP|原名称|位置编号|固定改名|
+|Model|Original STEP|Original NAME|Position numbering|Fixed aliases|
 |---|---:|---:|---:|---:|
 |1.5B|0.00%|1.04%|0.00%|0.00%|
 |3B|0.00%|2.08%|0.00%|10.07%|
 |7B|0.00%|0.00%|0.00%|26.04%|
 |32B|0.00%|24.65%|0.35%|0.69%|
 
-原测试短任务iid四尺度四条件平均均100%，因此不是改名组连训练长度任务也整体学不会。但不能据此推断通用语言能力无损。
+On the original iid short-task test, all four conditions average 100% at all four scales. Alias models therefore can learn tasks at training lengths. This does not establish preserved general language ability.
 
-不能只看平均：固定改名减原名称的三个seed差值，1.5B为−9.38/+10.21/+0.83个百分点；3B为+17.92/−1.88/+32.08；7B为+32.71/−20.21/+51.46；32B为−8.75/−11.04/−55.21。32B劣势三seed同向，小模型的均值优势并非每seed一致。位置编号减STEP在32B为+18.54/−0.62/+22.71，亦不能说稳定全面改善。
+Means alone are insufficient. Fixed aliases minus Original NAME gives seed differences of −9.38/+10.21/+0.83 percentage points at 1.5B; +17.92/−1.88/+32.08 at 3B; +32.71/−20.21/+51.46 at 7B; and −8.75/−11.04/−55.21 at 32B. All three 32B seeds show a disadvantage, while smaller-model mean advantages are not consistent across seeds. Position numbering minus STEP at 32B is +18.54/−0.62/+22.71, also short of a consistent improvement.
 
-## 为什么不能简单归因“注意到名字”
+## Why this is not simply about attending to names
 
-原名称组和改名组都满足输入名称=输出名称。因此该对照没有操纵“名字是否一样”，而是操纵身份表示的形式。32B改名较弱支持名称形式可能重要，但仍有分词、共享tool前缀、预训练表示、输入长度以及监督token权重等解释，没有隔离注意力机制。
+Original NAME and aliases both have input name = output name. The comparison changes the form of identity representation, not whether names match. Weaker aliases at 32B suggest name form may matter, but tokenization, the shared tool prefix, pretrained representations, input length, and supervised-token weighting remain possible explanations. The attention mechanism is not isolated.
 
-同一原测试ood384题（长度3–5），保留的原评测程序还测了输入给工具定义的条件。以下是同题同检查点三seed平均：
+On the same original ood set of 384 examples at lengths 3–5, the retained evaluation procedure also supplies tool definitions in the input. Three-seed means for the same examples and checkpoint are:
 
-|模型|输入|原STEP|原名称|位置编号|固定改名|
+|Model|Input|Original STEP|Original NAME|Position numbering|Fixed aliases|
 |---|---|---:|---:|---:|---:|
-|7B|不给定义|17.97%|57.90%|30.56%|74.13%|
-|7B|给定义|16.67%|50.09%|30.12%|42.01%|
-|32B|不给定义|44.27%|73.00%|58.77%|48.78%|
-|32B|给定义|63.45%|71.70%|81.16%|81.77%|
+|7B|Without definitions|17.97%|57.90%|30.56%|74.13%|
+|7B|With definitions|16.67%|50.09%|30.12%|42.01%|
+|32B|Without definitions|44.27%|73.00%|58.77%|48.78%|
+|32B|With definitions|63.45%|71.70%|81.16%|81.77%|
 
-32B改名相对原名称由−24.22变成+10.07个百分点。这限制了“原名称普遍更好”的说法，提示名称表示与知识可访问方式存在交互；7B又有相反方向，不能宣称提供定义必定改善。这里是旧协议自带的补充评测，并非新加训练或选点。
+The 32B alias difference relative to Original NAME changes from −24.22 to +10.07 percentage points. This limits claims that Original NAME is universally better and suggests an interaction between name representation and access to knowledge. The opposite direction at 7B also rules out a claim that providing definitions always helps. These are supplementary evaluations already in the original protocol, not new training or checkpoint selection.
 
-32B旧独立测试中，每条件1440条：原名称827条标签序列全对，其中809条完整执行全对；位置编号781条标题全对，其中564条完整执行全对；改名485条名称序列全对，其中449条完整执行全对。位置编号即使正确输出全部编号，仍可能执行错工具，不能把全部失败归于不会写step3。对输出条件化的统计有选择偏差，仅作行为诊断，不是无偏因果效应或独立子任务概率。
+On the earlier independent 32B test, each condition has 1440 trajectories. Original NAME has 827 correct label sequences, including 809 fully correct executions; position numbering has 781 correct heading sequences, including 564 fully correct executions; aliases have 485 correct name sequences, including 449 fully correct executions. Even with every position label correct, the model can execute the wrong tool, so inability to write step3 cannot explain every failure. Statistics conditional on outputs have selection bias and serve as behavioral diagnostics, not unbiased causal effects or independent subtask probabilities.
 
-## 已复核的具体案例与反例
+## Reviewed examples and counterexamples
 
-案例按固定随机种子2026092603从每个改善/退化层至多抽3条，共97条；成功率分母用全量记录。以下不是精选案例估计效应：
+Using fixed random seed 2026092603, up to 3 cases were drawn from each improvement/degradation stratum, totaling 97. Success-rate denominators use all records. The examples below are not used as selected-case effect estimates:
 
-- 32B改名对原名称的失败，seed33/id100182：要求toolE→toolG→toolD→toolF，却跳过toolD；原名称同题全部正确。
-- 32B位置对原名称的失败，seed22/id100035：正确输出step1/2/3，但第三段把red的rot/inc误展开为pink的rot/inc/swap；数字运算本身正确。标题计数正确不等于工具执行正确。
-- 7B改名改善，seed33/id100431：8工具全部执行正确；原名称漏掉重复出现的brown，并把white内部操作展开错。
-- 7B改名退化，seed22/id100005：toolF→toolC→toolF只执行前两次即Answer，原名称完成三次。改名并未消除旧提前结束模式。
+- 32B alias failure relative to Original NAME, seed33/id100182: toolE→toolG→toolD→toolF is required, but toolD is skipped. Original NAME completes the same example correctly.
+- 32B position failure relative to Original NAME, seed22/id100035: step1/2/3 are correct, but the third segment expands red as the rot/inc/swap operations of pink instead of rot/inc. The numerical computation itself is correct. Correct heading counts do not guarantee correct tool execution.
+- 7B alias improvement, seed33/id100431: all 8 tools are executed correctly. Original NAME misses the repeated brown call and incorrectly expands the internal operations of white.
+- 7B alias degradation, seed22/id100005: for toolF→toolC→toolF, the model executes only the first two calls before Answer; Original NAME completes all three. Aliases do not eliminate the earlier early-stopping pattern.
 
-完整原始文本、提示及评分见[成对案例](analysis/paired-cases.json)。已输出段内部指标按“要求位置”判定，不是按模型实际写出的工具身份判定，也不是oracle条件下全部要求调用的正确率；不可与上一阶段子任务乘积直接混用。
+Full raw text, prompts, and scores are in [paired cases](analysis/paired-cases.json). Within-emitted-segment metrics use the required position rather than the tool identity actually written by the model. They are not accuracy on all required calls under oracle conditions and must not be combined directly with the previous-stage subtask products.
 
-## 判断与下一步建议
+## Interpretation and next steps
 
-目前最稳妥的结论是：**输出标签的具体表示会显著影响短训练向长执行的泛化；效果取决于模型规模、名称形式和输入是否提供工具定义。单纯增加位置编号不能复现全部名称收益，稳定身份也不保证任意命名等效。**
+The most defensible conclusion is: **The specific output-label representation substantially affects generalization from short training tasks to long execution. Effects depend on model scale, name form, and whether tool definitions are supplied. Position numbering alone does not reproduce all name benefits, and stable identity does not make arbitrary names equivalent.**
 
-这支持继续研究模型如何借助输出身份绑定下一段操作，但尚未证明两阶段独立学习、注意力机制，也未验证真实Agent坚持执行或RSI改善。小模型改名成功说明原颜色词不是普遍必要条件；32B改名退化说明稳定身份不是跨表示无条件充分条件。没有无边界对照，不能声称已经单独测出边界的因果效应。
+This supports further study of how output identity binds the next segment of operations. It does not establish independently learned two-stage components or an attention mechanism, nor improved persistence in real agents or RSI. Alias success in smaller models shows that the original color words are not universally necessary; alias degradation at 32B shows that stable identity is not unconditionally sufficient across representations. Without a boundary-free control, the causal effect of boundaries has not been isolated.
 
-推荐下轮先集中32B，保持任务和预算，用多个固定映射、分词长度与区分度匹配的名称，检验“表示形式×是否给定义”的交互是否可重复，明确区分输入检索与输出复述作用。本轮只做已授权两个新增条件，未启动该扩展，也没有为了得到统一阳性再改训练。应用启发是把清晰任务身份与可访问的操作定义一起考虑，而不是直接推荐所有Agent重复任意编号。
+A recommended next study would focus on 32B, retain the task and budget, and use multiple fixed mappings with names matched for token length and distinguishability. It would test reproducibility of the representation-form x definition-availability interaction and separate input retrieval from output repetition. This study ran only the two authorized added conditions, without starting that extension or modifying training to obtain uniformly positive results. The application implication is to consider clear task identities together with accessible operation definitions, rather than recommending that every agent repeat arbitrary numbers.
 
-[全量分长度及seed表](REPORT.md) · [摘要与配对差值](RESULT_DIGEST.md) · [图表](figures/label-controls.png) · [补充评测](AUXILIARY_EVALUATIONS.md) · [结束行为](BOUNDARY_DIAGNOSTICS.md) · [完成审计](COMPLETION_AUDIT.md) · [复现与成本](REPRODUCTION_AND_COST.md)
+[All lengths and seeds](REPORT.md) · [Summary and paired differences](RESULT_DIGEST.md) · [Figure](figures/label-controls.png) · [Supplementary evaluations](AUXILIARY_EVALUATIONS.md) · [Stopping behavior](BOUNDARY_DIAGNOSTICS.md) · [Completion audit](COMPLETION_AUDIT.md) · [Reproduction and costs](REPRODUCTION_AND_COST.md)

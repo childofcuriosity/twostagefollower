@@ -17,12 +17,12 @@ for model in ROOTS:
      c['label_sequence_correct']+=1;c['strict_given_labels_correct_numerator']+=g['strict_trace']
    results.append(dict(model=model,condition=condition,seed=seed,counts=dict(c),emitted_label_count_histogram=dict(hist)))
 write(R/'analysis/boundary-diagnostics.json',dict(results=results,note='Descriptive, conditioned-on-output rates not causal. All test tasks require at least three calls. STEP third-label identity is trivial and not comparable to identity binding. No new model inference.'))
-lines=['# 第二次调用之后是否继续','按已登记的段数/提前结束指标补充描述；不是注意力机制或编号外推失败的独立因果证明。分母均为旧独立480题×3seed。','','|模型|条件|输出至少第三个段标签|正确完成两工具后提前Answer|完整轨迹|','|---|---|---:|---:|---:|']
+lines=['# Does execution continue after the second call?','Supplementary description using the registered segment-count/early-stopping metrics. This is not independent causal evidence for an attention mechanism or failure to extrapolate numbering. Every denominator is the earlier independent 480 examples x 3 seeds.','','|Model|Condition|Emits at least a third segment label|Early Answer after correctly completing two tools|Full trajectory|','|---|---|---:|---:|---:|']
 for model in ROOTS:
  for condition in ['flat','macro','position','alias']:
   cc=collections.Counter()
   for x in results:
    if (x['model'],x['condition'])==(model,condition):cc.update(x['counts'])
   lines.append('|'+model+'|'+condition+'|'+'|'.join(str((Decimal(cc[k])*100/Decimal(cc["n"])).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))+"%" for k in ['reaches_third_label','exact_two_tools_correct_then_answer','strict_correct'])+'|')
-lines+=['','所有seed、段数直方图及标签正确后的完整轨迹分层见analysis/boundary-diagnostics.json。条件于模型输出的分层有选择偏差，不能据此估计无偏训练效果。']
+lines+=['','All seeds, segment-count histograms, and full-trajectory rates stratified by correct labels are in analysis/boundary-diagnostics.json. Stratification conditional on model output introduces selection bias and cannot estimate an unbiased training effect.']
 (R/'BOUNDARY_DIAGNOSTICS.md').write_text('\n'.join(lines)+'\n')

@@ -1,17 +1,17 @@
-# 32B主对照阶段性结果
+# Interim results for the primary 32B comparison
 
-原定主训练和最终560题评测已完成：32B flat/macro各3seed，固定512步。四模型13,440条最终输出已逐题核验。本文件不代表整个goal完成：独立确认、完整检查点与补充对照仍在运行。
+Planned primary training and final evaluation on 560 examples are complete: three flat/macro seeds for 32B at fixed step 512. All 13,440 final outputs across four models have been checked individually. This does not establish completion of the full goal; independent confirmation, complete checkpoint evaluation, and supplementary controls remain in progress.
 
-未见长组合中，32B答案正确率flat44.36%、macro73.70%，完整轨迹44.27%、73.00%。配对三个seed答案增益23.18、26.04、38.80个百分点，均值29.34，三个seed的95%t区间8.68至50.00个百分点。只有三个训练seed，区间较宽。
+On unseen long compositions, 32B flat/macro answer accuracy is 44.36%/73.70% and complete-trajectory accuracy 44.27%/73.00%. Paired seed answer gains are 23.18, 26.04, and 38.80 points, averaging 29.34, with a three-seed 95% t interval from 8.68 to 50.00 points. The interval is wide with only three training seeds.
 
-| 调用数 | flat答案正确率 | macro答案正确率 |
+| Calls | Flat answer accuracy | Macro answer accuracy |
 |---|---:|---:|
 | 3 | 94.79% | 96.09% |
 | 4 | 33.07% | 73.18% |
 | 5 | 5.21% | 51.82% |
 
-规模质疑确有依据：32B flat的恰好两工具正确后结束仅0.26%，小模型的固定两段行为显著缓解。32B仍存在正确执行部分前缀后交答案，flat38.37%、macro21.70%；但这一早停差异在三个seed中并不一致，其中seed11的macro早停反而更多。不能从均值把准确率增益全部归因为抑制早停。两条件在3调用上几乎相当，优势主要出现在4/5调用。
+The scale concern has evidence: 32B flat stops after exactly two correct tools on only 0.26% of examples, substantially reducing the small-model behavior. It still answers after a correct incomplete prefix: 38.37% for flat and 21.70% for macro. This reduction is inconsistent across seeds; macro stops early more often for seed 11. Mean accuracy gains cannot all be attributed to suppressed early stopping. Conditions are nearly tied at three calls, with gains mainly at four/five calls.
 
-初步解释应转向长组合的完成范围和操作序列泛化，保留模型规模、学习剂量及格式效应的区别。数据不证明先验知识保护的因果机制，也尚未验证真实Agent长任务。
+Initial interpretation should focus on completion over longer compositions and operation-sequence generalization, distinguishing scale, training dose, and formatting. Data do not establish a causal prior-preservation mechanism or validate real-agent long tasks.
 
-可核查数据：analysis/primary32-interim.json、analysis/results.json、analysis/final-case-audit.jsonl。独立确认及补充结果完成后须更新最终结论，不能将本文作为最终报告。
+Auditable data: analysis/primary32-interim.json, analysis/results.json, and analysis/final-case-audit.jsonl. Final conclusions must incorporate independent confirmation and supplementary results. This file is not the final report.

@@ -1,7 +1,7 @@
-# 当前阶段：完成并交付审核
+# Current stage: complete and delivered for review
 
-限定标签对照goal已完成。24新训练/评测作业成功，旧组只读复用；82176条主/独立/补充记录已审计。研究判断见[CONCLUSIONS.md](CONCLUSIONS.md)，完整验证见[COMPLETION_AUDIT.md](COMPLETION_AUDIT.md)。所有计算结束，本机计算进程为空。
+The bounded label-control goal is complete. All 24 new training/evaluation jobs succeeded; original conditions were reused read-only. All 82176 main/independent/supplementary records have been audited. See [CONCLUSIONS.md](CONCLUSIONS.md) for interpretation and [COMPLETION_AUDIT.md](COMPLETION_AUDIT.md) for full verification. All computation has ended, and the local compute-process list is empty.
 
-结果不是统一的身份解释：32B改名退化且给定义后反转，小尺度表现不同。保留三个seed、全部长度及反例。初次绘图后处理故障已修复，原失败记录保留。后续新训练未启动。正常长任务每小时检查偏好继续有效。
+The results do not support one uniform identity explanation: aliases degrade at 32B, with the direction reversing when definitions are supplied, while smaller scales behave differently. All three seeds, lengths, and counterexamples are retained. The initial plotting postprocessing failure was fixed, with its original record preserved. No follow-up training has started. The preference for hourly checks during normal long jobs remains in effect.
 
-系统中另一个旧暂停goal保持原状态；本轮记录在本目录GOAL.json，未冒充完成旧目标。
+The separate older paused goal in the system retains its status. This study is recorded in GOAL.json in this directory, without claiming completion of the old goal.

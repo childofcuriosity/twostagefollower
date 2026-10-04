@@ -1,8 +1,8 @@
-# 计算量、输出token与结束原因
+# Compute, output tokens, and stopping reasons
 
-所有token数由实际保存的output_ids逐条复核，包含真实EOS，排除prompt与padding。EOS必须在输出末尾，达到上限必须恰好等于冻结cap；训练loss记录的token总数也与原始候选一致。
+All token counts are checked record by record against saved output_ids, including actual EOS and excluding prompt and padding. EOS must be the final output token; cap-truncated outputs must exactly match the frozen cap. Token totals in training-loss records also match the raw candidates.
 
-| 组合 | STEP训练token | NAME训练token | NAME相对变化 | STEP训练段GPUh | NAME训练段GPUh | NAME相对变化 |
+| Setting | STEP training tokens | NAME training tokens | NAME relative change | STEP training-segment GPUh | NAME training-segment GPUh | NAME relative change |
 |---|---:|---:|---:|---:|---:|---:|
 | 7b-L3 | 3,624,615 | 3,522,155 | -2.83% | 4.742 | 4.632 | -2.32% |
 | 7b-L4 | 4,547,028 | 4,441,896 | -2.31% | 5.505 | 5.304 | -3.66% |
@@ -11,34 +11,34 @@
 | 14b-L6 | 6,818,650 | 6,691,325 | -1.87% | 13.065 | 12.361 | -5.38% |
 | 14b-L7 | 7,647,766 | 7,694,354 | +0.61% | 14.586 | 13.977 | -4.18% |
 
-每格合计三个seed、38400候选。训练段GPUh=各run在NCCL初始化结束后计时的墙钟×2，含加载、采样、反向、保存与等待；不含此前的进程/NCCL启动。配对在同一物理双卡slot顺序运行。时间差是本轮测量，不等同于纯GPU内核加速率。输出长度是生成行为的结果，不能把成功率差全部归因于标签自身的token长度。
+Each cell totals three seeds and 38400 candidates. Training-segment GPUh is run wall time after NCCL initialization multiplied by 2, including loading, sampling, backpropagation, saving, and waiting, but excluding earlier process/NCCL startup. Paired conditions run sequentially in the same physical two-GPU slot. Time differences are measurements from this study, not pure GPU-kernel speedups. Output length is a result of generation behavior; success differences cannot be attributed entirely to the token lengths of the labels themselves.
 
-## 全部作业占用与嵌套计时
+## Total job occupancy and nested timings
 
-| 范围 | GPU小时 |
+| Scope | GPU-hours |
 |---|---:|
-| 预检与恢复 | 5.868 |
-| 正式配对训练完整作业 | 108.770 |
-| 评测worker完整生命周期 | 21.360 |
-| 合计 | 135.998 |
+| Prechecks and recovery | 5.868 |
+| Complete main paired training jobs | 108.770 |
+| Complete evaluation-worker lifecycles | 21.360 |
+| Total | 135.998 |
 
-评测任务计时合计15.737 GPUh，其中模型generate计时15.542 GPUh。这两项嵌套于worker生命周期，不能再加入上表总计。完整作业口径包括启动、加载和等待，未用稀疏利用率采样估计GPU内核活动时间。纯CPU数据准备、评分和作图不计GPU时长。
+Total evaluation-task time: 15.737 GPUh, including model generate time of 15.542 GPUh. Both timings are nested within worker lifecycles and must not be added to the total above. Full-job accounting includes startup, loading, and waiting; sparse utilization samples are not used to estimate active GPU-kernel time. CPU-only data preparation, scoring, and plotting contribute no GPU time.
 
-资源由6个双卡训练slot+4评测卡，在首小时调整为7个双卡slot+2评测卡；训练队列全部派出且有两卡释放后，增加2评测卡收尾。所有调整只影响资源调度，冻结模型、数据、采样、评分及训练预算未改，训练没有中断重启。
+Resources changed from 6 two-GPU training slots + 4 evaluation GPUs to 7 two-GPU slots + 2 evaluation GPUs in the first hour. Once all training jobs had been dispatched and two GPUs became free, 2 evaluation GPUs were added to finish the queue. These changes affected scheduling only; frozen models, data, sampling, scoring, and training budgets remained unchanged. Training was not interrupted or restarted.
 
-## 实际样本与截断
+## Actual samples and truncations
 
-正式候选460,800条，输出token 67,172,424，上限截断9条。独立生成的预定评测119,808条，输出token 17,552,357，上限截断2条。其余均由EOS结束，EOS本身不等于任务成功。
+Main candidates: 460,800; output tokens: 67,172,424; cap truncations: 9. Independently generated scheduled evaluations: 119,808; output tokens: 17,552,357; cap truncations: 2. All other outputs end with EOS, which alone does not imply task success.
 
-另有9216条预检/恢复实际候选：12个条件任务各4次原始更新+2次恢复重放。恢复重放不当作独立seed或正式证据，成本计入预检。原始模型step0每组合条件只生成一次并由三个seed引用，没有将引用数伪装为独立生成数。
+An additional 9216 candidates were generated during prechecks/recovery: 4 original updates + 2 replayed recovery updates for each of 12 condition/tasks. Recovery replays are not independent seeds or main evidence; their costs are included in prechecks. Original-model step0 is generated once per setting/condition and referenced by three seeds; reference counts are not treated as independent generations.
 
-完整逐组训练/评测token及结束原因：analysis/cost-and-token-audit.json；逐个作业分配：analysis/lifecycle-audit.json。
+Complete per-setting training/evaluation tokens and stopping reasons: analysis/cost-and-token-audit.json; per-job allocations: analysis/lifecycle-audit.json.
 
-## step100贪心测试的推理开销
+## Inference costs for step100 greedy tests
 
-每个条件合计三个seed各512题，共1536个新测试回答；下表只取预定step100端点，包含EOS，不把多个seed当同一策略的独立采样。生成时间为实际batch generate墙钟按输出均摊后合计，乘单卡数1；不含加载与worker等待。
+Each condition totals 512 examples per seed across three seeds, or 1536 fresh test responses. The table uses only the scheduled step100 endpoint, includes EOS, and does not treat multiple seeds as independent samples from one policy. Generation time is actual batch generate wall time, apportioned across outputs and summed, multiplied by the single-GPU count of 1; loading and worker waiting are excluded.
 
-| 组合 | STEP平均输出token | NAME平均输出token | NAME变化 | STEP生成GPUh | NAME生成GPUh | NAME变化 |
+| Setting | STEP mean output tokens | NAME mean output tokens | NAME change | STEP generation GPUh | NAME generation GPUh | NAME change |
 |---|---:|---:|---:|---:|---:|---:|
 | 7b-L3 | 94.63 | 93.63 | -1.06% | 0.0773 | 0.0759 | -1.73% |
 | 7b-L4 | 117.98 | 116.92 | -0.90% | 0.1001 | 0.0976 | -2.48% |
@@ -47,4 +47,4 @@
 | 14b-L6 | 176.52 | 175.70 | -0.47% | 0.3028 | 0.3058 | +0.98% |
 | 14b-L7 | 198.81 | 201.54 | +1.37% | 0.3483 | 0.3718 | +6.74% |
 
-时间受batch内最长输出及调度影响，输出token减少不保证按相同比例减少generate时间。本轮测得的时间差不是跨硬件或独立吞吐基准。完整训练与评测采用相同冻结生成上限；没有为NAME放宽预算。
+Timing depends on the longest output in each batch and on scheduling. Fewer output tokens do not guarantee a proportional decrease in generate time. These measured time differences are not a cross-hardware or independent throughput benchmark. Full training and evaluation use the same frozen generation caps, with no relaxed budget for NAME.

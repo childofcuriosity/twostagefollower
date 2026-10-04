@@ -1,35 +1,35 @@
-# 判读时需要固定的区别
+# Distinctions to preserve when interpreting the results
 
-本文件在新增作业运行期间补充解释口径，不改变已登记训练、提示、数据或评分。
+These interpretation notes were added while new jobs were running. They do not change registered training, prompts, data, or scoring.
 
-## 所有条件的输入都包含工具身份
+## Inputs contain tool identities in every condition
 
-原STEP、位置编号、原名称、固定改名四组，题目都提供完整工具列表。因此不是“模型有没有得到工具身份”的对照，而是“输出当前段时是否再次显式写出可稳定识别的工具身份”，对比统一边界与位置提示。位置组也能从输入的第几个工具找回身份；名字组可能减少这个绑定/检索步骤。
+Original STEP, position numbering, Original NAME, and fixed aliases all receive the complete tool list. The comparison is therefore whether a stable tool identity is explicitly repeated when outputting the current segment, relative to a uniform boundary or position cue. The position condition can retrieve identity from the corresponding input-list item; names may reduce this binding/retrieval step.
 
-如果名称/alias更好，可支持输出中的稳定身份提示有用，但无法据此说STEP完全不知道身份。所有条件都有段边界，也没有无边界组，故不能估计边界相对于无边界的总效应。
+Better NAME/alias performance would support the usefulness of stable identity cues in outputs, but would not mean STEP has no identity information. Every condition has segment boundaries, with no boundary-free condition, so the total effect of boundaries cannot be estimated.
 
-## 位置外推不是未见token
+## Position extrapolation is not unseen-token extrapolation
 
-训练仅出现step1、step2这些标签组合，测试出现step3等。数字3–8的token本身在训练数字状态中普遍出现，不能称为未见词表token。真正未训练的是这些位置标签作为段首输出的组合/用法。位置组成功说明能外推，失败同时可能包含外推困难。
+Training contains only label combinations step1 and step2; testing includes step3 and later. Tokens for digits 3?8 occur widely in training numerical states and are not unseen vocabulary tokens. What is untrained is their combination/use as segment-initial position labels. Position success demonstrates extrapolation; failure may include extrapolation difficulty.
 
-## 任意改名可能更难辨认
+## Arbitrary aliases may be harder to distinguish
 
-原色词各不相同，toolA–toolI共享tool前缀，并依赖后面的字母区分。两种表示在token长度、共享前缀、预训练熟悉度等方面都不同。位置step1–step8同样共享前缀。当前只加入用户指定的两个条件，不额外添加随机单token名称或更多别名组来移动目标。
+The original color words differ from one another, whereas toolA?toolI share the tool prefix and rely on the following letter for distinction. These representations also differ in token length and pretrained familiarity. Position labels step1?step8 likewise share a prefix. Only the two user-specified conditions are added, without moving the goal by introducing random single-token names or more alias groups.
 
-原名称和alias都输入输出同名，因此不能直接检验名称是否一致；alias同时改输入输出，是整套词汇重命名对照，不能把它当作纯输出处理。单套固定映射跨模型/训练seed复用，不能声称已经排除特定映射的偶然性。
+Original NAME and aliases both match input and output names, so they do not directly test name consistency. Aliases rename both input and output vocabulary and are not a pure output intervention. One fixed mapping is reused across models/training seeds, leaving mapping-specific chance effects unresolved.
 
-## 标签长度与预算
+## Label length and budget
 
-四尺度预检的目标token数相同：原名称每轮263858，位置和alias每轮均271656，增加约2.96%。位置与alias在输出token数上匹配，但alias输入列表更长。未改变旧模型、训练步数、mask、microbatch或提示来做事后补偿。
+Prechecked target-token counts match across four scales: Original NAME has 263858 per pass; position and alias each have 271656, approximately 2.96% more. Position and alias match output-token counts, but alias input lists are longer. No post hoc compensation changes the original models, training steps, masks, microbatches, or prompts.
 
-原测试正确参考含EOS最长：旧172、新177，低于256生成上限；独立集旧268、新276，低于512。没有正确参考本身因新增标签而超预算的题；模型异常生成仍可能触顶并记失败，不提高预算帮助新组。
+Maximum correct-reference length including EOS in original tests is 172 for old labels and 177 for new labels, below the 256 cap; in the independent set it is 268 and 276, below 512. No correct reference exceeds budget because of new labels. Abnormal model generations may still hit the cap and count as failures; budgets are not raised to help new conditions.
 
-## 两种完整率都保留
+## Retain both full-success metrics
 
-沿原评分器的主“完整轨迹”要求操作序列、逐步数字、最终Answer正确，不强制标签身份。新增数字/大写标签只扩展合法段首语法。另列label_aware_complete要求对应标签序列正确，防止模型忽略新增标签却靠原操作完成的情况被隐藏。
+The original primary full-trajectory score requires correct operations, numerical states at every step, and the final Answer, without enforcing label identity. New numerical/uppercase labels only extend legal segment-heading syntax. The separately reported label_aware_complete metric also requires the correct label sequence, exposing cases where a model completes operations while ignoring new labels.
 
-“已输出段操作全对”按要求工具列表的对应位置评分，对所有条件统一；不是按模型所写名称重新定义正确操作，也不是此前oracle条件的全部要求操作能力。missing段由完整率/标签序列体现。条件于标签正确后的操作成绩可作为描述性分层，不能视为无偏因果比较。
+All emitted-segment operations correct is scored against the corresponding position in the required tool list, consistently across conditions. It neither redefines correct operations from the emitted name nor measures all required operations under the earlier oracle setting. Missing segments appear in full-success/label-sequence metrics. Operation performance conditional on correct labels is descriptive stratification, not an unbiased causal comparison.
 
-## 不能预设结论
+## Do not assume the conclusion
 
-alias接近原名称只说明本次固定改名可承载收益，不证明任意命名无关。alias较弱可能支持名称形式影响可利用性，但还不能识别具体注意力或预训练机制。position接近原名称支持进度提示也可能有效，不否定身份也有作用。所有组都差或都有尺度/seed分歧，照实报告并把解释收紧，不追加结果导向的新组。
+Alias performance close to Original NAME would show that this fixed mapping can preserve gains, not that arbitrary naming never matters. Weaker aliases could support an effect of name form on usability without identifying a specific attention or pretraining mechanism. Position performance close to Original NAME would support the usefulness of progress cues without excluding an identity contribution. If all groups perform poorly or differ by scale/seed, report that and narrow the interpretation rather than adding outcome-driven conditions.

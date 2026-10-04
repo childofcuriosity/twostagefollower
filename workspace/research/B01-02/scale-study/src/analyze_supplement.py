@@ -59,22 +59,22 @@ for model in ['qwen3b','qwen32b']:
     assert len(high)==len(low)==384;differences.append(statistics.mean(r[metric] for r in low)-statistics.mean(r[metric] for r in high))
    mean=float(np.mean(differences));margin=float(t.ppf(.975,2)*np.std(differences,ddof=1)/np.sqrt(3));paired[model][condition][metric]=dict(direction='low lr minus original lr',seed_differences=differences,mean=mean,seed_t95=[mean-margin,mean+margin])
 assert len(source_hashes)==38
-result=dict(source_sha256=source_hashes,registered_training_source_unchanged=True,raw_records=len(rows)+len(frozen),summary=summary,low_lr_comparisons=paired,training=runs,checkpoint_sha256=hashes,notes='Instruct uses official chat template consistently in training/test and is reported separately; not pure parameter-scale comparison. Low LR both 3B and32B same 512 steps; no test-selected early stop.')
+result=dict(source_sha256=source_hashes,registered_training_source_unchanged=True,raw_records=len(rows)+len(frozen),summary=summary,low_lr_comparisons=paired,training=runs,checkpoint_sha256=hashes,notes='Instruct uses official chat template consistently in training/test and is reported separately; not pure parameter-scale comparison. Low LR both 3B and 32B same 512 steps; no test-selected early stop.')
 (R/'analysis/supplement-results.json').write_text(json.dumps(result,indent=2));(R/'analysis/supplement-case-audit.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in rows+frozen))
 lines=[]
 for r in summary:
  if r['split']=='ood':
   v=r['means'];lines.append(f"| {r['model']} | {r['condition']} | {r['context']} | {100*v['accuracy']:.2f}% | {100*v['strict_trace']:.2f}% | {100*v['exact_two_tools_early_answer']:.2f}% |")
-text='''# 低学习率与指令版本补充
+text='''# Lower learning rate and instruction-model supplement
 
-这组在新模型正式最终分数尚不可见时登记：3B/32B对称采用1e-4，原主配方3e-4；32B-Instruct采用3e-4和官方chat模板，每组flat/macro三个seed，512步、batch32。没有按测试调学习率或停止步。中间适配器保留，本组固定最终测试。
+Registered before final formal scores for the new models were visible: symmetric 1e-4 learning rates for 3B/32B versus the original 3e-4 recipe, and 32B-Instruct at 3e-4 with the official chat template. Each flat/macro group uses three seeds, 512 steps, and batch size 32. Learning rate and stopping steps were not tuned on test scores. Intermediate adapters are retained; this comparison uses fixed final evaluation.
 
-| 模型 | 条件 | 是否提供工具定义 | 长组合答案正确 | 完整轨迹正确 | 正确两工具后结束 |
+| Model | Condition | Tool definitions supplied | Long-composition answer correct | Complete trajectory correct | Stops after two correct tools |
 |---|---|---|---:|---:|---:|
 '''+ '\n'.join(lines)+'''
 
-frozen基线只有一次确定性评测，不冒充三个训练seed。无定义基座不知道人为颜色映射，不能将其低分当作能力低；给定义与不给定义属于不同条件。Base/Instruct的模板和后训练均不同，不能把所有差异归因于参数规模或先验稳定性。3B低学习率组使用5090，而原3B使用PRO6000；此硬件差异也限制其纯学习率因果解释。32B两档学习率均为PRO6000。
+The frozen baseline receives one deterministic evaluation, not three training seeds. Without definitions, the base model does not know the artificial color mapping; low scores do not establish low capability. Results with and without definitions are different conditions. Base and Instruct differ in templates and post-training, so differences cannot all be attributed to parameter scale or prior stability. The low-learning-rate 3B group uses a 5090 while the original 3B group uses a PRO6000, limiting a purely learning-rate causal interpretation. Both 32B learning-rate groups use PRO6000 GPUs.
 
-完整逐seed差与95% t区间、逐题核验、训练计数和126个检查点哈希见[补充统计](analysis/supplement-results.json)。本文件仅汇总，科学结论须结合主报告和CONCLUSIONS.md。
+See [supplementary statistics](analysis/supplement-results.json) for all seed differences, 95% t intervals, example-level checks, training counts, and 126 checkpoint hashes. This file is a summary; interpret it with the main report and CONCLUSIONS.md.
 '''
 (R/'SUPPLEMENT.md').write_text(text);(R/'analysis/SUPPLEMENT_READY.json').write_text(json.dumps({'utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'records':len(rows)+len(frozen),'checkpoint_files':len(hashes)},indent=2));print('Supplement complete, pending manual interpretation',flush=True)

@@ -1,81 +1,81 @@
-# 第一批候选课题：idea 审核稿
+# First research candidates: idea review
 
-日期：2026-09-23。项目：EvoScientist + EvoSkills。状态：待用户审核 idea；没有开展以下课题训练、理论证明或结果写作。
+2026-09-23. Project: EvoScientist + EvoSkills. Awaiting user review; none of these training experiments, proofs, or results drafts has started.
 
-研究主线是模型能否通过自我迭代学到可复用的创新能力。这里把“创新”暂时操作化为：产生能改善后续学习的新课程，或提出能跨任务复用的程序抽象；不能由这些局部任务推导出一般科学创新能力。研究助手使用的 GPT 与实验中训练的开放权重基座模型分开记录。候选均是经初步查新的研究问题，不是已确认首创的方法。
+The direction asks whether model iteration develops reusable innovation, provisionally measured by curricula improving subsequent learning or abstractions reused across tasks. These bounded measures do not establish general scientific innovation. Record assistant GPT separately from experimentally trained open bases. Candidates are preliminarily reviewed questions, not confirmed original methods.
 
-建议顺序：B01-02 优先（与创新主线最贴近、机制可检验）；B01-03 次选（可明确否证，但人工任务风险高）；B01-01 保留（工程可行，近期相关工作密集，增量风险最大）。
+Prioritize B01-02 for relevance/testable mechanisms; B01-03 second for falsifiability despite artificial-task risk; hold B01-01 because dense recent literature raises incremental-contribution risk.
 
-## B01-01：自生成课程的学习收益能否跨模型与优化器迁移？
+## B01-01: does generated-curriculum utility transfer across models and optimizers?
 
-**具体问题。** 某生成器针对学生 A 产生“训练后有效”的题目，这种效用是否只适合 A 的参数状态和优化器？在控制题目难度、正确率和计算量后，能否学到对从未参与奖励的学生 C 也有效的课程？研究对象是参数更新后的真实学习收益，而非模型间答案分歧。
+**Question.** Are examples useful after training student A specific to its parameters/optimizer? Controlling difficulty, accuracy, and compute, can curricula help reward-excluded student C? Measure actual post-update gains rather than answer disagreement.
 
-**最接近的已有工作。** [INFUSER](https://arxiv.org/html/2606.09052v4) §2 已用优化器感知的影响分数奖励生成器；[SOAR](https://arxiv.org/html/2601.18778v1) §3 已按学生短程训练收益训练教师，并平均多个学生训练副本；[DARC](https://arxiv.org/html/2601.13761v1) §4 已展示题目跨学生规模复用；[Beyond Uncertainty](https://arxiv.org/html/2608.30035v1) §4 已将异构求解器答案分歧用作出题奖励。因此“学习效用奖励”“多学生”“课程迁移”本身都不能作为新贡献。
+**Closest work.** [INFUSER](https://arxiv.org/html/2606.09052v4) §2 rewards optimizer-aware influence; [SOAR](https://arxiv.org/html/2601.18778v1) §3 uses short student updates averaged across copies; [DARC](https://arxiv.org/html/2601.13761v1) §4 demonstrates cross-size reuse; [Beyond Uncertainty](https://arxiv.org/html/2608.30035v1) §4 rewards heterogeneous-solver disagreement. Utility rewards, multiple students, and transfer are not themselves new.
 
-**待验证的差异。** 将“对未参与奖励的基座家族和优化器仍有效”设为首要目标和隔离测试；对比真实短程更新收益与分歧、难度、单学生影响分数。候选方法只是待评估的多学生效用下分位数目标，不能仅以“组合已有方法”主张创新。价值取决于是否发现系统性效用错配及可重复修复，而非换个奖励公式。查新尚不能排除完全同题的其他工作。
+**Unverified distinction.** Make utility on reward-excluded families/optimizers primary and separately tested. Compare real updates with disagreement, difficulty, and single-student influence. A multi-student lower-quantile objective is only a candidate; combining existing ideas is insufficient. Value requires systematic mismatch and repeatable repair, not merely another reward formula. Exact overlap remains possible.
 
-**关键假设。** 单学生效用包含可分离的模型特定成分；多个学习者共享的效用能预测未见学习者收益。若收益排序几乎不随学生/优化器改变，研究动机即弱。
+**Assumption.** Single-student utility has separable model-specific components; shared utility predicts unseen learners. Nearly invariant rankings across students/optimizers weaken motivation.
 
-**最小实验。**
-1. 使用可执行的字符串变换/整数程序任务，按程序结构隔离训练、奖励开发集和最终测试；验证器给真值，避免伪标签错误混入效用判断。
-2. 先固定一个生成器和约 256 个候选小批次，测量每批在两类 1–3B 基座上的 8–16 步更新收益、难度与分歧；第三类基座只作最终迁移测试。先诊断效用排序，不直接重做大规模 meta-RL。
-3. 在诊断有信号后，比较等预算随机课程、难度课程、分歧课程、单学生效用课程、多学生效用课程；所有方法计入生成、评分和训练算力。3 个训练种子，固定输出 token 预算。
-4. 主要指标：未见家族测试准确率提升、每 GPU 小时学习曲线面积、效用排名相关性；消融学生多样性、优化器变化、实际更新 vs 梯度近似。额外学生计算必须计入成本。
+**Minimal experiment.**
+1. Executable string/integer programs, structurally separated across training, reward-development, and tests. Verifier truth prevents pseudo-label errors contaminating utility.
+2. Fix one generator and approximately 256 batches; measure 8–16-step gains, difficulty, and disagreement on two 1–3B families, reserving a third for final transfer. Diagnose rankings before large meta-RL.
+3. After a signal, compare equal-budget random, difficulty, disagreement, single-student, and multi-student curricula, accounting for generation/scoring/training. Three seeds and fixed output-token budgets.
+4. Measure unseen-family accuracy gains, learning-curve area per GPU-hour, and utility-rank correlation. Ablate learner diversity, optimizers, and real updates versus gradient approximations. Charge extra-student compute.
 
-**算力与时间估计。** 首个诊断限 32–64 GPU·小时；若通过，完整小规模比较约 96–192 GPU·小时，使用本机 4–8 卡，排期约 2–4 天（含实现/排错，非纯训练时长）。这是 1–3B、短序列、小批次实验的规划区间，尚无训练吞吐实测；不包含完整 INFUSER/SOAR 复现。理论审核后先校准 20 步，再更新预算。
+**Estimated resources.** Initial diagnosis 32–64 GPU-hours; if passed, full small comparison 96–192 on four to eight local GPUs over approximately 2–4 days including implementation/debugging. These unmeasured short-sequence 1–3B estimates exclude full INFUSER/SOAR replication. Calibrate 20 steps after theory review, then revise.
 
-**放弃标准。** 两类学生之间没有稳定的效用错配；或在计入评分成本后，对未见学生的收益不超过最佳基线 2 个百分点且不确定区间覆盖零；或优势只能在参与奖励的学生上出现。首轮 3 种子仅用于筛选，接近阈值归为“不确定”，不包装成成功。
+**Drop criteria.** No stable utility mismatch; or cost-accounted unseen-student gains fail to exceed the best baseline by two points with uncertainty including zero; or gains occur only for rewarded students. Three seeds screen only; near-threshold outcomes remain uncertain.
 
-**判断。** 推荐级别 C，先保留。相关工作拥挤，只有明确的机制发现和跨家族证据才值得继续。
+**Judgment.** Recommendation C, hold. Dense literature requires clear mechanisms and cross-family evidence.
 
-## B01-02：模型发明的程序抽象，是否真正成为权重中的可组合能力？
+## B01-02: do model-invented abstractions become composable capabilities in weights?
 
-**具体问题。** 模型从自己解题轨迹中提出一个可复用的新函数，经验证和训练后，不再提供函数库，它能否在未见组合任务中使用其语义？收益究竟来自抽象本身，还是只是多看了正确答案、更多 token 或记住了函数名字？
+**Question.** After proposing reusable functions from solving traces, validation, and training, can a model use their semantics in unseen compositions without a library? Are gains from abstractions, additional correct answers/tokens, or memorized names?
 
-**最接近的已有工作。** [LILO](https://arxiv.org/html/2310.19791v2) 已通过代码压缩构建可解释函数库；[Notes to Self](https://arxiv.org/html/2607.20372v1) §3–4 已评估经验抽象增强训练及测试时不提供抽象的设定；[SPEE](https://arxiv.org/html/2608.02139v1) 已将演化经验通过特权信息自蒸馏内化；[Rethinking Continual Experience Internalization](https://arxiv.org/html/2606.04703v1) 已分析反复内化的稳定性。因此“发明函数库”“去掉提示仍有效”“经验写回权重”都不是新颖性主张。
+**Closest work.** [LILO](https://arxiv.org/html/2310.19791v2) compresses interpretable libraries; [Notes to Self](https://arxiv.org/html/2607.20372v1) §3–4 tests abstraction-assisted training without test abstractions; [SPEE](https://arxiv.org/html/2608.02139v1) internalizes evolved experience through privileged distillation; [Rethinking Continual Experience Internalization](https://arxiv.org/html/2606.04703v1) studies stability. Library invention, removing prompts, and experience in weights are not novelty claims.
 
-**待验证的差异。** 针对模型自己提出且可执行验证的抽象，构造语义干预和训练资料严格配对的证据：改变抽象语义时，学习到的组合行为是否随之改变；仅改名字时，行为是否保持。贡献候选是对“抽象导致可组合学习”的机制检验，以及可能由此产生的训练约束，不是一次 benchmark 涨分。当前主要近邻未直接建立这组控制下的结论；仍需后续引文追踪。
+**Unverified distinction.** Pair training data and intervene on model-proposed executable abstractions: does behavior follow changed semantics and survive renaming? Potential contribution is controlled abstraction-driven composable learning and resulting constraints, not one benchmark gain. Main nearby works do not directly establish this exact comparison; citation tracing remains necessary.
 
-**关键假设。** 部分自提出的抽象能降低任务描述复杂度，并产生超过等信息量直接解题蒸馏的组合迁移。若只能借助检索函数库使用，则不支持本题的参数内化命题。
+**Assumption.** Some proposed abstractions reduce description complexity and transfer beyond information-matched direct-trace distillation. Retrieval-only use does not support parameter internalization.
 
-**最小实验。**
-1. 构建受限 DSL 的字符串/列表变换任务。模型从自己的成功与失败轨迹提出约 20–50 个宏函数；沙箱验证等价性、类型和运行资源，统计有效提案率及压缩收益。AST 隔离测试，防止同程序换数字泄漏。
-2. 对同一 1–3B 基座进行等 token、等更新步数的四组训练：直接正确轨迹蒸馏；自然语言经验内化；可执行抽象辅助内化；相同长度但不提供有效抽象的对照。保留冻结模型+外部函数库作为能力上界参照，成本单独计量。
-3. 测试不提供函数库，使用未见的 3–5 层组合。训练成对模型：语义相同而名称随机化；名称形式相同而定义有受控变化。变化在训练中提供给对应模型，不能要求模型猜一个从未告知的新规则。
-4. 主要指标：无库组合正确率、对受控语义变化的响应、跨命名稳定性；消融抽象生成、验证、内化三个环节。记录模型是否只是展开背诵已有长程序；至少留一个独立任务生成器测试。
+**Minimal experiment.**
+1. Restricted-DSL string/list transformations. Propose approximately 20–50 macros from actual successful/failed traces; sandbox-check equivalence, types, and resources. Measure valid rates/compression. Separate ASTs to prevent same-program/different-number leakage.
+2. Four token/update-matched groups on one 1–3B base: correct traces, natural-language experience, executable-abstraction assistance, and same-length ineffective-abstraction control. Keep frozen base plus library as an upper-bound capability reference, with separate costs.
+3. Test unseen 3–5-layer compositions without libraries. Pair fixed-semantics/randomized-name and fixed-name/changed-definition training. Supply changed rules during training rather than demand guesses of unknown rules.
+4. Measure library-free composition, semantic responsiveness, and naming stability. Ablate generation/validation/internalization; check memorized long-program expansions and retain an independent generator test.
 
-**算力与时间估计。** 第一轮 4 条件×3 种子，1–3B、序列上限 2048、每条件约 2–5M 训练 token；连同抽象生成和配对干预，规划 48–120 GPU·小时，2–4 卡，约 2–4 天含实现。完整干预矩阵若超预算先回到预算审核，不能悄悄减少对照。均为估计，未实测。
+**Estimated resources.** Four conditions × three seeds, 1–3B, sequence cap 2048, approximately 2–5M training tokens per condition. With generation/interventions: 48–120 GPU-hours, two to four GPUs, approximately 2–4 days including implementation. Review excess budgets rather than silently remove controls. Unmeasured estimates.
 
-**放弃标准。** 在无库测试中，相比等信息/等成本轨迹蒸馏没有稳定的至少 3 个百分点增益；收益经 AST 去重后消失；对语义变化不敏感却对命名显著敏感；或有效抽象极少、简单人工宏即可解释全部收益。纯负结果可以是诊断记录，不能预设能成为论文。
+**Drop criteria.** No stable ≥3-point no-library gain over matched distillation; gains disappear after AST deduplication; semantic insensitivity with strong naming sensitivity; or scarce valid abstractions with simple manual macros explaining all gains. Negative results may remain diagnostics without a promised paper.
 
-**判断。** 推荐级别 A，优先进入机制分析。最贴近“发明可复用概念并学会它”，且可用小模型做干预；最大风险是人工 DSL 上成立但难迁移到自然任务。
+**Judgment.** Recommendation A, prioritize mechanisms. Closest to inventing reusable concepts and learning them, with feasible small-model interventions. Main risk is artificial-DSL success without natural transfer.
 
-## B01-03：只保留眼前有用的自生成任务，会不会丢掉必须成套学习的“垫脚石”？
+## B01-03: does immediate-utility filtering discard complementary stepping stones?
 
-**具体问题。** 是否存在任务包 A、B：单独短程学习几乎无益，但先 A 后 B 能改善未见组合任务？只按单轮增益筛任务，会不会系统性删除 A，从而阻断后续自我迭代？重点是可识别的任务互补性，而非泛泛地“看得更远”。
+**Question.** Can individually unhelpful packages A/B yield useful A→B training for unseen composition? Does one-round filtering discard A and obstruct iteration? Focus on identifiable complementarity rather than vaguely looking further ahead.
 
-**最接近的已有工作。** [SOAR](https://arxiv.org/html/2601.18778v1) 已优化 10 步内循环收益并累积促进学生升级的题目；[INFUSER](https://arxiv.org/html/2606.09052v4) 采用局部影响近似；[Learning to Self-Evolve](https://arxiv.org/html/2603.18620v1) §3.3 提出跨轮累计目标，实际简化为单步上下文更新。因此多步收益、垫脚石课程和长期目标均已有先例。
+**Closest work.** [SOAR](https://arxiv.org/html/2601.18778v1) optimizes ten-step updates and accumulates promotion tasks; [INFUSER](https://arxiv.org/html/2606.09052v4) uses local influence; [Learning to Self-Evolve](https://arxiv.org/html/2603.18620v1) §3.3 proposes cumulative objectives but simplifies to one-step context updates. Multi-step gains, stepping stones, and long-term objectives have precedents.
 
-**待验证的差异。** 在真实权重更新闭环中，隔离“两个单独无益的训练批次存在顺序互补”这一因果效应；由可回滚的成对短程更新估计互补性，再判断保留此类批次能否改善自生成课程。简单把奖励窗口拉长不足以构成贡献，必须超过等成本长窗口、随机保留和经验回放。
+**Unverified distinction.** Identify order-dependent complementarity of individually unhelpful batches under real updates. Estimate through reversible paired short updates, then test retention in generated curricula. Longer reward windows alone are insufficient; beat compute-matched long windows, random retention, and replay.
 
-**关键假设。** 跨批次互补性足够常见，且能够在便宜的短程探测中预测；效果不能完全由额外梯度步数、易到难排序或更多 replay 解释。
+**Assumption.** Complementarity is common and cheaply predictable, not entirely extra steps, easy-to-hard order, or replay.
 
-**最小实验。**
-1. 用可执行程序组合/小型符号推导环境，形成约 128 个候选任务包。至少两种结构独立的任务生成器，不能只手写一个必然依赖 A→B 的演示。
-2. 从相同模型与优化器状态回滚，比较 A→B、B→A、A→A、B→B、随机→B；等 token、等更新步数、相同测试集。先用 8/32/128 步三个观察窗口区分噪声和滞后。
-3. 只有成对诊断出现可重复信号，才在后续获准实验中训练课程生成器；比较单轮效用筛选、固定长窗口效用、随机保留、replay、互补性保留。最终测试不用于挑 A/B 或调窗口。
-4. 指标：有用互补对比例、达到同等测试正确率的总算力、至少 3 轮后的净增益。3 种子，保留失败配对，不能只报告挑出的成功案例。
+**Minimal experiment.**
+1. Approximately 128 packages in executable composition/small symbolic derivation with two structurally independent generators, not one hand-designed A→B example.
+2. Restore identical model/optimizer states for A→B, B→A, A→A, B→B, random→B at equal tokens/updates/tests. Observe 8/32/128-step windows to distinguish noise/delay.
+3. Only repeatable paired signals justify later authorized generator training. Compare one-round filtering, fixed long windows, random retention, replay, and complementarity retention. Tests do not select pairs/windows.
+4. Measure useful-pair frequency, compute to matched accuracy, and net gains after at least three rounds. Use three seeds and retain failed pairs rather than selected successes.
 
-**算力与时间估计。** 配对诊断规划 24–48 GPU·小时；完整小规模闭环约 72–160 GPU·小时，2–4 卡、约 2–4 天含实现。1–3B 模型，短序列，先校准再承诺。大模型完整 meta-RL 不属于首轮预算。
+**Estimated resources.** Diagnosis 24–48 GPU-hours; complete small loop 72–160, two to four GPUs, approximately 2–4 days with implementation. Short-sequence 1–3B models, calibrated before commitments. Large-model meta-RL is outside initial budget.
 
-**放弃标准。** 配对优势在等步数/等 token 下消失；只在人工指定的依赖链成立；两类独立生成器均找不到可重复的至少 3 个百分点组合增益；或简单随机保留/replay 达到同等效果而成本更低。若观测窗口内无法分辨效应，不将统计噪声解释为“深层长期创新”。
+**Drop criteria.** Gains disappear under equal steps/tokens, exist only in designed dependencies, lack repeatable ≥3-point gains across two generators, or match cheaper random retention/replay. Unresolved windows do not turn noise into deep long-term innovation.
 
-**判断。** 推荐级别 B，作为第二选择。机制问题清楚、反例也有信息，但比 B01-02 更容易停留在玩具任务。
+**Judgment.** Recommendation B, second choice. Clear mechanisms and informative counterexamples, with greater toy-task risk than B01-02.
 
-## 预算、证据与审核约定
+## Budget, evidence, and review agreement
 
-GPU·小时 = 使用卡数×实际占用时间，含生成、打分、训练、评估，不等于墙钟时长。以上为筛选预算区间，基于本机实测卡型而非吞吐；没有把矩阵冒烟速度外推为训练速度。实现时间、下载、共享存储和模型可学性可能主导排期。先用开放权重小基座；具体 checkpoint、许可、训练依赖版本在获准机制阶段定稿。不会直接把整套 SOAR 的论文规模算力套到本机。
+GPU-hours are GPU count × actual allocation time, including generation/scoring/training/evaluation, not wall time alone. Screening ranges use measured hardware models, not training throughput; matrix-smoke speed is not extrapolated. Implementation, downloads, shared storage, and learnability may dominate. Start with small open bases; freeze checkpoints/licenses/dependencies during authorized mechanisms. Do not transplant full SOAR paper budgets locally.
 
-当前建议批准 B01-02 进入理论/机制分析，B01-03 候补，B01-01 暂存。下一关提交变量定义、可识别性、对照充分性、潜在混淆、预注册指标与预算；该关通过后才编写并运行研究实验。
+Recommend B01-02 for theory/mechanisms, B01-03 as backup, B01-01 on hold. Next review covers definitions, identifiability, controls, confounds, preregistered metrics, and budgets before implementation/runs.
 
-当前没有阻塞 idea 审核的缺项。训练前需要项目内训练栈和完整模型权重；paper-navigator 的 deepxiv-sdk/可选服务凭据、WebUI 端到端与多卡训练尚未验证。这些不妨碍当前通过 Tavily/arXiv 查新，不要求现在另交密钥。
+No missing item blocks idea review. Training needs a local stack/full weights. paper-navigator deepxiv-sdk/optional credentials, end-to-end WebUI, and distributed training remain unverified. These do not block Tavily/arXiv review or require new keys now.

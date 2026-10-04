@@ -1,42 +1,42 @@
-# 稳定性与真实组合：运行前登记
+# Stability and actual composition: preregistration
 
-用户2026-09-25批准做深做透。目标：定位已有训练的种子/长度不稳定，实测单独训练模型接起来能否改善完整执行。不能以启动、个别阳性或浅层负面诊断作为完成。当前仅用本机8×RTX PRO6000 96GB，不再访问已交还服务器。全部环境和产物留在本目录。
+On 2026-09-25, the user authorized a thorough investigation of seed- and length-dependent instability in existing training and whether actual composition of separately trained models improves complete execution. Launching jobs, isolated positive results, or shallow negative diagnoses do not establish completion. Use only the local 8 × RTX PRO6000 96 GB GPUs; do not access the returned servers. Keep environments and artifacts in this directory.
 
-## 固定材料
+## Fixed materials
 
-使用oracle-study已有Qwen2.5 Base 3B、32B，joint（一起训练）、operation_oracle（只训练顺序）、order_oracle（只训练操作），seed11/22/33，step64/128/256/512。原训练配置及数据保持不变。复用共同EndTool/Done协议、生成边界、greedy、batch8、2048生成token/4096上下文/16工具预算及严格整题评分。所有训练阶段已经结束，本轮首先不重训。
+Use the existing oracle-study Qwen2.5 Base 3B and 32B adapters: joint, operation_oracle (sequence-only training), and order_oracle (operation-only training), with seeds 11/22/33 and steps 64/128/256/512. Preserve original training configurations and data. Reuse the shared EndTool/Done protocol, generation boundaries, greedy decoding, batch size 8, budgets of 2048 generated tokens, 4096 context tokens, and 16 tools, and strict whole-task scoring. Training has already finished; this stage begins without retraining.
 
-测试固定原dev224（其中短调用128、长调用96）和独立确认480（每长度3/4/5/6/8各96题）。dev用于观察训练进程，独立确认集是已经使用过的固定测试集合，不称作新盲测。所有检查点全部报告，不挑测试最佳点作主结果，不在本轮按测试结果制定早停规则。另检查同一训练条件的训练loss曲线。
+Fix the original 224-example development set (128 short and 96 long examples) and the 480-example independent confirmation set (96 examples at each length 3/4/5/6/8). Development data track training progression. The confirmation set has already been used and is not a new blind test. Report every checkpoint; do not select the best test checkpoint as the main result or derive early-stopping rules from these tests. Also inspect training-loss curves under the same training conditions.
 
-## 训练过程矩阵
+## Training-progression matrix
 
-每模型/seed/检查点：一起训练模型测自主、程序给顺序、程序给操作三模式；两专用模型测各自训练对应模式，共5模式。两模型×三seed×四检查点×五模式×704题=84480条覆盖。32B的512步独立确认7200条复用原输出；3B的512步独立确认在本机重跑（校准修订见末节），全部512步dev新运行。新增曲线推理77280条。
+For each model, seed, and checkpoint, test the joint model in autonomous, program-supplied sequence, and program-supplied operation modes, plus each specialist in its trained mode: five modes total. Two models × three seeds × four checkpoints × five modes × 704 examples = 84480 records. Reuse 7200 existing 32B step-512 confirmation outputs. Rerun 3B step-512 confirmation locally (see the calibration revision below); all step-512 development evaluations are new. This requires 77280 new curve-evaluation trajectories.
 
-## 不靠正确答案的实际组合
+## Actual composition without reference answers
 
-同一基座加载不同LoRA，写名称（含Done）时选择顺序负责的adapter，写工具操作时选择操作负责的adapter。全部历史为实际生成token；不插入正确名称/操作，不修正状态，不按目标长度强制停止。每次生成从完整实际历史重建上下文。当前阶段仅由协议header/body决定adapter，路由不读参考chain或正确性评分。
+Load different LoRA adapters on the same base. Select the sequence adapter for names, including Done, and the operation adapter for tool operations. History consists entirely of actual generated tokens. Do not insert correct names or operations, repair states, or force termination at the target length. Reconstruct each generation context from the complete actual history. Adapter selection depends only on the protocol header/body stage; routing does not read reference chains or correctness scores.
 
-在step256和512分别测试：
-- 顺序专用＋操作专用。
-- 顺序专用＋一起训练（只替换顺序部分）。
-- 一起训练＋操作专用（只替换操作部分）。
+At steps 256 and 512, test:
+- Sequence specialist + operation specialist.
+- Sequence specialist + joint model (replace only the sequence component).
+- Joint model + operation specialist (replace only the operation component).
 
-共同参照为同一步数一起训练模型自己执行。一起训练模型在两阶段使用同一adapter与原自主执行算法完全相同，先用真实新进程固定batch输出核验后复用，不制造重复组。2尺度×3seed×2检查点×3组合×704题=25344条新增主评测。与曲线共109824条覆盖，102624条新增推理。
+The common baseline is autonomous execution by the joint model at the same checkpoint. Using its adapter for both stages is algorithmically identical to original autonomous execution. Verify equivalence in a fresh process with fixed batches before reusing outputs; do not create a duplicate group. Two scales × three seeds × two checkpoints × three compositions × 704 examples = 25344 new main-evaluation trajectories. Together with the curves, coverage is 109824 trajectories, including 102624 new inference runs.
 
-三个种子同seed配对是主分析。3×3跨seed配对并未运行，不能宣称排除了种子偶配效果。组合推理每个生成token只运行一个adapter，不是同token调用两个LLM；计实际模型tokens与时间。两专用512步训练总成本约两倍于单个一起训练512步，必须明确；预设比较“两专用各256步组合”对“一起训练512步”，使总训练样本/优化步暴露近似配平。相同步数比较与此预算配平比较分开报告，不能混为一谈。
+Same-seed pairing across the three seeds is the primary analysis. The 3 × 3 cross-seed matrix is not run, so chance pairing effects remain possible. Composition activates one adapter per generated token, rather than calling two LLMs for the same token; record actual model tokens and time. Two 512-step specialists cost approximately twice as much training as one 512-step joint model. Prespecify two 256-step specialists versus one 512-step joint model to approximately match cumulative training examples and optimization steps. Report same-step and exposure-matched comparisons separately.
 
-## 验收与判断
+## Acceptance criteria and interpretation
 
-运行前验证：模型路由正确、所有组合token为模型生成、错误名称不纠正、错误数字原样进入另一模型、提前Done允许并计错、缺结束边界失败。两尺度seed11各40条固定batch自主执行，核对当前同硬件直接调用单adapter与多adapter路由到同一adapter是否逐条一致；旧输出对照另外报告（校准不计主矩阵）。原训练/输入/adapter配置与源码留hash；失败不覆盖原记录。
+Before running, verify correct routing, model provenance for all composed tokens, no correction of wrong names, propagation of wrong numbers to the other model, permitted but failing premature Done, and failure on missing end boundaries. For seed 11 at each scale, compare 40 fixed-batch autonomous examples between direct single-adapter calls and multi-adapter routing to that same adapter on current hardware. Report comparisons with old outputs separately; calibration is outside the main matrix. Hash original training materials, inputs, adapter configurations, and source. Preserve failed records.
 
-最终全部新增轨迹独立复算评分、token解码和前缀hash，核对题目完整性。报告每长度/seed的完整任务准确率、顺序/所有已生成操作分数、首错类型/位置、有效生成token和时间。主结论是固定512步结果及预定预算配平对照；检查点曲线是描述性诊断。提高均值但严重损伤某seed不得称为稳定改善；“稳定正信号”要求独立长题总体三个seed均提高且未观察到任一种子的整体退化，同时报告每长度和程序成簇区间。只有三个seed，不能证明总体鲁棒性。
+Independently recompute scores, token decoding, and prefix hashes for every new trajectory and verify coverage. Report whole-task accuracy, sequence accuracy, correctness of all emitted operations, first-error type and position, effective generated tokens, and time by length and seed. Primary conclusions use the fixed 512-step and prespecified exposure-matched comparisons; checkpoint curves are descriptive. A higher mean with substantial harm to one seed is not a stable improvement. A positive consistency signal requires higher aggregate independent long-task accuracy for all three seeds with no observed aggregate seed decline, accompanied by per-length results and program-clustered intervals. Three seeds cannot establish population-wide robustness.
 
-若稳定收益成立：复核同预算与错误传播，解释具体来自哪一部分；若组合收益消失或退化：利用两种只替换单部分的对照和逐token首次分歧定位原因，必要时登记并进行针对性的机制验证，不凭空换任务制造正结果。完成需有全部矩阵、轨迹审计、研究判断、资源释放和可复现报告；不得把尚未运行的机制修复当作已完成。
+If consistent gains appear, check the matched budget and error propagation and identify the contributing component. If gains disappear or reverse, use the single-component replacements and first token-level divergences to locate causes, preregistering targeted mechanism tests if needed. Do not switch tasks merely to obtain positive results. Completion requires the full matrix, trajectory audits, interpretation, resource release, and a reproducible report. Unrun mechanism fixes do not count as completed work.
 
-## 正式矩阵启动前的校准修订
+## Calibration revision before the formal matrix
 
-首轮mock因模块名run与上游src/run.py冲突导入失败，已改为按绝对源码路径加载，本地7项路由检查通过。首轮真实核验：32B与旧记录40/40完全一致；3B与旧5090记录37/40一致，其中1条整题对错改变。无法把跨硬件旧输出当作严格程序等价基准，因此改为当前同硬件先直接调用单adapter，再加载其余adapter并路由到同一个adapter，逐条核验两者一致；同时把3B全部512步独立确认重跑，不再复用旧5090输出。该变更发生在任何正式新曲线/组合结果产生前。旧校准、失败与移动路径保留在calibration-attempts/v1。
+The first mock run failed because the module name run collided with upstream src/run.py. Loading by absolute source path fixed the issue; all seven local routing checks passed. Initial real replay matched 40/40 old 32B records and 37/40 old 3B records from the 5090, with one whole-task correctness change. Cross-hardware outputs cannot serve as strict implementation-equivalence references. Revised calibration compares direct single-adapter calls with routing to that same adapter after loading the others, all on current hardware. Rerun every 3B step-512 confirmation output instead of reusing the 5090 outputs. This revision preceded all new formal curve and composition results. Retain old calibration records, failures, and moved paths in calibration-attempts/v1.
 
-最终主矩阵覆盖仍109824条；复用只有32B旧512独立确认7200条，新增推理102624条。同硬件路由校准两尺度各40题×两种调用方式，共160条，另保留首轮80条校准。旧基准差异单独报告，不判为路由正确性失败，也不从主结果里删除困难题。
+Final main-matrix coverage remains 109824 records: 7200 reused old 32B step-512 confirmation outputs and 102624 new trajectories. Same-hardware routing calibration covers 40 examples × two call methods × two scales = 160 records, alongside the initial 80 calibration records. Report old-baseline differences separately; neither classify them as routing failures nor remove difficult examples from the main results.
 
-补充口径：两专用各256步与一起训练512步配平的是累计训练样本/优化步数，不是所有资源维度。两个rank16 adapter的总可训练参数存储约为单个rank16的两倍，单token仅激活其中一个；本轮未训练总adapter参数相同的新对照，不能声称已经排除参数容量影响。短dev首次观察到≥99%仅作掌握时间的描述性标记，不用于挑测试检查点。
+The two 256-step specialists versus the 512-step joint model match cumulative training examples and optimization steps, not every resource. Two rank-16 adapters store approximately twice the trainable parameters of one rank-16 adapter, with one active per token. No new control matches total adapter capacity, so capacity effects are not excluded. The first short-development score of at least 99% is only a descriptive mastery-time marker, not a test-checkpoint selection rule.

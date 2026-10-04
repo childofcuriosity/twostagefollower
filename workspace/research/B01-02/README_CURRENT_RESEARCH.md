@@ -1,27 +1,27 @@
-> 最新：位置/固定改名两新增条件已完成，四尺度×三seed。见[label-controls最终结论](label-controls/CONCLUSIONS.md)与[完成审计](label-controls/COMPLETION_AUDIT.md)。以下旧阶段记录保留为历史背景。
+> Historical update: the position-label and fixed-renaming conditions were completed across four model scales and three seeds. See the [label-control conclusions](label-controls/CONCLUSIONS.md) and [completion audit](label-controls/COMPLETION_AUDIT.md). The earlier stage notes below are retained for context. For the latest archived study, see the [repository overview](../../../README.md).
 
-> 2026-09-26：最新全阶段审查入口为[研究审查资料](review-package-2026-09-26/RESEARCH_REVIEW_CN.md)，配套[审查提示](review-package-2026-09-26/REVIEW_PROMPT_CN.md)及证据快照见同目录。稳定性、操作上下文干预和新程序确认均已完成；阶段性旧状态以stability-study/CONCLUSIONS.md为准。
+> On 2026-09-26, the original workspace provided a review package in `review-package-2026-09-26/`, including `RESEARCH_REVIEW_CN.md`, `REVIEW_PROMPT_CN.md`, and evidence snapshots. That package is omitted from this archive. The stability study, operation-context intervention, and fresh-program confirmation had been completed; see `stability-study/CONCLUSIONS.md` for conclusions from that stage.
 
-# 当前研究在回答什么
+# Research question at this stage
 
-当前工作目录：`stability-study`。运行状态与目标分别见该目录的 `WORK_STATUS.md` 和 `GOAL.json`。
+The active research directory at this stage was `stability-study`. Its `WORK_STATUS.md` and `GOAL.json` record the running status and objectives.
 
-我们研究的是一个受控问题：模型只在一至两个工具的任务上训练，面对三至八个工具时，为什么会漏做、提前结束或错误展开工具；把“写工具名称”和“写工具内部操作”分开训练，能否改善完整任务。
+We study a controlled question: when a model is trained on tasks with one or two tools, why does it skip work, stop early, or expand tools incorrectly on tasks with three to eight tools? Can separately training tool-name output and within-tool operation output improve whole-task completion?
 
-这套任务的输入已经给出正确工具顺序。因此“顺序能力”指保持输入顺序、逐项完成并正确结束，不等同于现实任务中的自主规划。工具是固定的九种小程序，不是模型发明任意新工具。
+The input already supplies the correct tool sequence. Here, sequence capability means preserving that order, completing each item, and stopping correctly. Autonomous planning in real-world tasks is a separate capability. The tools are nine fixed small programs.
 
-## 三层证据分别是什么
+## Three layers of evidence
 
-1. 原先的名称标签与step标签实验：改变输出表示，看完整执行和长任务表现。这里得到的是名称表示的收益线索。
-2. `oracle-study`：在训练文本和输出协议相同的条件下，分别训练全部输出、仅名称部分、仅操作部分。测试一个部分时，由程序提供另一个部分的正确内容，用于分离学习能力。两个正确上下文下的准确率乘积，不能直接当成真实组合成功率。
-3. `stability-study`：检查64、128、256、512步的变化，并把两个专用模型实际连接；再分别只替换一个部分。正确答案不参与生成，不修正中间状态。这一层回答收益能否真正落到整题，以及是否依赖训练种子或成本增加。
+1. The original NAME-versus-STEP experiments change the output representation and evaluate complete execution and longer tasks. They provide initial evidence for the benefit of tool-name representations.
+2. `oracle-study` holds the training text and output protocol constant while training all outputs, name tokens only, or operation tokens only. During evaluation of one component, a program supplies the correct content for the other component to isolate learning capabilities. The product of the two accuracies under correct contexts is distinct from success under actual composition.
+3. `stability-study` examines checkpoints at 64, 128, 256, and 512 steps, connects the two specialist models, and then replaces one component at a time. Generation uses neither reference answers nor corrections to intermediate states. This stage tests whether the gains translate to whole-task success and how they depend on training seeds and additional cost.
 
-## 当前能与不能下的结论
+## Supported findings and open questions
 
-已有证据支持继续研究工具名称与固定操作之间的分解；尚不能把它写成稳定改善真实Agent长任务，也不能宣称已经证明某一种学习机制。
+The available evidence supports further investigation of the decomposition between tool names and fixed operations. Stable improvements on real-agent long tasks and a specific learning mechanism remain open questions.
 
-本轮必须报告全部种子、任务长度和已登记检查点。平均提升与每个种子都提升分开说；两专用各512步与单模型512步不是同训练成本；各256步组合虽与单模型512步有相同累计样本暴露，但总adapter参数仍多一倍。
+This study must report all seeds, task lengths, and registered checkpoints. Average gains should be distinguished from gains on every seed. Two specialists trained for 512 steps each have a different training cost from one model trained for 512 steps. Combining two specialists trained for 256 steps each matches the cumulative example exposure of a single 512-step model, while doubling the total adapter parameters.
 
-此外，一起训练时名称相关目标约占11.14%、操作约占88.86%。分开训练同时改变了损失归一化和参数共享。因此组合成功本身不能排除监督权重、参数容量或上下文变化的解释。
+In joint training, name-related targets account for approximately 11.14% of the objective and operations for approximately 88.86%. Separate training changes both loss normalization and parameter sharing. Supervision weighting, parameter capacity, and context changes therefore remain alternative explanations for successful composition.
 
-最终原始轨迹、配对比较、子任务两列、错误案例、运行成本及审计记录都保留在当前目录。尚未完成的实验和诊断不能写成结论。
+The original workspace retained final raw trajectories, paired comparisons, both subtask metrics, error cases, execution costs, and audit records. This archive includes selected artifacts. Unfinished experiments and diagnostics must remain identified as pending rather than presented as findings.

@@ -1,19 +1,19 @@
-# 检查点与实际组合结果
-只展示已完成作业，未完成矩阵不能作为goal完成。原始输出与模式/检查点映射见analysis/results.json。名称：J=一起训练，S=只训练顺序，E=只训练操作；SE表示实际由S写名称、E写操作，没有程序正确答案。
+# Checkpoints and actual composition results
+Only completed jobs are shown; an incomplete matrix does not complete the goal. See analysis/results.json for raw outputs and mode/checkpoint mappings. J=joint training, S=sequence-only training, E=operation-only training. SE actually uses S for names and E for operations, without program-supplied correct answers.
 
-## qwen3b：完整执行
-|步数|工具数|一起训练 J/J|只替换顺序 S/J|只替换操作 J/E|两项都专用 S/E|
+## qwen3b: complete execution
+|Steps|Tools|Joint J/J|Replace sequence S/J|Replace operations J/E|Both specialists S/E|
 |---|---:|---:|---:|---:|---:|
-|64|3|80.56% (n=288)|未安排|未安排|未安排|
-|64|4|59.72% (n=288)|未安排|未安排|未安排|
-|64|5|33.33% (n=288)|未安排|未安排|未安排|
-|64|6|13.89% (n=288)|未安排|未安排|未安排|
-|64|8|0.35% (n=288)|未安排|未安排|未安排|
-|128|3|89.58% (n=288)|未安排|未安排|未安排|
-|128|4|65.28% (n=288)|未安排|未安排|未安排|
-|128|5|41.32% (n=288)|未安排|未安排|未安排|
-|128|6|19.44% (n=288)|未安排|未安排|未安排|
-|128|8|3.47% (n=288)|未安排|未安排|未安排|
+|64|3|80.56% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|64|4|59.72% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|64|5|33.33% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|64|6|13.89% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|64|8|0.35% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|128|3|89.58% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|128|4|65.28% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|128|5|41.32% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|128|6|19.44% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|128|8|3.47% (n=288)|Not scheduled|Not scheduled|Not scheduled|
 |256|3|87.15% (n=288)|82.99% (n=288)|83.68% (n=288)|79.51% (n=288)|
 |256|4|63.19% (n=288)|75.35% (n=288)|65.62% (n=288)|79.17% (n=288)|
 |256|5|33.68% (n=288)|55.21% (n=288)|34.72% (n=288)|53.12% (n=288)|
@@ -25,8 +25,8 @@
 |512|6|19.79% (n=288)|39.24% (n=288)|21.18% (n=288)|46.18% (n=288)|
 |512|8|3.12% (n=288)|15.28% (n=288)|2.08% (n=288)|19.79% (n=288)|
 
-### 子任务和短题曲线
-|步数|测试|J自主|J测操作|E测操作|J测顺序|S测顺序|
+### Subtask and short-task curves
+|Steps|Test|J autonomous|J operation test|E operation test|J sequence test|S sequence test|
 |---|---|---:|---:|---:|---:|---:|
 |64|dev/1|100.00% (n=33)|100.00% (n=33)|100.00% (n=33)|100.00% (n=33)|100.00% (n=33)|
 |64|dev/2|98.01% (n=351)|98.01% (n=351)|98.29% (n=351)|100.00% (n=351)|100.00% (n=351)|
@@ -57,19 +57,19 @@
 |512|length6/6|19.79% (n=288)|63.19% (n=288)|76.04% (n=288)|26.39% (n=288)|65.28% (n=288)|
 |512|length8/8|3.12% (n=288)|35.42% (n=288)|45.14% (n=288)|10.07% (n=288)|40.97% (n=288)|
 
-## qwen32b：完整执行
-|步数|工具数|一起训练 J/J|只替换顺序 S/J|只替换操作 J/E|两项都专用 S/E|
+## qwen32b: complete execution
+|Steps|Tools|Joint J/J|Replace sequence S/J|Replace operations J/E|Both specialists S/E|
 |---|---:|---:|---:|---:|---:|
-|64|3|98.61% (n=288)|未安排|未安排|未安排|
-|64|4|92.36% (n=288)|未安排|未安排|未安排|
-|64|5|84.03% (n=288)|未安排|未安排|未安排|
-|64|6|70.49% (n=288)|未安排|未安排|未安排|
-|64|8|56.25% (n=288)|未安排|未安排|未安排|
-|128|3|99.65% (n=288)|未安排|未安排|未安排|
-|128|4|95.49% (n=288)|未安排|未安排|未安排|
-|128|5|86.11% (n=288)|未安排|未安排|未安排|
-|128|6|78.47% (n=288)|未安排|未安排|未安排|
-|128|8|59.38% (n=288)|未安排|未安排|未安排|
+|64|3|98.61% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|64|4|92.36% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|64|5|84.03% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|64|6|70.49% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|64|8|56.25% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|128|3|99.65% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|128|4|95.49% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|128|5|86.11% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|128|6|78.47% (n=288)|Not scheduled|Not scheduled|Not scheduled|
+|128|8|59.38% (n=288)|Not scheduled|Not scheduled|Not scheduled|
 |256|3|100.00% (n=288)|100.00% (n=288)|100.00% (n=288)|100.00% (n=288)|
 |256|4|96.53% (n=288)|95.49% (n=288)|96.88% (n=288)|96.53% (n=288)|
 |256|5|85.76% (n=288)|81.25% (n=288)|91.67% (n=288)|88.19% (n=288)|
@@ -81,8 +81,8 @@
 |512|6|83.33% (n=288)|82.29% (n=288)|93.40% (n=288)|91.67% (n=288)|
 |512|8|61.46% (n=288)|65.97% (n=288)|82.64% (n=288)|87.15% (n=288)|
 
-### 子任务和短题曲线
-|步数|测试|J自主|J测操作|E测操作|J测顺序|S测顺序|
+### Subtask and short-task curves
+|Steps|Test|J autonomous|J operation test|E operation test|J sequence test|S sequence test|
 |---|---|---:|---:|---:|---:|---:|
 |64|dev/1|100.00% (n=33)|100.00% (n=33)|100.00% (n=33)|100.00% (n=33)|100.00% (n=33)|
 |64|dev/2|100.00% (n=351)|100.00% (n=351)|99.72% (n=351)|100.00% (n=351)|100.00% (n=351)|

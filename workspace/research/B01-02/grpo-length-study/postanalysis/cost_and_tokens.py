@@ -71,24 +71,24 @@ result = dict(passed=True, records=records, totals=totals, precheck_actual_outpu
               precheck=precheck, lifecycle=lifecycle['allocated_gpu_hours'],
               total_allocated_gpu_hours=lifecycle['total_allocated_gpu_hours'])
 (R / 'analysis/cost-and-token-audit.json').write_text(json.dumps(result, indent=2) + '\n')
-lines = ['# 计算量、输出token与结束原因', '',
-         '所有token数由实际保存的output_ids逐条复核，包含真实EOS，排除prompt与padding。EOS必须在输出末尾，达到上限必须恰好等于冻结cap；训练loss记录的token总数也与原始候选一致。', '',
-         '| 组合 | STEP训练token | NAME训练token | NAME相对变化 | STEP训练段GPUh | NAME训练段GPUh | NAME相对变化 |',
+lines = ['# Compute, output tokens, and stopping reasons', '',
+         'All token counts are checked record by record against saved output_ids, including actual EOS and excluding prompt and padding. EOS must be the final output token; cap-truncated outputs must exactly match the frozen cap. Token totals in training-loss records also match the raw candidates.', '',
+         '| Setting | STEP training tokens | NAME training tokens | NAME relative change | STEP training-segment GPUh | NAME training-segment GPUh | NAME relative change |',
          '|---|---:|---:|---:|---:|---:|---:|']
 for x in records:
     s, n = [x['conditions'][c]['training'] for c in ['STEP', 'NAME']]
     lines.append(f'| {x["task"]} | {s["output_tokens"]:,} | {n["output_tokens"]:,} | {x["NAME_vs_STEP_training_token_percent"]:+.2f}% | {s["post_nccl_run_gpu_hours"]:.3f} | {n["post_nccl_run_gpu_hours"]:.3f} | {x["NAME_vs_STEP_training_segment_gpu_percent"]:+.2f}% |')
-lines += ['', '每格合计三个seed、38400候选。训练段GPUh=各run在NCCL初始化结束后计时的墙钟×2，含加载、采样、反向、保存与等待；不含此前的进程/NCCL启动。配对在同一物理双卡slot顺序运行。时间差是本轮测量，不等同于纯GPU内核加速率。输出长度是生成行为的结果，不能把成功率差全部归因于标签自身的token长度。', '',
-          '## 全部作业占用与嵌套计时', '',
-          '| 范围 | GPU小时 |', '|---|---:|']
-for key, label in [('precheck', '预检与恢复'), ('formal_training', '正式配对训练完整作业'), ('evaluation_workers', '评测worker完整生命周期')]:
+lines += ['', 'Each cell totals three seeds and 38400 candidates. Training-segment GPUh is run wall time after NCCL initialization multiplied by 2, including loading, sampling, backpropagation, saving, and waiting, but excluding earlier process/NCCL startup. Paired conditions run sequentially in the same physical two-GPU slot. Time differences are measurements from this study, not pure GPU-kernel speedups. Output length is a result of generation behavior; success differences cannot be attributed entirely to the token lengths of the labels themselves.', '',
+          '## Total job occupancy and nested timings', '',
+          '| Scope | GPU-hours |', '|---|---:|']
+for key, label in [('precheck', 'Prechecks and recovery'), ('formal_training', 'Complete main paired training jobs'), ('evaluation_workers', 'Complete evaluation-worker lifecycles')]:
     lines.append(f'| {label} | {lifecycle["allocated_gpu_hours"][key]:.3f} |')
-lines += [f'| 合计 | {lifecycle["total_allocated_gpu_hours"]:.3f} |', '',
-          f'评测任务计时合计{lifecycle["evaluation_task_gpu_hours"]:.3f} GPUh，其中模型generate计时{lifecycle["evaluation_generation_gpu_hours"]:.3f} GPUh。这两项嵌套于worker生命周期，不能再加入上表总计。完整作业口径包括启动、加载和等待，未用稀疏利用率采样估计GPU内核活动时间。纯CPU数据准备、评分和作图不计GPU时长。', '',
-          '资源由6个双卡训练slot+4评测卡，在首小时调整为7个双卡slot+2评测卡；训练队列全部派出且有两卡释放后，增加2评测卡收尾。所有调整只影响资源调度，冻结模型、数据、采样、评分及训练预算未改，训练没有中断重启。', '',
-          '## 实际样本与截断', '',
-          f'正式候选{totals["training"]["outputs"]:,}条，输出token {totals["training"]["output_tokens"]:,}，上限截断{totals["training"]["truncated"]}条。独立生成的预定评测{totals["evaluation"]["outputs"]:,}条，输出token {totals["evaluation"]["output_tokens"]:,}，上限截断{totals["evaluation"]["truncated"]}条。其余均由EOS结束，EOS本身不等于任务成功。', '',
-          '另有9216条预检/恢复实际候选：12个条件任务各4次原始更新+2次恢复重放。恢复重放不当作独立seed或正式证据，成本计入预检。原始模型step0每组合条件只生成一次并由三个seed引用，没有将引用数伪装为独立生成数。', '',
-          '完整逐组训练/评测token及结束原因：analysis/cost-and-token-audit.json；逐个作业分配：analysis/lifecycle-audit.json。']
+lines += [f'| Total | {lifecycle["total_allocated_gpu_hours"]:.3f} |', '',
+          f'Total evaluation-task time: {lifecycle["evaluation_task_gpu_hours"]:.3f} GPUh, including model generate time of {lifecycle["evaluation_generation_gpu_hours"]:.3f} GPUh. Both timings are nested within worker lifecycles and must not be added to the total above. Full-job accounting includes startup, loading, and waiting; sparse utilization samples are not used to estimate active GPU-kernel time. CPU-only data preparation, scoring, and plotting contribute no GPU time.', '',
+          'Resources changed from 6 two-GPU training slots + 4 evaluation GPUs to 7 two-GPU slots + 2 evaluation GPUs in the first hour. Once all training jobs had been dispatched and two GPUs became free, 2 evaluation GPUs were added to finish the queue. These changes affected scheduling only; frozen models, data, sampling, scoring, and training budgets remained unchanged. Training was not interrupted or restarted.', '',
+          '## Actual samples and truncations', '',
+          f'Main candidates: {totals["training"]["outputs"]:,}; output tokens: {totals["training"]["output_tokens"]:,}; cap truncations: {totals["training"]["truncated"]}. Independently generated scheduled evaluations: {totals["evaluation"]["outputs"]:,}; output tokens: {totals["evaluation"]["output_tokens"]:,}; cap truncations: {totals["evaluation"]["truncated"]}. All other outputs end with EOS, which alone does not imply task success.', '',
+          'An additional 9216 candidates were generated during prechecks/recovery: 4 original updates + 2 replayed recovery updates for each of 12 condition/tasks. Recovery replays are not independent seeds or main evidence; their costs are included in prechecks. Original-model step0 is generated once per setting/condition and referenced by three seeds; reference counts are not treated as independent generations.', '',
+          'Complete per-setting training/evaluation tokens and stopping reasons: analysis/cost-and-token-audit.json; per-job allocations: analysis/lifecycle-audit.json.']
 (R / 'COSTS.md').write_text('\n'.join(lines) + '\n')
 print(json.dumps(totals, indent=2))

@@ -52,18 +52,18 @@ def main():
                                     program_bootstrap95=np.quantile(boot,[.025,.975]).tolist()))
     assert len(records)==84,len(records)
     write(C/'analysis/comparisons.json',dict(records=records,note='Same checkpoints and rows; all operations model-generated from actual state. Program bootstrap conditional on 3 seeds. Local context removes both prior trace and global future-tool list from operation input.'))
-    lines=['# 操作部分只看当前工具和状态：实际执行对照',
-           '所有名称和操作仍由模型生成，没有程序正确答案帮助。局部上下文只改变操作部分输入；名称部分保留完整历史。',
-           'J=一起训练，S=只训练顺序，E=只训练操作。全部固定512步。平均值不能替代各seed差值。',
-           '', '|模型|比较|工具数|新方案整题成功|对照整题成功|差值pp|三个seed差值pp|',
+    lines=['# Operations see only the current tool and state: actual execution controls',
+           'All names and operations remain model-generated, with no program-supplied correct answers. Local context changes only operation inputs; the sequence component retains full history.',
+           'J=joint training, S=sequence-only training, E=operation-only training. All checkpoints are fixed at 512 steps. Means do not replace seed-wise differences.',
+           '', '|Model|Comparison|Tools|New full-task success|Control full-task success|Difference pp|Three seed differences pp|',
            '|---|---|---|---:|---:|---:|---|']
     for row in records:
         a=sum(s['metrics']['complete']['a'] for s in row['seeds'])/3
         b=sum(s['metrics']['complete']['b'] for s in row['seeds'])/3
         diff=' / '.join(f'{100*s["delta"]:+.2f}' for s in row['seeds'])
-        label=f'{row["a_route"]} {row["a_context"]} 对 {row["b_route"]} {row["b_context"]}'
+        label=f'{row["a_route"]} {row["a_context"]} versus {row["b_route"]} {row["b_context"]}'
         lines.append(f'|{row["model"]}|{label}|{row["length"]}|{100*a:.2f}%|{100*b:.2f}%|{100*row["mean_delta"]:+.2f}|{diff}|')
-    lines += ['', '两项子任务的准确率按seed列在analysis/comparisons.json。此干预改变的是操作上下文范围，不是训练权重，也不能将变化单独归因于token长度。']
+    lines += ['', 'Both subtask accuracies are listed by seed in analysis/comparisons.json. This intervention changes operation-context scope, not trained weights; changes cannot be attributed solely to token length.']
     (C/'REPORT.md').write_text('\n'.join(lines)+'\n');print('Context paired cells:',len(records))
 
 

@@ -1,73 +1,73 @@
-# 真实Agent第一步：完成，但未验证身份复述的收益
+# Real-agent first step: complete, without evidence of an identity-restatement benefit
 
-本轮开发冒烟已完成并验收：24个任务×4条件共96条主轨迹；全部最终工作副本重新评分，全部工具动作重放后的文件与原始归档一致。另保留12条单项校准，以及执行兼容性修复后的3条四要求校准。总计111条模型轨迹，约2.801 GPU小时，未超过8小时。没有SFT或RL训练。
+This development smoke test is complete and audited: 24 tasks × 4 conditions, totaling 96 main trajectories. Every final workspace was rescored, and file states after replaying every tool action matched the original archives. Also retained are 12 single-requirement calibrations and 3 four-requirement calibrations after execution-compatibility repairs. The total is 111 model trajectories and approximately 2.801 GPU-hours, within the 8-hour budget. No SFT or RL training was performed.
 
-**判断：现在不应把身份复述送进SFT或Agentic RL当作已经有效的方法。** 当前结果没有显示其优于对照，且工具协议和基本执行错误占比很高。下一步应先建立可靠的原生工具调用基线，通过多要求短任务能力验收，再检验真正的长程提前结束。此处完成的是开发验证及诊断，不是确认性研究或真实生产Agent方法已验证。
+**Decision: identity restatement should not yet enter SFT or Agentic RL as an already effective method.** These results show no advantage over controls, while tool-protocol and basic execution errors are common. The next step is a reliable native-tool baseline that passes multi-requirement short-task checks before testing genuinely long-horizon early stopping. This completes development validation and diagnosis, not a confirmatory study or validation of a production-agent method.
 
-## 做了什么
+## What we ran
 
-冻结Qwen2.5-32B-Instruct，revision `5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd`，BF16、单卡、greedy。使用项目内自建JSON工具执行循环，工具返回作为user-role消息；不是EvoScientist、Codex产品或成熟Agent SDK运行结果。
+Frozen Qwen2.5-32B-Instruct, revision `5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd`, BF16, one GPU, greedy decoding. Execution uses a project-built JSON tool loop with tool returns as user-role messages, rather than EvoScientist, the Codex product, or a mature agent SDK.
 
-三个本地任务家族：多文件配置修改、CSV关联筛选并生成报告、多模块Python函数实现。每类8个任务，4要求和12要求各4个。代码任务是小型模块集合，尚不代表大型真实仓库或复杂依赖工作流。相同seed的短/长任务共享部分内容，只有3种生成器家族；不能把24题当24种独立任务模板。允许批量操作，不人为强迫工具调用次数。
+Three local task families: editing configurations across files, joining/filtering CSV data and producing reports, and implementing Python functions across modules. Each family has 8 tasks: 4 with 4 requirements and 4 with 12. Code tasks are small module collections, not large real repositories or complex dependency workflows. Short/long tasks with the same seed share some content, and there are only 3 generator families; the 24 examples are not 24 independent task templates. Batch operations are allowed, without forcing a tool-call count.
 
-四组共享原始要求清单、工具、输入和预算，仅改变status要求：初始清单；通用继续/核对提醒；当前任务ID和名称；维护待办状态。任务身份是用户要求的身份，不只是`write_file`之类工具名称。状态由模型自己写，隐藏验收从不反馈给执行中的模型。模型可以自主finish，外部没有真值完成门控。
+All four conditions share original requirements, tools, inputs, and budgets, differing only in status instructions: initial checklist, generic continue/check reminders, current task ID and name, or maintained to-do status. Task identity refers to user requirements, not merely tool names such as `write_file`. The model writes its own status; hidden acceptance checks never feed back to the running model. It can finish autonomously without a ground-truth completion gate.
 
-短/长累计生成预算8,192/16,384 token，32/64轮，上下文上限24,576；原协议每轮生成上限1,536。全部生成开销计入，逐轮保留输入token、输出token、末尾token ID及EOS/长度上限。工作副本与Python标准库隔离在本项目，网络、子进程和越界访问被实测阻止。
+Short/long cumulative generation budgets are 8,192/16,384 tokens, with 32/64 rounds and context cap 24,576. The original per-turn generation cap is 1,536. All generation costs are counted; each round retains input/output tokens, final token ID, and EOS/length-cap evidence. Workspaces and standard-library Python are isolated within the project, with network, subprocess, and out-of-bounds access empirically blocked.
 
-## 四组结果
+## Four-condition results
 
-| 条件 | 真实完成 | 未完成却宣告完成 | 平均生成token | 平均输入token总和 |
+| Condition | Actual completion | Declared completion while incomplete | Mean generated tokens | Mean total input tokens |
 |---|---:|---:|---:|---:|
-| 初始清单 | 9/24（37.5%） | 3/24 | 1,582 | 6,093 |
-| 通用提醒 | 16/24（66.7%） | 4/24 | 1,855 | 13,037 |
-| 当前任务身份 | 9/24（37.5%） | 7/24 | 1,278 | 7,839 |
-| 待办状态 | 10/24（41.7%） | 5/24 | 1,079 | 4,666 |
+| Initial checklist | 9/24 (37.5%) | 3/24 | 1,582 | 6,093 |
+| Generic reminder | 16/24 (66.7%) | 4/24 | 1,855 | 13,037 |
+| Current task identity | 9/24 (37.5%) | 7/24 | 1,278 | 7,839 |
+| To-do status | 10/24 (41.7%) | 5/24 | 1,079 | 4,666 |
 
-身份组相对初始清单：5题仅身份组完成、5题仅清单组完成，净差0；相对通用提醒：4题仅身份组完成、11题仅提醒组完成。不能把较少输出token单独称为效率提高，因为完成情况不同。本批不计算确认性显著性结论，不根据最好看的家族或长度挑结果。
+Against the initial checklist, identity alone completes 5 tasks and checklist alone completes 5, a net difference of 0. Against generic reminders, identity alone completes 4 and reminders alone complete 11. Fewer output tokens alone do not establish better efficiency when completion differs. No confirmatory significance claim is made, and results are not selected by the most favorable family or length.
 
-![完整结果与成本](figures/agent-smoke.png)
+![Complete results and costs](figures/agent-smoke.png)
 
-## 为什么不能直接把低完成率解释为长程早停
+## Why low completion cannot simply be called long-horizon early stopping
 
-96条最终分类：44条真实完成、19条未完成主动finish、26条执行/协议失败、6条自报阻塞、1条预算耗尽。这些分类描述实际终态，不是互斥的根本原因。
+Final categories for the 96 trajectories are 44 actual completions,19 incomplete voluntary finishes,26 execution/protocol failures,6 self-reported blocks, and 1 budget exhaustion. These describe terminal states, not mutually exclusive underlying causes.
 
-59条轨迹出现过解析或工具异常，6条曾触及单次生成上限。52条失败的所有要求均已归因到未改动文件、未生成输出或生成但不正确；详细路径见`analysis/failure-diagnostics.json`。多要求短任务本身也很不稳定，不能说“模型已经稳定会做，只是任务太长”。
+Parsing or tool exceptions occurred in 59 trajectories;6 hit the per-generation cap. Every requirement in all 52 failures was attributed to unchanged files, missing outputs, or generated but incorrect outputs; detailed paths are in `analysis/failure-diagnostics.json`. Multi-requirement short tasks are themselves unreliable, so the model cannot be described as consistently capable except when tasks become long.
 
-具体证据：
+Examples:
 
-- `code-n04-s0-v2 / identity`：一次输出四次写文件与finish，被单对象JSON协议整体拒绝；模型收到错误后直接宣称已完成，四个TODO文件实际都未修改。这同时涉及协议和错误完成自评。
-- `data-n12-s2-v2 / reminder`：12个报告文件都存在，但模型把地区和数量阈值配对错，仅2/12要求通过。缺少文件与算错内容必须分开。
-- `files-n04-s2-v2 / identity`：最初已正确完成；随后用只包含修改字段的对象做全对象比较，误判额外保留字段为错误，最后删掉应保留字段。它是完成后退化，不是没坚持下去。
-- 6条blocked声明均涉及JSON组织、导入或内部实现问题；任务所需输入完整，未发现确实需要用户补充的外部前提。原隔离Python不默认导入工作目录也贡献了技术障碍。不能将这些都称为合理等待用户。
+- `code-n04-s0-v2 / identity`: the model emitted four file writes and finish together, and the single-object JSON protocol rejected the batch. After receiving the error, the model declared completion; all four TODO files were unchanged. This combines a protocol issue with incorrect self-assessment.
+- `data-n12-s2-v2 / reminder`: all 12 report files existed, but regions were paired with wrong quantity thresholds and only 2/12 requirements passed. Missing files and incorrect contents must be separated.
+- `files-n04-s2-v2 / identity`: the task was initially complete. A later whole-object comparison used an object containing only changed fields, incorrectly treated preserved extra fields as errors, and deleted required preserved fields. This is degradation after completion, not insufficient persistence.
+- All 6 blocked claims concerned JSON organization, imports, or internal implementation. Required inputs were complete, with no missing external prerequisite requiring user input. Isolated Python not importing the working directory by default also contributed technical friction. These cases cannot all be called reasonable waits for a user.
 
-逐动作重放发现16条轨迹在首次满足验收后仍有动作，共25次：8次列文件、11次检查、5次重复写入/计算，以及1次破坏性重写。检查不能一律算空转；破坏性重写单列。此小样本也不足以声称没有无限循环风险。
+Action-by-action replay found 16 trajectories with actions after first passing acceptance, totaling 25 actions: 8 file listings,11 checks,5 repeated writes/computations, and 1 destructive rewrite. Checks are not all idle looping; destructive rewriting is separate. This small sample also does not establish absence of infinite-loop risk.
 
-状态指令的实际遵循保留在`analysis/status-audit.jsonl`；非法JSON回合不能自动当作已执行的身份提示。按意向处理报告所有轨迹，不筛掉不遵循的样本来提高成绩。
+Actual adherence to status instructions is retained in `analysis/status-audit.jsonl`. Invalid JSON rounds cannot automatically count as executed identity cues. All trajectories are reported by assigned condition, without filtering nonadherent samples to raise scores.
 
-## 校准、修复和停止分支
+## Calibration, repairs, and the stopping branch
 
-第一批单项校准4/6通过：两条CSV任务猜错路径/字段、输出结构也不符合要求。全部失败保留。统一补充明确路径、表头与聚合JSON结构后，用新的单项种子2/3校准6/6通过，才运行主96。没有改正确答案或放宽验收。
+The first single-requirement calibration passed 4/6. Both CSV failures guessed paths/fields incorrectly and violated the required output structure. All failures are retained. After uniformly clarifying paths, headers, and aggregate JSON structure, new single-task seeds2/3 passed 6/6, and only then did the main 96 run. Correct answers and acceptance standards were unchanged.
 
-主96的离线诊断发现29个完全可解析的多JSON调用序列，其中23个在隔离副本按顺序执行后可通过该时刻的任务验收。**这不是新Agent成功率**：它没有让模型在新反馈下继续运行，只说明单对象解析器影响很大。
+Offline diagnosis of the main 96 found 29 fully parseable multi-JSON call sequences. Executing them sequentially in isolated copies passed task acceptance at that point in 23 cases. **This is not a new agent success rate:** the model did not continue under new feedback. It shows substantial interference from the single-object parser.
 
-因此另在`../agent-study-v3`登记兼容性复核：支持完整JSON调用序列、允许agent Python导入工作目录（隐藏grader仍隔离）、单轮上限增到3,072，累计预算不变。三项同时修改，不能分别归因。原结果完全保留，不合并成绩。
+A separate compatibility check was therefore registered in `../agent-study-v3`: support full JSON call sequences, allow agent Python to import the working directory while keeping the hidden grader isolated, and raise the per-turn cap to 3,072 without changing the cumulative budget. All three changes occur together, so their separate effects are not identified. Original results remain intact and scores are not pooled.
 
-修复后先做三个四要求任务的能力门槛，要求3/3。实测只通过文件和代码两项；数据项先产生非法转义，修正后没有创建reports目录，工具报错，却同批发出finish。独立重验确认四份报告均不存在。因此按登记规则停止，**未启动修复后的第二批96条**，没有继续调提示直到得到正结果。
+The repaired setup first faced three four-requirement capability tasks with a3/3 threshold. Only files and code passed. Data first produced an invalid escape, then corrected code failed to create the reports directory and raised a tool error, yet issued finish in the same batch. Independent verification found all four reports absent. The registered stopping rule was followed: **the repaired second batch of 96 was not started**, and prompts were not tuned until positive results appeared.
 
-## 对后续训练的建议
+## Recommendations for later training
 
-1. 暂不启动身份复述SFT，更不直接上Agentic RL。否则会把协议学习、基础代码能力和长程停止混在一起，无法判断训练收益来自什么。
-2. 下一研究关口先验收一个成熟的工具调用运行方式：多调用、工具结果反馈、代码导入和正确结束的语义必须清楚。用独立多要求短任务确认能力，不能只凭单项6/6推断。
-3. 达到能力门槛后，先确认存在“还有预算、前面执行正确、后续要求可执行，却主动停止”的足够案例，再比较任务身份、普通提醒、待办和序号/剩余量。
-4. 如能建立稳定、独立的收益，再用相同行动/工具结果的配对SFT隔离状态表示，最后考虑Agentic RL。当前既不证明该技巧普遍无效，也没有证明它可解决Codex真实长任务问题。
+1. Do not yet start identity-restatement SFT or Agentic RL. That would mix protocol learning, basic coding capability, and long-horizon stopping, leaving the source of gains unclear.
+2. First validate a mature tool-calling setup with clear semantics for multiple calls, tool-result feedback, imports, and correct termination. Confirm capability on independent multi-requirement short tasks; single-requirement6/6 is insufficient.
+3. After passing that gate, establish enough cases where budget remains, prior execution is correct, remaining requirements are feasible, yet the model stops voluntarily. Then compare task identity, generic reminders, to-do status, and position/remaining-count cues.
+4. If stable independent gains emerge, use paired SFT with the same actions/tool results to isolate status representation, then consider Agentic RL. Current evidence neither proves the technique universally ineffective nor shows that it solves real Codex long-task failures.
 
-研究主张应保持在：先前受控数字执行任务中的标签效应成立；迁移到本轮文件/数据/代码执行时，尚未得到支持。**不把两个阶段拼成“已经解决Agent中途停止”或RSI论文结论。**
+The research claim remains: label effects were found in the earlier controlled numerical execution task; transfer to these file/data/code tasks is not yet supported. **Do not combine the two stages into a claim that agent early stopping or RSI has been solved.**
 
-## 审核与复现入口
+## Review and reproduction entry points
 
-- `REPORT.md`及`analysis/results.json`：四组按家族、长度的全部汇总与配对结果。
-- `analysis/all-failures.json`、`failure-diagnostics.json`、`post-completion-review.json`：全量失败、格式因素和完成后动作。
-- `analysis/verification.json`、`replay.json`：96条独立重验、哈希和动作重放。
-- `runs/main-*/*/`：原始messages、trajectory、summary与final-workspace。
-- `../agent-study-v3/analysis/calibration-verification.json`：兼容性复核校准与未越过门槛的证据。
-- `COMPLETION_AUDIT.md`：本goal逐项验收；未运行的分支不会写成已完成。
+- `REPORT.md` and `analysis/results.json`: all four-condition summaries and paired results by family and length.
+- `analysis/all-failures.json`, `failure-diagnostics.json`, `post-completion-review.json`: all failures, format factors, and post-completion actions.
+- `analysis/verification.json`, `replay.json`: 96 independent checks, hashes, and action replays.
+- `runs/main-*/*/`: raw messages, trajectory, summary, and final-workspace.
+- `../agent-study-v3/analysis/calibration-verification.json`: compatibility-check calibration and evidence of failure to pass the threshold.
+- `COMPLETION_AUDIT.md`: itemized goal acceptance; unrun branches are not claimed complete.

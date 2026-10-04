@@ -38,18 +38,18 @@ def main():
                 for step in [64,128,256,512]:
                     z=log[max(0,step-32):step];training.append(dict(model=model,condition=condition,seed=seed,step=step,mean_previous32_loss=sum(x['loss'] for x in z)/len(z),last_loss=z[-1]['loss']))
     write(R/'analysis/results.json',dict(results=out,sources=sources,training=training,covered=sum(x['n'] for x in sources),new=sum(x['n'] for x in sources if not x['reuse'])))
-    lines=['# 检查点与实际组合结果','只展示已完成作业，未完成矩阵不能作为goal完成。原始输出与模式/检查点映射见analysis/results.json。名称：J=一起训练，S=只训练顺序，E=只训练操作；SE表示实际由S写名称、E写操作，没有程序正确答案。']
+    lines=['# Checkpoints and actual composition results','Only completed jobs are shown; an incomplete matrix does not complete the goal. See analysis/results.json for raw outputs and mode/checkpoint mappings. J=joint training, S=sequence-only training, E=operation-only training. SE actually uses S for names and E for operations, without program-supplied correct answers.']
     groups=collections.defaultdict(collections.Counter)
     for x in out:groups[x['model'],x['kind'],x['condition'],x['step'],x['mode'],x['split'],x['length']].update(x['counts'])
     def val(model,kind,cond,step,mode,split,L):
-        c=groups.get((model,kind,cond,step,mode,split,L));return f'{100*c["complete"]/c["n"]:.2f}% (n={c["n"]})' if c else '待完成'
+        c=groups.get((model,kind,cond,step,mode,split,L));return f'{100*c["complete"]/c["n"]:.2f}% (n={c["n"]})' if c else 'Pending'
     for model in ['qwen3b','qwen32b']:
-        lines+=['\n## '+model+'：完整执行','|步数|工具数|一起训练 J/J|只替换顺序 S/J|只替换操作 J/E|两项都专用 S/E|','|---|---:|---:|---:|---:|---:|']
+        lines+=['\n## '+model+': complete execution','|Steps|Tools|Joint J/J|Replace sequence S/J|Replace operations J/E|Both specialists S/E|','|---|---:|---:|---:|---:|---:|']
         for st in [64,128,256,512]:
             for L in [3,4,5,6,8]:
-                v=[val(model,'curve','joint',st,'joint','length'+str(L),L)]+[val(model,'compose',None,st,m,'length'+str(L),L) if st in [256,512] else '未安排' for m in ['SJ','JE','SE']]
+                v=[val(model,'curve','joint',st,'joint','length'+str(L),L)]+[val(model,'compose',None,st,m,'length'+str(L),L) if st in [256,512] else 'Not scheduled' for m in ['SJ','JE','SE']]
                 lines.append(f'|{st}|{L}|'+'|'.join(v)+'|')
-        lines+=['\n### 子任务和短题曲线','|步数|测试|J自主|J测操作|E测操作|J测顺序|S测顺序|','|---|---|---:|---:|---:|---:|---:|']
+        lines+=['\n### Subtask and short-task curves','|Steps|Test|J autonomous|J operation test|E operation test|J sequence test|S sequence test|','|---|---|---:|---:|---:|---:|---:|']
         for st in [64,128,256,512]:
             for split,L in [('dev',1),('dev',2)]+[('length'+str(x),x) for x in [3,4,5,6,8]]:
                 v=[val(model,'curve',c,st,m,split,L) for c,m in [('joint','joint'),('joint','order_oracle'),('order_oracle','order_oracle'),('joint','operation_oracle'),('operation_oracle','operation_oracle')]]

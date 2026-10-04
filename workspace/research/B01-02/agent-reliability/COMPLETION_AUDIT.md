@@ -1,14 +1,14 @@
-# 交付核验
+# Delivery verification
 
-- 439条已登记轨迹全部完成，覆盖全部运行队列；没有未计入的半截运行目录。
-- 439条归档最终工作区均重新验收，与原评分一致；成功和73条失败全部保留。
-- 所有动作重放的最终文件状态一致，工具错误状态一致。早期未固定接口中记录到10条轨迹的工具返回全文存在时间/宿主路径差异，不能把这些早期跨运行差异解释成单一方法效应；详情在native-audit.json。
-- 新受控接口的21条轨迹进一步通过全部工具返回全文一致检查。
-- 九个修复配对的干预前模型输出和工具返回一致；原5/24失败的新进程重复与原轨迹、结果、文件逐项一致。
-- 原始提示、工具调用、结果、最终文件、回执、上下文整理记录及所有开发失败均已保存。
-- 累计模型进程占用29.64GPU小时。全部模型工作进程已退出；本机交付时显存状态保存在final-delivery-check.json。
-- 模型权重未更新，没有外部付费推理调用或对外发布。本轮工作环境、缓存引用与产物保留在当前项目目录。
+- All 439 registered trajectories are complete, covering every run queue, with no uncounted partial run directories.
+- All 439 archived final workspaces have been regraded, matching original scores. Successes and all 73 failures are retained.
+- Action replays match final file states and tool-error states. In the early unfixed interface, full tool-return text in 10 trajectories differs in time/host paths. These early cross-run differences cannot be interpreted as a single-method effect; see native-audit.json.
+- All 21 trajectories under the new controlled interface also pass full tool-return text equality checks.
+- Model outputs and tool returns match before intervention in nine repair pairs. A new-process repeat of the original 5/24 failure matches trajectory, results, and files item by item.
+- Original prompts, tool calls, results, final files, receipts, context-management records, and all development failures are saved.
+- Total model-process occupancy is 29.64 GPU-hours. All model workers have exited; local GPU memory at delivery is recorded in final-delivery-check.json.
+- Model weights were unchanged, with no paid external inference calls or external publication. Work environments, cache references, and artifacts remain in the current project directory.
 
-该核验保证记录完整、评分与重放一致，不把3题机制实验变成跨模型/真实任务的普遍结论。原始摘要/删除方法的收益不能用来证明身份复述独有效果。当前交付为可复现工程修复和机制线索，研究新颖性仍需进一步核对。
+These checks establish record completeness and agreement of scoring/replays, not general conclusions across models or real tasks from a 3-task mechanism study. Gains from the original summary/deletion methods do not establish a unique identity-restatement effect. The deliverable is a reproducible engineering repair and mechanism evidence; research novelty still requires further checking.
 
-审核入口：[CONCLUSIONS.md](CONCLUSIONS.md)；完整报告：[REPORT.md](REPORT.md)；结构化结果：[analysis/results.json](analysis/results.json)；机制核验：[analysis/mechanism-audit.json](analysis/mechanism-audit.json)。
+Review entry: [CONCLUSIONS.md](CONCLUSIONS.md); full report: [REPORT.md](REPORT.md); structured results: [analysis/results.json](analysis/results.json); mechanism checks: [analysis/mechanism-audit.json](analysis/mechanism-audit.json).

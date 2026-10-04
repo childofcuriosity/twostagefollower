@@ -1,37 +1,37 @@
-# 这轮在检查什么
+# What this study checks
 
-本轮有两个问题：训练过程中，长任务能力何时出现、何时变差、不同训练随机种子何时分化；把分别训练的顺序与操作两部分真正接起来以后，是否比一个模型同时做两件事更好。当前结果进度以WORK_STATUS.md为准，本文描述固定方法，不代表已经完成。
+This study asks when long-task performance emerges, deteriorates, and diverges across training seeds, and whether connecting separately trained sequence and operation models improves complete execution over a jointly trained model. See WORK_STATUS.md for progress. This document specifies the fixed method and does not establish completion.
 
-## 比较对象
+## Comparisons
 
-“一起训练”指一个模型同时学习工具名称和工具内部操作。“只训练顺序”只监督名称及整条结束，“只训练操作”只监督工具内部的基本操作、数字结果和工具结束。这三类都是已经存在的LoRA适配器，本轮不先重训。
+Joint training supervises both tool names and within-tool operations. Sequence-only training supervises names and the end of the complete sequence. Operation-only training supervises primitive operations, numeric results, and tool termination. All three use existing LoRA adapters; this stage begins without retraining.
 
-原任务输入提供正确工具列表，模型需要按顺序复述并执行，而不是从目标自主规划。训练只有一或两个工具，长测试有3、4、5、6、8个工具。一步错了仍按模型实际输出继续，格式完全非法则记失败。
+The input supplies the correct tool list. The model repeats and executes that list in order rather than planning from a goal. Training examples contain one or two tools; long tests contain 3, 4, 5, 6, or 8. Execution continues from actual model outputs after an error; completely invalid formatting counts as failure.
 
-## 训练过程
+## Training progression
 
-3B、32B各三个随机种子；每类模型检查64、128、256、512步，所有点都报告。一起训练模型分别测：完整自己执行、程序提供正确顺序后写操作、程序正确执行所选工具后写名称。另两类模型分别测自己训练的那项。开发集短题用于观察是否学会，长题用于观察泛化；不从测试里挑最好的检查点。
+For both 3B and 32B, evaluate three seeds at steps 64, 128, 256, and 512 and report every point. Test the joint model in three modes: autonomous execution, operation generation with program-supplied correct names, and name generation with program-executed correct operations. Test each specialist on its trained component. Short development examples track mastery; long examples track generalization. Do not choose checkpoints using test performance.
 
-## 真正接起来执行
+## Actual composed execution
 
-一个基座模型可以加载多份LoRA参数。当需要名称时启用负责顺序的参数，当需要具体操作时启用负责操作的参数。两个阶段都看到同一份真实生成历史，程序只负责切换参数和识别结束边界。
+One base model loads multiple LoRA adapters. The sequence adapter generates names; the operation adapter generates operations. Both stages see the same actual generation history. The program switches adapters and recognizes termination boundaries.
 
-例如要求`red → black`：负责顺序的模型先写一个名称；负责操作的模型接着根据这份实际历史写操作；然后顺序模型继续写名称或结束。名字写错不改，数字写错不改，少做就结束也不强行继续。该组合过程不读取参考解来决定下一条生成内容。
+For a requested `red → black` sequence, the sequence model first writes a name, the operation model continues from that actual history, and the sequence model then writes another name or terminates. Incorrect names and numbers remain unchanged. Premature termination does not trigger forced continuation. The composition procedure does not consult reference solutions to choose subsequent content.
 
-对照四种执行方式：同一个一起训练模型做全部工作；只把名称部分换成单独训练的模型；只把操作部分换成单独训练的模型；两部分都换成单独训练的模型。前三者帮助定位差异来自哪一部分，不仅比较一个组合均值。
+Compare four routes: the joint model handles both stages; a specialist replaces only name generation; a specialist replaces only operation generation; and specialists handle both stages. The single-component replacements help locate the source of differences beyond the aggregate composition score.
 
-两个专用模型在512步接起来，与一个一起训练512步的模型比较，训练量并不相同。因此还预设两个专用模型各256步的组合，对照一起训练512步，近似配平总训练样本和优化步。两份LoRA的参数存储仍多于一份，不能声称所有成本完全相同；实际生成每个token只激活一份LoRA。
+Two specialists trained for 512 steps use more total training than one joint model trained for 512 steps. A prespecified comparison therefore pairs two 256-step specialists against the 512-step joint model, approximately matching cumulative examples and optimization steps. Two LoRA adapters still require more parameter storage, so this does not match every cost. Only one adapter is active per generated token.
 
-## 硬件和实现核验
+## Hardware and implementation checks
 
-本轮只用当前目录的训练环境和本机PRO6000，3B原来在5090上训练评测。首次3B跨硬件固定40条回放出现3条文本差异、1条整题正确性变化；因此3B全部最终基准也在本机重跑。32B原来也是本机同型号，旧40条回放完全一致。
+Use only the training environment in this directory and the local PRO6000 hardware. The original 3B runs used a 5090. Initial cross-hardware replay of 40 fixed 3B examples produced three text differences and one change in whole-task correctness, so all final 3B baselines are rerun locally. The original 32B hardware was the same local model; all 40 old replay records matched.
 
-正式运行前，在当前硬件先直接调用一份参数，再加载另外两份参数并让路由器始终选择原参数。两尺度各40条完整记录都一致，确认本轮路由实现没有改变这一固定校准集的行为。模拟器另检查错误名称不纠正、错误数字进入后续历史、提前结束计错、缺工具结束标记失败。保留首轮导入冲突和跨硬件差异，不删除失败校准。
+Before formal evaluation, call a single adapter directly on the current hardware, then load the other two adapters and route every call to the original adapter. All 40 complete records match at each scale, confirming unchanged behavior on this fixed calibration set. Mock checks also verify that wrong names remain uncorrected, wrong numbers enter subsequent history, premature termination fails, and missing tool-end markers fail. Retain the initial import failure and hardware differences rather than deleting failed calibrations.
 
-## 如何判断
+## Interpretation
 
-主要看完整任务是否严格正确，不用两个子任务准确率的乘积代替组合实测。报告三个seed各自结果、均值、最差seed变化、不同长度、错误位置与生成成本。只有三个seed，即使都改善，也只是观察到的正面稳定信号，不是对所有训练随机性的证明。
+The primary measure is strict complete-task success from actual execution, not the product of two subtask accuracies. Report each seed, the mean, the worst-seed change, results by length, error positions, and generation costs. Improvement across three seeds is an observed positive consistency signal, not proof over all training randomness.
 
-检查点曲线若出现早期较好、后期下降，将如实展示，但不在测试集上选点作最终“最佳方法”。只有提前固定的512步主比较和256步组合对512步的成本比较，作为本轮方法效果的固定比较。后续如果要改训练或早停，须先明确规则再验证。
+Show any early peaks and later declines in checkpoint curves, but do not choose a test-optimal checkpoint as the final method. The fixed effect comparisons are the prespecified 512-step comparison and the two 256-step specialists versus the 512-step joint model. Any subsequent training or early-stopping changes require a defined rule before validation.
 
-源代码、固定输入和参数路径在src/、data/、analysis/job-configs/；72份适配器完整SHA256见analysis/adapter-hashes.json；正式生成代码冻结见analysis/formal-source-freeze.json。原训练配置、日志和检查点仍在oracle-study，不复制或覆盖。所有混合模型输出保存真实token及前缀hash，程序/模型来源按原格式记录；组合输出必须全部是模型token。
+Source code, fixed inputs, and parameter paths are in src/, data/, and analysis/job-configs/. Complete SHA256 hashes for all 72 adapters are in analysis/adapter-hashes.json; the formal generation source freeze is in analysis/formal-source-freeze.json. Original training configurations, logs, and checkpoints remain in oracle-study without duplication or overwriting. All mixed-model outputs retain actual tokens and prefix hashes, with program/model provenance recorded in the original format. Every token in composed outputs must be model-generated.

@@ -1,22 +1,22 @@
-# 后续验证登记
+# Follow-up verification registration
 
-2026-09-25。用户再次要求持续解决问题；旧报告为阶段结果，不是整体目标完成。本登记写于后续运行前，旧源码与轨迹不改。
+2026-09-25. The user again requested continued work on the problem. The earlier report records an interim stage rather than completion of the overall goal. This registration precedes follow-up runs; earlier source and trajectories remain unchanged.
 
-## A：执行器与单轮截断复核
+## A: Executor and per-turn truncation checks
 
-- 冻结同一 Qwen2.5-32B-Instruct、工具、任务、greedy 解码和总生成预算24000。使用旧三组24工单，属于诊断集，不计作独立留出验证。
-- v4仅修正连续协议错误计数：完整解析但没有调用且因长度截断的响应仍属于错误，不在后续检查前提前清零。保留原始异常输出和恢复消息。
-- 四组：full/4096、sanitize/4096、full/8192、sanitize/8192；每组全部3个种子20267001–20267003，共12条。所有失败保留。
-- 原始单轮限额以外参数不变。上下文30000预算的实现会预留下一轮最大生成量，因此8192组允许的最大输入更短；逐条检查是否触发上下文预算，若触发，不将其作为单因素截断证据，需要另做相同输入上限的对照。
-- 主指标：实际正确工单数、全流程完成；辅助：交付数、真实停止原因、截断/错误事件、伪角色出现时点、tokens、成本。不能以模型自报完成替代验收。
-- 4096组与旧结果复核，确认计数修复有无改变行为。8192对比用于判断截断依赖；不要求结果预先支持历史过滤。
+- Freeze the same Qwen2.5-32B-Instruct, tools, tasks, greedy decoding, and total generation budget 24000. Use the three earlier 24-ticket tasks as a diagnostic set, not independent held-out validation.
+- v4 fixes only consecutive protocol-error counting: a fully parsed response with no calls that ends by length truncation is still an error; do not reset the counter before later checks. Preserve raw abnormal outputs and recovery messages.
+- Four conditions: full/4096, sanitize/4096, full/8192, sanitize/8192. Each uses all 3 seeds20267001–20267003, totaling 12 trajectories. Retain every failure.
+- Parameters other than the original per-turn cap are unchanged. The implementation reserves the next turn's maximum generation within the 30000 context budget, so the 8192 condition allows shorter maximum input. Check context-budget triggers record by record. If triggered, the comparison is not single-factor truncation evidence and requires another control with equal input limits.
+- Primary metrics: actually correct ticket count and complete workflow success. Auxiliary metrics: delivered count, actual stopping reason, truncation/error events, first pseudo-role occurrence, tokens, and costs. Self-reported completion cannot replace acceptance checks.
+- Compare the 4096 condition against earlier results to determine whether the counter repair changes behavior. The 8192 comparison tests truncation dependence; outcomes need not favor history filtering.
 
-## 整体未完成项
+## Remaining overall work
 
-本批仅为诊断，不满足整体goal。后续仍需独立新任务、删除长度控制、其他合适模型、不同解码设置及有语义子任务和依赖的实际工作流。新任务与正式对照在运行前另行冻结；效果不佳则归因、修改方法并保留失败，使用新的留出验证。最终报告区分身份复述与历史修复，检查跨任务效用、代价与退化，不能以挑选正例收尾。
+This batch is diagnostic and does not complete the overall goal. Independent new tasks, deletion-length controls, other suitable models, decoding settings, and practical workflows with semantic subtasks and dependencies remain necessary. Freeze new tasks and formal controls separately before running them. If results are weak, investigate causes, revise the method while retaining failures, and use new held-out validation. The final report must distinguish identity restatement from history repair and examine cross-task utility, cost, and degradation, rather than end with selected positive examples.
 
-## B：独立工单留出集（先冻结数据）
+## B: Independent held-out tickets (freeze data first)
 
-- 固定12个新种子20268001–20268012，每个24工单；与旧种子不重合。数据生成算法保持不变，以检验同分布独立复现。所有种子必须纳入，不能按表现增删。
-- 现在生成并散列冻结，尚未运行模型。历史策略与删除长度控制的具体实现将在B开始推理前登记并冻结；A诊断只允许用于修正执行器与确定预算，不查看B结果选方法。
-- 跨任务、跨模型仍属单独验证，不用这12个同分布样本代替。
+- Fix 12 new seeds20268001–20268012, each with 24 tickets, disjoint from earlier seeds. Retain the data-generation algorithm to test independent in-distribution replication. Include every seed without performance-based additions or deletions.
+- Generate and hash-freeze data now, before model runs. Register and freeze the history policies and deletion-length control before B inference starts. A diagnostics may only repair the executor and determine budgets; B results must not be inspected to select methods.
+- Cross-task and cross-model validation remain separate; these 12 in-distribution samples do not replace them.

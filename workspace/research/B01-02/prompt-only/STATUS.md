@@ -1,11 +1,11 @@
-# 当前状态：完成
+# Current status: complete
 
-2026-09-28。完整报告REPORT.md；逐项验收COMPLETION_AUDIT.md。
+2026-09-28. Full report: REPORT.md. Itemized acceptance: COMPLETION_AUDIT.md.
 
-7B因短题地板按登记启用14B备选；两模型七档探索均保留。14B只有L2达到选长标准，正式512题×4组=2048输出；全流程3040条。60个调度作业成功结束，本机8卡已空闲，无待重启队列。
+The registered short-task floor triggered the 14B fallback after 7B. Seven-length exploration is retained for both models. Only 14B L2 qualifies for formal evaluation: 512 examples × four groups = 2048 outputs; the full procedure contains 3040 outputs. All 60 dispatch jobs ended successfully. The eight local GPUs are idle with no restart queue.
 
-正式：STEP45.90%、POSITION47.85%、ALIAS57.42%、NAME45.12%。主比较NAME−STEP −0.78个百分点，95%区间[−4.88,+3.32]，没有原名复述提升证据。ALIAS+11.52个百分点[+6.84,+16.41]为辅助阳性，输入输出同步改名，不能归因于只复述标题。
+Formal results: STEP 45.90%, POSITION 47.85%, ALIAS 57.42%, NAME 45.12%. The primary NAME−STEP difference is −0.78 points, 95% interval [−4.88,+3.32], with no evidence of improvement from repeating original names. The auxiliary ALIAS gain of +11.52 points [+6.84,+16.41] changes names in both input and output and cannot be attributed solely to header repetition.
 
-辅助首错类别已进行透明修正，原始标签/分数保留；阅读顶层REPORT.md和analysis/formal-errors-reviewed.json，不把fallback14/REPORT.generated.md的初版操作数标签当作真实调用增减。
+Auxiliary first-error categories were transparently corrected; original labels and scores remain. Read top-level REPORT.md and analysis/formal-errors-reviewed.json. Initial operation-count labels in fallback14/REPORT.generated.md do not reliably identify actual call insertion/deletion.
 
-资源总分配1.046 GPU小时，正式0.198。正常运行不足小时巡检触发点即完成；没有额外重复seed或越界启动真实任务。旧微调实验未改；跨模型独立确认和真实任务迁移留待下一阶段，未对外发布。
+Total allocation is 1.046 GPU-hours, including 0.198 for formal evaluation. Normal runs completed before hourly inspection was due. No extra repeated seeds or real tasks outside scope were launched. Earlier fine-tuning experiments are unchanged. Independent cross-model confirmation and real-task transfer remain for a later stage; results were not externally published.

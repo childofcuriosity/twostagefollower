@@ -1,32 +1,39 @@
-# B01-02：二值奖励GRPO，运行前登记
+# B01-02: binary-reward GRPO preregistration
 
-2026-09-28。用户已明确授权实现、独立预检、配置冻结与6个正式run及全部预定评测。旧实验只读。
+2026-09-28. The user explicitly authorized implementation, independent prechecks, configuration freezing, 6 main runs, and all scheduled evaluations. Earlier experiments are read-only.
 
-## 固定继承
-Qwen2.5-14B-Instruct官方原始BF16权重，revision cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8；prompt-only/fallback14的L2、九工具与四位数字、完整定义和单一示例、STEP/NAME Prompt及官方chat模板。仅标题要求及示例标题不同；无额外SFT，无其他标签、规模或长度。奖励和主评测复用旧严格轨迹评分语义，标题单列，不采用更严格逐字符匹配。
+## Fixed inherited settings
 
-## 新数据
-固定L2工具索引独立均匀抽自0..8，四位输入各独立均匀抽自0..9；调用链+输入去重。共享训练4096、验证256、测试512、预检64题。除本轮四集合与示例互斥，还排除研究目录内已有底层题与评测记录里的L2（chain,x）组合；排除清单和哈希在数据构建记录中保存。旧正式512题保留历史测试身份，不调参。
+Official original BF16 Qwen2.5-14B-Instruct weights, revision cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8. Inherit L2, nine tools, four-digit states, complete definitions and a single example, STEP/NAME prompts, and the official chat template from prompt-only/fallback14. Only heading requirements and example headings differ. There is no additional SFT, other label condition, model scale, or task length. Reward and primary evaluation reuse the historical strict-trajectory scoring semantics, with headings reported separately, rather than introducing stricter character-by-character matching.
 
-数据随机种子：训练910001、验证910002、测试910003、预检910004。正式训练seed为301、302、303，每seed为STEP/NAME配对。数据生成seed不是训练重复。题目顺序由各训练seed单独生成；同seed两组初始化及顺序相同。预检seed为930001，不使用正式训练题、验证题或新测试题选择配置。
+## New data
 
-## 更新与奖励
-BF16 LoRA+GRPO，从原始模型出发，无先行SFT。每更新16道题×每题8个完整回答，100次更新，6run；每run1600道题呈现、12800个候选，合计76800个正式训练候选。同seed两组题序、初始化、有效batch、采样参数及更新预算相同，不强求候选相同。
+At fixed L2, tool indices are drawn independently and uniformly from 0..8, and each of four input digits independently and uniformly from 0..9. Deduplicate by call chain plus input. Both conditions share 4096 training, 256 validation, 512 test, and 64 precheck examples. The four sets are mutually disjoint and exclude the demonstration example, as well as existing L2 (chain, x) pairs in underlying datasets and evaluation records in the research directory. Exclusion lists and hashes are saved in data-construction records. The previous formal set of 512 examples retains its historical test status and is not used for tuning.
 
-奖励仅完整轨迹正确1，否则0。旧评分要求包括操作序列、全部状态、唯一正确Answer及无不允许的额外行；原评分允许的标题归一化仍保留，标题合规不影响奖励。同题8候选中心化并归一化优势，应用整个回答所有有效token，包括实际EOS，排除prompt和padding。不做分段或局部奖励。KL只是GRPO的策略正则，不改0/1任务奖励。具体学习率、LoRA、warmup、KL、clip、优势标准差约定和token/sequence聚合方式在独立预检后统一冻结。
+Data seeds: training 910001, validation 910002, test 910003, precheck 910004. Main training seeds are 301, 302, and 303, paired across STEP/NAME. Data-generation seeds are not training replications. Each training seed independently determines example order; the two conditions share initialization and order for that seed. Precheck seed is 930001. Main training, validation, and fresh test examples are not used to select configurations.
 
-## 预检和配置选择
-优先查看并复用已有可运行GRPO实现。先检查候选奖励与旧评分一致、采样成功率/重复率/同题混合奖励、有效输出mask，再短程更新与checkpoint保存、恢复。配置选择依据实现正确、有限loss/梯度、合理KL和采样区分度，不按NAME是否领先。正式从原始权重及配对初始化重启。所有预检与失败记录保存。OOM可减少microbatch并保持有效batch；正式实质协议变化须另存版本，不把不同协议混成一组结果。
+## Updates and rewards
 
-## 检查点与评测
-保存step0、10、20、…、100。固定验证256题每检查点greedy评测；新测试512题只step0与step100，不选最佳端点。step0为同一原始策略，允许两组各一次推理结果被三个seed引用，明确标记复用，不将其计作独立重复；每个run仍保存其LoRA初始化checkpoint及哈希。验证门槛60/70/80/90%，按预定检查点首次达到报告；未达到记未达到，不能声称首次跨越发生于两评测点间的某个精确更新。
+BF16 LoRA+GRPO starts from the original model, without prior SFT. Each update uses 16 examples × 8 complete responses per example, for 100 updates across 6 runs. Each run presents 1600 examples and 12800 candidates, totaling 76800 main training candidates. Conditions with the same seed share example order, initialization, effective batch, sampling parameters, and update budget; identical candidates are not required.
 
-报告每seed相对step0提升、NAME−STEP配对差、均值与样本SD、完整验证曲线、各门槛达标更新与计算成本。3seed仅初步重复，不作过强稳定性结论。记录生成token、实际候选、采样/更新/评测时间和分配GPU时间，不将等更新预算等同等计算量。标题、操作展开、数字错误、提前结束、额外输出、EOS与截断另记录。
+Reward is 1 only for a fully correct trajectory, otherwise 0. Historical scoring requires the operation sequence, all states, a unique correct Answer, and no disallowed extra lines. Existing heading normalization is retained; heading compliance does not affect reward. Advantages are centered and normalized within the 8 candidates for each example and applied to every valid token of the full response, including actual EOS but excluding prompt and padding. There are no segment-level or local rewards. KL regularizes the GRPO policy without changing the 0/1 task reward. Learning rate, LoRA, warmup, KL, clipping, advantage standard-deviation convention, and token/sequence aggregation are frozen together after independent prechecks.
 
-## 执行和完成
-只用本机.69八卡，尽量安排训练与评测并行；正常耗时任务每小时巡检，完成/异常事件及时处理。不因一次KL变化、几批全0/全1停止；持续异常诊断保留现场并继续。完整6个100更新run、所有固定评测及分析报告完成才算正常完成，不以正结果为前提。负结果区分故障/优化不稳/奖励无区分度/未观察标签收益。
+## Prechecks and configuration selection
 
-内部或细粒度奖励、提示优化调研、实际数学等任务迁移、跨模型/长度扩展均为后续，不自动开展，也不对外发布。
+First inspect and reuse any existing working GRPO implementation. Check candidate rewards against historical scoring, sampling success/duplication/within-example mixed rewards, and valid-output masks; then test short updates and checkpoint saving/recovery. Select configurations based on correct implementation, finite losses/gradients, reasonable KL, and discriminative sampling rewards, not whether NAME leads. Main runs restart from original weights and paired initialization. Retain all prechecks and failure records. OOM may be handled by reducing microbatch size while preserving effective batch. Substantive changes to the main protocol require a separate version; do not pool different protocols into one result group.
 
-## 资源重新授权（2026-09-28）
-用户本轮重新分配172.169.20.70:31904和172.169.20.65:32350，各4张PRO6000。覆盖此前“已收回/仅本机”的资源限制；本机8卡及这两台远程可用于本轮6正式run和预定评测。连接凭据仅存项目.config/private-servers受限文件，不写日志或报告。尽量将训练/评测有效任务并行，不增加重复seed或改变实验预算来占卡。正常训练每小时巡检，异常/完成及时处理。
+## Checkpoints and evaluation
+
+Save step0, 10, 20, …, 100. Evaluate every checkpoint greedily on 256 fixed validation examples. Evaluate the 512 fresh test examples only at step0 and step100, without selecting the best endpoint. step0 is the same original policy: one inference pass per condition may be referenced by three seeds, with reuse explicitly marked rather than counted as independent replication. Each run still saves its LoRA initialization checkpoint and hash. Validation thresholds are 60/70/80/90%, reported at the first scheduled checkpoint that reaches them. Unreached thresholds remain Not reached; no exact crossing update between evaluation points is claimed.
+
+Report per-seed gains over step0, paired NAME−STEP differences, means and sample SDs, complete validation curves, and updates/compute costs to reach each threshold. Three seeds provide preliminary replication, not strong evidence of stability. Record generated tokens, actual candidates, sampling/update/evaluation time, and allocated GPU time. Equal update budgets are not equal compute. Separately record headings, operation expansion, numerical errors, early stopping, extra outputs, EOS, and truncation.
+
+## Execution and completion
+
+Use only the eight GPUs on local host .69 initially, with training and evaluation in parallel where possible. Check routine long jobs hourly and handle completion/exception events promptly. Do not stop for one KL change or a few all-0/all-1 batches; diagnose persistent anomalies, preserve their state, and continue. Normal completion requires all 6 runs of 100 updates, all fixed evaluations, and analysis reports, regardless of whether results are positive. Negative results must distinguish failures, unstable optimization, uninformative rewards, and no observed label benefit.
+
+Internal or fine-grained rewards, prompt-optimization research, transfer to practical mathematics or other tasks, and extensions across models/lengths are follow-up work. Do not start them automatically or publish externally.
+
+## Resource reauthorization (2026-09-28)
+
+The user reassigned 172.169.20.70:31904 and 172.169.20.65:32350 for this study, each with 4 PRO6000 GPUs. This supersedes the earlier withdrawn/local-only resource restriction. The 8 local GPUs and both remote machines may be used for these 6 main runs and scheduled evaluations. Connection credentials are stored only in restricted project .config/private-servers files, not in logs or reports. Parallelize useful training/evaluation work where possible, without adding seeds or changing experimental budgets just to occupy GPUs. Check normal training hourly and handle exceptions/completion promptly.

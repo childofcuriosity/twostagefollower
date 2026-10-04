@@ -1,14 +1,14 @@
-# 完成验收清单（正式输出完成前建立）
+# Completion checklist established before formal outputs
 
-此文件是要求清单，不代表已经通过。最终逐项证据应写入COMPLETION_AUDIT.md。
+This file lists requirements; it does not certify that they have passed. Record final evidence for each item in COMPLETION_AUDIT.md.
 
-1. **模型/范围**：官方7B原始权重；若启用14B，存在基于短题地板及实现诊断的切换记录。无adapter、无训练；旧训练实验不变。
-2. **提示控制**：四组完整定义及一个共同底层示例；STEP/POSITION/NAME只改变标题要求和示例标题；ALIAS映射与既有实验一致，输入输出同步改名。证据：prompts、method-audit、实际chat渲染。
-3. **探索完整性**：所有初始长度各32题、STEP/NAME各一次；补测触发按规则；保留所有探索及7B失败表现；按STEP而非NAME选择。
-4. **冻结与新题**：正式首次运行前冻结model revision、Prompt、代码、数据和解码；每长度512新题，与预检/探索/示例无重复；四组相同底层题，无重复择优。
-5. **容量与解码**：greedy、原始权重、四组同一生成上限；正确目标均容纳，完整输入+上限不超过上下文；实际token和EOS可核验。
-6. **严格评分**：旧严格评分与独立逐行实现一致；工具操作、全部状态与Answer正确；标题单列。逐题原始输出和评分完整配对。
-7. **统计/错误**：各组成功率、相对STEP逐题差与95%区间、discordant题数；首错类型、非互斥错误、主动EOS与截断、标题符合率均可追溯。
-8. **成本**：输入/输出token、同步批量generate秒、外层分配GPU时长；NAME相对STEP增量；不把批量墙钟当单题延迟或内核活动时长。
-9. **运行审计**：全部作业结束；OOM或中断保留及修复记录；本机8卡使用，正常长任务每小时巡检；结束检查无残留推理进程。
-10. **交付与结论**：顶层简洁REPORT.md直接回答是否有效、哪些调用长度及错误、输出/推理成本；区分探索与正式、不预设正结果；说明模型选择和词形/token/Prompt局限。不扩大跨模型独立验证、真实任务或对外发布。
+1. **Model and scope:** Official original 7B weights. Any 14B fallback must have a documented short-task floor and implementation diagnosis. No adapters or training; leave earlier training experiments unchanged.
+2. **Prompt controls:** Full definitions and one shared underlying example in all four groups. STEP/POSITION/NAME change only header requirements and example headers. ALIAS uses the existing mapping in both inputs and outputs. Evidence: prompts, method-audit, and actual rendered chat inputs.
+3. **Complete exploration:** All initial lengths, 32 examples each, one STEP/NAME output per example; additional tests only under the registered rule. Retain all exploration and 7B failures. Select using STEP rather than NAME.
+4. **Freeze and fresh examples:** Freeze model revision, prompts, code, data, and decoding before the first formal run. Use 512 new examples per selected length, disjoint from prechecks, exploration, and the example. Share underlying examples across conditions; no repeated generation followed by selection.
+5. **Capacity and decoding:** Greedy decoding, original weights, and a common generation limit across conditions. Every correct target fits; full input plus generation budget fits the context. Actual tokens and EOS are auditable.
+6. **Strict scoring:** The existing scorer and independent line-by-line implementation agree on operations, all intermediate states, and Answer. Report headers separately. Retain complete paired raw outputs and scores.
+7. **Statistics and errors:** Report group success, example-level differences from STEP with 95% intervals, and discordant counts. Make first errors, overlapping error flags, EOS versus truncation, and header compliance traceable.
+8. **Costs:** Input/output tokens, synchronized batch generate seconds, outer allocated GPU time, and NAME increments over STEP. Do not interpret batch wall time as per-example latency or kernel-active time.
+9. **Run audit:** All jobs ended; OOM/interruption records and fixes retained. Use the eight local GPUs and inspect normal long-running jobs hourly. Check for residual inference processes at completion.
+10. **Delivery and conclusions:** A concise top-level REPORT.md answers whether the method helps, at which call lengths, with which errors and output/inference costs. Separate exploration from formal results without presuming gains. Explain model selection and label-form/token/prompt limitations. Independent cross-model validation, real-task transfer, and external publication are outside scope.

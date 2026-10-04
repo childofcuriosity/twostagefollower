@@ -1,26 +1,26 @@
-# B01-02 后续：训练是否改善抽象提案效用
+# B01-02 follow-up: does training improve abstraction-proposal utility?
 
-用户已授权继续实验。本协议在生成提案及查看结果前固定。
+The user authorized continuation. This protocol was fixed before proposal generation and result inspection.
 
-## 假设与范围
-比较冻结Qwen2.5-1.5B与上一轮flat/macro三个种子的检查点，在独立任务家族中提出可复用子程序的能力。旧训练是执行轨迹训练，不是提案策略训练；本实验只问一次执行学习是否自然转移到提案效用，不声称完整多轮自我改进。沿用人工DSL，不能推出自然科学创新。
+## Hypothesis and scope
+Compare frozen Qwen2.5-1.5B with earlier flat/macro checkpoints from three seeds on reusable-subprogram proposals for independent families. Earlier training supervised execution traces, not proposal policies. Test whether one execution-learning stage transfers naturally to utility, without claiming complete multi-round improvement. The artificial DSL does not establish scientific innovation.
 
-## 独立任务分布
-固定种子91407构建8个任务家族，每家族3个不等价的隐含长度2–3子程序。隐含子程序不与旧9个宏语义等价。任务程序由这些子程序及随机原语混合组成；每家族16条支持轨迹、128条测试轨迹，程序AST和精确仿射语义在支持/测试之间隔离。家族均同等权重。支持轨迹由正确执行器生成，所有方法共享；不是模型自己解出的成功轨迹。模型仅看到支持轨迹的原语序列，不看到隐含边界或测试集。
+## Independent task distribution
+Use seed 91407 to build eight families, each with three inequivalent hidden length-2–3 subprograms, semantically distinct from the old nine macros. Mix these with random primitives. Each family has 16 support and 128 test traces, with AST and exact affine-function separation across support/test. Weight families equally. A correct executor supplies shared support traces; these are not model-solved successes. Models see primitive sequences without hidden boundaries or test data.
 
-## 提案与预算
-冻结base、flat、macro各三次配对运行（11/22/33）；base三次仅采样重复，不是三个不同基础模型。另做macro错配上下文对照（循环使用另一家族支持轨迹，在原家族支持集选库）。每家族每方法16次提案；模型通过有限token trie约束为六原语的长度2–3程序，共252种语法候选，temperature=1。无效语义、重复提案仍占预算，不补采样。约束语法排除了上一轮格式失败，但限制了开放式发现空间，必须明确报告。
+## Proposals and budgets
+Run frozen base, flat, and macro three times with paired seeds 11/22/33; base repeats change sampling, not model identity. Add macro mismatched-context controls using another family cyclically for proposal context but original support for selection. Each method proposes 16 times per family. A finite-token trie restricts six-primitive programs to lengths 2–3, totaling 252 candidates, at temperature 1. Semantically invalid and duplicate proposals consume budget without replacement. Grammar removes earlier format failures while limiting open-ended discovery; disclose both.
 
-随机对照在同一252种语法候选中均匀独立抽16次。所有提案方法在原家族支持集用相同贪心压缩收益规则选择至多3个语义不同非恒等宏，非正净收益不选。不看测试分数选库。频次启发式先计支持集全部2/3元组频率，取前16，再用相同规则选库；它不是等搜索计算量的基线。额外全252候选贪心参考也不是全局最优上界。
+Random controls independently draw 16 candidates uniformly from the same space. All proposal methods use the same support-set greedy compression rule to choose up to three semantically distinct, nonidentity macros with positive net gains. Tests never guide selection. Frequency heuristics count all support 2/3-grams, take 16, and apply the same selector; search compute differs. Greedy selection from all 252 candidates is another reference, not a globally optimal upper bound.
 
-等预算仅指16次候选提案、相同选库器与下游验证；LM与随机/启发式的计算成本并不相等。保留所有生成原文、候选、采样种子与成本。
+Equal budget means 16 proposals, a shared selector, and downstream verification, not equal LM/random/heuristic compute. Retain raw generations, candidates, seeds, and costs.
 
-## 指标
-主要：未见测试轨迹的描述长度降低比例。使用动态规划，以原语为1token、每次宏调用为1token，扣除一次性库定义长度sum(len(macro)+1)；支持集亦扣定义成本。只允许精确连续原语片段替换，不能任意重写目标语义。它衡量复用压缩，不是模型解题率。
+## Metrics
+Primary: proportional description-length reduction on unseen test traces. Dynamic programming counts primitives and macro calls as one token each and subtracts one-time definition cost sum(len(macro)+1), also on support. Only exact contiguous primitive replacement is allowed, not arbitrary semantic rewriting. This measures reuse compression, not model accuracy.
 
-第二指标：固定确定性广度优先程序搜索，使用原语加选出的宏作为动作，按精确仿射signature去重。预算3000次动作扩展；宏调用算1次扩展，同时单列实际基本操作执行次数。目标是128条测试程序的完整函数语义；记录搜索发现率与发现步数。顺序固定原语在前、宏按索引排序；该搜索器不是神经模型，测试目标不参与提案/选库。比较无宏基线、随机、模型、启发式。预算选择在结果前固定，不为显著性调节。
+Secondary: fixed deterministic breadth-first search with primitives and selected macros as actions, deduplicated by exact affine signature. Budget: 3000 action expansions; a macro counts as one, with actual primitive executions reported separately. Targets are complete functions of 128 test programs. Record discovery rate and steps. Order primitives first, then macros by index. This is not neural search; targets never enter proposing/selection. Compare no-macro, random, model, and heuristic sources. Fix the budget before results rather than tuning for significance.
 
-主要配对比较macro-flat、macro-base、macro-random。报告每家族及每seed结果，按8个家族聚类bootstrap（条件于现有检查点），不把每次提案当独立训练种子。主筛选阈值：macro-random净压缩提升至少2个百分点、三个seed差值都正，且搜索解出率不比随机低超过2个百分点。即使通过也只支持该有限域提案效用。失败则停止扩大本路线；若仅优于base而不优于flat/错配上下文，不能归因于宏组织或任务适配。
+Primary paired comparisons: macro−flat, macro−base, macro−random. Report families/seeds and bootstrap over eight family clusters conditional on checkpoints; proposals are not independent training seeds. Screening requires macro−random compression ≥2 points, positive differences for all three seeds, and search discovery no more than two points below random. Passing supports bounded-domain utility only. Failure stops expansion of this route. Gains over base without gains over flat/mismatched context cannot be attributed to macro organization or task adaptation.
 
-## 预计资源与停止规则
-复用现有检查点，12个提案作业（含3个错配对照），无新增参数训练。预计不足2GPU小时，CPU评估另计；实际记录。不补采样失败，不按测试分数改超参。完成后报告并等待审核。
+## Expected resources and stopping
+Reuse checkpoints for 12 proposal jobs, including three mismatch controls, with no new parameter training. Expect under two GPU-hours, CPU analysis separate; record actual costs. No replacement sampling of failures or test-based hyperparameter changes. Report completion and await review.

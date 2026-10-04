@@ -52,17 +52,17 @@ def main():
                                     mean_delta=sum(s['delta'] for s in seeds)/3,all_three_seeds_improve=all(s['delta']>0 for s in seeds),
                                     program_bootstrap95=np.quantile(boot,[.025,.975]).tolist()))
     write(F/'analysis/comparisons.json',dict(records=records,note='Pre-frozen new programs, all routes and seeds retained. Bootstrap resamples programs and is conditional on three trained seeds.'))
-    lines=['# 新程序确认结果',
-           '数据在任何局部上下文真实模型推理前冻结，100个新工具组合×4个输入。不是新工具学习，也不是现实Agent任务。全部模型固定512步。',
-           'J/J表示一起训练模型负责两部分；S/E表示名称和操作由各自专用模型负责。full保留全部历史，local仅使操作部分看到当前工具和实际状态。',
-           '', '|模型|比较|长度|新方案完整成功|对照完整成功|差值pp|三个seed差值pp|',
+    lines=['# New-program confirmation results',
+           'Data were frozen before any actual local-context model inference:100 new tool compositions x4 inputs. This tests neither learning new tools nor real-agent tasks. All models use fixed 512-step checkpoints.',
+           'J/J uses the jointly trained model for both components; S/E uses specialists for names and operations. full retains all history; local gives only the current tool and actual state to the operation component.',
+           '', '|Model|Comparison|Length|New full success|Control full success|Difference pp|Three seed differences pp|',
            '|---|---|---|---:|---:|---:|---|']
     for r in records:
         a=sum(s['scores']['complete']['a'] for s in r['seeds'])/3;b=sum(s['scores']['complete']['b'] for s in r['seeds'])/3
         delta=' / '.join(f'{100*s["delta"]:+.2f}' for s in r['seeds'])
-        label=f'{r["a_route"]} {r["a_context"]} 对 {r["b_route"]} {r["b_context"]}'
+        label=f'{r["a_route"]} {r["a_context"]} versus {r["b_route"]} {r["b_context"]}'
         lines.append(f'|{r["model"]}|{label}|{r["length"]}|{100*a:.2f}%|{100*b:.2f}%|{100*r["mean_delta"]:+.2f}|{delta}|')
-    lines += ['', '逐seed两子任务准确率、原始对错计数和程序成簇区间见analysis/comparisons.json；全量实际输入与输出审计见analysis/completion-audit.json。']
+    lines += ['', 'See analysis/comparisons.json for per-seed subtask accuracies, raw correct/incorrect counts, and program-clustered intervals; analysis/completion-audit.json audits all actual inputs and outputs.']
     (F/'REPORT.md').write_text('\n'.join(lines)+'\n');print('FRESH AUDIT AND COMPARISONS PASSED',total,len(records))
 
 

@@ -1,10 +1,10 @@
-# 两个独立训练子任务与联合执行
+# Two separately trained subtasks and joint execution
 
-独立确认集；三个seed分别求乘积后平均。A与B来自两个不同专用检查点。两子任务同题均对是两次oracle评测的配对统计，不是实际运行双模型组合。只展示三seed完整的单元。
+Independent confirmation set; compute products separately for three seeds, then average. A and B come from different specialist checkpoints. Both subtasks correct on the same example is a paired statistic from two oracle evaluations, not an executed two-model composition. Only cells with all three seeds complete are shown.
 
 
 ## qwen1.5b
-|调用数|A顺序任务|B全部展开任务|A×B|两子任务同题均对|联合自主执行|
+|Calls|A sequence task|B all-expansions task|A x B|Both subtasks correct on the same example|Joint autonomous execution|
 |---|---:|---:|---:|---:|---:|
 | 3 | 82.64% | 99.31% | 82.11% | 82.29% | 92.01% |
 | 4 | 73.61% | 90.62% | 66.19% | 68.06% | 61.46% |
@@ -13,7 +13,7 @@
 | 8 | 33.68% | 41.67% | 13.40% | 15.28% | 9.72% |
 
 ## qwen3b
-|调用数|A顺序任务|B全部展开任务|A×B|两子任务同题均对|联合自主执行|
+|Calls|A sequence task|B all-expansions task|A x B|Both subtasks correct on the same example|Joint autonomous execution|
 |---|---:|---:|---:|---:|---:|
 | 3 | 84.72% | 95.49% | 80.69% | 80.21% | 85.76% |
 | 4 | 82.29% | 95.83% | 78.46% | 78.82% | 61.11% |
@@ -22,7 +22,7 @@
 | 8 | 41.32% | 45.83% | 18.62% | 18.75% | 2.78% |
 
 ## qwen7b
-|调用数|A顺序任务|B全部展开任务|A×B|两子任务同题均对|联合自主执行|
+|Calls|A sequence task|B all-expansions task|A x B|Both subtasks correct on the same example|Joint autonomous execution|
 |---|---:|---:|---:|---:|---:|
 | 3 | 100.00% | 98.96% | 98.96% | 98.96% | 97.22% |
 | 4 | 93.75% | 85.07% | 79.68% | 80.21% | 84.03% |
@@ -31,7 +31,7 @@
 | 8 | 29.86% | 9.38% | 3.00% | 1.39% | 13.89% |
 
 ## qwen32b
-|调用数|A顺序任务|B全部展开任务|A×B|两子任务同题均对|联合自主执行|
+|Calls|A sequence task|B all-expansions task|A x B|Both subtasks correct on the same example|Joint autonomous execution|
 |---|---:|---:|---:|---:|---:|
 | 3 | 100.00% | 100.00% | 100.00% | 100.00% | 100.00% |
 | 4 | 99.65% | 97.92% | 97.59% | 97.57% | 96.18% |

@@ -24,10 +24,10 @@ axes[0].set_ylabel('Validation outputs with error flag (%)')
 fig.tight_layout()
 for ext in ['png','pdf','svg']:fig.savefig(R/f'figures/validation-error-curves.{ext}',dpi=180)
 plt.close(fig)
-lines=['','## 全程错误变化（固定验证集）','','下图覆盖所有预定检查点，曲线为3个seed的错误标志比例均值。标志可重叠；数值错误指给定输出前一状态后，当前原始操作计算不正确。它与工具展开/顺序错误分开计数，不能相加为总错误率。','','![完整错误曲线](figures/validation-error-curves.png)','','| 更新 | STEP展开错误/256 | NAME展开错误/256 | STEP数字错误/256 | NAME数字错误/256 | STEP标题合规 | NAME标题合规 |','|---:|---:|---:|---:|---:|---:|---:|']
+lines=['','## Error changes throughout training (fixed validation set)','','The figure covers every prespecified checkpoint. Curves show the mean error-flag fractions over 3 seeds. Flags can overlap. A numerical error means that the current raw operation is computed incorrectly given the preceding output state. Numerical errors and tool-expansion/order errors are counted separately and must not be added into a total error rate.','','![Complete error curves](figures/validation-error-curves.png)','','| Update | STEP expansion errors/256 | NAME expansion errors/256 | STEP numerical errors/256 | NAME numerical errors/256 | STEP heading compliance | NAME heading compliance |','|---:|---:|---:|---:|---:|---:|---:|']
 for step in range(0,101,10):
  s,n=[next(x for x in rows if x['condition']==c and x['step']==step) for c in ['STEP','NAME']]
  lines.append(f'| {step} | {s["mean_error_counts_per_256"]["operation_mismatch"]:.2f} | {n["mean_error_counts_per_256"]["operation_mismatch"]:.2f} | {s["mean_error_counts_per_256"]["numeric_error"]:.2f} | {n["mean_error_counts_per_256"]["numeric_error"]:.2f} | {s["mean_header_rate"]:.2%} | {n["mean_header_rate"]:.2%} |')
-lines+=['','全部错误标志、EOS/截断和每个seed的原始数据见analysis/results.json、analysis/error-curves.json及eval/outputs。']
+lines+=['','All error flags, EOS/truncation information, and per-seed raw data are in analysis/results.json, analysis/error-curves.json, and eval/outputs.']
 with (R/'REPORT.md').open('a') as f:f.write('\n'.join(lines)+'\n')
 print('Full validation error curves generated.')

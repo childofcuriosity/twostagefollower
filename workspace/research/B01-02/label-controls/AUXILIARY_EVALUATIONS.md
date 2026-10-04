@@ -1,9 +1,9 @@
-# 沿旧训练器保留的补充评测
-以下均由旧训练器原有流程产生；未额外运行新模型条件。主结论仍使用无工具定义的原测试和固定512步独立集。本表不选择较好条件替代主结果。
+# Supplementary evaluations retained from the original trainer
+These outputs all come from the existing workflow of the original trainer; no extra model conditions were run. Primary conclusions still use the original tests without tool definitions and the fixed-512-step independent set. This table does not substitute better-performing conditions for the primary results.
 
-## 给出工具定义的原测试（最终512步）
+## Original tests with tool definitions (final step512)
 
-|模型|子集|原STEP|原名称|位置编号|固定改名|
+|Model|Subset|Original STEP|Original NAME|Position numbering|Fixed aliases|
 |---|---|---:|---:|---:|---:|
 |qwen7b|iid|96.09%|94.53%|88.02%|95.83%|
 |qwen7b|ood|16.67%|50.09%|30.12%|42.01%|
@@ -12,4 +12,4 @@
 |qwen32b|ood|63.45%|71.70%|81.16%|81.77%|
 |qwen32b|pressure|75.00%|81.25%|91.67%|82.64%|
 
-开发集各检查点逐seed和数据子集的成绩保存在analysis/auxiliary-audit.json，不与正式测试混成额外独立样本。
+Per-seed and per-subset development scores at every checkpoint are saved in analysis/auxiliary-audit.json and are not pooled with formal tests as additional independent samples.

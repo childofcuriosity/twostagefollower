@@ -1,40 +1,40 @@
-# Qwen2.5-0.5B 域内标签复核：运行前登记
+# Qwen2.5-0.5B in-domain label replication: preregistration
 
-日期：2026-09-27。用户授权：只改变原标签实验的模型规模，先复核训练长度1–2；如STEP基线域内仍饱和，依次把训练支持的最大调用长度扩到3、4、5、6、7、8。仅在训练长度范围内评测。不得运行原OOD或旧独立长序列评测。
+Date: 2026-09-27. User authorization: change only model scale in the original label experiment and first replicate training lengths 1–2. If the in-domain STEP baseline remains saturated, extend maximum supported training length successively to 3, 4, 5, 6, 7, and 8. Evaluate only supported lengths. Do not run original OOD or earlier independent long-sequence tests.
 
-## 继承的设置
+## Inherited settings
 
-- Qwen2.5 **Base**、LoRA r16/alpha32/dropout0，七类原投影，AdamW、LR 3e-4及原调度，512优化步，microbatch16×累积2，样本暴露16384；复用原训练器算法，不按测试选点。
-- 原9工具、四位数字操作、原prompt及Answer结束协议、原目标格式；flat/position/alias/macro四种标签定义与2026-09-26原实验完全相同。alias映射仍由`random.Random(2026092601)`产生。
-- 20个训练种子：11、22、33、100–116。同seed各条件配对；`set_seed`同时影响LoRA初始化及训练样本打乱。生成greedy，原短题评测batch32/max_new_tokens256，沿原严格完整轨迹评分器。
-- 最大长度2档逐字复用原4096条训练题和原测试的128条iid短题，不额外评测原测试OOD/pressure、旧独立480题或with-library条件。训练总步数和预算不随长度增加。
+- Qwen2.5 **Base**, LoRA r16/alpha32/dropout0, seven original projection types, AdamW, LR 3e-4 with original schedule, 512 steps, microbatch 16 × accumulation 2, and 16384 example presentations. Reuse the original trainer algorithm without test-based checkpoint selection.
+- Original nine tools, four-digit operations, prompt, Answer termination protocol, and target format. flat/position/alias/macro definitions match the 2026-09-26 experiment exactly. The alias mapping still comes from `random.Random(2026092601)`.
+- Twenty seeds: 11, 22, 33, and 100–116, paired across conditions. `set_seed` controls LoRA initialization and training-data shuffling. Use greedy generation, original short-test batch 32/max_new_tokens256, and the existing strict complete-trajectory scorer.
+- Maximum length two reuses the original 4096 training examples and 128 IID short tests verbatim. Do not add original OOD/pressure, old independent 480-example, or with-library evaluations. Training steps and budget do not grow with length.
 
-## 本轮差异和顺序门槛
+## Changes and sequential thresholds
 
-唯一模型差异：改为官方`Qwen/Qwen2.5-0.5B` Base，锁定revision与模型文件清单。最大长度2档先只运行flat的20个seed，核对其128题域内严格完整轨迹分数。
+The sole model change is to official `Qwen/Qwen2.5-0.5B` Base, with frozen revision and manifest. At maximum length two, run only the 20 flat seeds first and check strict in-domain accuracy on 128 examples.
 
-事前定义“仍接近满分”：flat的20 seed平均严格完整轨迹准确率≥99%，且至少19/20个seed各自≥99%。若不满足，**停在最大长度2档并完成四标签20 seed正式比较**。若满足，固定该档flat结果，逐档扩展支持长度，先只训练flat 20 seed；首个不满足同一饱和门槛的档位，完成该档其余三标签的20 seed正式比较。若长度8仍满足，报告所有flat档位饱和，不自动扩大。中途不根据身份组结果升级。
+Initial definition of near-perfect saturation: flat mean strict accuracy ≥99% across 20 seeds and at least 19/20 seeds individually ≥99%. If unmet, **stop at maximum length two and complete the formal four-label comparison with 20 seeds**. Otherwise freeze those flat results and extend lengths sequentially, first training 20 flat seeds at each level. At the first level below that same saturation criterion, train the remaining labels. If length eight remains saturated, report saturation at all flat levels without further automatic expansion. Never advance based on identity-label results.
 
-最大长度3–8的训练/域内测试集在运行前按原数据生成器的随机采样、去重、输入数字、提示和工具库逻辑扩展至1–L，保留每档原始文件、生成种子、抽样与hash。每档训练4096条，有效batch及512步固定。仅评测1–L长度的冻结域内测试。长度扩展本身会改变样本分布，这是用户允许的唯一额外实验变量；逐档只作本档内四条件配对，不把跨档数值当同一题集提升。
+Before running lengths 3–8, extend the original sampling, deduplication, digits, prompts, and tool-library logic to 1–L. Retain files, generation seeds, sampling records, and hashes. Each level fixes 4096 training examples, effective batch, and 512 steps. Evaluate only frozen in-domain tests at lengths 1–L. Extending length changes the example distribution, the only additional experimental variable authorized here. Compare labels within each level; cross-level scores do not measure improvement on one shared test set.
 
-## 主要终点与审计
+## Primary endpoint and audit
 
-主终点：域内全部测试题的严格完整轨迹成功率。报告每标签20 seed均值、样本SD、每seed得分、同seed差值及区间，另列每个调用长度。允许描述性学习曲线仅用原训练器已有检查点；不改训练流程为曲线额外存点。
+Primary endpoint: strict complete-trajectory success across all in-domain tests. Report each label with 20-seed mean, sample SD, every seed score, same-seed differences and intervals, plus each call length. Descriptive learning curves may use only existing trainer checkpoints; do not change training to save extra points.
 
-保留每个运行的配置、冻结代码、训练日志、adapter、原始输出和失败；逐项检查模型revision、512步、16384样本、提示/目标一致、训练/评测数据覆盖与旧评分器。正常训练每小时巡检，完成/失败事件及时处理。所有文件限定在当前项目目录，不覆盖任何旧实验。
+Retain every run configuration, frozen source, training log, adapter, raw output, and failure. Verify revision, 512 steps, 16384 examples, prompt/target consistency, data coverage, and the old scorer. Inspect normal training hourly and handle completion/failure promptly. Keep all files within the project without overwriting earlier experiments.
 
-## 后续备忘（本轮不启动）
+## Future notes, outside this round
 
-短期：纯prompt对照，比较只给规则与计划、执行前复述当前工具身份的作用。长期：相关工作与创新性调研，迁移到可自动验收的真实执行任务，验证“给定计划—执行前复述子任务身份—完成率”；公开成果与个人贡献只按真实证据陈述。
+Near term: prompt-only comparison of rules/plan alone versus repeating current tool identity before execution. Longer term: related-work/novelty review and transfer to automatically verifiable real execution tasks, testing supplied plan → pre-execution subtask identity → completion. Public claims and individual contributions must follow actual evidence.
 
-## 2026-09-27 运行前修订（用户最新指示）
+## 2026-09-27 pre-run amendment from latest user instructions
 
-上文的99%“接近满分”停止门槛尚未运行即被用户否决。保留原文作为修订记录，不再使用该门槛。新门槛在任何0.5B训练或评测之前固定：STEP的20 seed域内严格完整轨迹**平均成功率≤90%**，并且至少15/20 seed各自≤95%，才视为该档具有足够改善空间。选择首个满足此门槛的最大长度档位完成四标签正式比较；如果长度2–8均不满足，仍按顺序完成全部七档STEP筛查，在长度8如实报告基线及剩余空间，不因身份标签预期收益调整档位。长度1由原长度2训练集覆盖，不另开长度1训练。
+The user rejected the above 99% saturation threshold before it was used. Retain it as history, but replace it before any 0.5B training/evaluation: sufficient headroom requires STEP **mean strict in-domain success ≤90%** across 20 seeds and at least 15/20 seeds individually ≤95%. Select the first maximum-length level meeting this rule for the four-label comparison. If none of lengths 2–8 qualify, complete all seven STEP screening levels and honestly report the length-eight baseline/headroom without adjusting levels for expected identity-label gains. Length one is covered by the original length-two training set and receives no separate training.
 
-90%仅是基线错误空间门槛，不能保证标签方法有效或达到论文证据强度。主结论取决于同seed配对差值、seed间SD、逐长度结果、原始失败案例与诚实的置信区间。选择档位仅依据STEP，四标签结果无论正负均报告；因为所选档位经过基线筛查，不能把该选择后的区间当作完全预先固定任务的确证检验。
+The 90% threshold identifies baseline error headroom; it guarantees neither method effectiveness nor publication-strength evidence. Conclusions depend on paired seed differences, between-seed SD, length-specific results, raw failures, and honest intervals. Selection uses STEP only and reports all label outcomes. Because baseline screening selects the level, subsequent intervals are not confirmatory tests on a completely prespecified task.
 
-## 长度扩展的执行细则（长度3启动前冻结）
+## Length-extension details frozen before starting length three
 
-长度2的STEP 20/20 seed均为128/128严格完整轨迹成功，按上面的新门槛继续。每个L=3–8独立生成4096条训练题，仍按原长度1–2生成器“从所有长度不超过L的9工具调用链均匀抽取、每题四位数均匀抽取、链与输入组合去重”的原则；固定数据随机种子`900+L`，生成文件和sha256在训练前冻结。为了保留与长度2的直接锚点，测试包含旧128条1–2调用IID题，另给每个新增调用长度3–L各128条冻结新题；所以长度L测试共`128*(L-1)`题，仅含训练支持的调用长度。每档20训练seed使用同一训练/测试文件，四标签配对。
+All 20 length-two STEP seeds achieve 128/128 strict success, triggering extension under the revised rule. For each L=3–8, independently generate 4096 training examples using the original principle: sample uniformly from all nine-tool chains of length at most L, draw four digits uniformly, and deduplicate chain/input pairs. Fix data seed `900+L` and freeze files/SHA256 before training. Preserve a direct anchor to length two by retaining the old 128 one-/two-call IID tests, adding 128 frozen examples for every new length 3–L. Each level thus has `128*(L-1)` tests, all training-supported. Twenty seeds share the same training/test files and labels are paired.
 
-长度增加可能超过原训练器256-token序列断言或原256-token生成上限。预检先测最大目标长度；若确实超出，只提高容量上限至容纳完整训练目标和测试目标，保留原greedy、提示、目标、解析、评分、优化步与预算。具体每档变更及数值记录在预检文件。这是长度扩展所必需的兼容调整，不回写旧实验。
+Longer targets may exceed the old 256-token training assertion or generation limit. Precheck maximum targets; only if exceeded, raise capacity enough to fit complete training/test targets. Preserve greedy decoding, prompts, targets, parsing, scoring, optimization steps, and budget. Record per-level changes and values in prechecks. This necessary compatibility adjustment does not alter old experiments.

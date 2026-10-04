@@ -1,12 +1,12 @@
-# 完成核验
+# Completion verification
 
-主矩阵109824条（新增102624、复用7200），操作上下文16896条，新程序确认9600条，合计136320条正式覆盖。不是136320个独立题目。当前两轮校准320条原始轨迹、首次归档校准80条另存，不计正式样本。
+Main matrix 109824 trajectories (102624 new,7200 reused), operation-context intervention 16896, and new-program confirmation 9600, totaling 136320 formal records, not independent examples. The two current calibration rounds retain 320 raw trajectories; the first archived calibration retains another 80, excluded from formal samples.
 
-- 主矩阵：analysis/completion-audit.json，analysis/formal-source-freeze.json，analysis/adapter-hashes.json。
-- 操作上下文：context-intervention/analysis/completion-audit.json，实际生成输入逐条重建；新评测器完整历史模式在两个尺度各40题与旧评测器逐条一致。
-- 新程序确认：fresh-confirmation/analysis/completion-audit.json，9600条、99481生成事件，明确no_oracle_inputs与actual_generation_contexts_reconstructed均为true。
-- 完整分析组装：analysis/final-analysis-complete.json；人工复核最终图、统计口径、固定抽样成功/失败案例及宽松评分敏感性；补齐144格子任务表和16组事后函数范围诊断。
-- 所有失败校准和硬件差异保留。3B在本机统一重评，避免把5090与PRO6000数值差异混入方法比较。原始来源及token hash可追溯。
-- 资源账见RESOURCE_ACCOUNTING.md：78个已结束评测/校准作业，31.62分配GPU小时（含加载等墙钟时间）；本轮无新增训练。最终三阶段调度/分析进程已退出，现场8卡均无显存占用。未重新使用已交还远程机器。
+- Main matrix: analysis/completion-audit.json, analysis/formal-source-freeze.json, analysis/adapter-hashes.json.
+- Operation context: context-intervention/analysis/completion-audit.json reconstructs actual generation inputs record by record. In full-history mode, the new and old evaluators match on 40 examples per scale.
+- New-program confirmation: fresh-confirmation/analysis/completion-audit.json covers 9600 trajectories and 99481 generation events, with no_oracle_inputs and actual_generation_contexts_reconstructed explicitly true.
+- Final analysis assembly: analysis/final-analysis-complete.json. Final figures, statistical definitions, fixed-sample success/failure cases, and relaxed-scoring sensitivity reviewed;144 subtask cells and 16 post hoc function-scope diagnostic groups completed.
+- All failed calibrations and hardware differences retained.3B is consistently reevaluated locally to avoid mixing5090/PRO6000 numerical differences into method comparisons. Original provenance and token hashes are traceable.
+- Resources: RESOURCE_ACCOUNTING.md records 78 completed evaluation/calibration jobs and 31.62 allocated GPU-hours, including loading and other wall time. No new training occurred. All three-stage scheduling/analysis processes exited; all 8 GPUs were checked with no memory occupied. Returned remote machines were not reused.
 
-完成的是当前获准的稳定性研究及登记跟进；不代表未验证的现实Agent/RSI总体目标已完成。最终判断见CONCLUSIONS.md。
+This completes the authorized stability study and registered follow-ups, not unverified broader real-agent/RSI goals. See CONCLUSIONS.md for final interpretation.

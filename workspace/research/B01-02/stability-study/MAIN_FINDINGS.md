@@ -1,56 +1,56 @@
-> 本文件为主矩阵阶段报告；后续两阶段现均已完成，最终判断与最新状态以[CONCLUSIONS.md](CONCLUSIONS.md)为准。以下阶段性“进行中”记录仅描述当时进度。
+> This is the main-matrix stage report. Both subsequent stages are now complete; see [CONCLUSIONS.md](CONCLUSIONS.md) for final interpretation and current status. References below to ongoing work describe progress at the time.
 
-# 主矩阵：真实组合已经完成的结果
+# Main matrix: completed actual-composition results
 
-本文件只解释已完成且审计通过的主矩阵。操作上下文干预和新程序确认集尚在进行，最终入口将是本目录CONCLUSIONS.md，当前不标目标完成。
+This document explains only the completed, audited main matrix. At this stage, operation-context interventions and fresh-program confirmation remain in progress. CONCLUSIONS.md will be the final entry point; the goal is not yet marked complete.
 
-模型为Qwen2.5 Base 3B和32B。输入给定四个数字和正确工具顺序；模型负责保持顺序、展开九种已学工具并正确结束。不是自主规划新顺序，也不是发明新工具。
+Models are Qwen2.5 Base 3B and 32B. Inputs provide four numbers and the correct tool order. The model maintains that order, expands nine learned tools, and terminates correctly; it does not autonomously plan a new order or invent tools.
 
-“一起训练”指同一套LoRA参数同时监督名称与操作；“只训练顺序”“只训练操作”指分别只对相应输出token计算监督损失，训练输入仍含完整正确文本。实际组合是在同一冻结基座上按生成阶段切换两套微调参数，并不由程序补正确答案。
+Joint training supervises names and operations in one LoRA adapter. Sequence-only and operation-only training compute loss only on the corresponding output tokens, while training inputs still contain the full correct text. Actual composition switches fine-tuned adapters on the same frozen base according to generation stage. The program does not supply reference answers.
 
-## 固定512步，真实完整执行
+## Fixed step 512: actual complete execution
 
-每个模型/方案三个训练seed，各480道长题（3/4/5/6/8工具，每长度96题），共1440条。必须全顺序、全操作和结束均正确才算整题成功。操作必须按工具定义展开且逐步数字正确；仅最终四位数碰巧相同，或使用不同的等价操作序列，不算本次严格主指标成功。
+Each model/route uses three training seeds and 480 long examples per seed (96 each at 3/4/5/6/8 tools), totaling 1440 trajectories. Whole-task success requires correct order, operations, and termination. Operations must follow tool definitions and produce correct numbers at every step. Coincidentally correct final numbers or a different equivalent operation sequence do not satisfy the strict primary metric.
 
-|名称由谁生成|操作由谁生成|3B长题总体|3B八工具|32B长题总体|32B八工具|
+|Name generator|Operation generator|3B all long tasks|3B eight tools|32B all long tasks|32B eight tools|
 |---|---|---:|---:|---:|---:|
-|一起训练的模型|一起训练的模型|40.49%|3.12%|85.35%|61.46%|
-|只训练顺序的模型|一起训练的模型|53.89%|15.28%|85.21%|65.97%|
-|一起训练的模型|只训练操作的模型|40.28%|2.08%|93.33%|82.64%|
-|只训练顺序的模型|只训练操作的模型|55.83%|19.79%|93.19%|87.15%|
+|Joint model|Joint model|40.49%|3.12%|85.35%|61.46%|
+|Sequence specialist|Joint model|53.89%|15.28%|85.21%|65.97%|
+|Joint model|Operation specialist|40.28%|2.08%|93.33%|82.64%|
+|Sequence specialist|Operation specialist|55.83%|19.79%|93.19%|87.15%|
 
-因此收益来源有明显尺度差异：3B主要受益于替换名称顺序部分；32B主要受益于替换操作部分。不能把它概括成“两部分分开训练就总是更容易”。
+The source of gains differs by scale: 3B mainly benefits from replacing name/order generation, while 32B mainly benefits from replacing operations. This does not support a general claim that separately training both components is always easier.
 
-两部分都使用专用模型时，3B三个seed相对一起训练分别提高12.29、8.75、25.00个百分点；32B分别变化+17.08、−1.25、+7.71个百分点。32B的负值只是本次观测，不能据此宣称总体上显著有害；但它不满足登记的三个seed都改善标准。
+With specialists in both stages, 3B gains 12.29, 8.75, and 25.00 percentage points over joint training across seeds; 32B changes by +17.08, −1.25, and +7.71 points. The negative 32B observation does not establish significant population-level harm, but it fails the registered requirement of improvement for all three seeds.
 
-## 训练样本暴露配平后
+## Matching training-example exposure
 
-两个专用模型各256步，与一起训练512步比较，累计训练样本数相同。3B分别提高11.88、7.08、24.17个百分点，平均14.37；32B分别变化+15.83、−1.88、+7.29，平均7.08。
+Two 256-step specialists and one 512-step joint model receive the same cumulative number of training examples. The 3B gains are 11.88, 7.08, and 24.17 points, averaging 14.37. The 32B changes are +15.83, −1.88, and +7.29 points, averaging 7.08.
 
-这排除了“只因总样本暴露多一倍”这一简单解释，但没有配平所有资源：两套adapter的参数存储仍多一倍；监督token总数和各部分损失归一化也不同。一起训练约11.14%的目标token是工具名称及整题结束符，88.86%是操作及每个工具的EndTool。不能直接把收益归因于模型内部形成独立模块。
+This excludes a simple explanation based only on twice the total example exposure, but does not match every resource. Two adapters still double parameter storage; supervised-token counts and component loss normalization also differ. Approximately 11.14% of joint target tokens are names and task-end markers, while 88.86% are operations and per-tool EndTool markers. Gains cannot directly be attributed to independent internal modules.
 
-32B各256步与一起训练256步比较时，三个seed均提高；固定512步和与一起训练512步的样本配平比较则未一致提高。全部检查点都保留，不选择表现最好的一个作主结论。
+For 32B, two 256-step specialists outperform the 256-step joint model for all three seeds. The fixed 512-step and exposure-matched comparisons against the 512-step joint model do not improve consistently. Retain every checkpoint rather than choosing the strongest one as the primary result.
 
-## 两个子任务能预测实际结果，但不是独立学习的证明
+## Subtask scores predict actual performance, but do not establish independent learning
 
-按每个seed、每个工具长度分别相乘后汇总，两个专用模型的子任务分数预测3B为56.04%，实际55.83%；预测32B为93.20%，实际93.19%。条件于三种训练seed的程序成簇bootstrap，预测误差区间分别约为[−1.15,+0.73]、[−0.41,+0.41]个百分点。
+Multiplying within seed and tool length before aggregation predicts 56.04% for the two 3B specialists versus 55.83% actual success, and 93.20% for 32B versus 93.19% actual success. Program-clustered bootstrap intervals conditional on the three training seeds place prediction errors at approximately [−1.15,+0.73] and [−0.41,+0.41] percentage points.
 
-必须加入一起训练模型作为对照：相同计算预测3B为41.17%，实际40.49%；预测32B为85.43%，实际85.35%。可见，乘积吻合支持这种任务拆分作为性能诊断，并非分开训练特有的证据。模型内部独立性、学习为何更容易，仍需要其他干预支持。
+The joint model is a necessary control: the same calculation predicts 41.17% versus 40.49% actual success for 3B, and 85.43% versus 85.35% for 32B. Product agreement supports this decomposition as a performance diagnostic, rather than providing evidence unique to separate training. Internal independence and easier learning require additional interventions.
 
-直接混合所有长度再相乘，会混入任务长度同时影响两个部分造成的关联。两种口径均公开在ORACLE_PREDICTION_CHECK.md与ALL_ROUTE_PREDICTIONS.md；没有用两次测试同题都对率替代本次真实执行。
+Pooling lengths before multiplication introduces association because length affects both components. Both calculations are reported in ORACLE_PREDICTION_CHECK.md and ALL_ROUTE_PREDICTIONS.md. Actual execution is not replaced by the fraction of examples correct in both oracle tests.
 
-## 不稳定性已排查到哪里
+## Findings on instability
 
-32B一起训练模型在64/128/256/512步的长题成功数（每次480题）依次为：seed11的382/351/349/354；seed22的346/425/415/437；seed33的429/431/434/438。统一提前停训无法同时解释和改善三者。短题接近满分也不能保证长题稳定。
+At steps 64/128/256/512, 32B joint-model long-task success counts out of 480 are 382/351/349/354 for seed 11, 346/425/415/437 for seed 22, and 429/431/434/438 for seed 33. One common early-stopping rule cannot simultaneously explain and improve all three. Near-perfect short-task performance does not guarantee stable long-task performance.
 
-在正确名称已给定的288道32B八工具题中，一起训练模型前两次操作全对，第三次开始出现错误；操作专用模型前三次全对，第四次以后开始出错。新错误也发生在此前全对的历史上，因此“都是先错再模仿错误”不能解释全部现象。这是增加操作上下文干预的依据，不是已经证明长历史中某一个因素的因果作用。
+On 288 eight-tool 32B examples with correct names supplied, joint-model operations are all correct for the first two calls, with errors beginning at the third. The operation specialist is correct for the first three, with errors beginning at the fourth. New errors also occur after entirely correct histories, so imitation of earlier errors cannot explain every failure. This motivates the operation-context intervention; it does not establish a causal effect of any particular factor in long histories.
 
-## 审计与限制
+## Audits and limitations
 
-主矩阵109824条正式轨迹已逐条独立重算操作、评分、token解码及前缀哈希；102624条新增、7200条复用32B旧512步输出。两尺度当前硬件的单adapter与同adapter路由各40题完全一致。
+All 109824 formal main-matrix trajectories passed independent recomputation of operations, scores, token decoding, and prefix hashes: 102624 new records and 7200 reused old 32B step-512 outputs. Direct single-adapter calls and routing to the same adapter match on all 40 calibration examples at each scale on current hardware.
 
-3B旧5090输出与本机PRO6000输出7200条中6930条完全一致，组内整题成绩差异最大5/480。已证明最终adapter与512步checkpoint权重及配置相同；主分析全部使用本机重跑的3B对照，不混用旧硬件输出。
+Of 7200 old 3B outputs from the 5090 and new local PRO6000 outputs, 6930 match exactly; the largest group-level whole-task score difference is 5/480. Final adapters and step-512 checkpoints have identical verified weights and configurations. The primary analysis uses only the locally rerun 3B baselines.
 
-单部分替换的首次输出分歧中，有80条发生在未替换的模型部分且该行文本前缀相同；动态批量的数值差异是可能解释，尚未单独证实。这些案例全部保留。固定512步，3B只换顺序的193条净改善中，这类例外净贡献为0；32B只换操作的115条净改善中无这类例外，不能用它们解释主要收益。
+Among first divergences under single-component replacement, 80 occur in the unchanged component despite identical text prefixes for that line. Dynamic-batch numerical differences are a possible, separately unverified explanation. Retain every case. At step 512, these exceptions contribute zero net successes to the 193-example net gain from replacing the 3B sequence component. None occur within the 115-example net gain from replacing 32B operations, so they cannot explain the main gains.
 
-当前仍是已给正确工具顺序的受控任务、三个训练seed和有限工具库；既有确认集已被分析过，因此另有预先冻结的新程序集。尚未证明真实Agent迁移、创新能力或RSI能力，也不把上下文整理等同于新的训练方法。
+The task remains controlled, with supplied tool order, three training seeds, and a limited tool library. Because the existing confirmation set has already been analyzed, a new program set is separately preregistered and frozen. Transfer to real agents, innovation, and RSI remain unestablished; reorganizing context is not a new training method.

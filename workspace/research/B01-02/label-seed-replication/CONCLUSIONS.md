@@ -1,45 +1,45 @@
-# 20训练种子复核：研究判断
+﻿# Replication with 20 training seeds: conclusions
 
-本轮按事前登记完成1.5B、3B、7B四种标签的20训练种子比较。旧11/22/33只读复用；新增100–116共204次训练全部成功。主终点为同一旧独立480题上的完整轨迹成功率。没有按中途表现选种子、选检查点或改变样本量。
+As preregistered, this study completed the 20-training-seed comparison of four labels at 1.5B, 3B, and 7B. Earlier seeds 11/22/33 were reused read-only; all 204 new runs with seeds 100–116 succeeded. The primary endpoint is full-trajectory success on the same earlier independent 480-example set. Seeds, checkpoints, and sample sizes were not selected or changed based on interim performance.
 
-## 主要结果
+## Main results
 
-三模型每条件20 seed的均值±样本SD，单位百分比：
+Means ± sample SD over 20 seeds per model/condition, in percent:
 
-|模型|统一step|位置编号|固定改名|原工具名称|
+|Model|Uniform step|Position numbering|Fixed aliases|Original tool names|
 |---|---:|---:|---:|---:|
 |1.5B|0.00±0.00|0.00±0.00|15.21±8.92|18.84±5.79|
 |3B|0.00±0.00|0.87±0.78|49.45±11.68|35.06±5.55|
 |7B|13.49±6.00|15.16±9.31|43.73±15.19|41.25±13.14|
 
-用相同seed的差值判断：
+Comparisons use differences within the same seed:
 
-|模型|比较|平均差，百分点|20 seed中较好/较差/相同|描述性95% t区间，百分点|
+|Model|Comparison|Mean difference, percentage points|Better/worse/tied among 20 seeds|Descriptive 95% t interval, percentage points|
 |---|---|---:|---:|---:|
-|1.5B|固定改名−位置编号|+15.21|20/0/0|[+11.03,+19.38]|
-|3B|固定改名−位置编号|+48.57|20/0/0|[+43.12,+54.02]|
-|7B|固定改名−位置编号|+28.57|20/0/0|[+21.61,+35.53]|
-|1.5B|固定改名−原名称|−3.64|9/11/0|[−8.37,+1.10]|
-|3B|固定改名−原名称|+14.39|18/2/0|[+8.96,+19.81]|
-|7B|固定改名−原名称|+2.48|10/10/0|[−7.72,+12.68]|
-|7B|位置编号−统一step|+1.67|11/9/0|[−2.98,+6.31]|
+|1.5B|Fixed aliases−position numbering|+15.21|20/0/0|[+11.03,+19.38]|
+|3B|Fixed aliases−position numbering|+48.57|20/0/0|[+43.12,+54.02]|
+|7B|Fixed aliases−position numbering|+28.57|20/0/0|[+21.61,+35.53]|
+|1.5B|Fixed aliases−original names|−3.64|9/11/0|[−8.37,+1.10]|
+|3B|Fixed aliases−original names|+14.39|18/2/0|[+8.96,+19.81]|
+|7B|Fixed aliases−original names|+2.48|10/10/0|[−7.72,+12.68]|
+|7B|Position numbering−uniform step|+1.67|11/9/0|[−2.98,+6.31]|
 
-原工具名称优于统一step在1.5B/3B/7B均为20/20 seed同向，平均差分别为+18.84、+35.06、+27.76个百分点。但这仍是固定数据和旧测试上的结果，不是其他任务的保证。
+Original tool names outperform uniform step in 20/20 seeds at each of 1.5B/3B/7B, with mean differences of +18.84, +35.06, and +27.76 percentage points. These remain results on fixed data and an earlier test set, not guarantees for other tasks.
 
-## 是否变得可信
+## How much stronger is the evidence?
 
-20 seed让训练随机性的估计比三seed稳得多，且不需要让SD本身变小。最清楚的是：在当前协议及固定映射下，**输出稳定工具身份的两个条件通常明显优于仅给位置编号**；原工具名称也明显优于统一step。3B固定改名比原名称高约14.39个百分点，18/20 seed同向，在这套映射和旧测试上有较强复核证据。
+Twenty seeds estimate training randomness more reliably than three, without requiring SD itself to decrease. The clearest result is that, under this protocol and fixed mapping, **both conditions that output stable tool identities generally outperform position numbering substantially**. Original tool names also clearly outperform uniform step. At 3B, fixed aliases exceed original names by approximately 14.39 percentage points, with 18/20 seeds agreeing, providing stronger replication evidence for this mapping and earlier test set.
 
-1.5B、7B的固定改名与原名称谁更好，20 seed仍不能区分。7B平均差只有+2.48个百分点，而配对差SD为21.79个百分点；若效应真接近这个大小，仅继续增加少量seed不会解决。按观察到的SD、常规双侧95%区间粗算，要使区间半宽小于2.48个百分点，需要约300个配对seed，且估计效应不能变小；这不适合作为下一步。更有信息量的是换固定改名映射、控制分词和长度，再用新测试程序确认。
+At 1.5B and 7B, twenty seeds still do not resolve which of fixed aliases or original names is better. At 7B, the mean difference is only +2.48 points, with paired-difference SD 21.79 points. If the effect is near this size, adding only a few seeds will not resolve it. A rough calculation using the observed SD and a conventional two-sided 95% interval requires approximately 300 paired seeds to reduce the half-width below 2.48 points, assuming the effect does not shrink. That is not a suitable next step. More informative work would change the fixed alias mapping, control tokenization and length, and confirm results on new test programs.
 
-位置编号没有稳定复现工具身份标签的收益，但不能直接说“位置信息无效”：训练只出现step1/step2标题，长题需要step3及以后。四条件也不是严格递进信息量的单变量操纵：位置与身份是不同信息，固定改名和原名称都提供身份且词形不同。新增两条件目标token比原名称多约2.96%，alias输入也更长。
+Position numbering does not consistently reproduce identity-label gains, but this does not establish that position information is useless: training includes only step1/step2 headings, while long tasks require step3 and later. Nor are the four conditions a single-variable manipulation of monotonically increasing information. Position and identity convey different information; fixed aliases and original names both provide identity with different word forms. The two added conditions have approximately 2.96% more target tokens than original names, and alias inputs are longer.
 
-统计区间仅按20训练seed计算，条件于相同4096训练题、同一批480测试题和**一套**固定改名映射。480题包含每种序列四个数字输入，不等于480个独立程序；数据集已反复使用，不是新盲测。多重比较未校正。这里不能推断跨映射、跨数据、真实Agent或RSI的可靠收益。
+Intervals are computed over 20 training seeds, conditional on the same 4096 training examples, 480 test examples, and **one** fixed alias mapping. The 480 examples include four numerical inputs per sequence, rather than 480 independent programs. The dataset has been reused repeatedly and is not a fresh blind test. Multiple comparisons are uncorrected. Reliable benefits across mappings, datasets, real agents, or RSI cannot be inferred here.
 
-## 执行与审计
+## Execution and audit
 
-新增204次训练/主测试/独立测试均exit 0；每次512更新步和16,384样本暴露，共212,160条新评分记录。合并旧36次模型条件种子后为249,600条记录，不能当作独立题数。原始输出、训练日志、配置、adapter及逐seed统计保留。旧输出hash不变、逐题ID/输入/顺序匹配；17个新7B seed四条件初始adapter逐文件hash一致。新增工作合计66.52分配GPU小时、8.38小时墙钟，只用本机8张PRO6000。结束时本机GPU计算进程列表为空。
+All 204 new training/main-test/independent-test jobs exited with code 0. Each had 512 updates and 16,384 example exposures, yielding 212,160 new scored records. Including the earlier 36 model-condition-seed runs gives 249,600 records, not independent examples. Raw outputs, training logs, configurations, adapters, and per-seed statistics are retained. Earlier output hashes are unchanged, and per-example IDs, inputs, and sequences match. For all 17 new 7B seeds, initial adapters match file by file across the four conditions. New work totaled 66.52 allocated GPU-hours and 8.38 hours wall time, using only the 8 local PRO6000 GPUs. The final local GPU compute-process list was empty.
 
-自动分析首次失败：独立分析脚本加载旧评分模块时漏导入`re`，训练和推理已全部成功。补上导入后重跑离线分析成功；未重训、未修改原始模型输出或旧评分器。失败标记保留于analysis/pipeline-failed.json，恢复记录见analysis/recovery.json。
+The first automated analysis failed because the standalone analysis script omitted an import of `re` while loading the old scoring module; all training and inference had already succeeded. Adding the import and rerunning offline analysis succeeded, without retraining or changing raw model outputs or the old scorer. The failure marker remains in analysis/pipeline-failed.json; recovery is recorded in analysis/recovery.json.
 
-细表与原测试OOD结果：[REPORT.md](REPORT.md)。逐seed、配对差、输出哈希：[analysis/results.json](analysis/results.json)。完成覆盖：[analysis/completion-audit.json](analysis/completion-audit.json)。
+Detailed tables and original-test OOD results: [REPORT.md](REPORT.md). Per-seed results, paired differences, and output hashes: [analysis/results.json](analysis/results.json). Completion coverage: [analysis/completion-audit.json](analysis/completion-audit.json).

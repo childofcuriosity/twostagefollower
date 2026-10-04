@@ -1,14 +1,14 @@
-# 完成审计
+# Completion audit
 
-24个新增训练/评测作业全部exit 0；四尺度×两新条件×三seed，每个512更新步、16384样本暴露。旧flat/macro未重训。
+All 24 added training/evaluation jobs exited with code 0: four scales x two new conditions x three seeds, each with 512 update steps and 16384 example exposures. Earlier flat/macro conditions were not retrained.
 
-- 主与旧独立评测49920条（新增24960、复用24960）；补充开发集及给定义评测32256条，总计82176条已评分记录，不等于独立题数。
-- 48份旧原始输出与历史hash相同，旧24960条原评分复现一致；新增数据去除标题后的操作与Answer逐例不变，位置组提示不变，改名组只改一致映射。
-- 原训练源码hash、driver机械变换、原模型版本/环境/优化参数、每run配置及512条有限loss/梯度记录核验通过。7B/32B十二个新增初始adapter与同seed原名称组逐文件一致；32B位置step0共1344条输出与旧基线一致。
-- 生成代码、事前登记及评分器启动hash保持一致；正确参考长度在原预算内，失败全保留于分母。没有人工给正确名称或中间状态。
-- 固定随机抽取97个正反配对案例，最终复核包含32B漏调用、位置正确但工具错、7B正例与负例；图表已视觉检查。
-- 正常运行每小时检查；完成事件衔接。新作业合计21.98分配GPU小时，含加载、训练与推理。最终nvidia-smi计算进程列表为空，无新增远程作业。
+- Main and earlier independent evaluations contain 49920 records (24960 new, 24960 reused). Supplementary development and with-definition evaluations add 32256, totaling 82176 scored records, not independent examples.
+- All 48 earlier raw-output files match historical hashes, and original scores on 24960 reused records are reproduced. After removing headings, operations and Answers in new data are unchanged example by example. Position prompts are unchanged; aliases apply only the consistent renaming map.
+- Original trainer-source hashes, mechanical driver transformations, model revisions/environments/optimization parameters, per-run configs, and 512 finite loss/gradient records per run pass verification. All twelve new 7B/32B initial adapters match Original NAME adapters for the same seed file by file. All 1344 position step0 outputs at 32B match the earlier baseline.
+- Generation code, preregistration, and scorer launch hashes remain unchanged. Correct reference lengths fit the original budgets, and all failures remain in denominators. No correct names or intermediate states are supplied by hand.
+- A fixed random sample of 97 positive/negative paired cases was reviewed, including missed 32B calls, correct positions with wrong tools, and positive/negative 7B cases. Figures were visually checked.
+- Routine monitoring was hourly, with completion events handled in sequence. New jobs totaled 21.98 allocated GPU-hours, including loading, training, and inference. The final nvidia-smi compute-process list was empty, with no new remote jobs.
 
-后处理故障如实保留：初次调度器训练全成功且核心分析成功后，绘图脚本比较键漏condition，导致分析管线exit 1。修正该绘图索引后，单独运行plots.py、boundary_diagnostics.py、auxiliary.py均成功；没有重训、修改模型输出或评分器。边界表另外统一十进制四舍五入（369/1440=25.625%显示25.63%）。原失败标记归档analysis/failures/initial-plot.json，恢复完成记录analysis/pipeline-complete.json。
+Postprocessing failures are retained: after all training and core analysis succeeded, the initial scheduler analysis pipeline exited with code 1 because a plotting comparison key omitted condition. After fixing that index, plots.py, boundary_diagnostics.py, and auxiliary.py ran successfully on their own, without retraining or changing model outputs or the scorer. The boundary table also uses consistent decimal rounding (369/1440=25.625%, displayed as 25.63%). The original failure marker is archived at analysis/failures/initial-plot.json; recovery completion is recorded in analysis/pipeline-complete.json.
 
-核心机器审计见analysis/completion-audit.json，补充覆盖见analysis/auxiliary-audit.json，逐作业见analysis/dispatch.json。GOAL.json记录本轮限定目标完成；系统goal槽中另一个暂停的旧Agent目标没有被错误标为完成。
+Core machine-audit results are in analysis/completion-audit.json; supplementary coverage is in analysis/auxiliary-audit.json; per-job records are in analysis/dispatch.json. GOAL.json records completion of this bounded study. The separate older paused agent goal in the system slot was not incorrectly marked complete.

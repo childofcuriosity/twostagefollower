@@ -26,13 +26,13 @@ for c in ['STEP','NAME']:
     cases.append(dict(condition=c,seed=seed,id=row['id'],input=row['x'],chain=row['chain'],raw=row['raw'],expected=target(row,c),grading=g))
   records.append(dict(condition=c,seed=seed,strict_failures=sum(reasons.values()),exclusive_reason_priority=dict(reasons),titles=dict(title)))
 write(R/'analysis/endpoint-error-supplement.json',dict(records=records,cases=cases,note='Descriptive exclusive reason priority: answer count, extra unrecognized lines, operation sequence, numeric step, final Answer. Original primary scores unchanged.'))
-lines=['# 评分边界案例与补充错误归类','','严格评分同时要求正确操作、全部状态和最终Answer；标题是独立合规指标。下表只解释已保存的原始输出，不改变评分。','','| 条件/seed | 严格失败 | 数字步骤 | 操作序列 | 仅最终Answer | 额外Trace标题（主分不扣） |','|---|---:|---:|---:|---:|---:|']
+lines=['# Scoring boundary cases and supplementary error categories','','Strict scoring requires correct operations, all states, and the final Answer. Headings are an independent compliance metric. The table below interprets saved raw outputs without changing scores.','','| Condition/seed | Strict failures | Numerical steps | Operation sequence | Final Answer only | Extra Trace heading (no primary-score penalty) |','|---|---:|---:|---:|---:|---:|']
 for x in records:
  e=x['exclusive_reason_priority'];h=x['titles']
  lines.append(f'| {x["condition"]}/{x["seed"]} | {x["strict_failures"]} | {e.get("numeric_step",0)} | {e.get("operation_sequence",0)} | {e.get("final_Answer_only",0)} | {h.get("extra_Trace_heading_only",0)} |')
-lines+=['','NAME seed302的49条、seed303的4条标题不合规，全部由额外`Trace:`造成；删除这一额外标题后，工具身份和顺序均符合要求。原评分器允许一般标题行，因此这里不会算作未知额外行或扣二值奖励。不能把90.43%的全标题合规率解释为只有90.43%的工具名称正确。','']
+lines+=['','All 49 heading-noncompliant outputs for NAME seed302 and 4 for seed303 result from an extra `Trace:` heading. Removing that heading leaves compliant tool identities and order. The original scorer permits generic heading lines, so these are not unknown extra lines and incur no binary-reward penalty. A fully compliant heading rate of 90.43% must not be interpreted as only 90.43% correct tool names.','']
 for x in cases:
- lines.extend([f'## {x["condition"]} seed{x["seed"]}，{x["id"]}',f'严格轨迹={x["grading"]["strict"]}；标题全合规={x["grading"]["header_compliant"]}。输入{x["input"]}，工具索引{x["chain"]}。','','实际输出：','```text',x['raw'],'```','','标准输出：','```text',x['expected'],'```',''])
+ lines.extend([f'## {x["condition"]} seed{x["seed"]}，{x["id"]}',f'Strict trajectory={x["grading"]["strict"]}; full heading compliance={x["grading"]["header_compliant"]}. Input {x["input"]}, tool indices {x["chain"]}。','','Actual output:','```text',x['raw'],'```','','Reference output:','```text',x['expected'],'```',''])
 (R/'CASE_REVIEW.md').write_text('\n'.join(lines)+'\n')
-with (R/'REPORT.md').open('a') as f:f.write('\n标题与最终Answer的补充核验见[CASE_REVIEW.md](CASE_REVIEW.md)：NAME端点53条全标题不合规均为额外`Trace:`，工具名及顺序本身正确；STEP seed301另有1条中间轨迹全对而最终Answer抄错。主评分未改。\n')
+with (R/'REPORT.md').open('a') as f:f.write('\nSee [CASE_REVIEW.md](CASE_REVIEW.md) for supplementary heading and final-Answer checks: all 53 NAME endpoint heading violations are extra `Trace:` headings, with correct tool names and order. STEP seed301 also has 1 case with entirely correct intermediate states but an incorrectly copied final Answer. The primary score is unchanged.\n')
 print('Supplemental endpoint classification and cases written.')

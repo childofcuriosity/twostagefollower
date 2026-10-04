@@ -1,30 +1,30 @@
-# 补充控制与训练时间轴
+# Supplementary controls and training timeline
 
-这些实验均在部分主结果已知后登记并运行，不冒充原预注册结果。原结果与失败保留。
+These experiments were registered and run after some primary results were known. They are not original preregistered results. Original findings and failures are retained.
 
-## 缺少原语是否解释退化
+## Does missing primitive coverage explain degradation?
 
-原9个宏没有ends，新的测试家族有31/48隐含模式含ends，测试程序83.11%含ends，因此这是实质性混淆。固定人工覆盖干预把brown=inc,inc,inc替换为ends,inc,inc，其余调用链/输入/步数不变。三个seed真实累计训练输入和监督token逐项与原macro相同。
+The original nine macros omit ends, whereas 31/48 hidden patterns in fresh test families contain ends and 83.11% of test programs use it. This is a substantive confound. A fixed manual coverage intervention replaces brown=inc, inc, inc with ends, inc, inc while preserving other call chains, inputs, and steps. Actual cumulative input and supervised tokens match original macro training exactly for all three seeds.
 
-主提案设置：base 39.01%，原macro 9.06%，补齐覆盖 12.93%。提案包含ends比例恢复到47.53%；覆盖补齐相对原macro差+3.88个百分点，家族bootstrap区间-1.32 至 +10.76。不能把这点均值改善宣称为显著恢复，但它仍明显低于base。因此缺少一个原语不是充分解释；没有排除更广泛的训练分布狭窄。
+Primary proposal setting: base 39.01%, original macro 9.06%, restored coverage 12.93%. The fraction of proposals containing ends recovers to 47.53%; restored coverage minus original macro: +3.88 percentage points, family-bootstrap interval -1.32 to +10.76. This mean improvement cannot be claimed as significant recovery, and performance remains well below base. Missing one primitive is therefore insufficient as an explanation, while broader training-distribution narrowness remains possible.
 
-## 候选停止长度控制
+## Candidate stopping-length control
 
-主实验允许长度2–3，3B模型训练后更偏好较短输出。追加每个家族固定8条长度2、8条长度3的语法配额，提示、T=1和选库器不变。
+The primary experiment permits lengths 2–3; trained 3B models prefer shorter outputs. The added grammar quota fixes eight length-2 and eight length-3 proposals per family, preserving prompts, T=1, and selection.
 
-| 模型 | base | flat | macro |
+| Model | Base | Flat | Macro |
 |---|---:|---:|---:|
 | qwen1.5b | 38.64% | 4.08% | 14.49% |
 | qwen3b | 40.97% | 3.25% | 8.05% |
 | smol1.7b | 36.43% | 7.39% | 9.72% |
 
-完整seed差与区间见[length-results.json](analysis/length-results.json)。这是新解码条件，不能把数值直接当原采样分布的替换成绩。
+Complete seed differences and intervals are in [length-results.json](analysis/length-results.json). This is a new decoding condition, not a replacement estimate for the original sampling distribution.
 
-## 原训练配方的完整时间轴
+## Complete original-recipe training timeline
 
-重新执行原宏训练三个seed，优化器和数据顺序保持，在固定步数插入只读评测，未根据测试分数选早停。
+Repeat original macro training for three seeds with unchanged optimizer and data order, inserting read-only evaluations at fixed steps without test-based early stopping.
 
-| 优化步 | IID执行 | 未见组合执行 | 新家族提案净压缩 |
+| Optimization step | IID execution | Unseen-composition execution | Fresh-family net proposal compression |
 |---|---:|---:|---:|
 | 0 | 0.78% | 0.00% | 40.26% |
 | 16 | 3.65% | 1.22% | 20.78% |
@@ -33,17 +33,17 @@
 | 256 | 100.00% | 30.30% | 10.53% |
 | 512 | 100.00% | 29.77% | 10.37% |
 
-最终权重与原训练逐seed哈希一致检查：[{"seed": 33, "matches_original_final_weights": true}, {"seed": 22, "matches_original_final_weights": true}, {"seed": 11, "matches_original_final_weights": true}]。一致才可将曲线解释为同一确定性训练轨迹的检查点观察。
+Final-weight hash agreement with original training by seed: [{"seed": 33, "matches_original_final_weights": true}, {"seed": 22, "matches_original_final_weights": true}, {"seed": 11, "matches_original_final_weights": true}]. Agreement is required to interpret checkpoints as observations from the same deterministic training trajectory.
 
-![训练时间轴](figures/training-timecourse.png)
+![Training timeline](figures/training-timecourse.png)
 
-这里时间轴的采样随机数路径与主稳健性作业不同，所以最终提案净压缩10.37%与主表9.06%不是同一批提案；执行任务、最终模型权重相同。第16步提案效用已从40.26%降到20.78%，第64步约9.48%，下降不只出现在训练末期。
+The timeline uses a different proposal-sampling random path from primary robustness jobs. Its final 10.37% net compression and primary-table 9.06% therefore use different proposal samples, despite identical execution tasks and final weights. Proposal utility falls from 40.26% to 20.78% by step 16 and approximately 9.48% by step 64, rather than declining only at the end.
 
-## 原配方梯度诊断
+## Original-recipe gradient diagnostics
 
-以下探针直接使用上述原配方检查点和执行数据，与主报告中闭环配方的诊断分开。每个检查点为三个seed各三个固定小批次；初始化检查点相同，九批不能当作九个独立模型。
+These probes directly use original-recipe checkpoints and execution data, separately from closed-loop diagnostics in the main report. Each checkpoint uses three fixed minibatches per seed across three seeds. Initialization checkpoints are identical; nine batches do not represent nine independent models.
 
-| 步数 | 平均梯度余弦 | 负余弦批次 | 提案替代目标NLL |
+| Step | Mean gradient cosine | Negative-cosine batches | Proposal surrogate NLL |
 |---|---:|---:|---:|
 | 0 | +0.0944 | 0/9 | 2.6724 |
 | 16 | -0.0470 | 8/9 | 1.1325 |
@@ -52,27 +52,27 @@
 | 256 | -0.0427 | 7/9 | 1.4897 |
 | 512 | -0.0438 | 8/9 | 1.5311 |
 
-更新后多处出现局部梯度冲突，支持继续考察目标之间的干扰。但是第16步提案替代NLL比初始化更好，实际采样效用却已明显降低；因此该NLL不是提案效用的充分代理。梯度余弦既没有包含AdamW预条件的完整更新方向，也不构成长期退化的因果证明。闭环配方同样出现过负余弦而提案未持续下降，不能把“检测到负余弦”直接等同于RSI瓶颈。
+Local gradient conflicts occur at several post-update points, motivating further study of objective interference. At step 16, however, proposal surrogate NLL improves over initialization while sampled utility has already fallen substantially. NLL is therefore not a sufficient utility proxy. Gradient cosine omits the full AdamW-preconditioned update direction and does not establish long-term causal degradation. The loop recipe also exhibits negative cosines without sustained proposal decline; detecting a negative cosine is not itself an RSI bottleneck.
 
-## 退化提案者压力干预
+## Degraded-proposer stress intervention
 
-主闭环中的提案者未必退化，因此另用第一轮确实退化的数字macro适配器作为外部提案者。学习器仍从同一个shared轮1检查点开始，提案支持、选库、执行器和128步训练保持；两个执行域均采用同一来源的原语序列提案。它检验人为引入退化提案源的总效应，**不是自然闭环自行陷入退化的证据**。
+Because closed-loop proposers do not necessarily degrade, an additional intervention uses the demonstrably degraded first-round numeric macro adapter as an external proposer. Learners still start at the same shared round-1 checkpoint, with unchanged support, selector, executor, and 128-step training. Both execution domains receive primitive-sequence proposals from this same source. This tests the total effect of deliberately introducing a degraded proposer, **not spontaneous degradation within a natural loop**.
 
-表中正数表示base/updated来源优于legacy来源；起点相同，因此是下一轮学习增益差。
+Positive values favor base/updated sources over legacy. Identical starts make these next-round learning-gain differences.
 
-| 域 | 比较 | 评测 | 差（百分点） | 三seed差 | 95% t区间 |
+| Domain | Comparison | Evaluation | Difference (percentage points) | Three seed differences | 95% t interval |
 |---|---|---|---:|---|---|
-| digits | base-legacy | short | +0.52 | +0.00 / +0.00 / +1.56 | -1.72 至 +2.76 |
-| digits | base-legacy | family | +6.25 | +0.00 / +10.16 / +8.59 | -7.34 至 +19.84 |
-| digits | base-legacy | pressure | +6.77 | +0.00 / +12.50 / +7.81 | -8.92 至 +22.46 |
-| digits | updated-legacy | short | -0.52 | +0.00 / +0.00 / -1.56 | -2.76 至 +1.72 |
-| digits | updated-legacy | family | +7.03 | +3.12 / +10.94 / +7.03 | -2.67 至 +16.73 |
-| digits | updated-legacy | pressure | +6.77 | +3.12 / +10.94 / +6.25 | -3.00 至 +16.54 |
-| strings | base-legacy | short | -3.12 | -3.12 / -6.25 / +0.00 | -10.89 至 +4.64 |
-| strings | base-legacy | family | +1.82 | -8.59 / +9.38 / +4.69 | -21.33 至 +24.98 |
-| strings | base-legacy | pressure | +0.52 | -6.25 / +7.81 / +0.00 | -16.98 至 +18.02 |
-| strings | updated-legacy | short | -1.56 | -4.69 / +0.00 / +0.00 | -8.29 至 +5.16 |
-| strings | updated-legacy | family | -2.86 | -13.28 / +9.38 / -4.69 | -31.28 至 +25.55 |
-| strings | updated-legacy | pressure | +2.08 | +1.56 / +9.38 / -4.69 | -15.42 至 +19.59 |
+| digits | base-legacy | short | +0.52 | +0.00 / +0.00 / +1.56 | -1.72 to +2.76 |
+| digits | base-legacy | family | +6.25 | +0.00 / +10.16 / +8.59 | -7.34 to +19.84 |
+| digits | base-legacy | pressure | +6.77 | +0.00 / +12.50 / +7.81 | -8.92 to +22.46 |
+| digits | updated-legacy | short | -0.52 | +0.00 / +0.00 / -1.56 | -2.76 to +1.72 |
+| digits | updated-legacy | family | +7.03 | +3.12 / +10.94 / +7.03 | -2.67 to +16.73 |
+| digits | updated-legacy | pressure | +6.77 | +3.12 / +10.94 / +6.25 | -3.00 to +16.54 |
+| strings | base-legacy | short | -3.12 | -3.12 / -6.25 / +0.00 | -10.89 to +4.64 |
+| strings | base-legacy | family | +1.82 | -8.59 / +9.38 / +4.69 | -21.33 to +24.98 |
+| strings | base-legacy | pressure | +0.52 | -6.25 / +7.81 / +0.00 | -16.98 to +18.02 |
+| strings | updated-legacy | short | -1.56 | -4.69 / +0.00 / +0.00 | -8.29 to +5.16 |
+| strings | updated-legacy | family | -2.86 | -13.28 / +9.38 / -4.69 | -31.28 to +25.55 |
+| strings | updated-legacy | pressure | +2.08 | +1.56 / +9.38 / -4.69 | -15.42 to +19.59 |
 
-每个来源实际产生的宏库、训练长度、语义覆盖及支持/保留程序压缩见[curriculum-rows.jsonl](analysis/curriculum-rows.jsonl)。提案源会改变课程长度和训练token数；这些比较是相同样本/步数下的总效应，不是等token的纯提案质量效应。抽象压缩P是候选代理指标，只有观察到后续学习变化G才与改进能力建立联系；二者不能互相代称。
+Actual macro libraries, training lengths, semantic coverage, and support/held-out program compression by source are in [curriculum-rows.jsonl](analysis/curriculum-rows.jsonl). Proposal sources alter curriculum lengths and training-token counts. These comparisons estimate total effects at equal examples/steps, not pure proposal-quality effects at equal tokens. Abstraction compression P is a candidate proxy; only observed subsequent learning changes G connect it to improvement capability. The two cannot substitute for each other.

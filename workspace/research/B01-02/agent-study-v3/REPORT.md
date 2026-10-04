@@ -1,9 +1,9 @@
-# 执行兼容性复核：校准未通过，未启动主对照
+﻿# Execution compatibility check: calibration failed; main comparison not started
 
-在原96条完成后，统一修改完整JSON序列解析、工作目录import兼容性与单轮生成上限（1536→3072），累计预算不变，未训练模型。三项合并，不分别作因果归因。
+After the original 96 trajectories were completed, full JSON-sequence parsing, working-directory import compatibility, and the per-turn generation cap (1536→3072) were changed together. The cumulative budget was unchanged and no model was trained. These three combined changes do not identify separate causal effects.
 
-新的四要求校准：文件通过、数据失败、代码通过，2/3未达到预登记3/3门槛。数据轨迹第一次含非法JSON转义；修正后的代码未创建reports目录，发生FileNotFoundError，同批仍发出finish。独立重验确认四份输出都不存在。
+In the new four-requirement calibration, files and code passed but data failed: 2/3, below the preregistered 3/3 threshold. The first data trajectory contained an invalid JSON escape. Corrected code then failed to create the reports directory, raised FileNotFoundError, and still issued finish in the same batch. Independent verification confirmed that all four outputs were absent.
 
-因此没有启动第二批96条。不能将这个校准批次和原四组结果混合，也没有修复后的四组对比可报告。
+The second batch of 96 was therefore not started. This calibration batch cannot be pooled with the original four-condition results, and there is no post-repair four-condition comparison to report.
 
-全部轨迹、final-workspace和原始错误保留；`analysis/calibration-verification.json`记录独立重验。与原96及两批单项校准合计约2.801 GPU小时。总体判断和建议见[第一步结论](../agent-study/CONCLUSIONS.md)。
+All trajectories, final-workspace copies, and raw errors are retained; `analysis/calibration-verification.json` records independent verification. Together with the original 96 and two single-requirement calibration batches, the total is approximately 2.801 GPU-hours. See the [first-stage conclusions](../agent-study/CONCLUSIONS.md) for the overall interpretation and recommendations.

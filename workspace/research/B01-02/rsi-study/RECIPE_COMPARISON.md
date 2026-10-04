@@ -1,19 +1,19 @@
-# 两种执行训练配方不等价
+# The two execution-training recipes are not equivalent
 
-阶段A出现提案退化，阶段B共享闭环暂未出现相同现象。这是适用范围反例，不是隔离了某一单独原因的因果比较。
+Stage A shows proposal degradation; the stage-B shared loop has not shown the same pattern. This limits scope rather than identifying a single causal factor.
 
-| 维度 | 阶段A：原宏调用训练 | 阶段B：闭环执行训练 |
+| Dimension | Stage A: original macro-call training | Stage B: closed-loop execution training |
 |---|---|---|
-| 输入 | 宏名称调用链，不给定义 | 显式基本操作序列 |
-| 输出 | 分组标签+基本操作/状态 | 基本操作/状态，无宏名称分组 |
-| 训练库 | 固定9个原模型提案 | 每轮12家族各选择至多3个提案 |
-| 原语覆盖 | 原库没有ends；另有覆盖补齐控制 | 所选库加20%均匀基本操作；空库用基本操作 |
-| 长度 | 1–2次宏调用 | 2–3次选中片段/基本操作 |
-| 学习率 | 3e-4，warmup与cosine衰减 | 1e-4常数 |
-| 参数更新 | 512步×32例=16,384次呈现 | 3轮×128步×16例=6,144次呈现 |
-| 优化器 | 一次连续AdamW | 每轮重建AdamW，参数连续 |
-| 评测 | 未见宏组合，测试无宏库 | 固定未见函数/家族程序，题面包含基本操作计划 |
+| Input | Macro-name chain without definitions | Explicit primitive-operation sequence |
+| Output | Group labels plus primitives/states | Primitives/states without macro-name groups |
+| Library | Nine fixed original model proposals | Up to three selected proposals per each of 12 families per round |
+| Primitive coverage | Original library omits ends; separate coverage control | Selected library plus 20% uniform primitives; primitives only for empty libraries |
+| Length | 1–2 macro calls | 2–3 selected fragments/primitives |
+| Learning rate | 3e-4 with warmup/cosine decay | Constant 1e-4 |
+| Updates | 512 steps × 32 examples = 16,384 presentations | Three rounds × 128 steps × 16 examples = 6,144 presentations |
+| Optimizer | One continuous AdamW run | AdamW rebuilt each round; parameters retained |
+| Evaluation | Unseen macro compositions without a library | Fixed unseen functions/family programs with primitive plans in the input |
 
-因此不能说“只要补齐原语”或“只要显式计划”就已证明避免退化。覆盖补齐实验只隔离了一个因素；其他差异尚未做完整因子分解。阶段B虽然是实质性参数更新闭环，但不是阶段A训练配方原样递归执行。
+Neither restoring primitive coverage nor supplying explicit plans alone has been shown to prevent degradation. The coverage experiment isolates one factor; other differences lack a full factorial analysis. Stage B has real parameter updates in a loop but does not recursively repeat the exact stage-A recipe.
 
-P衡量符号复用压缩，G衡量下一轮神经执行学习收益。更高P不保证更适合当前学习器的课程；提案源干预报告G，不用P替代G。即使观察到G差异，也需检查程序长度、语义覆盖与训练token改变，不能跳到“创新能力”这一宽泛属性。
+P measures symbolic-reuse compression; G measures next-round neural execution-learning gains. Higher P need not produce a better curriculum for the current learner. Proposal-source interventions report G without substituting P. Even G differences require examining changed program lengths, semantic coverage, and training tokens before invoking a broad property such as innovation.

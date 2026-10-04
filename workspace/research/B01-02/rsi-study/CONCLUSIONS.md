@@ -1,57 +1,57 @@
-# 结果审核：执行训练与提案效用的条件性分离
+# Review: conditional separation of execution training and proposal utility
 
-2026-09-24。本轮已完成真实训练、三轮闭环、同起点干预、补充控制及完整性审计。我的判断：值得保留为研究发现，并收紧命题；尚不足以宣称发现了普遍的RSI瓶颈，也不宜直接写成一篇已有完整机制证据的论文。
+2026-09-24. Actual training, three-round loops, same-start interventions, supplementary controls, and integrity audits are complete. The finding is worth retaining with a narrower claim. Evidence does not establish a universal RSI bottleneck or a paper with a complete mechanism account.
 
-## 已经做实的发现
+## Findings established by the experiments
 
-在原宏执行监督配方中，执行表现提高与有限预算下的抽象提案效用下降同时出现，并在三个模型、两个模型家族中复现。提案效用是候选宏在保留程序上的净压缩收益，包含宏定义成本；它不是科学创新能力的直接测量。
+Under the original macro-execution supervision recipe, execution improves while finite-budget abstraction-proposal utility declines, replicated across three models from two families. Utility is net compression of held-out programs by proposed macros, including definition costs. It does not directly measure scientific innovation.
 
-| 模型 | 宏训练后未见组合执行准确率 | 提案净压缩：基座→宏训练后 |
+| Model | Unseen-composition execution after macro training | Net proposal compression: base → macro-trained |
 |---|---:|---:|
 | Qwen2.5-1.5B | 29.77% | 39.01% → 9.06% |
 | Qwen2.5-3B | 60.76% | 40.42% → 9.15% |
 | SmolLM2-1.7B | 22.66% | 35.39% → 9.01% |
 
-表为主设置、三个seed均值。三个模型各12种提示/温度/采样预算设置中，宏训练后的提案均值都低于基座；这些设置共享模型、题目或采样前缀，不能当作36次独立复现。改提示、增大预算以及固定候选长度均未消除差距。原训练宏缺少ends原语是实际混淆；补齐后主提案效用12.93%，仍远低于基座39.01%，但没有排除更广泛的分布偏移。
+The table uses the primary setting and three-seed means. For every model, macro-trained mean proposal utility is below base in all 12 prompt/temperature/budget settings. Shared models, examples, and sampling prefixes mean these are not 36 independent replications. Prompt changes, larger budgets, and fixed candidate lengths do not remove the gap. Missing ends coverage in original macros is a real confound. Restoring it yields 12.93% primary proposal utility, still far below base at 39.01%, but broader distribution shift remains possible.
 
-原配方三个seed重跑的最终权重均与原始权重SHA256一致。检查点测量中，提案净压缩从40.26%在第16步降至20.78%、第64步降至9.48%，此时IID执行已达98.96%；到512步提案为10.37%。这说明下降在学习早期发生，不是仅在最终检查点出现。时间轴与主表使用不同采样随机数路径，数值不应混作同一次测量。
+Final weights from three original-recipe reruns match original SHA256 hashes. Checkpoint measurements show compression falling from 40.26% to 20.78% at step 16 and 9.48% at step 64, when IID execution reaches 98.96%; proposal utility is 10.37% at step 512. The decline occurs early, not only at the final checkpoint. Timeline and primary-table sampling paths differ and are not one measurement.
 
-## 扩展后发现的重要边界
+## Scope limits revealed by the extension
 
-新的“提案—支持集筛选—课程生成—执行训练”闭环没有自然复现提案退化。共享同一模型的三轮结果为：
+The new proposal → support selection → curriculum generation → execution-training loop does not naturally reproduce proposal degradation. Three rounds with a shared model give:
 
-| 执行域 | 初始→末轮提案净压缩 | 末轮未见家族执行 |
+| Execution domain | Initial → final net proposal compression | Final unseen-family execution |
 |---|---:|---:|
-| 数字 | 38.69% → 40.58% | 99.22% |
-| 字符串 | 37.99% → 39.05% | 95.57% |
+| Numeric | 38.69% → 40.58% | 99.22% |
+| String | 37.99% → 39.05% | 95.57% |
 
-这是对“只要执行训练就会损伤提案”的反例。新旧配方的输入表示、课程分布、学习率、训练量和优化器重置均不同，不能把保护作用归因于某个单一因素；详见[配方比较](RECIPE_COMPARISON.md)。字符串更长压力集的shared末轮执行仅28.65%，常规集高分不代表全面掌握。
+This counters the claim that any execution training harms proposing. Recipes differ in input representation, curriculum, learning rate, training amount, and optimizer resets, so no single protective factor is identified; see [RECIPE_COMPARISON.md](RECIPE_COMPARISON.md). Shared final execution on the longer string stress set is only 28.65%; high standard-set scores do not establish comprehensive mastery.
 
-直接加入提案监督的joint条件，末轮提案均值比shared略高，但执行均值更低，没有显示全面改进。多数配对区间很宽；字符串未见家族执行差为−4.69个百分点，三seed的95% t区间为[−8.05, −1.33]，这是多个比较中的一个，未经多重比较校正，不能单独包装成稳定机制。回放与打乱回放的辅助监督token逐轮一致，打乱后数字提案表现明显变差，说明监督内容关系值得研究；尚未识别一般适用的修复方案。
+Joint proposal supervision yields slightly higher final mean proposal utility than shared but lower mean execution, not an across-the-board improvement. Most paired intervals are wide. The string unseen-family execution difference is −4.69 points, three-seed 95% t interval [−8.05, −1.33]. This is one of multiple unadjusted comparisons and cannot alone establish a stable mechanism. Replay and shuffled replay match auxiliary tokens round by round; shuffled replay notably worsens numeric proposal performance, motivating study of supervision relationships without establishing a general repair.
 
-## 与RSI有关的因果链，哪些还没成立
+## Which RSI-related causal links remain unestablished?
 
-我们分别测量执行E、提案代理效用P、由提案源改变训练课程后的实际增益G。原配方支持E提高同时P下降；从P下降推到G下降，证据仍不足。
+We separately measure execution E, proxy proposal utility P, and actual learning gain G after proposal-source changes to the curriculum. The original recipe supports rising E with falling P; evidence from falling P to falling G remains insufficient.
 
-从同一个学习器检查点出发，仅切换初始基座或当前更新模型作为提案源，数字和字符串的主要执行差区间都跨零。数字“基座源−更新源”为−0.78个百分点，95%区间[−6.60, 5.04]；字符串为+4.69，区间[−6.96, 16.33]。这既不能证明有害，也不能证明无害。新闭环本身未造成提案退化，使这组比较对“退化的后果”检验较弱。
+From identical learner checkpoints, switching between the initial base and updated proposer yields primary execution intervals crossing zero in both domains. Base-source minus updated-source is −0.78 points [−6.60, 5.04] numerically and +4.69 [−6.96, 16.33] for strings. This establishes neither harm nor harmlessness. Because the new loop does not degrade its proposer, these comparisons weakly test consequences of degradation.
 
-因此补做了明确标为事后的压力干预：用原配方的退化提案模型替换来源，学习器仍从同一起点训练。数字域“更新源−退化源”为+7.03个百分点，三个seed方向一致，但95%区间[−2.67, 16.73]；字符串为−2.86，区间[−31.28, 25.55]，方向不一致。不能据此宣布发现可靠的跨域RSI瓶颈。提案源还会改变训练程序长度和token量，现有比较估计的是固定样本/步数下的课程总效应。
+An explicitly post hoc stress intervention therefore substitutes the degraded original-recipe proposer while training learners from the same starts. Updated-source minus degraded-source is +7.03 points numerically, positive in all three seeds but with interval [−2.67, 16.73]; for strings it is −2.86 [−31.28, 25.55], with inconsistent direction. This does not establish a reliable cross-domain RSI bottleneck. Proposal sources also change program lengths and token counts, so comparisons estimate total curriculum effects at fixed examples/steps.
 
-原配方梯度探针在更新后多处出现负余弦，但闭环配方也出现负余弦却未持续退化。第16步提案替代NLL已经改善，采样提案效用却下降，进一步说明不能把替代损失或梯度符号当作创新能力的直接机制证据。局部一阶分析是解释框架，不是新定理或完成的因果解释。
+Original-recipe gradient probes show negative cosines at several post-update checkpoints, but the loop recipe also has negative cosines without sustained degradation. At step 16, proposal surrogate NLL improves while sampled utility declines. Neither surrogate loss nor gradient sign directly establishes an innovation mechanism. Local first-order analysis is an explanatory framework, not a new theorem or completed causal explanation.
 
-## 我的推荐
+## Recommendation
 
-保留的核心命题是：**在受控程序抽象任务中，执行收益不能单独作为提案效用或自我改进收益的证据；执行监督造成的提案退化具有训练条件依赖性。** 三模型复现、早期时间轴、候选控制、可保留提案的闭环反例及同起点分支共同构成当前证据包。
+Retain the core claim: **On controlled program-abstraction tasks, execution gains alone do not establish proposal-utility or subsequent improvement gains; proposal degradation under execution supervision depends on training conditions.** Evidence comprises three-model replication, early timelines, candidate controls, a loop that preserves proposing, and same-start branches.
 
-不建议继续盲目增加同类toy训练或按结果挑选种子。下一阶段最有价值的是把差异拆成可识别的因素，并检验真实增益：先固定数据和更新预算，交叉比较显式原语计划/宏名输入与窄/宽课程；再在独立的可执行代码任务上，用相同学习器起点和可比训练预算检验提案源是否影响保留测试集学习增益。应预先固定主要终点、最小有意义效应和功效设计，不以“得到正结果”为停止条件。如果P差异稳定而G始终不随之变化，就应放弃“RSI因果瓶颈”表述，将贡献限定为提案指标与训练迁移边界。
+Avoid blindly adding similar toy training or selecting seeds by results. Next, isolate identifiable factors and test actual learning gains: fix data/update budgets and cross explicit primitive plans versus macro-name inputs with narrow versus broad curricula. Then use an independent executable-code task, identical learner starts, and comparable budgets to test proposal-source effects on held-out learning gains. Prespecify endpoints, meaningful effect sizes, and power rather than stopping for positive results. If P differs consistently but G does not follow, abandon an RSI causal-bottleneck claim and limit the contribution to proposal metrics and training-transfer boundaries.
 
-这两项是审核后的下一阶段建议，本次未运行自然代码实验，也未证明大模型、全参数训练或RL上的结论。最近邻已经研究提案/求解角色干扰、熵下降及提案训练消融，不能宣称这些宽泛概念首创；来源与差异见[查新记录](literature/NEAREST.md)。
+These are next-stage recommendations after review. No natural-code experiments were run here, nor are conclusions established for larger models, full-parameter training, or RL. Nearby work already studies proposer/solver interference, entropy decline, and proposer-training ablations; those broad concepts are not original. See [literature review](literature/NEAREST.md).
 
-## 交付与审计
+## Delivery and audit
 
-- [完整报告](REPORT.md)：设计、各条件结果、训练预算、全部主要对照及限制。
-- [补充结果](SUPPLEMENT.md)：覆盖、长度、时间轴、原配方梯度与退化来源压力实验。
-- [审计](analysis/verification.json)：50,464条执行记录、180,864条提案、150个检查点哈希、语义隔离与训练计数。重复测量不等于独立样本，检查点不等于独立训练。
-- [统计区间](analysis/loop-inference.json)、[原始结果与复现入口](README.md)、[可导出图表](figures/)与[资源统计](analysis/cost.json)。新增设备预留约4.67 GPU·小时，不含下载和排队等待，也不是GPU内核忙碌时间。
+- [Full report](REPORT.md): design, conditions, budgets, primary controls, and limits.
+- [Supplement](SUPPLEMENT.md): coverage, length, timeline, original-recipe gradients, and degraded-source stress tests.
+- [Audit](analysis/verification.json): 50,464 execution records, 180,864 proposals, 150 checkpoint hashes, semantic separation, and training counts. Repeated measurements are not independent samples; checkpoints are not independent training runs.
+- [Intervals](analysis/loop-inference.json), [raw results/reproduction](README.md), [exportable figures](figures/), and [resource accounting](analysis/cost.json). New allocation is approximately 4.67 GPU-hours, excluding downloads/queues and distinct from kernel activity.
 
-本轮计算已结束。所有新环境、模型、缓存、日志和研究产物均保存在当前项目目录，保留反例、失败日志及事后修订记录；未发表或上传研究成果。
+Computation is complete. All new environments, models, caches, logs, and research artifacts remain in the project, including counterexamples, failures, and post hoc amendments. Research results were not published or uploaded at this stage.

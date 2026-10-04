@@ -1,16 +1,16 @@
-# 本轮完成验收要求
+﻿# Completion requirements for this study
 
-本文件仅列要求，非完成声明。最终须逐项用文件/原始记录验证。
+This file lists requirements, not a completion claim. Each item must ultimately be verified against files and raw records.
 
-1. 原始14B revision、L2、工具定义、STEP/NAME Prompt、示例、chat模板、评分语义和greedy评测与历史一致；原实验不改，无SFT/ALIAS/额外长度。
-2. 4096训练、256验证、512新测试、64预检，底层题全部互斥，排除旧题与示例；两组共享题目。固定3配对seed、LoRA初始化和每更新题序相同。
-3. 独立预检证明二值奖励与旧评分一致，候选成功/重复/组内区分度可观测，完整梯度更新及checkpoint保存恢复可用；配置选择不依NAME领先。正式从原始起点重启。
-4. 6run各100次optimizer更新；每更新16题×8完整候选，正式候选总数76800（故障重放另记、不重复计数）；优势为同题相对0/1奖励，整回答token策略loss，不含prompt/padding，不做局部分。
-5. 冻结学习率、warmup、LoRA、KL、clip、优势std、loss聚合和采样设置；原始参考策略不训练。实质变更另开协议、失败与重放现场保留。
-6. 每run保存step0/10/...100共11个checkpoint及可恢复状态；共66个。初始化hash配对一致，LoRA B零、无训练前SFT。配置冻结时间早于正式起点。
-7. 每条件step0原始策略在验证256/测试512各一次，显式供三个seed复用；每run step10...100验证，step100测试。每个检查点256验证题，端点512测试题，无按新测试挑点或调参。独立新评测输出共19968条（1536基准+15360训练后验证+3072端点测试），复用step0不得声称独立seed证据。
-8. 每seed相对step0提升、NAME−STEP配对差、3seed均值/样本SD；完整曲线；60/70/80/90%验证门槛首次在固定检查点达到，否则未达到；速度解释不只挑有利门槛，不把3seed夸大稳定性。
-9. 原始候选/token IDs/奖励、训练日志、模型检查点和评测输出可追溯；标题正确性、操作展开、数字、提前结束、额外输出、主动EOS与上限截断分开记录。
-10. 输出token、候选数、采样/反向更新/评测时间、分配GPU时间全部实测；等更新不等计算，速度同时展示更新数与实际计算成本。
-11. 预检/正式及运行异常记录；正常训练每小时巡检（阶段不足1小时则记录完成事件）；正式成功退出、评测worker停止、资源清空后才宣布计算结束。
-12. 简洁最终报告区分实现故障、优化不稳、奖励无区分度和未观察标签收益；不要求阳性，不自动添加内部奖励、Prompt优化或实际任务迁移，不对外发布。
+1. Original 14B revision, L2, tool definitions, STEP/NAME prompts, examples, chat template, scoring semantics, and greedy evaluation match the historical study. Earlier experiments remain unchanged; no SFT/ALIAS/additional lengths.
+2. 4096 training, 256 validation, 512 fresh test, and 64 precheck examples, all mutually disjoint at the underlying-example level and excluding old examples and demonstrations. Conditions share examples. Fix 3 paired seeds, matched LoRA initialization, and identical per-update example order.
+3. Independent prechecks establish matching binary rewards and historical scoring; observable candidate success, duplication, and within-group reward discrimination; complete gradient updates; and working checkpoint saving/recovery. Configuration selection is independent of NAME leading. Main runs restart from the original initialization.
+4. Each of 6 runs performs 100 optimizer updates using 16 examples × 8 complete candidates per update, totaling 76800 main candidates. Failure replays are recorded separately, without double-counting. Advantages use within-example relative 0/1 rewards; policy loss covers full-response tokens, excluding prompt/padding, without local scores.
+5. Freeze learning rate, warmup, LoRA, KL, clipping, advantage std, loss aggregation, and sampling settings. The original reference policy remains frozen. Substantive changes require a new protocol; retain failure and replay records.
+6. Save 11 recoverable checkpoints per run at step0/10/...100, totaling 66. Paired initialization hashes match; LoRA B is zero, with no pre-training SFT. Configuration freezing precedes main-run start.
+7. Evaluate each condition's original step0 policy once on 256 validation/512 test examples and explicitly reuse these outputs across three seeds. Each run has validation at step10...100 and testing at step100. Every validation checkpoint has 256 examples and every test endpoint 512, without selecting checkpoints or tuning on fresh tests. There are 19968 independent new evaluation outputs: 1536 baseline + 15360 post-training validation + 3072 endpoint test. Reused step0 outputs are not independent seed evidence.
+8. Report each seed's gain over step0, paired NAME−STEP differences, 3-seed means/sample SDs, and complete curves. Record the first fixed checkpoint reaching each 60/70/80/90% validation threshold, otherwise Not reached. Speed interpretation must consider all thresholds, without overstating stability from 3 seeds.
+9. Raw candidates/token IDs/rewards, training logs, checkpoints, and evaluation outputs are traceable. Separately record heading correctness, operation expansion, numerical errors, early stopping, extra output, voluntary EOS, and cap truncation.
+10. Measure output tokens, candidate counts, sampling/backpropagation-update/evaluation time, and allocated GPU time. Equal updates are not equal compute; show both update counts and actual compute costs when discussing speed.
+11. Retain precheck/main-run and exception records. Check normal training hourly, or record completion if a phase lasts less than 1 hour. Declare computation complete only after main runs exit successfully, evaluation workers stop, and resources are released.
+12. A concise final report distinguishes implementation failures, unstable optimization, uninformative rewards, and no observed label benefit. Positive results are not required. Do not automatically add internal rewards, prompt optimization, or practical-task transfer, or publish externally.

@@ -1,26 +1,26 @@
-# B01-02：二值奖励GRPO标签学习对照
+# B01-02: label comparison under binary-reward GRPO
 
-Qwen2.5-14B-Instruct原始revision、固定L2、九工具及STEP/NAME Prompt与前轮一致；BF16基座+LoRA，无额外SFT。奖励仅严格完整轨迹0/1，标题不计奖励。6run各100更新，每更新16题×8候选。
+Qwen2.5-14B-Instruct at the original revision, fixed L2; the nine tools and STEP/NAME prompts match the previous study; BF16 base + LoRA, with no additional SFT. Reward is strict full-trajectory 0/1, with no heading reward. Each of 6 runs has 100 updates, using 16 examples x 8 candidates per update.
 
-## 新测试集端点（512题）
+## Fresh test endpoints (512 examples)
 
-| seed | STEP step0→100 | STEP提升 | NAME step0→100 | NAME提升 | NAME−STEP端点差 |
+| seed | STEP step0 to 100 | STEP gain | NAME step0 to 100 | NAME gain | NAME-STEP endpoint difference |
 |---:|---:|---:|---:|---:|---:|
 | 301 | 51.17%→97.46% | +46.29 pp | 49.61%→99.41% | +49.80 pp | +1.95 pp |
 | 302 | 51.17%→99.61% | +48.44 pp | 49.61%→98.83% | +49.22 pp | -0.78 pp |
 | 303 | 51.17%→99.22% | +48.05 pp | 49.61%→99.22% | +49.61 pp | +0.00 pp |
 
-STEP：step100为98.76% ± 1.14%（3seed均值±样本SD）；相对本组step0平均提升+47.59个百分点。
+STEP: step100 = 98.76% ± 1.14% (3-seed mean +/- sample SD); mean gain over the condition-specific step0 = +47.59 percentage points.
 
-NAME：step100为99.15% ± 0.30%（3seed均值±样本SD）；相对本组step0平均提升+49.54个百分点。
+NAME: step100 = 99.15% ± 0.30% (3-seed mean +/- sample SD); mean gain over the condition-specific step0 = +49.54 percentage points.
 
-配对NAME−STEP端点差均值+0.39 ± 1.41个百分点；1/3 seed为正。两组提升幅度之差均值+1.95个百分点。三个seed仅初步重复，不把seed×题数合并成大量独立模型重复。
+Mean paired NAME-STEP endpoint difference: +0.39 ± 1.41 percentage points; 1/3 seeds are positive. Mean difference in learning gains: +1.95 percentage points. Three seeds provide preliminary replication; seed x example counts are not treated as many independent model replications.
 
-step0为同一原始策略，每条件各算一次新验证/测试并由三个seed明确引用；各run单独保留其配对LoRA初始化checkpoint。新测试集只在预定step0和100评分，没有挑最好checkpoint。
+step0 uses the same original policy: fresh validation/test outputs are generated once per condition and explicitly referenced by three seeds. Each run retains its own paired LoRA initialization checkpoint. The fresh test set is scored only at the scheduled step0 and 100, with no best-checkpoint selection.
 
-## 验证门槛与完整学习曲线
+## Validation thresholds and complete learning curves
 
-| 条件 | seed | 首次60% | 首次70% | 首次80% | 首次90% | 曲线平均成功率（梯形面积/100） |
+| Condition | seed | First 60% | First 70% | First 80% | First 90% | Mean curve success (trapezoidal area/100) |
 |---|---:|---:|---:|---:|---:|---:|
 | STEP | 301 | 20 | 30 | 40 | 50 | 82.46% |
 | NAME | 301 | 20 | 20 | 30 | 40 | 87.30% |
@@ -29,15 +29,15 @@ step0为同一原始策略，每条件各算一次新验证/测试并由三个se
 | STEP | 303 | 20 | 30 | 30 | 40 | 85.25% |
 | NAME | 303 | 20 | 30 | 30 | 40 | 86.80% |
 
-门槛按step0/10/…/100固定评测点首次达到；不推断两检查点之间的精确跨越时刻，也不将未达到按任意更新数补值。完整逐seed曲线及每点实际训练token/GPU时间在analysis/results.json。
+Thresholds record the first fixed evaluation point at step0/10/.../100 that reaches the target. Exact crossing times between checkpoints are not inferred, and unreached thresholds receive no arbitrary update count. Complete per-seed curves and actual training tokens/GPU time at every point are in analysis/results.json.
 
-![验证成功率随更新](figures/validation-vs-updates.png)
+![Validation success by update](figures/validation-vs-updates.png)
 
-![验证成功率随实际计算](figures/validation-vs-compute.png)
+![Validation success by actual compute](figures/validation-vs-compute.png)
 
-## 采样、优化与成本
+## Sampling, optimization, and costs
 
-| 条件 | seed | 候选数 | 输出token | 组内奖励有区分度比例 | 候选重复比例 | 最大KL | 训练分配GPU小时 |
+| Condition | seed | Candidates | Output tokens | Mixed-reward group fraction | Duplicate candidate fraction | Maximum KL | Allocated training GPU-hours |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | STEP | 301 | 12800 | 852147 | 17.56% | 82.65% | 0.67958 | 2.314 |
 | NAME | 301 | 12800 | 852997 | 14.25% | 75.77% | 0.08572 | 2.349 |
@@ -46,11 +46,11 @@ step0为同一原始策略，每条件各算一次新验证/测试并由三个se
 | STEP | 303 | 12800 | 849667 | 14.25% | 83.48% | 0.15370 | 2.310 |
 | NAME | 303 | 12800 | 849794 | 14.50% | 76.45% | 0.10238 | 2.339 |
 
-候选重复比例在同一道题的8个输出内部统计。全0/全1组保留，任务优势为0，仍可能存在KL梯度。相同更新预算不等于相同计算量；compute曲线累计两rank采样和更新墙钟，训练分配GPU时间另含加载、保存及等待，不是GPU内核活动时间。评测开销与预检/恢复开销须在完成审计中单列。
+Duplicate fractions are measured within the 8 outputs for each example. All-0/all-1 groups are retained with zero task advantage, though KL gradients may remain. Equal update budgets do not imply equal compute. Compute curves accumulate sampling and update wall time across both ranks. Allocated training GPU time additionally includes loading, saving, and waiting; it is not active GPU-kernel time. Evaluation and precheck/recovery costs must be listed separately in the completion audit.
 
-## 标题、错误及结束原因（step100新测试）
+## Headings, errors, and stopping reasons (step100 fresh test)
 
-| 条件 | seed | 标题全合规 | 操作序列不符 | 数字错误 | 前缀提前停止 | 额外原始操作 | 格式额外行 | 截断 |
+| Condition | seed | Fully compliant headings | Operation-sequence mismatch | Numerical error | Early prefix stop | Extra raw operations | Extra format lines | Truncation |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | STEP | 301 | 100.00% | 0 | 12 | 0 | 0 | 0 | 0 |
 | NAME | 301 | 100.00% | 0 | 3 | 0 | 0 | 0 | 0 |
@@ -59,21 +59,21 @@ step0为同一原始策略，每条件各算一次新验证/测试并由三个se
 | STEP | 303 | 100.00% | 0 | 4 | 0 | 0 | 0 | 0 |
 | NAME | 303 | 99.22% | 0 | 4 | 0 | 0 | 0 | 0 |
 
-错误标志非互斥；数字错误按输出前一步状态核验，展开不符包括额外/缺失操作。额外原始操作不直接称作额外工具调用；合法标题的合规另列，不纳入二值奖励。逐题原始输出、token IDs、EOS/上限证据保留在eval/outputs/。
+Error flags can overlap. Numerical errors are checked against the preceding output state; expansion mismatches include extra/missing operations. Extra raw operations are not directly counted as extra tool calls. Heading compliance is reported separately and excluded from binary rewards. Per-example raw outputs, token IDs, and EOS/cap evidence are retained in eval/outputs/.
 
-## 证据与解释边界
+## Evidence and scope of interpretation
 
-冻结配置config/frozen.json及freeze-manifest.json；数据data/manifest.json；预检analysis/precheck-complete.json；固定checkpoint与候选runs/v1-*；完整曲线/配对/成本analysis/results.json；实现口径METHOD.md。最终研究判断见[CONCLUSIONS.md](CONCLUSIONS.md)，完整验收和成本口径见[COMPLETION_AUDIT.md](COMPLETION_AUDIT.md)。
+Frozen configurations: config/frozen.json and freeze-manifest.json; data: data/manifest.json; prechecks: analysis/precheck-complete.json; fixed checkpoints and candidates: runs/v1-*; complete curves/pairing/costs: analysis/results.json; implementation definitions: METHOD.md. See [CONCLUSIONS.md](CONCLUSIONS.md) for final interpretation and [COMPLETION_AUDIT.md](COMPLETION_AUDIT.md) for complete checks and cost accounting.
 
-本轮只比较给定计划下的标签结构是否帮助训练执行。未加入内部/局部奖励，未验证真实数学或Agent迁移、跨模型泛化或创新性，不将方法收益与内部机制假设混为一谈。
+This study compares whether label structure helps train execution under a supplied plan. It adds no internal/local rewards and does not establish transfer to real mathematics or agents, cross-model generalization, or novelty. Method gains are distinguished from hypotheses about internal mechanisms.
 
-## 全程错误变化（固定验证集）
+## Error changes throughout training (fixed validation set)
 
-下图覆盖所有预定检查点，曲线为3个seed的错误标志比例均值。标志可重叠；数值错误指给定输出前一状态后，当前原始操作计算不正确。它与工具展开/顺序错误分开计数，不能相加为总错误率。
+The figure covers every prespecified checkpoint. Curves show the mean error-flag fractions over 3 seeds. Flags can overlap. A numerical error means that the current raw operation is computed incorrectly given the preceding output state. Numerical errors and tool-expansion/order errors are counted separately and must not be added into a total error rate.
 
-![完整错误曲线](figures/validation-error-curves.png)
+![Complete error curves](figures/validation-error-curves.png)
 
-| 更新 | STEP展开错误/256 | NAME展开错误/256 | STEP数字错误/256 | NAME数字错误/256 | STEP标题合规 | NAME标题合规 |
+| Update | STEP expansion errors/256 | NAME expansion errors/256 | STEP numerical errors/256 | NAME numerical errors/256 | STEP heading compliance | NAME heading compliance |
 |---:|---:|---:|---:|---:|---:|---:|
 | 0 | 59.00 | 39.00 | 84.00 | 112.00 | 100.00% | 97.27% |
 | 10 | 56.33 | 33.00 | 77.33 | 102.33 | 99.48% | 97.14% |
@@ -87,6 +87,6 @@ step0为同一原始策略，每条件各算一次新验证/测试并由三个se
 | 90 | 0.33 | 0.33 | 4.00 | 2.33 | 100.00% | 95.70% |
 | 100 | 0.67 | 0.33 | 2.33 | 2.67 | 100.00% | 97.92% |
 
-全部错误标志、EOS/截断和每个seed的原始数据见analysis/results.json、analysis/error-curves.json及eval/outputs。
+All error flags, EOS/truncation information, and per-seed raw data are in analysis/results.json, analysis/error-curves.json, and eval/outputs.
 
-标题与最终Answer的补充核验见[CASE_REVIEW.md](CASE_REVIEW.md)：NAME端点53条全标题不合规均为额外`Trace:`，工具名及顺序本身正确；STEP seed301另有1条中间轨迹全对而最终Answer抄错。主评分未改。
+See [CASE_REVIEW.md](CASE_REVIEW.md) for supplementary heading and final-Answer checks: all 53 NAME endpoint heading violations are extra `Trace:` headings, with correct tool names and order. STEP seed301 also has 1 case with entirely correct intermediate states but an incorrectly copied final Answer. The primary score is unchanged.

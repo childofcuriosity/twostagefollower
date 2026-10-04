@@ -1,21 +1,21 @@
-# 机制命题、形式化与可识别性
+# Mechanistic claims, formalization, and identifiability
 
-## 三个不同量
-E(θ)：固定执行任务分布上的正确率；P(θ)：固定候选预算下，模型在未见任务上提出并经支持集选择的抽象效用；G(θ,p)：从同一学习器θ出发，用提案源p产生训练数据后，在固定测试上的学习增益。E提高且P降低是能力分离；只有干预p改变G，才能把提案退化连接到后续学习障碍。E与P负相关不能替代该因果实验。
+## Three distinct quantities
+E(θ) is accuracy on a fixed execution distribution. P(θ) is utility of abstractions proposed on unseen tasks and selected using support data under a fixed candidate budget. G(θ, p) is fixed-test learning gain when proposal source p supplies training data to the same initial learner θ. Rising E with falling P is capability separation. Only an intervention on p that changes G connects proposal degradation to subsequent learning obstacles. Negative E/P correlation cannot substitute for this experiment.
 
-每轮θ_{t+1}=Update(θ_t, Data(Select(Proposal(θ_t,S_t))))。冻结提案者只替换Proposal里的参数，其他执行器/筛选/学习器预算保持。有限三轮闭环仍依赖人设DSL、任务分布和精确执行器，不是开放式RSI。
+Each round follows θ_{t+1}=Update(θ_t, Data(Select(Proposal(θ_t,S_t)))). Freezing the proposer replaces only parameters inside Proposal while retaining executor, selector, and learner budgets. A three-round loop still depends on a human-designed DSL, distribution, and exact executor; it is not open-ended RSI.
 
-## 局部梯度条件（解释工具，不宣称新定理）
-设执行损失L_E、可微提案效用替代损失L_P，一次小步θ'=θ−η∇L_E，则L_P(θ')−L_P(θ)≈−η〈∇L_P,∇L_E〉。内积为负时，降低执行损失的一阶更新可能提高提案损失；但真实优化为AdamW、步长有限，且可微替代损失不等于采样/选库后的P，不能把局部内积直接当成长期因果机制。
+## Local gradient condition: an explanatory tool, not a new theorem
+For execution loss L_E and differentiable proposal surrogate L_P, a small step θ'=θ−η∇L_E gives L_P(θ')−L_P(θ)≈−η〈∇L_P,∇L_E〉. A negative inner product permits an execution-loss descent step to increase proposal loss at first order. Actual optimization uses AdamW and finite steps, and the surrogate differs from sampled/selected utility P; the local inner product is not directly a long-term causal mechanism.
 
-本研究的主要因果证据仍来自相同起点的提案源分支，以及replay/joint与打乱回放的对照。梯度夹角作为诊断；若不冲突，应否定简单局部梯度解释而不是寻找有利批次。
+Primary causal evidence comes from same-start proposal-source branches and replay/joint versus shuffled-replay controls. Gradient angles are diagnostic. Absence of conflict should count against the simple local-gradient explanation, rather than trigger selection of favorable batches.
 
-## 替代解释及控制
-- 格式/提示错配：三提示、语法约束、固定完整预算曲线，另存原始输出。
-- 采样集中而非能力消失：提案K=4/16/64及温度1.5；若高预算追平，只能称低预算效率下降。
-- 额外监督/算力：所有条件执行样本数相同；辅助条件额外4条提案监督，完整记录token，打乱回放拥有同样提示/目标集合。混合目标胜出不代表同算力最优。
-- 任务多样性或课程改变：保存每轮提案、库、训练程序、语义覆盖；反事实分支冻结学习器起点，以分离路径依赖。
-- 训练目标由环境真值提供：循环并非纯模型自举，环境执行器参与生成监督。
-- 二元字符串与数字共用抽象语法但执行语义独立，不能把两个域称完全独立自然任务。
+## Alternative explanations and controls
+- Format/prompt mismatch: three prompts, grammar constraints, complete fixed-budget curves, and retained raw outputs.
+- Sampling concentration rather than lost capability: K=4/16/64 and temperature 1.5. If larger budgets close the gap, describe lower finite-budget efficiency only.
+- Extra supervision/compute: equal execution-example counts; auxiliary conditions add four proposal examples with full token accounting. Shuffled replay has the same prompt/target sets. Winning mixed objectives do not imply equal-compute optimality.
+- Task diversity or curriculum changes: preserve proposals, libraries, training programs, and semantic coverage each round. Counterfactual branches fix learner starts to separate path dependence.
+- Environment-provided training truth: supervision comes partly from an executor, so the loop is not purely model-generated bootstrapping.
+- Strings and numbers share abstraction syntax but differ in execution semantics; they are not fully independent natural-task categories.
 
-当前工作仍没有通用自然语料SFT控制、真实代码benchmark或大模型RL训练。因此即便支持H1/H2/H3，也只建立受控闭域证据，不能声称一般遗忘被排除、或已证明所有RSI系统存在该瓶颈。
+There is still no general natural-corpus SFT control, real-code benchmark, or large-model RL training. Even support for H1/H2/H3 would establish controlled closed-domain evidence only, neither excluding general forgetting nor proving a bottleneck in all RSI systems.

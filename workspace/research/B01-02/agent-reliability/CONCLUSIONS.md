@@ -1,12 +1,12 @@
-# 本轮审核入口
+# Review entry point
 
-已完成执行修复和受控验证，保留439条轨迹；模型进程共29.64GPU小时。未微调或使用外部付费推理。
+Execution repairs and controlled verification are complete, with 439 retained trajectories and 29.64 GPU-hours of model-process occupancy. No fine-tuning or paid external inference was used.
 
-- 同一32B模型、原24任务：旧协议9/24，原生接口23/24。
-- 独立36任务复现：空说明36/36、身份36/36；名称/身份说明的独有收益没有稳定复现。
-- 新的3个24工单任务：完整历史5/24、24/24、23/24；仅清理历史、清理＋摘要、仅过滤自造伪角色文本均为24/24、24/24、24/24。
-- 只完成5项的失败在新进程里逐字复现；修复前配对前缀一致，真实工具记录和所有失败都保留。没有答案反馈或结束硬门控。
+- Same 32B model, original 24 tasks: old protocol9/24, native interface23/24.
+- Independent 36-task replication: empty notes36/36, identity 36/36; no consistent unique benefit from name/identity notes.
+- Three new 24-ticket tasks: full history5/24,24/24,23/24; clearing history alone, clearing + summary, and filtering invented pseudo-role text alone each score24/24,24/24,24/24.
+- The failure completing only 5 items reproduces verbatim in a new process. Paired prefixes match before repair, with genuine tool records and all failures retained. There is no answer feedback or hard termination gate.
 
-这是小规模机制案例和可用修复，不是新颖性已确立的论文结论，也不是RSI或身份复述独有优势的证明。建议重点研究自造执行叙述/伪工具观察进入历史后导致的虚假完成，并跨模型、真实任务复核。
+These are small-scale mechanism cases and usable repairs, not an established novelty claim, proof of RSI, or proof of a unique identity-restatement benefit. Further work should focus on false completion after invented execution narratives/pseudo-tool observations enter history, with cross-model and real-task verification.
 
-完整方法、成本、反例、查新与边界见[REPORT.md](REPORT.md)，审计见[COMPLETION_AUDIT.md](COMPLETION_AUDIT.md)。
+See [REPORT.md](REPORT.md) for full methods, costs, counterexamples, novelty checks, and limitations, and [COMPLETION_AUDIT.md](COMPLETION_AUDIT.md) for the audit.

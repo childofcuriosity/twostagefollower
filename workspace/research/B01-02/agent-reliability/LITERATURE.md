@@ -1,13 +1,13 @@
-# 与已有工作的关系（有限查新）
+﻿# Relation to prior work (limited novelty check)
 
-本次核对了下列一手摘要与正式出版元数据。上下文压缩、任务状态外置、学习何时删改记忆已有明确近邻，不能把这些宽泛主张作为我们的原创发现。
+This check covered the primary abstracts and official publication metadata below. Context compression, external task state, and learning when to edit/delete memories have clear prior work; these broad ideas are not original findings here.
 
-| 已有工作 | 已有内容 | 对当前结论的约束 |
+| Prior work | Existing contribution | Constraint on current interpretation |
 |---|---|---|
-| [Context as a Tool / CAT](https://arxiv.org/abs/2512.22087)，2025-12预印本 | 将稳定任务语义、长期记忆和近期交互分开，并训练上下文管理能力。 | “分层保留目标、摘要与最近操作”本身不是新的研究主张。 |
-| [InfiAgent](https://aclanthology.org/2026.findings-acl.1787/)，Findings of ACL 2026 | 将持久状态外置到文件，通过状态快照及近期动作重建有界上下文。 | “保持小上下文也能做长任务”已有直接近邻。 |
-| [Memory as Action / MemAct](https://aclanthology.org/2026.findings-acl.956/)，Findings of ACL 2026 | 把上下文删改作为可学习动作，以强化学习优化信息保留与任务表现。 | 未来如果训练Agent学会维护上下文，需要与已有记忆策略训练比较；不能把采用Agentic RL本身当增量。 |
+| [Context as a Tool / CAT](https://arxiv.org/abs/2512.22087), 2025-12 preprint | Separates stable task semantics, long-term memory, and recent interactions, and trains context management. | Hierarchically retaining goals, summaries, and recent actions is not itself new. |
+| [InfiAgent](https://aclanthology.org/2026.findings-acl.1787/), Findings of ACL 2026 | Externalizes persistent state into files and reconstructs bounded context from state snapshots and recent actions. | Completing long tasks with a small context already has direct prior work. |
+| [Memory as Action / MemAct](https://aclanthology.org/2026.findings-acl.956/), Findings of ACL 2026 | Treats context edits/deletions as learnable actions, using reinforcement learning to optimize information retention and task performance. | Future training of agent context management must be compared with existing memory-policy training; using Agentic RL alone is not a contribution. |
 
-当前更具体的研究线索是：在固定工具协议、可见时钟、输入schema和任务预算下，模型生成的伪角色/伪工具观察被回填到历史后，是否形成可复现的错误累积，进而产生虚假完成；保持真正工具历史、只清理这类模型自造文本能否修复。我们已在小规模受控任务上获得配对证据，但目前没有证明跨模型、跨真实任务的普遍性。
+A more specific research lead is whether, with tool protocol, visible clock, input schema, and task budget fixed, model-generated pseudo-role/pseudo-tool observations fed back into history cause reproducible error accumulation and false completion, and whether removing only this invented text while preserving genuine tool history can repair it. Paired evidence exists on small controlled tasks, but generality across models and real tasks remains unestablished.
 
-以上是我们的研究判断，不是文献已经证明的差异。这里只核对了摘要与元数据，尚不能排除全文或其他文献已覆盖这一具体失败链。当前应称为可复现的机制案例与工程修复；新颖性和论文贡献仍需进一步核对。不要将其表述为已发表成果、已证明的RSI瓶颈，或已证明名称复述独有优势。
+This distinction is our research judgment, not a difference established by the literature. Only abstracts and metadata were checked; the full papers or other work may already cover this exact failure chain. The current result should be described as reproducible mechanism cases and engineering repairs, with novelty and paper contributions still requiring verification. It should not be presented as a published result, a proven RSI bottleneck, or proof of a unique benefit from name restatement.

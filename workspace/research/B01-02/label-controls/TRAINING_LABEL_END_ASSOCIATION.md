@@ -1,7 +1,7 @@
-# 标签与训练结束位置的关联：数据描述
-在首批1.5B结果后补充的数据审计，不冒充事前机制验证。不改任何实验。这里的结束指该标签所标工具是训练题最后一个工具，不是标签后立即预测Answer的概率。
+# Association between labels and training end positions: data description
+This supplementary data audit was added after the first 1.5B results, not as a preregistered mechanism test. No experiments are changed. Ending here means that the labeled tool is the last tool in a training example, not the probability of predicting Answer immediately after the label.
 
-|条件|标签|出现次数|属于最后工具|比例|
+|Condition|Label|Occurrences|Belongs to final tool|Fraction|
 |---|---|---:|---:|---:|
 |flat|step|7798|4096|52.53%|
 |macro|gray|843|455|53.97%|
@@ -25,4 +25,4 @@
 |alias|toolC|853|450|52.75%|
 |alias|toolB|883|477|54.02%|
 
-位置组step2在训练中总是最后一个工具，因此位置组失败同时可能包含终止关联和未训练位置外推。原名称与alias在按工具对应后的结束关联完全相同，但词形、分词和输入表示不同。该描述不能证明模型实际采用了哪种机制。
+In training, step2 is always the final tool for the position condition. Position failures may therefore involve both termination associations and extrapolation to untrained positions. Original NAME and aliases have identical end-position associations when matched by tool, but differ in word form, tokenization, and input representation. This description does not establish which mechanism the model actually uses.

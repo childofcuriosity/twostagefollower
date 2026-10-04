@@ -1,52 +1,52 @@
-# Qwen2.5-0.5B 域内标签复核
+# Qwen2.5-0.5B in-domain label replication
 
-完成时间：2026-09-27 UTC。所有结果是训练支持长度内的评测；本轮没有运行域外长序列或纯 prompt 对照。
+Completed 2026-09-27 UTC. All evaluations use lengths supported by training. This round includes neither out-of-domain long sequences nor prompt-only controls.
 
-## 研究问题与结论
+## Research question and conclusion
 
-输入为四位数字和给定的工具调用顺序，模型逐工具输出原始操作、每步状态和最终 `Answer`。严格成功要求完整操作序列、全部中间数字和最终答案正确。原1.5B短题近乎满分；本轮检验更小的同系列0.5B及逐级加长训练任务能否提供域内改善空间。
+Given four digits and a tool-call order, the model emits primitive operations, every intermediate state, and the final `Answer`. Strict success requires the complete correct operation sequence, all intermediate numbers, and the answer. Original 1.5B short-task scores were near perfect; this study tests whether the smaller same-family 0.5B model and progressively longer training tasks provide room for in-domain improvement.
 
-**主要观察：**首次达到预先修订改善空间门槛的是最大长度5。该档固定改名与原工具名称分别比统一 step 高10.92和11.10个百分点，20/20配对seed均为正；位置编号比统一 step 低6.23个百分点。**但差异集中在1–2次调用，4–5次调用四组均100%。**因此证据支持身份标签在该采样下减少短任务退化，不支持“提升五次调用本身”的主张。
+**Main observation:** Maximum training length five first meets the revised, prespecified headroom threshold. Fixed aliases and original names outperform uniform step by 10.92 and 11.10 percentage points, respectively, with positive differences for all 20 paired seeds. Position indices score 6.23 points below step. **Differences concentrate at one/two calls; all four groups score 100% at four/five calls.** Evidence supports reduced short-task degradation under this sampling scheme, rather than better execution of five-call tasks themselves.
 
-## 继承的设置
+## Inherited settings
 
-- 官方Qwen2.5 Base、旧LoRA r16/alpha32/dropout0与七种投影、AdamW、LR3e-4及原学习率日程。512优化步，microbatch16、累积2，单run暴露16384题；不按测试选择检查点。
-- 固定9工具、四位数字操作、旧prompt、Answer结束协议、四种标签的输入输出及固定改名映射；标签顺序为统一 step、位置编号、固定改名、原工具名称。
-- 20个配对训练seed：11、22、33、100–116；相同seed控制LoRA初始化和训练样本打乱。贪心解码，batch32，严格完整轨迹旧评分器。
-- 长度2档逐字使用旧4096条训练题与旧128条IID短测试题；旧模型与历史结果保持不动。
+- Official Qwen2.5 Base; existing LoRA r16/alpha32/dropout0 and seven projection types; AdamW, LR 3e-4, and the original schedule. Use 512 optimization steps, microbatch 16 with accumulation 2, and 16384 example presentations per run. No test-based checkpoint selection.
+- Fixed nine tools, four-digit operations, original prompt, Answer termination protocol, four label input/output formats, and fixed alias mapping. Label order: uniform step, position index, fixed alias, original tool name.
+- Twenty paired training seeds: 11, 22, 33, and 100–116. A shared seed controls LoRA initialization and example shuffling. Greedy decoding, batch 32, and the existing strict complete-trajectory scorer.
+- Maximum length two reuses the original 4096 training examples and 128 short IID tests verbatim. Existing models and historical results remain unchanged.
 
-## 本轮差异与冻结顺序
+## Changes and freeze order
 
-- 仅把模型换为`Qwen/Qwen2.5-0.5B` Base，revision `060db6499f32faf8b98477b0a26969ef7d8b9987`。模型与数据hash见`analysis/delivery-audit.json`、各档manifest。
-- 运行前用户否决原99%饱和门槛；在任一0.5B结果出现前改为：STEP 20 seed平均严格成功率≤90%，且至少15个seed各自≤95%。旧文字和修订均留在`REGISTRATION.md`。此门槛只决定哪档有错误空间，不能保证身份标签会赢。
-- 长度3–5分别冻结4096训练题；按旧生成器的链均匀采样规则扩展到1–L，四位数均匀、链+输入去重。数据seed为903/904/905。测试逐档保留旧128短题，新增每个长度128题；长度5共512题、每seed四标签同题。只评测训练支持的长度。
-- 长度5目标训练序列实际最大269 token，旧训练器的256序列断言不再容纳目标，因此只把该断言提高到512；生成`max_new_tokens=256`、贪心、解析和评分均未改。长度2–4无需兼容调整。
+- The only model change is to `Qwen/Qwen2.5-0.5B` Base, revision `060db6499f32faf8b98477b0a26969ef7d8b9987`. Model/data hashes are in `analysis/delivery-audit.json` and length-specific manifests.
+- The user rejected the original 99% saturation threshold before running. Before any 0.5B result, it was replaced by STEP mean strict success ≤90% across 20 seeds, with at least 15 seeds individually ≤95%. Original text and amendment remain in `REGISTRATION.md`. This identifies error headroom without guaranteeing identity-label gains.
+- Freeze 4096 training examples separately for maximum lengths 3–5. Extend the original uniform-over-chains generator to lengths 1–L, with uniform digits and chain/input deduplication. Data seeds are 903/904/905. Retain the original 128 short tests and add 128 for each new length. L5 has 512 tests shared by all labels within each seed. Evaluate only training-supported lengths.
+- Maximum L5 training target length is 269 tokens, exceeding the old 256-token assertion. Raise only that assertion to 512. Generation `max_new_tokens=256`, greedy decoding, parsing, and scoring are unchanged. Lengths 2–4 require no compatibility adjustment.
 
-## STEP筛查
+## STEP screening
 
-| 训练最大调用长度 | 测试题/seed | STEP均值±seed样本SD | 判断 |
+| Maximum training call length | Test examples/seed | STEP mean ± seed sample SD | Decision |
 |---:|---:|---:|---|
-| 2 | 128 | 100.00% ± 0.00% | 仍饱和，升级 |
-| 3 | 256 | 100.00% ± 0.00% | 仍饱和，升级 |
-| 4 | 384 | 99.18% ± 0.13% | 仍饱和，升级 |
-| 5 | 512 | 88.56% ± 3.35% | 有改善空间，停止升级 |
+| 2 | 128 | 100.00% ± 0.00% | Still saturated; extend |
+| 3 | 256 | 100.00% ± 0.00% | Still saturated; extend |
+| 4 | 384 | 99.18% ± 0.13% | Still saturated; extend |
+| 5 | 512 | 88.56% ± 3.35% | Headroom found; stop extending |
 
-长度5是第一个满足门槛的档位，因此未训练最大长度6–8。这是按基线选择任务难度，不能用为阳性结果做事后挑选的确证解释。
+Length five first meets the threshold, so maximum lengths 6–8 were not trained. This baseline-based difficulty selection cannot be interpreted as a confirmatory analysis of a task fixed independently of selection or as post hoc selection for positive label results.
 
-## 长度5四标签主比较
+## Four-label primary comparison at maximum length five
 
-| 输出标签 | 域内严格完整轨迹成功率，20 seed均值±SD | 相对统一step的配对差，均值±SD | 配对改善seed |
+| Output label | In-domain strict trajectory success, 20-seed mean ± SD | Paired difference from step, mean ± SD | Improved paired seeds |
 |---|---:|---:|---:|
-| 统一 step | 88.56% ± 3.35% | 基线 | — |
-| 位置编号 | 82.33% ± 4.96% | -6.23 ± 6.43个百分点 | 4/20 |
-| 固定改名 | 99.48% ± 0.31% | +10.92 ± 3.41个百分点 | 20/20 |
-| 原工具名称 | 99.67% ± 0.41% | +11.10 ± 3.34个百分点 | 20/20 |
+| Uniform step | 88.56% ± 3.35% | Baseline | — |
+| Position index | 82.33% ± 4.96% | -6.23 ± 6.43 percentage points | 4/20 |
+| Fixed alias | 99.48% ± 0.31% | +10.92 ± 3.41 percentage points | 20/20 |
+| Original tool name | 99.67% ± 0.41% | +11.10 ± 3.34 percentage points | 20/20 |
 
-配对seed差的描述性t区间（df=19）：固定改名相对STEP为+9.32至+12.52个百分点，原工具名称为+9.54至+12.67，位置编号为−9.24至−3.22。训练数据、测试题和改名映射固定，区间只覆盖训练seed波动；任务与映射变化未纳入。
+Descriptive t intervals for paired seed differences (df=19): fixed alias versus STEP +9.32 to +12.52 points; original name +9.54 to +12.67; position index −9.24 to −3.22. Training data, test examples, and alias mapping are fixed. Intervals cover training-seed variation, not task or mapping variation.
 
-### 按调用长度
+### By call length
 
-| 调用长度 | 每seed题数 | 统一step | 位置编号 | 固定改名 | 原工具名称 |
+| Calls | Examples/seed | Uniform step | Position index | Fixed alias | Original name |
 |---:|---:|---:|---:|---:|---:|
 | 1 | 11 | 5.91% | 0.00% | 77.73% | 86.82% |
 | 2 | 117 | 59.87% | 34.74% | 99.83% | 99.79% |
@@ -54,11 +54,11 @@
 | 4 | 128 | 100.00% | 100.00% | 100.00% | 100.00% |
 | 5 | 128 | 100.00% | 100.00% | 100.00% | 100.00% |
 
-这里逐长度分母是20 seed重复评测同一批题：一次调用220条、两次调用2340条、其余各2560条输出；它们不是相互独立的新题。
+Length-specific denominators repeat the same examples across 20 seeds: 220 one-call outputs, 2340 two-call outputs, and 2560 at each other length. These are not independent fresh examples.
 
-### 每个训练seed的严格成功率
+### Strict success by training seed
 
-| seed | 统一step | 位置编号 | 固定改名 | 原工具名称 | 改名−step | 原名−step |
+| Seed | Uniform step | Position index | Fixed alias | Original name | Alias−step | Original−step |
 |---:|---:|---:|---:|---:|---:|---:|
 | 11 | 88.87% | 77.54% | 99.41% | 99.22% | +10.55 | +10.35 |
 | 22 | 89.65% | 90.23% | 99.41% | 100.00% | +9.77 | +10.35 |
@@ -81,19 +81,19 @@
 | 115 | 91.21% | 83.20% | 100.00% | 99.41% | +8.79 | +8.20 |
 | 116 | 90.43% | 86.91% | 99.41% | 100.00% | +8.98 | +9.57 |
 
-## 数据与评分审计、解释边界
+## Data/scoring audits and interpretation limits
 
-- 长度5训练4096题：1/2/3/4/5次调用分别只有1/4/40/379/3672题；这是旧“所有长度≤L的调用链等概率”采样规则在L=5下的直接结果。短题供给变稀可能解释STEP和位置编号的短题退化，但现有设计没有单独验证这一机制。
-- 训练/测试的链+输入组合没有重复；测试包含旧128短题与新增的3/4/5次调用各128题。长度5所有标签训练目标去掉标题后操作和Answer逐题一致；固定改名在输入输出中同步生效。
-- 80个正式run全部512步、16384样本暴露、相同模型revision和LoRA可训练参数数；40960条原始域内输出逐题保留。旧严格评分器核对完整轨迹；旧评分不要求标题本身正确，另用标签感知评分复核后本轮各长度严格成功计数相同。
-- 差异主要是多做了工具：长度5的STEP在一次/两次调用失败207/939条seed输出，均出现操作序列不符；逐步数字错误计数为0。位置编号在短题常继续输出额外step。不能由此断定模型内部机制。
-- 四五次调用四组都满分，因此本轮无法证明身份标签提高这些长度的域内表现；更多seed也不能给已满分长度创造提升空间。长度5训练几乎全是五次调用，短长度的可靠性属于分布权重变化下的保持能力。
-- 本轮只使用一份训练数据、一套测试题和一套固定改名映射。固定改名与原名的输入token、目标长度不同；seed稳定性不等于跨映射、跨数据或真实Agent任务稳定性。长度1训练只有1题，不能把它的成绩看成充分学习过的一次调用分布。
+- The 4096 L5 training examples contain only 1/4/40/379/3672 examples at 1/2/3/4/5 calls, respectively. This follows directly from uniform sampling over all chains of length ≤L. Sparse short-task exposure may explain degradation of STEP and position indices, but the design does not independently test that mechanism.
+- Training/test chain-input pairs do not overlap. Tests retain 128 old short examples and add 128 each at 3/4/5 calls. Removing headers yields identical operations and Answer targets across all L5 labels. Fixed aliases apply to both inputs and outputs.
+- All 80 formal runs have 512 steps, 16384 example presentations, and identical model revision/trainable LoRA parameter count. All 40960 raw in-domain outputs are retained individually. The old scorer checks complete trajectories without requiring correct headers; a label-aware recheck yields identical strict success counts at every length.
+- Differences mainly involve extra tool execution. For L5-trained STEP, the 207/939 failed one-/two-call seed outputs all have operation-sequence mismatches, with zero intermediate arithmetic errors. Position labels often continue with extra steps on short tasks. These observations do not identify internal mechanisms.
+- Every group is perfect at four/five calls, so this round cannot establish identity-label improvements there; more seeds cannot create headroom at saturated lengths. L5 training is overwhelmingly five-call data, making short-task reliability a retention question under changed distribution weights.
+- Only one training dataset, test set, and fixed alias mapping are used. Aliases and original names differ in input tokens and target lengths. Seed consistency does not establish consistency across mappings, datasets, or real-agent tasks. One-call training contains only one example and is not a well-learned one-call distribution.
 
-## 成本与证据位置
+## Costs and evidence
 
-- 本轮正式L5 80个run记录模型加载后的GPU分配时间合计3.59小时（每run总耗时求和，含推理与保存）；L2/3/4各20个STEP run也已完成。按全部140个job的外层运行时长求和约6.05分配GPU小时，含模型加载与环境开销。使用本机8张PRO6000；结束时GPU显存均为空。
-- 登记及修订：`REGISTRATION.md`；数据冻结清单：`data/L3/manifest.json`、`data/L4/manifest.json`、`data/L5/manifest.json`；逐seed和配对结果：`analysis/scores-L5.json`；全量逐题旧评分：`analysis/graded-L5.jsonl`；审计：`analysis/delivery-audit.json`。
-- 每个run位于`runs/L5-{condition}-s{seed}/`，保留driver快照、配置、512步训练日志、LoRA adapter、原始`predictions.jsonl`、`summary.json`及完成标记；分发退出记录在`analysis/dispatch-L5-*.json`。
+- Recorded post-loading GPU allocation for the 80 formal L5 runs totals 3.59 hours (sum of run durations, including inference/saving). Twenty STEP runs each at L2/3/4 are also complete. Outer durations for all 140 jobs total approximately 6.05 allocated GPU-hours, including loading and environment overhead. Eight local PRO6000 GPUs were used; all memory was empty at completion.
+- Registration/amendments: `REGISTRATION.md`; data manifests: `data/L3/manifest.json`, `data/L4/manifest.json`, `data/L5/manifest.json`; seed/paired results: `analysis/scores-L5.json`; full original scores: `analysis/graded-L5.jsonl`; audit: `analysis/delivery-audit.json`.
+- Runs are in `runs/L5-{condition}-s{seed}/`, retaining driver snapshots, configurations, 512-step logs, adapters, raw `predictions.jsonl`, `summary.json`, and completion markers. Dispatch exits: `analysis/dispatch-L5-*.json`.
 
-后续纯prompt对照与真实执行任务拓展仍只是备忘，本轮没有启动。
+Prompt-only controls and real-execution extensions remain future notes; neither was launched.

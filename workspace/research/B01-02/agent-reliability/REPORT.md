@@ -1,83 +1,83 @@
-# Agent可靠性：修复、复现与机制对照
+# Agent reliability: repairs, replication, and mechanism controls
 
-本轮共保留 **439条模型轨迹**，其中73条未通过全部验收；包括开发失败、回测、独立验证和重复实验。模型进程累计占用 **29.64 GPU小时**（含加载及进程持有GPU的准备时间；不含此前agent-study的2.80GPU小时）。未调用付费外部推理API，未更新模型权重。
+This study retains **439 model trajectories**, including 73 that failed full acceptance. These include development failures, backtests, independent validation, and repeats. Model processes occupied a total of **29.64 GPU-hours** (including loading and preparation while processes hold GPUs; excluding the earlier agent-study total of 2.80 GPU-hours). No paid external inference APIs were called, and model weights were unchanged.
 
-## 当前可支持的结论
+## Conclusions supported so far
 
-1. 执行接口确实是重要障碍。同一冻结32B模型在原24任务上的真实完成数由旧自定义协议9/24提高到原生工具接口23/24；加一个无关示例为21/24。这是接口、结束语义和预算等整体修复的工程对比，不是某一组件的单因素效应。
-2. 身份说明的独有优势没有稳定复现。独立36任务中，空说明36/36、通用提醒34/36、身份说明36/36、待办清单35/36。这批复现存在满分天花板，不能据此证明身份说明完全无效，也不能把小样本优势写成确定结论。
-3. 找到了实际可修复的长交互失败。在固定时钟、错误路径、输入schema的三个新24工单任务上，完整历史只完整完成1/3；仅清理旧历史、清理并保留进度摘要、仅过滤模型自造的伪角色文本，均完成3/3。所有组都可以自行结束，没有隐藏答案反馈或禁止结束的硬门控。
-4. 一个只交付5/24便宣布完成的失败在新进程中逐字复现。干预前的模型输出和工具返回一致；保留全部真实工具历史、只过滤伪角色文本也能修复。因此在这些案例中，额外身份复述或进度摘要不是完成任务的必要条件。
+1. The execution interface was a substantial obstacle. On the original 24 tasks, the same frozen 32B model improved from 9/24 actual completions with the earlier custom protocol to 23/24 with the native tool interface; adding an unrelated example gave 21/24. This is an engineering comparison of combined interface, termination-semantics, and budget repairs, not a single-component effect.
+2. A unique advantage from identity notes did not replicate consistently. On 36 independent tasks, empty notes scored 36/36, generic reminders 34/36, identity notes 36/36, and to-do lists 35/36. This replication has a ceiling effect; it neither proves identity notes useless nor turns a small-sample advantage into a firm conclusion.
+3. A repairable long-interaction failure was found. Across three new 24-ticket tasks with fixed clock, error paths, and input schema, full history completed only 1/3 tasks. Clearing old history alone, clearing it while retaining a progress summary, and filtering only model-generated pseudo-role text each completed 3/3. Every condition can stop voluntarily, without hidden-answer feedback or a hard gate preventing termination.
+4. A failure that declared completion after delivering only 5/24 items reproduced verbatim in a new process. Model outputs and tool returns matched before intervention. Preserving all genuine tool history while filtering only pseudo-role text also repaired it. Additional identity restatement or progress summaries were therefore not necessary for completion in these cases.
 
-这里的正面结果是可复现的执行修复与机制案例。三个受控任务不足以建立广泛的成功率估计，也未证明RSI、权重层面的自我改进或研究新颖性。
+The positive findings are reproducible execution repairs and mechanism cases. Three controlled tasks do not provide a broad success-rate estimate or establish RSI, weight-level self-improvement, or research novelty.
 
-## 模型、工具与验收
+## Model, tools, and acceptance checks
 
-冻结Qwen2.5-32B-Instruct，revision `5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd`；BF16、SDPA、贪心生成。采用模型自带tools chat_template。普通任务使用list_files/read_file/write_file/run_python四个工具；顺序工单增加next_ticket/submit_ticket。Python运行在本目录内的chroot沙箱，无网络或子进程创建能力。当前由本地实验脚本执行，不是EvoScientist聊天运行器，也没有SFT或Agentic RL。
-文件任务检查指定配置及所有未授权改动；数据任务检查真实CSV计算结果和输入保留；代码任务用隐藏的新输入检查函数行为及输入不被修改。顺序工单逐项开放输入，提交回执只表示收到文件，即使结果错误也会继续开放下一项；全部真实结果在结束后独立验收。实际向提交工具发送错误输出并确认它仍被接收的检查见`analysis/queue-receipt-validation.json`。
-长清单可以一次批处理，因此不能仅凭12条要求称为长程交互。顺序工单必须获取新的工具输入，才用于检验长交互。受控主实验共享128轮、24000生成token、30000上下文、单轮4096生成token和2400秒的限额。模型早停、协议失败、上下文/输出预算耗尽以及交付了错误结果分别保存。
+Frozen Qwen2.5-32B-Instruct, revision `5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd`; BF16, SDPA, and greedy generation, using the native tools chat_template. Ordinary tasks use list_files/read_file/write_file/run_python; sequential tickets add next_ticket/submit_ticket. Python runs in a chroot sandbox within this directory, without network access or subprocess creation. Execution uses local experiment scripts, not the EvoScientist chat runner, with no SFT or Agentic RL.
+File tasks check specified configurations and all unauthorized changes. Data tasks check actual CSV computations and preservation of inputs. Code tasks use hidden fresh inputs to check function behavior and unchanged inputs. Sequential tickets reveal inputs one at a time; submission receipts acknowledge file delivery only, opening the next item even if the result is wrong. All actual results are independently graded after termination. See `analysis/queue-receipt-validation.json` for a check that deliberately submits an incorrect output and confirms acceptance.
+Long checklists can be batch-processed in one action, so 12 requirements alone do not establish long-horizon interaction. Sequential tickets require new tool inputs and are used to test long interactions. Controlled main experiments share limits of 128 rounds, 24000 generated tokens, 30000 context tokens, 4096 generated tokens per turn, and 2400 seconds. Early stopping, protocol failure, context/output budget exhaustion, and incorrect deliveries are recorded separately.
 
-## 全部主要对照
+## All main comparisons
 
-下表中不同实验使用不同固定样本，不能把跨行变化当单因素效应。四列为该行任务的完整通过数。
+Experiments below use different fixed samples, so changes across rows are not single-factor effects. The four columns count tasks passing all requirements within each row.
 
-| 实验 | 空说明/基线 | 通用提醒 | 身份说明 | 待办清单 |
+| Experiment | Empty notes/baseline | Generic reminder | Identity notes | To-do list |
 |---|---:|---:|---:|---:|
-| 原生接口，12个新长清单 | 10/12 | 6/12 | 12/12 | 6/12 |
-| 显式说明字段，12个独立长清单 | 10/12 | 11/12 | 12/12 | 12/12 |
-| 显式说明字段，固定36任务复现 | 36/36 | 34/36 | 36/36 | 35/36 |
-| 原生顺序工单，12/24项各3题 | 0/6 | 0/6 | 1/6 | 0/6 |
-| 显式说明＋共享执行提示，新顺序工单6题 | 2/6 | 3/6 | 3/6 | 2/6 |
-| 交接摘要，旧24项3题＋新24项3题 | 5/6 | 3/6 | 5/6 | 4/6 |
+| Native interface, 12 new long checklists | 10/12 | 6/12 | 12/12 | 6/12 |
+| Explicit note field, 12 independent long checklists | 10/12 | 11/12 | 12/12 | 12/12 |
+| Explicit note field, fixed 36-task replication | 36/36 | 34/36 | 36/36 | 35/36 |
+| Native sequential tickets, 3 tasks each with 12/24 items | 0/6 | 0/6 | 1/6 | 0/6 |
+| Explicit notes + shared execution instructions, 6 new sequential-ticket tasks | 2/6 | 3/6 | 3/6 | 2/6 |
+| Handoff summary, 3 old + 3 new 24-item tasks | 5/6 | 3/6 | 5/6 | 4/6 |
 
-原生接口的两个开发配置各6/6；独立短任务各12/12。显式说明的开发基线5/6、身份6/6也完整保留。早期自然语言状态要求经常没有实际执行：原生长清单身份组只有7/24个行动轮带非空正文；后续通过所有工具共同的note参数记录说明，但仍应按实际内容检验遵循情况，不能只看组名。
+Both native-interface development configurations scored 6/6; both independent short-task sets scored 12/12. Explicit-note development results, baseline 5/6 and identity 6/6, are also retained. Early natural-language status requests were often not followed: only 7/24 action rounds in the native long-checklist identity condition contained nonempty prose. Later notes were recorded through a shared note parameter on all tools, but adherence must still be checked from content rather than condition names.
 
-## 固定运行条件后的24工单实验
+## 24-ticket experiment with fixed execution conditions
 
-下表是**正确交付数/24**，不是模型自报完成数。原始完整历史两次失败分别只交付5和23项；不是已交付24项中的算术错误。
+The table reports **correct deliveries/24**, not self-reported completion. The two full-history failures delivered only 5 and 23 items; they were not arithmetic errors among 24 delivered items.
 
-| 输入种子 | 完整历史 | 仅清理旧历史 | 清理＋进度摘要 | 仅过滤伪角色文本 |
+| Input seed | Full history | Clear old history only | Clear + progress summary | Filter pseudo-role text only |
 |---|---:|---:|---:|---:|
 | 20267001 | 5/24 | 24/24 | 24/24 | 24/24 |
 | 20267002 | 24/24 | 24/24 | 24/24 | 24/24 |
 | 20267003 | 23/24 | 24/24 | 24/24 | 24/24 |
 
-完整历史与各修复的配对检验只有3题，双侧符号检验p=0.5；这里不宣称统计上已证明通用优势。保留成功的完整历史案例，不只展示两条坏例。过滤策略是在观察到一个失败后提出，再用于全部3题，属于探索性机制消融。
+Paired tests of full history versus each repair have only 3 tasks, with two-sided sign-test p=0.5. No statistically established general advantage is claimed. The successful full-history case is retained alongside both failures. Filtering was proposed after observing one failure and then applied to all 3 tasks, making it an exploratory mechanism ablation.
 
-| 运行策略 | 平均生成token | 平均累计输入token | 平均生成轮数 | 完整通过 |
+| Policy | Mean generated tokens | Mean cumulative input tokens | Mean generation rounds | Full passes |
 |---|---:|---:|---:|---:|
-| 完整历史 | 10854 | 348890 | 40.3 | 1/3 |
-| 仅清理旧历史 | 8971 | 74574 | 45.3 | 3/3 |
-| 清理＋进度摘要 | 9076 | 98191 | 60.3 | 3/3 |
-| 仅过滤伪角色文本 | 13112 | 518287 | 60.3 | 3/3 |
+| Full history | 10854 | 348890 | 40.3 | 1/3 |
+| Clear old history only | 8971 | 74574 | 45.3 | 3/3 |
+| Clear + progress summary | 9076 | 98191 | 60.3 | 3/3 |
+| Filter pseudo-role text only | 13112 | 518287 | 60.3 | 3/3 |
 
-这些是每次尝试的成本；完整历史有失败，不能把较少的生成token直接解释为更高效率。
+These are per-attempt costs. Full history includes failures, so fewer generated tokens cannot directly be read as higher efficiency.
 
-## 一个可复查的失败链
+## A verifiable failure sequence
 
-种子20267001：干预前6轮完全一致。完整历史从第10轮（日志从0编号）出现模型自行生成的Human/伪tool_response文本；随后类似文本累积。第19轮生成达到4096 token上限，下一轮把“前几项流程一样”推断成“全部24项都已处理”，但真实回执只有5项。独立重复的全部可见模型输出、工具返回和最终文件状态一致。
-过滤策略不增加工具调用、不补写输出、不提供剩余任务答案，也不拦截结束；仅在有真实工具调用的助手消息回填历史时，移除伪角色标记及其后正文，保留真实调用、真实返回和原始日志。它在三个样本均达到24/24。该正则过滤仅是诊断消融，不应直接用于任意生产对话：合法引用也可能包含类似标记。
-同时，仅删去已完成项的旧交互也达到3/3；额外的进度摘要没有在这批数据里显示必要性。更精细的长度匹配删除、不同解码策略与跨模型验证尚未做，不能把所有改善唯一归因于某一种语义机制。
+Seed20267001: the first 6 rounds match exactly before intervention. In full history, model-generated Human/pseudo-tool_response text appears at round 10 (logs are zero-indexed), then accumulates. Round 19 reaches the 4096-token cap. In the next round, the model infers that all 24 items are processed because the first items follow the same procedure, although genuine receipts cover only 5. Independent repetition matches all visible model outputs, tool returns, and final file states.
+Filtering adds no tool calls, writes no missing outputs, supplies no answers for remaining tasks, and does not intercept termination. When an assistant message containing genuine tool calls is inserted into history, it removes pseudo-role markers and subsequent prose while retaining genuine calls, genuine returns, and raw logs. It achieves 24/24 on all three samples. This regex filter is a diagnostic ablation, not a general production-dialogue policy: legitimate quotations can contain similar markers.
+Deleting old interactions for completed items alone also achieves 3/3; additional progress summaries were not necessary in these data. More precise length-matched deletion, alternative decoding, and cross-model checks remain undone, so all improvements cannot be uniquely attributed to one semantic mechanism.
 
-## 遇到的失败和采取的修复
+## Failures encountered and repairs
 
-- 自定义JSON封装拒绝多调用、同批finish早于观察工具结果：改用原生工具消息，实际返回后才允许模型自然结束。
-- 原生接口仍有代码生成不自洽、映射参数错误和缺少验收：保留所有失败，运行独立长清单复现；不把错误实现一概算成不愿继续。
-- 长历史出现自造角色/工具返回文本和上下文耗尽：增加交接摘要、仅清理、仅过滤的对照。
-- 模型自行打印当前时间，造成摘要介入前两次轨迹分岔；宿主错误路径也随工作进程变化：固定常见时钟/RNG，统一错误路径，再做新输入上的共同接口对照。早期跨版本配对仅作工程回测。
-- 固定运行条件的第一版摘要校准3/4：其中一题交付4项但仅1项正确，原因是丢失/猜错JSON根结构。给所有组共享的持久接口说明补上真实数组schema，第二版校准4/4。失败版本没有删除，也未修改预定主任务的输入或答案。
+- Custom JSON wrapping rejected multiple calls, and same-batch finish preceded observation of tool results. Native tool messages replaced it, allowing the model to terminate naturally only after receiving actual returns.
+- Native interfaces still showed inconsistent generated code, incorrect mapping arguments, and missing validation. All failures were retained and independent long-checklist replication was run; faulty implementation was not uniformly classified as unwillingness to continue.
+- Long histories accumulated invented role/tool-return text and exhausted context. Handoff-summary, clearing-only, and filtering-only controls were added.
+- The model printed the current time, causing paired trajectories to diverge before summary intervention; host error paths also varied by worker. Common clocks/RNG were fixed and error paths standardized before shared-interface comparisons on new inputs. Earlier cross-version pairs serve only as engineering backtests.
+- Initial summary calibration under fixed execution conditions scored 3/4. One task delivered 4 items with only 1 correct because the JSON root structure was lost or guessed incorrectly. The actual array schema was added to persistent interface instructions shared by every condition; second-version calibration scored 4/4. The failed version was retained, and scheduled main-task inputs/answers were unchanged.
 
-## 证据与边界
+## Evidence and limitations
 
-- `analysis/native-audit.json`：439条轨迹的归档结果重新验收、动作重放和文件状态核对；早期缓存审计核对文件及工具错误状态，新受控实验进一步核对工具返回全文。
-- `analysis/mechanism-audit.json`：九个修复配对的干预前一致性，以及原失败的确定性重复。
-- `analysis/failure-diagnostics.json`：每条失败的缺失/错误输出、已交付/未交付项、伪角色文本及最终回答。
-- `analysis/results.json`：全部成功、失败、token、轮数、模型进程成本及配对统计。
-- `runs/`：每次运行的原始生成、工具调用、消息、最终文件与提交回执；`src/`及各REGISTRATION文件保存实现与事前设计。
-- `analysis/environment.json`：环境与模型/模板指纹；全部环境和工件在当前项目目录。
+- `analysis/native-audit.json`: 439 archived trajectory results rechecked, actions replayed, and file states verified. Early cached audits check files and tool-error states; new controlled experiments additionally compare full tool-return text.
+- `analysis/mechanism-audit.json`: pre-intervention agreement in nine repair pairs and deterministic repetition of the original failure.
+- `analysis/failure-diagnostics.json`: missing/incorrect outputs, delivered/undelivered items, pseudo-role text, and final responses for every failure.
+- `analysis/results.json`: all successes, failures, tokens, rounds, model-process costs, and paired statistics.
+- `runs/`: raw generations, tool calls, messages, final files, and submission receipts for every run. `src/` and REGISTRATION files preserve implementation and preregistered design.
+- `analysis/environment.json`: environment and model/template fingerprints; all environments and artifacts are in the current project directory.
 
-先前SFT的flat/macro长度泛化实验与本轮冻结模型的Agent实验不同；当前结果只检验推理时接口/提示的迁移，不把两者合成一个RSI机制。仅测试一个模型家族和贪心解码；主受控顺序实验只有3题，任务是输入明确、回执可见的合成流程，不等于真实开放式软件项目或科研任务。基线接口、转义/格式、上下文与行为效应必须区分；更换模型或训练的必要性不能仅从旧接口的低分推出。
+The earlier SFT flat/macro length-generalization study differs from this frozen-model agent study. Current results test inference-time interface/prompt transfer only and are not combined into one RSI mechanism. Only one model family and greedy decoding are tested. The main controlled sequential experiment has only 3 tasks: synthetic workflows with explicit inputs and visible receipts, rather than open-ended software projects or research tasks. Baseline interface, escaping/format, context, and behavioral effects must be distinguished. Low scores under the old interface alone do not establish a need to change models or train.
 
-已有上下文管理近邻及本轮有限查新见[LITERATURE.md](LITERATURE.md)。当前建议把后续问题具体化为：真实工具记录与模型自造执行叙述混在历史中时，何时引发虚假完成，以及如何在保留必要接口信息的同时阻止这种累积。名称复述保留为消融，不作为已经成立的主结论。
+See [LITERATURE.md](LITERATURE.md) for related context-management work and this limited novelty check. A more specific follow-up question is when mixing genuine tool records with invented execution narratives in history causes false completion, and how to prevent that accumulation while preserving necessary interface information. Name restatement remains an ablation, not an established main conclusion.
 
-![结果与受控进展](figures/reliability.png)
+![Results and controlled progress](figures/reliability.png)

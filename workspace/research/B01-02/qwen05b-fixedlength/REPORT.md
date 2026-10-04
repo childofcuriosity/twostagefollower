@@ -1,63 +1,63 @@
-# Qwen2.5-0.5B 固定长度域内标签复核
+# Qwen2.5-0.5B fixed-length in-domain label replication
 
-2026-09-27/28 完成。研究问题：训练和测试**都恰好包含 L 次工具调用**时，在每段操作前输出当前工具身份，是否提高严格完整轨迹成功率。输入给出四位数字及工具调用链；模型逐工具输出原始操作和中间状态，末尾给出 `Answer`。本轮没有运行域外长序列评测或纯 prompt 对照。
+Completed 2026-09-27/28. The question is whether emitting current tool identity before each operation segment improves strict complete-trajectory success when training and testing **both contain exactly L calls**. Inputs supply four digits and a tool chain; the model emits primitives and intermediate states by tool, then `Answer`. No out-of-domain long-sequence or prompt-only controls were run.
 
-## 主要结果
+## Main results
 
-探索按照预先登记的 L=10、15、20、25、30 及按 5 递增的 35、40 完成。L40 首次满足预登记候选标准（STEP 在 10–90% 且原工具名比 STEP 高至少 5 个百分点、至少 2/3 seed 同向）。**L40 是根据探索结果选择的长度。**正式复核另用预先指定的 20 个新训练 seed 200–219，以及重新生成、与探索题不重合的 512 道测试题；四组共享同一份 L40 训练底层题和正式测试题。
+Exploration followed registered L=10,15,20,25,30 and five-step extensions 35,40. L40 first met the candidate criterion: STEP in 10%–90%, original names at least five points higher, and at least 2/3 seeds improving. **L40 was selected from exploration.** Formal replication uses the prespecified 20 new seeds 200–219 and 512 newly generated tests disjoint from exploration. Four conditions share the same underlying L40 training and formal-test examples.
 
-| 标签，按信息呈现顺序 | 正式 L40 完整轨迹成功率，20 seed 均值 ± 样本 SD | 相对 STEP 同 seed 配对差均值 ± SD | 改善 seed |
+| Label, ordered by information presentation | Formal L40 strict success, 20-seed mean ± sample SD | Same-seed difference from STEP, mean ± SD | Improved seeds |
 |---|---:|---:|---:|
-| 统一 step | 72.01% ± 10.76% | 基线 | — |
-| 位置编号 | 19.33% ± 23.46% | −52.69 ± 26.39 个百分点 | 2/20 |
-| 固定改名 | 99.67% ± 0.25% | +27.66 ± 10.77 个百分点 | 20/20 |
-| 原工具名称 | 99.69% ± 0.27% | +27.68 ± 10.70 个百分点 | 20/20 |
+| Uniform step | 72.01% ± 10.76% | Baseline | — |
+| Position index | 19.33% ± 23.46% | −52.69 ± 26.39 percentage points | 2/20 |
+| Fixed alias | 99.67% ± 0.25% | +27.66 ± 10.77 percentage points | 20/20 |
+| Original tool name | 99.69% ± 0.27% | +27.68 ± 10.70 percentage points | 20/20 |
 
-基于 20 个配对训练 seed 的描述性 t 区间（df=19）：固定改名相对 STEP 为 **+22.62 至 +32.70** 个百分点，原工具名为 **+22.67 至 +32.69**，位置编号为 **−65.03 至 −40.34**。区间只反映训练 seed 波动；训练题、测试题、改名映射和候选长度各只有一份。固定改名与原工具名差距仅 0.02 个百分点，本轮不能区分两种身份词形。
+Descriptive paired-seed t intervals (df=19): fixed alias versus STEP **+22.62 to +32.70** points, original names **+22.67 to +32.69**, and position indices **−65.03 to −40.34**. Intervals cover training-seed variation only, with one training set, test set, mapping, and selected length. The 0.02-point alias/original-name gap does not distinguish the two identity word forms.
 
-### 探索全记录
+### Complete exploration record
 
-每档为 4096 道恰好 L 次调用的训练题、512 道恰好 L 次调用的探索测试题，STEP 与原工具名各 3 个配对 seed（11、22、33）。
+Each level uses 4096 training and 512 exploratory test examples with exactly L calls. STEP and original names each have three paired seeds (11,22,33).
 
-| L | STEP 均值 | 原工具名均值 | 原名−STEP |
+| L | STEP mean | Original-name mean | Original−STEP |
 |---:|---:|---:|---:|
-| 10 | 99.93% | 100.00% | +0.07 个百分点 |
-| 15 | 100.00% | 100.00% | 0.00 个百分点 |
-| 20 | 98.89% | 99.67% | +0.78 个百分点 |
-| 25 | 99.02% | 99.35% | +0.33 个百分点 |
-| 30 | 96.48% | 99.80% | +3.32 个百分点 |
-| 35 | 92.90% | 99.93% | +7.03 个百分点 |
-| 40 | 74.02% | 98.96% | +24.93 个百分点 |
+| 10 | 99.93% | 100.00% | +0.07 percentage points |
+| 15 | 100.00% | 100.00% | 0.00 percentage points |
+| 20 | 98.89% | 99.67% | +0.78 percentage points |
+| 25 | 99.02% | 99.35% | +0.33 percentage points |
+| 30 | 96.48% | 99.80% | +3.32 percentage points |
+| 35 | 92.90% | 99.93% | +7.03 percentage points |
+| 40 | 74.02% | 98.96% | +24.93 percentage points |
 
-探索 L40 的 STEP-s11、原工具名-s11 在旧 microbatch16/accum2 下约第20步显存不足；失败文件保留。两条以新目录 `-retry1`、microbatch8/accum4 重新完成，其他四条沿用16/2，因此探索 L40 混有两种 microbatch 实现，只用于选档。正式 80 个 run **全部统一8/4**，有效 batch 32 不变。
+L40 exploratory STEP-s11 and original-name-s11 ran out of memory near step 20 under microbatch16/accum2. Failed files remain. Both completed in new `-retry1` directories with microbatch8/accum4; the other four retained 16/2. Exploratory L40 mixes implementations and serves only length selection. All 80 formal runs **uniformly use 8/4**, preserving effective batch 32.
 
-## 继承设置与本轮差异
+## Inherited settings and changes
 
-继承：官方 Qwen2.5-0.5B Base（revision `060db6499f32faf8b98477b0a26969ef7d8b9987`）、旧九工具和四位数操作、旧输入与输出模板、原固定改名映射、LoRA r16/alpha32/dropout0 与七种投影、AdamW、原 3e-4 学习率日程、512 优化步、每 run 暴露 16,384 样本、贪心解码、旧严格完整轨迹评分。四条件底层训练题、测试题均配对。
+Inherited: official Qwen2.5-0.5B Base revision `060db6499f32faf8b98477b0a26969ef7d8b9987`, nine tools/four-digit operations, input/output templates, fixed alias mapping, LoRA r16/alpha32/dropout0 across seven projections, AdamW, original 3e-4 schedule, 512 steps, 16,384 example presentations per run, greedy decoding, and old strict trajectory scoring. Underlying training/test examples are paired across conditions.
 
-本轮：每档调用链长度恰好 L，9 工具独立均匀抽取，输入四位数字独立均匀抽取；训练 4096 题，测试 512 题，链＋数字组合去重。L40 正式训练与探索共用训练底层题；正式测试重新生成且与训练、探索测试零重叠。正式 seed 200–219 与探索 seed 11/22/33 不重合。所有 L40 正式 run 训练序列断言容量统一为1536，生成 `max_new_tokens=1536`，保证正确目标不会因容量被截断；显存兼容调整统一采用 microbatch8/accum4。优化步和有效 batch 未变。输入/目标词数仍随标签不同，未做 token 长度匹配。
+Here, every chain has exactly L calls, with independently uniform tool and digit draws. There are 4096 training and 512 test examples, deduplicated by chain/input. Formal L40 shares exploratory training data but uses fresh tests with zero training/exploration overlap. Formal seeds 200–219 are disjoint from exploratory 11/22/33. All formal L40 training capacity assertions and `max_new_tokens` are 1536, fitting correct targets. Memory adjustment is uniformly microbatch8/accum4, without changing steps/effective batch. Input/target lengths still differ by label; token lengths are not matched.
 
-## 错误和成本审计
+## Error and cost audits
 
-下面计数来自每标签 20×512=10,240 条正式输出，类别可重叠。“少做/多做工具”按输出标题段数相对所需 40 段；“展开错误”按旧严格评分器的原始操作序列首个错误位置；数字计算错误按输出的中间状态逐步核对。“生成上限”是生成 token 数达到 1536 的记录数。
+Counts below use 20×512=10,240 formal outputs per label; categories can overlap. Missing/extra tools compare output header-segment count to the required 40. Expansion errors use the first primitive-sequence mismatch under the old strict scorer. Arithmetic is checked against emitted intermediate states. Generation-cap counts include outputs reaching 1536 tokens.
 
-| 标签 | 少做工具 | 多做工具 | 展开错误 | 数字计算错误 | 生成上限 | 平均输出 token/题 |
+| Label | Missing tools | Extra tools | Expansion errors | Arithmetic errors | Generation cap | Mean output tokens/example |
 |---|---:|---:|---:|---:|---:|---:|
-| 统一 step | 19 | 94 | 2,842 | 15 | 0 | 1,112.18 |
-| 位置编号 | 2 | 0 | 8,256 | 25 | 0 | 1,182.34 |
-| 固定改名 | 18 | 14 | 31 | 0 | 0 | 1,151.37 |
-| 原工具名称 | 9 | 23 | 31 | 0 | 0 | 1,111.37 |
+| Uniform step | 19 | 94 | 2,842 | 15 | 0 | 1,112.18 |
+| Position index | 2 | 0 | 8,256 | 25 | 0 | 1,182.34 |
+| Fixed alias | 18 | 14 | 31 | 0 | 0 | 1,151.37 |
+| Original tool name | 9 | 23 | 31 | 0 | 0 | 1,111.37 |
 
-位置编号几乎总写出40个标题，却经常展开错操作；标题段数正确本身不等于完整执行成功。两种身份标签显著提高本任务的固定长度域内执行成功率，但本实验不能把增益唯一归因于“身份信息”：标签词形、输入输出 token 化和训练监督长度也有差异。不能由固定工具组合任务推断真实 Agent 或内部注意力机制。
+Position labels almost always produce 40 headers but frequently expand the wrong operations. Correct segment counts alone do not establish complete execution. Both identity labels substantially improve fixed-length in-domain success on this task, but identity information is not uniquely identified: word forms, input/output tokenization, and supervised lengths differ. Fixed synthetic tool composition does not establish real-agent benefits or internal attention mechanisms.
 
-正式 80/80 run 退出码0，全部512步、每 run 16,384 样本、相同模型 revision，训练 loss 有限。40,960 条正式原始输出经旧严格评分；标签感知评分重新核对，四组严格成功总数分别为 7,374 / 1,979 / 10,206 / 10,208，完全一致。训练、探索测试和正式测试的“调用链＋数字输入”分别唯一，三组间零重叠；训练与正式测试哈希分别为 `75640d4ffae269e6eec061318c30ac36027152afcd2182752cf744374fb27038`、`db9b546831cc923c14a3c934b9bcfc401cd71d271039d9fa5a15fa7e47c92ea4`。正式队列外层运行时长求和 **22.98 分配 GPU 小时**，包含模型加载、训练、推理与保存；不是 GPU 内核活跃时间。只使用本机 `.69` 的 8 张 PRO6000，结束时显存均空闲。
+All 80 formal runs exited 0 with 512 steps, 16,384 examples, identical model revision, and finite losses. The old strict scorer evaluated 40,960 raw outputs. Label-aware rescoring gives identical group success counts: 7,374 / 1,979 / 10,206 / 10,208. Training, exploration, and formal-test chain/input pairs are unique within and disjoint across sets. Training/formal-test hashes are `75640d4ffae269e6eec061318c30ac36027152afcd2182752cf744374fb27038` and `db9b546831cc923c14a3c934b9bcfc401cd71d271039d9fa5a15fa7e47c92ea4`. Summed outer formal-job duration is **22.98 allocated GPU-hours**, including loading, training, inference, and saving, not kernel-active time. Only the eight local `.69` PRO6000 GPUs were used; memory was idle at completion.
 
-## 证据入口
+## Evidence
 
-- 运行前规则、候选冻结、显存调整和资源变更：`REGISTRATION.md`。
-- 数据和容量清单：`data/L40/explore-manifest.json`、`data/L40/formal/formal-manifest.json`；所有长度的数据与清单保留在各 `data/L*/`。
-- 正式逐 seed、配对差、错误、token 和时间：`analysis/scores-formal-L40.json`；逐题严格评分：`analysis/graded-formal-L40.jsonl`。
-- 探索各长度结果：`analysis/scores-explore-L*.json`；L40 探索失败与重跑分别在对应 `runs/explore-L40-*-s11/` 和 `-retry1/` 目录。
-- 原始输出、训练日志、adapter、配置、代码快照：`runs/formal-L40-{condition}-s{seed}/`。正式分发退出台账：`analysis/dispatch-formal-L40-flat-position-alias-macro.json`。
+- Prerun rules, candidate freeze, memory adjustment, and resource changes: `REGISTRATION.md`.
+- Data/capacity manifests: `data/L40/explore-manifest.json`, `data/L40/formal/formal-manifest.json`; all lengths retained under `data/L*/`.
+- Formal seed scores, paired differences, errors, tokens, and time: `analysis/scores-formal-L40.json`; example-level strict scores: `analysis/graded-formal-L40.jsonl`.
+- Exploration: `analysis/scores-explore-L*.json`; L40 failures and retries in corresponding `runs/explore-L40-*-s11/` and `-retry1/` directories.
+- Raw outputs, logs, adapters, configurations, and source snapshots: `runs/formal-L40-{condition}-s{seed}/`. Dispatch exits: `analysis/dispatch-formal-L40-flat-position-alias-macro.json`.
 
-纯 prompt 对照、真实任务拓展、论文投稿属于后续阶段，本轮没有启动。
+Prompt-only controls, real-task extensions, and paper submission remain later-stage work; none was launched here.

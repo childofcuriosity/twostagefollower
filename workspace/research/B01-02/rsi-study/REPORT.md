@@ -1,30 +1,30 @@
-# 执行学习与改进能力分离：扩展研究结果
+# Execution learning and improvement capability: extended results
 
-生成时间（UTC）：2026-09-24T05:12:55Z。本轮为用户授权的RSI相关扩展研究，数据与模型已真实运行，等待统一审核。
+Generated at (UTC): 2026-09-24T05:12:55Z. This user-authorized RSI extension has completed actual model/data experiments and awaits consolidated review.
 
-## 研究问题与判断入口
+## Research question and interpretation
 
-本研究区分三个量：给定提示下的执行表现E、有限提案预算下的抽象效用P、由提案源决定下一轮训练数据后的实际学习增益G。E↑且P↓不自动推出G↓，更不等于开放式RSI不可能。[机制分析](MECHANISM.md)列出反证与限制。
+Distinguish execution E under a given prompt, abstraction utility P under finite proposal budgets, and learning gain G after proposals shape next-round training data. E↑ with P↓ does not imply G↓ or impossibility of open-ended RSI. See [MECHANISM.md](MECHANISM.md) for counterexamples and limits.
 
-当前判断：原执行监督配方的提案效用下降在三个模型中复现，并经提示、预算、长度及原语覆盖控制后仍存在；新的三轮闭环却能保留提案效用。同起点分支尚未确立其对下一轮学习增益的可靠因果损害。因此支持“执行学习与提案效用具有条件性分离”，不支持“普遍RSI瓶颈已获证明”。
+Original-recipe proposal degradation replicates across three models and persists under prompt, budget, length, and coverage controls. The new three-round loop preserves utility. Same-start branches have not established reliable subsequent-learning harm. Evidence supports conditional execution/proposal separation, not a proven universal RSI bottleneck.
 
-具体判断见[结论审核](CONCLUSIONS.md)。本文件保留完整设计和主要表格，避免只挑符合预期的模型、提示、轮次或任务域。
+See [CONCLUSIONS.md](CONCLUSIONS.md). This report retains the full design/main tables without selecting favorable models, prompts, rounds, or domains.
 
-## 实际规模
+## Actual scale
 
-- 三个模型：Qwen2.5-1.5B、Qwen2.5-3B、SmolLM2-1.7B；两个模型家族。后两者为本轮新增下载并固定revision和哈希。
-- 第一轮设置复核新增12次512步LoRA训练、2个冻结执行基线；原1.5B六个适配器复用。
-- 稳健性27个作业：每个模型base/flat/macro三seed，三个提示加一个温度复核，16个新测试家族，各64次提案；K=4/16/64采用同一采样序列前缀。
-- 闭环24条三轮轨迹：数字域5条件×3seed；字符串域3条件×3seed。每轮128步、batch16，轮0–3全部保存。
-- 12个预定同起点因果分支，加6个事后退化提案者压力分支，每个128步；6个闭环梯度诊断和3个原配方梯度诊断，均不更新参数。另复现原宏训练三个seed，完整记录0/16/64/128/256/512步时间轴。另追加3次长度匹配的原语覆盖训练及27个长度配额提案控制，均明确标为事后实验。
-- 共180,864条真实提案、50,464条逐题执行记录；同一题和同一模型多次测量不是同样多的独立样本。
-- 审计150个适配器哈希，设备预留累计约4.67 GPU·小时；不含下载/前序等待，不等于GPU内核忙碌时间。
+- Three models across two families: Qwen2.5-1.5B, Qwen2.5-3B, SmolLM2-1.7B. The latter two were downloaded for this round with frozen revisions/hashes.
+- Initial-setting replication adds twelve 512-step LoRA runs and two frozen execution baselines; six original 1.5B adapters are reused.
+- Robustness: 27 jobs, base/flat/macro with three seeds per model, three prompts plus a temperature check, 16 fresh test families with 64 proposals each. K=4/16/64 share sampled prefixes.
+- Closed loop: 24 three-round trajectories, five numeric conditions × three seeds and three string conditions × three seeds. Each round has 128 steps, batch 16; rounds 0–3 are retained.
+- Twelve prespecified same-start branches plus six post hoc degraded-proposer stress branches, each with 128 steps. Six loop and three original-recipe gradient diagnostics do not update parameters. Original macro training repeats across three seeds at checkpoints 0/16/64/128/256/512. Three length-matched primitive-coverage runs and 27 length-quota controls are explicitly post hoc.
+- Total: 180,864 actual proposals and 50,464 execution records. Repeated measurements of one example/model are not equally many independent samples.
+- Audited 150 adapter hashes; approximately 4.67 allocated GPU-hours, excluding downloads/prior waiting and distinct from kernel-active time.
 
-## 多模型执行与提案对照
+## Multi-model execution and proposal controls
 
-执行仍为第一轮宏调用任务；提案采用新的16个测试家族。表中提案主设置为instruction、T=1、K=16，全部结果为三seed均值。base的seed仅改变提案采样，不能称三次基础模型训练。
+Execution uses the original macro-call task; proposals use 16 new test families. Primary proposal settings are instruction, T=1, K=16. Values average three seeds; base seeds vary sampling, not base-model training.
 
-| 模型 | 训练形式 | 执行IID | 执行未见组合 | 提案净压缩：base → 训练后 |
+| Model | Training format | IID execution | Unseen-composition execution | Net proposal compression: base → trained |
 |---|---|---:|---:|---:|
 | qwen1.5b | flat | 100.00% | 0.09% | 39.01% → 3.39% |
 | qwen1.5b | macro | 100.00% | 29.77% | 39.01% → 9.06% |
@@ -33,21 +33,21 @@
 | smol1.7b | flat | 100.00% | 0.00% | 35.39% → 5.80% |
 | smol1.7b | macro | 100.00% | 22.66% | 35.39% → 9.01% |
 
-![提案预算](figures/proposal-budget.png)
+![Proposal budget](figures/proposal-budget.png)
 
-![提示复核](figures/prompt-robustness.png)
+![Prompt robustness](figures/prompt-robustness.png)
 
-完整每seed/家族差值与家族bootstrap见[robust-results.json](analysis/robust-results.json)。base执行基线存在格式限制；不能仅由训练后IID变高断言内部算法能力从无到有。各模型tokenizer不同，训练样本/步数相同但监督token未必相同，实际计数在[审计](analysis/verification.json)。
+Full seed/family differences and family bootstrap results: [robust-results.json](analysis/robust-results.json). Frozen execution baselines have format limitations; increased trained IID accuracy alone does not establish newly acquired internal algorithms. Tokenizers differ, so equal steps/examples need not yield equal supervised tokens; see actual counts in the [audit](analysis/verification.json).
 
-## 三轮闭环
+## Three-round closed loop
 
-阶段A与B的输入表示、任务分布、学习率和更新量不同，详见[配方比较](RECIPE_COMPARISON.md)。B不退化是适用范围反例，不能据此识别某一单独保护因素。
+Stages A/B differ in input representation, task distribution, learning rate, and update amount; see [RECIPE_COMPARISON.md](RECIPE_COMPARISON.md). Absence of degradation in B limits the phenomenon's scope but identifies no single protective factor.
 
-每轮模型从12个训练家族支持程序中提出16个候选，支持集贪心选至多3个宏；所选宏影响下一轮执行训练的操作分布。执行真值由环境提供，测试家族不进入训练。训练程序与固定评测程序精确语义隔离。
+Each round, models propose 16 candidates from support programs in 12 training families. Support-set greedy selection chooses at most three macros, shaping next-round execution-training operation distributions. The environment supplies execution truth; test families never enter training. Training and fixed evaluation programs are exactly semantically disjoint.
 
-shared：更新后的同一模型继续提案和执行。frozen：提案固定初始基座，执行模型更新。replay：shared加初始化提案回放。joint：shared加本轮支持集筛选后的提案监督。shuffled：回放目标在相同token长度桶中打乱与提示的配对。辅助损失权重0.2，每步额外4例，执行样本数均16；辅助方法有额外计算，不能称总算力相等。
+shared: one updated model continues proposing and executing. frozen: the initial base proposes while the executor updates. replay: shared plus initial-proposal replay. joint: shared plus supervision on proposals selected from current support. shuffled: replay targets are reassigned to prompts within equal-token-length buckets. Auxiliary loss weight is 0.2 with four extra examples per step; every condition has 16 execution examples. Auxiliary methods add compute, so total compute is unequal.
 
-| 域 | 条件 | 提案净压缩：轮0→3 | 短程序执行：轮0→3 | 未见家族执行：轮0→3 | 轮3精确原语序列 |
+| Domain | Condition | Net proposal compression: round 0→3 | Short-program execution: round 0→3 | Unseen-family execution: round 0→3 | Round-3 exact primitive sequence |
 |---|---|---:|---:|---:|---:|
 | digits | frozen | 38.69% → 38.69% | 0.00% → 100.00% | 0.00% → 90.89% | 91.15% |
 | digits | joint | 38.69% → 43.15% | 0.00% → 98.96% | 0.00% → 91.93% | 92.71% |
@@ -58,36 +58,36 @@ shared：更新后的同一模型继续提案和执行。frozen：提案固定�
 | strings | joint | 37.99% → 43.73% | 0.00% → 97.92% | 0.00% → 90.89% | 92.97% |
 | strings | shared | 37.99% → 39.05% | 0.00% → 98.96% | 0.00% → 95.57% | 97.92% |
 
-![三轮轨迹](figures/loop-trajectories.png)
+![Three-round trajectories](figures/loop-trajectories.png)
 
-frozen的提案指标来自实际冻结提案者，所以保持能力是结构性控制，不是执行模型自动学会了保留提案能力。三轮优化器各自重建，但适配器参数持续继承。所有轮次公开，未在测试上挑检查点。
+Frozen proposal metrics come from the actual frozen proposer. Preservation is structural, not learned by the executor. Optimizers restart each round while adapter parameters carry forward. All rounds are reported without test-based checkpoint selection.
 
-字符串短输入有偶然答案匹配，需同时检查精确原语序列和[直接复制输入基线](analysis/loop-inference.json)。两个域共用原语名称和家族AST，但实际执行语义不同；它们不是两类完全独立自然任务。
+Short string inputs permit chance-correct answers; also inspect exact primitive sequences and the [copy-input baseline](analysis/loop-inference.json). Domains share primitive names and family ASTs but differ in execution semantics; they are not fully independent natural-task categories.
 
-## 同一学习器起点的因果分支
+## Causal branches from identical learner starts
 
-从shared轮1同一个适配器出发，复制两条128步分支，只改变训练提案源：当前更新模型，或禁用LoRA后的初始基座。支持集、选库器、执行器、训练随机种子和学习器起点一致。分支起点哈希逐对验证。
+From the same shared round-1 adapter, copy two 128-step branches, changing only proposal source: the updated model or initial base with LoRA disabled. Support, selector, executor, training seed, and learner start match; starting hashes are verified pairwise.
 
-下表为“基座提案源 − 更新提案源”的最终执行差，正值表示保留初始提案者更有利；因为起点相同，也等于学习增益差。只有三个seed，t区间可能很宽。
+The table reports final execution for base-source minus updated-source. Positive values favor retaining the initial proposer. Identical starts make these learning-gain differences too. Three-seed t intervals can be wide.
 
-| 域 | 评测 | 平均差（百分点） | 三seed差 | 95% t区间 |
+| Domain | Evaluation | Mean difference (percentage points) | Three seed differences | 95% t interval |
 |---|---|---:|---|---|
-| digits | short | +1.04 | +0.00 / +0.00 / +3.12 | -3.44 至 +5.52 |
-| digits | family | -0.78 | -3.12 / -0.78 / +1.56 | -6.60 至 +5.04 |
-| digits | pressure | +0.00 | -3.12 / +1.56 / +1.56 | -6.72 至 +6.72 |
-| strings | short | -1.56 | +1.56 / -6.25 / +0.00 | -11.83 至 +8.71 |
-| strings | family | +4.69 | +4.69 / +0.00 / +9.38 | -6.96 至 +16.33 |
-| strings | pressure | -1.56 | -7.81 / -1.56 / +4.69 | -17.09 至 +13.96 |
+| digits | short | +1.04 | +0.00 / +0.00 / +3.12 | -3.44 to +5.52 |
+| digits | family | -0.78 | -3.12 / -0.78 / +1.56 | -6.60 to +5.04 |
+| digits | pressure | +0.00 | -3.12 / +1.56 / +1.56 | -6.72 to +6.72 |
+| strings | short | -1.56 | +1.56 / -6.25 / +0.00 | -11.83 to +8.71 |
+| strings | family | +4.69 | +4.69 / +0.00 / +9.38 | -6.96 to +16.33 |
+| strings | pressure | -1.56 | -7.81 / -1.56 / +4.69 | -17.09 to +13.96 |
 
-![提案源干预](figures/causal-branches.png)
+![Proposal-source intervention](figures/causal-branches.png)
 
-这些分支固定执行样本数和优化步数，但所选程序长度会改变训练token量和难度，属于提案源通过课程产生的总效应，不能解释为等token下纯信息质量效应。
+Branches match execution-example counts and optimization steps, but selected program lengths change training tokens/difficulty. This is the total proposal-source effect through curriculum, not pure information quality at equal tokens.
 
-## 梯度诊断
+## Gradient diagnostics
 
-对数字域shared/joint三个seed的轮0–3，固定执行批次与训练支持集频次最佳宏的提案NLL，计算LoRA梯度余弦。负余弦表示该批次一阶下降方向冲突。它使用替代损失，不是采样后提案效用P的真实梯度，也不能单独证明长期遗忘机制。
+For numeric shared/joint runs across three seeds and rounds 0–3, compute LoRA gradient cosines between fixed execution batches and proposal NLL for the frequency-optimal macro from training support. Negative cosine indicates local first-order descent conflict on that batch. This surrogate is not the true gradient of sampled proposal utility P and cannot alone establish long-term forgetting.
 
-| 条件 | 轮次 | 平均梯度余弦 | 负值批次数 |
+| Condition | Round | Mean gradient cosine | Negative batches |
 |---|---:|---:|---:|
 | shared | 0 | +0.1480 | 0/9 |
 | shared | 1 | -0.0059 | 7/9 |
@@ -98,25 +98,25 @@ frozen的提案指标来自实际冻结提案者，所以保持能力是结构�
 | joint | 2 | -0.0200 | 7/9 |
 | joint | 3 | +0.0020 | 5/9 |
 
-![梯度诊断](figures/gradient-alignment.png)
+![Gradient diagnostics](figures/gradient-alignment.png)
 
-## 与已有工作的关系
+## Relation to prior work
 
-已有[Absolute Zero](https://arxiv.org/html/2505.03335v1)研究共享模型提案/求解及提案训练消融；[Self-play Dynamics](https://arxiv.org/html/2510.27072v1)分析角色熵与冻结提案变体；[Skill Self-Play](https://arxiv.org/html/2607.22529v1)研究技能、提案和求解共同演化；[Implicit Inference](https://arxiv.org/html/2309.10105v2)指出部分微调退化可由提示变化恢复。因此“角色干扰”“熵下降”“需要训练提案者”均不能作为本项目首创。[查新记录](literature/NEAREST.md)及本地原论文HTML保留。
+[Absolute Zero](https://arxiv.org/html/2505.03335v1) studies shared proposing/solving and proposer-training ablations; [Self-play Dynamics](https://arxiv.org/html/2510.27072v1) studies role entropy and frozen proposers; [Skill Self-Play](https://arxiv.org/html/2607.22529v1) studies coevolution of skills, proposing, and solving; [Implicit Inference](https://arxiv.org/html/2309.10105v2) shows prompt recovery from some fine-tuning degradation. Role interference, entropy decline, and the need to train proposers are not original claims here. Retain the [literature review](literature/NEAREST.md) and local paper HTML.
 
-潜在贡献只能来自受控的E/P/G分离、同起点提案源干预、恢复干预和适用边界；是否达到论文价值取决于具体证据，不能靠RSI命名。
+Potential contribution must come from controlled E/P/G separation, same-start proposal-source interventions, recovery interventions, and scope limits. Paper value depends on evidence, not RSI terminology.
 
-## 局限、失败与复现
+## Limitations, failures, and reproduction
 
-- 人工有限DSL、252种短宏、3个训练seed、小模型LoRA与3轮，不代表开放式科学发现或无限递归改进。
-- 没有通用自然语料SFT控制、真实代码benchmark、全参数训练或RL；没有排除所有一般遗忘/提示恢复解释。
-- 基座与训练后模型使用相同语法约束，但约束后提案效用仍是有限预算下的可用性，不等于参数中知识是否消失。
-- 模型下载首次缺httpx，改标准库；HTTP/2中断由curl续传恢复。所有新增运行失败/协议细化见[修订记录](analysis/amendments.md)及根目录日志。
-- [验证与哈希](analysis/verification.json)、[训练/提案复现说明](README.md)、[原协议](PROTOCOL.md)、[费用口径](analysis/cost.json)、[完整闭环统计](analysis/loop-results.json)、[干预区间](analysis/loop-inference.json)。
+- Finite artificial DSL, 252 short macros, three training seeds, small-model LoRA, and three rounds do not represent open-ended discovery or unlimited recursive improvement.
+- No general natural-corpus SFT control, real-code benchmark, full-parameter training, or RL. General forgetting/prompt-recovery explanations remain incompletely excluded.
+- Grammar constraints match across base/trained models, but constrained utility measures finite-budget usability rather than disappearance of parameter knowledge.
+- Initial downloads lacked httpx and switched to the standard library; curl resumed HTTP/2 interruptions. Run failures/refinements are in [amendments](analysis/amendments.md) and root logs.
+- [Verification/hashes](analysis/verification.json), [training/proposal reproduction](README.md), [original protocol](PROTOCOL.md), [costs](analysis/cost.json), [full loop statistics](analysis/loop-results.json), and [intervention intervals](analysis/loop-inference.json).
 
-所有环境、权重、缓存、原始输出与图表位于当前项目目录，未发布或提交论文。
+All environments, weights, caches, raw outputs, and figures remain in the project. No paper has been published or submitted.
 
 
-## 补充控制与时间轴
+## Supplementary controls and timeline
 
-详见[SUPPLEMENT.md](SUPPLEMENT.md)：原语覆盖、候选长度配额、原训练检查点曲线及事后退化提案者压力分支。所有结果与原预注册实验分开。
+See [SUPPLEMENT.md](SUPPLEMENT.md) for primitive coverage, candidate-length quotas, original-training checkpoint curves, and post hoc degraded-proposer stress branches. These are separate from preregistered experiments.

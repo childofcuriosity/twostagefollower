@@ -1,6 +1,6 @@
-# 7B探索与切换依据
+# 7B exploration and fallback decision
 
-这是备选模型切换前的完整探索，不作为独立跨模型确认实验。模型revision：a09a35458c702b33eeacc393d103063234e8bc28。Prompt未调整。
+This is the complete exploration before switching to the fallback model, not an independent cross-model confirmation. Model revision: a09a35458c702b33eeacc393d103063234e8bc28. Prompts were unchanged.
 
 | L | STEP /32 | NAME /32 |
 |---:|---:|---:|
@@ -12,6 +12,6 @@
 | 30 | 0 | 0 |
 | 40 | 0 | 0 |
 
-L2的STEP为9.375%，L5为0%，均低于登记的20%短题地板。独立预检48条中，30条首错为数字错误、15条为操作或顺序错误、1条遗漏、2条正确，全部主动EOS。完整定义与示例、评分解析、生成容量经核验，没有发现实现缺陷；据此启用用户预先授权的14B备选，重复原流程，未依NAME增益挑模型或长度。
+STEP scored 9.375% at L2 and 0% at L5, both below the registered 20% short-task floor. Among 48 independent precheck outputs, first errors were numeric in 30, operation/order in 15, and omission in one; two were correct. All ended with EOS. Checks of full definitions, examples, scoring/parsing, and generation capacity found no implementation defects. The previously authorized 14B fallback therefore repeated the original procedure. Neither model nor length was selected using NAME gains.
 
-L2探索中NAME为7/32，STEP为3/32；样本小且属于探索，不据此声明正式有效。其余初始长度两组均0/32。全部原始响应位于runs/explore-*，逐题评分位于analysis/graded-explore-*。
+In L2 exploration, NAME scored 7/32 and STEP 3/32. This small exploratory sample does not establish formal effectiveness. Both conditions scored 0/32 at every other initial length. All raw responses are in runs/explore-* and example-level scores in analysis/graded-explore-*.

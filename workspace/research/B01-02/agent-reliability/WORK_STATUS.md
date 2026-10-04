@@ -1,11 +1,11 @@
-# 本轮已完成交付
+# This study has been delivered
 
-审核入口：CONCLUSIONS.md。完整报告：REPORT.md。核验：COMPLETION_AUDIT.md、analysis/final-delivery-check.json、analysis/delivery-manifest.json。
+Review entry: CONCLUSIONS.md. Full report: REPORT.md. Verification: COMPLETION_AUDIT.md, analysis/final-delivery-check.json, analysis/delivery-manifest.json.
 
-执行可靠性修复、独立短任务验收、长清单复现、顺序工单对照、上下文整理、固定时钟/路径/schema的受控实验、伪角色文本消融与原失败重复均已执行。439条轨迹全部保留，含73条未通过验收的尝试；模型进程29.64GPU小时。所有模型工作进程已退出，GPU已释放。
+Execution-reliability repairs, independent short-task acceptance checks, long-checklist replication, sequential-ticket controls, context management, controlled clock/path/schema experiments, pseudo-role text ablation, and repetition of the original failure have all been run. All 439 trajectories are retained, including 73 attempts that failed acceptance. Model processes occupied 29.64 GPU-hours. All model workers have exited and GPUs have been released.
 
-同一模型原24任务旧协议9/24，原生接口23/24；独立36任务空说明与身份组均36/36，没有稳定独有身份优势。最终三个24工单任务，完整历史分别5/24、24/24、23/24；仅清理历史、清理＋进度摘要、仅过滤伪角色文本均全部24/24。干预前配对一致，原5/24失败的新进程重复一致。439条归档结果重验与文件重放通过；21条受控轨迹进一步核对工具返回全文。
+With the same model on the original 24 tasks, the old protocol scored 9/24 and the native interface23/24. Empty-note and identity conditions both scored 36/36 on the independent 36 tasks, with no consistent unique identity advantage. On the final three 24-ticket tasks, full history scored 5/24,24/24,23/24. Clearing history alone, clearing + progress summaries, and filtering only pseudo-role text all scored 24/24 throughout. Pairs match before intervention, and the original 5/24 failure matches its new-process repeat. All 439 archived results pass regrading and file replay; 21 controlled trajectories additionally pass full tool-return text comparisons.
 
-结果限于冻结Qwen2.5-32B-Instruct与当前合成任务，不等于已证明RSI或新颖论文发现。正面交付是可复现的执行修复与更具体的失败机制线索。后续应检验跨模型、真实任务及更严格消融；不把名称复述独有优势作为已成立前提。查新范围和已知近邻见LITERATURE.md。
+Results are limited to frozen Qwen2.5-32B-Instruct and these synthetic tasks. They do not establish RSI or a novel paper finding. The positive deliverable is reproducible execution repairs and a more specific failure-mechanism lead. Follow-up should test other models, real tasks, and stricter ablations without assuming a unique benefit from name restatement. See LITERATURE.md for search scope and known related work.
 
-全部环境与资产仍在当前项目；没有对外发布。用户偏好继续有效：长任务正常运行约15分钟检查，不因首个方案失败而结束目标，保留失败与真实成本。
+All environments and assets remain in this project; nothing was published externally. User preferences remain: check normal long jobs approximately every 15 minutes, continue after the first failed approach, and retain failures and actual costs.

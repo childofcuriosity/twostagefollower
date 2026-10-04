@@ -1,45 +1,45 @@
-# 两个子任务的乘积，究竟检验了什么
+# What does the product of two subtasks test?
 
-这里讨论固定工具库、输入已经给出正确顺序的任务。名称模型决定下一工具及Done，操作模型生成该工具内部的操作和数字。以下是对本实验的理想化分析，不把它当作模型内部结构的证明。
+This discussion concerns a fixed tool library with correct order supplied in the input. The name model chooses the next tool and Done; the operation model generates within-tool operations and numbers. The analysis idealizes this experiment and is not evidence of internal model structure.
 
-## 先分清三个成功事件
+## Distinguish three success events
 
-- A：测试名称部分时，程序正确执行模型选中的工具，名称模型能完整按题目要求调用并结束。
-- B：测试操作部分时，程序依次给出题目要求的正确名称，操作模型能把全部要求的调用正确展开。
-- C：两个模型真正接起来、不由程序提供正确答案时，整题正确完成。
+- A: in a name-component test, the program correctly executes selected tools and the name model makes every required call and terminates correctly.
+- B: in an operation-component test, the program supplies required correct names in order and the operation model correctly expands every required call.
+- C: the two models actually run together, without program-supplied correct answers, and complete the whole task correctly.
 
-这些事件都针对同一道输入定义。实验主比较仍是各训练方式的准确率和实际C，不用两次测试同题均对率替代实际执行。
+All events are defined for the same input. Primary comparisons still use accuracy under each training condition and actual C, rather than replacing execution with paired both-correct rates from separate tests.
 
-## 一个有明确前提的性质
+## A property with explicit assumptions
 
-如果解码确定、相同输入token前缀总得到相同输出，并且程序提供的正确片段与真实正确生成使用完全相同的token编码，那么沿着正确执行路径有：
+If decoding is deterministic, identical input-token prefixes always yield identical outputs, and program-supplied correct segments have exactly the same tokenization as correct generated segments, then along the correct execution path:
 
 \[
 C(x)=A(x)B(x).
 \]
 
-理由是看第一次错误：若第一次错在名称，此前历史完全正确，名称模型在程序正确执行的测试中也会在相同前缀出错；若第一次错在操作，操作模型在程序给正确名称的测试中也会在同样前缀出错。反过来，若两个部分在各自正确历史中始终正确，接起来也会逐步保持正确，直至结束。
+Consider the first error. If it occurs in a name, prior history is correct, so the name model also fails at the identical prefix in the program-correct-execution test. If it occurs in operations, the operation model likewise fails at the same prefix in the correct-name test. Conversely, if both components are always correct along their respective correct histories, their composition remains correct step by step through termination.
 
-这只是串行组合和严格全程正确指标的性质。它对一起训练后复用同一模型的两个部分也适用，并不要求训练过程独立。
+This is a property of serial composition and strict whole-trajectory correctness. It also applies when both components reuse one jointly trained model; independent training is not required.
 
-真实实验还存在动态批量、BF16数值差异，以及相同文本可能具有不同token分割等因素，不能只凭这条理想化性质省略实际组合校准。我们实际运行了全部组合、保存真实token历史，并另外披露首次分歧出现在未替换部分的案例。
+Actual experiments involve dynamic batches, BF16 numerical differences, and potentially different tokenizations of the same text. This idealized property cannot replace real composition calibration. We ran all compositions, retained actual token histories, and separately disclosed cases where the first divergence occurred in an unchanged component.
 
-## 从事件到准确率相乘，还多了一层条件
+## Multiplying accuracies needs another assumption
 
-在上述理想化条件下，固定一个训练seed和一种任务长度：
+Under those idealized conditions, fix one training seed and task length:
 
 \[
 P(C)=P(A)P(B)+\operatorname{Cov}(A,B).
 \]
 
-因此准确率乘积接近完整成功率，支持的是“这份任务分布上两类成功/失败的关联较弱”这个统计近似。它不意味着两个模型学到了内部独立模块，更不能单凭乘积吻合说明分开训练更好。反过来，实际不吻合也可能涉及前缀/解码差异，不能不做接口核验就全归因于学习关联。
+A product close to full success supports weak association between the two kinds of success/failure under this task distribution. It does not imply independent internal modules or, alone, better learning from separate training. Disagreement may also involve prefix/decoding differences and cannot all be attributed to learning dependence without interface checks.
 
-不同长度同时改变两个子任务的难度，不同seed也改变两部分能力。应先在每个seed和长度内相乘，再按目标任务分布的权重汇总。直接把长短任务及不同seed混合后相乘，会混入这些共同因素。本轮既保留直接混合口径，也报告按长度分层的结果，没有用测试成绩选择长度。
+Task length changes both subtask difficulties; seeds also change both abilities. Multiply within each seed and length, then aggregate with the target task-distribution weights. Pooling lengths and seeds before multiplication introduces shared-factor associations. This study reports both directly pooled and length-stratified results, without selecting lengths by test performance.
 
-## 当前证据的含义
+## What current evidence means
 
-固定512步、按长度分层，分开训练的3B预测56.04%、实际55.83%；32B预测93.20%、实际93.19%。一起训练模型同样接近：3B预测41.17%、实际40.49%；32B预测85.43%、实际85.35%。所以拆分是有用的性能诊断，而“分开训练是否帮助学习”必须另看训练条件与真实组件替换对照。
+At fixed 512 steps with length stratification, separate training predicts 56.04% versus actual 55.83% at 3B, and 93.20% versus 93.19% at 32B. Joint models are similarly close:41.17% versus 40.49% at 3B,85.43% versus 85.35% at 32B. Decomposition is therefore a useful performance diagnostic; learning benefits from separation require training-condition and actual component-replacement controls.
 
-另外，单次工具操作的正确目标由当前工具和当前四位状态完全决定。在本任务中，这两个量足以确定操作输出；过往轨迹和后续工具列表不是执行该工具必需的信息。因此局部操作输入是合法的能力检验，并非把正确答案提供给模型。它同时改变了操作部分看到的历史范围、后续工具信息和任务长度格式，不能单独归因为某一种注意力机制或token长度。
+A single-tool correct target is completely determined by the current tool and four-digit state. These two values suffice for operation output; prior trajectories and future tools are unnecessary for that tool. Local operation inputs are therefore a valid capability test without supplying answers. They jointly change visible history, future-tool information, and task-length format, so effects cannot be isolated to one attention mechanism or token length.
 
-改变操作输入方式后，B也必须在匹配的新输入方式下理解；不能把旧全历史B的准确率继续当成新方法的操作能力。真实Agent的状态未必能由这么小的接口完整表达，迁移需要另外验证。
+After changing operation inputs, B must be interpreted under matched new inputs. Old full-history B cannot remain the operation-ability estimate for the new method. Real-agent state may not fit such a small interface; transfer requires separate validation.

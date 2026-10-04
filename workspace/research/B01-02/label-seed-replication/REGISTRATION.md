@@ -1,28 +1,28 @@
-# 标签实验的训练种子复核：运行前登记
+﻿# Training-seed replication of the label experiment: preregistration
 
-登记时间：2026-09-26。此轮由用户授权，仅做1.5B、3B、7B，不运行32B。
+Registered on 2026-09-26. The user authorized this study for 1.5B, 3B, and 7B only; 32B is excluded.
 
-## 研究问题
+## Research question
 
-旧独立480题上四种标签的三训练种子标准差较大，尤其固定改名与原名称的比较。本轮固定数据、模型、训练配置、改名映射和评测协议，增加训练种子，以估计训练随机性下的准确率和配对差值；不把标准差降低或阳性作为停止条件。
+Across the four labels on the earlier independent 480-example set, standard deviations over three training seeds were large, especially for fixed aliases versus original names. This study fixes data, models, training configurations, alias mapping, and evaluation protocol while adding training seeds to estimate accuracy and paired differences under training randomness. Neither a smaller standard deviation nor positive results are stopping criteria.
 
-## 固定设计
+## Fixed design
 
-- Qwen2.5 Base 1.5B、3B、7B；四条件为flat（统一step）、position（位置编号）、alias（固定toolA–I映射）、macro（原名称）。沿第一阶段Answer协议。
-- 每模型每条件固定20个相同训练种子：旧11/22/33只读复用，新增100–116共17个。新增总数3×4×17=204次训练。
-- 使用原4096条1–2工具训练数据，512优化步，有效batch32、LoRA r16/alpha32/dropout0、学习率3e-4；同模型条件间保持相同输入、输出构造方式，仅按原四条件定义变化。原训练器算法源码保持不变，运行快照保存在本目录。
-- 固定原测试560题和旧独立480题。主要结果用独立480题的严格完整轨迹成功率；原测试OOD384题为复核。不得基于测试选checkpoint。
-- 所有新增种子四条件配对，推理greedy，独立集batch4/max_new_tokens512。复用旧11/22/33的独立集采用相同batch和token上限。
-- 固定alias映射为此前2026092601映射。**此设计只估计固定映射下的训练种子波动**，不估计跨改名映射的波动。
-- 主要相邻配对差：position−flat、alias−position、macro−alias；另报告macro−flat与alias−macro便于和旧研究对照。
-- 对每模型×条件报告20 seed均值、样本SD、范围；对配对差报告逐seed、均值、样本SD、95% t区间。区间只是训练种子的描述性估计，不将共享480题当成20×480独立题。报告全部20个seed和失败；不因出现希望的方向提前停或追加选定seed。若20 seed后方向仍不明，明确列为不确定，不以更换终点、筛种子解决。
+- Qwen2.5 Base 1.5B, 3B, and 7B; four conditions: flat (uniform step), position (position numbering), alias (fixed toolA–I mapping), and macro (original names). Retain the first-stage Answer protocol.
+- Fix the same 20 training seeds for every model/condition: reuse old seeds 11/22/33 read-only and add 17 seeds 100–116. New training totals 3×4×17=204 runs.
+- Use the original 4096 training examples with 1–2 tools, 512 optimizer steps, effective batch32, LoRA r16/alpha32/dropout0, and learning rate 3e-4. Within each model, input/output construction follows the original four condition definitions. Original training-algorithm source remains unchanged; run snapshots are saved here.
+- Fix the original 560-example test and earlier independent 480-example set. The primary result is strict full-trajectory success on the independent 480 examples; the original OOD384 examples provide a cross-check. Do not select checkpoints on test results.
+- Pair all four conditions for every new seed. Inference is greedy, with independent-set batch4/max_new_tokens512. Reused seeds 11/22/33 use the same independent-set batch and token cap.
+- Keep the earlier 2026092601 alias mapping. **This design estimates training-seed variation under a fixed mapping**, not variation across alias mappings.
+- Primary adjacent paired differences: position−flat, alias−position, macro−alias. Also report macro−flat and alias−macro for comparison with earlier work.
+- For every model×condition, report the 20-seed mean, sample SD, and range. For paired differences, report every seed, mean, sample SD, and 95% t interval. Intervals are descriptive estimates over training seeds; shared test examples are not 20×480 independent examples. Report all 20 seeds and failures. Do not stop early or add selected seeds after a desired direction appears. If direction remains unclear after 20 seeds, report uncertainty rather than changing endpoints or filtering seeds.
 
-## 验收与解释边界
+## Acceptance checks and interpretation limits
 
-所有204作业完整exit 0、每run512步和16384样本暴露；输出逐题与冻结数据ID/输入/工具序列匹配，旧记录hash不变，旧评分等价。首个每条件新seed检验初始adapter同seed一致。全部原始输出、日志、失败记录保留。
+All 204 jobs must exit with code 0, with 512 steps and 16384 example exposures per run. Outputs must match frozen example IDs, inputs, and tool sequences; old-record hashes must remain unchanged and historical scores equivalent. Check matching same-seed initial adapters for the first new seed in each condition. Retain all raw outputs, logs, and failure records.
 
-同一个训练seed同时影响LoRA初始化与数据打乱，不单独识别二者。位置编号与固定身份是不同信息类型，不能声称四条件构成严格单调信息量实验。position训练只见step1/2；新增目标token比旧macro多约2.96%，alias输入更长，分词/长度未匹配。旧独立集已被使用，不是新盲测。更多训练seed不能排除这些混杂，也不能证明现实Agent或RSI收益。
+A training seed affects both LoRA initialization and data shuffling; their separate effects are not identified. Position numbering and fixed identity convey different types of information, so the four conditions are not a strictly monotonic information-content experiment. Position training sees only step1/2. New targets have approximately 2.96% more tokens than old macro targets, and alias inputs are longer; tokenization/length are unmatched. The earlier independent set has already been used and is not a fresh blind test. More training seeds cannot eliminate these confounds or establish real-agent or RSI benefits.
 
-## 资源
+## Resources
 
-只用本机8张RTX PRO6000 Blackwell，按空闲卡动态分配；不使用已归还远程机器。参照已测单作业墙钟，204作业预计约65–80分配GPU小时，若8卡持续可用约9–12小时墙钟，具体以实测记录为准。正常运行约一小时检查一次，失败/完成事件及时处理。
+Use only the 8 local RTX PRO6000 Blackwell GPUs, allocated dynamically as GPUs become free. Do not use returned remote machines. Based on measured per-job wall time, 204 jobs are expected to require approximately 65–80 allocated GPU-hours, or about 9–12 hours wall time if all 8 GPUs remain available; actual records determine final costs. Check routine runs approximately hourly and handle failures/completion promptly.

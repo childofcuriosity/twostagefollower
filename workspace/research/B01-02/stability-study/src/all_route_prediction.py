@@ -33,16 +33,16 @@ write(R/'analysis/all-route-predictions.json',dict(records=records,note=(
     'actual comes from no-oracle execution. Products are calculated within each seed and length before averaging; '
     'all-length row is the average of length-specific products. Similar accuracy of this diagnostic for JJ '
     'means product agreement is not evidence specific to separate training.')))
-labels={'JJ':'一起训练 / 一起训练','SJ':'只训顺序 / 一起训练','JE':'一起训练 / 只训操作','SE':'只训顺序 / 只训操作'}
-lines=['# 一起训练与分开训练，都用相同方式检验乘积预测',
-       '以下固定512步，全部为新协议下的匹配对照，不替代第一阶段原名称组基准。顺序与操作两列分别在程序提供正确另一部分的条件下测量；实际列没有正确答案帮助。',
-       '先在每个seed、每个长度内计算乘积，再汇总。因而all行的预测值不等于把显示出来的两个总体平均率简单相乘。256步和逐seed记录见JSON。',
-       '', '|模型|谁写名称 / 谁写操作|长度|顺序准确率|操作准确率|分层乘积预测|实际成功率|误差pp|',
+labels={'JJ':'Joint / joint','SJ':'Sequence specialist / joint','JE':'Joint / operation specialist','SE':'Sequence specialist / operation specialist'}
+lines=['# Testing product predictions consistently for joint and separate training',
+       'All results below use fixed 512-step matched controls under the new protocol, not replacements for the original first-stage NAME baseline. Sequence and operation accuracies are measured with the program supplying the correct other component; actual execution receives no reference-answer assistance.',
+       'Compute products within each seed and length, then aggregate. The all-row prediction therefore need not equal the product of the two displayed overall mean rates. See JSON for 256-step and per-seed records.',
+       '', '|Model|Name writer / operation writer|Length|Sequence accuracy|Operation accuracy|Stratified product prediction|Actual success|Error pp|',
        '|---|---|---|---:|---:|---:|---:|---:|']
 for length in ['all',3,4,5,6,8]:
     for row in records:
         if row['step']!=512 or row['length']!=length:continue
         m=row['mean'];values='|'.join(f'{100*m[k]:.2f}%' for k in ['sequence','operations','product','actual'])
         lines.append(f'|{row["model"]}|{labels[row["route"]]}|{length}|{values}|{100*m["error"]:+.2f}|')
-lines += ['', '解释：如果一起训练模型也能被同样的两个子任务分数近似预测，乘积吻合支持的是分解作为性能诊断的合理性；不能单靠它宣称分开训练让模型内部形成了独立模块。学习收益应由同协议训练方式对照、真实组件替换和上下文干预分别判断。']
+lines += ['', 'If the same two subtask scores also approximately predict jointly trained models, product agreement supports decomposition as a performance diagnostic. It alone does not establish that separate training creates independent internal modules. Learning gains require separate assessment through same-protocol training controls, actual component replacement, and context interventions.']
 (R/'ALL_ROUTE_PREDICTIONS.md').write_text('\n'.join(lines)+'\n');print('All-route prediction cells:',len(records))

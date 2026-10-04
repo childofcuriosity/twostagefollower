@@ -1,8 +1,8 @@
-## 宽口径提前回答与输出段数
+## Broad early-answer metric and output segments
 
-宽口径定义为：存在且仅存在一个格式有效的最终Answer，但可解析的基本操作条数少于目标操作条数。它包括前缀已出错的情况；不能单独区分停止错误、跳过操作或格式漏解析。下表在全部原长题上统计，分母每条件1,152条（384题×3seed）。正确前缀指标是其中更保守且可验证的子集。
+The broad definition requires exactly one valid final Answer and fewer parseable primitive operations than the target. It includes incorrect prefixes and cannot alone distinguish stopping errors, skipped operations, or parsing omissions. The table covers all original long examples, with 1,152 outputs per condition (384 examples × three seeds). The correct-prefix metric is a more conservative, verifiable subset.
 
-| 模型 | 标签 | 少执行操作即回答 | 正确前缀后提前回答 |
+| Model | Label | Answers before emitting all operations | Early answer after correct prefix |
 |---|---|---:|---:|
 | qwen1.5b | flat | 100.00% | 87.59% |
 | qwen1.5b | macro | 69.36% | 43.23% |
@@ -13,4 +13,4 @@
 | qwen32b | flat | 52.43% | 38.37% |
 | qwen32b | macro | 25.95% | 21.70% |
 
-完整输出段数相对要求调用数的分布见[CSV](analysis/output-segment-distribution.csv)。段首计数仅为格式行为；即使段数正确也必须核对操作和状态，不能把段数当完成率。
+See the [CSV](analysis/output-segment-distribution.csv) for emitted segment counts relative to required calls. Header counts describe formatting only. Correct counts still require operation/state checks and do not measure completion.

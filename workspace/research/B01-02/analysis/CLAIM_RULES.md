@@ -1,14 +1,14 @@
-# 最终报告的证据约束
+# Evidence requirements for the final report
 
-- 主结论只基于预指定macro-flat三种子配对比较；natural/shuffled为次要对照，不在多个对照中挑最有利的来“赢”。
-- 报告IID与OOD，OOD按3/4/5深度拆分；384道OOD题仅包含96个独立程序组合，各4个输入，置信区间按组合聚类。三个训练种子的区间不等同于题目bootstrap。
-- 主组监督token匹配应再用训练日志累计数核对，不能只依赖数据生成时审计。
-- 只能报告实际LoRA参数更新，不声称全参数预训练、SPEE完整复现或EvoScientist全自动科研产品已验收。
-- 真实抽象提案成功率低，而且大部分发现轨迹是错解。函数在有限域可执行，不意味着它是有用创新。
-- 无库测试成功仅说明参数适应和行为泛化。有限行为实验不能唯一确定内部算法。
-- 在语义置换世界必须按对应新真值评分；只有新旧目标不同的样本适合比较新旧语义依赖。
-- 若IID高而OOD低，可否定当前设置下的组合迁移；若IID也低，只能判定训练/任务设置未充分学会，不能宣布抽象假设被证伪。
-- 核心效果通过也先标为“值得复核的机制信号”，结合新增近邻文献判断新颖性，不能直接写成论文或简历成果。
-- GPU小时以实际日志为准，校准、发现、基线、训练及评估分别记录；安装下载的墙钟不伪装成GPU训练时间。调度器进程墙钟作为设备预留时间保守估计，不当作内核busy time。
-- 语义循环置换会改变某些宏的展开长度，不能把原世界与语义世界的分数差纯归因为语义本身。核心检验是在新旧真值不同的题目上是否跟随新真值；记录各世界真实token成本。名称置换则保持定义不变。
-- 主要组的训练token严格匹配，推理只有最大生成上限（256）一致；实际生成token可能不同。不能声称总推理算力相同。尤其提前停止与长链输出差异可能就是机制的一部分，报告每组真实生成token和时间。
+- Base the primary conclusion only on the prespecified three-seed paired macro−flat comparison. natural/shuffled are secondary; do not select the most favorable control to claim a win.
+- Report IID and OOD, splitting OOD by depth 3/4/5. The 384 OOD examples represent 96 independent compositions with four inputs each; cluster intervals by composition. Three-training-seed intervals differ from example bootstraps.
+- Recheck matched supervised tokens using cumulative training logs rather than relying solely on data-generation audits.
+- Report actual LoRA updates, not full-parameter pretraining, complete SPEE replication, or acceptance of a fully autonomous EvoScientist research product.
+- Real abstraction-proposal success is low and most discovery traces are incorrect. Executability in a finite domain does not establish useful innovation.
+- Library-free success supports parameter adaptation and behavioral generalization only. Finite behavioral experiments cannot uniquely identify internal algorithms.
+- Score permuted-semantic worlds against their new truth. Only examples with different old/new targets can compare dependence on old versus new semantics.
+- High IID and low OOD can reject compositional transfer in this setup. Low IID indicates inadequate learning of this setup, not falsification of abstraction hypotheses.
+- Even a passing effect is initially a mechanism signal worth replication. Assess novelty with new nearby literature rather than immediately presenting a paper or résumé achievement.
+- Use actual logs for GPU-hours, separately recording calibration, discovery, baselines, training, and evaluation. Installation/download wall time is not training time. Scheduler wall time conservatively estimates device reservation, not kernel activity.
+- Cyclic semantic permutations change some macro expansion lengths; original-versus-permuted scores do not isolate semantics. Test following new truth where targets differ and report actual world-specific tokens. Name permutations preserve definitions.
+- Primary training tokens match strictly, but inference shares only the 256-token cap. Actual generation can differ, so total inference compute is unequal. Early stopping and longer outputs may themselves matter; report real generated tokens and time by group.

@@ -1,12 +1,12 @@
-# 第二阶段具体做法与复现入口
+# Second-stage methods and reproduction
 
-本轮只回答原玩具任务的oracle消融问题：把“名称序列”和“工具内部展开”分别作为监督目标，能否分别学会、与联合训练有何差异。模型是Qwen2.5 Base 1.5B、3B、7B、32B，采用LoRA监督微调，没有Agentic RL，也没有让模型在线创造新工具。本轮由本目录脚本直接训练评测。
+This study addresses only oracle ablations of the original toy task: can name sequences and within-tool expansion be learned as separate supervision targets, and how do they differ from joint training? Models are Qwen2.5 Base 1.5B,3B,7B,32B with LoRA supervised fine-tuning. There is no Agentic RL or online invention of tools. Scripts in this directory directly train and evaluate the models.
 
-## 题目与两个子任务
+## Task and two subtasks
 
-输入是四个数字和一个已给定顺序的工具名称列表，要求从左到右执行。9个固定工具各包含2或3条基本操作；基本操作有6种，其中这套库实际用到5种。输入提供基本操作说明，不逐题提供工具定义；名称对应的固定展开从训练样本学习。**顺序任务A是按输入复述完整名称列表并在正确位置结束，不是从目标推导计划。** 展开任务B要求所有规定工具的操作行、数字和工具结束位置全部正确。
+Inputs contain four digits and an already ordered list of tool names, to be executed left to right. Each of 9 fixed tools contains 2 or 3 primitive operations; there are 6 primitive operation types, of which this library uses 5. Inputs describe primitive operations but do not supply tool definitions per example; fixed name-to-expansion mappings are learned from training examples. **Sequence task A repeats the complete input name list and terminates at the right point; it does not derive a plan from a goal.** Expansion task B requires correct operation lines, numbers, and tool-ending positions for every required tool.
 
-例如输入数字`1 2 3 4`，工具为`red black`，正确输出为：
+For input digits `1 2 3 4` and tools `red black`, the correct output is:
 
 ```text
 red:
@@ -20,41 +20,41 @@ EndTool
 Done
 ```
 
-三个训练条件看到完全相同的正确文本，区别在loss：
+All three training conditions see exactly the same correct text; losses differ:
 
-|条件|模型学习预测|程序在oracle推理时提供|
+|Condition|Model learns to predict|Program supplies during oracle inference|
 |---|---|---|
-|joint 联合训练|名称、操作、EndTool、Done|无|
-|order_oracle 展开专用训练|操作和EndTool|每个正确名称，以及整条任务的Done|
-|operation_oracle 顺序专用训练|名称和Done|模型实际选中工具的操作及EndTool|
+|joint training|Names, operations, EndTool, Done|Nothing|
+|order_oracle expansion-specialist training|Operations and EndTool|Every correct name and the final task-level Done|
+|operation_oracle sequence-specialist training|Names and Done|Operations and EndTool for the tool actually selected by the model|
 
-顺序专用模型选错工具时，程序执行那个错误工具，不改成参考答案；提前Done也直接记错。展开专用模型虽然得到正确名称，仍能遗漏操作、写错数字、过早EndTool或超预算。错误数字能解析时会原样进入后续状态。所有人工片段训练label为`-100`，并逐token检查来源边界；它们作为上下文供之后的模型token使用，不计作模型预测正确。
+If a sequence specialist selects the wrong tool, the program executes that wrong tool rather than correcting it to the reference. Early Done is also scored wrong. Expansion specialists receive correct names but can still omit operations, miscompute numbers, emit EndTool early, or exceed budget. Parseable incorrect numbers are passed unchanged into subsequent states. All program-supplied segments have training label `-100`, with token-level source-boundary checks. They serve as context for later model tokens rather than counting as correct model predictions.
 
-程序/模型轮流输出时，从保存的完整token历史重新调用模型。每次记录实际token ID、来源、前缀长度与SHA256；没有跨人工插入片段复用旧KV缓存。结束由显式换行/EndTool/Done识别，不能按参考答案的操作行数截断。16工具上限只是防跑飞，不替模型决定正确长度。四个tokenizer各5136条参考轨迹已检查分段/整体编码一致；参考header最长2 token、body最长33 token、整条输出最长282 token、含输入最长412 token，分别低于24/128/2048/4096限制。具体预算见REGISTRATION.md。
+When program and model alternate, the model is called again from the full saved token history. Each call records actual token IDs, source, prefix length, and SHA256; old KV caches are not reused across program insertions. Explicit newline/EndTool/Done markers determine termination, never the reference operation-line count. The 16-tool cap prevents runaway generation rather than choosing the correct length. For each of four tokenizers, 5136 reference trajectories pass segmented-versus-whole encoding checks. Maximum header/body/full output/input-plus-output lengths are 2/33/282/412 tokens, below limits24/128/2048/4096. See REGISTRATION.md for budgets.
 
-## 数据、训练与配对比较
+## Data, training, and paired comparisons
 
-训练4096题，394题单工具、3702题双工具，90种程序，四轮共16384样本、512优化步。没有在长调用测试上训练。原测试560题包含128同分布、384未见长组合、48压力题；另有480条此前固定的独立确认输入，3/4/5/6/8工具各24程序×4输入。这些测试输入与训练输入无完全重复，长程序与训练程序也不重合。独立确认集不是本轮结果出来后新建的盲测集；只是与原训练/测试输入分离的固定集合。逐项交叉检查见analysis/data-audit.json。
+Training has 4096 examples:394 single-tool and 3702 two-tool examples, covering 90 programs. Four passes give 16384 examples and 512 optimizer steps. Long-call tests are not used for training. The original 560 tests contain 128 in-distribution,384 unseen long-composition, and 48 stress examples. Another 480 previously fixed independent confirmation inputs comprise 24 programs x4 inputs at each of 3/4/5/6/8 tools. Test inputs have no exact duplicates in training, and long programs do not overlap training programs. The independent confirmation set was fixed earlier, not newly constructed blind after these results. See analysis/data-audit.json for cross-checks.
 
-每尺度×3训练条件×seed11/22/33，共36项训练。每个joint检查点除自主推理外，再接受两种oracle帮助；两个专用检查点各测对应oracle环境。共60个检查点/推理模式组合，每个1040题，合计62400条正式轨迹。每长度的288条计数是96输入在3个训练seed上的输出，不是288个独立程序。
+Each scale x3 training conditions x seeds11/22/33 gives 36 training jobs. Each joint checkpoint receives two oracle evaluations in addition to autonomous inference; the two specialist checkpoints each receive their corresponding oracle evaluation. This gives 60 checkpoint/inference-mode combinations x1040 examples =62400 main trajectories. The 288 outputs per length are 96 inputs across 3 training seeds, not 288 independent programs.
 
-主检查点事先固定step512，step64/128/256也保留；未按测试表现选检查点。所有条件相同输入、次序、batch与训练步数，但监督token量不同。每四轮联合监督1,001,552 token，展开监督890,016 token，顺序监督111,536 token。因此这是目标mask干预，不能同时声称隔离了监督量、loss权重、梯度干扰或显式模块化结构的效果。
+The primary checkpoint is fixed in advance at step512; step64/128/256 are retained, with no test-based checkpoint selection. Conditions share inputs, order, batch, and training steps but differ in supervised-token counts. Over four passes, joint supervision uses 1,001,552 tokens, expansion 890,016, and sequence 111,536. This target-mask intervention does not separately isolate supervision quantity, loss weighting, gradient interference, or explicit modular structure.
 
-关键训练比较是“专用检查点+oracle”对“联合检查点+同一种oracle”，把推理时得到的帮助控制住。关键推理比较是“同一联合检查点+oracle”对“同一检查点自主执行”。专用oracle成绩直接与联合自主成绩相减同时改了训练和推理，不是单因素因果比较。
+The key training comparison is specialist checkpoint + oracle versus joint checkpoint + the same oracle, controlling inference assistance. The key inference comparison is one joint checkpoint + oracle versus the same checkpoint executing autonomously. Directly subtracting joint autonomous scores from specialist oracle scores changes both training and inference, not one causal factor.
 
-## 乘积应该怎样理解
+## Interpreting products
 
-同一个联合模型的完整正确事件可以分为A和B，其概率恒等于`P(A) × P(B|A)`。用`P(A) × P(B)`代替需要额外的统计独立假设。
+For one joint model, complete correctness can be decomposed into events A and B, with probability exactly `P(A) × P(B|A)`. Substitution with `P(A) × P(B)` requires an additional statistical-independence assumption.
 
-本轮专用模型的A、B来自两个不同检查点、两个oracle推理环境。记录同一题上两个oracle任务是否都正确，再与各seed的边际概率乘积比较，可以检查这些**测试输出**的相关性；不能证明联合模型内部真的分成两个独立模块。也不能把乘积与联合自主准确率的差全部归为相关性，因为训练目标和推理环境已变。两专用模型的同题均对统计不是实际运行双模型组合Agent，后者本轮没有测试。
+Here, specialist A and B come from different checkpoints and oracle environments. Comparing paired both-correct events on the same examples with the product of marginal probabilities within each seed checks association between these **test outputs**, not whether the joint model internally contains independent modules. The difference between the product and joint autonomous accuracy also changes training targets and inference environments and cannot be attributed wholly to correlation. Paired both-correct statistics are not an executed two-specialist agent, which was not tested in this study.
 
-## 环境与证据复现
+## Environment and evidence reproduction
 
-所有环境、缓存、数据、适配器和日志在本项目。小模型在六台8×5090服务器运行，32B在本机PRO6000 96GB运行；同尺度比较使用同类硬件。远程服务器已交还，不应照旧调度文件再次连接。台账见infrastructure/SERVERS.md；凭据与研究产物隔离，不在公开文档列出。
+All environments, caches, data, adapters, and logs are in this project. Small models ran on six servers with 8x5090 GPUs;32B ran on local PRO6000 96 GB GPUs. Within-scale comparisons use the same hardware type. Remote servers were returned; do not reconnect using old scheduling files. The ledger is infrastructure/SERVERS.md. Credentials are separated from research artifacts and omitted from public documents.
 
-共同环境为Python3.12.3、torch2.7.1+cu128、transformers4.51.3、peft0.15.2、accelerate1.6.0、numpy2.2.6。完整配置在每run的config.json；训练曲线train.jsonl；适配器adapter/与checkpoints/；原始推理evaluation-*.jsonl；训练/评测完成摘要training-complete.json与evaluation-complete.json。环境包清单与hash见infrastructure/；输入、模型配置、tokenizer与权重文件清单见analysis/reproducibility-inputs.json。模型权重文件记录大小和下载manifest，未另外重算所有大权重文件的SHA256。
+The shared environment is Python3.12.3, torch2.7.1+cu128, transformers4.51.3, peft0.15.2, accelerate1.6.0, numpy2.2.6. Each run contains config.json, training curves in train.jsonl, adapters in adapter/ and checkpoints/, raw inference in evaluation-*.jsonl, and training/evaluation-complete.json summaries. Package inventories and hashes are in infrastructure/; input/model-config/tokenizer/weight inventories are in analysis/reproducibility-inputs.json. Weight files record sizes and download manifests; SHA256 was not recomputed for every large weight file.
 
-在项目根目录可重新执行只读结果验算并刷新派生报告：
+From the project root, rerun read-only result checks and refresh derived reports:
 
 ```bash
 source training-env.sh
@@ -73,6 +73,6 @@ python workspace/research/B01-02/oracle-study/src/report.py
 python workspace/research/B01-02/oracle-study/src/completion_audit.py
 ```
 
-这些脚本不重训、不覆盖原始输出。绘图使用已有项目`.analysis-venv`的matplotlib3.10.1；训练环境未为绘图改动。模型新进程复跑使用src/reproduce.py，每尺度固定120条、保持原batch组合；记录见analysis/reproduction/。训练脚本与复跑脚本拒绝覆盖已存在的输出目录；若重做训练应在新的实验目录建立独立run，不删除本轮原始结果。完整启动参数与分配见infrastructure/allocation.json和logs/。
+These scripts neither retrain nor overwrite raw outputs. Plotting uses matplotlib3.10.1 in the existing project `.analysis-venv`, without changing the training environment. src/reproduce.py runs a fresh model process for 120 fixed examples per scale with original batch groupings; records are in analysis/reproduction/. Training and reproduction scripts refuse to overwrite existing output directories. Retraining requires independent runs in a new experiment directory, preserving these results. Full launch arguments and allocations are in infrastructure/allocation.json and logs/.
 
-唯一正式调度变更为把原排队的32B顺序专用seed33提前放到空闲GPU2训练，原队列等待它完成后负责评测。main训练函数AST保持一致，数据、超参、推理与评分不变；租约、旧源码、错误路径检查均有记录。其他后增脚本均为离线分析，不改正式输出。
+The only main scheduling change moved the queued 32B sequence-specialist seed33 to free GPU2 for training; the original queue waited for completion and then evaluated it. The main training-function AST is unchanged, as are data, hyperparameters, inference, and scoring. Lease, old source, and error-path checks are recorded. Other later scripts perform offline analysis without changing main outputs.

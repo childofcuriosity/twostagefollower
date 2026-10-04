@@ -2,79 +2,79 @@ from common import *
 import statistics,time
 r=json.loads((ROOT/'analysis/results.json').read_text());jobs=json.loads((ROOT/'analysis/completed.json').read_text());assert len(jobs)==12 and all(j['returncode']==0 for j in jobs)
 rows=[json.loads(l) for l in (ROOT/'analysis/rows.jsonl').read_text().splitlines()]
-labels={'base':'冻结基座','flat':'平坦轨迹训练后','macro':'宏标签训练后','mismatch':'宏模型+错配上下文','random':'均匀随机16次','frequency':'支持集频次启发式','exhaustive':'全部252候选贪心','no-library':'无宏库'}
+labels={'base':'Frozen base','flat':'After flat-trace training','macro':'After macro-label training','mismatch':'Macro model + mismatched context','random':'16 uniform random proposals','frequency':'Support-frequency heuristic','exhaustive':'Greedy over all 252 candidates','no-library':'No macro library'}
 table='\n'.join(f"| {labels[k]} | {v['test_compression']*100:.2f}% | {v['search_solved_fraction']*100:.2f}% | {v['mean_selected_size']:.2f} | {v['mean_unique_proposed_semantics']:.2f} |" for k,v in r['methods'].items())
-ctable='\n'.join(f"| macro − {k.removeprefix('macro-vs-')} | {v['mean_compression_difference']*100:+.2f} | {' / '.join(f'{x*100:+.2f}' for x in v['seed_compression_differences'])} | {' 至 '.join(f'{x*100:+.2f}' for x in v['family_cluster_bootstrap_95'])} | {v['mean_search_difference']*100:+.2f} |" for k,v in r['comparisons'].items())
+ctable='\n'.join(f"| macro − {k.removeprefix('macro-vs-')} | {v['mean_compression_difference']*100:+.2f} | {' / '.join(f'{x*100:+.2f}' for x in v['seed_compression_differences'])} | {' to '.join(f'{x*100:+.2f}' for x in v['family_cluster_bootstrap_95'])} | {v['mean_search_difference']*100:+.2f} |" for k,v in r['comparisons'].items())
 gpu=sum(j['wall_seconds'] for j in jobs)/3600
 passed=r['prespecified_screen_passed']
-verdict='通过相对随机提案的预设筛选，但训练后明显弱于冻结基座；不支持“一轮执行学习让模型更会提出有用抽象”。建议停止扩大当前执行训练路线，保留为反例和诊断。' if passed else '未通过预设筛选。当前证据不支持把上一轮的执行收益解释为更有用的抽象发现，不建议继续扩大这套短程序设置的算力投入。'
-text=f'''# B01-02 后续实验：抽象提案是否随执行学习改善
+verdict='Passes the prespecified screen against random proposals but remains substantially below the frozen base. This does not support better useful-abstraction proposals after one execution-learning stage. Stop expanding this execution-training route and retain it as a counterexample and diagnostic.' if passed else 'Fails the prespecified screen. Current evidence does not support interpreting earlier execution gains as better useful-abstraction discovery. Further compute expansion of this short-program setup is not recommended.'
+text=f'''# B01-02 follow-up: do abstraction proposals improve with execution learning?
 
-完成时间（UTC）：{time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())}。用户授权继续实验，本轮已完成，等待结果审核。
+Completed at (UTC): {time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())}. The user authorized continuation; this round is complete and awaits review.
 
-## 判断
+## Judgment
 
 **{verdict}**
 
-这是使用已有Qwen2.5-1.5B及flat/macro适配器的实测，不是新增提案策略训练。负结果不能否定专门训练创新策略的可能性；正结果也不能代表多轮自我改进。协议在提案生成前固定，分析代码在查看效用结果前另行登记。
+These are measurements with existing Qwen2.5-1.5B and flat/macro adapters, not newly trained proposal policies. Negative results do not exclude specially trained innovation strategies; positive results would not establish multi-round improvement. The protocol was fixed before generation, and analysis source separately registered before utility inspection.
 
-## 实际设计
+## Actual design
 
-- 8个独立任务家族，各有3个隐含短操作模式，均不与上一轮9个宏语义等价；每家族16条支持程序、128条测试程序。支持与测试精确函数语义隔离，未要求各测试程序彼此语义不同。每家族等权重。
-- 模型只看未标注隐含边界的支持程序，生成16次长度2–3的候选宏。语法由有限token trie约束，合法空间252条；重复、恒等提案消耗预算，不补采样。
-- base、flat、macro各3次运行，另有3个macro错配上下文对照。旧训练种子为11/22/33；base三次只改变采样种子。
-- 所有方法用相同支持集贪心规则选择至多3个语义不同宏；库定义成本计入收益，不利用测试集选择。随机组也只有16次提案；频次/全枚举计算量不同，仅为参照。
-- 共12个模型作业、1,536条真实提案。没有新增参数训练，没有重跑上一轮30个训练。
+- Eight independent families, each with three hidden short-operation patterns semantically distinct from the previous nine macros, 16 support programs, and 128 tests. Support/test functions are exactly disjoint; test functions need not be distinct from one another. Families are equally weighted.
+- Models see support programs without hidden boundaries and generate 16 length-2–3 candidates. A finite-token trie constrains 252 valid candidates. Duplicates/identities consume budget without replacement.
+- Three runs each for base/flat/macro, plus three macro mismatched-context controls. Training seeds are 11/22/33; base repeats vary sampling only.
+- All methods select up to three semantically distinct macros using the same support-greedy rule and definition costs, without test-based selection. Random also has 16 proposals; frequency/full-enumeration references use different compute.
+- Twelve model jobs and 1,536 actual proposals, with no new parameter training or reruns of the earlier 30 training jobs.
 
-## 主要结果
+## Main results
 
-压缩率是未见程序的净描述长度降低比例，不是神经模型答题正确率。搜索率是外部符号广度优先搜索在3,000次动作扩展内发现完整目标函数的比例。
+Compression is net description-length reduction on unseen programs, not neural accuracy. Search discovery is external symbolic breadth-first discovery of complete target functions within 3,000 action expansions.
 
-| 方法 | 测试净压缩率 | 搜索发现率 | 平均库大小 | 每16次提案的不同语义数* |
+| Method | Test net compression | Search discovery | Mean library size | Distinct semantics per 16 proposals* |
 |---|---:|---:|---:|---:|
 {table}
 
-*全枚举使用252次，空库为0；其余方法为16次。确定性启发式/空库在三个seed上重复列入配对分析，不是三次独立实验。宏与基本操作均算一个搜索动作，但宏需要更多底层操作，实际计数见逐家族原始记录。
+*Full enumeration uses 252 candidates, no-library uses zero, and other methods use 16. Deterministic heuristics/no-library repeat in paired analyses across three seeds, not three independent experiments. Macros and primitives each count as one search action, but macros execute more primitives; see family-level raw counts.
 
-| 比较 | 压缩差（百分点） | 三seed差 | 家族bootstrap 95%区间 | 搜索差（百分点） |
+| Comparison | Compression difference (points) | Three seed differences | Family-bootstrap 95% interval | Search difference (points) |
 |---|---:|---|---|---:|
 {ctable}
 
-预设筛选：macro相对随机平均压缩提升≥2个百分点，三个seed差值均正，且搜索发现率不低超过2个百分点。判定：**{'通过' if passed else '未通过'}**。区间按8个任务家族聚类，条件于已有检查点；没有将1,536次提案当作独立训练重复。
+Prespecified screen: macro exceeds random mean compression by at least two points, improves across all three seeds, and loses no more than two points in search discovery. Decision: **{'Pass' if passed else 'Fail'}**. Intervals cluster eight families conditional on checkpoints; 1,536 proposals are not independent training repetitions.
 
-## 为什么整体判断仍然是否定当前路线
+## Why the overall judgment remains against this route
 
-macro相对随机的压缩差为+7.69个百分点，但家族bootstrap区间约−3.11至+18.13个百分点，跨家族不确定性仍大。“通过筛选阈值”不等于显著优于随机。更关键的是，相对冻结base下降18.52个百分点，三个seed均下降，家族区间约−26.76至−10.01个百分点。搜索发现率也比base低6.71个百分点。上一轮“执行更好”没有转化为“提案更好”。
+Macro beats random compression by +7.69 points, but the family-bootstrap interval is approximately −3.11 to +18.13, with substantial family uncertainty. Passing a screen does not mean significant superiority. More importantly, macro is 18.52 points below frozen base, declining for every seed, with interval approximately −26.76 to −10.01. Search discovery is also 6.71 points below base. Better execution did not transfer to better proposing.
 
-macro优于flat且优于错配上下文，说明宏训练后仍有上下文适配信号；不能将其解释为比训练前更强。每16次提案的不同语义数从base约10.08降到macro约5.33、flat约3.00，多样性收缩与效用下降同时出现，但本实验没有证明多样性下降就是因果机制，更不能据此诊断所有通用能力遗忘。支持集频次启发式的57.04%压缩率也明显更高，但其候选获取计算量不同。
+Macro beats flat and mismatched context, indicating retained context adaptation rather than superiority to pretraining. Distinct semantics per 16 proposals fall from approximately 10.08 for base to 5.33 for macro and 3.00 for flat. Diversity contraction co-occurs with lower utility but is not identified as its cause, nor does it diagnose loss of all general capabilities. The support-frequency heuristic compresses 57.04%, substantially better but with different candidate-acquisition compute.
 
-## 事后敏感性复核
+## Post hoc sensitivity checks
 
-两个问题在主结果之后追加，原结果不覆盖，详见[修订声明](analysis/amendments.md)与[完整2×2对照](analysis/sensitivity.json)。
+Two issues were added after primary results without overwriting them; see [amendments](analysis/amendments.md) and [complete 2×2 controls](analysis/sensitivity.json).
 
-- 原选库器在语义去重时保留最先出现的写法，而压缩要求字面片段匹配。改为先比较支持收益、选中后排除同语义候选：base压缩38.79%、macro19.60%、flat1.53%、随机11.74%；方向保持。全枚举参考提升到57.04%，与频次启发式相同，说明原全枚举劣势来自代表写法选择，而非候选越多越差。
-- 保持原选库，改为3,000次基本操作执行预算：base搜索率58.95%、macro55.96%、随机49.22%、flat49.48%；macro仍弱于base。两个改动同时应用也保持这一方向。
+- Original semantic deduplication retained the first spelling, while compression requires literal matching. Selecting support gains first and excluding semantic equivalents afterward yields base 38.79%, macro 19.60%, flat 1.53%, random 11.74%, preserving direction. Full enumeration rises to 57.04%, matching the frequency heuristic. Its earlier disadvantage reflected representative selection, not inherently harmful extra candidates.
+- With original selection but a 3,000-primitive-execution budget, search rates are base 58.95%, macro 55.96%, random 49.22%, flat 49.48%. Macro remains below base, including when both modifications apply.
 
-因此不建议追加大模型或更多同类执行训练。若继续主线，应另设计直接优化提案效用且检验未见任务家族的训练，加入保持基座提案能力的对照；这是下一步待审核设计，本轮没有悄悄开始该训练。
+Do not add larger models or more similar execution training. Continuing would require training directly for proposal utility, testing unseen families, and controls preserving base proposing. That next-stage design awaits review and was not started here.
 
-## 解释边界
+## Interpretation limits
 
-1. 上一轮模型学的是执行轨迹，并未接受“提出高效抽象”的奖励或监督。本轮直接检查其迁移，不能把未训练的技能失败解释为创新不可学习。
-2. 支持轨迹由正确执行器生成，所有方法相同；不是模型自主解出的成功经验。任务仍是人工DSL，宏语法只有252种。
-3. 主要指标是连续原语复用的压缩收益；有压缩不保证搜索更快，加入宏也增加分支因子。因此搜索率单独报告，不挑较好的一个替代失败指标。
-4. 等预算指提案次数及相同下游选库规则。模型推理、随机抽样、频次统计的计算成本不同；等动作扩展也不是等基本操作执行成本。
-5. 任务与旧训练库分离，但仍使用相同六原语；不是自然语言、真实代码或跨原语系统迁移。
-6. 不按本测试集调prompt、温度、候选次数或重新筛家族；保留所有提案、重复及负收益候选。
+1. Earlier models learned execution traces without efficient-abstraction rewards or supervision. This tests transfer of that training; an untrained skill failure does not establish unlearnable innovation.
+2. All methods share executor-generated correct support, not autonomously solved successes. The artificial DSL has only 252 macro candidates.
+3. Contiguous-primitive compression need not accelerate search because macros increase branching. Report search separately rather than substituting the better metric for a failed one.
+4. Budgets match proposal counts and downstream selection, not model/random/frequency compute. Equal action expansions are not equal primitive-execution costs.
+5. Tasks differ from the old library but share six primitives. This is not natural-language, real-code, or cross-primitive transfer.
+6. Do not tune prompts, temperature, candidate counts, or families on this test. Retain all proposals, duplicates, and negative-utility candidates.
 
-## 审计与复现
+## Audit and reproduction
 
-- [预注册协议](PROTOCOL.md)、[机制边界](MECHANISM.md)、[首次登记哈希](analysis/registration.json)、[评估代码登记](analysis/evaluation-registration.json)。
-- [机器可读结果](analysis/results.json)、[逐方法/种子/家族记录](analysis/rows.jsonl)、[校验与文件哈希](analysis/verification.json)。
-- `runs/*/proposals.jsonl`保留完整提示、生成原文、候选索引与token数；`data/tasks.json`保留全部支持/测试程序和隐含模式；`data/candidates.json`给出候选全集。
-- 沿用父目录`runs/*/adapter`及项目根目录`.training-venv`；新增文件全部在本目录树。基础模型和适配器哈希见父目录`analysis/artifact-verification.json`。
-- 本轮累计设备预留约{gpu:.3f} GPU·小时，CPU分析墙钟{r['seconds']:.1f}秒；设备预留包含进程加载等等待，不是GPU内核占用时间。任务独立分卡运行，没有NCCL多卡训练。
+- [Preregistration](PROTOCOL.md), [mechanism limits](MECHANISM.md), [initial hashes](analysis/registration.json), [evaluation registration](analysis/evaluation-registration.json).
+- [Machine-readable results](analysis/results.json), [method/seed/family records](analysis/rows.jsonl), [verification/hashes](analysis/verification.json).
+- `runs/*/proposals.jsonl` retains complete prompts, raw generations, candidate indices, and token counts. `data/tasks.json` retains support/tests and hidden patterns; `data/candidates.json` contains the candidate universe.
+- Reuse parent `runs/*/adapter` and root `.training-venv`; all new files stay in this subtree. Base/adapter hashes are in parent `analysis/artifact-verification.json`.
+- Total device reservation approximately {gpu:.3f} GPU-hours; CPU analysis wall time {r['seconds']:.1f} seconds. Reservation includes loading/waiting, not kernel-active time. Independent jobs use separate GPUs without NCCL training.
 
-在项目根目录先`source training-env.sh`。数据构造为`python workspace/research/B01-02/followup/src/common.py`；生成由`src/launch.py`调度（已存在运行目录会拒绝覆盖）；统计、验证和报告分别运行`src/analyze.py`、`src/verify.py`、`src/report.py`。复现时应使用新的运行目录保留原始证据。
+From the project root, first `source training-env.sh`. Build data with `python workspace/research/B01-02/followup/src/common.py`. `src/launch.py` dispatches generation and refuses to overwrite existing runs. Run `src/analyze.py`, `src/verify.py`, and `src/report.py` for statistics, verification, and reporting. Use new run directories for reproduction to retain original evidence.
 '''
 (ROOT/'REPORT.md').write_text(text)
 (ROOT/'analysis/cost.json').write_text(json.dumps({'reserved_gpu_hours':gpu,'cpu_analysis_wall_seconds':r['seconds'],'model_jobs':12,'raw_proposals':1536},indent=2))

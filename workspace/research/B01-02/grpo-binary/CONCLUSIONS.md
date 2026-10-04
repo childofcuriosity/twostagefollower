@@ -1,49 +1,49 @@
-# B01-02 GRPO二值奖励：研究判断
+﻿# B01-02 binary-reward GRPO: research conclusions
 
-**本轮观察到NAME更快学习的初步证据，但没有稳定的训练终点优势。** Qwen2.5-14B-Instruct、固定L2、3个配对seed、严格完整轨迹二值奖励。6个正式run均完成100更新，所有预定验证与端点评测完成；不把结果外推为普遍身份机制或真实Agent能力。
+**This study provides preliminary evidence that NAME learns faster, but no consistent advantage at the training endpoint.** The setting is Qwen2.5-14B-Instruct, fixed L2, 3 paired seeds, and strict full-trajectory binary rewards. All 6 main runs completed 100 updates and every scheduled validation and endpoint evaluation. These findings are not generalized to a universal identity mechanism or real-agent capability.
 
-## 训练是否有效、终点是否更好
+## Did training work, and was the endpoint better?
 
-新测试集每条件512题，step0为原始模型，各seed显式共享这一基准。
+The fresh test set has 512 examples per condition. step0 is the original model, explicitly shared as a baseline across seeds.
 
-| 条件 | step0 | step100均值±seed样本SD | 相对本组step0平均提升 |
+| Condition | step0 | step100 mean±seed sample SD | Mean gain over condition-specific step0 |
 |---|---:|---:|---:|
 | STEP | 51.17% | 98.76% ± 1.14 pp | +47.59 pp |
 | NAME | 49.61% | 99.15% ± 0.30 pp | +49.54 pp |
 
-NAME−STEP的逐seed端点差为 **+1.95、−0.78、0.00 pp**，均值 **+0.39 pp**、配对差样本SD **1.41 pp**。只有一个seed为正，另一个反向，一个持平。因此不宣称NAME稳定提高最终准确率；也不能由三个seed和接近饱和的端点证明两组等效。NAME提升幅度平均多1.95 pp，其中包含其step0低1.56 pp这一事实，不能用提升幅度替代同预算端点比较。
+Per-seed NAME−STEP endpoint differences are **+1.95, −0.78, and 0.00 pp**, with mean **+0.39 pp** and sample SD **1.41 pp**. One seed is positive, one negative, and one tied. These results do not establish a consistent final-accuracy improvement for NAME. Three seeds with nearly saturated endpoints also cannot establish equivalence. NAME's mean learning gain is larger by 1.95 pp, partly reflecting its 1.56 pp lower step0 baseline; gain magnitude cannot replace an endpoint comparison at the same budget.
 
-## 是否学得更快
+## Did it learn faster?
 
-下表每格为首次达到预先固定验证阈值的更新数，按seed301/302/303排列。
+Each cell below gives the first update count reaching a fixed validation threshold, ordered by seeds 301/302/303.
 
-| 验证门槛 | STEP | NAME | NAME更早的seed数 |
+| Validation threshold | STEP | NAME | Seeds where NAME was earlier |
 |---|---|---|---:|
 | 60% | 20 / 30 / 20 | 20 / 20 / 20 | 1/3 |
 | 70% | 30 / 30 / 30 | 20 / 20 / 30 | 2/3 |
 | 80% | 40 / 40 / 30 | 30 / 30 / 30 | 2/3 |
 | 90% | 50 / 40 / 40 | 40 / 40 / 40 | 1/3 |
 
-其余为同一检查点达到；本轮所有门槛最终都达到。特别地，NAME seed303在step20是179/256=69.92%，没有达到70%；按冻结门槛记为step30，不能四舍五入后改判。
+The remaining seeds reached the threshold at the same checkpoint; every threshold was eventually reached. In particular, NAME seed303 scored 179/256=69.92% at step20, below 70%. Under the frozen threshold it is recorded as step30, without rounding it into a pass.
 
-完整曲线的补充描述统计（梯形面积/100）在三个配对seed上均偏向NAME，差分别为 **+4.84、+1.54、+1.54 pp**；均值为NAME86.99%、STEP84.35%。部分晚期检查点STEP反而更高，不能称NAME全程压倒STEP。结合全部阈值与曲线，本轮支持有限的早期学习速度收益，三个seed仍只是初步重复。
+The supplementary full-curve descriptive statistic, trapezoidal area/100, favors NAME for all three paired seeds, with differences of **+4.84, +1.54, and +1.54 pp**. Mean values are 86.99% for NAME and 84.35% for STEP. STEP is higher at some late checkpoints, so NAME does not dominate throughout training. Taken together, the thresholds and curves support a limited early-learning speed benefit, with three seeds still constituting preliminary replication.
 
-达到70%的两个较快seed中，NAME使用20而非30次更新，即2560而非3840个候选；实测累计采样和更新GPU时间减少约32.4%、33.2%。第三个seed达到该门槛均需30步，时间基本相同。这些时间不包括初始化、保存和验证，不能与整run分配GPU时间混用。
+For the two seeds that reached 70% earlier, NAME used 20 rather than 30 updates, or 2560 rather than 3840 candidates. Measured cumulative sampling/update GPU time fell by approximately 32.4% and 33.2%. Both conditions took 30 steps for the third seed, with essentially the same time. These timings exclude initialization, saving, and validation and must be distinguished from whole-run allocated GPU time.
 
-## 错误变化说明什么
+## What do the error changes show?
 
-差异最清楚地伴随操作展开/顺序错误更早减少。以step20作早期曲线的示例，每256道验证题的三seed平均操作序列错误为STEP46条、NAME7条；step0分别59、39条。数字错误step0为84、112条，step20为62、68条：NAME起初数字错误更多，两组训练都明显减少错误。全部固定检查点的错误曲线见[REPORT.md](REPORT.md)，这些非互斥标志不能相加作因果分解，也不能直接证明内部注意力或信用分配机制。
+The clearest difference accompanies an earlier decrease in operation-expansion/order errors. At step20, as an example from the early curves, mean operation-sequence errors across three seeds were 46 for STEP and 7 for NAME per 256 validation examples, versus 59 and 39 at step0. Numerical errors were 84 and 112 at step0, and 62 and 68 at step20: NAME started with more numerical errors, and both conditions reduced errors substantially through training. See [REPORT.md](REPORT.md) for every fixed-checkpoint error curve. These overlapping flags cannot be summed into a causal decomposition or directly establish internal attention or credit-assignment mechanisms.
 
-端点错误几乎都是数字计算，另有STEP的一条缺失操作、一条最终Answer抄错。NAME seed302/303的49/4条标题不合规全部是多写了`Trace:`，工具名称及顺序本身正确；原评分允许一般标题行，所以严格得分不扣、标题合规单列。例子及完整分类见[CASE_REVIEW.md](CASE_REVIEW.md)。所有正式训练候选及评测输出均由EOS结束，无生成上限截断。
+Endpoint errors are almost all numerical, with one missing-operation case and one incorrectly copied final Answer for STEP. All 49/4 heading violations for NAME seeds 302/303 are extra `Trace:` headings; the tool names and order are correct. The original scorer allows generic heading lines, so strict scores are unaffected and heading compliance is reported separately. Examples and complete categories are in [CASE_REVIEW.md](CASE_REVIEW.md). All main training candidates and evaluation outputs ended with EOS, with no generation-cap truncations.
 
-## 成本与实施判断
+## Costs and implementation
 
-每组正式采样38400个回答。STEP输出2,551,654 token，NAME输出2,550,930 token，差−0.03%，基本相同。计入进程启动、模型加载与保存的三个run合计分配GPU时间为STEP6.954小时、NAME7.049小时，NAME约多1.36%。step100测试的输出token总计101,000与101,116，NAME约多0.11%；实测生成时间约多0.71%。这是本次硬件上的测量，不把相同更新数称为相同计算量。
+Each condition sampled 38400 main responses. STEP generated 2,551,654 tokens and NAME 2,550,930, a difference of −0.03%, effectively the same. Across three runs, allocated GPU time including process startup, model loading, and saving was 6.954 hours for STEP and 7.049 for NAME, about 1.36% more for NAME. step100 test output tokens totaled 101,000 and 101,116, about 0.11% more for NAME; measured generation time was about 0.71% longer. These are measurements on this hardware; equal updates are not treated as equal compute.
 
-正式训练共14.003 GPU小时；评测实际任务墙钟合计1.550 GPU小时，其中生成1.503 GPU小时。评测worker全生命周期分配5.005 GPU小时，包含等待检查点；不得把这段等待算成有效推理。已计时预检与恢复共1.711 GPU小时。两个最初参数解析失败和基础设施诊断缺少完整时长，单独披露，不编造总GPU内核活动时间。详细口径见[COMPLETION_AUDIT.md](COMPLETION_AUDIT.md)。
+Main training totaled 14.003 GPU-hours. Actual evaluation-task wall time totaled 1.550 GPU-hours, including 1.503 GPU-hours of generation. Evaluation-worker lifecycles occupied 5.005 GPU-hours, including checkpoint waiting, which must not be counted as active inference. Timed prechecks and recovery totaled 1.711 GPU-hours. Complete durations are unavailable for two initial argument-parsing failures and infrastructure diagnostics; these are disclosed separately, without inventing total GPU-kernel activity time. See [COMPLETION_AUDIT.md](COMPLETION_AUDIT.md) for accounting definitions.
 
-两组二值奖励都成功学会任务，不属于“二值奖励整体无效”。各run约14%–18%的题目组有混合0/1奖励，其余全0/全1组按原协议保留；尽管采样重复较多，已有足够学习信号。偶发KL/梯度峰值没有被当作停训理由，完整曲线和有限数值记录支持本轮没有持续优化崩溃。预检恢复的数值非确定性已在正式训练前修复，正式run没有中断或配置变更。
+Both conditions learned the task successfully with binary rewards; binary rewards did not fail overall. Approximately 14%–18% of example groups in each run had mixed 0/1 rewards. Remaining all-0/all-1 groups were retained under the original protocol. Despite substantial sampling duplication, enough learning signal was available. Occasional KL/gradient peaks were not used as reasons to stop training. Complete curves and finite-value records support the absence of sustained optimization collapse. Numerical nondeterminism in precheck recovery was fixed before main training; main runs had no interruptions or configuration changes.
 
-本轮最合适的研究表述是：**在给定计划的固定L2符号执行任务中，NAME格式相较STEP显示早期GRPO学习效率收益；最终成功率接近饱和，端点优势不稳定。** 方法收益、格式遵循和机制假设应分开陈述。尚未证明跨模型、长调用链、数学或真实执行任务迁移，也未完成论文创新性论证。
+The most appropriate statement is: **On a supplied-plan, fixed-L2 symbolic execution task, NAME shows an early GRPO learning-efficiency benefit over STEP; final success is nearly saturated, and endpoint advantages are inconsistent.** Method gains, format compliance, and mechanism hypotheses should be stated separately. Transfer across models, longer call chains, mathematics, or real execution tasks remains unestablished, as does paper novelty.
 
-后续建议保留这条二值奖励基线，优先验证学习速度收益能否迁移到更难的实际执行任务；当前没有因“二值奖励失败”而必须增加内部奖励的证据。Prompt机器学习优化、细粒度奖励、跨模型及实际任务均留待另行协议，本轮未自动扩展，也未对外发布。
+For follow-up, retain this binary-reward baseline and prioritize testing whether the learning-speed benefit transfers to harder practical execution tasks. There is currently no evidence that internal rewards are required because binary rewards failed. Learned prompt optimization, fine-grained rewards, additional models, and practical tasks require separate protocols. This study was neither automatically expanded nor publicly released.

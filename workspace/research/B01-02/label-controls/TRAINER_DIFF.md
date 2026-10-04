@@ -1,12 +1,12 @@
-# 与旧训练器的差异
+# Differences from the original trainers
 
-原训练源码文件未改动；每次新作业保存driver_snapshot.py。包装器只扩展condition参数允许值、把输出根指向新增目录，并替换目标文本构造函数。LoRA、优化器、学习率、损失归一化、batch顺序、梯度裁剪及原开发集评测逻辑沿旧代码。新标签目标实现见src/common.py的target。
+Original trainer source files are unchanged; each new job saves driver_snapshot.py. The wrapper only extends allowed condition values, redirects the output root to the new directory, and replaces target-text construction functions. LoRA, optimizer, learning rate, loss normalization, batch order, gradient clipping, and original development evaluation follow the existing code. New label targets are implemented in target in src/common.py.
 
-旧程序写出的config.json中的source_sha256指driver_snapshot.py；complete.json另记录原训练器hash。旧基座、revision、trainable参数、环境与实际样本/token计数另行审计。
+In config.json written by the old program, source_sha256 points to driver_snapshot.py; complete.json separately records the original trainer hash. Original base models, revisions, trainable parameters, environments, and actual example/token counts are audited separately.
 
-包装器在原正式测试后，用仍在内存中的同一模型运行旧独立集的batch4、greedy、512-token设置，额外保存原始token及实际prompt；不再次训练，不改变原正式测试，不把参考计算写入生成上下文。
+After the original formal test, the wrapper uses the same model still in memory to evaluate the earlier independent set with batch4, greedy decoding, and a 512-token cap, additionally saving raw tokens and actual prompts. It does not retrain, alter the original formal test, or place reference computations in generation context.
 
-## qwen1.5b对应训练器
+## Trainer for qwen1.5b
 
 ```diff
 --- original
@@ -22,7 +22,7 @@
   tok=AutoTokenizer.from_pretrained(ROOT/'model',local_files_only=True);tok.pad_token=tok.eos_token
 ```
 
-## qwen32b对应训练器
+## Trainer for qwen32b
 
 ```diff
 --- original

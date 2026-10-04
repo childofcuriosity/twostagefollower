@@ -31,13 +31,13 @@ def main():
     for row in records:
         if row['step']==512 and row['length']==8:
             pooled[row['model'],row['condition'],row['position']].update(row['counts'])
-    lines=['# 正确名称已给定时，操作错误出现在什么位置',
-           '这是诊断测试，不能当作无帮助的实际执行。即使名称正确，操作仍可能写错；当前状态始终来自实际生成，程序不修正。',
-           '“此前全对”只统计到达该位置且前面没有操作错误的题，用于区分新发生错误与已经出错之后的表现。它不是随机分组，不能据此声称因果。',
-           '', '|模型|训练方式|第几个工具|到达数|其中操作正确|此前全对数|此前全对时本次正确|',
+    lines=['# Where do operation errors occur when correct names are supplied?',
+           'This is a diagnostic test, not unassisted actual execution. Operations can be wrong even with correct names. Current state always follows actual generation and is not corrected by the program.',
+           'Previously all correct counts only examples reaching a position with no earlier operation errors, separating newly occurring errors from behavior after an error. This is not randomized grouping and does not support causal claims.',
+           '', '|Model|Training|Tool position|Reached|Operations correct among reached|Previously all correct|Current correct given previously all correct|',
            '|---|---|---:|---:|---:|---:|---:|']
     for (model,condition,pos),counts in sorted(pooled.items()):
-        label='一起训练' if condition=='joint' else '只训练操作'
+        label='Joint training' if condition=='joint' else 'Operation-only training'
         lines.append(f'|{model}|{label}|{pos}|{counts["reached"]}|{counts["correct"]}|{counts["previous_calls_correct"]}|{counts["correct_given_clean_previous_calls"]}|')
     (R/'OPERATION_ERROR_POSITIONS.md').write_text('\n'.join(lines)+'\n')
     print('Operation position cells:',len(records))

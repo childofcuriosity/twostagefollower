@@ -1,8 +1,8 @@
-# 两个子任务的准确率乘积，能否预测实际执行
-顺序列来自程序正确执行所选工具的测试；操作列来自程序提供正确名称的测试。最后一列对照的是真正接起来执行，没有程序正确答案帮助。
-乘积先按每个seed计算，再平均。误差=实际成功率−乘积。区间按工具组合成簇配对重采样，仅条件于现有三个训练seed；不能据此证明内部机制独立。
+# Can the product of two subtask accuracies predict actual execution?
+The sequence column comes from tests where a program correctly executes selected tools; the operation column comes from tests where a program supplies correct names. The final comparison is actual connected execution without program-supplied correct answers.
+Compute products within each seed, then average. Error=actual success minus product. Intervals use paired resampling clustered by tool composition, conditional on the three observed training seeds; they do not establish independent internal mechanisms.
 
-|模型|训练步数|长度|顺序准确率|操作准确率|两列乘积|实际完整成功|误差pp|误差95%区间pp|
+|Model|Training steps|Length|Sequence accuracy|Operation accuracy|Product|Actual full success|Error pp|95% error interval pp|
 |---|---:|---|---:|---:|---:|---:|---:|---|
 |qwen3b|256|all|68.47%|78.33%|52.63%|54.86%|+2.23|[+0.64, +3.86]|
 |qwen3b|256|3|83.33%|95.83%|79.86%|79.51%|-0.35|[-1.13, +0.00]|
@@ -29,14 +29,14 @@
 |qwen32b|512|6|98.26%|93.06%|91.51%|91.67%|+0.16|[-0.46, +0.98]|
 |qwen32b|512|8|96.53%|90.62%|87.70%|87.15%|-0.54|[-1.94, +0.74]|
 
-## 控制任务长度后的整体预测
-长题同时影响两个子任务。直接混合不同长度再相乘，会把长度造成的关联混进来。下表先在每个seed、每个长度内相乘，再按本测试各长度相同权重汇总；没有挑选或删除长度。上表all行的直接混合乘积仍保留。
+## Overall prediction controlling for task length
+Long tasks affect both subtasks. Multiplying rates after pooling lengths mixes in length-induced association. The table first multiplies within each seed and length, then aggregates with equal weights across the tested lengths, without selecting or dropping lengths. The directly pooled product in the all row above is retained.
 
-|模型|步数|按长度分层的乘积预测|实际完整成功|误差pp|分层程序bootstrap区间pp|
+|Model|Steps|Length-stratified product prediction|Actual full success|Error pp|Stratified program-bootstrap interval pp|
 |---|---:|---:|---:|---:|---|
 |qwen3b|256|55.47%|54.86%|-0.60|[-1.54, +0.36]|
 |qwen3b|512|56.04%|55.83%|-0.20|[-1.15, +0.73]|
 |qwen32b|256|92.40%|92.43%|+0.03|[-0.29, +0.40]|
 |qwen32b|512|93.20%|93.19%|-0.00|[-0.41, +0.41]|
 
-解释边界：这些子任务分数测的是各模型沿正确历史执行时的能力。完整无错执行要求两部分沿这一路径都正确；用两个边际正确率相乘，还要求它们在相同长度内的失败关联不大。预测吻合支持这种统计近似的实用性，不能证明模型内部独立学习，也不能排除损失权重或参数容量的影响。
+These subtask scores measure each model along correct histories. Error-free execution requires both components to remain correct on that path. Multiplying marginal accuracies additionally assumes weak failure association within each length. Prediction agreement supports the usefulness of this statistical approximation, not independent internal learning, and does not exclude loss-weighting or parameter-capacity effects.

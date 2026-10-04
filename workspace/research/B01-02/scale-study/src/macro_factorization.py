@@ -41,14 +41,14 @@ for family,model,L in sorted({(r['family'],r['model'],r['length']) for r in rows
 out={'definition':'Whole macro J: correct name at required position AND complete correct expansion of that emitted name with locally valid arithmetic. Missing=incorrect. Prediction per model/seed/length: p(J)^L estimated on other four program folds. Conditional adjacency restricted to both segments actually emitted excludes missing-tail failures. Correlation descriptive, no causal mimicry claim; difficult programs and positions can confound. Position standardized rates use overlap positions only, still not program/seed adjusted.','source_sha256':hashlib.sha256((R/'analysis/subtask-factorization-segments.jsonl').read_bytes()).hexdigest(),'summary':summary}
 (R/'analysis/macro-factorization.json').write_text(json.dumps(out,indent=2))
 (R/'analysis/macro-factorization-predictions.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in pred))
-lines=['# Macro整体粒度的已有轨迹统计\n',out['definition'],'\n独立确认集：每行288条轨迹，来自24程序×4输入×3seed。所有预测为按程序分组的交叉预测。\n']
+lines=['# Macro-level statistics from existing trajectories\n',out['definition'],'\nIndependent confirmation: each row contains 288 trajectories from 24 programs × four inputs × three seeds. All predictions use cross-validation grouped by program.\n']
 for model in ['qwen1.5b','qwen3b','qwen7b','qwen32b']:
- lines+=['\n## '+model,'|长度|单macro正确率|macro连乘预测|原A/B分开连乘|实际整题|前macro正确后当前出错|前macro错误后当前出错|','|---|---:|---:|---:|---:|---:|---:|']
+ lines+=['\n## '+model,'|Length|Single-macro accuracy|Product across macros|Original separate A/B product|Actual whole task|Current error after correct macro|Current error after incorrect macro|','|---|---:|---:|---:|---:|---:|---:|']
  for z in summary:
   if z['family']!='independent' or z['model']!=model:continue
   c=z['counts'];rates=[]
   for g in ['prev_ok','prev_bad']:
-   n=c.get(g+'_present_n',0);bad=c.get(g+'_present_current_bad',0);rates.append(f'{100*bad/n:.2f}% ({bad}/{n})' if n else '无样本')
+   n=c.get(g+'_present_n',0);bad=c.get(g+'_present_current_bad',0);rates.append(f'{100*bad/n:.2f}% ({bad}/{n})' if n else 'No observations')
   lines.append('| '+str(z['length'])+' | '+' | '.join(f'{100*z[k]:.2f}%' for k in ['macro_accuracy','macro_product','separate_AB_product','actual'])+' | '+' | '.join(rates)+' |')
-lines+=['\n后两列仅统计相邻两个macro都实际输出的情况，缺失不混入。它们是条件相关性，不控制程序难度；前一macro错误会使后续位置持续错位，也不等于复制错误。JSON另保留缺失与逐位置标准化结果。','\n原3–5调用集全部逐长度数据也保存在analysis/macro-factorization.json。']
+lines+=['\nThe last two columns include only adjacent macros that were both emitted; missing calls are excluded. These conditional associations do not control program difficulty. An incorrect preceding macro may cause persistent positional misalignment, which is not necessarily error copying. JSON also retains missing-call and position-standardized results.','\nAll length-specific results for the original 3–5-call set are also in analysis/macro-factorization.json.']
 (R/'MACRO_FACTORIZATION.md').write_text('\n'.join(lines));print('\n'.join(lines))

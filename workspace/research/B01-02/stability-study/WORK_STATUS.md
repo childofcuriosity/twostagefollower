@@ -1,3 +1,3 @@
-# 当前阶段：已完成，提交结果审核
+# Current stage: complete, submitted for results review
 
-主矩阵、局部操作输入对照、新程序确认均已完成，正式覆盖136320条；审计、子任务表、案例与图复核完成。最终入口CONCLUSIONS.md及COMPLETION_AUDIT.md。所有本轮计算已结束，本机8卡现场检查均空闲；已交还远程机器未再使用。当前限定研究goal已完成，系统中旧的其他暂停goal未改写。下一轮扩展等待用户审核。
+The main matrix, local-operation-input controls, and new-program confirmation are complete, covering 136320 formal records. Audits, subtask tables, cases, and figures are reviewed. Start with CONCLUSIONS.md and COMPLETION_AUDIT.md. All computation has ended; all 8 local GPUs were checked idle, and returned remote machines were not reused. This bounded research goal is complete; separate older paused system goals were not rewritten. Further extensions await user review.

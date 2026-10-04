@@ -1,18 +1,34 @@
-# stepname
+# twostagefollower
 
-研究多步执行任务中，输出当前工具名称是否有助于模型学习和完整执行。本仓库是研究工作区的**源码与报告归档**，保留实验之间的原有相对路径；不是包含全部训练权重、逐题轨迹和运行环境的完整备份。
+## Research overview
 
-## 当前主要问题
+An agent can have a plan and still leave it unfinished. It may skip a step, lose track of the current operation, or stop before completing the sequence. We study this gap between having a plan and following it through in a controlled execution task.
 
-受控任务给出四位数字、九种工具的定义和正确调用顺序，模型需要展开操作、计算中间状态并输出答案。STEP 条件在每次调用前使用统一的 `step:` 标签；NAME 条件使用当前工具名称。正确顺序已经给定，因此该实验主要检验执行学习，不等同于开放环境中的自主规划。
+The intervention is simple: **train the model to write the current tool's unique identifier before executing it.** Each tool has a fixed identity, repeated whenever that tool is called. We compare this NAME format with a STEP format that uses the same `step:` marker for every call. Both formats require the model to produce the full execution trace and final answer.
 
-研究从执行能力与提案能力的比较，发展到模型规模、分开训练与组合、标签对照，以及二值奖励 GRPO 训练。历史真实 Agent 实验也保留在独立目录中，不能把受控数字任务的结果直接视为真实 Agent 迁移结果。
+Tool identifiers improved whole-task performance in our training experiments. We observed gains with supervised fine-tuning (SFT) and with reinforcement learning using GRPO. The SFT studies include Qwen2.5-7B Base; the GRPO studies use Qwen2.5-7B-Instruct and Qwen2.5-14B-Instruct. The benefit depends on task length and training conditions, with the hardest settings still showing low success.
 
-## 最新结果：GRPO 长度扩展
+Our working explanation is that an explicit tool identity makes two subtasks clearer: tracking which step of the plan comes next, and carrying out the operations within that step. Separate-training and composition experiments support studying this decomposition, although they do not isolate it as the sole cause of the gains. Here, the plan is supplied in the input: the first subtask is following that plan and stopping correctly, rather than inventing a plan from a goal.
 
-2026-09-29 完成 7B L3/L4/L5、14B L5/L6/L7 共六个组合；每个组合包含 STEP/NAME 与三个配对随机种子，共 36 次正式训练，每次 100 次更新。L 表示依次调用的工具数量。奖励为整条执行轨迹是否完全正确。
+**The result concerns training, not a general prompt-engineering recipe.** In a separate prompt-only test of Qwen2.5-14B-Instruct, NAME achieved 45.12% full-trajectory success versus 45.90% for STEP. Simply asking an unmodified model to repeat the tool name did not reproduce the training benefit in that test.
 
-| 组合 | STEP 测试成功率 | NAME 测试成功率 |
+## Controlled task
+
+The model starts with a four-digit state and a prescribed sequence of calls to nine deterministic tools. Each tool consists of basic operations on the digits. The model must expand every call, compute the intermediate states, and return the final answer. An interpreter checks the entire trace, so a correct final answer alone does not count as successful execution.
+
+This setting lets us measure skipped calls, incorrect operations, and premature stopping directly. It also separates the question of executing a known plan from the broader problem of autonomous planning. Experiments with real agents are kept in separate study directories.
+
+## Training results
+
+In the SFT study, models trained on one- and two-tool tasks were tested on longer sequences. On the independent 480-example test set spanning three to eight calls, Qwen2.5-7B achieved **37.01%** complete-trajectory success with NAME, compared with **12.15%** with STEP, averaged over three training seeds. See the [SFT study](workspace/research/B01-02/scale-study/CONCLUSIONS.md) and [label-control results](workspace/research/B01-02/label-controls/CONCLUSIONS.md).
+
+### GRPO
+
+The latest study, completed on September 29, 2026, uses GRPO with a binary reward: the entire execution trajectory must be correct. We ran six model/length settings, two output formats, and three paired seeds, for 36 runs of 100 updates each.
+
+L is the number of tool calls. Test success below is averaged over three seeds, using 512 fresh test examples per setting.
+
+| Setting | STEP | NAME |
 |---|---:|---:|
 | 7B L3 | 8.27% | 32.75% |
 | 7B L4 | 0.91% | 4.17% |
@@ -21,36 +37,48 @@
 | 14B L6 | 4.56% | 38.74% |
 | 14B L7 | 0.72% | 7.29% |
 
-表中为三个种子的均值，每组使用 512 道新测试题。14B L5 是唯一符合预先登记的 STEP 验证成功率 20%–90% 窗口的组合；NAME−STEP 的配对测试差均值为 37.83 个百分点。两组原模型提示词起点不同，学习增益之差为 32.75 个百分点。7B L5 未观察到学习改善；三种子仍属初步重复，不能据此断言普遍因果机制、创新性或真实 Agent 泛化。
+NAME scored higher in all six settings, though success fell sharply as tasks grew longer. We observed no learning improvement at 7B L5.
 
-主要入口：[最新结论](workspace/research/B01-02/grpo-length-study/CONCLUSIONS.md)、[完整报告](workspace/research/B01-02/grpo-length-study/REPORT.md)、[方法](workspace/research/B01-02/grpo-length-study/METHOD.md)、[审计](workspace/research/B01-02/grpo-length-study/COMPLETION_AUDIT.md)。历史报告中“已完成”“原始数据在本目录”等措辞描述原实验工作区，不表示所有证据文件都包含在此归档中。
+14B L5 was the only setting within the preregistered STEP validation range of 20%–90%. There, NAME led by 37.83 percentage points on the test set. The formats also had different prompt-only baselines; after accounting for those starting points, the difference in learning gains was 32.75 points.
 
-## 实验地图
+The training gains vary with task length; the longest settings remain difficult. Transfer to real-agent tasks remains to be evaluated.
 
-所有路径均位于 `workspace/research/B01-02/`。
+See the [report](workspace/research/B01-02/grpo-length-study/REPORT.md), [method](workspace/research/B01-02/grpo-length-study/METHOD.md), [conclusions](workspace/research/B01-02/grpo-length-study/CONCLUSIONS.md), and [completion audit](workspace/research/B01-02/grpo-length-study/COMPLETION_AUDIT.md) for details. Internal reports, protocols, and research notes are available in English.
 
-| 目录 | 内容 |
+## Why split plan following from execution?
+
+Writing a tool identifier gives each call an explicit identity before the model begins its internal operations. This suggests a division of labor: one component follows the tool sequence, while another executes the selected tool on the current state.
+
+We tested that division directly by training separate models for tool-name/sequence output and operation output, then connecting them during inference. On fresh programs, separate training increased mean full-task success from 35.67% to 51.17% for Qwen2.5-3B and from 79.58% to 90.75% for Qwen2.5-32B when both used full history. Giving the operation component just the current tool and actual state improved execution further. These experiments make the decomposition useful to investigate; separate training also changes loss normalization and total adapter capacity, and its gains vary across seeds and contexts.
+
+See the [decomposition and stability results](workspace/research/B01-02/stability-study/CONCLUSIONS.md) for the component comparisons, and the [prompt-only study](workspace/research/B01-02/prompt-only/REPORT.md) for the distinction between training the representation and requesting it at inference time.
+
+## Where to look
+
+Experiments live under `workspace/research/B01-02/`. Each study keeps its own code, protocol, and reports.
+
+| Directory | Study |
 |---|---|
-| `src/`、根目录 `PROTOCOL.md` / `REPORT.md` | 原始任务与实验 |
-| `followup/`、`rsi-study/` | 执行与提案能力、闭环研究历史 |
-| `agent-completion-plan/` | 长任务完成率研究计划 |
-| `scale-study/` | 模型规模与标签实验 |
-| `agent-study/`、`agent-study-v3/`、`agent-reliability/` | 真实 Agent 与工具协议可靠性探索 |
-| `oracle-study/`、`stability-study/` | 顺序和操作分开学习、组合与稳定性 |
-| `label-controls/`、`label-seed-replication/` | 标签位置、改名和种子复核 |
-| `prompt-only/`、`prompt-only-length-short-20260929/` | 纯提示词与短测探索 |
-| `grpo-binary/` | 固定长度二值奖励 GRPO |
-| `grpo-length-study/` | 最新六组合长度扩展 |
-| `qwen05b-fixedlength/`、`qwen05b-indomain/` | 早期小模型对照 |
+| `grpo-length-study/` | The six settings reported above |
+| `grpo-binary/` | Earlier fixed-length GRPO experiments |
+| `oracle-study/`, `stability-study/` | Training sequence and operation prediction separately, then composing them |
+| `label-controls/`, `label-seed-replication/` | Label position, renaming, and seed replication |
+| `scale-study/` | Model size and output labels |
+| `prompt-only/`, `prompt-only-length-short-20260929/` | Prompt-only baselines |
+| `followup/`, `rsi-study/` | Execution training, proposal quality, and closed-loop experiments |
+| `agent-study/`, `agent-study-v3/`, `agent-reliability/` | Separate experiments with real agents and tool protocols |
+| `agent-completion-plan/` | Plans for studying long-task completion |
+| `qwen05b-fixedlength/`, `qwen05b-indomain/` | Early small-model controls |
+| `src/`, root `PROTOCOL.md` and `REPORT.md` | The original task and first experiments |
 
-初始候选与文献记录见 [candidates.md](workspace/research/2026-09-23-batch01/candidates.md) 和 [sources.md](workspace/research/2026-09-23-batch01/sources.md)。旧状态文件保留为历史材料；当前结论优先查阅各实验的结论、方法和完成审计。
+The initial [candidate ideas](workspace/research/2026-09-23-batch01/candidates.md) and [literature notes](workspace/research/2026-09-23-batch01/sources.md) are also retained. Status files describe work at the time they were written; use each study's final report and conclusions when reading its results.
 
-## 使用与复现限制
+## Running the code
 
-- 根目录 `training-requirements.in` 与 `training-requirements.lock.txt` 保存原训练依赖记录。请在适合自己硬件的独立 Python/CUDA 环境中安装；锁定文件是原环境记录，不保证在任意平台可直接安装。
-- 保留 `workspace/research/B01-02/` 层级：部分实验通过相邻目录导入任务、解析器和评估代码。先阅读对应 `METHOD.md`、`REGISTRATION.md`、`PROTOCOL.md` 或复现文档，再运行相应 `src/` 脚本。
-- 未运行新训练，也未重构归档源码。部分脚本保留原本的本地绝对路径、GPU 拓扑、模型目录和远程调度假设；它们需要按自己的环境配置。远程工具引用的私有服务器配置未提供。不要直接启动历史调度脚本。
-- 全量权重、检查点、逐题数据、候选输出、日志、运行时、服务器基础设施及私有配置未上传。部分报告链接指向这些未归档产物，无法仅凭本仓库重新完成全量原始证据审计。需要重新生成数据、获取模型并按协议运行，或另行取得对应原始产物。
-- 小规模汇总 JSON/CSV、实验配置、源码与报告图用于理解结果；它们不能替代完整原始轨迹。自动扫描只用于发现常见凭据形态，不构成代码正确性或可复现性验证。
+Start with the protocol or method document for the study you want to reproduce. Dependencies are recorded in `training-requirements.in` and `training-requirements.lock.txt`; you will need a Python/CUDA environment suited to your hardware.
 
-[ARCHIVE_MANIFEST.json](ARCHIVE_MANIFEST.json) 记录所选文件、大小、SHA-256 及归档改动。原工作区文件保持不变。没有添加未经确认的开源许可证。
+Keep the directory layout intact, since some scripts import code from neighboring studies. Before running a script, check its model paths, output paths, GPU settings, and scheduling configuration. Several scripts still use paths and assumptions from the original machines. The lock file records that environment, so installation may need adjustments on yours.
+
+The archive includes source, configurations, reports, figures, and small JSON/CSV summaries. Model weights, checkpoints, raw per-example trajectories, logs, runtime environments, and private server configuration are omitted. Some historical reports link to those omitted files. Reproducing the experiments requires obtaining the models and regenerating the data; auditing the original runs in full requires their raw artifacts.
+
+[ARCHIVE_MANIFEST.json](ARCHIVE_MANIFEST.json) lists the current archive files and their hashes. Historical source-freeze records describe the original experiment files; translated report generators have new hashes. No license has been added.

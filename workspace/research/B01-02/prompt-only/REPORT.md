@@ -1,14 +1,14 @@
-# B01-02：纯 Prompt 工具身份复述
+# B01-02: prompt-only tool-identity repetition
 
-2026-09-28完成。**本轮没有发现“复述原工具名”提高严格完整轨迹成功率的证据。** 正式采用获授权的Qwen2.5-14B-Instruct备选，在L2新512题上，NAME为45.12%，STEP为45.90%，逐题配对差−0.78个百分点，95%区间[−4.88,+3.32]。这不是证明两者完全等效，也不排除其他Prompt/任务下的收益。
+Completed 2026-09-28. **This round found no evidence that repeating original tool names improves strict complete-trajectory success.** Formal evaluation used the authorized Qwen2.5-14B-Instruct fallback on 512 fresh L2 examples. NAME scored 45.12% and STEP 45.90%, a paired difference of −0.78 percentage points with a 95% interval of [−4.88,+3.32]. This does not establish equivalence or exclude gains with other prompts or tasks.
 
-固定改名ALIAS取得辅助阳性结果：57.42%，相对STEP +11.52个百分点[+6.84,+16.41]。但ALIAS同时改变输入工具名称和输出标题，不能将收益单独归因于执行前复述身份。当前证据不支持将微调实验的强提升直接推广到纯Prompt。
+The fixed-renaming ALIAS condition produced an auxiliary positive result: 57.42%, or +11.52 points over STEP [+6.84,+16.41]. Because ALIAS changes input tool names and output headers together, its gain cannot be attributed solely to repeating identities before execution. Current evidence does not support directly extending the large fine-tuning gains to prompting alone.
 
-## 模型选择与调用长度
+## Model selection and call lengths
 
-7B原始权重先完成独立预检和全部探索；STEP在L2为3/32，L5为0/32。预检及原始输出核验未发现定义、示例、解析或预算缺陷，错误主要是数字计算及操作展开；据登记规则启用14B，**Prompt未改**，重新完成同一流程。7B结果完整保留，这属于模型选择，不是独立跨模型确认。
+Original 7B weights first completed independent prechecks and all exploration. STEP scored 3/32 at L2 and 0/32 at L5. Precheck and raw-output audits found no definition, example, parsing, or budget defects; most errors involved arithmetic and operation expansion. The registered rule triggered the 14B fallback, which repeated the full procedure with **unchanged prompts**. All 7B results are retained. This is model selection, not independent cross-model confirmation.
 
-| 调用长度 | 7B STEP | 7B NAME | 14B STEP | 14B NAME |
+| Call length | 7B STEP | 7B NAME | 14B STEP | 14B NAME |
 |---:|---:|---:|---:|---:|
 | 2 | 3/32 | 7/32 | 21/32 | 20/32 |
 | 5 | 0/32 | 0/32 | 3/32 | 5/32 |
@@ -18,59 +18,59 @@
 | 30 | 0/32 | 0/32 | 0/32 | 0/32 |
 | 40 | 0/32 | 0/32 | 0/32 | 0/32 |
 
-14B只有L2的STEP处于20%–90%，故按规则只选这一档，正式输出为**512题×4组=2,048条**，无需凑满两档。没有相邻档从>90%直接跌至<20%，L40也未饱和，不触发补测。L5及更长仅有探索证据；不能据32题地板表现断言所有长任务必然无效。
+Only 14B L2 STEP accuracy lies within 20%–90%, so the rule selects that single length: **512 examples × four groups = 2,048 formal outputs**. A second length is not required. No adjacent tested lengths cross directly from above 90% to below 20%, and L40 is not saturated, so no additional exploration is triggered. L5 and longer lengths have only exploratory evidence; 32-example floor scores do not establish universal failure on long tasks.
 
-## 正式结果
+## Formal results
 
-| 条件 | 严格成功 | 相对STEP配对差及95%区间（百分点） | 仅本组成功 / 仅STEP成功 | 全部标题合规 |
+| Condition | Strict success | Paired difference from STEP and 95% interval (percentage points) | Condition-only / STEP-only successes | All headers compliant |
 |---|---:|---:|---:|---:|
-| STEP | 235/512（45.90%） | — | — | 512/512（100%） |
-| POSITION | 245/512（47.85%） | +1.95 [−2.34,+6.25] | 67 / 57 | 497/512（97.07%） |
-| ALIAS | 294/512（57.42%） | +11.52 [+6.84,+16.41] | 113 / 54 | 512/512（100%） |
-| NAME | 231/512（45.12%） | −0.78 [−4.88,+3.32] | 55 / 59 | 488/512（95.31%） |
+| STEP | 235/512 (45.90%) | — | — | 512/512 (100%) |
+| POSITION | 245/512 (47.85%) | +1.95 [−2.34,+6.25] | 67 / 57 | 497/512 (97.07%) |
+| ALIAS | 294/512 (57.42%) | +11.52 [+6.84,+16.41] | 113 / 54 | 512/512 (100%) |
+| NAME | 231/512 (45.12%) | −0.78 [−4.88,+3.32] | 55 / 59 | 488/512 (95.31%) |
 
-每题每组仅一次greedy输出；不是训练seed实验。区间为固定分析seed740001、10,000次逐题配对bootstrap百分位区间，仅反映固定模型、Prompt及题目生成分布下的测试题抽样不确定性。辅助对照没有做多重比较校正。正式STEP与32题探索估计不同，未据正式结果重新选长或修改Prompt。
+Each example receives one greedy output per group; this is not a training-seed experiment. Intervals use analysis seed 740001 and 10,000 paired example-level bootstrap samples. They cover example-sampling uncertainty conditional on the fixed model, prompt, and test-generation distribution. Auxiliary controls have no multiple-comparison correction. Formal STEP accuracy differs from the 32-example exploratory estimate; formal results did not trigger length reselection or prompt changes.
 
-## 减少了什么错误？
+## Which errors decreased?
 
-以下为**复核后的首个可观测错误**，每条失败只记一个首错；操作数错误与工具展开错误归入“工具/顺序”，不把多一个原始操作当成多一次调用。
+The following are **reviewed first observable errors**, with one first error per failed output. Incorrect operation counts and expansions fall under tools/order; an extra primitive operation is not automatically an extra call.
 
-| 条件 | 工具展开/顺序 | 数字计算/最终数字 | 遗漏完整调用 | 增加完整调用 | 格式 | 成功 |
+| Condition | Tool expansion/order | Arithmetic/final numbers | Omitted complete call | Extra complete call | Format | Success |
 |---|---:|---:|---:|---:|---:|---:|
 | STEP | 93 | 182 | 0 | 0 | 2 | 235 |
 | POSITION | 37 | 207 | 14 | 0 | 9 | 245 |
 | ALIAS | 3 | 214 | 0 | 0 | 1 | 294 |
 | NAME | 53 | 227 | 0 | 0 | 1 | 231 |
 
-NAME减少了工具展开/顺序首错（93→53），但数字首错更多（182→227），没有转化为整体成功率提升。逐题看，NAME使55道STEP失败题变正确，同时使59道STEP正确题变失败；后者53题首错为数字错误。
+NAME reduces tool-expansion/order first errors from 93 to 53, but increases numeric first errors from 182 to 227, yielding no overall success gain. It corrects 55 STEP failures while turning 59 STEP successes into failures; 53 of the latter first err numerically.
 
-ALIAS的主要改善在工具展开/顺序：首错93→3。它纠正113道STEP失败题，其中71道原首错为工具/顺序、41道数字、1道格式；同时新增54道失败，首错均为数字错误。这些是配对输出的描述，不是内部机制的因果证明。
+ALIAS mainly improves expansion/order, reducing first errors from 93 to 3. It corrects 113 STEP failures: 71 originally first erred in tools/order, 41 numerically, and one in formatting. It also introduces 54 failures, all with numeric first errors. These are paired-output descriptions, not causal evidence about internal mechanisms.
 
-首错规则保守识别可确定的完整调用删除/插入；无法唯一对齐的操作差异归工具/顺序。非互斥检查也保留：STEP/POSITION/ALIAS/NAME的操作序列不一致分别119/65/6/64题，逐步数字错误分别192/211/213/239题。标题遵循单列；NAME的24条额外`Trace:`标题不等于增加24次调用。**正式2,048条均主动EOS结束，生成上限截断为0。** 探索阶段另有7B的3/448条、14B的10/448条触及生成上限，均保留且未重试；两模型的预检各48条均主动EOS。所有探索档也按正确目标预检容量，长题地板仍受模型错误输出和这些截断影响，不能解释成单一机制。
+First-error rules conservatively identify unambiguous complete-call deletion/insertion. Ambiguous operation alignments fall under tools/order. Overlapping checks are also retained: operation-sequence mismatches number 119/65/6/64 for STEP/POSITION/ALIAS/NAME, and intermediate numeric errors number 192/211/213/239. Header compliance is separate: 24 extra NAME `Trace:` headers do not imply 24 extra calls. **All 2,048 formal outputs end voluntarily with EOS; none hit the generation limit.** Exploration includes 3/448 capped 7B outputs and 10/448 capped 14B outputs, all retained without retries. All 48 precheck outputs per model end with EOS. Every exploratory length passed correct-target capacity checks, but model output errors and these truncations still affect long-task floor scores; no single mechanism is established.
 
-分析修正记录：冻结评分器的初版辅助`extra_call/omitted_call`标签曾混入额外/缺失原始操作和中途Answer；复核后修正99条辅助首错标签，原标签及原始输出全保留。严格成功率、逐题配对差、置信区间、Prompt和推理配置均未改变。复核代码及逐题结果见`postanalysis/error_review.py`、`analysis/graded-formal-errors-reviewed.jsonl`。
+Analysis correction: initial auxiliary `extra_call/omitted_call` labels from the frozen scorer conflated extra/missing primitives and intermediate Answer lines with call changes. Review corrected 99 auxiliary first-error labels while retaining original labels and raw outputs. Strict accuracy, paired differences, confidence intervals, prompts, and inference settings are unchanged. See `postanalysis/error_review.py` and `analysis/graded-formal-errors-reviewed.jsonl`.
 
-## 输出与推理成本
+## Output and inference costs
 
-| 条件 | 输入token/题 | 输出token/题（含EOS） | 输出相对STEP | 512题批量generate合计秒 | generate相对STEP |
+| Condition | Input tokens/example | Output tokens/example including EOS | Output relative to STEP | Total batch generate seconds for 512 examples | Generate relative to STEP |
 |---|---:|---:|---:|---:|---:|
 | STEP | 473 | 67.99 | — | 101.47 | — |
 | POSITION | 493 | 68.34 | +0.50% | 105.81 | +4.28% |
 | ALIAS | 492 | 68.10 | +0.15% | 103.32 | +1.83% |
 | NAME | 477 | 67.47 | −0.77% | 100.57 | −0.89% |
 
-NAME输入多4 token/题，实际输出少0.52 token/题，没有可见输出成本增加；它与STEP的**正确目标**平均token长度本来相同，实际输出差异不能解读为更高效的正确执行。ALIAS输入多19 token/题，实际输出多0.10 token/题；正确目标因标签token化平均多2 token/题。
+NAME adds four input tokens per example and emits 0.52 fewer output tokens, with no observed output-cost increase. Its **correct targets** already have the same average token length as STEP; actual-output differences do not demonstrate more efficient correct execution. ALIAS adds 19 input tokens and 0.10 actual output tokens per example. Its correct targets average two extra tokens because of label tokenization.
 
-正式采用8张本机PRO6000，每条件两个互斥的256题分片，batch32。generate时间在GPU同步后测量，上表是两卡批量时间之和，不是单题延迟；约1%的差异也可能来自硬件/调度波动，不能据一次运行认定稳定加速。正式调度墙钟90.46秒，外层分配GPU时长0.198小时；包括7B/14B预检与探索在内，总计1.046分配GPU小时。分配时间包含模型加载、保存及调度轮询间隔，不是GPU内核活动时间；下载未计入GPU时间。
+Formal evaluation uses eight local PRO6000 GPUs, with two disjoint 256-example shards per condition and batch size 32. Generate time is measured after GPU synchronization; the table sums batch time across two GPUs rather than reporting per-example latency. Differences of approximately 1% may reflect hardware or scheduling variation and do not establish repeatable speedups. Formal dispatch wall time is 90.46 seconds and outer allocated GPU time is 0.198 hours. Including both models and all prechecks/exploration, total allocation is 1.046 GPU-hours. Allocation includes loading, saving, and polling intervals, not only kernel activity; downloads are excluded.
 
-## 冻结、验收与边界
+## Freezing, acceptance, and limits
 
-7B revision `a09a35458c702b33eeacc393d103063234e8bc28`；14B revision `cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8`。均官方原始权重、BF16、SDPA、无adapter、无训练。单user消息采用官方chat模板，由模板添加默认Qwen system文字。STEP/POSITION/NAME只改变标题规则及示例标题；ALIAS输入输出同步改名，沿用旧固定映射。
+7B revision: `a09a35458c702b33eeacc393d103063234e8bc28`; 14B revision: `cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8`. Both use official original weights, BF16, SDPA, no adapters, and no training. A single user message uses the official chat template, which adds the default Qwen system text. STEP/POSITION/NAME change only header rules and example headers. ALIAS applies the existing fixed renaming to both inputs and outputs.
 
-正式配置于2026-09-28 00:36:17 UTC冻结，先于全部8个正式作业。512新题与224探索题、12预检题及示例在“调用链＋四位输入”上两两分离；四组共享底层题。统一生成上限256，四组最大正确目标仅76–78 token，最大输入493，均远低于32,768上下文。源码和Prompt哈希、逐题token IDs及EOS、分片恰好一次合并均已核验。
+Formal configuration was frozen at 2026-09-28 00:36:17 UTC before all eight formal jobs. The 512 fresh examples, 224 exploration examples, 12 precheck examples, and demonstration are pairwise disjoint in call-chain/four-digit-input pairs. Groups share underlying examples. The generation limit is 256 throughout; maximum correct targets are 76–78 tokens and maximum input length is 493, well below the 32,768-token context. Source/prompt hashes, token IDs and EOS, and exactly-once shard merging were verified.
 
-全流程3,040条输出已重新评分，严格旧评分与独立实现一致；60个作业退出码均0，无OOM或中断。各阶段不足1小时，未到小时巡检触发点即完成；完成后确认本机8卡显存均0MiB，无残留推理进程。原训练实验未改。详细验收见[COMPLETION_AUDIT.md](COMPLETION_AUDIT.md)。
+All 3,040 outputs were rescored, with agreement between the original strict scorer and independent implementation. All 60 jobs exited with code 0; no OOM or interruption occurred. Every stage finished before the hourly inspection threshold. Final checks found 0 MiB on all eight local GPUs and no residual inference processes. Earlier training experiments are unchanged. See [COMPLETION_AUDIT.md](COMPLETION_AUDIT.md).
 
-本轮只支持这一模型、Prompt、映射和九工具合成任务上的判断。ALIAS辅助收益值得后续研究，但不代表已验证通用身份复述方法、真实Agent迁移或创新性；跨模型独立复核和真实执行任务留待后续，未对外发布。
+Conclusions apply to this model, prompt, mapping, and nine-tool synthetic task. The auxiliary ALIAS gain merits further study but does not validate a general identity-repetition method, real-agent transfer, or novelty. Independent cross-model replication and real execution tasks remain future work; results were not externally published.
 
-证据入口：[运行前登记](REGISTRATION.md)、[7B探索](7B_EXPLORATION.md)、[正式Prompt](fallback14/prompts/)、[正式冻结与数据](fallback14/data/formal-L2-manifest.json)、[原始输出](fallback14/runs/)、[配对统计](fallback14/analysis/scores-formal-L2.json)、[复核错误分析](analysis/formal-errors-reviewed.json)、[总审计与成本](analysis/final-research-audit.json)。
+Evidence: [preregistration](REGISTRATION.md), [7B exploration](7B_EXPLORATION.md), [formal prompts](fallback14/prompts/), [formal freeze and data](fallback14/data/formal-L2-manifest.json), [raw outputs](fallback14/runs/), [paired statistics](fallback14/analysis/scores-formal-L2.json), [reviewed errors](analysis/formal-errors-reviewed.json), and [overall audit and costs](analysis/final-research-audit.json).

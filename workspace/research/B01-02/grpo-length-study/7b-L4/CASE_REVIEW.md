@@ -1,8 +1,8 @@
-# 7b-L4：错误与标题核验
+# 7b-L4: error and heading checks
 
-以下只解释已保存输出，不改变严格主评分。互斥归类按Answer数量、未知行、操作序列、数字步骤、仅最终Answer的固定优先顺序进行；不是按时间定位首错。原始可重叠错误标志保存在analysis/results.json。
+The analysis below interprets saved outputs without changing the strict primary score. Mutually exclusive categories follow a fixed priority: Answer count, unknown lines, operation sequence, numerical steps, and final Answer only. This is not temporal first-error attribution. Original overlapping error flags are retained in analysis/results.json.
 
-| 条件/seed | 失败/512 | Answer数量 | 未知行 | 操作序列 | 数字步骤 | 仅最终Answer | 仅额外Trace标题 | 其他标题问题 | 截断 |
+| Condition/seed | Failures/512 | Answer count | Unknown lines | Operation sequence | Numerical steps | Final Answer only | Extra Trace heading only | Other heading issues | Truncation |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | STEP/base | 508 | 2 | 13 | 438 | 55 | 0 | 0 | 175 | 0 |
 | STEP/301 | 508 | 1 | 18 | 433 | 56 | 0 | 0 | 163 | 0 |
@@ -13,15 +13,15 @@
 | NAME/302 | 491 | 30 | 16 | 265 | 179 | 1 | 0 | 63 | 0 |
 | NAME/303 | 489 | 27 | 20 | 250 | 192 | 0 | 0 | 53 | 0 |
 
-base为原始模型step0，其余为对应seed的step100。额外Trace标题可能与严格成功同时出现；它不代表新增工具调用。操作序列不匹配涵盖原始操作遗漏、增加、替换和顺序改变，不能直接反推遗漏了几次高层工具调用。EOS只说明主动结束，不保证执行完整。互斥优先级归类存在遮蔽：操作序列改善后，更多失败会落入数字错误类别；不能仅凭该类别计数增加就判断数字计算变差，应同时查看主报告中的可重叠数字错误标志。
+base denotes the original model at step0; other rows are seed-specific step100 results. Extra Trace headings can occur alongside strict success and do not indicate additional tool calls. Operation-sequence mismatches include omitted, added, substituted, and reordered raw operations; they cannot directly identify how many high-level tool calls were omitted. EOS indicates voluntary stopping, not necessarily complete execution. Priority-based categories can mask other errors: once operation sequences improve, more failures may be categorized as numerical errors. An increased count in that category alone does not establish worse numerical computation; also consult the overlapping numerical-error flags in the main report.
 
-案例按每个条件/seed/错误类别的最小题目ID选取，展示原始与标准轨迹；类别频率以上表为准。
+Examples are selected by the smallest example ID within each condition/seed/error category, showing raw and reference trajectories. Use the table above for category frequencies.
 
-## STEP seed301 L4-test-00000：operation_sequence
+## STEP seed301 L4-test-00000: operation_sequence
 
-严格正确=0；标题合规=1；输入=[5, 2, 5, 8]；工具索引=[3, 3, 7, 3]。
+Strictly correct=0; heading compliant=1; input=[5, 2, 5, 8]; tool indices=[3, 3, 7, 3].
 
-实际输出：
+Actual output:
 ```text
 step:
 inc 6 3 6 9
@@ -43,7 +43,7 @@ swap 9 1 2 6
 Answer: 1 9 2 6
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 inc 6 3 6 9
@@ -62,11 +62,11 @@ Answer: 6 9 2 9
 
 ```
 
-## STEP seed301 L4-test-00013：numeric_step
+## STEP seed301 L4-test-00013: numeric_step
 
-严格正确=0；标题合规=1；输入=[7, 2, 4, 5]；工具索引=[8, 4, 1, 8]。
+Strictly correct=0; heading compliant=1; input=[7, 2, 4, 5]; tool indices=[8, 4, 1, 8].
 
-实际输出：
+Actual output:
 ```text
 step:
 inc 8 3 5 6
@@ -87,7 +87,7 @@ inc 0 2 3 5
 Answer: 0 2 3 5
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 inc 8 3 5 6
@@ -109,11 +109,11 @@ Answer: 3 0 2 5
 
 ```
 
-## STEP seed301 L4-test-00052：unrecognized_extra_lines
+## STEP seed301 L4-test-00052: unrecognized_extra_lines
 
-严格正确=0；标题合规=1；输入=[2, 2, 9, 4]；工具索引=[4, 7, 3, 6]。
+Strictly correct=0; heading compliant=1; input=[2, 2, 9, 4]; tool indices=[4, 7, 3, 6].
 
-实际输出：
+Actual output:
 ```text
 step:
 rot 2 9 4 2
@@ -133,7 +133,7 @@ inc 4 1 5 6
 Answer: 4 1 5 6
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 rot 2 9 4 2
@@ -154,11 +154,11 @@ Answer: 5 8 5 3
 
 ```
 
-## STEP seed301 L4-test-00227：other_title_noncompliance
+## STEP seed301 L4-test-00227: other_title_noncompliance
 
-严格正确=1；标题合规=0；输入=[4, 1, 8, 9]；工具索引=[1, 3, 0, 7]。
+Strictly correct=1; heading compliant=0; input=[4, 1, 8, 9]; tool indices=[1, 3, 0, 7].
 
-实际输出：
+Actual output:
 ```text
 step:
 rev 9 8 1 4
@@ -176,7 +176,7 @@ inc 2 3 8 5
 Answer: 2 3 8 5
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 rev 9 8 1 4
@@ -196,11 +196,11 @@ Answer: 2 3 8 5
 
 ```
 
-## STEP seed301 L4-test-00379：missing_or_multiple_Answer
+## STEP seed301 L4-test-00379: missing_or_multiple_Answer
 
-严格正确=0；标题合规=1；输入=[9, 0, 6, 8]；工具索引=[1, 4, 0, 4]。
+Strictly correct=0; heading compliant=1; input=[9, 0, 6, 8]; tool indices=[1, 4, 0, 4].
 
-实际输出：
+Actual output:
 ```text
 step:
 rev 8 6 0 9
@@ -221,7 +221,7 @@ swap 3 12 3 2
 Answer: 3 12 3 2
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 rev 8 6 0 9
@@ -242,11 +242,11 @@ Answer: 0 2 3 4
 
 ```
 
-## STEP seed302 L4-test-00000：operation_sequence
+## STEP seed302 L4-test-00000: operation_sequence
 
-严格正确=0；标题合规=1；输入=[5, 2, 5, 8]；工具索引=[3, 3, 7, 3]。
+Strictly correct=0; heading compliant=1; input=[5, 2, 5, 8]; tool indices=[3, 3, 7, 3].
 
-实际输出：
+Actual output:
 ```text
 step:
 inc 6 3 6 9
@@ -268,7 +268,7 @@ swap 9 1 2 6
 Answer: 1 9 2 6
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 inc 6 3 6 9
@@ -287,11 +287,11 @@ Answer: 6 9 2 9
 
 ```
 
-## STEP seed302 L4-test-00002：unrecognized_extra_lines
+## STEP seed302 L4-test-00002: unrecognized_extra_lines
 
-严格正确=0；标题合规=1；输入=[1, 8, 9, 0]；工具索引=[4, 1, 6, 1]。
+Strictly correct=0; heading compliant=1; input=[1, 8, 9, 0]; tool indices=[4, 1, 6, 1].
 
-实际输出：
+Actual output:
 ```text
 step:
 rot 8 9 0 1
@@ -311,7 +311,7 @@ inc 0 4 3 3
 Answer: 0 4 3 3
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 rot 8 9 0 1
@@ -333,11 +333,11 @@ Answer: 0 1 9 8
 
 ```
 
-## STEP seed302 L4-test-00013：numeric_step
+## STEP seed302 L4-test-00013: numeric_step
 
-严格正确=0；标题合规=1；输入=[7, 2, 4, 5]；工具索引=[8, 4, 1, 8]。
+Strictly correct=0; heading compliant=1; input=[7, 2, 4, 5]; tool indices=[8, 4, 1, 8].
 
-实际输出：
+Actual output:
 ```text
 step:
 inc 8 3 5 6
@@ -358,7 +358,7 @@ inc 0 2 3 4
 Answer: 0 2 3 4
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 inc 8 3 5 6
@@ -380,11 +380,11 @@ Answer: 3 0 2 5
 
 ```
 
-## STEP seed302 L4-test-00227：other_title_noncompliance
+## STEP seed302 L4-test-00227: other_title_noncompliance
 
-严格正确=1；标题合规=0；输入=[4, 1, 8, 9]；工具索引=[1, 3, 0, 7]。
+Strictly correct=1; heading compliant=0; input=[4, 1, 8, 9]; tool indices=[1, 3, 0, 7].
 
-实际输出：
+Actual output:
 ```text
 step:
 rev 9 8 1 4
@@ -402,7 +402,7 @@ inc 2 3 8 5
 Answer: 2 3 8 5
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 rev 9 8 1 4
@@ -422,11 +422,11 @@ Answer: 2 3 8 5
 
 ```
 
-## STEP seed303 L4-test-00000：operation_sequence
+## STEP seed303 L4-test-00000: operation_sequence
 
-严格正确=0；标题合规=0；输入=[5, 2, 5, 8]；工具索引=[3, 3, 7, 3]。
+Strictly correct=0; heading compliant=0; input=[5, 2, 5, 8]; tool indices=[3, 3, 7, 3].
 
-实际输出：
+Actual output:
 ```text
 step:
 inc 6 3 6 9
@@ -441,7 +441,7 @@ inc 8 1 4 5
 Answer: 8 1 4 5
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 inc 6 3 6 9
@@ -460,11 +460,11 @@ Answer: 6 9 2 9
 
 ```
 
-## STEP seed303 L4-test-00003：unrecognized_extra_lines
+## STEP seed303 L4-test-00003: unrecognized_extra_lines
 
-严格正确=0；标题合规=1；输入=[8, 2, 0, 0]；工具索引=[4, 7, 8, 5]。
+Strictly correct=0; heading compliant=1; input=[8, 2, 0, 0]; tool indices=[4, 7, 8, 5].
 
-实际输出：
+Actual output:
 ```text
 step:
 rot 2 0 0 8
@@ -484,7 +484,7 @@ swap 5 9 6 4
 Answer: 9 5 6 4
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 rot 2 0 0 8
@@ -505,11 +505,11 @@ Answer: 4 6 6 8
 
 ```
 
-## STEP seed303 L4-test-00013：numeric_step
+## STEP seed303 L4-test-00013: numeric_step
 
-严格正确=0；标题合规=1；输入=[7, 2, 4, 5]；工具索引=[8, 4, 1, 8]。
+Strictly correct=0; heading compliant=1; input=[7, 2, 4, 5]; tool indices=[8, 4, 1, 8].
 
-实际输出：
+Actual output:
 ```text
 step:
 inc 8 3 5 6
@@ -530,7 +530,7 @@ inc 0 2 3 4
 Answer: 0 2 3 4
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 inc 8 3 5 6
@@ -552,11 +552,11 @@ Answer: 3 0 2 5
 
 ```
 
-## STEP seed303 L4-test-00227：other_title_noncompliance
+## STEP seed303 L4-test-00227: other_title_noncompliance
 
-严格正确=1；标题合规=0；输入=[4, 1, 8, 9]；工具索引=[1, 3, 0, 7]。
+Strictly correct=1; heading compliant=0; input=[4, 1, 8, 9]; tool indices=[1, 3, 0, 7].
 
-实际输出：
+Actual output:
 ```text
 step:
 rev 9 8 1 4
@@ -574,7 +574,7 @@ inc 2 3 8 5
 Answer: 2 3 8 5
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 rev 9 8 1 4
@@ -594,11 +594,11 @@ Answer: 2 3 8 5
 
 ```
 
-## STEP seed303 L4-test-00379：missing_or_multiple_Answer
+## STEP seed303 L4-test-00379: missing_or_multiple_Answer
 
-严格正确=0；标题合规=1；输入=[9, 0, 6, 8]；工具索引=[1, 4, 0, 4]。
+Strictly correct=0; heading compliant=1; input=[9, 0, 6, 8]; tool indices=[1, 4, 0, 4].
 
-实际输出：
+Actual output:
 ```text
 step:
 rev 8 6 0 9
@@ -619,7 +619,7 @@ swap 3 10 2 2
 Answer: 10 3 2 2
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 step:
 rev 8 6 0 9
@@ -640,11 +640,11 @@ Answer: 0 2 3 4
 
 ```
 
-## NAME seed301 L4-test-00000：operation_sequence
+## NAME seed301 L4-test-00000: operation_sequence
 
-严格正确=0；标题合规=0；输入=[5, 2, 5, 8]；工具索引=[3, 3, 7, 3]。
+Strictly correct=0; heading compliant=0; input=[5, 2, 5, 8]; tool indices=[3, 3, 7, 3].
 
-实际输出：
+Actual output:
 ```text
 gold:
 inc 6 3 6 9
@@ -661,7 +661,7 @@ rev 5 8 1 8
 Answer: 5 8 1 8
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 gold:
 inc 6 3 6 9
@@ -680,11 +680,11 @@ Answer: 6 9 2 9
 
 ```
 
-## NAME seed301 L4-test-00001：numeric_step
+## NAME seed301 L4-test-00001: numeric_step
 
-严格正确=0；标题合规=1；输入=[8, 8, 9, 5]；工具索引=[7, 4, 8, 0]。
+Strictly correct=0; heading compliant=1; input=[8, 8, 9, 5]; tool indices=[7, 4, 8, 0].
 
-实际输出：
+Actual output:
 ```text
 gray:
 rot 9 8 5 8
@@ -704,7 +704,7 @@ inc 1 5 4 1
 Answer: 1 5 4 1
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 gray:
 rot 8 9 5 8
@@ -725,11 +725,11 @@ Answer: 1 4 5 4
 
 ```
 
-## NAME seed301 L4-test-00005：missing_or_multiple_Answer
+## NAME seed301 L4-test-00005: missing_or_multiple_Answer
 
-严格正确=0；标题合规=1；输入=[4, 2, 2, 8]；工具索引=[3, 6, 2, 0]。
+Strictly correct=0; heading compliant=1; input=[4, 2, 2, 8]; tool indices=[3, 6, 2, 0].
 
-实际输出：
+Actual output:
 ```text
 gold:
 inc 5 3 3 9
@@ -745,7 +745,7 @@ rot 1 5 5 7
 inc 2 6 6 8
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 gold:
 inc 5 3 3 9
@@ -764,11 +764,11 @@ Answer: 6 2 8 8
 
 ```
 
-## NAME seed301 L4-test-00011：unrecognized_extra_lines
+## NAME seed301 L4-test-00011: unrecognized_extra_lines
 
-严格正确=0；标题合规=1；输入=[1, 6, 7, 8]；工具索引=[3, 7, 0, 8]。
+Strictly correct=0; heading compliant=1; input=[1, 6, 7, 8]; tool indices=[3, 7, 0, 8].
 
-实际输出：
+Actual output:
 ```text
 gold:
 inc 2 7 8 9
@@ -787,7 +787,7 @@ inc 7 4 1 0
 Answer: 7 4 1 0
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 gold:
 inc 2 7 8 9
@@ -807,11 +807,11 @@ Answer: 7 4 3 2
 
 ```
 
-## NAME seed301 L4-test-00172：final_Answer_only
+## NAME seed301 L4-test-00172: final_Answer_only
 
-严格正确=0；标题合规=1；输入=[9, 5, 4, 0]；工具索引=[0, 7, 7, 2]。
+Strictly correct=0; heading compliant=1; input=[9, 5, 4, 0]; tool indices=[0, 7, 7, 2].
 
-实际输出：
+Actual output:
 ```text
 red:
 rot 5 4 0 9
@@ -830,7 +830,7 @@ rot 3 2 8 7
 Answer: 8 7 3 2
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 red:
 rot 5 4 0 9
@@ -850,11 +850,11 @@ Answer: 3 2 8 7
 
 ```
 
-## NAME seed302 L4-test-00000：operation_sequence
+## NAME seed302 L4-test-00000: operation_sequence
 
-严格正确=0；标题合规=1；输入=[5, 2, 5, 8]；工具索引=[3, 3, 7, 3]。
+Strictly correct=0; heading compliant=1; input=[5, 2, 5, 8]; tool indices=[3, 3, 7, 3].
 
-实际输出：
+Actual output:
 ```text
 gold:
 inc 6 3 6 9
@@ -874,7 +874,7 @@ rev 9 7 0 3
 Answer: 9 7 0 3
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 gold:
 inc 6 3 6 9
@@ -893,11 +893,11 @@ Answer: 6 9 2 9
 
 ```
 
-## NAME seed302 L4-test-00001：missing_or_multiple_Answer
+## NAME seed302 L4-test-00001: missing_or_multiple_Answer
 
-严格正确=0；标题合规=1；输入=[8, 8, 9, 5]；工具索引=[7, 4, 8, 0]。
+Strictly correct=0; heading compliant=1; input=[8, 8, 9, 5]; tool indices=[7, 4, 8, 0].
 
-实际输出：
+Actual output:
 ```text
 gray:
 rot 9 8 5 8
@@ -916,7 +916,7 @@ rot 4 7 2 3
 inc 5 8 3 4
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 gray:
 rot 8 9 5 8
@@ -937,11 +937,11 @@ Answer: 1 4 5 4
 
 ```
 
-## NAME seed302 L4-test-00002：numeric_step
+## NAME seed302 L4-test-00002: numeric_step
 
-严格正确=0；标题合规=1；输入=[1, 8, 9, 0]；工具索引=[4, 1, 6, 1]。
+Strictly correct=0; heading compliant=1; input=[1, 8, 9, 0]; tool indices=[4, 1, 6, 1].
 
-实际输出：
+Actual output:
 ```text
 pink:
 rot 8 9 0 1
@@ -962,7 +962,7 @@ inc 1 0 9 8
 Answer: 1 0 9 8
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 pink:
 rot 8 9 0 1
@@ -984,11 +984,11 @@ Answer: 0 1 9 8
 
 ```
 
-## NAME seed302 L4-test-00011：unrecognized_extra_lines
+## NAME seed302 L4-test-00011: unrecognized_extra_lines
 
-严格正确=0；标题合规=1；输入=[1, 6, 7, 8]；工具索引=[3, 7, 0, 8]。
+Strictly correct=0; heading compliant=1; input=[1, 6, 7, 8]; tool indices=[3, 7, 0, 8].
 
-实际输出：
+Actual output:
 ```text
 gold:
 inc 2 7 8 9
@@ -1007,7 +1007,7 @@ inc 7 4 1 0
 Answer: 7 4 1 0
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 gold:
 inc 2 7 8 9
@@ -1027,11 +1027,11 @@ Answer: 7 4 3 2
 
 ```
 
-## NAME seed302 L4-test-00389：final_Answer_only
+## NAME seed302 L4-test-00389: final_Answer_only
 
-严格正确=0；标题合规=1；输入=[2, 4, 0, 7]；工具索引=[2, 8, 1, 5]。
+Strictly correct=0; heading compliant=1; input=[2, 4, 0, 7]; tool indices=[2, 8, 1, 5].
 
-实际输出：
+Actual output:
 ```text
 green:
 rot 4 0 7 2
@@ -1050,7 +1050,7 @@ swap 2 7 5 9
 Answer: 7 2 5 9
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 green:
 rot 4 0 7 2
@@ -1070,11 +1070,11 @@ Answer: 2 7 5 9
 
 ```
 
-## NAME seed303 L4-test-00000：numeric_step
+## NAME seed303 L4-test-00000: numeric_step
 
-严格正确=0；标题合规=1；输入=[5, 2, 5, 8]；工具索引=[3, 3, 7, 3]。
+Strictly correct=0; heading compliant=1; input=[5, 2, 5, 8]; tool indices=[3, 3, 7, 3].
 
-实际输出：
+Actual output:
 ```text
 gold:
 inc 6 3 6 9
@@ -1092,7 +1092,7 @@ rev 5 9 2 9
 Answer: 5 9 2 9
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 gold:
 inc 6 3 6 9
@@ -1111,11 +1111,11 @@ Answer: 6 9 2 9
 
 ```
 
-## NAME seed303 L4-test-00005：missing_or_multiple_Answer
+## NAME seed303 L4-test-00005: missing_or_multiple_Answer
 
-严格正确=0；标题合规=1；输入=[4, 2, 2, 8]；工具索引=[3, 6, 2, 0]。
+Strictly correct=0; heading compliant=1; input=[4, 2, 2, 8]; tool indices=[3, 6, 2, 0].
 
-实际输出：
+Actual output:
 ```text
 gold:
 inc 5 3 3 9
@@ -1131,7 +1131,7 @@ rot 7 1 5 5
 inc 8 2 6 6
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 gold:
 inc 5 3 3 9
@@ -1150,11 +1150,11 @@ Answer: 6 2 8 8
 
 ```
 
-## NAME seed303 L4-test-00008：operation_sequence
+## NAME seed303 L4-test-00008: operation_sequence
 
-严格正确=0；标题合规=1；输入=[8, 2, 0, 1]；工具索引=[4, 1, 0, 6]。
+Strictly correct=0; heading compliant=1; input=[8, 2, 0, 1]; tool indices=[4, 1, 0, 6].
 
-实际输出：
+Actual output:
 ```text
 pink:
 rot 2 0 1 8
@@ -1173,7 +1173,7 @@ neg 6 7 9 4
 Answer: 6 7 9 4
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 pink:
 rot 2 0 1 8
@@ -1194,11 +1194,11 @@ Answer: 5 7 9 6
 
 ```
 
-## NAME seed303 L4-test-00011：unrecognized_extra_lines
+## NAME seed303 L4-test-00011: unrecognized_extra_lines
 
-严格正确=0；标题合规=1；输入=[1, 6, 7, 8]；工具索引=[3, 7, 0, 8]。
+Strictly correct=0; heading compliant=1; input=[1, 6, 7, 8]; tool indices=[3, 7, 0, 8].
 
-实际输出：
+Actual output:
 ```text
 gold:
 inc 2 7 8 9
@@ -1217,7 +1217,7 @@ inc 7 4 1 0
 Answer: 7 4 1 0
 ```
 
-标准轨迹：
+Reference trajectory:
 ```text
 gold:
 inc 2 7 8 9

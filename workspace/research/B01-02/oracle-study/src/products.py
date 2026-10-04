@@ -25,9 +25,9 @@ for model in ['qwen1.5b','qwen3b','qwen7b','qwen32b']:
    ss.append(dict(seed=seed,n=96,A_sequence_specialist=pa,B_execution_specialist=pb,product=pa*pb,both_oracle_tasks_correct=sum(a and b for a,b,j in pairs)/96,joint_autonomous=sum(j for a,b,j in pairs)/96))
   if len(ss)==3:rows.append(dict(model=model,length=L,n=288,seeds=ss,**{k:sum(s[k] for s in ss)/3 for k in ['A_sequence_specialist','B_execution_specialist','product','both_oracle_tasks_correct','joint_autonomous']}))
 (R/'analysis/oracle-products.json').write_text(json.dumps(dict(rows=rows,note='Specialist A learns names/Done with actual selected-tool execution provided; specialist B learns execution with correct names supplied. Product per seed. Same-item A&B is observed co-success in two separate oracle evaluations, not a run of a composed agent. Do not treat oracle-token correctness as learned capability.'),indent=2))
-lines=['# 两个独立训练子任务与联合执行\n','独立确认集；三个seed分别求乘积后平均。A与B来自两个不同专用检查点。两子任务同题均对是两次oracle评测的配对统计，不是实际运行双模型组合。只展示三seed完整的单元。\n']
+lines=['# Two separately trained subtasks and joint execution\n','Independent confirmation set; compute products separately for three seeds, then average. A and B come from different specialist checkpoints. Both subtasks correct on the same example is a paired statistic from two oracle evaluations, not an executed two-model composition. Only cells with all three seeds complete are shown.\n']
 for model in ['qwen1.5b','qwen3b','qwen7b','qwen32b']:
- lines+=['\n## '+model,'|调用数|A顺序任务|B全部展开任务|A×B|两子任务同题均对|联合自主执行|','|---|---:|---:|---:|---:|---:|']
+ lines+=['\n## '+model,'|Calls|A sequence task|B all-expansions task|A x B|Both subtasks correct on the same example|Joint autonomous execution|','|---|---:|---:|---:|---:|---:|']
  for z in rows:
   if z['model']==model:lines.append('| '+str(z['length'])+' | '+' | '.join(f'{100*z[k]:.2f}%' for k in ['A_sequence_specialist','B_execution_specialist','product','both_oracle_tasks_correct','joint_autonomous'])+' |')
 (R/'ORACLE_PRODUCTS.md').write_text('\n'.join(lines));print('Complete model/length cells:',len(rows))

@@ -19,10 +19,10 @@ for control in ['plan','reminder','todo']:
  paired.append(dict(control=control,n=len(pairs),identity_only_complete=sum(a['grade']['complete'] and not b['grade']['complete'] for a,b in pairs),control_only_complete=sum(b['grade']['complete'] and not a['grade']['complete'] for a,b in pairs),both_complete=sum(a['grade']['complete'] and b['grade']['complete'] for a,b in pairs)))
 result=dict(records=len(lookup),missing=missing,summary=summaries,paired=paired,source_sha256=hashes,note='Development smoke, three task-generator families; no confirmatory significance claim. Greedy trajectories are not repeated decoding seeds. Tool returns are user-role messages in a custom JSON action harness, not a production agent SDK.')
 (R/'analysis/results.json').write_text(json.dumps(result,indent=2));print('Analyzed',len(lookup),'trajectories; missing',len(missing),flush=True)
-lines=['# 真实文件/数据/代码Agent冒烟结果','',f'已完成 {len(lookup)}/96 条主轨迹。这是开发冒烟，不是确认性实验。','', '| 条件 | 完成率 | 未完成主动结束 | 平均输出token | 平均工具/结束轮次 |','|---|---:|---:|---:|---:|']
+lines=['# File/data/code agent smoke-test results','',f'Completed {len(lookup)}/96 main trajectories. This is a development smoke test, not a confirmatory experiment.','', '| Condition | Completion rate | Voluntary termination while incomplete | Mean output tokens | Mean tool/termination rounds |','|---|---:|---:|---:|---:|']
 for x in summaries:
  if x['family']=='all' and x['length']=='all':lines.append(f"| {x['condition']} | {100*x['complete_rate']:.1f}% | {100*x['premature_finish_rate']:.1f}% | {x['mean_generated_tokens']:.0f} | {x['mean_turns']:.1f} |")
-lines += ['','各任务家族、长度、配对差及原始路径见analysis/results.json，所有逐题判定见analysis/cases.jsonl。结论须经原始轨迹审计后填写，不自动把名称条件的任何差异归因于注意力或记忆机制。']
+lines += ['','See analysis/results.json for every task family, length, paired difference, and raw path, and analysis/cases.jsonl for per-example judgments. Conclusions require raw-trajectory audits; differences involving names are not automatically attributed to attention or memory mechanisms.']
 (R/'REPORT.md').write_text('\n'.join(lines)+'\n')
 if not missing:
  import subprocess,sys

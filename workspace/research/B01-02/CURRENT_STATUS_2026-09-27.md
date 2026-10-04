@@ -1,52 +1,52 @@
-# B01-02 当前情况总览
+# B01-02 status overview
 
-更新：2026-09-27。内部研究汇总，未发表；以下区分实际结果、解释和下一步建议。当前无正在等待恢复的训练。详细数据与原始轨迹仍在各实验目录。
+Updated 2026-09-27. Unpublished internal research summary, separating results, interpretation, and recommendations. No training awaits restart. Detailed data/raw trajectories remain in experiment directories.
 
-资源更新（2026-09-27）：用户重新提供三台PRO6000入口，已只读连通核对。`REDACTED_HOST`的主机名和内部地址与当前本机一致，是本机8卡入口；`REDACTED_HOST`和`REDACTED_HOST`各有4卡。三台均为RTX PRO 6000 Blackwell、共享当前项目目录；核对时GPU显存占用均为0 MiB、利用率0%。这是时点快照，后续调度前需重新检查。没有由这次资源核对启动新的研究作业；20 seed复核仍按实际记录仅在本机完成。登录凭据不写入研究文档。
+Resource update, 2026-09-27: the user supplied three PRO6000 endpoints, checked read-only. One `REDACTED_HOST` matches the current local hostname/internal address and exposes eight local GPUs; the other two `REDACTED_HOST` endpoints each expose four. All are RTX PRO6000 Blackwell with the shared project directory. At inspection, memory was 0 MiB and utilization 0% throughout. This is a point-in-time snapshot requiring recheck before scheduling. Resource inspection launched no study jobs; the 20-seed replication ran only locally as recorded. Credentials are not written into research documents.
 
-## 一句话
+## Main point
 
-在固定9工具、给定调用顺序的受控任务中，**输出当前工具的稳定身份标签，与比只写`step`或位置编号更好的长执行表现相关**；1.5B/3B/7B的20训练seed复核使这个观察更稳。结果还不足以证明“名称—操作绑定”是唯一原因，也未证明能改善真实Agent。
+In the controlled nine-tool task with supplied order, **stable current-tool identity labels are associated with better long execution than step or position labels**. Twenty-seed 1.5B/3B/7B replication strengthens this observation, but does not isolate name-operation binding as the sole cause or establish real-agent gains.
 
-## 具体任务与最新实验
+## Task and latest experiment
 
-输入是四位数字和已给的工具序列。模型要逐工具写出规定的小操作、每步数字和最终`Answer`。训练题只有1–2个工具，测试3/4/5/6/8个工具；完整成功要求全部操作和中间数字、最终答案都正确。它测试长执行外推，不测试自主制定计划。
+Inputs contain four digits and a supplied tool sequence. Models emit prescribed primitives, each numeric state, and final `Answer`. Training has 1–2 tools; tests have 3/4/5/6/8. Complete success requires every operation, intermediate number, and answer. This tests execution-length extrapolation, not autonomous planning.
 
-四种输出标题按当前讨论顺序：统一`step`（仅段边界）；`step1/step2`（调用位置）；固定`toolA`–`toolI`（稳定工具身份，输入输出同步改名）；原颜色工具名（稳定工具身份，原词形）。最后两组都保留输入输出同名。位置与身份是不同信息类型，四列不是严格单调信息量控制。
+Four header types: uniform `step` (boundaries), `step1/step2` (positions), fixed `toolA`–`toolI` (stable identity with input/output renaming), and original color names (stable identity/original forms). Both identity groups share names across input/output. Position and identity encode different information; columns are not a strictly monotonic information control.
 
-20训练seed、旧独立480题的完整轨迹成功率，均值±seed间样本SD：
+Complete-trajectory success on the existing independent 480 tests, mean ± sample SD across 20 training seeds:
 
-|模型|统一step|位置编号|固定改名|原工具名称|
+| Model | Uniform step | Position index | Fixed alias | Original tool name |
 |---|---:|---:|---:|---:|
 |1.5B|0.00±0.00%|0.00±0.00%|15.21±8.92%|18.84±5.79%|
 |3B|0.00±0.00%|0.87±0.78%|49.45±11.68%|35.06±5.55%|
 |7B|13.49±6.00%|15.16±9.31%|43.73±15.19%|41.25±13.14%|
 
-同seed配对：固定改名高于位置编号，在三个规模均为20/20 seed同向，平均差分别+15.21、+48.57、+28.57个百分点。原工具名高于统一step也三个规模20/20同向。固定改名相对原工具名，3B为+14.39个百分点、18/20同向；1.5B和7B仍无法分清，7B为10胜/10负。32B目前只有原三seed，固定改名在旧独立集较原名称低，但给工具定义的原测试中结果反转；**不能把32B与20seed表合并成同等稳健结论**。
+Paired by seed, aliases beat positions in 20/20 seeds at all three scales, averaging +15.21, +48.57, +28.57 points. Original names beat step in 20/20 at all scales. Aliases beat original names at 3B by +14.39 points, with 18/20 positive seeds. The 1.5B/7B comparison remains unresolved; 7B splits 10 wins/10 losses. 32B has only three original seeds: aliases lose to original names on existing independent tests, but reverse with definitions on original tests. **Do not combine 32B with the 20-seed table as equally robust evidence.**
 
-## 相关但协议不同的结果
+## Related results under different protocols
 
-较早稳定性实验采用`EndTool/Done`交接，不可和上面的`Answer`分数相加或画进步曲线。在新400题上，32B一起训练/完整历史79.58%，只把操作输入改成当前工具和实际状态后为93.92%；3B对应35.67%→39.67%。这提示操作输入组织也重要，但同时改变了历史长度、未来列表和格式，不能只归因于身份或注意力。
+Earlier stability experiments use `EndTool/Done` handoffs and cannot be added to `Answer` scores or plotted as one progress curve. On 400 fresh examples, 32B joint/full-history accuracy is 79.58%, rising to 93.92% with only current-tool/actual-state operation inputs. For 3B, 35.67% rises to 39.67%. Operation-input organization matters, but history length, future lists, and format change together, preventing attribution solely to identity or attention.
 
-## 能说到哪里
+## Supported scope
 
-当前较稳的观察是**标签表示显著影响这个任务的长执行外推**，并且只给位置编号没有复现稳定身份标签的收益。不能声称已隔离身份本身的因果效应：位置标题`step3`以后从未在训练里作为标题出现；新增两条件监督目标token比原名称多约2.96%，改名输入更长；只测试一套改名映射和一批已反复使用的长题。三个规模虽有20训练seed，训练数据与测试程序仍固定，SD不覆盖换数据和换名称的波动。
+The firmer observation is that **label representation substantially affects long-execution extrapolation in this task**, and positions do not reproduce stable-identity gains. Identity itself is not causally isolated: position headers after step2 never appear as training headers; two new conditions have approximately 2.96% more supervised target tokens than original names, and alias inputs are longer. Only one mapping and repeatedly used long-test set are tested. Twenty seeds per scale still share fixed training data/test programs; SD does not cover changed datasets/names.
 
-## 初步查新判断
+## Initial novelty assessment
 
-“稳定称号对应工具/技能”不是新构思：[Toolformer](https://arxiv.org/abs/2302.04761)、[Voyager](https://arxiv.org/abs/2305.16291)等已经用有名工具或可复用技能；[Atomic Task Graph](https://arxiv.org/abs/2607.01942)显式管理子任务与执行依赖。[From Fixed Keys to Readable Schemas](https://arxiv.org/abs/2609.09476)直接比较函数身份表示；[Attributing Structured-Output Gains](https://arxiv.org/abs/2607.02595)指出接口格式对齐会被误当程序能力收益。
+Stable names for tools/skills are established in [Toolformer](https://arxiv.org/abs/2302.04761), [Voyager](https://arxiv.org/abs/2305.16291), and related work. [Atomic Task Graph](https://arxiv.org/abs/2607.01942) explicitly manages subtasks/dependencies. [From Fixed Keys to Readable Schemas](https://arxiv.org/abs/2609.09476) directly compares function-identity representations; [Attributing Structured-Output Gains](https://arxiv.org/abs/2607.02595) notes interface alignment can be mistaken for program-capability gains.
 
-当前可能的研究增量是更窄的受控问题：**在匹配格式与训练暴露后，输出当前工具身份是否独立改善短训练向长执行外推；这种效应是否迁移到真实Agent完整完成率。**目前尚未完成这两个关键验证，也未形成发表级新颖性判断。初步检索受arXiv/OpenAlex/Semantic Scholar限流，不能称穷尽查新。
+A possible contribution is narrower: **after matching format and training exposure, does outputting current-tool identity independently improve short-training to long-execution extrapolation, and does that transfer to complete real-agent tasks?** Neither key validation is complete, and publication-level novelty is unestablished. arXiv/OpenAlex/Semantic Scholar rate limits constrain preliminary searches; this is not exhaustive review.
 
-## 最值得审查与决定的下一步
+## Next decision worth reviewing
 
-先做小而关键的识别实验：多套预先固定的改名映射，匹配分词/长度，使位置标题在训练中有可比暴露，并使用新的长程序测试。若身份优势仍在，再用冻结Agent同一批真实长任务比较稳定任务ID、位置编号和语义任务名，固定工具定义、预算和验收器，报告完整完成、遗漏、提前结束和成本。若优势消失，收缩到“特定词形/训练协议影响特定玩具任务”，不继续扩大机制主张。
+First isolate key factors with multiple fixed alias maps, matched tokenization/lengths, comparable position-header training exposure, and fresh long programs. If identity gains persist, compare stable task IDs, positions, and semantic task names for a frozen agent on shared real long tasks, fixing tools, budgets, and acceptance checks. Report completion, omissions, early stopping, and costs. If gains disappear, narrow claims to particular word forms/training protocols in a toy task rather than expanding mechanism claims.
 
-## 阅读入口
+## Reading guide
 
-- [20 seed研究判断](label-seed-replication/CONCLUSIONS.md)：最新结果、可信边界与审计。
-- [20 seed详细表](label-seed-replication/REPORT.md)：均值、SD、配对差和原测试OOD。
-- [初步查新](label-seed-replication/NOVELTY_REVIEW_2026-09-27.md)：最近邻一手工作和待验证差异。
-- [标签四条件原始结论](label-controls/CONCLUSIONS.md)：含32B及给定义反例。
-- [分开训练与上下文结论](stability-study/CONCLUSIONS.md)：不同交接协议，不与上表直接比较。
-- [上一阶段综合审查资料](review-package-2026-09-26/RESEARCH_REVIEW_CN.md)：早于20 seed复核，作为背景读。
+- [20-seed conclusions](label-seed-replication/CONCLUSIONS.md): latest findings, scope, and audit.
+- [Detailed 20-seed tables](label-seed-replication/REPORT.md): means, SD, paired differences, and original OOD.
+- [Preliminary literature review](label-seed-replication/NOVELTY_REVIEW_2026-09-27.md): primary nearby work and unresolved distinctions.
+- [Original four-label conclusions](label-controls/CONCLUSIONS.md): includes 32B and definition-supplied counterexamples.
+- [Separate training and context](stability-study/CONCLUSIONS.md): a different handoff protocol, not directly comparable above.
+- [Previous-stage review package](review-package-2026-09-26/RESEARCH_REVIEW_CN.md): background preceding the 20-seed replication.

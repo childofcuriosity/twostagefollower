@@ -1,10 +1,10 @@
-# B01-02 GRPO长度扩展：结论
+﻿# B01-02 GRPO length scaling: conclusions
 
-36个正式run、全部固定检查点评测和逐条审计已完成。**14B、L5是本轮唯一符合预先登记的STEP验证终点20%–90%窗口的组合**；它既有学习空间，也已有明显的NAME训练收益。7B、L3与14B、L6也观察到较大收益，但STEP仍偏低。
+All 36 main runs, fixed-checkpoint evaluations, and record-level audits are complete. **14B, L5 is the only setting in this study within the preregistered 20%–90% STEP endpoint validation window.** It leaves room for learning while showing a clear benefit from NAME training. Substantial gains were also observed at 7B, L3 and 14B, L6, although STEP success remained low.
 
-主指标为严格完整轨迹成功率。下表为每组512道新测试题、三个seed的均值±样本SD；差值单位为百分点。STEP与NAME各自有不同的原模型Prompt起点，因此同时列出相对step0的学习增益差，避免把原有Prompt差别算成训练收益。
+The primary metric is strict full-trajectory success. The table reports three-seed means ± sample SD on 512 fresh test examples per setting; differences are in percentage points. STEP and NAME have different original-model prompt baselines, so the difference in learning gains relative to step0 is also reported to separate existing prompt differences from training gains.
 
-| 组合 | STEP step0→100 | NAME step0→100 | NAME−STEP终点差均值±SD | 两组学习增益之差 |
+| Setting | STEP step0→100 | NAME step0→100 | NAME−STEP endpoint difference, mean±SD | Difference in learning gains |
 |---|---:|---:|---:|---:|
 | 7b-L3 | 3.91%→8.27% ±0.60pp | 7.23%→32.75% ±3.72pp | +24.48 ±4.30 | +21.16 |
 | 7b-L4 | 0.78%→0.91% ±0.11pp | 2.93%→4.17% ±0.30pp | +3.26 ±0.23 | +1.11 |
@@ -13,42 +13,42 @@
 | 14b-L6 | 2.93%→4.56% ±0.49pp | 5.66%→38.74% ±15.69pp | +34.18 ±15.23 | +31.45 |
 | 14b-L7 | 0.78%→0.72% ±0.23pp | 3.52%→7.29% ±1.19pp | +6.58 ±0.98 | +3.84 |
 
-![原模型与训练后的长度曲线](figures/test-success-vs-length.png)
+![Length curves before and after training](figures/test-success-vs-length.png)
 
-## 合适的难度与收益边界
+## Suitable difficulty and limits of the gains
 
-14B、L5的STEP验证终点为26.95%、35.55%、44.14%，均值35.55%；按预先登记的基线难度规则入选，不依据NAME优势大小挑选。它的NAME测试终点为53.71%、78.32%、80.27%，STEP为24.41%、32.23%、42.19%；配对差为+29.30、+46.09、+38.09个百分点。NAME相对自身step0平均提高60.22个百分点，STEP提高27.47个百分点，学习增益差为+32.75个百分点。
+At 14B, L5, STEP endpoint validation success was 26.95%, 35.55%, and 44.14%, averaging 35.55%. This setting was selected by the preregistered baseline-difficulty rule, not by the size of NAME's advantage. NAME test endpoints were 53.71%, 78.32%, and 80.27%, versus 24.41%, 32.23%, and 42.19% for STEP; paired differences were +29.30, +46.09, and +38.09 percentage points. NAME improved by an average of 60.22 points over its own step0, versus 27.47 for STEP, giving a learning-gain difference of +32.75 points.
 
-7B、L3的NAME测试均值32.75%，STEP8.27%，学习增益差+21.16个百分点；14B、L6对应38.74%与4.56%，学习增益差+31.45个百分点。L6的NAME三个seed为29.10%、30.27%、56.84%，波动明显，不能只展示最好seed。两组都不满足本轮STEP20%–90%的候选窗口，不改窗口补选。
+At 7B, L3, mean NAME test success was 32.75%, versus 8.27% for STEP, with a learning-gain difference of +21.16 points. At 14B, L6, the corresponding values were 38.74% and 4.56%, with a learning-gain difference of +31.45 points. NAME's three L6 seeds scored 29.10%, 30.27%, and 56.84%, showing substantial variation; reporting only the best seed would be misleading. Neither setting meets the study's STEP 20%–90% candidate window, which is retained unchanged.
 
-7B、L4和14B、L7虽有正的端点差，但整体成功率仍低。7B、L5的STEP保持0%，NAME从step0的0.98%变为0.85%，没有观察到学习改善。即使六组合的18个终点配对差都为正，也不能据此声称六组合均有训练收益。
+7B, L4 and 14B, L7 have positive endpoint differences but still low overall success. At 7B, L5, STEP remains at 0%, while NAME moves from 0.98% at step0 to 0.85%, with no observed learning improvement. All 18 endpoint paired differences across the six settings are positive, but this does not establish training gains in all six settings.
 
-## 学得是否更快
+## Does learning become faster?
 
-全部36条固定验证曲线和预设60%/70%/80%/90%门槛见[完整报告](REPORT.md)。14B、L5的NAME seed302与303均在step70首次达到60%，分别在step90与80首次达到70%；NAME seed301和全部STEP在100步内未达到60%。全部组合均未达到80%或90%验证门槛。测试端点超过80%不算达到验证门槛。
+The [full report](REPORT.md) contains all 36 fixed validation curves and the preset 60%/70%/80%/90% thresholds. At 14B, L5, NAME seeds 302 and 303 first reached 60% at step70 and first reached 70% at step90 and step80, respectively. NAME seed301 and every STEP run failed to reach 60% within 100 steps. No setting reached the 80% or 90% validation thresholds. A test endpoint above 80% does not count as reaching the validation threshold.
 
-完整曲线支持7B L3、14B L5/L6的NAME学习改善；但不能给没有达到门槛的STEP填造一个步数，再声称NAME快若干倍。相同100次更新只表示相同题目和采样预算，不能等同相同计算量。
+The complete curves support improved NAME learning at 7B L3 and 14B L5/L6. For STEP runs that never reach a threshold, no step count can be assigned to claim a speedup factor. Matching 100 updates matches example and sampling budgets, not compute.
 
-![所有固定验证学习曲线](figures/all-learning-curves.png)
+![All fixed validation learning curves](figures/all-learning-curves.png)
 
-## 错误与低分原因
+## Errors and low-success settings
 
-14B、L5在512题上的端点平均操作序列不匹配数由STEP的197降至NAME的50.33，局部数字错误由229.33降至112；14B、L6分别为352.33→112.33、415.33→252；7B、L3分别为324.67→113.33、390.67→300.33。这些标志可重叠，不能相加成失败数。收益同时涉及操作展开和数字执行，不能只解释为标题格式变好或少提前结束。
+Across 512 endpoint examples at 14B, L5, the mean operation-sequence mismatch count fell from 197 for STEP to 50.33 for NAME, while local numerical errors fell from 229.33 to 112. The corresponding changes were 352.33→112.33 and 415.33→252 at 14B, L6, and 324.67→113.33 and 390.67→300.33 at 7B, L3. These flags can overlap and must not be summed into a failure count. The gains involve both operation expansion and numerical execution, rather than heading format or reduced early stopping alone.
 
-7B、L5的同题候选奖励有区分度比例仅STEP0.23%、NAME0.75%；STEP平均训练奖励0.08%、NAME0.25%。它在本轮二值奖励、100更新预算下信号极稀疏，未学成不等于实现中断，也不证明换预算或方法仍不可学。7B、L4的STEP有区分度组也不足1%。所有零分组和低分seed均保留，没有追加局部奖励或重试择优。
+At 7B, L5, only 0.23% of STEP candidate groups and 0.75% of NAME groups had differing rewards within an example; mean training rewards were 0.08% and 0.25%, respectively. Under binary rewards and the 100-update budget, the learning signal was extremely sparse. Failure to learn here is neither an implementation interruption nor evidence that other budgets or methods cannot learn the task. Fewer than 1% of STEP groups at 7B, L4 had differing rewards as well. All zero-reward groups and low-scoring seeds were retained, with no added local rewards or best-of-retry selection.
 
-标题合规单独统计；例如额外Trace标题不等于调用额外工具。原始操作数量也不直接当高层工具调用数量。各组合CASE_REVIEW.md提供互斥解释类别、标题边界、按最小题目ID选出的原始与标准轨迹案例；互斥优先级归类不是时间意义上的首错归因。
+Heading compliance is counted separately: an extra Trace heading, for example, is not an extra tool call. Raw operation counts are also distinct from high-level tool-call counts. Each setting's CASE_REVIEW.md provides mutually exclusive interpretation categories, heading boundaries, and raw/reference trajectory examples selected by the smallest example ID. Classification by category priority is not temporal first-error attribution.
 
-## 输出与成本
+## Outputs and costs
 
-全部预检、正式训练和评测worker累计占用136.00 GPU小时，其中正式训练108.77、评测21.36、预检与恢复5.87；口径包含启动和等待。正式候选460800条、67172424个输出token；实际预定评测119808条、17552357个输出token。训练截断9条，评测截断2条，均保留；其余为EOS结束。EOS不表示执行成功。
+Precheck, main-training, and evaluation workers occupied a total of 136.00 GPU-hours: 108.77 for main training, 21.36 for evaluation, and 5.87 for prechecks and recovery. These totals include startup and waiting. Main training generated 460800 candidates and 67172424 output tokens; scheduled evaluations actually generated 119808 responses and 17552357 output tokens. All 9 training truncations and 2 evaluation truncations were retained; other responses ended with EOS. EOS does not indicate successful execution.
 
-重点14B、L5：NAME训练输出token比STEP少2.74%，NCCL初始化后的训练段GPU时间少4.24%；step100贪心测试平均输出149.52对151.87 token，少1.55%，实测generate时间少5.04%。其他组合的端点输出与时间变化不同，例如14B L7的NAME输出多1.37%、generate时间多6.74%。这些是本轮计时，不当作普遍加速率；完整分项、嵌套计时定义及逐组数据见[COSTS.md](COSTS.md)。
+For the focal 14B, L5 setting, NAME used 2.74% fewer training output tokens and 4.24% less training-segment GPU time after NCCL initialization than STEP. At step100, greedy test outputs averaged 149.52 versus 151.87 tokens, a 1.55% reduction, with 5.04% less measured generate time. Other settings showed different endpoint output/time changes: at 14B L7, NAME generated 1.37% more tokens and took 6.74% more generate time. These are timings from this study, not general speedup rates. See [COSTS.md](COSTS.md) for all components, nested timing definitions, and per-setting data.
 
-## 证据强度与下一步
+## Strength of evidence and next steps
 
-当前证据支持：在本轮给定调用计划、九工具数字执行任务和固定二值GRPO预算下，NAME条件在7B L3及14B L5/L6学得更好；14B L5为后续独立确认的首选难度。三seed属于初步重复，六组合是用户选定的探索，筛出的组合不是新的独立确认。L5两模型共享底层数据；其他长度未做完全交叉的模型比较。
+The evidence supports better NAME learning at 7B L3 and 14B L5/L6 under the supplied-call-plan, nine-tool numerical execution task and fixed binary-GRPO budget used here. 14B L5 is the preferred difficulty for a later independent confirmation. Three seeds constitute preliminary replication; the six settings were selected by the user for exploration, and the selected setting is not a new independent confirmation. The two L5 models share underlying data; the other lengths do not form a fully crossed model comparison.
 
-工具名称可能帮助步骤定位、操作展开或提供语义提示；本轮没有区分这些机制，也没有证明身份概念、注意力机制或纯Prompt普遍有效。未加入POSITION/ALIAS、内部奖励、更多模型/长度或真实任务，不主张已经完成新颖性或真实Agent迁移验证。后续若研究奖励或迁移，应另开协议并保留本轮二值结果；本轮未自动启动后续实验。
+Tool names may help locate steps, expand operations, or supply semantic cues. This study does not distinguish these mechanisms or establish an identity concept, an attention mechanism, or general prompt-only effectiveness. It includes no POSITION/ALIAS controls, internal rewards, additional models/lengths, or real tasks, and does not establish novelty or transfer to real agents. Further reward or transfer studies should have separate protocols and retain these binary-reward results. No follow-up experiments were started automatically.
 
-交付入口：[完整结果](REPORT.md)、[成本](COSTS.md)、[方法与复核方式](METHOD.md)、[逐项完成审计](COMPLETION_AUDIT.md)。所有原始数据、候选、checkpoint、评测输出和失败/调度记录保留在本目录。16卡模型进程已退出，显存清空。
+Deliverables: [full results](REPORT.md), [costs](COSTS.md), [methods and verification](METHOD.md), and [itemized completion audit](COMPLETION_AUDIT.md). All raw data, candidates, checkpoints, evaluation outputs, and failure/scheduling records were retained in this directory in the original workspace. Model processes on all 16 GPUs had exited and GPU memory was cleared.

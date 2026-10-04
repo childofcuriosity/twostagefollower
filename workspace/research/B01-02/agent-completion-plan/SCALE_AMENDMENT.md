@@ -1,65 +1,65 @@
-# 第一阶段修订：模型规模与先验能力是否缓解过早终止
+# Stage-one amendment: model scale, prior capability, and early termination
 
-2026-09-24。用户支持Agent完成率提案，要求第一阶段优先检查几十B模型，避免只从≤3B模型外推。本文为执行设计补充，尚未下载新增权重或运行新训练。
+2026-09-24. The user supports the agent-completion proposal and prioritizes tens-of-billions scale validation before extrapolating from ≤3B. This supplements execution design; no new weights/training have been downloaded/run yet.
 
-## 研究问题
+## Research questions
 
-Q1：同一系列基础模型从1.5/3B扩大到7/32B后，相同短调用微调是否仍造成两段后停止？
-Q2：工具身份标签的收益是否随规模缩小？
-Q3：后训练和更可靠的指令遵循是否提供额外保护？
-Q4：规模差异来自初始任务能力、学习速度或微调扰动量，还是与稳定使用任务结构有关？
+Q1: Does the same short-call fine-tuning still produce two-segment stopping as one base-model family scales from 1.5/3B to 7/32B?
+Q2: Do tool-identity label gains shrink with scale?
+Q3: Do post-training and more reliable instruction following provide additional protection?
+Q4: Do differences reflect initial capability, learning speed, fine-tuning perturbation, or stable task-structure use?
 
-参数更多不能直接推出先验更丰富、更稳定；即便出现规模趋势，也不是规模单因素随机实验。不同checkpoint的预训练过程等无法完全控制。只能先建立同系列规模相关性，再以训练剂量、指令版本及已知语义条件缩小解释范围。
+More parameters do not guarantee richer or more stable priors. Scale trends are not randomized single-factor effects; pretraining/checkpoint differences remain. Establish within-family associations, then narrow explanations through dose, instruction variants, and known-semantics conditions.
 
-## 模型与执行顺序
+## Models and execution order
 
-规模主线：Qwen2.5-1.5B、3B、7B、32B Base。原1.5/3B可复用已审计主结果，新尺度增加7B和32B；新机制条件和基线诊断需要各尺度按同协议补齐。
+Primary series: Qwen2.5-1.5B/3B/7B/32B Base. Reuse audited 1.5/3B primary results and add 7/32B. Complete new mechanisms/baseline diagnostics under common protocols at every scale.
 
-优先32B Base两个原始条件flat/macro×seed11/22/33，共6训练；7B再补同样6训练构建中间尺度。32B不退化也继续完成预定规模比较，不按正结果继续/负结果停止。
+Prioritize six 32B Base flat/macro × seed11/22/33 runs, then the same six 7B runs. Complete the planned comparison even without 32B degradation; continuation does not depend on positive results.
 
-应用桥接：Qwen2.5-32B-Instruct的冻结基线与flat/macro微调；与Base分表。若要推断指令模型中的规模趋势，需要匹配小尺度Instruct，不能直接用3B Base vs32B Instruct。指令模型使用其官方chat模板，训练与测试一致；Base沿用原文本模板。
+Bridge: Qwen2.5-32B-Instruct frozen and flat/macro-fine-tuned conditions, separate from Base. Instruction-model scale trends require smaller matched Instruct models, not 3B Base versus 32B Instruct. Instruct uses official chat templates consistently; Base retains original text templates.
 
-官方模型来源：
-https://huggingface.co/Qwen/Qwen2.5-32B （32.5B参数，64层，Base）
+Official model source:
+https://huggingface.co/Qwen/Qwen2.5-32B (32.5B parameters, 64 layers, Base)
 https://huggingface.co/Qwen/Qwen2.5-32B-Instruct
 https://huggingface.co/Qwen/Qwen2.5-7B
 
-模型下载先固定Hub revision及文件SHA，使用当前目录缓存和已有代理。不是最新模型竞赛，选择同系列是为减少比较混淆；真实Agent阶段可另选当前强指令模型。
+Freeze Hub revision/file SHA before downloading into project caches via the existing proxy. Same-family selection reduces confounding rather than competing for the latest model. Real-agent stages may separately select a strong instruction model.
 
-## 对齐训练强度，避免把训坏和规模混淆
+## Matching training intensity
 
-主复核严格保留4,096原始训练题、短调用分布、LoRA rank16/alpha32/原target_modules、512步、有效batch32、原学习率3e-4及调度、BF16。等样本/步数不等FLOPs，LoRA绝对参数量和比例随尺寸变化必须报告。仅microbatch/梯度累积为显存调整，维持有效batch和数据顺序；采用梯度检查点等节省激活，避免为32B单独量化引入精度混淆。
+Retain 4,096 original examples, short-call distribution, LoRA rank16/alpha32/target_modules, 512 steps, effective batch32, LR3e-4/schedule, BF16. Equal examples/steps do not match FLOPs; report LoRA parameter counts/proportions. Adjust microbatch/accumulation only for memory, preserving effective batch/order. Prefer activation checkpointing to 32B-only quantization confounding.
 
-固定检查点0/16/64/128/256/512，报告短题掌握、长题准确率、轨迹完整性与早停分布的完整曲线，不在测试上选最优步。只在开发集选择“达到预设短调用准确率阈值”的检查点，作为掌握程度匹配的次要比较；达不到阈值如实报告，不拿没学会工具的模型声称抵抗偏差。
+Fix checkpoints 0/16/64/128/256/512. Report complete short-mastery, long-accuracy, trajectory, and stopping curves without test-optimal selection. Select mastery-matched secondary checkpoints from development using a predefined short-call threshold. Disclose failure to reach it; poor tool execution is not resistance to stopping bias.
 
-较大学习率可能对不同尺度有不同影响。预先安排小尺度3B及32B的共同低学习率敏感性1e-4，主要条件对称，不能仅为某一模型调参。正式协议运行前锁定该组，不依据测试成绩选择或丢弃。若资源受限，先完成原配方规模主线，再做对称敏感性；结果均保留。
+Prespecify symmetric low-LR 1e-4 sensitivity for 3B/32B, since rates can affect scales differently. Lock before formal runs; retain all results rather than tune one model or discard settings. If resources constrain, finish original-recipe scale comparisons first.
 
-## 先验能力诊断
+## Prior-capability diagnostics
 
-原工具使用任意颜色名且不提供定义。冻结模型猜不出未给出的定义不代表不聪明。因此必须另做给定完整工具定义/显式操作计划的冻结执行基线，所有尺度相同条件，并测局部操作正确率。
+Frozen models cannot know arbitrary color definitions that are not supplied. Add full-definition/explicit-operation-plan frozen baselines at every scale, with local operation accuracy.
 
-这套给定义测试与原无定义主任务分开报告，不改变原训练测试匹配。观察微调前后同一给定义基准的能力；若32B初始擅长长执行却经窄数据微调后形成两段停止，才能支持“已有能力仍可能被短任务学习干扰”。如果32B本来就做不对，先检查任务表达与模型使用方法，不能靠参数数目假定聪明。
+Report these separately without altering original train/test matching. Compare before/after training on identical definition-supplied benchmarks. Strong initial 32B long execution followed by stopping after narrow training would support interference with prior capability. If it already fails, inspect task wording/model use instead of assuming intelligence from size.
 
-自然含义工具名、任意ID及动态重命名属于后续机制组；不同语义条件可能改变难度，必须各自配对。Base/Instruct对比只说明后训练相关性，不能单独证明预训练知识稳定性。
+Natural names, arbitrary IDs, and dynamic renaming are later paired mechanism groups, since semantics can alter difficulty. Base/Instruct contrasts show post-training associations, not pretraining-knowledge stability alone.
 
-## 主要指标与可识别边界
+## Metrics and identifiable limits
 
-第一终点：全部长调用测试上的过早给出答案率，按完整轨迹检验；包括所有模型成功/失败，不只分析macro对flat错的条件子集。并报告恰好两段结束率、段数对要求数、错误操作、算术错误、最终答案准确率、等价轨迹和偶然正确、token/步数上限。
+First endpoint: early-answer rate across all long tests, checked against complete trajectories, including every success/failure rather than only macro-correct/flat-wrong cases. Also report exactly-two-segment endings, segment counts versus requirements, operation/arithmetic errors, answers, equivalent/chance-correct trajectories, and token/step caps.
 
-主要效应：每个尺度flat−macro的早停率差和macro−flat完成率差；观察差值是否随尺度变化，任务配对并按程序模板聚类，seed单列。规模不必单调，不能先验拟合必然改善的曲线。旧测试作为复现，新测试程序模板留出作为确认。
+Primary effects per scale: flat−macro early-stopping and macro−flat completion differences. Pair tasks, cluster program templates, and separate seeds. Trends need not be monotonic; do not impose improvement curves. Old tests replicate; new held-out templates confirm.
 
-停止位置是可观测行为；先验知识保护和注意力跟踪仍是解释，需与随机标签/序号/身份对照共同判读。
+Stopping position is observed behavior. Prior preservation/attention tracking remain explanations requiring interpretation with random-label, position, and identity controls.
 
-## 结果分支
+## Outcome branches
 
-1 32B flat基本不早停，标签收益消失：降低通用重要性，定位小模型或特定微调配方现象；真实Agent阶段必须重新确认对应错误存在，不能加大训练直至把大模型训坏。
-2 32B仍明显早停且身份标签缓解：证明问题不局限≤3B，进入真实交互验证。
-3 32B只在高学习率/长微调后退化：重点转为微调剂量导致的停止偏差；不宣称模型自然存在同等缺陷。
-4 32B Base有问题而Instruct显著缓解：优先研究后训练/指令遵循差异，不能归因纯规模。
-5 所有32B条件局部执行都差：实验尚未建立大模型能力前提，先诊断配置/模板，拒绝解释规模效应。
+1. Little 32B flat early stopping and no label gain: narrow relevance to small models/specific recipes. Reestablish the error in real agents rather than train larger models until they fail.
+2. Persistent 32B early stopping reduced by identity: the issue extends beyond ≤3B; proceed to real interaction validation.
+3. Degradation only at high LR/prolonged fine-tuning: focus on dose-induced stopping bias, not an equivalent natural deficit.
+4. Base struggles but Instruct improves: prioritize post-training/instruction differences rather than pure scale.
+5. All 32B conditions have poor local execution: capability is unestablished; diagnose configuration/templates before interpreting scale.
 
-## 实际资源
+## Resources
 
-本次确认本机8×RTX PRO6000 Blackwell，每卡约96GiB，检查时均空闲。32.5B BF16权重按2字节/参数约65GB（约60.5GiB），另需激活、LoRA梯度/优化器、KV缓存和临时空间。因此适合优先测试单卡小microbatch+梯度检查点，不保证未实测即可容纳任何batch。必要时两卡切分训练；不得把推理device_map自动切分直接当可靠训练方案。
+Eight local RTX PRO6000 Blackwell GPUs, approximately 96 GiB each, were idle at inspection. BF16 32.5B weights require approximately 65 GB (60.5 GiB), plus activations, LoRA gradients/optimizer, KV cache, and temporary storage. First test single-GPU small microbatches/checkpointing; arbitrary batches are not guaranteed to fit. If needed, use two-GPU training partitioning; inference device_map sharding is not automatically reliable training.
 
-先做加载、前后向和固定小段吞吐/显存校准，估算6个32B主作业及其他条件的GPU小时，然后启动预定矩阵；保留所有环境在当前目录，长任务阶段性低频检查。对已批准本地研究不重复询问常规实现选择；不申请外部付费服务。
+Calibrate loading, forward/backward, throughput, and memory, estimate six primary 32B jobs/other conditions, then launch the fixed matrix. Keep environments project-local and inspect long tasks infrequently by stage. Routine approved local choices need no repeated permission; do not request paid external services.

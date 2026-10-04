@@ -1,13 +1,13 @@
-# 本轮可识别性与边界
+# Identifiability and limits of this round
 
-研究因果链分成三步：执行训练改变参数 → 给定新任务经验时提案分布改变 → 所选抽象对未见任务有实际效用。上一轮只验证了执行训练后的组合输出，本轮检查后两步，但仍没有直接优化提案策略。
+The causal chain has three steps: execution training changes parameters; proposal distributions change given new-task experience; selected abstractions provide utility on unseen tasks. The previous round tested compositional outputs after execution training. This round checks the latter two steps without directly optimizing a proposal policy.
 
-固定支持集S、测试集T、候选预算K=16。模型策略pθ(a|S)采样候选集A；所有方法经过同一选库器g(S,A)，得到库L。主要效用U(T,L)为动态规划压缩后扣除定义成本的净长度收益，选库时只能使用S。
+Fix support S, test T, and candidate budget K=16. Policy pθ(a|S) samples candidate set A; every method uses selector g(S, A) to obtain library L. Primary utility U(T, L) is net description-length reduction from dynamic-programming compression after definition costs. Selection sees only S.
 
-比较macro与base包括全部执行训练效应，macro与flat才对应上一轮轨迹标签训练差异。macro与mismatch保留同一参数和选库器，只改变提供给提案模型的支持上下文；错配组仍在真实支持集选库，因此检验的是提案分布的上下文适应增量，不能代表整个流程完全不依赖任务。随机组与模型组共享候选语法、预算和选库器；启发式和全枚举另列，不能声称搜索计算相等。
+Macro versus base includes all execution-training effects; macro versus flat isolates the earlier trajectory-label training difference. Macro versus mismatch holds parameters/selector fixed and changes support context seen by the proposer. Mismatch still selects on true support, so it tests incremental proposal-context adaptation rather than complete task independence. Random/model methods share grammar, budget, and selector. Heuristics/full enumeration are separate references with unequal search compute.
 
-程序搜索指标独立于字符串压缩：一个库可能压缩原有写法，却因增加分支因子降低固定扩展预算下的搜索发现率。使用函数完整语义作目标，避免把偶然四位输入输出匹配算作解出。宏一步包含2–3次原语执行，故另记原语操作数量；不能把等扩展数当成等计算量。广度优先且原语优先只是一个固定搜索器，负结果不排除专门训练的神经搜索器受益。
+Program search is separate from string compression. A library can compress existing text yet reduce discovery under a fixed expansion budget by increasing branching. Targets use complete function semantics, avoiding chance matches on four-digit inputs. A macro action executes 2–3 primitives; log primitive counts because equal expansions are not equal compute. Breadth-first, primitive-first search is one fixed searcher. Negative results do not exclude benefits for a specially trained neural searcher.
 
-三个检查点种子是上一轮真实独立训练，base的三个种子仅改变采样。家族bootstrap条件于现有检查点与所构造八个家族，不提供跨模型、跨自然任务的总体置信结论。宏提案空间仅252条短程序；语法约束有利于消除格式失败，也可能暴露底层续写偏好。即使全部通过，最多支持有限环境内执行学习到抽象选择的迁移，不等于学会开放式创新。
+The three checkpoint seeds are genuine independent earlier training runs; base seeds vary sampling only. Family bootstrap is conditional on existing checkpoints and eight constructed families, not population uncertainty across models/natural tasks. The proposal space has only 252 short programs. Grammar constraints remove format failures but may expose continuation preferences. Even full success supports bounded transfer from execution learning to abstraction selection, not open-ended innovation.
 
-若失败，不在测试集上调prompt、采样温度或预算再宣布通过。真正研究“学会提案策略”需要另设计训练任务家族、提案效用奖励与严格家族外验证；本轮不能用没有做过这种训练的负结果否定这一大方向。
+After failure, do not tune prompts, temperatures, or budgets on the test set and declare success. Learning a proposal policy requires separate training families, utility rewards, and strict out-of-family evaluation. Failure without that training does not refute the broader direction.

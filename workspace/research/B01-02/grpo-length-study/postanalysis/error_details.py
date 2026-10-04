@@ -67,9 +67,9 @@ note = ('Exclusive descriptive priority: Answer count, unrecognized lines, opera
         'Title compliance is separate and cannot be added to strict failures. '
         'Cases are the first ID per observed category/condition/seed, not prevalence estimates.')
 write(R / 'analysis/error-details.json', dict(records=records, cases=cases, note=note))
-lines = [f'# {R.name}：错误与标题核验', '',
-         '以下只解释已保存输出，不改变严格主评分。互斥归类按Answer数量、未知行、操作序列、数字步骤、仅最终Answer的固定优先顺序进行；不是按时间定位首错。原始可重叠错误标志保存在analysis/results.json。', '',
-         '| 条件/seed | 失败/512 | Answer数量 | 未知行 | 操作序列 | 数字步骤 | 仅最终Answer | 仅额外Trace标题 | 其他标题问题 | 截断 |',
+lines = [f'# {R.name}: error and heading checks', '',
+         'The analysis below interprets saved outputs without changing the strict primary score. Mutually exclusive categories follow a fixed priority: Answer count, unknown lines, operation sequence, numerical steps, and final Answer only. This is not temporal first-error attribution. Original overlapping error flags are retained in analysis/results.json.', '',
+         '| Condition/seed | Failures/512 | Answer count | Unknown lines | Operation sequence | Numerical steps | Final Answer only | Extra Trace heading only | Other heading issues | Truncation |',
          '|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|']
 for x in records:
     counts = [x['reasons'].get(k, 0) for k in reason_keys]
@@ -77,12 +77,12 @@ for x in records:
                x['titles'].get('other_title_noncompliance', 0), x['endings'].get('length', 0)]
     lines.append(f'| {x["condition"]}/{x["seed"]} | {x["strict_failures"]} | ' +
                  ' | '.join(map(str, counts)) + ' |')
-lines += ['', 'base为原始模型step0，其余为对应seed的step100。额外Trace标题可能与严格成功同时出现；它不代表新增工具调用。操作序列不匹配涵盖原始操作遗漏、增加、替换和顺序改变，不能直接反推遗漏了几次高层工具调用。EOS只说明主动结束，不保证执行完整。互斥优先级归类存在遮蔽：操作序列改善后，更多失败会落入数字错误类别；不能仅凭该类别计数增加就判断数字计算变差，应同时查看主报告中的可重叠数字错误标志。', '',
-          '案例按每个条件/seed/错误类别的最小题目ID选取，展示原始与标准轨迹；类别频率以上表为准。', '']
+lines += ['', 'base denotes the original model at step0; other rows are seed-specific step100 results. Extra Trace headings can occur alongside strict success and do not indicate additional tool calls. Operation-sequence mismatches include omitted, added, substituted, and reordered raw operations; they cannot directly identify how many high-level tool calls were omitted. EOS indicates voluntary stopping, not necessarily complete execution. Priority-based categories can mask other errors: once operation sequences improve, more failures may be categorized as numerical errors. An increased count in that category alone does not establish worse numerical computation; also consult the overlapping numerical-error flags in the main report.', '',
+          'Examples are selected by the smallest example ID within each condition/seed/error category, showing raw and reference trajectories. Use the table above for category frequencies.', '']
 for x in cases:
     lines += [f'## {x["condition"]} seed{x["seed"]} {x["id"]}：{x["category"]}', '',
-              f'严格正确={x["grading"]["strict"]}；标题合规={x["grading"]["header_compliant"]}；输入={x["input"]}；工具索引={x["chain"]}。', '',
-              '实际输出：', '```text', x['raw'], '```', '',
-              '标准轨迹：', '```text', x['expected'], '```', '']
+              f'Strictly correct={x["grading"]["strict"]}; heading compliant={x["grading"]["header_compliant"]}; input={x["input"]}; tool indices={x["chain"]}。', '',
+              'Actual output:', '```text', x['raw'], '```', '',
+              'Reference trajectory:', '```text', x['expected'], '```', '']
 (R / 'CASE_REVIEW.md').write_text('\n'.join(lines) + '\n')
 print(json.dumps(dict(task=R.name, groups=len(records), cases=len(cases)), indent=2))

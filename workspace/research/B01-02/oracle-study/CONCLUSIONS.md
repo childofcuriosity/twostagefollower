@@ -1,38 +1,38 @@
-# 第二阶段oracle消融：完成后的研究判断
+# Second-stage oracle ablation: conclusions after completion
 
-2026-09-25。**已完成本轮全部36项训练、60个检查点/推理模式组合、62,400条正式评测，逐条独立重算与token上下文验算通过；四尺度各120条新进程复跑，共480条完整记录完全一致。** 这份交付包含正结果、反例、种子差异和未解决的解释，不是“拿到服务器/启动任务”后的停止点。验收见[COMPLETION_AUDIT.md](COMPLETION_AUDIT.md)。
+2026-09-25. **All 36 training jobs, 60 checkpoint/inference-mode combinations, and 62,400 main evaluations are complete. Independent record-level recomputation and token-context checks passed. New-process reruns of 120 examples per scale, 480 total, matched complete records exactly.** This deliverable includes positive results, counterexamples, seed variation, and unresolved interpretations; work did not stop at obtaining servers or launching jobs. See [COMPLETION_AUDIT.md](COMPLETION_AUDIT.md).
 
-## 对核心假设的回答
+## Answer to the main hypothesis
 
-两个子任务确实可以分别训练学会。在同分布短调用上，两个专用训练条件四种模型均为384/384正确（128题×3seed）。长调用上，32B的两个专用子任务也保持很高准确率：八工具顺序任务96.53%，全部操作展开任务90.62%。这支持把两项能力分开测量和训练是有价值的抓手。
+The two subtasks can indeed be learned separately. On in-distribution short calls, both specialist conditions score384/384 at all four scales (128 examples x3 seeds). On long calls, the two 32B specialists also retain high accuracy:96.53% on eight-tool sequence prediction and 90.62% on all-operation expansion. This supports measuring and training the two abilities separately as a useful research approach.
 
-**但“分别训练总比联合训练更容易”“名称收益已由两个独立内部模块解释”还不能成立。** 控制相同oracle推理环境后，训练收益依赖子任务、模型规模和seed；7B有明确退化，32B展开收益也不是三个seed全部为正。本轮没有同新协议的step标签训练组，不能用它单独解释此前名称组相对step组的全部收益。
+**Separate training is not established as always easier than joint training, nor are name benefits explained by two independent internal modules.** Under matched oracle inference, training gains depend on subtask, model scale, and seed. There is clear 7B degradation, and 32B expansion gains are not positive in all three seeds. No STEP training condition under the new protocol is included, so this study alone cannot explain all earlier NAME-versus-STEP gains.
 
-题目中的工具顺序已在输入给定。这里的顺序能力是按输入列表依次复述名称并正确结束，不是从目标自主制定计划；工具固定为9个，不涉及现场造工具。训练/程序交接实例见[METHOD_AND_REPRODUCTION.md](METHOD_AND_REPRODUCTION.md)。
+Tool order is supplied in the input. Sequence ability here means repeating names in input-list order and stopping correctly, rather than autonomously planning from a goal. The 9 tools are fixed, with no on-the-fly invention. See [METHOD_AND_REPRODUCTION.md](METHOD_AND_REPRODUCTION.md) for training/program-handoff examples.
 
-## 最关键的同环境训练对照
+## Key training comparisons under matched inference
 
-下表是独立确认集的八工具任务，每格96题×3seed，共288个输出。展开列都由程序提供正确顺序；顺序列都由程序正确执行模型实际选中的工具。因此同一对子列比较的是训练目标变化，不额外混入推理帮助。
+The table uses eight-tool tasks in the independent confirmation set, with 96 examples x3 seeds =288 outputs per cell. Both expansion columns receive correct program-supplied sequences; both sequence columns have programs correctly execute the tools actually selected. Within each pair, the changed factor is the training target, without added inference assistance.
 
-|模型|展开：联合训练|展开：专用训练|顺序：联合训练|顺序：专用训练|联合自主执行|
+|Model|Expansion: joint training|Expansion: specialist training|Sequence: joint training|Sequence: specialist training|Joint autonomous execution|
 |---|---:|---:|---:|---:|---:|
 |1.5B|53.47%|41.67%|28.47%|33.68%|9.72%|
 |3B|35.42%|45.83%|9.03%|41.32%|2.78%|
 |7B|48.61%|9.38%|33.33%|29.86%|13.89%|
 |32B|68.06%|90.62%|92.01%|96.53%|61.46%|
 
-值得保留的两个具体阳性结果：
+Two specific positive findings deserve attention:
 
-- **32B展开训练平均提升22.57个百分点**，三个seed分别为+65.63、−9.38、+11.46个百分点。按24个程序成簇bootstrap的95%区间为[+15.28,+30.56]个百分点，但该区间条件于已训练的三个seed，不能掩盖seed22退化、seed11贡献很大的事实。每seed正确数为联合27/84/85，专用90/75/96，分母均96。
-- **3B顺序训练平均提升32.29个百分点**，三个seed分别为+28.13、+15.63、+53.13个百分点，方向一致；对应程序bootstrap区间[+20.49,+44.44]个百分点。正确数为联合24/1/1，专用51/16/52，分母均96。
+- **32B expansion-specialist training improves by 22.57 percentage points on average**, with seed differences+65.63,−9.38,+11.46. A24-program clustered-bootstrap 95% interval is[+15.28,+30.56] points, conditional on the three trained seeds; it must not hide seed22 degradation or the large seed11 contribution. Per-seed correct counts are 27/84/85 for joint and 90/75/96 for specialist, each out of 96.
+- **3B sequence-specialist training improves by 32.29 percentage points on average**, with consistent seed differences+28.13,+15.63,+53.13. The program-bootstrap interval is[+20.49,+44.44] points. Correct counts are 24/1/1 for joint and 51/16/52 for specialist, each out of 96.
 
-7B展开训练是必须保留的反例：三个seed的差均为负，平均−39.24个百分点。32B顺序训练平均+4.51个百分点，程序bootstrap区间[−4.51,+15.97]，不能据此认定稳定提升。完整短调用、未见组合、压力子集及3/4/5/6/8工具表见[REPORT.md](REPORT.md)；逐seed配对差见analysis/paired-comparisons.json。上述区间是描述性分析，未做多重比较校正，也不是跨训练随机性的总体置信结论。
+7B expansion training is an essential counterexample: all three differences are negative, averaging−39.24 points.32B sequence training averages+4.51 points with program-bootstrap interval[−4.51,+15.97], insufficient for a consistent-improvement claim. See [REPORT.md](REPORT.md) for all short-call, unseen-composition, stress, and 3/4/5/6/8-tool results; per-seed paired differences are in analysis/paired-comparisons.json. These intervals are descriptive, uncorrected for multiple comparisons, and not population-level confidence claims over training randomness.
 
-## 两子任务乘积是否能预估整体
+## Can the subtask product predict overall performance?
 
-32B专用子任务的结果如下。A是完整顺序正确，B是所有要求调用展开正确；先每seed计算乘积，再平均。
+The 32B specialist results follow. A means the entire sequence is correct; B means every required call is expanded correctly. Compute products within each seed before averaging.
 
-|调用数|A顺序|B全部展开|A×B|同一题两个oracle任务均对|联合自主执行|
+|Calls|A sequence|B all expansions|A×B|Both oracle tasks correct on the same example|Joint autonomous execution|
 |---|---:|---:|---:|---:|---:|
 |3|100.00%|100.00%|100.00%|100.00%|100.00%|
 |4|99.65%|97.92%|97.59%|97.57%|96.18%|
@@ -40,32 +40,32 @@
 |6|98.26%|93.06%|91.51%|91.32%|83.33%|
 |8|96.53%|90.62%|87.70%|87.50%|61.46%|
 
-对这两个**分别训练、分别接受oracle帮助**的子任务，同题均对率与乘积很接近。八工具差−0.20个百分点，程序bootstrap区间[−1.06,+0.47]。这与“两个子任务输出的关联较弱”相容，但不能证明独立，尤其高准确率时差值本来就容易很小。
+For these two **separately trained, separately oracle-assisted** subtasks, paired both-correct rates are close to their products. The eight-tool difference is−0.20 points, with program-bootstrap interval[−1.06,+0.47]. This is compatible with weak association between subtask outputs, but does not prove independence, especially since high accuracies tend to make the difference small.
 
-乘积87.70%却不能预测联合模型自主执行的61.46%。原因不是这两个专用子任务之间突然出现强相关，而是比较对象已经改变：不同检查点、不同监督和不同推理历史。两个专用模型实际交替运行的端到端准确率本轮未测试，不能把87.50%称作组合Agent实测成绩。四尺度完整乘积表见[ORACLE_PRODUCTS.md](ORACLE_PRODUCTS.md)，差值及不确定性见[FACTORIZATION.md](FACTORIZATION.md)。
+The 87.70% product nevertheless does not predict the joint autonomous model at 61.46%. The issue is not a sudden strong correlation between the specialists: the comparison changes checkpoints, supervision, and inference history. End-to-end accuracy of actual alternating specialist models was not tested;87.50% is not measured composed-agent performance. See [ORACLE_PRODUCTS.md](ORACLE_PRODUCTS.md) for all scales and [FACTORIZATION.md](FACTORIZATION.md) for differences and uncertainty.
 
-## 失败轨迹说明了什么
+## What do failure trajectories show?
 
-不是只看均值或随机挑几条。全部62,400条都做了错误分类；在独立八工具、正确顺序oracle条件下，再对全部同题展开结果进行配对，定位首个错误。
+Analysis goes beyond means or a few selected examples. All 62,400 outputs are categorized. Under the correct-sequence oracle on independent eight-tool tasks, all same-example expansion outputs are paired and the first error located.
 
-32B联合训练失败92/288条，其中77条的首错是工具内部过早`EndTool`，4条错操作序列、3条数字错、8条body无法解析。展开专用训练失败27条：6条内部过早结束、21条错操作序列。配对上81条由错变对，16条由对变错，净增65条。**可以确认的行为变化是工具内部少执行操作的情况减少；这还不是内部学习机制的定论，也不是对原step实验“整条两步即停”机制的直接证明。**
+32B joint training fails92/288 cases: first errors are premature within-tool `EndTool` in 77, wrong operation sequences in 4, numerical errors in 3, and unparseable bodies in 8. Expansion-specialist training fails 27:6 premature internal endings and 21 wrong operation sequences. In pairs,81 change from wrong to correct and 16 from correct to wrong, a net gain of 65. **The established behavioral change is fewer omitted operations within tools; this is not a settled internal learning mechanism or direct proof of the original STEP whole-task stopping-after-two-calls mechanism.**
 
-7B方向相反：展开专用训练失败261条，其中201条首错为内部过早结束；联合训练对应121条。两种训练的末32步teacher-forced loss都约10⁻⁶，同分布短调用全部正确，因此不宜简单说成训练没有收敛或模型连格式都没学会；更准确的观测是长历史泛化对监督目标和seed很敏感。固定随机抽取、逐条核验的32B收益与7B退化各3例见[BADCASES.md](BADCASES.md)。原始位置、操作和样本全集计数在analysis/mechanism-diagnostics.json。
+7B shows the reverse: expansion-specialist training fails 261 cases, with 201 first errors from premature within-tool ending, versus 121 under joint training. Final 32-step teacher-forced losses are approximately 10⁻⁶ for both, and in-distribution short calls are all correct. This is not well described as nonconvergence or failure to learn format; long-history generalization is sensitive to supervision targets and seeds. See [BADCASES.md](BADCASES.md) for 3 fixed-random, individually checked 32B gains and 3 7B degradations. Full counts, operation details, and positions are in analysis/mechanism-diagnostics.json.
 
-整体失败分类：提前Done且名称前缀正确4843条，错误/不完整操作4096条，错误名称3580条，格式或片段预算91条，EOS或格式144条，纯数字错误37条，多工具2条。分类有固定优先级，不是互相独立的错误成因。所有失败留在分母内。参考正确轨迹最长body仅33 token，低于128上限；完整输出最长282 token，低于2048上限，未用参考行数强制截断。
+Overall failure categories:4843 early Done with correct name prefix,4096 wrong/incomplete operations,3580 wrong names,91 format/segment-budget failures,144 EOS/format failures,37 purely numerical errors, and 2 multi-tool cases. Categories have fixed priority rather than independent causes. All failures remain in denominators. Correct-reference bodies are at most 33 tokens, below 128; full output is at most 282, below 2048. Reference line counts do not force truncation.
 
-## 可信度与剩余解释
+## Reliability and remaining explanations
 
-输入/输出来源、人工token loss mask、错误工具不被纠正、错误数字继续传递、批量异步片段结束等均已检查。36项训练都完整512步，训练loss和梯度记录有限；正式推理及协议代码在所有run中哈希一致。原测试与训练无完全重复，独立确认输入与原训练/测试无完全重复；独立确认集是此前固定的集合，不是本轮结果出来后建立的盲测集。
+Input/output provenance, program-token loss masks, uncorrected wrong tools, propagation of wrong numbers, and batched asynchronous segment endings are checked. All 36 runs complete 512 steps with finite losses and gradients. Main inference/protocol code hashes match across runs. Original tests contain no exact training duplicates; independent confirmation inputs contain no exact original training/test duplicates. That confirmation set was fixed earlier, not created blind after this study produced results.
 
-同一个联合检查点的两种oracle干预，与自主推理形成24,960条配对。19条在人工内容尚未产生差异时，模型段却已有不同输出：1.5B 2条、3B 10条、7B 7条、32B 0条；相同前缀哈希已确认。动态batch下BF16数值差异是可能解释，尚未逐例用logits定位，不能把这19条称为干净的token干预证据。其中4条正确性收益、3条损失；剔除这些异常后仍有3223条收益、0条损失，主结果表保留原分母。固定原batch的新进程复跑480/480完全一致，只证明这一固定执行方式的复现，不保证跨batch位级一致。
+Two oracle interventions on the same joint checkpoint form 24,960 pairs with autonomous inference. In 19 cases, model segments differ before program content diverges:2 at 1.5B,10 at 3B,7 at 7B,0 at 32B, despite matching prefix hashes. BF16 numerical differences under dynamic batching are a possible explanation, not yet localized per example through logits. These 19 cases are not clean token-intervention evidence. They include 4 correctness gains and 3 losses; excluding anomalies leaves 3223 gains and 0 losses, while primary tables retain original denominators. Exact480/480 new-process reproduction with original batches establishes reproducibility for that execution setup, not bitwise invariance across batches.
 
-训练专用化同时移除了另一部分loss、改变监督token数及梯度权重；展开专用还同时mask了名称、Done和EOS。因此当前结果不能区分“多任务梯度干扰”“结束监督影响”“监督权重改变”等具体解释。也未证明名称本身一定产生内部模块、更大模型必然缓解问题、真实Agent中途停止已解决，或RSI能力提升。
+Specialization removes the other loss component and changes supervised-token counts and gradient weights; expansion specialization also masks names, Done, and EOS. Results cannot distinguish multitask gradient interference, ending supervision, or supervision weighting. They do not establish that names necessarily create internal modules, larger models necessarily resolve the issue, real-agent early stopping is solved, or RSI improves.
 
-## 推荐的研究表述与下一步判断
+## Recommended claim and next steps
 
-目前最稳妥的表述是：**在短调用训练、长调用测试的具名工具执行任务中，顺序复述与工具展开可以分别学会；改变监督目标会显著改变长任务泛化，但收益具有子任务、规模和seed依赖。32B展开专用训练减少了工具内部过早结束，且其两个oracle子任务的配对成功率接近边际成功率乘积。**
+The most defensible statement is: **In named-tool execution trained on short calls and tested on long calls, sequence repetition and tool expansion can be learned separately. Changing supervision targets substantially changes long-task generalization, with gains depending on subtask, scale, and seed.32B expansion-specialist training reduces premature within-tool endings, and the paired success of its two oracle subtasks is close to the product of their marginal success rates.**
 
-我的推荐是保留这条研究线，优先围绕“哪一部分监督造成何种长历史错误”继续打磨。下一轮应先把名称loss与Done/EOS结束loss分别消融，并做两子任务loss权重控制和更多seed；这样才能区分用户的两阶段学习解释与结束信号/权重解释。随后才考虑真实双模型组合及真实Agent迁移。本轮预先登记的第二阶段已全部完成；上述后续机制实验未冒充已完成结果，也未因这份建议替换本轮验收。
+Retain this research direction, focusing on which supervision components cause which long-history errors. Next separate name loss from Done/EOS termination loss, control the relative weights of both subtasks, and add seeds. These controls can distinguish the proposed two-stage learning explanation from ending-signal/weighting explanations. Actual two-model composition and real-agent transfer should follow. The preregistered second stage is complete; these mechanism studies are recommendations, not completed results or substitutes for current acceptance checks.
 
-本轮含模型加载、校准和复跑的单GPU进程耗时约22.76小时，分布在不同型号GPU上，不能视为统一型号的GPU算力成本；正式训练约14.18、正式评测约8.40小时，校准约0.04、复跑约0.14小时。成本定义见analysis/cost-total.json。六台5090服务器已交还，本机训练和评测进程也已结束；全部环境、适配器、代码、原始输出及报告保存在本目录。
+Total single-GPU process time including loading, calibration, and reruns is approximately 22.76 hours across different GPU types, not a uniform-hardware compute cost. Main training is approximately 14.18 hours, main evaluation 8.40, calibration 0.04, and reruns 0.14. See analysis/cost-total.json for definitions. All six 5090 servers were returned; local training/evaluation processes ended. Environments, adapters, code, raw outputs, and reports remain in this directory.

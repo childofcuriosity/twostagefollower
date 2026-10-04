@@ -50,14 +50,14 @@ def main():
         'A: full name sequence correct. B: all emitted calls expand correctly; missing calls fail A, '
         'not B. Product is computed within each seed before averaging. Oracle products use separate '
         'correct-context evaluations, are predictions only, and are not actual no-oracle composition.')))
-    lines = ['# 实际执行的两个子任务与完整成功率',
-             '顺序正确=整题名称列表完全正确；操作全对=所有实际生成的调用都正确展开，缺失调用由顺序列判错。',
-             '乘积先在每个训练种子内计算，再取平均。乘积接近整题成功率只能说明这些汇总率相容，不能证明统计独立。',
-             '另外列出的“正确上下文乘积”来自两次程序提供正确另一部分的测试，不能当作实际执行结果。',
-             '|模型|训练步数|工具数|谁写名称 / 谁写操作|顺序正确|已生成操作全对|两列乘积|实际整题成功|正确上下文乘积|',
+    lines = ['# Two actual-execution subtasks and full success',
+             'Correct sequence means the entire task name list is correct. All operations correct means every actually generated call is expanded correctly; missing calls fail the sequence column.',
+             'Products are computed within each training seed and then averaged. A product close to full-task success indicates compatible aggregate rates, not proven statistical independence.',
+             'The separately listed correct-context product comes from two tests where a program supplies the correct other component; it is not actual execution performance.',
+             '|Model|Training steps|Tools|Name writer / operation writer|Correct sequence|All generated operations correct|Product of both columns|Actual full-task success|Correct-context product|',
              '|---|---:|---|---|---:|---:|---:|---:|---:|']
-    labels = {'joint:joint': '一起训练 / 一起训练', 'SJ': '只训顺序 / 一起训练',
-              'JE': '一起训练 / 只训操作', 'SE': '只训顺序 / 只训操作'}
+    labels = {'joint:joint': 'Joint / joint', 'SJ': 'Sequence specialist / joint',
+              'JE': 'Joint / operation specialist', 'SE': 'Sequence specialist / operation specialist'}
     for row in records:
         v = row['mean']
         cells = [f'{100*v[k]:.2f}%' for k in ['sequence', 'all_emitted_bodies', 'product', 'complete']]

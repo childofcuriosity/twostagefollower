@@ -1,72 +1,72 @@
-# 位置与身份对照：自动汇总
-本轮动机是区分进度信息、稳定工具身份及名称形式的作用。旧两组未重训；新两组沿用旧训练与Answer协议。以下为固定512步/旧独立480题的已计算结果，完整反例与原测试见REPORT.md。
+# Position and identity controls: automated summary
+This study aims to separate progress information, stable tool identity, and name form. The two original conditions were not retrained; the two new conditions retain the original training and Answer protocols. Results below are computed at fixed step512 on the earlier independent 480-example set. See REPORT.md for all counterexamples and original tests.
 
-|模型|原STEP|原名称|位置编号|固定改名|
+|Model|Original STEP|Original NAME|Position numbering|Fixed aliases|
 |---|---:|---:|---:|---:|
 |qwen1.5b|0.00%|16.25%|0.00%|16.81%|
 |qwen3b|0.00%|36.88%|0.97%|52.92%|
 |qwen7b|12.15%|37.01%|19.86%|58.33%|
 |qwen32b|25.63%|56.18%|39.17%|31.18%|
 
-## 各尺度配对证据
+## Paired evidence at each scale
 
 ### qwen1.5b
 
-|比较|平均差pp|三个训练seed差pp|
+|Comparison|Mean difference pp|Three training-seed differences pp|
 |---|---:|---|
-|位置编号 − 原STEP|+0.00|+0.00 / +0.00 / +0.00|
-|固定改名 − 原STEP|+16.81|+7.29 / +30.83 / +12.29|
-|位置编号 − 原名称|-16.25|-16.67 / -20.62 / -11.46|
-|固定改名 − 原名称|+0.56|-9.38 / +10.21 / +0.83|
-|固定改名 − 位置编号|+16.81|+7.29 / +30.83 / +12.29|
+|Position numbering − Original STEP|+0.00|+0.00 / +0.00 / +0.00|
+|Fixed aliases − Original STEP|+16.81|+7.29 / +30.83 / +12.29|
+|Position numbering − Original NAME|-16.25|-16.67 / -20.62 / -11.46|
+|Fixed aliases − Original NAME|+0.56|-9.38 / +10.21 / +0.83|
+|Fixed aliases − Position numbering|+16.81|+7.29 / +30.83 / +12.29|
 
-这里的正负是观测方向，不能用均值掩盖负向seed，也不能把三seed当成充分的训练随机性覆盖。
+Positive and negative signs indicate observed directions. Means must not hide negative seeds, and three seeds do not adequately cover training randomness.
 
 ### qwen3b
 
-|比较|平均差pp|三个训练seed差pp|
+|Comparison|Mean difference pp|Three training-seed differences pp|
 |---|---:|---|
-|位置编号 − 原STEP|+0.97|+0.00 / +0.62 / +2.29|
-|固定改名 − 原STEP|+52.92|+53.96 / +38.33 / +66.46|
-|位置编号 − 原名称|-35.90|-36.04 / -39.58 / -32.08|
-|固定改名 − 原名称|+16.04|+17.92 / -1.88 / +32.08|
-|固定改名 − 位置编号|+51.94|+53.96 / +37.71 / +64.17|
+|Position numbering − Original STEP|+0.97|+0.00 / +0.62 / +2.29|
+|Fixed aliases − Original STEP|+52.92|+53.96 / +38.33 / +66.46|
+|Position numbering − Original NAME|-35.90|-36.04 / -39.58 / -32.08|
+|Fixed aliases − Original NAME|+16.04|+17.92 / -1.88 / +32.08|
+|Fixed aliases − Position numbering|+51.94|+53.96 / +37.71 / +64.17|
 
-这里的正负是观测方向，不能用均值掩盖负向seed，也不能把三seed当成充分的训练随机性覆盖。
+Positive and negative signs indicate observed directions. Means must not hide negative seeds, and three seeds do not adequately cover training randomness.
 
 ### qwen7b
 
-|比较|平均差pp|三个训练seed差pp|
+|Comparison|Mean difference pp|Three training-seed differences pp|
 |---|---:|---|
-|位置编号 − 原STEP|+7.71|+3.33 / -3.75 / +23.54|
-|固定改名 − 原STEP|+46.18|+51.04 / +18.54 / +68.96|
-|位置编号 − 原名称|-17.15|-15.00 / -42.50 / +6.04|
-|固定改名 − 原名称|+21.32|+32.71 / -20.21 / +51.46|
-|固定改名 − 位置编号|+38.47|+47.71 / +22.29 / +45.42|
+|Position numbering − Original STEP|+7.71|+3.33 / -3.75 / +23.54|
+|Fixed aliases − Original STEP|+46.18|+51.04 / +18.54 / +68.96|
+|Position numbering − Original NAME|-17.15|-15.00 / -42.50 / +6.04|
+|Fixed aliases − Original NAME|+21.32|+32.71 / -20.21 / +51.46|
+|Fixed aliases − Position numbering|+38.47|+47.71 / +22.29 / +45.42|
 
-这里的正负是观测方向，不能用均值掩盖负向seed，也不能把三seed当成充分的训练随机性覆盖。
+Positive and negative signs indicate observed directions. Means must not hide negative seeds, and three seeds do not adequately cover training randomness.
 
 ### qwen32b
 
-|比较|平均差pp|三个训练seed差pp|
+|Comparison|Mean difference pp|Three training-seed differences pp|
 |---|---:|---|
-|位置编号 − 原STEP|+13.54|+18.54 / -0.62 / +22.71|
-|固定改名 − 原STEP|+5.56|+11.67 / +15.00 / -10.00|
-|位置编号 − 原名称|-17.01|-1.88 / -26.67 / -22.50|
-|固定改名 − 原名称|-25.00|-8.75 / -11.04 / -55.21|
-|固定改名 − 位置编号|-7.99|-6.88 / +15.62 / -32.71|
+|Position numbering − Original STEP|+13.54|+18.54 / -0.62 / +22.71|
+|Fixed aliases − Original STEP|+5.56|+11.67 / +15.00 / -10.00|
+|Position numbering − Original NAME|-17.01|-1.88 / -26.67 / -22.50|
+|Fixed aliases − Original NAME|-25.00|-8.75 / -11.04 / -55.21|
+|Fixed aliases − Position numbering|-7.99|-6.88 / +15.62 / -32.71|
 
-这里的正负是观测方向，不能用均值掩盖负向seed，也不能把三seed当成充分的训练随机性覆盖。
+Positive and negative signs indicate observed directions. Means must not hide negative seeds, and three seeds do not adequately cover training randomness.
 
-## 解释边界
+## Scope of interpretation
 
-- 两个新增条件的输出监督token数相同，每轮271656；原名称每轮263858。新标签比旧多约2.96%，不引入填充或更改原配置来掩盖差异。alias输入提示也更长。
-- 位置step3及以后是未在训练出现的标签组合，尽管数字token本身在数字状态中见过；失败不能单独否定位置信息。
-- alias与原名称均为输入输出同名，不能直接检验同名vs不同名。若alias较弱，词形区分性、共同tool前缀、分词/预训练表示与学习难度都是合理解释，不能宣称注意力因果机制已证明。
-- 一个固定映射跨所有seed/规模使用，本轮没有多映射复现。旧测试被使用过，不是全新盲测。
-- 原严格主指标检查规定操作与答案，不强制标签身份正确；另报标签序列和标签感知完整率，防止悄悄改变旧评分标准。
-- 本任务顺序已给，不是自主规划或真实Agent中途停止的直接验证；任何应用迁移均尚未测试。
+- The two added conditions have equal supervised output-token counts: 271656 per pass, compared with 263858 for Original NAME. New labels add approximately 2.96%; no padding or configuration changes hide this difference. Alias input prompts are also longer.
+- Position labels step3 and later are label combinations unseen in training, although digit tokens themselves occur in numerical states. Failure alone cannot rule out the value of position information.
+- Alias and Original NAME both use matching names in inputs and outputs, so this does not directly test matched versus mismatched names. If aliases are weaker, word-form distinguishability, a shared tool prefix, tokenization/pretrained representations, and learning difficulty are plausible explanations; a causal attention mechanism is not established.
+- One fixed mapping is used across all seeds/scales, without replication over multiple mappings. The earlier test set has been used before and is not a fresh blind test.
+- The original strict primary metric checks required operations and answers without requiring correct label identities. Label sequences and label-aware full-success rates are reported separately to preserve the original scoring standard.
+- The task supplies the sequence; it does not directly test autonomous planning or mid-task stopping in real agents. Application transfer remains untested.
 
-全量49920条主/独立轨迹（新增24960、复用24960）独立评分，数据及源码冻结核验见analysis/completion-audit.json。所有生成失败保留在分母。系统goal槽仍是旧暂停任务，本轮GOAL.json只在最终人工复核和交付后标完成。
+All 49920 main/independent trajectories (24960 new, 24960 reused) are independently scored. See analysis/completion-audit.json for data and source-freeze checks. All generation failures remain in denominators. The system goal slot still refers to the older paused task; this study marks GOAL.json complete only after final human review and delivery.
 
-最终科学复核与限制见[CONCLUSIONS.md](CONCLUSIONS.md)。
+See [CONCLUSIONS.md](CONCLUSIONS.md) for final scientific review and limitations.

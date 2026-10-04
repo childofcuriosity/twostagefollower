@@ -1,15 +1,17 @@
-# B01-02 prompt-only
+# B01-02 prompt-only study
 
-独立的纯Prompt四标题对照；无训练或adapter。研究设计见REGISTRATION.md。现有训练实验只读。
+An independent prompt-only comparison of four heading formats, with no training or adapters. See `REGISTRATION.md` for the study design. Existing training experiments are treated as read-only.
 
-入口：先`source training-env.sh`（项目根目录），再运行本目录src下脚本。
+## Original workflow
 
-- download.py：官方模型固定revision及文件哈希。
-- validate.py：DSL全状态验证、正确轨迹和人工错误变体评分核验。
-- prepare.py --phase {precheck,explore,formal} --lengths ...：数据、四组Prompt、token预算、冻结清单。
-- dispatch.py --phase ... --lengths ... --conditions STEP NAME ...：8卡任务调度；单长度正式实验按每组两份互斥题目分片用满8卡；每小时记录巡检。
-- worker.py：BF16、SDPA、greedy，保存原始文本、token IDs、停止原因、成本。OOM自动减半batch并保留记录。
-- score.py：旧严格评分与独立实现核验、标题合规、首错及配对bootstrap。
-- select.py：只依STEP确定补测或正式长度；--final写选长记录。
+The original workspace used `source training-env.sh` from the project root before running the scripts in this directory's `src/`. That environment script is omitted from the archive; configure an equivalent environment before adapting these commands.
 
-原始输出在runs/，评分在analysis/，数据及冻结清单在data/。进程完成标志complete.json；异常日志保留在logs/及各run目录。
+- `download.py`: pin official model revisions and record file hashes.
+- `validate.py`: validate the DSL over all states and check scoring on correct trajectories and deliberately incorrect variants.
+- `prepare.py --phase {precheck,explore,formal} --lengths ...`: prepare data, four prompt conditions, token budgets, and frozen manifests.
+- `dispatch.py --phase ... --lengths ... --conditions STEP NAME ...`: schedule jobs across eight GPUs. For a formal experiment at one length, split each condition into two disjoint example shards to use all eight GPUs. Record hourly monitoring checks.
+- `worker.py`: use BF16, SDPA, and greedy decoding; save raw text, token IDs, stopping reasons, and costs. On an out-of-memory error, halve the batch size and retain a record of the adjustment.
+- `score.py`: cross-check the original strict scorer against an independent implementation; evaluate heading compliance, first errors, and paired bootstrap estimates.
+- `select.py`: use STEP alone to choose supplementary evaluations or the formal task length; `--final` writes the length-selection record.
+
+In the original workspace, raw outputs were stored in `runs/`, scores in `analysis/`, and data and frozen manifests in `data/`. `complete.json` marks process completion. Exception logs were retained in `logs/` and each run directory. This archive omits raw outputs, datasets, and logs; see the [repository overview](../../../../README.md) for archive scope.
