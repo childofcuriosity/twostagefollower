@@ -1,0 +1,356 @@
+{
+  "passed": true,
+  "jobs": [
+    {
+      "name": "precheck-14b-L7-NAME",
+      "stage": "precheck",
+      "cards": 2,
+      "started": 1790634335.5334458,
+      "finished": 1790635386.4213438,
+      "wall_seconds": 1050.8472232818604,
+      "allocated_gpu_hours": 0.5838040129343669
+    },
+    {
+      "name": "precheck-14b-L6-STEP",
+      "stage": "precheck",
+      "cards": 2,
+      "started": 1790634335.9294775,
+      "finished": 1790635371.106212,
+      "wall_seconds": 1035.1351590156555,
+      "allocated_gpu_hours": 0.5750750883420308
+    },
+    {
+      "name": "precheck-7b-L5-NAME",
+      "stage": "precheck",
+      "cards": 2,
+      "started": 1790634338.1782417,
+      "finished": 1790635058.1197174,
+      "wall_seconds": 719.9120252132416,
+      "allocated_gpu_hours": 0.39995112511846753
+    },
+    {
+      "name": "precheck-14b-L5-NAME",
+      "stage": "precheck",
+      "cards": 2,
+      "started": 1790634337.2687757,
+      "finished": 1790635264.9245925,
+      "wall_seconds": 927.6251986026764,
+      "allocated_gpu_hours": 0.5153473325570425
+    },
+    {
+      "name": "precheck-7b-L3-STEP",
+      "stage": "precheck",
+      "cards": 2,
+      "started": 1790635287.3060012,
+      "finished": 1790636117.6758628,
+      "wall_seconds": 830.3404302597046,
+      "allocated_gpu_hours": 0.4613002390331692
+    },
+    {
+      "name": "precheck-7b-L4-NAME",
+      "stage": "precheck",
+      "cards": 2,
+      "started": 1790635106.3071978,
+      "finished": 1790635803.8148084,
+      "wall_seconds": 697.475882768631,
+      "allocated_gpu_hours": 0.3874866015381283
+    },
+    {
+      "name": "precheck-7b-L4-STEP",
+      "stage": "precheck",
+      "cards": 2,
+      "started": 1790635075.7179172,
+      "finished": 1790635794.7609253,
+      "wall_seconds": 719.013144493103,
+      "allocated_gpu_hours": 0.3994517469406128
+    },
+    {
+      "name": "precheck-14b-L5-STEP",
+      "stage": "precheck",
+      "cards": 2,
+      "started": 1790634336.8012183,
+      "finished": 1790635298.1582577,
+      "wall_seconds": 961.3271691799164,
+      "allocated_gpu_hours": 0.534070649544398
+    },
+    {
+      "name": "precheck-14b-L7-STEP",
+      "stage": "precheck",
+      "cards": 2,
+      "started": 1790634335.1271904,
+      "finished": 1790635414.4528065,
+      "wall_seconds": 1079.2876925468445,
+      "allocated_gpu_hours": 0.5996042736371359
+    },
+    {
+      "name": "precheck-14b-L6-NAME",
+      "stage": "precheck",
+      "cards": 2,
+      "started": 1790634336.340156,
+      "finished": 1790635323.708809,
+      "wall_seconds": 987.3190858364105,
+      "allocated_gpu_hours": 0.5485106032424503
+    },
+    {
+      "name": "precheck-7b-L5-STEP",
+      "stage": "precheck",
+      "cards": 2,
+      "started": 1790634337.7240686,
+      "finished": 1790635076.1098058,
+      "wall_seconds": 738.3565549850464,
+      "allocated_gpu_hours": 0.41019808610280356
+    },
+    {
+      "name": "precheck-7b-L3-NAME",
+      "stage": "precheck",
+      "cards": 2,
+      "started": 1790635317.879425,
+      "finished": 1790636133.0320387,
+      "wall_seconds": 815.1213726997375,
+      "allocated_gpu_hours": 0.45284520705540976
+    },
+    {
+      "name": "formal-pair-14b-L5-s301",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790639967.2204287,
+      "finished": 1790653471.272927,
+      "wall_seconds": 13504.004719734192,
+      "allocated_gpu_hours": 7.502224844296773
+    },
+    {
+      "name": "formal-pair-14b-L7-s301",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790636162.3092575,
+      "finished": 1790653323.2459252,
+      "wall_seconds": 17160.90095591545,
+      "allocated_gpu_hours": 9.533833864397472
+    },
+    {
+      "name": "formal-pair-7b-L5-s302",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790653306.9778047,
+      "finished": 1790660510.275785,
+      "wall_seconds": 7203.258754014969,
+      "allocated_gpu_hours": 4.001810418897205
+    },
+    {
+      "name": "formal-pair-14b-L5-s303",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790651462.3321447,
+      "finished": 1790664772.5525799,
+      "wall_seconds": 13310.190816402435,
+      "allocated_gpu_hours": 7.394550453556908
+    },
+    {
+      "name": "formal-pair-14b-L7-s302",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790636162.5410507,
+      "finished": 1790653280.8243198,
+      "wall_seconds": 17118.247936487198,
+      "allocated_gpu_hours": 9.510137742492887
+    },
+    {
+      "name": "formal-pair-14b-L6-s301",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790636163.3858118,
+      "finished": 1790651538.776274,
+      "wall_seconds": 15375.352436542511,
+      "allocated_gpu_hours": 8.54186246474584
+    },
+    {
+      "name": "formal-pair-14b-L5-s302",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790651445.7912946,
+      "finished": 1790664852.0821087,
+      "wall_seconds": 13406.260754585266,
+      "allocated_gpu_hours": 7.447922641436259
+    },
+    {
+      "name": "formal-pair-7b-L3-s303",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790660532.1531682,
+      "finished": 1790666201.8552783,
+      "wall_seconds": 5669.664732217789,
+      "allocated_gpu_hours": 3.149813740120994
+    },
+    {
+      "name": "formal-pair-14b-L6-s303",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790636164.2076666,
+      "finished": 1790651430.0866454,
+      "wall_seconds": 15265.848125696182,
+      "allocated_gpu_hours": 8.48102673649788
+    },
+    {
+      "name": "formal-pair-14b-L6-s302",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790636163.7895124,
+      "finished": 1790651415.2735403,
+      "wall_seconds": 15251.454894781113,
+      "allocated_gpu_hours": 8.473030497100618
+    },
+    {
+      "name": "formal-pair-7b-L4-s301",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790653423.2186203,
+      "finished": 1790659952.7786603,
+      "wall_seconds": 6529.530557155609,
+      "allocated_gpu_hours": 3.6275169761975605
+    },
+    {
+      "name": "formal-pair-7b-L3-s301",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790659974.317124,
+      "finished": 1790665629.9772918,
+      "wall_seconds": 5655.631229162216,
+      "allocated_gpu_hours": 3.1420173495345645
+    },
+    {
+      "name": "formal-pair-7b-L4-s302",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790653489.5057955,
+      "finished": 1790659994.0544572,
+      "wall_seconds": 6504.4992089271545,
+      "allocated_gpu_hours": 3.613610671626197
+    },
+    {
+      "name": "formal-pair-7b-L3-s302",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790660027.0409827,
+      "finished": 1790665680.5659935,
+      "wall_seconds": 5653.4876255989075,
+      "allocated_gpu_hours": 3.14082645866606
+    },
+    {
+      "name": "formal-pair-7b-L5-s303",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790653340.4163527,
+      "finished": 1790660536.9412806,
+      "wall_seconds": 7196.487195491791,
+      "allocated_gpu_hours": 3.9980484419398836
+    },
+    {
+      "name": "formal-pair-7b-L4-s303",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790658817.178532,
+      "finished": 1790665341.1039224,
+      "wall_seconds": 6523.895570039749,
+      "allocated_gpu_hours": 3.6243864277998608
+    },
+    {
+      "name": "formal-pair-7b-L5-s301",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790651560.3837767,
+      "finished": 1790658786.4519157,
+      "wall_seconds": 7226.038809537888,
+      "allocated_gpu_hours": 4.014466005298827
+    },
+    {
+      "name": "formal-pair-14b-L7-s303",
+      "stage": "formal_training",
+      "cards": 2,
+      "started": 1790636162.9684167,
+      "finished": 1790653394.6702378,
+      "wall_seconds": 17231.672095775604,
+      "allocated_gpu_hours": 9.57315116431978
+    },
+    {
+      "name": "evaluator-tail-0",
+      "stage": "evaluation_workers",
+      "cards": 1,
+      "started": 1790661672.9594338,
+      "finished": 1790666264.2553089,
+      "wall_seconds": 4591.265262365341,
+      "allocated_gpu_hours": 1.2753514617681503
+    },
+    {
+      "name": "evaluator-2",
+      "stage": "evaluation_workers",
+      "cards": 1,
+      "started": 1790636158.1089556,
+      "finished": 1790639940.381425,
+      "wall_seconds": 3782.238872051239,
+      "allocated_gpu_hours": 1.050621908903122
+    },
+    {
+      "name": "evaluator-v2-0",
+      "stage": "evaluation_workers",
+      "cards": 1,
+      "started": 1790639966.668375,
+      "finished": 1790666264.551836,
+      "wall_seconds": 26297.840485334396,
+      "allocated_gpu_hours": 7.304955690370666
+    },
+    {
+      "name": "evaluator-3",
+      "stage": "evaluation_workers",
+      "cards": 1,
+      "started": 1790636158.3817403,
+      "finished": 1790639933.2601056,
+      "wall_seconds": 3774.8322129249573,
+      "allocated_gpu_hours": 1.048564503590266
+    },
+    {
+      "name": "evaluator-1",
+      "stage": "evaluation_workers",
+      "cards": 1,
+      "started": 1790636157.8535235,
+      "finished": 1790639933.1345904,
+      "wall_seconds": 3775.2454578876495,
+      "allocated_gpu_hours": 1.0486792938576803
+    },
+    {
+      "name": "evaluator-0",
+      "stage": "evaluation_workers",
+      "cards": 1,
+      "started": 1790636157.606761,
+      "finished": 1790639947.8346128,
+      "wall_seconds": 3790.1922104358673,
+      "allocated_gpu_hours": 1.0528311695655186
+    },
+    {
+      "name": "evaluator-v2-1",
+      "stage": "evaluation_workers",
+      "cards": 1,
+      "started": 1790639966.915049,
+      "finished": 1790666260.5783103,
+      "wall_seconds": 26293.629013299942,
+      "allocated_gpu_hours": 7.303785837027761
+    },
+    {
+      "name": "evaluator-tail-1",
+      "stage": "evaluation_workers",
+      "cards": 1,
+      "started": 1790661673.0424037,
+      "finished": 1790666264.8688722,
+      "wall_seconds": 4591.795943021774,
+      "allocated_gpu_hours": 1.275498873061604
+    }
+  ],
+  "allocated_gpu_hours": {
+    "precheck": 5.867644966046015,
+    "formal_training": 108.77023689892557,
+    "evaluation_workers": 21.360288738144767
+  },
+  "total_allocated_gpu_hours": 135.99817060311636,
+  "evaluation_task_gpu_hours": 15.73697370370229,
+  "evaluation_generation_gpu_hours": 15.54249673028787,
+  "caveat": "Lifecycle allocation includes startup/loading/waiting; nested timers are not additive. Resource release requires a separate live process/GPU check."
+}

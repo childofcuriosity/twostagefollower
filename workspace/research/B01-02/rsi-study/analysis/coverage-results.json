@@ -1,0 +1,1157 @@
+{
+  "posthoc": true,
+  "primitive_diagnostics": {
+    "qwen1.5b": {
+      "base": {
+        "proposal_contains_ends": 0.4114583333333333,
+        "length3_fraction": 0.921875,
+        "unique_syntax": 10.416666666666666
+      },
+      "flat": {
+        "proposal_contains_ends": 0,
+        "length3_fraction": 0.9596354166666666,
+        "unique_syntax": 3.0416666666666665
+      },
+      "macro": {
+        "proposal_contains_ends": 0.11588541666666667,
+        "length3_fraction": 0.9466145833333334,
+        "unique_syntax": 5.645833333333333
+      }
+    },
+    "qwen3b": {
+      "base": {
+        "proposal_contains_ends": 0.5729166666666666,
+        "length3_fraction": 0.8098958333333334,
+        "unique_syntax": 11.125
+      },
+      "flat": {
+        "proposal_contains_ends": 0.0013020833333333333,
+        "length3_fraction": 0.3151041666666667,
+        "unique_syntax": 3.3125
+      },
+      "macro": {
+        "proposal_contains_ends": 0.016927083333333332,
+        "length3_fraction": 0.07682291666666667,
+        "unique_syntax": 5.166666666666667
+      }
+    },
+    "smol1.7b": {
+      "base": {
+        "proposal_contains_ends": 0.3463541666666667,
+        "length3_fraction": 0.9375,
+        "unique_syntax": 12.291666666666666
+      },
+      "flat": {
+        "proposal_contains_ends": 0.0013020833333333333,
+        "length3_fraction": 0.9713541666666666,
+        "unique_syntax": 7.520833333333333
+      },
+      "macro": {
+        "proposal_contains_ends": 0.010416666666666666,
+        "length3_fraction": 0.9322916666666666,
+        "unique_syntax": 6.875
+      }
+    }
+  },
+  "coverage": {
+    "concise-t1.0-k4": {
+      "compression": 0.15682326161365542,
+      "contains_ends": 0.4635416666666667,
+      "seed_means": [
+        0.15529515803766708,
+        0.13870692905170784,
+        0.17646769775159138
+      ],
+      "base": 0.2580270896862973,
+      "original_macro": 0.11757219150743217,
+      "coverage_minus_original_macro": {
+        "mean": 0.039251070106223265,
+        "seed_differences": [
+          0.040142090742542574,
+          0.02698670045827202,
+          0.050624419117855195
+        ],
+        "family_bootstrap_95": [
+          -0.007324940212596702,
+          0.08556558970340056
+        ]
+      }
+    },
+    "concise-t1.0-k16": {
+      "compression": 0.21542766285960058,
+      "contains_ends": 0.4921875,
+      "seed_means": [
+        0.22561334862303295,
+        0.22311762420636283,
+        0.19755201574940598
+      ],
+      "base": 0.4307217143223255,
+      "original_macro": 0.16026597352278976,
+      "coverage_minus_original_macro": {
+        "mean": 0.055161689336810836,
+        "seed_differences": [
+          0.06937520441986378,
+          0.0785302215256998,
+          0.017579642064868894
+        ],
+        "family_bootstrap_95": [
+          0.014908076554793172,
+          0.10222240744637581
+        ]
+      }
+    },
+    "concise-t1.0-k64": {
+      "compression": 0.25007154594410774,
+      "contains_ends": 0.4986979166666667,
+      "seed_means": [
+        0.2539000337460113,
+        0.26004476295290996,
+        0.23626984113340202
+      ],
+      "base": 0.49512770460816913,
+      "original_macro": 0.18627503716566876,
+      "coverage_minus_original_macro": {
+        "mean": 0.063796508778439,
+        "seed_differences": [
+          0.08382074076428092,
+          0.07574399632389822,
+          0.03182478924713784
+        ],
+        "family_bootstrap_95": [
+          0.008359526130101411,
+          0.12893950179393696
+        ]
+      }
+    },
+    "fewshot-t1.0-k4": {
+      "compression": 0.14119873396217356,
+      "contains_ends": 0.53125,
+      "seed_means": [
+        0.12241804119060459,
+        0.16609638526938936,
+        0.1350817754265267
+      ],
+      "base": 0.2402295050657054,
+      "original_macro": 0.09806330710823517,
+      "coverage_minus_original_macro": {
+        "mean": 0.043135426853938376,
+        "seed_differences": [
+          0.022924327950548107,
+          0.07534513329643225,
+          0.03113681931483477
+        ],
+        "family_bootstrap_95": [
+          -0.01196799037536274,
+          0.09714265038130432
+        ]
+      }
+    },
+    "fewshot-t1.0-k16": {
+      "compression": 0.19848321554330964,
+      "contains_ends": 0.5481770833333334,
+      "seed_means": [
+        0.1747927603082316,
+        0.21692883043396452,
+        0.2037280558877328
+      ],
+      "base": 0.4043784254874276,
+      "original_macro": 0.15853407477712134,
+      "coverage_minus_original_macro": {
+        "mean": 0.03994914076618829,
+        "seed_differences": [
+          0.0003869977666167276,
+          0.0742182157415138,
+          0.04524220879043435
+        ],
+        "family_bootstrap_95": [
+          -0.00787430683236804,
+          0.08502498068701442
+        ]
+      }
+    },
+    "fewshot-t1.0-k64": {
+      "compression": 0.2769485750382465,
+      "contains_ends": 0.5494791666666666,
+      "seed_means": [
+        0.2796381582467795,
+        0.28355637103201325,
+        0.26765119583594665
+      ],
+      "base": 0.4811177881408388,
+      "original_macro": 0.19304230932142377,
+      "coverage_minus_original_macro": {
+        "mean": 0.08390626571682269,
+        "seed_differences": [
+          0.0836291923546231,
+          0.0883860984562414,
+          0.07970350633960357
+        ],
+        "family_bootstrap_95": [
+          0.03847411049475531,
+          0.1292300420751188
+        ]
+      }
+    },
+    "instruction-t1.0-k4": {
+      "compression": 0.08464468472574835,
+      "contains_ends": 0.46875,
+      "seed_means": [
+        0.08949545329423811,
+        0.09006536547882792,
+        0.074373235404179
+      ],
+      "base": 0.21169683301969572,
+      "original_macro": 0.06203033099080605,
+      "coverage_minus_original_macro": {
+        "mean": 0.02261435373494229,
+        "seed_differences": [
+          0.044925852157346235,
+          0.010342180748730835,
+          0.0125750282987498
+        ],
+        "family_bootstrap_95": [
+          -0.008104872466885746,
+          0.055969291617059845
+        ]
+      }
+    },
+    "instruction-t1.0-k16": {
+      "compression": 0.12933985872034512,
+      "contains_ends": 0.4752604166666667,
+      "seed_means": [
+        0.1123573287961863,
+        0.17089366491223681,
+        0.10476858245261228
+      ],
+      "base": 0.3901124826017455,
+      "original_macro": 0.09057679896955623,
+      "coverage_minus_original_macro": {
+        "mean": 0.038763059750788906,
+        "seed_differences": [
+          0.028601979033386377,
+          0.06473956364100356,
+          0.022947636577976792
+        ],
+        "family_bootstrap_95": [
+          -0.013182489807426171,
+          0.10757474644344706
+        ]
+      }
+    },
+    "instruction-t1.0-k64": {
+      "compression": 0.19021897084886222,
+      "contains_ends": 0.4690755208333333,
+      "seed_means": [
+        0.1697600300194592,
+        0.21133290089902035,
+        0.1895639816281071
+      ],
+      "base": 0.48361077748953557,
+      "original_macro": 0.12819326831835012,
+      "coverage_minus_original_macro": {
+        "mean": 0.062025702530512095,
+        "seed_differences": [
+          0.039903707093624965,
+          0.07167869043497635,
+          0.07449471006293497
+        ],
+        "family_bootstrap_95": [
+          0.014966132786632556,
+          0.1100085015102054
+        ]
+      }
+    },
+    "instruction-t1.5-k4": {
+      "compression": 0.0925376514956211,
+      "contains_ends": 0.421875,
+      "seed_means": [
+        0.08299733833805786,
+        0.10465830594891544,
+        0.08995731019989002
+      ],
+      "base": 0.15958518376108047,
+      "original_macro": 0.06973629717876717,
+      "coverage_minus_original_macro": {
+        "mean": 0.02280135431685394,
+        "seed_differences": [
+          0.030701779340054337,
+          0.021169737522659292,
+          0.016532546087848175
+        ],
+        "family_bootstrap_95": [
+          -0.004517479768701725,
+          0.05477296248455702
+        ]
+      }
+    },
+    "instruction-t1.5-k16": {
+      "compression": 0.18189351467361872,
+      "contains_ends": 0.4427083333333333,
+      "seed_means": [
+        0.16216797265803432,
+        0.20100925722665083,
+        0.18250331413617105
+      ],
+      "base": 0.37731470702568337,
+      "original_macro": 0.11351032443876341,
+      "coverage_minus_original_macro": {
+        "mean": 0.06838319023485533,
+        "seed_differences": [
+          0.05647857933621134,
+          0.06843148359875185,
+          0.08023950776960279
+        ],
+        "family_bootstrap_95": [
+          0.01673509080404862,
+          0.13224767744648783
+        ]
+      }
+    },
+    "instruction-t1.5-k64": {
+      "compression": 0.24256584696674943,
+      "contains_ends": 0.4401041666666667,
+      "seed_means": [
+        0.23272641538597072,
+        0.25877494184226585,
+        0.23619618367201167
+      ],
+      "base": 0.5001335622998095,
+      "original_macro": 0.16948971562742063,
+      "coverage_minus_original_macro": {
+        "mean": 0.07307613133932879,
+        "seed_differences": [
+          0.06441307797016882,
+          0.08348649512928717,
+          0.07132882091853039
+        ],
+        "family_bootstrap_95": [
+          0.030198785387251514,
+          0.11862405666138598
+        ]
+      }
+    }
+  },
+  "matched_training_audit": [
+    {
+      "seed": 11,
+      "identical_training_counts": {
+        "input_tokens": 2430112,
+        "target_tokens": 1055432,
+        "examples": 16384
+      },
+      "new_execution": {
+        "iid": {
+          "n": 128,
+          "accuracy": 1.0,
+          "program_accuracy": 1.0,
+          "valid_execution": 1.0
+        },
+        "ood": {
+          "n": 384,
+          "accuracy": 0.1875,
+          "program_accuracy": 0.18489583333333334,
+          "valid_execution": 1.0
+        },
+        "pressure": {
+          "n": 48,
+          "accuracy": 0.10416666666666667,
+          "program_accuracy": 0.08333333333333333,
+          "valid_execution": 1.0
+        }
+      }
+    },
+    {
+      "seed": 22,
+      "identical_training_counts": {
+        "input_tokens": 2430112,
+        "target_tokens": 1055432,
+        "examples": 16384
+      },
+      "new_execution": {
+        "iid": {
+          "n": 128,
+          "accuracy": 1.0,
+          "program_accuracy": 1.0,
+          "valid_execution": 1.0
+        },
+        "ood": {
+          "n": 384,
+          "accuracy": 0.375,
+          "program_accuracy": 0.375,
+          "valid_execution": 1.0
+        },
+        "pressure": {
+          "n": 48,
+          "accuracy": 0.4375,
+          "program_accuracy": 0.3958333333333333,
+          "valid_execution": 1.0
+        }
+      }
+    },
+    {
+      "seed": 33,
+      "identical_training_counts": {
+        "input_tokens": 2430112,
+        "target_tokens": 1055432,
+        "examples": 16384
+      },
+      "new_execution": {
+        "iid": {
+          "n": 128,
+          "accuracy": 1.0,
+          "program_accuracy": 1.0,
+          "valid_execution": 1.0
+        },
+        "ood": {
+          "n": 384,
+          "accuracy": 0.24479166666666666,
+          "program_accuracy": 0.23177083333333334,
+          "valid_execution": 1.0
+        },
+        "pressure": {
+          "n": 48,
+          "accuracy": 0.16666666666666666,
+          "program_accuracy": 0.14583333333333334,
+          "valid_execution": 1.0
+        }
+      }
+    }
+  ],
+  "proposal_baselines": {
+    "random": {
+      "mean": 0.11596811318340575,
+      "rows": [
+        {
+          "family": 16,
+          "seed": 11,
+          "compression": 0.29292929292929293
+        },
+        {
+          "family": 16,
+          "seed": 22,
+          "compression": 0.0
+        },
+        {
+          "family": 16,
+          "seed": 33,
+          "compression": 0.265993265993266
+        },
+        {
+          "family": 17,
+          "seed": 11,
+          "compression": 0.10122699386503067
+        },
+        {
+          "family": 17,
+          "seed": 22,
+          "compression": 0.3067484662576687
+        },
+        {
+          "family": 17,
+          "seed": 33,
+          "compression": 0.019938650306748466
+        },
+        {
+          "family": 18,
+          "seed": 11,
+          "compression": 0.21021021021021022
+        },
+        {
+          "family": 18,
+          "seed": 22,
+          "compression": 0.028528528528528527
+        },
+        {
+          "family": 18,
+          "seed": 33,
+          "compression": 0.08408408408408409
+        },
+        {
+          "family": 19,
+          "seed": 11,
+          "compression": 0.0
+        },
+        {
+          "family": 19,
+          "seed": 22,
+          "compression": 0.06312292358803986
+        },
+        {
+          "family": 19,
+          "seed": 33,
+          "compression": 0.0
+        },
+        {
+          "family": 20,
+          "seed": 11,
+          "compression": 0.060240963855421686
+        },
+        {
+          "family": 20,
+          "seed": 22,
+          "compression": 0.0
+        },
+        {
+          "family": 20,
+          "seed": 33,
+          "compression": 0.39959839357429716
+        },
+        {
+          "family": 21,
+          "seed": 11,
+          "compression": 0.12710566615620214
+        },
+        {
+          "family": 21,
+          "seed": 22,
+          "compression": 0.3445635528330781
+        },
+        {
+          "family": 21,
+          "seed": 33,
+          "compression": 0.22358346094946402
+        },
+        {
+          "family": 22,
+          "seed": 11,
+          "compression": 0.215929203539823
+        },
+        {
+          "family": 22,
+          "seed": 22,
+          "compression": 0.30796460176991153
+        },
+        {
+          "family": 22,
+          "seed": 33,
+          "compression": 0.0
+        },
+        {
+          "family": 23,
+          "seed": 11,
+          "compression": 0.08269525267993874
+        },
+        {
+          "family": 23,
+          "seed": 22,
+          "compression": 0.0995405819295559
+        },
+        {
+          "family": 23,
+          "seed": 33,
+          "compression": 0.29709035222052066
+        },
+        {
+          "family": 24,
+          "seed": 11,
+          "compression": 0.027906976744186046
+        },
+        {
+          "family": 24,
+          "seed": 22,
+          "compression": 0.04496124031007752
+        },
+        {
+          "family": 24,
+          "seed": 33,
+          "compression": 0.12403100775193798
+        },
+        {
+          "family": 25,
+          "seed": 11,
+          "compression": 0.14897260273972604
+        },
+        {
+          "family": 25,
+          "seed": 22,
+          "compression": 0.0
+        },
+        {
+          "family": 25,
+          "seed": 33,
+          "compression": 0.2465753424657534
+        },
+        {
+          "family": 26,
+          "seed": 11,
+          "compression": 0.39943342776203966
+        },
+        {
+          "family": 26,
+          "seed": 22,
+          "compression": 0.10056657223796034
+        },
+        {
+          "family": 26,
+          "seed": 33,
+          "compression": 0.056657223796033995
+        },
+        {
+          "family": 27,
+          "seed": 11,
+          "compression": 0.02472952086553323
+        },
+        {
+          "family": 27,
+          "seed": 22,
+          "compression": 0.0
+        },
+        {
+          "family": 27,
+          "seed": 33,
+          "compression": 0.11282843894899536
+        },
+        {
+          "family": 28,
+          "seed": 11,
+          "compression": 0.0
+        },
+        {
+          "family": 28,
+          "seed": 22,
+          "compression": 0.0
+        },
+        {
+          "family": 28,
+          "seed": 33,
+          "compression": 0.15191986644407346
+        },
+        {
+          "family": 29,
+          "seed": 11,
+          "compression": 0.0
+        },
+        {
+          "family": 29,
+          "seed": 22,
+          "compression": 0.0
+        },
+        {
+          "family": 29,
+          "seed": 33,
+          "compression": 0.20512820512820512
+        },
+        {
+          "family": 30,
+          "seed": 11,
+          "compression": 0.0
+        },
+        {
+          "family": 30,
+          "seed": 22,
+          "compression": 0.01889763779527559
+        },
+        {
+          "family": 30,
+          "seed": 33,
+          "compression": 0.19055118110236222
+        },
+        {
+          "family": 31,
+          "seed": 11,
+          "compression": 0.07434402332361516
+        },
+        {
+          "family": 31,
+          "seed": 22,
+          "compression": 0.0
+        },
+        {
+          "family": 31,
+          "seed": 33,
+          "compression": 0.10787172011661808
+        }
+      ]
+    },
+    "frequency": {
+      "mean": 0.565902934390771,
+      "rows": [
+        {
+          "family": 16,
+          "seed": 11,
+          "compression": 0.5454545454545454
+        },
+        {
+          "family": 16,
+          "seed": 22,
+          "compression": 0.5454545454545454
+        },
+        {
+          "family": 16,
+          "seed": 33,
+          "compression": 0.5454545454545454
+        },
+        {
+          "family": 17,
+          "seed": 11,
+          "compression": 0.5828220858895705
+        },
+        {
+          "family": 17,
+          "seed": 22,
+          "compression": 0.5828220858895705
+        },
+        {
+          "family": 17,
+          "seed": 33,
+          "compression": 0.5828220858895705
+        },
+        {
+          "family": 18,
+          "seed": 11,
+          "compression": 0.6006006006006006
+        },
+        {
+          "family": 18,
+          "seed": 22,
+          "compression": 0.6006006006006006
+        },
+        {
+          "family": 18,
+          "seed": 33,
+          "compression": 0.6006006006006006
+        },
+        {
+          "family": 19,
+          "seed": 11,
+          "compression": 0.553156146179402
+        },
+        {
+          "family": 19,
+          "seed": 22,
+          "compression": 0.553156146179402
+        },
+        {
+          "family": 19,
+          "seed": 33,
+          "compression": 0.553156146179402
+        },
+        {
+          "family": 20,
+          "seed": 11,
+          "compression": 0.4879518072289157
+        },
+        {
+          "family": 20,
+          "seed": 22,
+          "compression": 0.4879518072289157
+        },
+        {
+          "family": 20,
+          "seed": 33,
+          "compression": 0.4879518072289157
+        },
+        {
+          "family": 21,
+          "seed": 11,
+          "compression": 0.5696784073506891
+        },
+        {
+          "family": 21,
+          "seed": 22,
+          "compression": 0.5696784073506891
+        },
+        {
+          "family": 21,
+          "seed": 33,
+          "compression": 0.5696784073506891
+        },
+        {
+          "family": 22,
+          "seed": 11,
+          "compression": 0.5380530973451327
+        },
+        {
+          "family": 22,
+          "seed": 22,
+          "compression": 0.5380530973451327
+        },
+        {
+          "family": 22,
+          "seed": 33,
+          "compression": 0.5380530973451327
+        },
+        {
+          "family": 23,
+          "seed": 11,
+          "compression": 0.5880551301684533
+        },
+        {
+          "family": 23,
+          "seed": 22,
+          "compression": 0.5880551301684533
+        },
+        {
+          "family": 23,
+          "seed": 33,
+          "compression": 0.5880551301684533
+        },
+        {
+          "family": 24,
+          "seed": 11,
+          "compression": 0.5922480620155038
+        },
+        {
+          "family": 24,
+          "seed": 22,
+          "compression": 0.5922480620155038
+        },
+        {
+          "family": 24,
+          "seed": 33,
+          "compression": 0.5922480620155038
+        },
+        {
+          "family": 25,
+          "seed": 11,
+          "compression": 0.5428082191780822
+        },
+        {
+          "family": 25,
+          "seed": 22,
+          "compression": 0.5428082191780822
+        },
+        {
+          "family": 25,
+          "seed": 33,
+          "compression": 0.5428082191780822
+        },
+        {
+          "family": 26,
+          "seed": 11,
+          "compression": 0.6005665722379604
+        },
+        {
+          "family": 26,
+          "seed": 22,
+          "compression": 0.6005665722379604
+        },
+        {
+          "family": 26,
+          "seed": 33,
+          "compression": 0.6005665722379604
+        },
+        {
+          "family": 27,
+          "seed": 11,
+          "compression": 0.5935085007727975
+        },
+        {
+          "family": 27,
+          "seed": 22,
+          "compression": 0.5935085007727975
+        },
+        {
+          "family": 27,
+          "seed": 33,
+          "compression": 0.5935085007727975
+        },
+        {
+          "family": 28,
+          "seed": 11,
+          "compression": 0.5409015025041736
+        },
+        {
+          "family": 28,
+          "seed": 22,
+          "compression": 0.5409015025041736
+        },
+        {
+          "family": 28,
+          "seed": 33,
+          "compression": 0.5409015025041736
+        },
+        {
+          "family": 29,
+          "seed": 11,
+          "compression": 0.5452991452991452
+        },
+        {
+          "family": 29,
+          "seed": 22,
+          "compression": 0.5452991452991452
+        },
+        {
+          "family": 29,
+          "seed": 33,
+          "compression": 0.5452991452991452
+        },
+        {
+          "family": 30,
+          "seed": 11,
+          "compression": 0.5669291338582677
+        },
+        {
+          "family": 30,
+          "seed": 22,
+          "compression": 0.5669291338582677
+        },
+        {
+          "family": 30,
+          "seed": 33,
+          "compression": 0.5669291338582677
+        },
+        {
+          "family": 31,
+          "seed": 11,
+          "compression": 0.6064139941690962
+        },
+        {
+          "family": 31,
+          "seed": 22,
+          "compression": 0.6064139941690962
+        },
+        {
+          "family": 31,
+          "seed": 33,
+          "compression": 0.6064139941690962
+        }
+      ]
+    },
+    "exhaustive": {
+      "mean": 0.565902934390771,
+      "rows": [
+        {
+          "family": 16,
+          "seed": 11,
+          "compression": 0.5454545454545454
+        },
+        {
+          "family": 16,
+          "seed": 22,
+          "compression": 0.5454545454545454
+        },
+        {
+          "family": 16,
+          "seed": 33,
+          "compression": 0.5454545454545454
+        },
+        {
+          "family": 17,
+          "seed": 11,
+          "compression": 0.5828220858895705
+        },
+        {
+          "family": 17,
+          "seed": 22,
+          "compression": 0.5828220858895705
+        },
+        {
+          "family": 17,
+          "seed": 33,
+          "compression": 0.5828220858895705
+        },
+        {
+          "family": 18,
+          "seed": 11,
+          "compression": 0.6006006006006006
+        },
+        {
+          "family": 18,
+          "seed": 22,
+          "compression": 0.6006006006006006
+        },
+        {
+          "family": 18,
+          "seed": 33,
+          "compression": 0.6006006006006006
+        },
+        {
+          "family": 19,
+          "seed": 11,
+          "compression": 0.553156146179402
+        },
+        {
+          "family": 19,
+          "seed": 22,
+          "compression": 0.553156146179402
+        },
+        {
+          "family": 19,
+          "seed": 33,
+          "compression": 0.553156146179402
+        },
+        {
+          "family": 20,
+          "seed": 11,
+          "compression": 0.4879518072289157
+        },
+        {
+          "family": 20,
+          "seed": 22,
+          "compression": 0.4879518072289157
+        },
+        {
+          "family": 20,
+          "seed": 33,
+          "compression": 0.4879518072289157
+        },
+        {
+          "family": 21,
+          "seed": 11,
+          "compression": 0.5696784073506891
+        },
+        {
+          "family": 21,
+          "seed": 22,
+          "compression": 0.5696784073506891
+        },
+        {
+          "family": 21,
+          "seed": 33,
+          "compression": 0.5696784073506891
+        },
+        {
+          "family": 22,
+          "seed": 11,
+          "compression": 0.5380530973451327
+        },
+        {
+          "family": 22,
+          "seed": 22,
+          "compression": 0.5380530973451327
+        },
+        {
+          "family": 22,
+          "seed": 33,
+          "compression": 0.5380530973451327
+        },
+        {
+          "family": 23,
+          "seed": 11,
+          "compression": 0.5880551301684533
+        },
+        {
+          "family": 23,
+          "seed": 22,
+          "compression": 0.5880551301684533
+        },
+        {
+          "family": 23,
+          "seed": 33,
+          "compression": 0.5880551301684533
+        },
+        {
+          "family": 24,
+          "seed": 11,
+          "compression": 0.5922480620155038
+        },
+        {
+          "family": 24,
+          "seed": 22,
+          "compression": 0.5922480620155038
+        },
+        {
+          "family": 24,
+          "seed": 33,
+          "compression": 0.5922480620155038
+        },
+        {
+          "family": 25,
+          "seed": 11,
+          "compression": 0.5428082191780822
+        },
+        {
+          "family": 25,
+          "seed": 22,
+          "compression": 0.5428082191780822
+        },
+        {
+          "family": 25,
+          "seed": 33,
+          "compression": 0.5428082191780822
+        },
+        {
+          "family": 26,
+          "seed": 11,
+          "compression": 0.6005665722379604
+        },
+        {
+          "family": 26,
+          "seed": 22,
+          "compression": 0.6005665722379604
+        },
+        {
+          "family": 26,
+          "seed": 33,
+          "compression": 0.6005665722379604
+        },
+        {
+          "family": 27,
+          "seed": 11,
+          "compression": 0.5935085007727975
+        },
+        {
+          "family": 27,
+          "seed": 22,
+          "compression": 0.5935085007727975
+        },
+        {
+          "family": 27,
+          "seed": 33,
+          "compression": 0.5935085007727975
+        },
+        {
+          "family": 28,
+          "seed": 11,
+          "compression": 0.5409015025041736
+        },
+        {
+          "family": 28,
+          "seed": 22,
+          "compression": 0.5409015025041736
+        },
+        {
+          "family": 28,
+          "seed": 33,
+          "compression": 0.5409015025041736
+        },
+        {
+          "family": 29,
+          "seed": 11,
+          "compression": 0.5452991452991452
+        },
+        {
+          "family": 29,
+          "seed": 22,
+          "compression": 0.5452991452991452
+        },
+        {
+          "family": 29,
+          "seed": 33,
+          "compression": 0.5452991452991452
+        },
+        {
+          "family": 30,
+          "seed": 11,
+          "compression": 0.5669291338582677
+        },
+        {
+          "family": 30,
+          "seed": 22,
+          "compression": 0.5669291338582677
+        },
+        {
+          "family": 30,
+          "seed": 33,
+          "compression": 0.5669291338582677
+        },
+        {
+          "family": 31,
+          "seed": 11,
+          "compression": 0.6064139941690962
+        },
+        {
+          "family": 31,
+          "seed": 22,
+          "compression": 0.6064139941690962
+        },
+        {
+          "family": 31,
+          "seed": 33,
+          "compression": 0.6064139941690962
+        }
+      ]
+    }
+  }
+}

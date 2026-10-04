@@ -1,0 +1,416 @@
+{
+  "passed": true,
+  "formal_rows": 2048,
+  "total_unique_generation_records": 3040,
+  "records_by_attempt": {
+    "prompt-only": 496,
+    "fallback14": 2544
+  },
+  "models": {
+    "qwen7b": {
+      "repo": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "files": 13
+    },
+    "qwen14b": {
+      "repo": "Qwen/Qwen2.5-14B-Instruct",
+      "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+      "files": 17
+    }
+  },
+  "formal_generation_cap": 256,
+  "formal_limits": {
+    "STEP": {
+      "max_target": 76,
+      "max_input": 473,
+      "mean_target": 67.03515625
+    },
+    "POSITION": {
+      "max_target": 78,
+      "max_input": 493,
+      "mean_target": 69.03515625
+    },
+    "ALIAS": {
+      "max_target": 78,
+      "max_input": 492,
+      "mean_target": 69.03515625
+    },
+    "NAME": {
+      "max_target": 76,
+      "max_input": 477,
+      "mean_target": 67.03515625
+    }
+  },
+  "formal_freeze": "2026-09-28T00:36:17Z",
+  "all_jobs": 60,
+  "all_jobs_exit_zero": true,
+  "failures": [],
+  "allocated_gpu_seconds_all": 3765.2289872169495,
+  "costs": {
+    "STEP": {
+      "generated_tokens": 34813,
+      "text_tokens": 34301,
+      "input_tokens": 242176,
+      "generate_seconds": 101.46956944465637,
+      "allocated_gpu_seconds": 170.43153643608093,
+      "full_heading_compliance": 512,
+      "position_matched_headings": 1024,
+      "required_headings": 1024,
+      "canonical_order_success": 235,
+      "under_calls": 0,
+      "over_calls": 0,
+      "operation_mismatch": 119,
+      "numeric_step_error": 192,
+      "format_error": 3
+    },
+    "POSITION": {
+      "generated_tokens": 34988,
+      "text_tokens": 34476,
+      "input_tokens": 252416,
+      "generate_seconds": 105.81313633918762,
+      "allocated_gpu_seconds": 180.48211884498596,
+      "full_heading_compliance": 497,
+      "position_matched_headings": 1009,
+      "required_headings": 1024,
+      "canonical_order_success": 245,
+      "under_calls": 15,
+      "over_calls": 0,
+      "operation_mismatch": 65,
+      "numeric_step_error": 211,
+      "format_error": 9
+    },
+    "ALIAS": {
+      "generated_tokens": 34865,
+      "text_tokens": 34353,
+      "input_tokens": 251904,
+      "generate_seconds": 103.32344794273376,
+      "allocated_gpu_seconds": 180.4152193069458,
+      "full_heading_compliance": 512,
+      "position_matched_headings": 1024,
+      "required_headings": 1024,
+      "canonical_order_success": 294,
+      "under_calls": 0,
+      "over_calls": 0,
+      "operation_mismatch": 6,
+      "numeric_step_error": 213,
+      "format_error": 1
+    },
+    "NAME": {
+      "generated_tokens": 34546,
+      "text_tokens": 34034,
+      "input_tokens": 244224,
+      "generate_seconds": 100.57071304321289,
+      "allocated_gpu_seconds": 180.38582563400269,
+      "full_heading_compliance": 488,
+      "position_matched_headings": 976,
+      "required_headings": 1024,
+      "canonical_order_success": 231,
+      "under_calls": 0,
+      "over_calls": 24,
+      "operation_mismatch": 64,
+      "numeric_step_error": 239,
+      "format_error": 1
+    }
+  },
+  "paired_errors": {
+    "POSITION": {
+      "transitions": [
+        {
+          "STEP": "extra_call",
+          "condition": "extra_call",
+          "n": 26
+        },
+        {
+          "STEP": "extra_call",
+          "condition": "none",
+          "n": 7
+        },
+        {
+          "STEP": "extra_call",
+          "condition": "numeric",
+          "n": 4
+        },
+        {
+          "STEP": "format",
+          "condition": "numeric",
+          "n": 1
+        },
+        {
+          "STEP": "none",
+          "condition": "extra_call",
+          "n": 1
+        },
+        {
+          "STEP": "none",
+          "condition": "none",
+          "n": 178
+        },
+        {
+          "STEP": "none",
+          "condition": "numeric",
+          "n": 40
+        },
+        {
+          "STEP": "none",
+          "condition": "omitted_call",
+          "n": 14
+        },
+        {
+          "STEP": "none",
+          "condition": "tool_or_order",
+          "n": 2
+        },
+        {
+          "STEP": "numeric",
+          "condition": "none",
+          "n": 29
+        },
+        {
+          "STEP": "numeric",
+          "condition": "numeric",
+          "n": 146
+        },
+        {
+          "STEP": "numeric",
+          "condition": "omitted_call",
+          "n": 6
+        },
+        {
+          "STEP": "numeric",
+          "condition": "tool_or_order",
+          "n": 1
+        },
+        {
+          "STEP": "omitted_call",
+          "condition": "none",
+          "n": 1
+        },
+        {
+          "STEP": "omitted_call",
+          "condition": "numeric",
+          "n": 1
+        },
+        {
+          "STEP": "omitted_call",
+          "condition": "omitted_call",
+          "n": 5
+        },
+        {
+          "STEP": "tool_or_order",
+          "condition": "none",
+          "n": 30
+        },
+        {
+          "STEP": "tool_or_order",
+          "condition": "numeric",
+          "n": 15
+        },
+        {
+          "STEP": "tool_or_order",
+          "condition": "omitted_call",
+          "n": 1
+        },
+        {
+          "STEP": "tool_or_order",
+          "condition": "tool_or_order",
+          "n": 4
+        }
+      ],
+      "recovered_by_STEP_error": {
+        "tool_or_order": 30,
+        "numeric": 29,
+        "extra_call": 7,
+        "omitted_call": 1
+      },
+      "lost_by_condition_error": {
+        "numeric": 40,
+        "omitted_call": 14,
+        "extra_call": 1,
+        "tool_or_order": 2
+      }
+    },
+    "ALIAS": {
+      "transitions": [
+        {
+          "STEP": "extra_call",
+          "condition": "none",
+          "n": 32
+        },
+        {
+          "STEP": "extra_call",
+          "condition": "numeric",
+          "n": 5
+        },
+        {
+          "STEP": "format",
+          "condition": "format",
+          "n": 1
+        },
+        {
+          "STEP": "none",
+          "condition": "none",
+          "n": 181
+        },
+        {
+          "STEP": "none",
+          "condition": "numeric",
+          "n": 54
+        },
+        {
+          "STEP": "numeric",
+          "condition": "none",
+          "n": 41
+        },
+        {
+          "STEP": "numeric",
+          "condition": "numeric",
+          "n": 139
+        },
+        {
+          "STEP": "numeric",
+          "condition": "tool_or_order",
+          "n": 2
+        },
+        {
+          "STEP": "omitted_call",
+          "condition": "extra_call",
+          "n": 1
+        },
+        {
+          "STEP": "omitted_call",
+          "condition": "none",
+          "n": 5
+        },
+        {
+          "STEP": "omitted_call",
+          "condition": "numeric",
+          "n": 1
+        },
+        {
+          "STEP": "tool_or_order",
+          "condition": "none",
+          "n": 35
+        },
+        {
+          "STEP": "tool_or_order",
+          "condition": "numeric",
+          "n": 15
+        }
+      ],
+      "recovered_by_STEP_error": {
+        "tool_or_order": 35,
+        "extra_call": 32,
+        "numeric": 41,
+        "omitted_call": 5
+      },
+      "lost_by_condition_error": {
+        "numeric": 54
+      }
+    },
+    "NAME": {
+      "transitions": [
+        {
+          "STEP": "extra_call",
+          "condition": "extra_call",
+          "n": 14
+        },
+        {
+          "STEP": "extra_call",
+          "condition": "none",
+          "n": 14
+        },
+        {
+          "STEP": "extra_call",
+          "condition": "numeric",
+          "n": 9
+        },
+        {
+          "STEP": "format",
+          "condition": "numeric",
+          "n": 1
+        },
+        {
+          "STEP": "none",
+          "condition": "extra_call",
+          "n": 1
+        },
+        {
+          "STEP": "none",
+          "condition": "none",
+          "n": 176
+        },
+        {
+          "STEP": "none",
+          "condition": "numeric",
+          "n": 53
+        },
+        {
+          "STEP": "none",
+          "condition": "tool_or_order",
+          "n": 5
+        },
+        {
+          "STEP": "numeric",
+          "condition": "format",
+          "n": 1
+        },
+        {
+          "STEP": "numeric",
+          "condition": "none",
+          "n": 25
+        },
+        {
+          "STEP": "numeric",
+          "condition": "numeric",
+          "n": 154
+        },
+        {
+          "STEP": "numeric",
+          "condition": "tool_or_order",
+          "n": 2
+        },
+        {
+          "STEP": "omitted_call",
+          "condition": "none",
+          "n": 5
+        },
+        {
+          "STEP": "omitted_call",
+          "condition": "numeric",
+          "n": 2
+        },
+        {
+          "STEP": "tool_or_order",
+          "condition": "none",
+          "n": 11
+        },
+        {
+          "STEP": "tool_or_order",
+          "condition": "numeric",
+          "n": 8
+        },
+        {
+          "STEP": "tool_or_order",
+          "condition": "tool_or_order",
+          "n": 31
+        }
+      ],
+      "recovered_by_STEP_error": {
+        "extra_call": 14,
+        "numeric": 25,
+        "omitted_call": 5,
+        "tool_or_order": 11
+      },
+      "lost_by_condition_error": {
+        "numeric": 53,
+        "extra_call": 1,
+        "tool_or_order": 5
+      }
+    }
+  },
+  "formal_prompt_identity_across_models": true,
+  "frozen_source_verified": true,
+  "formal_freeze_precedes_all_eight_jobs": true,
+  "exactly_once_shards_verified": true,
+  "all_3040_scores_rechecked": true
+}

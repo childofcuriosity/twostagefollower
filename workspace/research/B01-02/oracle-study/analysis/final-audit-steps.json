@@ -1,0 +1,78 @@
+[
+  {
+    "script": "data_audit.py",
+    "returncode": 0,
+    "seconds": 0.1012120246887207
+  },
+  {
+    "script": "audit_results.py",
+    "returncode": 0,
+    "seconds": 6.967664480209351
+  },
+  {
+    "script": "token_replay.py",
+    "returncode": 0,
+    "seconds": 30.052240133285522
+  },
+  {
+    "script": "diagnostics.py",
+    "returncode": 0,
+    "seconds": 2.7505733966827393
+  },
+  {
+    "script": "compare.py",
+    "returncode": 0,
+    "seconds": 8.159926176071167
+  },
+  {
+    "script": "products.py",
+    "returncode": 0,
+    "seconds": 2.822904348373413
+  },
+  {
+    "script": "product_uncertainty.py",
+    "returncode": 0,
+    "seconds": 0.9746403694152832
+  },
+  {
+    "script": "mechanisms.py",
+    "returncode": 0,
+    "seconds": 2.0368168354034424
+  },
+  {
+    "script": "intervention_pairs.py",
+    "returncode": 0,
+    "seconds": 1.1150729656219482
+  },
+  {
+    "script": "report.py",
+    "returncode": 0,
+    "seconds": 0.07059860229492188
+  },
+  {
+    "script": "plots.py",
+    "returncode": 1,
+    "seconds": 0.04915499687194824
+  },
+  {
+    "script": "plots.py",
+    "interpreter": "/usr/bin/python3.12",
+    "returncode": 0,
+    "seconds": 1.2100999355316162,
+    "note": "Plotting uses existing project analysis environment; training environment unchanged."
+  },
+  {
+    "script": "completion_audit.py",
+    "interpreter": "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+    "returncode": 0,
+    "seconds": 7.367680311203003,
+    "note": "Plotting uses existing project analysis environment; training environment unchanged."
+  },
+  {
+    "script": "plots.py",
+    "interpreter": "/WillRawData2/llm/will_datasets/toutiao/research/.analysis-venv/bin/python",
+    "returncode": 0,
+    "note": "Final rendering used literal project analysis venv path. Ancillary package inventory retried via importlib.metadata because analysis venv has no pip; no environment installation needed.",
+    "time": 1790325663.0956216
+  }
+]

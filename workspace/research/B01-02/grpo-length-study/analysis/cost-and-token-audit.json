@@ -1,0 +1,386 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "task": "7b-L3",
+      "conditions": {
+        "STEP": {
+          "training": {
+            "outputs": 38400,
+            "output_tokens": 3624615,
+            "endings": {
+              "eos": 38400
+            },
+            "post_nccl_run_gpu_hours": 4.741799591779709
+          },
+          "evaluation": {
+            "outputs": 9984,
+            "output_tokens": 946973,
+            "endings": {
+              "eos": 9984
+            }
+          }
+        },
+        "NAME": {
+          "training": {
+            "outputs": 38400,
+            "output_tokens": 3522155,
+            "endings": {
+              "eos": 38399,
+              "length": 1
+            },
+            "post_nccl_run_gpu_hours": 4.6319558804565
+          },
+          "evaluation": {
+            "outputs": 9984,
+            "output_tokens": 921005,
+            "endings": {
+              "eos": 9984
+            }
+          }
+        }
+      },
+      "NAME_vs_STEP_training_token_percent": -2.8267829824684787,
+      "NAME_vs_STEP_training_segment_gpu_percent": -2.316498392585631
+    },
+    {
+      "task": "7b-L4",
+      "conditions": {
+        "STEP": {
+          "training": {
+            "outputs": 38400,
+            "output_tokens": 4547028,
+            "endings": {
+              "eos": 38400
+            },
+            "post_nccl_run_gpu_hours": 5.505169428851869
+          },
+          "evaluation": {
+            "outputs": 9984,
+            "output_tokens": 1173637,
+            "endings": {
+              "eos": 9984
+            }
+          }
+        },
+        "NAME": {
+          "training": {
+            "outputs": 38400,
+            "output_tokens": 4441896,
+            "endings": {
+              "eos": 38397,
+              "length": 3
+            },
+            "post_nccl_run_gpu_hours": 5.303557120031781
+          },
+          "evaluation": {
+            "outputs": 9984,
+            "output_tokens": 1162649,
+            "endings": {
+              "eos": 9984
+            }
+          }
+        }
+      },
+      "NAME_vs_STEP_training_token_percent": -2.3121036422032115,
+      "NAME_vs_STEP_training_segment_gpu_percent": -3.6622362204415504
+    },
+    {
+      "task": "7b-L5",
+      "conditions": {
+        "STEP": {
+          "training": {
+            "outputs": 38400,
+            "output_tokens": 5275805,
+            "endings": {
+              "eos": 38400
+            },
+            "post_nccl_run_gpu_hours": 6.0686142787668444
+          },
+          "evaluation": {
+            "outputs": 9984,
+            "output_tokens": 1387196,
+            "endings": {
+              "eos": 9984
+            }
+          }
+        },
+        "NAME": {
+          "training": {
+            "outputs": 38400,
+            "output_tokens": 5323943,
+            "endings": {
+              "eos": 38400
+            },
+            "post_nccl_run_gpu_hours": 5.887390143738853
+          },
+          "evaluation": {
+            "outputs": 9984,
+            "output_tokens": 1402716,
+            "endings": {
+              "eos": 9984
+            }
+          }
+        }
+      },
+      "NAME_vs_STEP_training_token_percent": 0.9124294775868291,
+      "NAME_vs_STEP_training_segment_gpu_percent": -2.9862523255443585
+    },
+    {
+      "task": "14b-L5",
+      "conditions": {
+        "STEP": {
+          "training": {
+            "outputs": 38400,
+            "output_tokens": 5872937,
+            "endings": {
+              "eos": 38400
+            },
+            "post_nccl_run_gpu_hours": 11.381623431046803
+          },
+          "evaluation": {
+            "outputs": 9984,
+            "output_tokens": 1537691,
+            "endings": {
+              "eos": 9982,
+              "length": 2
+            }
+          }
+        },
+        "NAME": {
+          "training": {
+            "outputs": 38400,
+            "output_tokens": 5711950,
+            "endings": {
+              "eos": 38400
+            },
+            "post_nccl_run_gpu_hours": 10.898504481845432
+          },
+          "evaluation": {
+            "outputs": 9984,
+            "output_tokens": 1495389,
+            "endings": {
+              "eos": 9984
+            }
+          }
+        }
+      },
+      "NAME_vs_STEP_training_token_percent": -2.7411668131294475,
+      "NAME_vs_STEP_training_segment_gpu_percent": -4.244727934712012
+    },
+    {
+      "task": "14b-L6",
+      "conditions": {
+        "STEP": {
+          "training": {
+            "outputs": 38400,
+            "output_tokens": 6818650,
+            "endings": {
+              "eos": 38398,
+              "length": 2
+            },
+            "post_nccl_run_gpu_hours": 13.064677412642373
+          },
+          "evaluation": {
+            "outputs": 9984,
+            "output_tokens": 1777737,
+            "endings": {
+              "eos": 9984
+            }
+          }
+        },
+        "NAME": {
+          "training": {
+            "outputs": 38400,
+            "output_tokens": 6691325,
+            "endings": {
+              "eos": 38400
+            },
+            "post_nccl_run_gpu_hours": 12.361274885733922
+          },
+          "evaluation": {
+            "outputs": 9984,
+            "output_tokens": 1739464,
+            "endings": {
+              "eos": 9984
+            }
+          }
+        }
+      },
+      "NAME_vs_STEP_training_token_percent": -1.867305111715667,
+      "NAME_vs_STEP_training_segment_gpu_percent": -5.384002258087028
+    },
+    {
+      "task": "14b-L7",
+      "conditions": {
+        "STEP": {
+          "training": {
+            "outputs": 38400,
+            "output_tokens": 7647766,
+            "endings": {
+              "eos": 38398,
+              "length": 2
+            },
+            "post_nccl_run_gpu_hours": 14.585882863468594
+          },
+          "evaluation": {
+            "outputs": 9984,
+            "output_tokens": 1992923,
+            "endings": {
+              "eos": 9984
+            }
+          }
+        },
+        "NAME": {
+          "training": {
+            "outputs": 38400,
+            "output_tokens": 7694354,
+            "endings": {
+              "eos": 38399,
+              "length": 1
+            },
+            "post_nccl_run_gpu_hours": 13.976519905461206
+          },
+          "evaluation": {
+            "outputs": 9984,
+            "output_tokens": 2014977,
+            "endings": {
+              "eos": 9984
+            }
+          }
+        }
+      },
+      "NAME_vs_STEP_training_token_percent": 0.6091713580148816,
+      "NAME_vs_STEP_training_segment_gpu_percent": -4.177758478601124
+    }
+  ],
+  "totals": {
+    "training": {
+      "outputs": 460800,
+      "output_tokens": 67172424,
+      "truncated": 9
+    },
+    "evaluation": {
+      "outputs": 119808,
+      "output_tokens": 17552357,
+      "truncated": 2
+    }
+  },
+  "precheck_actual_outputs": 9216,
+  "precheck": [
+    {
+      "task": "7b-L3",
+      "condition": "STEP",
+      "outputs": 768,
+      "output_tokens": 71392,
+      "endings": {
+        "eos": 768
+      }
+    },
+    {
+      "task": "7b-L3",
+      "condition": "NAME",
+      "outputs": 768,
+      "output_tokens": 67939,
+      "endings": {
+        "eos": 768
+      }
+    },
+    {
+      "task": "7b-L4",
+      "condition": "STEP",
+      "outputs": 768,
+      "output_tokens": 94288,
+      "endings": {
+        "eos": 768
+      }
+    },
+    {
+      "task": "7b-L4",
+      "condition": "NAME",
+      "outputs": 768,
+      "output_tokens": 89798,
+      "endings": {
+        "eos": 768
+      }
+    },
+    {
+      "task": "7b-L5",
+      "condition": "STEP",
+      "outputs": 768,
+      "output_tokens": 106218,
+      "endings": {
+        "eos": 768
+      }
+    },
+    {
+      "task": "7b-L5",
+      "condition": "NAME",
+      "outputs": 768,
+      "output_tokens": 106935,
+      "endings": {
+        "eos": 768
+      }
+    },
+    {
+      "task": "14b-L5",
+      "condition": "STEP",
+      "outputs": 768,
+      "output_tokens": 120523,
+      "endings": {
+        "eos": 768
+      }
+    },
+    {
+      "task": "14b-L5",
+      "condition": "NAME",
+      "outputs": 768,
+      "output_tokens": 113932,
+      "endings": {
+        "eos": 768
+      }
+    },
+    {
+      "task": "14b-L6",
+      "condition": "STEP",
+      "outputs": 768,
+      "output_tokens": 134494,
+      "endings": {
+        "eos": 768
+      }
+    },
+    {
+      "task": "14b-L6",
+      "condition": "NAME",
+      "outputs": 768,
+      "output_tokens": 133030,
+      "endings": {
+        "eos": 768
+      }
+    },
+    {
+      "task": "14b-L7",
+      "condition": "STEP",
+      "outputs": 768,
+      "output_tokens": 152193,
+      "endings": {
+        "eos": 768
+      }
+    },
+    {
+      "task": "14b-L7",
+      "condition": "NAME",
+      "outputs": 768,
+      "output_tokens": 154871,
+      "endings": {
+        "eos": 768
+      }
+    }
+  ],
+  "lifecycle": {
+    "precheck": 5.867644966046015,
+    "formal_training": 108.77023689892557,
+    "evaluation_workers": 21.360288738144767
+  },
+  "total_allocated_gpu_hours": 135.99817060311636
+}

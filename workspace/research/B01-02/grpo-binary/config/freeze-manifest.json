@@ -1,0 +1,19 @@
+{
+  "created": 1790603138.983388,
+  "config_sha256": "33df7759cd6316cb975e3f107e84699a49bf5f03f31b97f812cd2590cee754fc",
+  "data_manifest_sha256": "c4c200dbff0743e6ffa6fde97aac9307758d120f4f3d08268f1a119ea0e6c78c",
+  "source": {
+    "remote.py": "7293b13ff98c9bb2abbbbb9d0c011b16e0382331378d7dc3f2151e446e4cca47",
+    "supervise.py": "fa33c6919f08d220368a13ede39a78b92755e4111c19a3c8c2ea1b873bda4af0",
+    "common.py": "387e1b54ae2015e28efddd076b185b45fe8df98949499e2250e98d84fd07b193",
+    "evaluate.py": "c300d42c059e8f45e3954e7c229a142f928459a24b969463934db01c612a8ca1",
+    "train.py": "41bf94f33814be0b4a78499593bff8c7b319a0d6bbc9e31536a283b55916da95",
+    "build.py": "3322a981808c06d5deecccfe8b62057da705e1a60e8de888fcf099e1da03bb3b",
+    "engine.py": "da0002aa4c75534c2714ca60779653bec47516577faed9cb67001e922e77100b",
+    "diagnose_dist.py": "80916cca349bff84b8932b4838dea88aed63cecf58a486fb03ecfd24d93d2f3b",
+    "validate.py": "51c6429741dd27042721044ab30c2fa2580c8e806ee3bf51c847b6ea71e41126",
+    "launch.py": "60e564f28b0fc69d7f46b81e12cfddc7f96774895ca2b030a18ebf77af0db962",
+    "job_runner.py": "dbe98d052edffaa927a13458940713f561a5bbd20c51dc4e879cb92db293c1bf"
+  },
+  "precheck_sha256": "c8e63d9b74880dccf07bdb1d6cb1ca972f754ca844a5f82152b9f8ebe5950e2b"
+}

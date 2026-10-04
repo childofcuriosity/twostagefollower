@@ -1,0 +1,21 @@
+{
+  "seed": 2026092501,
+  "n": 400,
+  "programs": 100,
+  "per_length": 80,
+  "excluded_splits": {
+    "train": 4096,
+    "dev": 224,
+    "test": 560,
+    "independent": 480
+  },
+  "excluded_program_counts_by_length": {
+    "3": 68,
+    "4": 68,
+    "5": 68,
+    "6": 24,
+    "8": 24
+  },
+  "sha256": "ef6a59edd042fbf7209e42099f447c65e5c8f9dc877c120849cba16146521813",
+  "note": "New programs disjoint from all oracle-study train/dev/test/independent input programs; generated before context-intervention real-model inference."
+}

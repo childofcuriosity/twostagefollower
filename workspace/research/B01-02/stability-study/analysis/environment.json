@@ -1,0 +1,13 @@
+{
+  "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+  "executable": "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "transformers": "4.51.3",
+    "peft": "0.15.2",
+    "accelerate": "1.6.0",
+    "numpy": "2.2.6"
+  },
+  "gpu": "0, GPU-c7e51843-826b-f1b2-aebd-e9bd41597390, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.105.08\n1, GPU-e41ea8f0-a6b1-c8f7-30c7-e387b6e2bb3d, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.105.08\n2, GPU-0ea11fc0-ce84-464f-1fd9-a1b22c827110, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.105.08\n3, GPU-56ccd503-b692-c803-5a50-46b1539a7058, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.105.08\n4, GPU-b2637a13-4f37-6359-225c-99a05f640c6f, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.105.08\n5, GPU-880c7022-67a2-17b7-ed30-2c90c81f4828, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.105.08\n6, GPU-54511106-d22a-d932-41c5-3c7d8e74c11d, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.105.08\n7, GPU-85132bc8-092a-556e-e51e-549a1a425985, NVIDIA RTX PRO 6000 Blackwell Server Edition, 580.105.08\n"
+}

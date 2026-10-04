@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "seed": 11,
+      "model": "qwen1.5b",
+      "condition": "position",
+      "records": 1040,
+      "environment_base_parameters_matched": true,
+      "training_samples_matched": true
+    },
+    {
+      "seed": 22,
+      "model": "qwen1.5b",
+      "condition": "position",
+      "records": 1040,
+      "environment_base_parameters_matched": true,
+      "training_samples_matched": true
+    }
+  ],
+  "note": "Triggered by first two process completions, not routine progress polling; no method selection based on partial scores."
+}

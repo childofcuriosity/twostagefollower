@@ -1,0 +1,72 @@
+{
+  "checked": 1790325830.1486902,
+  "servers": [
+    {
+      "server": "formal-local32",
+      "records": [
+        {
+          "run": "formal-local32-qwen32b-order_oracle-s11-status.json",
+          "pid": 3849117,
+          "alive": false,
+          "recorded_returncode": 0
+        },
+        {
+          "run": "formal-local32-qwen32b-joint-s22-status.json",
+          "pid": 3849096,
+          "alive": false,
+          "recorded_returncode": 0
+        },
+        {
+          "run": "formal-local32-qwen32b-joint-s33-status.json",
+          "pid": 3849539,
+          "alive": false,
+          "recorded_returncode": 0
+        },
+        {
+          "run": "formal-local32-qwen32b-joint-s11-status.json",
+          "pid": 3849786,
+          "alive": false,
+          "recorded_returncode": 0
+        },
+        {
+          "run": "formal-local32-qwen32b-operation_oracle-s11-status.json",
+          "pid": 3849097,
+          "alive": false,
+          "recorded_returncode": 0
+        },
+        {
+          "run": "formal-local32-qwen32b-operation_oracle-s33-status.json",
+          "pid": 4012472,
+          "alive": false,
+          "recorded_returncode": 0
+        },
+        {
+          "run": "formal-local32-qwen32b-order_oracle-s33-status.json",
+          "pid": 3849599,
+          "alive": false,
+          "recorded_returncode": 0
+        },
+        {
+          "run": "formal-local32-qwen32b-operation_oracle-s22-status.json",
+          "pid": 3849260,
+          "alive": false,
+          "recorded_returncode": 0
+        },
+        {
+          "run": "formal-local32-qwen32b-order_oracle-s22-status.json",
+          "pid": 3849600,
+          "alive": false,
+          "recorded_returncode": 0
+        },
+        {
+          "run": "external-qwen32b-operation_oracle-s33",
+          "pid": 3901044,
+          "alive": false,
+          "recorded_returncode": null,
+          "external_owner": true
+        }
+      ],
+      "gpu": "0, 0 MiB, 0 %\n1, 0 MiB, 0 %\n2, 0 MiB, 0 %\n3, 0 MiB, 0 %\n4, 0 MiB, 0 %\n5, 0 MiB, 0 %\n6, 0 MiB, 0 %\n7, 0 MiB, 0 %\n"
+    }
+  ]
+}

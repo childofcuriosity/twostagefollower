@@ -1,0 +1,7 @@
+{
+  "reason": "Both L2 and L5 STEP below20%; independent precheck and raw-response diagnosis found arithmetic/expansion errors, no implementation or generation-budget defect. Activate user-authorized 14B fallback; no Prompt change.",
+  "step_L2": 0.09375,
+  "step_L5": 0.0,
+  "time": 1790554887.740612,
+  "not_independent_cross_model_replication": true
+}

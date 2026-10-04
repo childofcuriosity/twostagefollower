@@ -1,0 +1,11 @@
+{
+  "length": 40,
+  "phase": "formal",
+  "condition": "position",
+  "seed": 203,
+  "gpu": 2,
+  "exit_code": 0,
+  "seconds": 1074.5459456443787,
+  "log": "logs/formal-L40-position-s203.log",
+  "finished": 1790528245.1714678
+}

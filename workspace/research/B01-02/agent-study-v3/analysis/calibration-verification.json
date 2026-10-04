@@ -1,0 +1,136 @@
+{
+  "calibration": [
+    {
+      "task": "cal-v3-code",
+      "category": "complete",
+      "grade": {
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4,
+        "protected_inputs_unchanged": true,
+        "checks": [
+          {
+            "id": "T01",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "T02",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "T03",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "T04",
+            "passed": true,
+            "detail": ""
+          }
+        ]
+      },
+      "generated_tokens": 600,
+      "wall_seconds": 33.491477251052856
+    },
+    {
+      "task": "cal-v3-data",
+      "category": "incomplete_voluntary_finish",
+      "grade": {
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4,
+        "protected_inputs_unchanged": true,
+        "checks": [
+          {
+            "id": "T01",
+            "passed": false,
+            "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'workspace/research/B01-02/agent-study-v3/runtime/cal-final-audit/work/reports/report_01.json'"
+          },
+          {
+            "id": "T02",
+            "passed": false,
+            "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'workspace/research/B01-02/agent-study-v3/runtime/cal-final-audit/work/reports/report_02.json'"
+          },
+          {
+            "id": "T03",
+            "passed": false,
+            "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'workspace/research/B01-02/agent-study-v3/runtime/cal-final-audit/work/reports/report_03.json'"
+          },
+          {
+            "id": "T04",
+            "passed": false,
+            "detail": "FileNotFoundError: [Errno 2] No such file or directory: 'workspace/research/B01-02/agent-study-v3/runtime/cal-final-audit/work/reports/report_04.json'"
+          }
+        ]
+      },
+      "generated_tokens": 828,
+      "wall_seconds": 45.89743089675903
+    },
+    {
+      "task": "cal-v3-files",
+      "category": "complete",
+      "grade": {
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4,
+        "protected_inputs_unchanged": true,
+        "checks": [
+          {
+            "id": "T01",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "T02",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "T03",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "id": "T04",
+            "passed": true,
+            "detail": ""
+          }
+        ]
+      },
+      "generated_tokens": 592,
+      "wall_seconds": 40.509714126586914
+    }
+  ],
+  "gate_passed": false,
+  "main96_started": false,
+  "reason": "Registered3/3 four-requirement capability threshold not reached",
+  "gpu_hours": 0.07402635799513922,
+  "combined_gpu_hours": 2.8006710507472357,
+  "raw_sha256": {
+    "runs/calibration/cal-v3-code--plan/summary.json": "174aab46f5799ef0402399b75bc5a569a2ec9a39723376d3fab4ac1a25db97d7",
+    "runs/calibration/cal-v3-code--plan/trajectory.jsonl": "dcaba9c05c1d121966f0be8ff70ea300d53416e9da6fae8758e5fdf825129a35",
+    "runs/calibration/cal-v3-code--plan/messages.json": "d940a6f0d772acd17ad27ce7a929e0d813645bc5cb35c257dcf57eb15173577f",
+    "runs/calibration/cal-v3-code--plan/final-workspace/README.txt": "cd5fe34c13a22186bf711c0f98bab13a22d86c7caa8acd04e308a35fe492ab38",
+    "runs/calibration/cal-v3-code--plan/final-workspace/jobs/task_02.py": "0227e876910de290b7425684798c155566aff9debb2340366a075e98464a2771",
+    "runs/calibration/cal-v3-code--plan/final-workspace/jobs/task_03.py": "02a7236d0a39db5d983e52f41a38e96948532f378514fe2cb69bc5154f07ce04",
+    "runs/calibration/cal-v3-code--plan/final-workspace/jobs/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/calibration/cal-v3-code--plan/final-workspace/jobs/task_01.py": "a1004f0afbc5f5a313b34e957aa1e2eb697d9a698daa41cca0e83873dd052aea",
+    "runs/calibration/cal-v3-code--plan/final-workspace/jobs/task_04.py": "b1f6d0846d8090b501893696403ab164c764270c9c22a87157a10545016f3365",
+    "runs/calibration/cal-v3-data--plan/summary.json": "a7d4b3455e317e8e1f1db0b1f969a807387661b880ac0d567689b2d757de705b",
+    "runs/calibration/cal-v3-data--plan/trajectory.jsonl": "0756893722e05968b02c3083acbcbcc7c3146612b242e6f14af419d85f699271",
+    "runs/calibration/cal-v3-data--plan/messages.json": "c2ee43db192a9066ecb16e26879c591264dd3ddb24d3d4579d22c93f2f87de54",
+    "runs/calibration/cal-v3-data--plan/final-workspace/README.txt": "cd5fe34c13a22186bf711c0f98bab13a22d86c7caa8acd04e308a35fe492ab38",
+    "runs/calibration/cal-v3-data--plan/final-workspace/orders.csv": "f758e6cc6926ff0397968eeee7be1c08733482e521e294d27f029061d029723d",
+    "runs/calibration/cal-v3-data--plan/final-workspace/prices.csv": "2d6d33df2e4c684c47b9388a026e05101f13ae8127d26dd8bf5d3df4411cda41",
+    "runs/calibration/cal-v3-files--plan/summary.json": "ac96a9f5dab51ca26f382ccd4574c486a44bba7513bc2131cbc2b953833fef48",
+    "runs/calibration/cal-v3-files--plan/trajectory.jsonl": "bd446a6e12f7f8b4bf9a2802b98825cef550314bbb443f073c54363883059e54",
+    "runs/calibration/cal-v3-files--plan/messages.json": "8387da927a816c6e0bbb103778744eec05cd9a86465fe680c757f6d0e012f17f",
+    "runs/calibration/cal-v3-files--plan/final-workspace/README.txt": "cd5fe34c13a22186bf711c0f98bab13a22d86c7caa8acd04e308a35fe492ab38",
+    "runs/calibration/cal-v3-files--plan/final-workspace/configs/service_01.json": "d4583919be60c57df37dce24bd3c1a323706a7a01a536477a076c9bc6f5edef6",
+    "runs/calibration/cal-v3-files--plan/final-workspace/configs/service_04.json": "7623f57c4d89e7b42fab38ef10574e32420417f12c711c1500e143b9e0ccdf24",
+    "runs/calibration/cal-v3-files--plan/final-workspace/configs/service_03.json": "c57c7d535f04b4e78da86c2f02930897456e90fa087135c076ad60b2385ae2af",
+    "runs/calibration/cal-v3-files--plan/final-workspace/configs/service_02.json": "720aed2a5ec13f9b2d678343c006b60eaae9c7a6d91749d5f3822f6fe18a096d"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "utc": "2026-09-24T04:52:28Z",
+  "posthoc": true,
+  "hashes": {
+    "src/timecourse.py": "8c6e0892012f0b77cee85b760bcdba4da4e5b6eb50799e7a91fae27715898967",
+    "src/launch_timecourse.py": "929a0ac5c27a02f62e65aa429410abee9f874529fded98d9f863de2fc6f06e58"
+  }
+}

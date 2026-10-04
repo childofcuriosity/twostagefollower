@@ -1,0 +1,185 @@
+{
+  "results": [
+    {
+      "condition": "macro",
+      "seed": 11,
+      "gpu": 0,
+      "exit_code": 0,
+      "seconds": 176.6914222240448,
+      "finished": 1790502886.4684978,
+      "log": "logs/L5-macro-s11.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 109,
+      "gpu": 0,
+      "exit_code": 0,
+      "seconds": 175.87743997573853,
+      "finished": 1790503062.4088774,
+      "log": "logs/L5-macro-s109.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 101,
+      "gpu": 4,
+      "exit_code": 0,
+      "seconds": 175.6865792274475,
+      "finished": 1790502885.465187,
+      "log": "logs/L5-macro-s101.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 107,
+      "gpu": 4,
+      "exit_code": 0,
+      "seconds": 177.00442814826965,
+      "finished": 1790503062.494793,
+      "log": "logs/L5-macro-s107.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 22,
+      "gpu": 1,
+      "exit_code": 0,
+      "seconds": 177.20342302322388,
+      "finished": 1790502886.980855,
+      "log": "logs/L5-macro-s22.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 111,
+      "gpu": 1,
+      "exit_code": 0,
+      "seconds": 176.0128881931305,
+      "finished": 1790503063.0400991,
+      "log": "logs/L5-macro-s111.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 33,
+      "gpu": 2,
+      "exit_code": 0,
+      "seconds": 179.8377652168274,
+      "finished": 1790502889.6155577,
+      "log": "logs/L5-macro-s33.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 112,
+      "gpu": 2,
+      "exit_code": 0,
+      "seconds": 175.52226042747498,
+      "finished": 1790503065.1822743,
+      "log": "logs/L5-macro-s112.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 104,
+      "gpu": 7,
+      "exit_code": 0,
+      "seconds": 175.26044607162476,
+      "finished": 1790502885.0407245,
+      "log": "logs/L5-macro-s104.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 106,
+      "gpu": 7,
+      "exit_code": 0,
+      "seconds": 172.78613138198853,
+      "finished": 1790503057.872596,
+      "log": "logs/L5-macro-s106.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 113,
+      "gpu": 7,
+      "exit_code": 0,
+      "seconds": 172.34550738334656,
+      "finished": 1790503230.242408,
+      "log": "logs/L5-macro-s113.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 102,
+      "gpu": 5,
+      "exit_code": 0,
+      "seconds": 175.8964626789093,
+      "finished": 1790502885.675539,
+      "log": "logs/L5-macro-s102.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 108,
+      "gpu": 5,
+      "exit_code": 0,
+      "seconds": 173.3376169204712,
+      "finished": 1790503059.0381608,
+      "log": "logs/L5-macro-s108.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 115,
+      "gpu": 5,
+      "exit_code": 0,
+      "seconds": 172.67253851890564,
+      "finished": 1790503231.7360377,
+      "log": "logs/L5-macro-s115.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 103,
+      "gpu": 6,
+      "exit_code": 0,
+      "seconds": 175.0597264766693,
+      "finished": 1790502884.8394191,
+      "log": "logs/L5-macro-s103.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 105,
+      "gpu": 6,
+      "exit_code": 0,
+      "seconds": 173.54988598823547,
+      "finished": 1790503058.4161637,
+      "log": "logs/L5-macro-s105.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 114,
+      "gpu": 6,
+      "exit_code": 0,
+      "seconds": 173.42843079566956,
+      "finished": 1790503231.871288,
+      "log": "logs/L5-macro-s114.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 100,
+      "gpu": 3,
+      "exit_code": 0,
+      "seconds": 177.11019945144653,
+      "finished": 1790502886.8883388,
+      "log": "logs/L5-macro-s100.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 110,
+      "gpu": 3,
+      "exit_code": 0,
+      "seconds": 175.2421591281891,
+      "finished": 1790503062.19742,
+      "log": "logs/L5-macro-s110.log"
+    },
+    {
+      "condition": "macro",
+      "seed": 116,
+      "gpu": 3,
+      "exit_code": 0,
+      "seconds": 173.3948678970337,
+      "finished": 1790503235.6354873,
+      "log": "logs/L5-macro-s116.log"
+    }
+  ],
+  "seconds": 525.9011948108673
+}

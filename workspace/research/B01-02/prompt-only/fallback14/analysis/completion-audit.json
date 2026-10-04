@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "formal_rows": 2048,
+  "selected_lengths": [
+    2
+  ],
+  "disjoint_data_counts": {
+    "explore": 224,
+    "formal": 512,
+    "precheck": 12
+  },
+  "raw_checks": [
+    {
+      "length": 2,
+      "condition": "STEP",
+      "n": 512,
+      "predictions_sha256": "171d7e8bcf7e300e6e8842723712f58b993af44885790c334ddeee13a17004f0"
+    },
+    {
+      "length": 2,
+      "condition": "POSITION",
+      "n": 512,
+      "predictions_sha256": "e92118361185a9d2db02e49deed2bddea0b53c387643dc939dc8c7b4e8b4f6b6"
+    },
+    {
+      "length": 2,
+      "condition": "ALIAS",
+      "n": 512,
+      "predictions_sha256": "75cf93f066665431d03d3092ad024f9358b0ee5118b1b9427dfe4fc71699d071"
+    },
+    {
+      "length": 2,
+      "condition": "NAME",
+      "n": 512,
+      "predictions_sha256": "8e1a97c61311d0ade5b9308aac2500414dd9bd23fee084a500ff5109f8959e67"
+    }
+  ],
+  "source_hashes": {
+    "2": {
+      "report.py": "69da3f9dc79d76657ce27d91412c53f615dbe8260542b349bbc8e217b5fbc212",
+      "select.py": "dedba581dd3013a18e00e64d8d3913db59592193390ddc380eeeddbd1acf9daf",
+      "validate.py": "e270de59687a17a285a13b8d4664ecf86bacc2166e092ad52bbaefea3c23a7cf",
+      "frozen_dsl.py": "59a3eddff9a3144e460954c15f33f3a00cec2fc3642daf2bb87a44af27c49003",
+      "score.py": "d503e5ea11aeec220bd494045987da472c9f223b2d48efef043da032e74cf1f7",
+      "download.py": "801a8eca576a1ea814cdf211ec9d36e5df66d02a9425437ece875dfed692beb0",
+      "common.py": "6107cd3544d42d94a0923f8b585f1837587a9f1034b1a253f0cb03f30b9e40ab",
+      "worker.py": "58ab75beb887573f45e689e297a82c220699cd8c4db24101b1b0fdfd7fd0a15c",
+      "prepare.py": "3efd85519007d4eb053792c05dcd86f8688885625cce012fa8340f84d8de7cab",
+      "dispatch.py": "eb71ca3bfc3e7a2a41b6e92059bd5d30cd6f016103b7b7c572d7ce528bf2c005"
+    }
+  },
+  "verified_utc": "2026-09-28T00:37:56.696958+00:00"
+}

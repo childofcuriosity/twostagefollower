@@ -1,0 +1,12 @@
+{
+  "utc": "2026-09-24T09:54:58Z",
+  "reason": "Before training, prefer original microbatch16 with gradient checkpointing. Lower microbatch test measured 4.35% BF16 gradient relative difference and did not meet chosen check tolerance; not labelled equivalent. Probe original microbatch first and preserve failed check.",
+  "launch_sha256": "304f28e3ad594dd6f7dd0860b0ba86461fe159f14178924daabc696f09d34468",
+  "microbatch_candidates": [
+    16,
+    8,
+    4,
+    2,
+    1
+  ]
+}

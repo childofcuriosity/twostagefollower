@@ -1,0 +1,22 @@
+{
+  "job": {
+    "id": "qwen32b-s11-JJ-full",
+    "kind": "confirmation",
+    "model": "qwen32b",
+    "seed": 11,
+    "route": "JJ",
+    "scope": "full"
+  },
+  "pid": 467722,
+  "gpu": 0,
+  "command": [
+    "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+    "-u",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/src/context_run.py",
+    "--job",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/analysis/qwen32b-s11-JJ-full-job.json"
+  ],
+  "start": 1790346913.3527129,
+  "returncode": 0,
+  "end": 1790347861.2397711
+}

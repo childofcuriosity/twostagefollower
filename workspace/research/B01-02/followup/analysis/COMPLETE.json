@@ -1,0 +1,9 @@
+{
+  "status": "complete_awaiting_review",
+  "utc": "2026-09-24T03:23:48Z",
+  "model_jobs": 12,
+  "proposals": 1536,
+  "new_parameter_training": false,
+  "primary_rows": 192,
+  "sensitivity_rows": 768
+}

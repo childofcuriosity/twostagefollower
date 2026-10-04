@@ -1,0 +1,325 @@
+{
+  "results": [
+    {
+      "model": "qwen1.5b",
+      "length": 3,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": 0.001808449074074107,
+      "per_seed_delta": [
+        0.0,
+        0.0,
+        0.005425347222222321
+      ],
+      "program_bootstrap95": [
+        -0.001953125,
+        0.00737847222222221
+      ]
+    },
+    {
+      "model": "qwen1.5b",
+      "length": 4,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": 0.018663194444444458,
+      "per_seed_delta": [
+        0.0,
+        0.02647569444444442,
+        0.02951388888888895
+      ],
+      "program_bootstrap95": [
+        -0.008684172453703693,
+        0.050349030671296306
+      ]
+    },
+    {
+      "model": "qwen1.5b",
+      "length": 5,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": -0.005967881944444457,
+      "per_seed_delta": [
+        -0.029296875,
+        0.01909722222222221,
+        -0.00770399305555558
+      ],
+      "program_bootstrap95": [
+        -0.05685944733796297,
+        0.04438114872685183
+      ]
+    },
+    {
+      "model": "qwen1.5b",
+      "length": 6,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": 0.003833912037037035,
+      "per_seed_delta": [
+        0.006184895833333343,
+        -0.004231770833333343,
+        0.009548611111111105
+      ],
+      "program_bootstrap95": [
+        -0.037905092592592594,
+        0.043619791666666664
+      ]
+    },
+    {
+      "model": "qwen1.5b",
+      "length": 8,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": 0.018807870370370364,
+      "per_seed_delta": [
+        0.005208333333333329,
+        0.0049913194444444475,
+        0.046223958333333315
+      ],
+      "program_bootstrap95": [
+        -0.02612756799768519,
+        0.061646412037036954
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "length": 3,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": -0.004774305555555543,
+      "per_seed_delta": [
+        0.0,
+        -0.01432291666666663,
+        0.0
+      ],
+      "program_bootstrap95": [
+        -0.014762369791666678,
+        0.0
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "length": 4,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": 0.0035807291666666297,
+      "per_seed_delta": [
+        0.0,
+        0.010742187499999889,
+        0.0
+      ],
+      "program_bootstrap95": [
+        -0.0027488425925925597,
+        0.013491030092592596
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "length": 5,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": -0.018952546296296297,
+      "per_seed_delta": [
+        -0.057834201388888895,
+        0.0078125,
+        -0.0068359375
+      ],
+      "program_bootstrap95": [
+        -0.04155906394675927,
+        -0.0002170138888888946
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "length": 6,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": -0.00947627314814814,
+      "per_seed_delta": [
+        -0.0205078125,
+        0.00575086805555558,
+        -0.013671875
+      ],
+      "program_bootstrap95": [
+        -0.035916702835648164,
+        0.01989474826388889
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "length": 8,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": 0.0012659143518518416,
+      "per_seed_delta": [
+        0.008138020833333315,
+        -0.01909722222222221,
+        0.01475694444444442
+      ],
+      "program_bootstrap95": [
+        -0.030889214409722223,
+        0.03154296874999998
+      ]
+    },
+    {
+      "model": "qwen7b",
+      "length": 3,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": 0.0,
+      "per_seed_delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "program_bootstrap95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "qwen7b",
+      "length": 4,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": 0.00528067129629628,
+      "per_seed_delta": [
+        0.03103298611111105,
+        -0.0060763888888888395,
+        -0.00911458333333337
+      ],
+      "program_bootstrap95": [
+        -0.01519458912037043,
+        0.032051142939814786
+      ]
+    },
+    {
+      "model": "qwen7b",
+      "length": 5,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": -0.02575231481481478,
+      "per_seed_delta": [
+        -0.05642361111111105,
+        -0.01822916666666663,
+        -0.0026041666666666574
+      ],
+      "program_bootstrap95": [
+        -0.05949978298611111,
+        0.009044053819444437
+      ]
+    },
+    {
+      "model": "qwen7b",
+      "length": 6,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": -0.0065104166666666435,
+      "per_seed_delta": [
+        -0.0034722222222221544,
+        0.0078125,
+        -0.023871527777777776
+      ],
+      "program_bootstrap95": [
+        -0.046405707465277765,
+        0.031431749131944436
+      ]
+    },
+    {
+      "model": "qwen7b",
+      "length": 8,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": -0.01613136574074074,
+      "per_seed_delta": [
+        -0.015299479166666671,
+        -0.03309461805555555,
+        0.0
+      ],
+      "program_bootstrap95": [
+        -0.03494014033564815,
+        0.006946252893518513
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "length": 3,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": 0.0,
+      "per_seed_delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "program_bootstrap95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "length": 4,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": -0.00021701388888887654,
+      "per_seed_delta": [
+        -0.0006510416666666297,
+        0.0,
+        0.0
+      ],
+      "program_bootstrap95": [
+        -0.0008680555555555433,
+        0.0
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "length": 5,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": -0.0030381944444444198,
+      "per_seed_delta": [
+        -0.00651041666666663,
+        -0.0026041666666666297,
+        0.0
+      ],
+      "program_bootstrap95": [
+        -0.009333405671296284,
+        0.0
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "length": 6,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": -0.0019169560185185268,
+      "per_seed_delta": [
+        -0.0009765625,
+        -0.00477430555555558,
+        0.0
+      ],
+      "program_bootstrap95": [
+        -0.006076388888888877,
+        0.0
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "length": 8,
+      "programs": 24,
+      "records": 288,
+      "co_success_minus_product": -0.001953125,
+      "per_seed_delta": [
+        -0.0026041666666666297,
+        -0.0032552083333333703,
+        0.0
+      ],
+      "program_bootstrap95": [
+        -0.010564959490740709,
+        0.004703776041666625
+      ]
+    }
+  ],
+  "note": "Shared program resampling across all three seeds, conditional on these trained checkpoints. CI crossing zero is not evidence of equivalence or internal independence. No multiplicity correction; descriptive only."
+}

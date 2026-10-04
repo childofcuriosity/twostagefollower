@@ -1,0 +1,16 @@
+{
+  "job": {
+    "model": "qwen7b",
+    "condition": "alias",
+    "seed": 103,
+    "steps": 512,
+    "microbatch": 16,
+    "accum": 2,
+    "lr": 0.0003
+  },
+  "gpu": 6,
+  "returncode": 0,
+  "seconds": 2697.744632959366,
+  "finished": 1790408068.5858026,
+  "log": "logs/qwen7b-alias-s103.log"
+}

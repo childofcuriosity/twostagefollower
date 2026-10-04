@@ -1,0 +1,21 @@
+{
+  "job": {
+    "kind": "curve",
+    "model": "qwen3b",
+    "seed": 33,
+    "id": "curve-qwen3b-order_oracle-s33",
+    "condition": "order_oracle"
+  },
+  "pid": 248575,
+  "gpu": 4,
+  "command": [
+    "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+    "-u",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/src/run.py",
+    "--job",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/analysis/job-configs/curve-qwen3b-order_oracle-s33.json"
+  ],
+  "start": 1790340284.1044946,
+  "returncode": 0,
+  "end": 1790341376.7028608
+}

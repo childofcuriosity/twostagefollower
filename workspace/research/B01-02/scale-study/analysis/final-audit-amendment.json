@@ -1,0 +1,18 @@
+{
+  "utc": "2026-09-24T16:26:10.338259+00:00",
+  "scope": "Analysis-only changes after final scores visible; no change to model, training, generated outputs or registered test set.",
+  "changes": [
+    "Verify all expected raw files against complete question IDs, inputs and split; recompute audits and hashes.",
+    "Plot correct-prefix early answer and IID mastery alongside OOD final/trace curves.",
+    "Include completed supplement results and subprocess cost in report.",
+    "Partition correct answers into exact trace, globally equivalent trace, input-specific coincidence, unsupported answer.",
+    "Report all 90/95/99 percent dev mastery thresholds as exploratory; numeric threshold not preregistered."
+  ],
+  "source_sha256": {
+    "verify.py": "f48474d8b0cb79f626304a24bb9e11120522a452c19f320ad85d7d8504f5c937",
+    "plots.py": "8f7cf1e32fc1d44d8d22ebecee58b612e7bb5b88e7814a0979fc64dfca502af4",
+    "report.py": "293ff7f092006346ca9d1d14d2c743844f0da3ee6ba5778e58f30e2c07532599",
+    "outcome_diagnostics.py": "f57b0ce7a1cc96cfa8e9400855da08b5146e9611a6104df148f4b7c0785c404f",
+    "mastery_diagnostics.py": "f22b5ea2ff5e9f1188537e96b1286f82c364253f2e845768a1b8981c8814ea99"
+  }
+}

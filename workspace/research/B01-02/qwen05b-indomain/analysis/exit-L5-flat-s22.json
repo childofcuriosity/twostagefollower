@@ -1,0 +1,9 @@
+{
+  "condition": "flat",
+  "seed": 22,
+  "gpu": 1,
+  "exit_code": 0,
+  "seconds": 175.87831568717957,
+  "finished": 1790501249.684148,
+  "log": "logs/L5-flat-s22.log"
+}

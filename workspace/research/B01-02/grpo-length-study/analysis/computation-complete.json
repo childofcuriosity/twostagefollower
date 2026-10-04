@@ -1,0 +1,10 @@
+{
+  "finished": 1790666268.1060245,
+  "runs": 36,
+  "updates_each": 100,
+  "checkpoints_expected": 396,
+  "formal_candidates_expected": 460800,
+  "independent_eval_expected": 119808,
+  "eval_shards": 1680,
+  "analysis_pending": true
+}

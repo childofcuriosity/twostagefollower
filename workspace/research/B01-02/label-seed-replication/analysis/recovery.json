@@ -1,0 +1,16 @@
+{
+  "finished": 1790425923.2386746,
+  "initial_failure": "Analysis import lacked re; all 204 training/inference jobs had exit 0 before analysis.",
+  "repair": "Added re import to isolated common.py; reran analyze.py only.",
+  "models_retrained": 0,
+  "raw_outputs_modified": false,
+  "results_sha256": "29208f0be381d9bec6ec942c5c2b51034194e13a3e4ef89b6dcf5e66b01b6b2e",
+  "deliverables_sha256": {
+    "REGISTRATION.md": "d6104a7a3d511c3fcf286e20276459261277cbaa39d7b36db98cda23917628f6",
+    "REPORT.md": "c711abf1a73a7ca1f4c3a636cc9836debb680bd5115d69150c040d5381ae6c92",
+    "CONCLUSIONS.md": "9f6a5a46c48d5b10a139a389dc74cdb22db37e2877396f39d14c21781520367d",
+    "analysis/results.json": "29208f0be381d9bec6ec942c5c2b51034194e13a3e4ef89b6dcf5e66b01b6b2e",
+    "analysis/completion-audit.json": "eceea3e781cda3c47a6c95dbee7f279c0ca8df069ac752fcb04d03ae424ea476",
+    "analysis/dispatch.json": "3f5d3408d7d51f654770df867551245be8ca790c54fc36e50296bd77bff79baa"
+  }
+}

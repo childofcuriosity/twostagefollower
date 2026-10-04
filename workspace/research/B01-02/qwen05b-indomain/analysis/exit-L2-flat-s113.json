@@ -1,0 +1,9 @@
+{
+  "condition": "flat",
+  "seed": 113,
+  "gpu": 7,
+  "exit_code": 0,
+  "seconds": 101.60512328147888,
+  "finished": 1790500083.1613786,
+  "log": "logs/L2-flat-s113.log"
+}

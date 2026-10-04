@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "precheck_correct_traces": 128,
+  "mutations_per_trace": 3,
+  "historical_outputs_reward_checked": 1968,
+  "uniform_groups_zero_advantage": true,
+  "prompt_and_padding_zero_gradient": true,
+  "eos_has_policy_gradient": true,
+  "per_completion_aggregation_verified": true,
+  "legacy_sha256": "de5d7eecf2e3407b1dabf296534cd8d54caa8d9433bc4f10bad12017b2e93f27"
+}

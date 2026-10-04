@@ -1,0 +1,2636 @@
+{
+  "records": [
+    {
+      "model": "qwen7b",
+      "condition": "flat",
+      "seed": 11,
+      "source": "scale-study/qwen7b/runs/flat-original-s11/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 125,
+          "label_sequence_correct": 128,
+          "accuracy": 125
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 48,
+          "label_sequence_correct": 117,
+          "accuracy": 49
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 3,
+          "label_sequence_correct": 11,
+          "accuracy": 8
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "flat",
+      "seed": 22,
+      "source": "scale-study/qwen7b/runs/flat-original-s22/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 122,
+          "label_sequence_correct": 128,
+          "accuracy": 122
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 69,
+          "label_sequence_correct": 104,
+          "accuracy": 69
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 12,
+          "label_sequence_correct": 12,
+          "accuracy": 14
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "flat",
+      "seed": 33,
+      "source": "scale-study/qwen7b/runs/flat-original-s33/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 122,
+          "label_sequence_correct": 128,
+          "accuracy": 122
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 75,
+          "label_sequence_correct": 108,
+          "accuracy": 75
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 14,
+          "label_sequence_correct": 16,
+          "accuracy": 16
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "macro",
+      "seed": 11,
+      "source": "scale-study/qwen7b/runs/macro-original-s11/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 126,
+          "accuracy": 128
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 176,
+          "label_sequence_correct": 176,
+          "accuracy": 176
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 25,
+          "label_sequence_correct": 25,
+          "accuracy": 25
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "macro",
+      "seed": 22,
+      "source": "scale-study/qwen7b/runs/macro-original-s22/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 127,
+          "label_sequence_correct": 128,
+          "accuracy": 127
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 292,
+          "label_sequence_correct": 307,
+          "accuracy": 294
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 37,
+          "label_sequence_correct": 38,
+          "accuracy": 37
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "macro",
+      "seed": 33,
+      "source": "scale-study/qwen7b/runs/macro-original-s33/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 108,
+          "label_sequence_correct": 126,
+          "accuracy": 109
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 109,
+          "label_sequence_correct": 126,
+          "accuracy": 113
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 24,
+          "label_sequence_correct": 24,
+          "accuracy": 24
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 118,
+          "label_sequence_correct": 128,
+          "accuracy": 120
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 113,
+          "label_sequence_correct": 140,
+          "accuracy": 115
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 12,
+          "label_sequence_correct": 17,
+          "accuracy": 18
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0000-dev-with-library.jsonl",
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0000-dev.jsonl",
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0016-dev.jsonl",
+      "file": "step0016-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 1,
+          "label_sequence_correct": 117,
+          "accuracy": 1
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 40,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0064-dev.jsonl",
+      "file": "step0064-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 125,
+          "label_sequence_correct": 128,
+          "accuracy": 125
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 15,
+          "label_sequence_correct": 32,
+          "accuracy": 15
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0128-dev.jsonl",
+      "file": "step0128-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 23,
+          "label_sequence_correct": 36,
+          "accuracy": 23
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0256-dev.jsonl",
+      "file": "step0256-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 20,
+          "label_sequence_correct": 33,
+          "accuracy": 20
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0512-dev.jsonl",
+      "file": "step0512-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 20,
+          "label_sequence_correct": 32,
+          "accuracy": 20
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 107,
+          "label_sequence_correct": 128,
+          "accuracy": 107
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 41,
+          "label_sequence_correct": 44,
+          "accuracy": 41
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 8,
+          "label_sequence_correct": 8,
+          "accuracy": 9
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0000-dev-with-library.jsonl",
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0000-dev.jsonl",
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0016-dev.jsonl",
+      "file": "step0016-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 1,
+          "label_sequence_correct": 122,
+          "accuracy": 1
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 43,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0064-dev.jsonl",
+      "file": "step0064-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 127,
+          "label_sequence_correct": 128,
+          "accuracy": 127
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 28,
+          "label_sequence_correct": 29,
+          "accuracy": 28
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0128-dev.jsonl",
+      "file": "step0128-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 19,
+          "label_sequence_correct": 19,
+          "accuracy": 19
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0256-dev.jsonl",
+      "file": "step0256-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 21,
+          "label_sequence_correct": 21,
+          "accuracy": 21
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0512-dev.jsonl",
+      "file": "step0512-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 22,
+          "label_sequence_correct": 22,
+          "accuracy": 22
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 113,
+          "label_sequence_correct": 128,
+          "accuracy": 113
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 193,
+          "label_sequence_correct": 313,
+          "accuracy": 196
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 29,
+          "label_sequence_correct": 38,
+          "accuracy": 30
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0000-dev-with-library.jsonl",
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0000-dev.jsonl",
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0016-dev.jsonl",
+      "file": "step0016-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 1,
+          "label_sequence_correct": 128,
+          "accuracy": 1
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 60,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0064-dev.jsonl",
+      "file": "step0064-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 47,
+          "label_sequence_correct": 92,
+          "accuracy": 47
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0128-dev.jsonl",
+      "file": "step0128-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 58,
+          "label_sequence_correct": 87,
+          "accuracy": 58
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0256-dev.jsonl",
+      "file": "step0256-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 60,
+          "label_sequence_correct": 86,
+          "accuracy": 60
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0512-dev.jsonl",
+      "file": "step0512-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 57,
+          "label_sequence_correct": 84,
+          "accuracy": 57
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 118,
+          "label_sequence_correct": 128,
+          "accuracy": 118
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 239,
+          "label_sequence_correct": 248,
+          "accuracy": 239
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 35,
+          "label_sequence_correct": 36,
+          "accuracy": 35
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0000-dev-with-library.jsonl",
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0000-dev.jsonl",
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0016-dev.jsonl",
+      "file": "step0016-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 4,
+          "label_sequence_correct": 128,
+          "accuracy": 4
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 95,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0064-dev.jsonl",
+      "file": "step0064-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 59,
+          "label_sequence_correct": 93,
+          "accuracy": 59
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0128-dev.jsonl",
+      "file": "step0128-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 60,
+          "label_sequence_correct": 80,
+          "accuracy": 60
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0256-dev.jsonl",
+      "file": "step0256-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 60,
+          "label_sequence_correct": 78,
+          "accuracy": 60
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0512-dev.jsonl",
+      "file": "step0512-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 59,
+          "label_sequence_correct": 77,
+          "accuracy": 59
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 127,
+          "label_sequence_correct": 128,
+          "accuracy": 127
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 46,
+          "label_sequence_correct": 47,
+          "accuracy": 46
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 6,
+          "label_sequence_correct": 6,
+          "accuracy": 6
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0000-dev-with-library.jsonl",
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0000-dev.jsonl",
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0016-dev.jsonl",
+      "file": "step0016-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 1,
+          "label_sequence_correct": 128,
+          "accuracy": 2
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 96,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0064-dev.jsonl",
+      "file": "step0064-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 61,
+          "label_sequence_correct": 70,
+          "accuracy": 61
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0128-dev.jsonl",
+      "file": "step0128-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 47,
+          "label_sequence_correct": 57,
+          "accuracy": 47
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0256-dev.jsonl",
+      "file": "step0256-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 45,
+          "label_sequence_correct": 54,
+          "accuracy": 45
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0512-dev.jsonl",
+      "file": "step0512-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 44,
+          "label_sequence_correct": 54,
+          "accuracy": 44
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 123,
+          "label_sequence_correct": 128,
+          "accuracy": 124
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 199,
+          "label_sequence_correct": 320,
+          "accuracy": 294
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 37,
+          "label_sequence_correct": 38,
+          "accuracy": 37
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0000-dev-with-library.jsonl",
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0000-dev.jsonl",
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0016-dev.jsonl",
+      "file": "step0016-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 2,
+          "label_sequence_correct": 128,
+          "accuracy": 2
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 91,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0064-dev.jsonl",
+      "file": "step0064-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 125,
+          "label_sequence_correct": 128,
+          "accuracy": 125
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 51,
+          "label_sequence_correct": 84,
+          "accuracy": 51
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0128-dev.jsonl",
+      "file": "step0128-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 92,
+          "label_sequence_correct": 92,
+          "accuracy": 92
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0256-dev.jsonl",
+      "file": "step0256-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 88,
+          "label_sequence_correct": 92,
+          "accuracy": 88
+        }
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0512-dev.jsonl",
+      "file": "step0512-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 88,
+          "label_sequence_correct": 92,
+          "accuracy": 88
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "flat",
+      "seed": 11,
+      "source": "scale-study/qwen32b/runs/flat-original-s11/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 123,
+          "label_sequence_correct": 125,
+          "accuracy": 123
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 147,
+          "label_sequence_correct": 164,
+          "accuracy": 147
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 26,
+          "label_sequence_correct": 26,
+          "accuracy": 26
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "flat",
+      "seed": 22,
+      "source": "scale-study/qwen32b/runs/flat-original-s22/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 329,
+          "label_sequence_correct": 335,
+          "accuracy": 330
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 48,
+          "label_sequence_correct": 48,
+          "accuracy": 48
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "flat",
+      "seed": 33,
+      "source": "scale-study/qwen32b/runs/flat-original-s33/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 111,
+          "label_sequence_correct": 121,
+          "accuracy": 111
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 255,
+          "label_sequence_correct": 308,
+          "accuracy": 255
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 34,
+          "label_sequence_correct": 46,
+          "accuracy": 35
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "macro",
+      "seed": 11,
+      "source": "scale-study/qwen32b/runs/macro-original-s11/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 179,
+          "label_sequence_correct": 179,
+          "accuracy": 182
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 34,
+          "label_sequence_correct": 37,
+          "accuracy": 35
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "macro",
+      "seed": 22,
+      "source": "scale-study/qwen32b/runs/macro-original-s22/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 294,
+          "label_sequence_correct": 295,
+          "accuracy": 294
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 37,
+          "label_sequence_correct": 37,
+          "accuracy": 40
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "macro",
+      "seed": 33,
+      "source": "scale-study/qwen32b/runs/macro-original-s33/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 353,
+          "label_sequence_correct": 355,
+          "accuracy": 353
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 46,
+          "label_sequence_correct": 46,
+          "accuracy": 48
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 127,
+          "label_sequence_correct": 128,
+          "accuracy": 127
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 354,
+          "label_sequence_correct": 377,
+          "accuracy": 358
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 44,
+          "label_sequence_correct": 48,
+          "accuracy": 45
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0000-dev-with-library.jsonl",
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0000-dev.jsonl",
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 3
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0016-dev.jsonl",
+      "file": "step0016-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 2,
+          "label_sequence_correct": 128,
+          "accuracy": 3
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 88,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0064-dev.jsonl",
+      "file": "step0064-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 67,
+          "label_sequence_correct": 75,
+          "accuracy": 67
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0128-dev.jsonl",
+      "file": "step0128-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 61,
+          "label_sequence_correct": 71,
+          "accuracy": 61
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0256-dev.jsonl",
+      "file": "step0256-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 61,
+          "label_sequence_correct": 71,
+          "accuracy": 61
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0512-dev.jsonl",
+      "file": "step0512-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 60,
+          "label_sequence_correct": 70,
+          "accuracy": 60
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 127,
+          "label_sequence_correct": 128,
+          "accuracy": 127
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 278,
+          "label_sequence_correct": 279,
+          "accuracy": 278
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 45,
+          "label_sequence_correct": 45,
+          "accuracy": 45
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0000-dev-with-library.jsonl",
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0000-dev.jsonl",
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 3
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0016-dev.jsonl",
+      "file": "step0016-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 1,
+          "label_sequence_correct": 128,
+          "accuracy": 5
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 85,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0064-dev.jsonl",
+      "file": "step0064-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 117,
+          "label_sequence_correct": 128,
+          "accuracy": 117
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 50,
+          "label_sequence_correct": 64,
+          "accuracy": 53
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0128-dev.jsonl",
+      "file": "step0128-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 33,
+          "label_sequence_correct": 37,
+          "accuracy": 33
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0256-dev.jsonl",
+      "file": "step0256-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 60,
+          "label_sequence_correct": 67,
+          "accuracy": 60
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0512-dev.jsonl",
+      "file": "step0512-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 56,
+          "label_sequence_correct": 60,
+          "accuracy": 56
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 124,
+          "label_sequence_correct": 128,
+          "accuracy": 124
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 303,
+          "label_sequence_correct": 382,
+          "accuracy": 308
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 43,
+          "label_sequence_correct": 47,
+          "accuracy": 44
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0000-dev-with-library.jsonl",
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0000-dev.jsonl",
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 3
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0016-dev.jsonl",
+      "file": "step0016-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 3,
+          "label_sequence_correct": 128,
+          "accuracy": 9
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 86,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0064-dev.jsonl",
+      "file": "step0064-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 59,
+          "label_sequence_correct": 96,
+          "accuracy": 60
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0128-dev.jsonl",
+      "file": "step0128-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 127,
+          "label_sequence_correct": 128,
+          "accuracy": 127
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 67,
+          "label_sequence_correct": 96,
+          "accuracy": 67
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0256-dev.jsonl",
+      "file": "step0256-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 66,
+          "label_sequence_correct": 96,
+          "accuracy": 66
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0512-dev.jsonl",
+      "file": "step0512-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 66,
+          "label_sequence_correct": 96,
+          "accuracy": 66
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 326,
+          "label_sequence_correct": 335,
+          "accuracy": 326
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 33,
+          "label_sequence_correct": 42,
+          "accuracy": 33
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0000-dev-with-library.jsonl",
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 1
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0000-dev.jsonl",
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 2
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0016-dev.jsonl",
+      "file": "step0016-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 3,
+          "label_sequence_correct": 128,
+          "accuracy": 3
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 96,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0064-dev.jsonl",
+      "file": "step0064-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 40,
+          "label_sequence_correct": 57,
+          "accuracy": 41
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0128-dev.jsonl",
+      "file": "step0128-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 51,
+          "label_sequence_correct": 51,
+          "accuracy": 51
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0256-dev.jsonl",
+      "file": "step0256-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 47,
+          "label_sequence_correct": 47,
+          "accuracy": 47
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 11,
+      "source": "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0512-dev.jsonl",
+      "file": "step0512-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 47,
+          "label_sequence_correct": 47,
+          "accuracy": 47
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 327,
+          "label_sequence_correct": 327,
+          "accuracy": 327
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 44,
+          "label_sequence_correct": 44,
+          "accuracy": 44
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0000-dev-with-library.jsonl",
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 1
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0000-dev.jsonl",
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 2
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0016-dev.jsonl",
+      "file": "step0016-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 9,
+          "label_sequence_correct": 128,
+          "accuracy": 9
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 96,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0064-dev.jsonl",
+      "file": "step0064-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 91,
+          "label_sequence_correct": 91,
+          "accuracy": 91
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0128-dev.jsonl",
+      "file": "step0128-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 67,
+          "label_sequence_correct": 71,
+          "accuracy": 68
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0256-dev.jsonl",
+      "file": "step0256-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 66,
+          "label_sequence_correct": 70,
+          "accuracy": 67
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 22,
+      "source": "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0512-dev.jsonl",
+      "file": "step0512-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 67,
+          "label_sequence_correct": 71,
+          "accuracy": 68
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/predictions-with-library.jsonl",
+      "file": "predictions-with-library.jsonl",
+      "n": 560,
+      "groups": {
+        "iid": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "ood": {
+          "n": 384,
+          "strict_trace": 289,
+          "label_sequence_correct": 289,
+          "accuracy": 289
+        },
+        "pressure": {
+          "n": 48,
+          "strict_trace": 42,
+          "label_sequence_correct": 42,
+          "accuracy": 42
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0000-dev-with-library.jsonl",
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 1
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0000-dev.jsonl",
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 2
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 0,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0016-dev.jsonl",
+      "file": "step0016-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 3,
+          "label_sequence_correct": 128,
+          "accuracy": 10
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 0,
+          "label_sequence_correct": 96,
+          "accuracy": 0
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0064-dev.jsonl",
+      "file": "step0064-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 59,
+          "label_sequence_correct": 59,
+          "accuracy": 59
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0128-dev.jsonl",
+      "file": "step0128-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 27,
+          "label_sequence_correct": 29,
+          "accuracy": 28
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0256-dev.jsonl",
+      "file": "step0256-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 29,
+          "label_sequence_correct": 29,
+          "accuracy": 30
+        }
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 33,
+      "source": "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0512-dev.jsonl",
+      "file": "step0512-dev.jsonl",
+      "n": 224,
+      "groups": {
+        "dev": {
+          "n": 128,
+          "strict_trace": 128,
+          "label_sequence_correct": 128,
+          "accuracy": 128
+        },
+        "dev_ood": {
+          "n": 96,
+          "strict_trace": 29,
+          "label_sequence_correct": 29,
+          "accuracy": 30
+        }
+      }
+    }
+  ],
+  "total_rows": 32256,
+  "source_sha256": {
+    "scale-study/qwen7b/runs/flat-original-s11/predictions-with-library.jsonl": "51a1dea0b8b1b59455c248352531357d636fa66e76a89d6f7bd251940a07f4dd",
+    "scale-study/qwen7b/runs/flat-original-s22/predictions-with-library.jsonl": "b37d0a0703985bbed7214a7de894f4f614e285f2f581c8c5009c106caa6616ff",
+    "scale-study/qwen7b/runs/flat-original-s33/predictions-with-library.jsonl": "f2aac1bd0a087d879644e5c250d58c821c27111503a56a9392ca952077142458",
+    "scale-study/qwen7b/runs/macro-original-s11/predictions-with-library.jsonl": "9f9b83dd7e5b767078222f75ffaeb91397d6fc027f4882e24d9061b80a8ac799",
+    "scale-study/qwen7b/runs/macro-original-s22/predictions-with-library.jsonl": "1929797e08cefddcfe15f49c8a39dbf1129b61626e1b449c0afa0cdf2a2ae0c8",
+    "scale-study/qwen7b/runs/macro-original-s33/predictions-with-library.jsonl": "ef685de0d01d94de6ff2360a6e8ad22e89aea1f366835838b478592c7cb3343f",
+    "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/predictions-with-library.jsonl": "d812de36c758f805ddd42222c0ac1ac3e8c1d6ee85563584157e18437e296d6c",
+    "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0000-dev-with-library.jsonl": "97c00ab024481a7f8eb71842a41835f01639a059755cdefd23e49baceb4ffe6e",
+    "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0000-dev.jsonl": "e66289d983b54b2f99c01ca3ae1a512e9db670aa49eb6524cac13e72672466ec",
+    "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0016-dev.jsonl": "77abec51a20c82bac9f90a8d5114cc574747e9ccbd41a475d6a2ea559eb91668",
+    "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0064-dev.jsonl": "cc25b45134067df95dbdbb2dd517c56318b9729297ad45e1ee6ecb8750314ce5",
+    "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0128-dev.jsonl": "ad73f90158ccbae8d25dd9d6ab8c78433656420fb8e053226a8f658ce02eeffc",
+    "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0256-dev.jsonl": "d032891a1ee4ffe0f4f02dad6ca0526236dd51f87acec9c2d8c55bc6ccb87fc7",
+    "label-controls/runs/qwen7b-position-s11/runs/position-original-s11/step0512-dev.jsonl": "340f9849fd17285f5574068473960c8ffe744edeb9f995ded600ae4863424616",
+    "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/predictions-with-library.jsonl": "7a9de4be79dab3a38d7f3ba63bb7a2feec098b55c1f7a44525164d1d2892457f",
+    "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0000-dev-with-library.jsonl": "97c00ab024481a7f8eb71842a41835f01639a059755cdefd23e49baceb4ffe6e",
+    "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0000-dev.jsonl": "e66289d983b54b2f99c01ca3ae1a512e9db670aa49eb6524cac13e72672466ec",
+    "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0016-dev.jsonl": "55ef744832d94ed2c67da16299bb252cec0058f2869a86ae5cb38bcb6e88919f",
+    "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0064-dev.jsonl": "85ce40d4a51a0f5d0c335b8abc8bca4061622b7bc675b73b8dddc76752a9609e",
+    "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0128-dev.jsonl": "35a3d6fe542c576f665d141740b35ea2c72a8182dc252814cba635f67b3881fe",
+    "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0256-dev.jsonl": "812d184e159fa124dc72b591efcb110dcc2bfaabbbe5d3ff9af8293fdf5b8fb2",
+    "label-controls/runs/qwen7b-position-s22/runs/position-original-s22/step0512-dev.jsonl": "f727609cef261f1d50bbd4d2304246141ec5ab37944297f67030ed8a26855cbe",
+    "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/predictions-with-library.jsonl": "31caa3302defbf760ee08d245d72526fb6be244fa54a778d5dc10b3ccd61b56a",
+    "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0000-dev-with-library.jsonl": "97c00ab024481a7f8eb71842a41835f01639a059755cdefd23e49baceb4ffe6e",
+    "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0000-dev.jsonl": "e66289d983b54b2f99c01ca3ae1a512e9db670aa49eb6524cac13e72672466ec",
+    "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0016-dev.jsonl": "596dd6a1f996e1ae9a8508c7b489e1a7ebf7722222dab3bf8e6c1a712c52e236",
+    "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0064-dev.jsonl": "a666c5eed352a024a9052af8894be7980c91ceeb03e9391b55d8b318b4596a8c",
+    "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0128-dev.jsonl": "f2c124e6c48423dccfade90126bbdfa07d8a6fa1f0d229fd9f4d77ced541e27b",
+    "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0256-dev.jsonl": "8b76a3ea1a5bce5b1b6dfeec79ca0877a363dba9d81de5f40c97afb88edfcccc",
+    "label-controls/runs/qwen7b-position-s33/runs/position-original-s33/step0512-dev.jsonl": "ead212ad82db74f6c251383b8869dc8d3f1470f48c8b78823533e8836309beb3",
+    "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/predictions-with-library.jsonl": "39a59898545e14d1fb8d7a784b29e50771bda9ed362e9e103f6f4a1773d11454",
+    "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0000-dev-with-library.jsonl": "b8f13b505ec0d9bd41adab514f0ae5a757328274724ebefccd2be95c7c48500c",
+    "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0000-dev.jsonl": "5b02ccc55d2a10f8f42784c6dd7ca9d42e0e877b44871b460b85a506b3e6d186",
+    "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0016-dev.jsonl": "7fc6f59d22a7134d43e2428aa72a547524cf42263dd880f7422d6a1258a4470d",
+    "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0064-dev.jsonl": "97c3b7d49939dd63a98050eb83958af7485c6e2e014958cb7856816d6a9b01fc",
+    "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0128-dev.jsonl": "e79b75a646428f5ff45b6bbe27f25db5a0dc9a26aa81275cb96d6f51daed46c9",
+    "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0256-dev.jsonl": "7001e00b65634147719fd981d7ad99f26c9bc2c5ea74a771eb101e7c880d5eef",
+    "label-controls/runs/qwen7b-alias-s11/runs/alias-original-s11/step0512-dev.jsonl": "522ae7dee50d4bd9ab3d57b0f6c004bc5922c526044daf59d0515cf727e665de",
+    "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/predictions-with-library.jsonl": "a495d3bb065d8a7e705f215164eb39feed1f5d81f70709027799cf38ade120ba",
+    "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0000-dev-with-library.jsonl": "b8f13b505ec0d9bd41adab514f0ae5a757328274724ebefccd2be95c7c48500c",
+    "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0000-dev.jsonl": "5b02ccc55d2a10f8f42784c6dd7ca9d42e0e877b44871b460b85a506b3e6d186",
+    "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0016-dev.jsonl": "3207beedf8012911504bfa3b5269b11135c91651b6c688beee12d2ea7f0525f8",
+    "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0064-dev.jsonl": "ff056ba6522990bc83b78bd6c43ef3c9493eed4c955f9a7be825a26e41cb8218",
+    "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0128-dev.jsonl": "6956c317f61bfb75836661408c7b65382e550c44246dfe95ae6c34a917b7573c",
+    "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0256-dev.jsonl": "c002ba83d91d13ab2958e74ccbbd56d60d42a4c6e8f9eeb66bc7f942285c3dd4",
+    "label-controls/runs/qwen7b-alias-s22/runs/alias-original-s22/step0512-dev.jsonl": "883aa760d497f2a4ba86fbeec66e5e22aa12f1a1a67d35bb6b5a66df2c23dc91",
+    "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/predictions-with-library.jsonl": "526bc582164ef194100eeaa2649c2e003091c0188169f3ea91d3b69218461d36",
+    "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0000-dev-with-library.jsonl": "b8f13b505ec0d9bd41adab514f0ae5a757328274724ebefccd2be95c7c48500c",
+    "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0000-dev.jsonl": "5b02ccc55d2a10f8f42784c6dd7ca9d42e0e877b44871b460b85a506b3e6d186",
+    "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0016-dev.jsonl": "cb54fbad5ee2b72b0a603ad11fac1dc8334ec3d8b13803fa55a731b324e7288a",
+    "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0064-dev.jsonl": "1a27e5eacdc12794af27c8107e8d9981458c5aa0962f62c4d3300050dbd9d150",
+    "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0128-dev.jsonl": "c700e14f724bf66f27f19faec6e866a021e57e151565bb8b19cc69abd9caa8ab",
+    "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0256-dev.jsonl": "6b344f1a02ff5a4526a96a3b1006c315cb6fd2ab1599a3bb396aff3c972da4fb",
+    "label-controls/runs/qwen7b-alias-s33/runs/alias-original-s33/step0512-dev.jsonl": "6b344f1a02ff5a4526a96a3b1006c315cb6fd2ab1599a3bb396aff3c972da4fb",
+    "scale-study/qwen32b/runs/flat-original-s11/predictions-with-library.jsonl": "4dbff10e591346e0a236a87fdc9afa4e652b8f629e267696f99bc9a98e6d3a1e",
+    "scale-study/qwen32b/runs/flat-original-s22/predictions-with-library.jsonl": "6de0a4dd2f0de86286469ac3c72b1e078350d9623e1370bcb69707b8197fb123",
+    "scale-study/qwen32b/runs/flat-original-s33/predictions-with-library.jsonl": "047833f8f9aaeade300bf57ca0e41ee2aaf4a1e519d093508d7802708765566d",
+    "scale-study/qwen32b/runs/macro-original-s11/predictions-with-library.jsonl": "edc05c64b4abdc3ea194dbdfa1625601e3e3a381d543f1ccf6f9b6500bbc9841",
+    "scale-study/qwen32b/runs/macro-original-s22/predictions-with-library.jsonl": "cbe9aefc502ae595c147474941b4f53d5e702b26fa6afffa9b96f3a7b2dc65f8",
+    "scale-study/qwen32b/runs/macro-original-s33/predictions-with-library.jsonl": "7288313b351b87ae6db16902cf0a62766f791371a5d95308807b7246630638e6",
+    "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/predictions-with-library.jsonl": "35f86dbf4cb184ca126ec75f468cc35494155c8a9327798617ab7116f3bab573",
+    "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0000-dev-with-library.jsonl": "16fb4092ac9e83389f1c0ef1a253eabe294ba7009ab359aee3ca95591098608c",
+    "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0000-dev.jsonl": "6e4144d4bd75ea8069e7cad42fc46c25cf34002b2656dfe09043fb656617aec8",
+    "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0016-dev.jsonl": "0fc8477d2110491c256af5b173dc3e63dfc3341f336ed57a1662cd146013ba30",
+    "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0064-dev.jsonl": "f6d9ecd2f6a08eaadc1f2602f06d3363c413d6c5987b32f4742beeae78af9082",
+    "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0128-dev.jsonl": "223d41872554f52a99024e62ae152b3710d058a4997bbfd74b6e878f45413107",
+    "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0256-dev.jsonl": "1cabab1fb69da7a27761a06cd9c6aa3991a327650a5c0128900ebc940ee5003a",
+    "label-controls/runs/qwen32b-position-s11/runs/position-original-s11/step0512-dev.jsonl": "baffdc3a16eaadb93e42ca730ec5c701f9f1f3434218204773d5f3cc249681ad",
+    "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/predictions-with-library.jsonl": "01b61b4fe887e2950560491cbba50c3c558ce972447ad0abc6b6ab0370361f3e",
+    "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0000-dev-with-library.jsonl": "16fb4092ac9e83389f1c0ef1a253eabe294ba7009ab359aee3ca95591098608c",
+    "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0000-dev.jsonl": "6e4144d4bd75ea8069e7cad42fc46c25cf34002b2656dfe09043fb656617aec8",
+    "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0016-dev.jsonl": "e4ed547c1062d8cfb2b9decf3def5de7885c9eb70a2060252773d02839b5b3df",
+    "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0064-dev.jsonl": "0f033b3270f1ed06042ba4bc9207e56d09dc225b873c16443e984a54b5f4681f",
+    "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0128-dev.jsonl": "c65df4891150bb0098b36aa546d4e8c351bc3f582ecb4f229cb56d4da185c027",
+    "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0256-dev.jsonl": "1c5d1508f58c74e5d8a5213c24816f1900c90eb94da19ef22773d0f799dfc3be",
+    "label-controls/runs/qwen32b-position-s22/runs/position-original-s22/step0512-dev.jsonl": "a81b5eabdd2272773d856c81c76e24a3eda7c4b232546ac33bac90e6c46352aa",
+    "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/predictions-with-library.jsonl": "2f7233c4a94689e0fa5ff954e5888998e6572531a7b6eba87f29a6cd99c5ee0d",
+    "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0000-dev-with-library.jsonl": "16fb4092ac9e83389f1c0ef1a253eabe294ba7009ab359aee3ca95591098608c",
+    "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0000-dev.jsonl": "6e4144d4bd75ea8069e7cad42fc46c25cf34002b2656dfe09043fb656617aec8",
+    "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0016-dev.jsonl": "a1aa6794b07c68fba2c1ed6bf943ab3eb6dde8f3ea65c43f66e4458390234499",
+    "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0064-dev.jsonl": "b6bfbfa0a3b2a3643d0be08db0ff365cfa72016ee894755c16c19469e27451d1",
+    "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0128-dev.jsonl": "de9240a7b5bb8878234393464a81a3eac516c6b5ba789fea8d85328aeab616de",
+    "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0256-dev.jsonl": "e98b1be263c931fef29595e0a82ec7f851564217ce76fea11c81cbabc83fee80",
+    "label-controls/runs/qwen32b-position-s33/runs/position-original-s33/step0512-dev.jsonl": "e98b1be263c931fef29595e0a82ec7f851564217ce76fea11c81cbabc83fee80",
+    "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/predictions-with-library.jsonl": "9e7e02a47a99925dbc8c5257b13be01b920b6bb2b198a10d102e76f7873e2217",
+    "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0000-dev-with-library.jsonl": "e6a6adef710f2ba762e9db392302cc16c3bee8d06e019089ef8ed7e85a168c36",
+    "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0000-dev.jsonl": "0c56c4dd1737c031d8b48e74768559e5369e534b5e37b91f5643947f118df5d6",
+    "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0016-dev.jsonl": "347c5ab80a29f29d629c23ae2ac992cbcbfb640cdcf73e5e14174bbc247c408c",
+    "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0064-dev.jsonl": "a59554b94247d72595a6c8c0f0ef52ed23dfca716e011c2a458a814674111b9f",
+    "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0128-dev.jsonl": "5063ecaf40825642c5b7e8049906ea8a33e0fb858bcb76712a27f37550f4dae4",
+    "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0256-dev.jsonl": "cc54e588bd7a2892a634b928c1b866743176998f8916421070fb6f79afdfebb8",
+    "label-controls/runs/qwen32b-alias-s11/runs/alias-original-s11/step0512-dev.jsonl": "9eb8938259fa3d9f6d68821082bde814f8fec78d687b3ba7e778c889b7809dd2",
+    "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/predictions-with-library.jsonl": "0d788ee186994f45d5626bc4475bf998eda36ebd4493deb465957bb406854744",
+    "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0000-dev-with-library.jsonl": "e6a6adef710f2ba762e9db392302cc16c3bee8d06e019089ef8ed7e85a168c36",
+    "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0000-dev.jsonl": "0c56c4dd1737c031d8b48e74768559e5369e534b5e37b91f5643947f118df5d6",
+    "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0016-dev.jsonl": "178156b04430a82cc7a4206794589288e482df7a596dbf0094414f3701e8fa9f",
+    "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0064-dev.jsonl": "ade800c316ec4f39653a2be5193279962bb18ee4398da42f687c71369d9411a2",
+    "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0128-dev.jsonl": "af2d60090dfab0858d579fae857a69981b92ce4fa8690891c32e4d6a438994ad",
+    "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0256-dev.jsonl": "aaa5166b81f1c161d4d3f9b7541cc6d70ff842b7c92e98235264e5890a53f536",
+    "label-controls/runs/qwen32b-alias-s22/runs/alias-original-s22/step0512-dev.jsonl": "161bbd94099a9e1a54b2df0ce33e91483dcb21163be0056a9f6d71249b2125f1",
+    "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/predictions-with-library.jsonl": "46d58ca8d990b5d84136b495a8173d8dc2160793999a993b48fb61695826c593",
+    "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0000-dev-with-library.jsonl": "e6a6adef710f2ba762e9db392302cc16c3bee8d06e019089ef8ed7e85a168c36",
+    "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0000-dev.jsonl": "0c56c4dd1737c031d8b48e74768559e5369e534b5e37b91f5643947f118df5d6",
+    "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0016-dev.jsonl": "beca7b63f3ebb997c8f7196ce98bc2375dbe42b2ddd330626a65b249b4430c32",
+    "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0064-dev.jsonl": "527861a1f2f8c61c7d35a773be5a39ab5d94efd3302cfe8cd84dc28bf39cd020",
+    "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0128-dev.jsonl": "4f15061c9044b857ead9ecd995269e52dffc82c6202969167f62d07d8e22248a",
+    "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0256-dev.jsonl": "1c1da578abe5b372d8b251334aaeed782a04c07a5636fc0649a78b0aabb15960",
+    "label-controls/runs/qwen32b-alias-s33/runs/alias-original-s33/step0512-dev.jsonl": "1c1da578abe5b372d8b251334aaeed782a04c07a5636fc0649a78b0aabb15960"
+  },
+  "note": "Already produced auxiliary evaluations retained from original trainer: with-library main test and new large-model checkpoint dev. Separate from 49920 primary comparison records; no test-driven checkpoint selection."
+}

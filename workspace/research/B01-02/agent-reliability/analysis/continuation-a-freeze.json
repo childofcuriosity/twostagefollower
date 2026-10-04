@@ -1,0 +1,6 @@
+{
+  "src/native_queue_controlled_v4.py": "af38742efd5e33b88c8192a2a19747e189b849ba8d3592169730a57fff42ddd4",
+  "src/launch_continuation.py": "b2807a9ccea3da23d0d33c7f9dd157193c0ca3e49bb3605ebed959014783011e",
+  "CONTINUATION_REGISTRATION.md": "2aa5392f13588ce38619ce09f9d91fc680a59e112718cc3bddcbe5b10713e5ad",
+  "queues/continuation-a-batch.json": "ea83a648fb9cb6abba6af90ee5f4cb9d670bec0a5da1ca8fceeeec37c0ca5a85"
+}

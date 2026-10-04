@@ -1,0 +1,16 @@
+{
+  "workspace/research/B01-02/oracle-study/src/worker.py": "9dd45f1cd632a425ea47805002c28389ad13efb894cb0ca50a58f58e95b64a4b",
+  "workspace/research/B01-02/oracle-study/src/check_controller.py": "5b6025fb506b0c253b6349e1583f14b3142dd472aa956917c9231bdafaf7db1b",
+  "workspace/research/B01-02/oracle-study/src/protocol.py": "3f73f11aa30704288c6b0b06689f2483580ca0febca4a0bcb43b6129e6bce299",
+  "workspace/research/B01-02/oracle-study/src/preflight.py": "b192c5262edd2d6f93e8afe5dbadafb2165df75b927323a83544e56da6fe0f56",
+  "workspace/research/B01-02/oracle-study/src/train.py": "36cb9113a65bb00e224e303e4c913abfdbbd49cd06ac7f8a180a12c9f1bc7419",
+  "workspace/research/B01-02/oracle-study/src/evaluate.py": "b9b8e6ae29174537071d8edd99a61ba58f28e595910bd0fcff335dd6ed53df82",
+  "workspace/research/B01-02/oracle-study/REGISTRATION.md": "418a35016bc8081ec3188408115e4901fa49be8456abf29e636f02414d3543b3",
+  "workspace/research/B01-02/oracle-study/infrastructure/formal-local.json": "f5168c02ee6bfcb7421426b967992f5e2b6f58240b99961a6e7207cb312fee0b",
+  "workspace/research/B01-02/oracle-study/infrastructure/formal-worker01.json": "30cef85ab76dedc601ee4fa58cab1222543b3149e9382a62aba9c1479f65ff9b",
+  "workspace/research/B01-02/oracle-study/infrastructure/formal-worker03.json": "b2fc1149d11c9b70ee95d1c154d151e3573541b7380458223d49176b7d9bf50e",
+  "workspace/research/B01-02/oracle-study/infrastructure/formal-worker06.json": "dbf44c2da9526b8d14d3ce9af0839263377f9961f72de5a95ee99434ab22e97b",
+  "workspace/research/B01-02/oracle-study/infrastructure/formal-worker02.json": "a9c3bb8c31f1bea6b588f35f9b354ff4baccc87bc983909e733786808932f427",
+  "workspace/research/B01-02/oracle-study/infrastructure/formal-worker05.json": "8f2aa2745e7f5cacc902ccba9c7da2e14ec11c76f80831ef66108ef8f3167fc8",
+  "workspace/research/B01-02/oracle-study/infrastructure/formal-worker04.json": "976fc46955e1c63fc07f34d156f11a223c9699fe980ee57c253e6d89301dea44"
+}

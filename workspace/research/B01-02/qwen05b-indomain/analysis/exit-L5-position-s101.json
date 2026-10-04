@@ -1,0 +1,9 @@
+{
+  "condition": "position",
+  "seed": 101,
+  "gpu": 4,
+  "exit_code": 0,
+  "seconds": 178.3410782814026,
+  "finished": 1790501799.4436426,
+  "log": "logs/L5-position-s101.log"
+}

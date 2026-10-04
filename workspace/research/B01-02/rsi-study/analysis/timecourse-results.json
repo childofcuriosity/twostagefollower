@@ -1,0 +1,177 @@
+{
+  "posthoc": true,
+  "summary": {
+    "0": {
+      "iid_accuracy": 0.0078125,
+      "ood_accuracy": 0.0,
+      "proposal_compression": 0.4026079375401341
+    },
+    "16": {
+      "iid_accuracy": 0.036458333333333336,
+      "ood_accuracy": 0.012152777777777778,
+      "proposal_compression": 0.20775989576144346
+    },
+    "64": {
+      "iid_accuracy": 0.9895833333333334,
+      "ood_accuracy": 0.2309027777777778,
+      "proposal_compression": 0.09481005350269193
+    },
+    "128": {
+      "iid_accuracy": 0.9947916666666666,
+      "ood_accuracy": 0.2821180555555556,
+      "proposal_compression": 0.10934637606013092
+    },
+    "256": {
+      "iid_accuracy": 1.0,
+      "ood_accuracy": 0.3029513888888889,
+      "proposal_compression": 0.10527145163228317
+    },
+    "512": {
+      "iid_accuracy": 1.0,
+      "ood_accuracy": 0.2977430555555556,
+      "proposal_compression": 0.10366981157561905
+    }
+  },
+  "rows": [
+    {
+      "seed": 33,
+      "step": 0,
+      "iid_accuracy": 0.0078125,
+      "ood_accuracy": 0.0,
+      "proposal_compression": 0.3669469614409223
+    },
+    {
+      "seed": 33,
+      "step": 128,
+      "iid_accuracy": 1.0,
+      "ood_accuracy": 0.18489583333333334,
+      "proposal_compression": 0.10217408438459682
+    },
+    {
+      "seed": 33,
+      "step": 64,
+      "iid_accuracy": 1.0,
+      "ood_accuracy": 0.1640625,
+      "proposal_compression": 0.1022940185039005
+    },
+    {
+      "seed": 33,
+      "step": 256,
+      "iid_accuracy": 1.0,
+      "ood_accuracy": 0.20572916666666666,
+      "proposal_compression": 0.09605200470374718
+    },
+    {
+      "seed": 33,
+      "step": 16,
+      "iid_accuracy": 0.046875,
+      "ood_accuracy": 0.0078125,
+      "proposal_compression": 0.18001077663214424
+    },
+    {
+      "seed": 33,
+      "step": 512,
+      "iid_accuracy": 1.0,
+      "ood_accuracy": 0.20833333333333334,
+      "proposal_compression": 0.09843654285635761
+    },
+    {
+      "seed": 22,
+      "step": 512,
+      "iid_accuracy": 1.0,
+      "ood_accuracy": 0.3776041666666667,
+      "proposal_compression": 0.11275740410040225
+    },
+    {
+      "seed": 22,
+      "step": 64,
+      "iid_accuracy": 0.96875,
+      "ood_accuracy": 0.2994791666666667,
+      "proposal_compression": 0.11308508289441709
+    },
+    {
+      "seed": 22,
+      "step": 0,
+      "iid_accuracy": 0.0078125,
+      "ood_accuracy": 0.0,
+      "proposal_compression": 0.4380702244340482
+    },
+    {
+      "seed": 22,
+      "step": 16,
+      "iid_accuracy": 0.03125,
+      "ood_accuracy": 0.018229166666666668,
+      "proposal_compression": 0.248096968453592
+    },
+    {
+      "seed": 22,
+      "step": 256,
+      "iid_accuracy": 1.0,
+      "ood_accuracy": 0.375,
+      "proposal_compression": 0.10896952531252345
+    },
+    {
+      "seed": 22,
+      "step": 128,
+      "iid_accuracy": 0.9921875,
+      "ood_accuracy": 0.3255208333333333,
+      "proposal_compression": 0.11275740410040225
+    },
+    {
+      "seed": 11,
+      "step": 512,
+      "iid_accuracy": 1.0,
+      "ood_accuracy": 0.3072916666666667,
+      "proposal_compression": 0.0998154877700973
+    },
+    {
+      "seed": 11,
+      "step": 128,
+      "iid_accuracy": 0.9921875,
+      "ood_accuracy": 0.3359375,
+      "proposal_compression": 0.11310763969539371
+    },
+    {
+      "seed": 11,
+      "step": 0,
+      "iid_accuracy": 0.0078125,
+      "ood_accuracy": 0.0,
+      "proposal_compression": 0.4028066267454317
+    },
+    {
+      "seed": 11,
+      "step": 64,
+      "iid_accuracy": 1.0,
+      "ood_accuracy": 0.22916666666666666,
+      "proposal_compression": 0.06905105910975821
+    },
+    {
+      "seed": 11,
+      "step": 16,
+      "iid_accuracy": 0.03125,
+      "ood_accuracy": 0.010416666666666666,
+      "proposal_compression": 0.19517194219859416
+    },
+    {
+      "seed": 11,
+      "step": 256,
+      "iid_accuracy": 1.0,
+      "ood_accuracy": 0.328125,
+      "proposal_compression": 0.11079282488057889
+    }
+  ],
+  "final_weight_matches": [
+    {
+      "seed": 33,
+      "matches_original_final_weights": true
+    },
+    {
+      "seed": 22,
+      "matches_original_final_weights": true
+    },
+    {
+      "seed": 11,
+      "matches_original_final_weights": true
+    }
+  ]
+}

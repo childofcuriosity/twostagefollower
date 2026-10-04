@@ -1,0 +1,23 @@
+[
+  {
+    "seed": 11,
+    "same_training_rows": true,
+    "same_proposal_libraries": true,
+    "same_execution_outputs": true,
+    "same_adapter_sha256": true
+  },
+  {
+    "seed": 22,
+    "same_training_rows": true,
+    "same_proposal_libraries": true,
+    "same_execution_outputs": true,
+    "same_adapter_sha256": true
+  },
+  {
+    "seed": 33,
+    "same_training_rows": true,
+    "same_proposal_libraries": true,
+    "same_execution_outputs": true,
+    "same_adapter_sha256": true
+  }
+]

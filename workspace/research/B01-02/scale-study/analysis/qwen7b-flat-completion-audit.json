@@ -1,0 +1,42 @@
+{
+  "utc": "2026-09-24T10:41:06.044087+00:00",
+  "runs": [
+    {
+      "seed": 11,
+      "steps": 512,
+      "examples": 16384,
+      "execution_records_checked": 1120,
+      "hashes": {
+        "qwen7b/runs/flat-original-s11/adapter/adapter_model.safetensors": "7e8155fd753e19b657b8046669b6ed3bb3baa282514603c5cbcf357fff9b68c6",
+        "qwen7b/runs/flat-original-s11/checkpoints/step0512/adapter/adapter_model.safetensors": "7e8155fd753e19b657b8046669b6ed3bb3baa282514603c5cbcf357fff9b68c6",
+        "qwen7b/runs/flat-original-s11/predictions.jsonl": "07b57532b5484d83ba80489da3109b09ffa5e633a7c5e5cb1756f2af1cefe8a1",
+        "qwen7b/runs/flat-original-s11/predictions-with-library.jsonl": "51a1dea0b8b1b59455c248352531357d636fa66e76a89d6f7bd251940a07f4dd"
+      }
+    },
+    {
+      "seed": 22,
+      "steps": 512,
+      "examples": 16384,
+      "execution_records_checked": 1120,
+      "hashes": {
+        "qwen7b/runs/flat-original-s22/adapter/adapter_model.safetensors": "797d22d18ccf222e1061b863e91281b4c2f33d03dc179fb5beedcaacf71d533f",
+        "qwen7b/runs/flat-original-s22/checkpoints/step0512/adapter/adapter_model.safetensors": "797d22d18ccf222e1061b863e91281b4c2f33d03dc179fb5beedcaacf71d533f",
+        "qwen7b/runs/flat-original-s22/predictions.jsonl": "48f8cf2c00c1866c0e030fd2c21b8ef62a846bc3387fb35061e9af5106600406",
+        "qwen7b/runs/flat-original-s22/predictions-with-library.jsonl": "b37d0a0703985bbed7214a7de894f4f614e285f2f581c8c5009c106caa6616ff"
+      }
+    },
+    {
+      "seed": 33,
+      "steps": 512,
+      "examples": 16384,
+      "execution_records_checked": 1120,
+      "hashes": {
+        "qwen7b/runs/flat-original-s33/adapter/adapter_model.safetensors": "2e0bbd142983dc9c64fbae6ea8b319a366ff2c8694d3ca5ed5faf35fcaead4c8",
+        "qwen7b/runs/flat-original-s33/checkpoints/step0512/adapter/adapter_model.safetensors": "2e0bbd142983dc9c64fbae6ea8b319a366ff2c8694d3ca5ed5faf35fcaead4c8",
+        "qwen7b/runs/flat-original-s33/predictions.jsonl": "abd2e8f047fa7b8554e5f437058700e32b226eecbeefa1f1ea1dadce45ea2c30",
+        "qwen7b/runs/flat-original-s33/predictions-with-library.jsonl": "f2aac1bd0a087d879644e5c250d58c821c27111503a56a9392ca952077142458"
+      }
+    }
+  ],
+  "scope": "Flat only; paired scale analysis awaits macro and checkpoint evaluations"
+}

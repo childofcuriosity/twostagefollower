@@ -1,0 +1,185 @@
+{
+  "results": [
+    {
+      "condition": "flat",
+      "seed": 102,
+      "gpu": 5,
+      "exit_code": 0,
+      "seconds": 125.52903342247009,
+      "finished": 1790500282.723797,
+      "log": "logs/L3-flat-s102.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 107,
+      "gpu": 5,
+      "exit_code": 0,
+      "seconds": 123.41633296012878,
+      "finished": 1790500406.17668,
+      "log": "logs/L3-flat-s107.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 22,
+      "gpu": 1,
+      "exit_code": 0,
+      "seconds": 125.85176062583923,
+      "finished": 1790500283.044708,
+      "log": "logs/L3-flat-s22.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 109,
+      "gpu": 1,
+      "exit_code": 0,
+      "seconds": 123.27152013778687,
+      "finished": 1790500406.3590915,
+      "log": "logs/L3-flat-s109.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 100,
+      "gpu": 3,
+      "exit_code": 0,
+      "seconds": 126.12649488449097,
+      "finished": 1790500283.320179,
+      "log": "logs/L3-flat-s100.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 111,
+      "gpu": 3,
+      "exit_code": 0,
+      "seconds": 124.14406394958496,
+      "finished": 1790500407.4863353,
+      "log": "logs/L3-flat-s111.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 33,
+      "gpu": 2,
+      "exit_code": 0,
+      "seconds": 127.18595862388611,
+      "finished": 1790500284.379276,
+      "log": "logs/L3-flat-s33.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 112,
+      "gpu": 2,
+      "exit_code": 0,
+      "seconds": 123.24239873886108,
+      "finished": 1790500407.6812205,
+      "log": "logs/L3-flat-s112.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 104,
+      "gpu": 7,
+      "exit_code": 0,
+      "seconds": 125.34551358222961,
+      "finished": 1790500282.5415359,
+      "log": "logs/L3-flat-s104.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 105,
+      "gpu": 7,
+      "exit_code": 0,
+      "seconds": 123.12238788604736,
+      "finished": 1790500405.7096074,
+      "log": "logs/L3-flat-s105.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 114,
+      "gpu": 7,
+      "exit_code": 0,
+      "seconds": 120.97309923171997,
+      "finished": 1790500526.712419,
+      "log": "logs/L3-flat-s114.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 101,
+      "gpu": 4,
+      "exit_code": 0,
+      "seconds": 125.47174906730652,
+      "finished": 1790500282.665887,
+      "log": "logs/L3-flat-s101.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 106,
+      "gpu": 4,
+      "exit_code": 0,
+      "seconds": 123.38386607170105,
+      "finished": 1790500406.0813222,
+      "log": "logs/L3-flat-s106.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 116,
+      "gpu": 4,
+      "exit_code": 0,
+      "seconds": 120.98564577102661,
+      "finished": 1790500527.0987737,
+      "log": "logs/L3-flat-s116.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 103,
+      "gpu": 6,
+      "exit_code": 0,
+      "seconds": 125.93826150894165,
+      "finished": 1790500283.1335793,
+      "log": "logs/L3-flat-s103.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 110,
+      "gpu": 6,
+      "exit_code": 0,
+      "seconds": 122.43406748771667,
+      "finished": 1790500405.6079023,
+      "log": "logs/L3-flat-s110.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 113,
+      "gpu": 6,
+      "exit_code": 0,
+      "seconds": 121.66988372802734,
+      "finished": 1790500527.309884,
+      "log": "logs/L3-flat-s113.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 11,
+      "gpu": 0,
+      "exit_code": 0,
+      "seconds": 125.75167179107666,
+      "finished": 1790500282.9442124,
+      "log": "logs/L3-flat-s11.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 108,
+      "gpu": 0,
+      "exit_code": 0,
+      "seconds": 122.90793013572693,
+      "finished": 1790500405.8913505,
+      "log": "logs/L3-flat-s108.log"
+    },
+    {
+      "condition": "flat",
+      "seed": 115,
+      "gpu": 0,
+      "exit_code": 0,
+      "seconds": 121.75462508201599,
+      "finished": 1790500527.676428,
+      "log": "logs/L3-flat-s115.log"
+    }
+  ],
+  "seconds": 370.51384377479553
+}

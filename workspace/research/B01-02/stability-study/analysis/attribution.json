@@ -1,0 +1,3446 @@
+{
+  "cells": [
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "SE",
+      "length": 3,
+      "counts": {
+        "n": 288,
+        "same_correctness": 234,
+        "identical_shared_events": 228,
+        "sequence_oracle_correct": 240,
+        "sequence_real_correct": 240,
+        "gain": 16,
+        "first_difference_expected_role": 60,
+        "loss": 38
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "SE",
+      "length": 4,
+      "counts": {
+        "n": 288,
+        "same_correctness": 196,
+        "identical_shared_events": 174,
+        "sequence_oracle_correct": 234,
+        "sequence_real_correct": 234,
+        "gain": 69,
+        "first_difference_expected_role": 114,
+        "loss": 23
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "SE",
+      "length": 5,
+      "counts": {
+        "n": 288,
+        "same_correctness": 174,
+        "identical_shared_events": 103,
+        "sequence_oracle_correct": 202,
+        "sequence_real_correct": 202,
+        "first_difference_expected_role": 185,
+        "loss": 29,
+        "gain": 85
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "SE",
+      "length": 6,
+      "counts": {
+        "n": 288,
+        "gain": 99,
+        "first_difference_expected_role": 237,
+        "sequence_oracle_correct": 187,
+        "sequence_real_correct": 189,
+        "same_correctness": 165,
+        "identical_shared_events": 51,
+        "sequence_correct_with_oracle_but_wrong_in_real": 1,
+        "lost_sequence_with_prior_body_error": 1,
+        "loss": 24
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "SE",
+      "length": 8,
+      "counts": {
+        "n": 288,
+        "same_correctness": 230,
+        "first_difference_expected_role": 279,
+        "sequence_oracle_correct": 123,
+        "sequence_real_correct": 123,
+        "gain": 46,
+        "loss": 12,
+        "identical_shared_events": 9,
+        "sequence_correct_with_oracle_but_wrong_in_real": 2,
+        "lost_sequence_with_prior_body_error": 1,
+        "lost_sequence_without_prior_body_error": 1
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "SJ",
+      "length": 3,
+      "counts": {
+        "n": 288,
+        "same_correctness": 244,
+        "identical_shared_events": 239,
+        "gain": 16,
+        "first_difference_expected_role": 49,
+        "loss": 28
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "SJ",
+      "length": 4,
+      "counts": {
+        "n": 288,
+        "same_correctness": 213,
+        "identical_shared_events": 191,
+        "gain": 55,
+        "first_difference_expected_role": 96,
+        "loss": 20,
+        "first_difference_other_role": 1
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "SJ",
+      "length": 5,
+      "counts": {
+        "n": 288,
+        "same_correctness": 206,
+        "identical_shared_events": 144,
+        "gain": 72,
+        "first_difference_expected_role": 142,
+        "loss": 10,
+        "first_difference_other_role": 2
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "SJ",
+      "length": 6,
+      "counts": {
+        "n": 288,
+        "same_correctness": 196,
+        "identical_shared_events": 74,
+        "gain": 73,
+        "first_difference_expected_role": 209,
+        "loss": 19,
+        "first_difference_other_role": 5
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "SJ",
+      "length": 8,
+      "counts": {
+        "n": 288,
+        "gain": 38,
+        "first_difference_expected_role": 236,
+        "same_correctness": 243,
+        "loss": 7,
+        "identical_shared_events": 48,
+        "first_difference_other_role": 4
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "JE",
+      "length": 3,
+      "counts": {
+        "n": 288,
+        "same_correctness": 276,
+        "identical_shared_events": 276,
+        "gain": 1,
+        "first_difference_expected_role": 12,
+        "loss": 11
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "JE",
+      "length": 4,
+      "counts": {
+        "n": 288,
+        "same_correctness": 271,
+        "identical_shared_events": 268,
+        "loss": 5,
+        "first_difference_expected_role": 18,
+        "gain": 12,
+        "first_difference_other_role": 2
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "JE",
+      "length": 5,
+      "counts": {
+        "n": 288,
+        "same_correctness": 243,
+        "identical_shared_events": 229,
+        "first_difference_expected_role": 51,
+        "loss": 21,
+        "first_difference_other_role": 8,
+        "gain": 24
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "JE",
+      "length": 6,
+      "counts": {
+        "n": 288,
+        "gain": 13,
+        "first_difference_expected_role": 90,
+        "same_correctness": 267,
+        "identical_shared_events": 192,
+        "first_difference_other_role": 6,
+        "loss": 8
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "JE",
+      "length": 8,
+      "counts": {
+        "n": 288,
+        "same_correctness": 273,
+        "identical_shared_events": 118,
+        "first_difference_expected_role": 160,
+        "gain": 6,
+        "loss": 9,
+        "first_difference_other_role": 10
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "SE",
+      "length": 3,
+      "counts": {
+        "n": 288,
+        "same_correctness": 232,
+        "identical_shared_events": 226,
+        "sequence_oracle_correct": 242,
+        "sequence_real_correct": 242,
+        "gain": 20,
+        "first_difference_expected_role": 62,
+        "loss": 36
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "SE",
+      "length": 4,
+      "counts": {
+        "n": 288,
+        "same_correctness": 196,
+        "identical_shared_events": 172,
+        "sequence_oracle_correct": 233,
+        "sequence_real_correct": 233,
+        "gain": 70,
+        "first_difference_expected_role": 116,
+        "loss": 22
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "SE",
+      "length": 5,
+      "counts": {
+        "n": 288,
+        "same_correctness": 165,
+        "identical_shared_events": 93,
+        "sequence_oracle_correct": 202,
+        "sequence_real_correct": 202,
+        "loss": 29,
+        "first_difference_expected_role": 195,
+        "gain": 94
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "SE",
+      "length": 6,
+      "counts": {
+        "n": 288,
+        "gain": 101,
+        "first_difference_expected_role": 235,
+        "sequence_oracle_correct": 188,
+        "sequence_real_correct": 188,
+        "same_correctness": 162,
+        "identical_shared_events": 53,
+        "sequence_correct_with_oracle_but_wrong_in_real": 1,
+        "lost_sequence_with_prior_body_error": 1,
+        "loss": 25
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "SE",
+      "length": 8,
+      "counts": {
+        "n": 288,
+        "same_correctness": 222,
+        "first_difference_expected_role": 281,
+        "sequence_oracle_correct": 118,
+        "sequence_real_correct": 121,
+        "gain": 57,
+        "loss": 9,
+        "identical_shared_events": 7,
+        "sequence_correct_with_oracle_but_wrong_in_real": 2,
+        "lost_sequence_with_prior_body_error": 1,
+        "lost_sequence_without_prior_body_error": 1
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "SJ",
+      "length": 3,
+      "counts": {
+        "n": 288,
+        "same_correctness": 242,
+        "identical_shared_events": 237,
+        "gain": 20,
+        "first_difference_expected_role": 51,
+        "loss": 26
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "SJ",
+      "length": 4,
+      "counts": {
+        "n": 288,
+        "same_correctness": 210,
+        "identical_shared_events": 187,
+        "gain": 61,
+        "first_difference_expected_role": 100,
+        "loss": 17,
+        "first_difference_other_role": 1
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "SJ",
+      "length": 5,
+      "counts": {
+        "n": 288,
+        "same_correctness": 200,
+        "identical_shared_events": 133,
+        "gain": 76,
+        "first_difference_expected_role": 154,
+        "loss": 12,
+        "first_difference_other_role": 1
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "SJ",
+      "length": 6,
+      "counts": {
+        "n": 288,
+        "same_correctness": 198,
+        "identical_shared_events": 80,
+        "gain": 73,
+        "first_difference_expected_role": 208,
+        "loss": 17
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "SJ",
+      "length": 8,
+      "counts": {
+        "n": 288,
+        "gain": 40,
+        "first_difference_expected_role": 247,
+        "same_correctness": 243,
+        "loss": 5,
+        "identical_shared_events": 40,
+        "first_difference_other_role": 1
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "JE",
+      "length": 3,
+      "counts": {
+        "n": 288,
+        "same_correctness": 276,
+        "identical_shared_events": 276,
+        "gain": 1,
+        "first_difference_expected_role": 12,
+        "loss": 11
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "JE",
+      "length": 4,
+      "counts": {
+        "n": 288,
+        "same_correctness": 274,
+        "identical_shared_events": 272,
+        "loss": 5,
+        "first_difference_expected_role": 16,
+        "gain": 9
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "JE",
+      "length": 5,
+      "counts": {
+        "n": 288,
+        "same_correctness": 252,
+        "identical_shared_events": 240,
+        "loss": 17,
+        "first_difference_expected_role": 48,
+        "gain": 19
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "JE",
+      "length": 6,
+      "counts": {
+        "n": 288,
+        "gain": 12,
+        "first_difference_expected_role": 87,
+        "same_correctness": 268,
+        "identical_shared_events": 201,
+        "loss": 8
+      }
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "JE",
+      "length": 8,
+      "counts": {
+        "n": 288,
+        "same_correctness": 273,
+        "identical_shared_events": 122,
+        "first_difference_expected_role": 163,
+        "gain": 6,
+        "loss": 9,
+        "first_difference_other_role": 3
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "SE",
+      "length": 3,
+      "counts": {
+        "n": 288,
+        "same_correctness": 288,
+        "identical_shared_events": 288,
+        "sequence_oracle_correct": 288,
+        "sequence_real_correct": 288
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "SE",
+      "length": 4,
+      "counts": {
+        "n": 288,
+        "same_correctness": 272,
+        "identical_shared_events": 270,
+        "sequence_oracle_correct": 287,
+        "sequence_real_correct": 287,
+        "first_difference_expected_role": 18,
+        "gain": 8,
+        "loss": 8
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "SE",
+      "length": 5,
+      "counts": {
+        "n": 288,
+        "same_correctness": 227,
+        "identical_shared_events": 223,
+        "sequence_oracle_correct": 277,
+        "sequence_real_correct": 276,
+        "gain": 34,
+        "first_difference_expected_role": 65,
+        "loss": 27,
+        "sequence_correct_with_oracle_but_wrong_in_real": 1,
+        "lost_sequence_with_prior_body_error": 1
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "SE",
+      "length": 6,
+      "counts": {
+        "n": 288,
+        "gain": 58,
+        "first_difference_expected_role": 85,
+        "sequence_oracle_correct": 284,
+        "sequence_real_correct": 284,
+        "same_correctness": 209,
+        "identical_shared_events": 203,
+        "loss": 21
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "SE",
+      "length": 8,
+      "counts": {
+        "n": 288,
+        "gain": 108,
+        "first_difference_expected_role": 146,
+        "sequence_oracle_correct": 276,
+        "sequence_real_correct": 276,
+        "same_correctness": 161,
+        "identical_shared_events": 142,
+        "loss": 19
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "SJ",
+      "length": 3,
+      "counts": {
+        "n": 288,
+        "same_correctness": 288,
+        "identical_shared_events": 288
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "SJ",
+      "length": 4,
+      "counts": {
+        "n": 288,
+        "loss": 3,
+        "first_difference_other_role": 2,
+        "same_correctness": 285,
+        "identical_shared_events": 285,
+        "first_difference_expected_role": 1
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "SJ",
+      "length": 5,
+      "counts": {
+        "n": 288,
+        "same_correctness": 275,
+        "identical_shared_events": 275,
+        "loss": 13,
+        "first_difference_expected_role": 11,
+        "first_difference_other_role": 2
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "SJ",
+      "length": 6,
+      "counts": {
+        "n": 288,
+        "same_correctness": 280,
+        "identical_shared_events": 279,
+        "loss": 7,
+        "first_difference_other_role": 5,
+        "first_difference_expected_role": 4,
+        "gain": 1
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "SJ",
+      "length": 8,
+      "counts": {
+        "n": 288,
+        "same_correctness": 257,
+        "identical_shared_events": 245,
+        "first_difference_other_role": 6,
+        "loss": 9,
+        "first_difference_expected_role": 37,
+        "gain": 22
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "JE",
+      "length": 3,
+      "counts": {
+        "n": 288,
+        "same_correctness": 288,
+        "identical_shared_events": 288
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "JE",
+      "length": 4,
+      "counts": {
+        "n": 288,
+        "same_correctness": 273,
+        "identical_shared_events": 271,
+        "first_difference_expected_role": 17,
+        "gain": 8,
+        "loss": 7
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "JE",
+      "length": 5,
+      "counts": {
+        "n": 288,
+        "same_correctness": 237,
+        "identical_shared_events": 233,
+        "gain": 34,
+        "first_difference_expected_role": 55,
+        "loss": 17
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "JE",
+      "length": 6,
+      "counts": {
+        "n": 288,
+        "gain": 58,
+        "first_difference_expected_role": 81,
+        "same_correctness": 213,
+        "identical_shared_events": 207,
+        "loss": 17
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "JE",
+      "length": 8,
+      "counts": {
+        "n": 288,
+        "gain": 87,
+        "first_difference_expected_role": 120,
+        "same_correctness": 187,
+        "identical_shared_events": 167,
+        "loss": 14,
+        "first_difference_other_role": 1
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "SE",
+      "length": 3,
+      "counts": {
+        "n": 288,
+        "same_correctness": 288,
+        "identical_shared_events": 288,
+        "sequence_oracle_correct": 288,
+        "sequence_real_correct": 288
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "SE",
+      "length": 4,
+      "counts": {
+        "n": 288,
+        "gain": 10,
+        "first_difference_expected_role": 16,
+        "sequence_oracle_correct": 287,
+        "sequence_real_correct": 288,
+        "same_correctness": 273,
+        "identical_shared_events": 272,
+        "loss": 5
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "SE",
+      "length": 5,
+      "counts": {
+        "n": 288,
+        "same_correctness": 226,
+        "identical_shared_events": 222,
+        "sequence_oracle_correct": 277,
+        "sequence_real_correct": 276,
+        "gain": 36,
+        "first_difference_expected_role": 66,
+        "loss": 26,
+        "sequence_correct_with_oracle_but_wrong_in_real": 2,
+        "lost_sequence_with_prior_body_error": 2
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "SE",
+      "length": 6,
+      "counts": {
+        "n": 288,
+        "gain": 42,
+        "first_difference_expected_role": 66,
+        "sequence_oracle_correct": 283,
+        "sequence_real_correct": 283,
+        "same_correctness": 228,
+        "identical_shared_events": 222,
+        "loss": 18
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "SE",
+      "length": 8,
+      "counts": {
+        "n": 288,
+        "gain": 96,
+        "first_difference_expected_role": 133,
+        "sequence_oracle_correct": 278,
+        "sequence_real_correct": 277,
+        "same_correctness": 170,
+        "identical_shared_events": 155,
+        "loss": 22,
+        "sequence_correct_with_oracle_but_wrong_in_real": 1,
+        "lost_sequence_without_prior_body_error": 1
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "SJ",
+      "length": 3,
+      "counts": {
+        "n": 288,
+        "same_correctness": 288,
+        "identical_shared_events": 288
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "SJ",
+      "length": 4,
+      "counts": {
+        "n": 288,
+        "same_correctness": 288,
+        "identical_shared_events": 288
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "SJ",
+      "length": 5,
+      "counts": {
+        "n": 288,
+        "same_correctness": 274,
+        "identical_shared_events": 274,
+        "loss": 13,
+        "first_difference_expected_role": 10,
+        "first_difference_other_role": 4,
+        "gain": 1
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "SJ",
+      "length": 6,
+      "counts": {
+        "n": 288,
+        "same_correctness": 279,
+        "identical_shared_events": 276,
+        "first_difference_other_role": 7,
+        "loss": 6,
+        "first_difference_expected_role": 5,
+        "gain": 3
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "SJ",
+      "length": 8,
+      "counts": {
+        "n": 288,
+        "same_correctness": 255,
+        "identical_shared_events": 245,
+        "loss": 10,
+        "first_difference_other_role": 9,
+        "first_difference_expected_role": 34,
+        "gain": 23
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "JE",
+      "length": 3,
+      "counts": {
+        "n": 288,
+        "same_correctness": 288,
+        "identical_shared_events": 288
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "JE",
+      "length": 4,
+      "counts": {
+        "n": 288,
+        "gain": 10,
+        "first_difference_expected_role": 16,
+        "same_correctness": 273,
+        "identical_shared_events": 272,
+        "loss": 5
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "JE",
+      "length": 5,
+      "counts": {
+        "n": 288,
+        "same_correctness": 236,
+        "identical_shared_events": 232,
+        "gain": 36,
+        "first_difference_expected_role": 56,
+        "loss": 16
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "JE",
+      "length": 6,
+      "counts": {
+        "n": 288,
+        "gain": 42,
+        "first_difference_expected_role": 61,
+        "same_correctness": 233,
+        "identical_shared_events": 227,
+        "loss": 13
+      }
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "JE",
+      "length": 8,
+      "counts": {
+        "n": 288,
+        "gain": 77,
+        "first_difference_expected_role": 109,
+        "same_correctness": 195,
+        "identical_shared_events": 179,
+        "loss": 16
+      }
+    }
+  ],
+  "examples": [
+    {
+      "group": [
+        "qwen32b",
+        256,
+        "JE",
+        "gain"
+      ],
+      "total": 187,
+      "samples": [
+        {
+          "seed": 11,
+          "id": 100438,
+          "length": 8,
+          "first_difference": {
+            "event": 11,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 8 3 2 0\nneg 2 7 8 0\nEndTool\n",
+            "right_text": "inc 8 3 2 0\nneg 2 7 8 0\ninc 3 8 9 1\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100327,
+          "length": 6,
+          "first_difference": {
+            "event": 5,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 9 1 4 6\ninc 0 2 5 7\nEndTool\n",
+            "right_text": "rot 9 1 4 6\ninc 0 2 5 7\nswap 2 0 5 7\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100316,
+          "length": 6,
+          "first_difference": {
+            "event": 11,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 5 2 7 0\ninc 6 3 8 1\ninc 7 4 9 2\nEnd\n",
+            "right_text": "inc 5 2 7 0\ninc 6 3 8 1\ninc 7 4 9 2\nEndTool\n"
+          },
+          "base_stop": "eos_or_protocol_error",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen32b",
+        256,
+        "JE",
+        "loss"
+      ],
+      "total": 55,
+      "samples": [
+        {
+          "seed": 11,
+          "id": 100205,
+          "length": 5,
+          "first_difference": {
+            "event": 9,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 6 3 0 2\nrev 2 0 3 6\nEndTool\n",
+            "right_text": "inc 6 3 0 2\nrev 2 0 3 6\nDone\nTo solve this problem, we need to apply each function in sequence to the input digits and follow the specified format for the trace. Let's go through each step carefully.\n\n**Input:** 2 4 1 8\n\n**Functions:** white gray blue red gold\n\n**Trace:**\n\n1. **white**\n   - **inc 2 4 1 8** 3 5 2 9\n   - **neg 3 5 2 9** 7 5 8 "
+          },
+          "base_stop": "done",
+          "composition_stop": "protocol_or_fragment_budget"
+        },
+        {
+          "seed": 22,
+          "id": 100225,
+          "length": 5,
+          "first_difference": {
+            "event": 9,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 5 2 5 5\ninc 6 3 6 6\nEndTool\n",
+            "right_text": "inc 6 6 3 6\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100369,
+          "length": 6,
+          "first_difference": {
+            "event": 7,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 0 4 1 6\ninc 1 5 2 7\nswap 5 1 2 7\nEndTool\n",
+            "right_text": "inc 7 1 5 2\nswap 1 7 5 2\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen32b",
+        256,
+        "SE",
+        "gain"
+      ],
+      "total": 208,
+      "samples": [
+        {
+          "seed": 33,
+          "id": 100400,
+          "length": 8,
+          "first_difference": {
+            "event": 3,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 8 9 8 7\ninc 9 0 9 8\nEndTool\n",
+            "right_text": "rot 8 9 8 7\ninc 9 0 9 8\nswap 0 9 9 8\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100467,
+          "length": 8,
+          "first_difference": {
+            "event": 14,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "Done\n",
+            "right_text": "black:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100099,
+          "length": 4,
+          "first_difference": {
+            "event": 7,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 5 6 5 3\nEndTool\n",
+            "right_text": "rot 5 6 5 3\nrot 6 5 3 5\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen32b",
+        256,
+        "SE",
+        "loss"
+      ],
+      "total": 75,
+      "samples": [
+        {
+          "seed": 11,
+          "id": 100384,
+          "length": 6,
+          "first_difference": {
+            "event": 9,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 5 9 0 0\nrot 9 0 0 5\ninc 0 1 1 6\nEndTool\n",
+            "right_text": "rot 5 9 0 0\ninc 6 0 1 1\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100480,
+          "length": 8,
+          "first_difference": {
+            "event": 6,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "blue:\n",
+            "right_text": "brown:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100446,
+          "length": 8,
+          "first_difference": {
+            "event": 12,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "gold:\n",
+            "right_text": "pink:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen32b",
+        256,
+        "SJ",
+        "gain"
+      ],
+      "total": 23,
+      "samples": [
+        {
+          "seed": 33,
+          "id": 100334,
+          "length": 6,
+          "first_difference": {
+            "event": 5,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 5 7 0 2\ninc 6 8 1 3\nEndTool\n",
+            "right_text": "rot 5 7 0 2\nrot 7 0 2 5\ninc 8 1 3 6\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100390,
+          "length": 8,
+          "first_difference": {
+            "event": 14,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "Done\n",
+            "right_text": "brown:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100465,
+          "length": 8,
+          "first_difference": {
+            "event": 14,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "Done\n",
+            "right_text": "black:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen32b",
+        256,
+        "SJ",
+        "loss"
+      ],
+      "total": 32,
+      "samples": [
+        {
+          "seed": 22,
+          "id": 100266,
+          "length": 5,
+          "first_difference": {
+            "event": 4,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "blue:\n",
+            "right_text": "black:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100097,
+          "length": 4,
+          "first_difference": {
+            "event": 5,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 0 5 3 4\nneg 0 5 7 6\ninc 1 6 8 7\nEndTool\n",
+            "right_text": "inc 0 5 3 4\nneg 0 5 7 6\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100360,
+          "length": 6,
+          "first_difference": {
+            "event": 11,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 5 9 9 5\nneg 5 1 1 5\ninc 6 2 2 6\nEndTool\n",
+            "right_text": "inc 5 9 9 5\nneg 5 1 1 5\ninc 6 2 2 6\nEnd\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "eos_or_protocol_error"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen32b",
+        512,
+        "JE",
+        "gain"
+      ],
+      "total": 165,
+      "samples": [
+        {
+          "seed": 11,
+          "id": 100100,
+          "length": 4,
+          "first_difference": {
+            "event": 5,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 7 4 5 8\nneg 3 6 5 2\nEndTool\n",
+            "right_text": "inc 7 4 5 8\nneg 3 6 5 2\ninc 4 7 6 3\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100445,
+          "length": 8,
+          "first_difference": {
+            "event": 15,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 6 9 9 6\ninc 7 0 0 7\nEndTool\n",
+            "right_text": "rot 6 9 9 6\ninc 7 0 0 7\nswap 0 7 0 7\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100406,
+          "length": 8,
+          "first_difference": {
+            "event": 9,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 9 3 6 8\ninc 0 4 7 9\nEndTool\n",
+            "right_text": "rot 9 3 6 8\ninc 0 4 7 9\nswap 4 0 7 9\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen32b",
+        512,
+        "JE",
+        "loss"
+      ],
+      "total": 50,
+      "samples": [
+        {
+          "seed": 22,
+          "id": 100432,
+          "length": 8,
+          "first_difference": {
+            "event": 15,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 7 8 7 9\ninc 8 9 8 0\nswap 9 8 8 0\nEndTool\n",
+            "right_text": "inc 0 8 9 8\nswap 8 0 9 8\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100429,
+          "length": 8,
+          "first_difference": {
+            "event": 15,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 4 8 0 4\ninc 5 9 1 5\nswap 9 5 1 5\nEndTool\n",
+            "right_text": "inc 5 5 9 1\nswap 5 5 9 1\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100449,
+          "length": 8,
+          "first_difference": {
+            "event": 11,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 5 1 9 8\ninc 6 2 0 9\nswap 2 6 0 9\nEndTool\n",
+            "right_text": "inc 9 6 2 0\nswap 6 9 2 0\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen32b",
+        512,
+        "SE",
+        "gain"
+      ],
+      "total": 184,
+      "samples": [
+        {
+          "seed": 33,
+          "id": 100465,
+          "length": 8,
+          "first_difference": {
+            "event": 14,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "Done\n",
+            "right_text": "black:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100401,
+          "length": 8,
+          "first_difference": {
+            "event": 15,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 7 8 3 1\nEndTool\n",
+            "right_text": "inc 7 8 3 1\nswap 8 7 3 1\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100222,
+          "length": 5,
+          "first_difference": {
+            "event": 9,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 8 4 3 4\nrot 4 3 4 8\ninc 5 4 5 9\nEnd\n",
+            "right_text": "rot 8 4 3 4\nrot 4 3 4 8\ninc 5 4 5 9\nEndTool\n"
+          },
+          "base_stop": "eos_or_protocol_error",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen32b",
+        512,
+        "SE",
+        "loss"
+      ],
+      "total": 71,
+      "samples": [
+        {
+          "seed": 11,
+          "id": 100109,
+          "length": 4,
+          "first_difference": {
+            "event": 5,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 8 6 2 0\nrot 6 2 0 8\ninc 7 3 1 9\nEndTool\n",
+            "right_text": "inc 1 9 7 3\nrot 9 7 3 1\ninc 0 8 4 2\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100236,
+          "length": 5,
+          "first_difference": {
+            "event": 9,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 3 9 3 2\nrot 9 3 2 3\ninc 0 4 3 4\nEndTool\n",
+            "right_text": "rot 3 9 3 2\ninc 4 0 4 3\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100360,
+          "length": 6,
+          "first_difference": {
+            "event": 8,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "green:\n",
+            "right_text": "white:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen32b",
+        512,
+        "SJ",
+        "gain"
+      ],
+      "total": 27,
+      "samples": [
+        {
+          "seed": 33,
+          "id": 100390,
+          "length": 8,
+          "first_difference": {
+            "event": 14,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "Done\n",
+            "right_text": "brown:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100440,
+          "length": 8,
+          "first_difference": {
+            "event": 15,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 7 5 9 5\ninc 8 6 0 6\ninc 9 7 1 7\nEnd\n",
+            "right_text": "inc 7 5 9 5\ninc 8 6 0 6\ninc 9 7 1 7\nEndTool\n"
+          },
+          "base_stop": "eos_or_protocol_error",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100474,
+          "length": 8,
+          "first_difference": {
+            "event": 14,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "Done\n",
+            "right_text": "white:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen32b",
+        512,
+        "SJ",
+        "loss"
+      ],
+      "total": 29,
+      "samples": [
+        {
+          "seed": 22,
+          "id": 100382,
+          "length": 6,
+          "first_difference": {
+            "event": 4,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "pink:\n",
+            "right_text": "gold:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100266,
+          "length": 5,
+          "first_difference": {
+            "event": 4,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "blue:\n",
+            "right_text": "black:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100254,
+          "length": 5,
+          "first_difference": {
+            "event": 9,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 9 4 0 0\nneg 1 6 0 0\ninc 2 7 1 1\nEndTool\n",
+            "right_text": "inc 9 4 0 0\nneg 1 6 0 0\ninc 2 7 1 1\nEnd\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "eos_or_protocol_error"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen3b",
+        256,
+        "JE",
+        "gain"
+      ],
+      "total": 56,
+      "samples": [
+        {
+          "seed": 11,
+          "id": 100411,
+          "length": 8,
+          "first_difference": {
+            "event": 11,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 3 4 0 0\nswap 4 3 0 0\nEndTool\n",
+            "right_text": "inc 3 4 0 0\ninc 4 5 1 1\ninc 5 6 2 2\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100114,
+          "length": 4,
+          "first_difference": {
+            "event": 5,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 8 7 1 8\ninc 9 8 2 9\ninc 0 9 3 0\nEndTool\n",
+            "right_text": "rot 6 0 7 7\ninc 7 1 8 8\nswap 1 7 8 8\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100372,
+          "length": 6,
+          "first_difference": {
+            "event": 7,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 8 2 9 8\ninc 9 3 0 9\ninc 0 4 1 0\nEndTool\n",
+            "right_text": "rot 1 8 7 7\ninc 2 9 8 8\nswap 9 2 8 8\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen3b",
+        256,
+        "JE",
+        "loss"
+      ],
+      "total": 54,
+      "samples": [
+        {
+          "seed": 11,
+          "id": 100236,
+          "length": 5,
+          "first_difference": {
+            "event": 7,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 9 8 2 8\nneg 1 2 8 2\ninc 2 3 9 3\nEndTool\n",
+            "right_text": "inc 9 8 2 8\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100008,
+          "length": 3,
+          "first_difference": {
+            "event": 5,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 5 6 0 8\ninc 6 7 1 9\nswap 7 6 1 9\nEndTool\n",
+            "right_text": "rot 5 6 0 8\ninc 6 7 1 9\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100236,
+          "length": 5,
+          "first_difference": {
+            "event": 3,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 2 1 8 2\ninc 3 2 9 3\nswap 2 3 9 3\nEndTool\n",
+            "right_text": "rot 2 1 8 2\ninc 3 2 9 3\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen3b",
+        256,
+        "SE",
+        "gain"
+      ],
+      "total": 315,
+      "samples": [
+        {
+          "seed": 33,
+          "id": 100240,
+          "length": 5,
+          "first_difference": {
+            "event": 4,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "green:\n",
+            "right_text": "pink:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100330,
+          "length": 6,
+          "first_difference": {
+            "event": 4,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "gray:\n",
+            "right_text": "brown:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100267,
+          "length": 5,
+          "first_difference": {
+            "event": 4,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "black:\n",
+            "right_text": "blue:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen3b",
+        256,
+        "SE",
+        "loss"
+      ],
+      "total": 126,
+      "samples": [
+        {
+          "seed": 11,
+          "id": 100134,
+          "length": 4,
+          "first_difference": {
+            "event": 7,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 4 0 3 8\ninc 5 1 4 9\nEndTool\n",
+            "right_text": "inc 9 5 1 4\nswap 5 9 1 4\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100230,
+          "length": 5,
+          "first_difference": {
+            "event": 9,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 5 6 2 7\ninc 6 7 3 8\nswap 7 6 3 8\nEndTool\n",
+            "right_text": "rot 5 6 2 7\ninc 6 7 3 8\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100231,
+          "length": 5,
+          "first_difference": {
+            "event": 3,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 8 4 3 7\ninc 9 5 4 8\nswap 5 9 4 8\nEndTool\n",
+            "right_text": "rot 8 4 3 7\ninc 9 5 4 8\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen3b",
+        256,
+        "SJ",
+        "gain"
+      ],
+      "total": 254,
+      "samples": [
+        {
+          "seed": 11,
+          "id": 100123,
+          "length": 4,
+          "first_difference": {
+            "event": 6,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "Done\n",
+            "right_text": "gold:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100217,
+          "length": 5,
+          "first_difference": {
+            "event": 6,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "black:\n",
+            "right_text": "blue:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100265,
+          "length": 5,
+          "first_difference": {
+            "event": 6,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "Done\n",
+            "right_text": "black:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen3b",
+        256,
+        "SJ",
+        "loss"
+      ],
+      "total": 84,
+      "samples": [
+        {
+          "seed": 22,
+          "id": 100254,
+          "length": 5,
+          "first_difference": {
+            "event": 6,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "brown:\n",
+            "right_text": "white:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100026,
+          "length": 3,
+          "first_difference": {
+            "event": 4,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "red:\n",
+            "right_text": "Done\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100067,
+          "length": 3,
+          "first_difference": {
+            "event": 4,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "white:\n",
+            "right_text": "Done\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen3b",
+        512,
+        "JE",
+        "gain"
+      ],
+      "total": 47,
+      "samples": [
+        {
+          "seed": 22,
+          "id": 100133,
+          "length": 4,
+          "first_difference": {
+            "event": 7,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 9 3 6 1\nswap 3 9 6 1\nEndTool\n",
+            "right_text": "rot 2 5 0 8\ninc 3 6 1 9\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100371,
+          "length": 6,
+          "first_difference": {
+            "event": 7,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 1 8 6 9\nswap 8 1 6 9\nEndTool\n",
+            "right_text": "rot 7 5 8 0\ninc 8 6 9 1\nswap 6 8 9 1\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100254,
+          "length": 5,
+          "first_difference": {
+            "event": 9,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "neg 2 7 1 1\nneg 8 3 9 9\nEndTool\n",
+            "right_text": "inc 9 4 0 0\nneg 1 6 0 0\ninc 2 7 1 1\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen3b",
+        512,
+        "JE",
+        "loss"
+      ],
+      "total": 50,
+      "samples": [
+        {
+          "seed": 11,
+          "id": 100418,
+          "length": 8,
+          "first_difference": {
+            "event": 7,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 3 7 6 9\nswap 7 3 6 9\nEndTool\n",
+            "right_text": "swap 6 2 5 8\ninc 7 3 6 9\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100362,
+          "length": 6,
+          "first_difference": {
+            "event": 9,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 0 7 7 5\nrot 7 7 5 0\ninc 8 8 6 1\nEndTool\n",
+            "right_text": "rot 0 7 7 5\nrot 7 7 5 0\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100197,
+          "length": 5,
+          "first_difference": {
+            "event": 9,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "inc 4 0 5 6\nneg 6 0 5 4\ninc 7 1 6 5\nEndTool\n",
+            "right_text": "inc 4 0 5 6\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen3b",
+        512,
+        "SE",
+        "gain"
+      ],
+      "total": 342,
+      "samples": [
+        {
+          "seed": 33,
+          "id": 100198,
+          "length": 5,
+          "first_difference": {
+            "event": 6,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "white:\n",
+            "right_text": "black:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100093,
+          "length": 3,
+          "first_difference": {
+            "event": 4,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "Done\n",
+            "right_text": "brown:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100342,
+          "length": 6,
+          "first_difference": {
+            "event": 8,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "gray:\n",
+            "right_text": "brown:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen3b",
+        512,
+        "SE",
+        "loss"
+      ],
+      "total": 121,
+      "samples": [
+        {
+          "seed": 22,
+          "id": 100013,
+          "length": 3,
+          "first_difference": {
+            "event": 4,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "blue:\n",
+            "right_text": "Done\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100234,
+          "length": 5,
+          "first_difference": {
+            "event": 3,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 5 5 4 0\ninc 6 6 5 1\nswap 6 6 5 1\nEndTool\n",
+            "right_text": "rot 5 5 4 0\ninc 6 6 5 1\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 22,
+          "id": 100045,
+          "length": 3,
+          "first_difference": {
+            "event": 5,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 7 2 2 9\ninc 8 3 3 0\nswap 3 8 3 0\nEndTool\n",
+            "right_text": "rot 7 2 2 9\ninc 8 3 3 0\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen3b",
+        512,
+        "SJ",
+        "gain"
+      ],
+      "total": 270,
+      "samples": [
+        {
+          "seed": 11,
+          "id": 100126,
+          "length": 4,
+          "first_difference": {
+            "event": 6,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "Done\n",
+            "right_text": "black:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100120,
+          "length": 4,
+          "first_difference": {
+            "event": 6,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "Done\n",
+            "right_text": "green:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100396,
+          "length": 8,
+          "first_difference": {
+            "event": 2,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "white:\n",
+            "right_text": "pink:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    },
+    {
+      "group": [
+        "qwen3b",
+        512,
+        "SJ",
+        "loss"
+      ],
+      "total": 77,
+      "samples": [
+        {
+          "seed": 33,
+          "id": 100348,
+          "length": 6,
+          "first_difference": {
+            "event": 8,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "black:\n",
+            "right_text": "brown:\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 33,
+          "id": 100107,
+          "length": 4,
+          "first_difference": {
+            "event": 6,
+            "phase": "header",
+            "other_phase": "header",
+            "same_prefix": true,
+            "left_text": "white:\n",
+            "right_text": "Done\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        },
+        {
+          "seed": 11,
+          "id": 100439,
+          "length": 8,
+          "first_difference": {
+            "event": 13,
+            "phase": "body",
+            "other_phase": "body",
+            "same_prefix": true,
+            "left_text": "rot 9 9 0 9\ninc 0 0 1 0\nswap 0 0 1 0\nEndTool\n",
+            "right_text": "inc 0 0 0 1\nswap 0 0 0 1\ninc 1 1 1 2\nEndTool\n"
+          },
+          "base_stop": "done",
+          "composition_stop": "done"
+        }
+      ]
+    }
+  ],
+  "exceptions": [
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100246,
+      "difference": {
+        "event": 9,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 4 6 0 7\ninc 5 7 1 8\nEndTool\n",
+        "right_text": "inc 8 5 7 1\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "step": 256,
+      "mode": "JE",
+      "id": 100141,
+      "difference": {
+        "event": 2,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "gold:\n",
+        "right_text": "pink:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "step": 256,
+      "mode": "JE",
+      "id": 100255,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "brown:\n",
+        "right_text": "Done\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "step": 256,
+      "mode": "JE",
+      "id": 100263,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "Done\n",
+        "right_text": "green:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "step": 256,
+      "mode": "JE",
+      "id": 100267,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "Done\n",
+        "right_text": "black:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "step": 256,
+      "mode": "JE",
+      "id": 100299,
+      "difference": {
+        "event": 10,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "Done\n",
+        "right_text": "brown:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "step": 256,
+      "mode": "JE",
+      "id": 100351,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "pink:\n",
+        "right_text": "Done\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "step": 256,
+      "mode": "JE",
+      "id": 100368,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "Done\n",
+        "right_text": "white:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "step": 256,
+      "mode": "JE",
+      "id": 100460,
+      "difference": {
+        "event": 8,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "brown:\n",
+        "right_text": "pink:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "step": 256,
+      "mode": "JE",
+      "id": 100476,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "EndTool\n",
+        "right_text": "green:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100439,
+      "difference": {
+        "event": 13,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 9 9 0 9\ninc 0 0 1 0\nswap 0 0 1 0\nEndTool\n",
+        "right_text": "inc 0 0 0 1\nswap 0 0 0 1\ninc 1 1 1 2\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "step": 512,
+      "mode": "JE",
+      "id": 100428,
+      "difference": {
+        "event": 8,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "green:\n",
+        "right_text": "white:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100182,
+      "difference": {
+        "event": 7,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 6 2 6 8\ninc 7 3 7 9\nswap 3 7 7 9\nEndTool\n",
+        "right_text": "rot 6 2 6 8\ninc 7 3 7 9\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100213,
+      "difference": {
+        "event": 5,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 5 8 1 5\ninc 6 9 2 6\nswap 9 6 2 6\nEndTool\n",
+        "right_text": "inc 6 6 9 2\ninc 7 7 0 3\ninc 8 8 1 4\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100363,
+      "difference": {
+        "event": 7,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 2 0 9 7\nswap 0 2 9 7\nEndTool\n",
+        "right_text": "inc 2 0 9 7\ninc 3 1 0 8\ninc 4 2 1 9\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100371,
+      "difference": {
+        "event": 7,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 1 8 6 9\nswap 8 1 6 9\nEndTool\n",
+        "right_text": "inc 1 8 6 9\ninc 2 9 7 0\ninc 3 0 8 1\ninc 4 1 9 2\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100405,
+      "difference": {
+        "event": 7,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 1 4 9 8\nEndTool\n",
+        "right_text": "rot 3 8 7 0\ninc 4 9 8 1\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100437,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 1 3 6 4\nswap 3 1 6 4\ninc 4 2 7 5\nEndTool\n",
+        "right_text": "inc 1 3 6 4\nswap 3 1 6 4\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100463,
+      "difference": {
+        "event": 5,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 5 8 3 5\ninc 6 9 4 6\ninc 7 0 5 7\nEndTool\n",
+        "right_text": "inc 5 8 3 5\nswap 8 5 3 5\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "JE",
+      "id": 100150,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "gold:\n",
+        "right_text": "Done\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "JE",
+      "id": 100211,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "Done\n",
+        "right_text": "green:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "JE",
+      "id": 100237,
+      "difference": {
+        "event": 4,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "green:\n",
+        "right_text": "pink:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "JE",
+      "id": 100258,
+      "difference": {
+        "event": 8,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "Done\n",
+        "right_text": "white:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "JE",
+      "id": 100279,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "End\n",
+        "right_text": "black:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "JE",
+      "id": 100342,
+      "difference": {
+        "event": 8,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "End\n",
+        "right_text": "gray:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 256,
+      "mode": "JE",
+      "id": 100403,
+      "difference": {
+        "event": 8,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "gold:\n",
+        "right_text": "Done\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100164,
+      "difference": {
+        "event": 7,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 6 6 7 6\nswap 6 6 7 6\nEndTool\n",
+        "right_text": "inc 6 6 7 6\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100213,
+      "difference": {
+        "event": 9,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rev 7 3 0 7\ninc 8 4 1 8\nEndTool\n",
+        "right_text": "rev 7 3 0 7\nrot 3 0 7 7\ninc 4 1 8 8\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100323,
+      "difference": {
+        "event": 7,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 8 1 5 5\nneg 2 9 5 5\ninc 3 0 6 6\nEndTool\n",
+        "right_text": "neg 3 0 6 6\nneg 7 0 4 4\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100374,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 9 1 0 9\ninc 0 2 1 0\ninc 1 3 2 1\nEndTool\n",
+        "right_text": "inc 9 1 0 9\nswap 1 9 0 9\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100376,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 6 6 2 3\ninc 7 7 3 4\ninc 8 8 4 5\nEndTool\n",
+        "right_text": "inc 6 6 2 3\nswap 6 6 2 3\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100450,
+      "difference": {
+        "event": 9,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "neg 2 3 6 5\nneg 8 7 6 5\nEndTool\n",
+        "right_text": "neg 2 3 6 5\nneg 8 7 4 5\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "JE",
+      "id": 100255,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "brown:\n",
+        "right_text": "white:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "JE",
+      "id": 100359,
+      "difference": {
+        "event": 8,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "white:\n",
+        "right_text": "Done\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "JE",
+      "id": 100364,
+      "difference": {
+        "event": 8,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "gray:\n",
+        "right_text": "Done\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "JE",
+      "id": 100390,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "gold:\n",
+        "right_text": "pink:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "JE",
+      "id": 100426,
+      "difference": {
+        "event": 8,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "Done\n",
+        "right_text": "green:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "JE",
+      "id": 100429,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "gray:\n",
+        "right_text": "Done\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "JE",
+      "id": 100433,
+      "difference": {
+        "event": 10,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "Done\n",
+        "right_text": "white:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "JE",
+      "id": 100441,
+      "difference": {
+        "event": 8,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "black:\n",
+        "right_text": "Done\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "JE",
+      "id": 100470,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "brown:\n",
+        "right_text": "pink:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 256,
+      "mode": "JE",
+      "id": 100472,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "pink:\n",
+        "right_text": "brown:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 512,
+      "mode": "JE",
+      "id": 100470,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "brown:\n",
+        "right_text": "pink:\n"
+      }
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "step": 512,
+      "mode": "JE",
+      "id": 100471,
+      "difference": {
+        "event": 6,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "brown:\n",
+        "right_text": "pink:\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100097,
+      "difference": {
+        "event": 5,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 0 5 3 4\nneg 0 5 7 6\ninc 1 6 8 7\nEndTool\n",
+        "right_text": "inc 0 5 3 4\nneg 0 5 7 6\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100223,
+      "difference": {
+        "event": 5,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 4 0 1 2\nneg 6 0 9 8\ninc 7 1 0 9\nEndTool\n",
+        "right_text": "inc 4 0 1 2\nneg 6 0 9 8\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100334,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 6 9 1 4\ninc 7 0 2 5\ninc 8 1 3 6\nEndTool\n",
+        "right_text": "inc 6 9 1 4\ninc 7 0 2 5\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100347,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 8 9 3 9\nrot 9 3 9 8\nEndTool\n",
+        "right_text": "rot 8 9 3 9\nrot 9 3 9 8\ninc 0 4 0 9\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100419,
+      "difference": {
+        "event": 9,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 1 3 7 2\ninc 2 4 8 3\ninc 3 5 9 4\nEndTool\n",
+        "right_text": "inc 1 3 7 2\ninc 2 4 8 3\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100428,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 7 2 2 6\nrev 6 2 2 7\nEndTool\n",
+        "right_text": "rot 1 1 5 6\nrot 1 5 6 1\ninc 2 6 7 2\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100442,
+      "difference": {
+        "event": 9,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 9 1 6 0\nEndTool\n",
+        "right_text": "inc 9 1 6 0\nswap 1 9 6 0\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100461,
+      "difference": {
+        "event": 5,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 4 7 1 0\ninc 5 8 2 1\nswap 8 5 2 1\nEndTool\n",
+        "right_text": "rot 4 7 1 0\ninc 5 8 2 1\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100464,
+      "difference": {
+        "event": 15,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 9 8 8 3\nneg 1 2 2 7\nEndTool\n",
+        "right_text": "inc 9 8 8 3\nneg 1 2 2 7\ninc 2 3 3 8\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100345,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 5 3 7 5\nrot 3 7 5 5\nEndTool\n",
+        "right_text": "rot 5 3 7 5\nrot 3 7 5 5\ninc 4 8 6 6\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100347,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 8 9 3 9\nrot 9 3 9 8\nEndTool\n",
+        "right_text": "rot 8 9 3 9\nrot 9 3 9 8\ninc 0 4 0 9\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100352,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 6 3 5 0\nneg 4 7 5 0\ninc 5 8 6 1\nEndTool\n",
+        "right_text": "inc 6 3 5 0\nneg 4 7 5 0\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100403,
+      "difference": {
+        "event": 15,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 2 0 3 0\nswap 0 2 3 0\nEndTool\n",
+        "right_text": "inc 2 0 3 0\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100427,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 8 8 3 4\nrot 8 3 4 8\ninc 9 4 5 9\nEndTool\n",
+        "right_text": "inc 5 9 9 4\nrev 4 9 9 5\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100428,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 7 2 2 6\nrev 6 2 2 7\nEndTool\n",
+        "right_text": "rot 1 1 5 6\nrot 1 5 6 1\ninc 2 6 7 2\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100464,
+      "difference": {
+        "event": 15,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 9 8 8 3\nneg 1 2 2 7\nEndTool\n",
+        "right_text": "inc 9 8 8 3\nneg 1 2 2 7\ninc 2 3 3 8\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100474,
+      "difference": {
+        "event": 15,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 5 6 7 4\nneg 5 4 3 6\nEndTool\n",
+        "right_text": "inc 5 6 7 4\nneg 5 4 3 6\ninc 6 5 4 7\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100182,
+      "difference": {
+        "event": 7,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 6 2 6 8\ninc 7 3 7 9\nswap 3 7 7 9\nEndTool\n",
+        "right_text": "rot 6 2 6 8\ninc 7 3 7 9\nswap 3 7 7 9\nEnd\nDone\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100204,
+      "difference": {
+        "event": 9,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 3 3 8 6\ninc 4 4 9 7\ninc 5 5 0 8\nEndTool\n",
+        "right_text": "inc 3 3 8 6\ninc 4 4 9 7\ninc 5 5 0 8\nEnd\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100360,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 5 9 9 5\nneg 5 1 1 5\ninc 6 2 2 6\nEndTool\n",
+        "right_text": "inc 5 9 9 5\nneg 5 1 1 5\ninc 6 2 2 6\nEnd\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100474,
+      "difference": {
+        "event": 15,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 5 6 7 4\nneg 5 4 3 6\ninc 6 5 4 7\nEndTool\n",
+        "right_text": "inc 5 6 7 4\nneg 5 4 3 6\ninc 6 5 4 7\nEnd\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 256,
+      "mode": "JE",
+      "id": 100402,
+      "difference": {
+        "event": 16,
+        "phase": "header",
+        "other_phase": "header",
+        "same_prefix": true,
+        "left_text": "blue:\n",
+        "right_text": "gold:\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100254,
+      "difference": {
+        "event": 9,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 9 4 0 0\nneg 1 6 0 0\ninc 2 7 1 1\nEndTool\n",
+        "right_text": "inc 9 4 0 0\nneg 1 6 0 0\ninc 2 7 1 1\nEnd\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100256,
+      "difference": {
+        "event": 9,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 8 8 5 7\nneg 2 2 5 3\ninc 3 3 6 4\nEndTool\n",
+        "right_text": "inc 8 8 5 7\nneg 2 2 5 3\ninc 3 3 6 4\nEnd\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100275,
+      "difference": {
+        "event": 9,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 8 4 4 2\ninc 9 5 5 3\nEnd\n",
+        "right_text": "rot 8 4 4 2\ninc 9 5 5 3\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100287,
+      "difference": {
+        "event": 9,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 5 7 5 6\ninc 6 8 6 7\nswap 8 6 6 7\nEndTool\n",
+        "right_text": "rot 5 7 5 6\ninc 6 8 6 7\nswap 8 6 6 7\nEnd\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100290,
+      "difference": {
+        "event": 9,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 6 9 9 0\nneg 4 1 1 0\ninc 5 2 2 1\nEnd\n",
+        "right_text": "inc 6 9 9 0\nneg 4 1 1 0\ninc 5 2 2 1\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100316,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 5 2 7 0\ninc 6 3 8 1\ninc 7 4 9 2\nEndTool\n",
+        "right_text": "inc 5 2 7 0\ninc 6 3 8 1\ninc 7 4 9 2\nEnd\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100351,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 5 4 6 2\nneg 5 6 4 8\ninc 6 7 5 9\nEnd\n",
+        "right_text": "inc 5 4 6 2\nneg 5 6 4 8\ninc 6 7 5 9\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100394,
+      "difference": {
+        "event": 13,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 3 5 6 8\nneg 7 5 4 2\ninc 8 6 5 3\nEndTool\n",
+        "right_text": "inc 3 5 6 8\nneg 7 5 4 2\ninc 8 6 5 3\nEnd"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100440,
+      "difference": {
+        "event": 15,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 7 5 9 5\ninc 8 6 0 6\ninc 9 7 1 7\nEnd\n",
+        "right_text": "inc 7 5 9 5\ninc 8 6 0 6\ninc 9 7 1 7\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100448,
+      "difference": {
+        "event": 5,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "inc 0 2 1 0\nrev 0 1 2 0\nEndTool\n",
+        "right_text": "inc 0 2 1 2\nrev 2 1 2 0\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100328,
+      "difference": {
+        "event": 5,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 0 2 2 7\ninc 1 3 3 8\nswap 3 1 3 8\nEndTool\n",
+        "right_text": "rot 0 2 2 7\ninc 1 3 3 8\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "step": 256,
+      "mode": "SJ",
+      "id": 100334,
+      "difference": {
+        "event": 5,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 5 7 0 2\ninc 6 8 1 3\nEndTool\n",
+        "right_text": "rot 5 7 0 2\nrot 7 0 2 5\ninc 8 1 3 6\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100334,
+      "difference": {
+        "event": 5,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 5 7 0 2\ninc 6 8 1 3\nEndTool\n",
+        "right_text": "rot 5 7 0 2\nrot 7 0 2 5\ninc 8 1 3 6\nEndTool\n"
+      }
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "step": 512,
+      "mode": "SJ",
+      "id": 100447,
+      "difference": {
+        "event": 11,
+        "phase": "body",
+        "other_phase": "body",
+        "same_prefix": true,
+        "left_text": "rot 9 1 4 5\nneg 1 9 5 5\nrot 9 5 5 1\nEndTool\n",
+        "right_text": "rot 9 1 4 5\nrot 1 4 5 9\nEndTool\n"
+      }
+    }
+  ],
+  "note": "Prior body error is observational association, not proof of causal error propagation. First-token differences outside changed role may reflect numerical batching effects and are explicitly retained."
+}

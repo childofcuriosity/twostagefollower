@@ -1,0 +1,11 @@
+{
+  "proposal_format_breakdown": {
+    "invalid_first_line": 132,
+    "parseable_but_wrong_length": 11,
+    "accepted": 17
+  },
+  "all_discovery_traces_solver_accuracy": 0.0078125,
+  "selected_positive_compression_score": 8,
+  "selected_nonpositive_compression_score": 1,
+  "warning": "Compression frequency is measured over syntactically valid attempts including incorrect solutions, so it is not evidence of task utility. Base-model instruction-format failure is confounded with proposal quality."
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "local_body_full_header_routing",
+    "eight_tool_batched_execution",
+    "global_and_local_token_provenance",
+    "wrong_selected_tool_preserved",
+    "wrong_state_preserved",
+    "context_snapshot_not_mutated",
+    "early_done_not_prevented"
+  ],
+  "mock_only": true
+}

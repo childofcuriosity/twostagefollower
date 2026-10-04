@@ -1,0 +1,10 @@
+{
+  "utc": "2026-09-24T04:53:10Z",
+  "reason": "Before any timecourse run, explicitly enable KV caching during read-only evaluation and restore training cache state afterward.",
+  "supersedes": [
+    "src/timecourse.py"
+  ],
+  "hashes": {
+    "src/timecourse.py": "ce11bef3f9f38023327b6a26c84479b9adc59b7c3a967e71cee0344cbeb82515"
+  }
+}

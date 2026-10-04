@@ -1,0 +1,185 @@
+{
+  "results": [
+    {
+      "condition": "position",
+      "seed": 102,
+      "gpu": 5,
+      "exit_code": 0,
+      "seconds": 178.52060341835022,
+      "finished": 1790501799.6238706,
+      "log": "logs/L5-position-s102.log"
+    },
+    {
+      "condition": "position",
+      "seed": 107,
+      "gpu": 5,
+      "exit_code": 0,
+      "seconds": 182.09959650039673,
+      "finished": 1790501981.7859185,
+      "log": "logs/L5-position-s107.log"
+    },
+    {
+      "condition": "position",
+      "seed": 103,
+      "gpu": 6,
+      "exit_code": 0,
+      "seconds": 180.46751379966736,
+      "finished": 1790501801.5713034,
+      "log": "logs/L5-position-s103.log"
+    },
+    {
+      "condition": "position",
+      "seed": 110,
+      "gpu": 6,
+      "exit_code": 0,
+      "seconds": 182.5183081626892,
+      "finished": 1790501984.120392,
+      "log": "logs/L5-position-s110.log"
+    },
+    {
+      "condition": "position",
+      "seed": 33,
+      "gpu": 2,
+      "exit_code": 0,
+      "seconds": 181.498553276062,
+      "finished": 1790501802.6002998,
+      "log": "logs/L5-position-s33.log"
+    },
+    {
+      "condition": "position",
+      "seed": 111,
+      "gpu": 2,
+      "exit_code": 0,
+      "seconds": 182.30814814567566,
+      "finished": 1790501984.9226668,
+      "log": "logs/L5-position-s111.log"
+    },
+    {
+      "condition": "position",
+      "seed": 11,
+      "gpu": 0,
+      "exit_code": 0,
+      "seconds": 183.27520895004272,
+      "finished": 1790501804.3762023,
+      "log": "logs/L5-position-s11.log"
+    },
+    {
+      "condition": "position",
+      "seed": 112,
+      "gpu": 0,
+      "exit_code": 0,
+      "seconds": 180.77690958976746,
+      "finished": 1790501985.205053,
+      "log": "logs/L5-position-s112.log"
+    },
+    {
+      "condition": "position",
+      "seed": 104,
+      "gpu": 7,
+      "exit_code": 0,
+      "seconds": 177.69531345367432,
+      "finished": 1790501798.7997096,
+      "log": "logs/L5-position-s104.log"
+    },
+    {
+      "condition": "position",
+      "seed": 105,
+      "gpu": 7,
+      "exit_code": 0,
+      "seconds": 176.50446105003357,
+      "finished": 1790501975.3363616,
+      "log": "logs/L5-position-s105.log"
+    },
+    {
+      "condition": "position",
+      "seed": 113,
+      "gpu": 7,
+      "exit_code": 0,
+      "seconds": 176.38489055633545,
+      "finished": 1790502151.754055,
+      "log": "logs/L5-position-s113.log"
+    },
+    {
+      "condition": "position",
+      "seed": 101,
+      "gpu": 4,
+      "exit_code": 0,
+      "seconds": 178.3410782814026,
+      "finished": 1790501799.4436426,
+      "log": "logs/L5-position-s101.log"
+    },
+    {
+      "condition": "position",
+      "seed": 106,
+      "gpu": 4,
+      "exit_code": 0,
+      "seconds": 176.54494166374207,
+      "finished": 1790501976.0015168,
+      "log": "logs/L5-position-s106.log"
+    },
+    {
+      "condition": "position",
+      "seed": 114,
+      "gpu": 4,
+      "exit_code": 0,
+      "seconds": 176.84834814071655,
+      "finished": 1790502152.8717773,
+      "log": "logs/L5-position-s114.log"
+    },
+    {
+      "condition": "position",
+      "seed": 100,
+      "gpu": 3,
+      "exit_code": 0,
+      "seconds": 179.18017029762268,
+      "finished": 1790501800.2822728,
+      "log": "logs/L5-position-s100.log"
+    },
+    {
+      "condition": "position",
+      "seed": 108,
+      "gpu": 3,
+      "exit_code": 0,
+      "seconds": 177.06700468063354,
+      "finished": 1790501977.406204,
+      "log": "logs/L5-position-s108.log"
+    },
+    {
+      "condition": "position",
+      "seed": 115,
+      "gpu": 3,
+      "exit_code": 0,
+      "seconds": 177.95427942276,
+      "finished": 1790502155.408683,
+      "log": "logs/L5-position-s115.log"
+    },
+    {
+      "condition": "position",
+      "seed": 22,
+      "gpu": 1,
+      "exit_code": 0,
+      "seconds": 179.45456790924072,
+      "finished": 1790501800.5559556,
+      "log": "logs/L5-position-s22.log"
+    },
+    {
+      "condition": "position",
+      "seed": 109,
+      "gpu": 1,
+      "exit_code": 0,
+      "seconds": 180.576899766922,
+      "finished": 1790501981.163708,
+      "log": "logs/L5-position-s109.log"
+    },
+    {
+      "condition": "position",
+      "seed": 116,
+      "gpu": 1,
+      "exit_code": 0,
+      "seconds": 177.67180824279785,
+      "finished": 1790502158.8633327,
+      "log": "logs/L5-position-s116.log"
+    }
+  ],
+  "seconds": 537.7930355072021
+}

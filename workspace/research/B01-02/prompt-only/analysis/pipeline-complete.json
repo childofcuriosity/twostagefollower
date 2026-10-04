@@ -1,0 +1,9 @@
+{
+  "root": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/prompt-only/fallback14",
+  "lengths": [
+    2
+  ],
+  "report": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/prompt-only/fallback14/REPORT.md",
+  "time": 1790555877.159388,
+  "requires_final_research_review": true
+}

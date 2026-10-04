@@ -1,0 +1,16 @@
+{
+  "job": {
+    "model": "qwen3b",
+    "condition": "macro",
+    "seed": 110,
+    "steps": 512,
+    "microbatch": 16,
+    "accum": 2,
+    "lr": 0.0003
+  },
+  "gpu": 5,
+  "returncode": 0,
+  "seconds": 680.7380907535553,
+  "finished": 1790421788.2001727,
+  "log": "logs/qwen3b-macro-s110.log"
+}

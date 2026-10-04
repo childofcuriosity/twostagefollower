@@ -1,0 +1,9 @@
+{
+  "utc": "2026-09-24T18:22:41.676730+00:00",
+  "scope": "Post-run CPU-only audit. No changes to model, prompts, tools or fixtures. No grading feedback reaches agent. Verify every final workspace and replay every recorded action to locate completion; distinguish post-completion verification from idle looping.",
+  "source_sha256": {
+    "analyze.py": "eb11139c14c8a407a6ae6a2d8b623f94f51b97b2932f98382521903eb6f43ac1",
+    "audit.py": "402538b9df54fc8846cd7d5abd497072a483a9b239d8d2c966f9747a30b6b84f",
+    "replay.py": "a33c6973b5c60a2ff45f62105f1445fb2539f15f0aad8df68992f8d28ed13b12"
+  }
+}

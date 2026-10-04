@@ -1,0 +1,17 @@
+{
+  "utc": "2026-09-24T10:09:15Z",
+  "purpose": "Independent confirmation and complete raw audit/CI/report pipeline fixed while new model formal final results unavailable",
+  "hashes": {
+    "src/launch_extended.py": "fa81a5cc869830e406883868c16f9bf9479b4fec58909afec9a6099d8ad3e85a",
+    "src/audit.py": "90904295f8adfc4746356578c033fc9db49940f93d7ffe5b3db1e57ac2053ed8",
+    "src/finalize.py": "dec5c533e75ae4fb1ae49d202eca23c48d79c1ff342aa6bfcff4b7c699482f50",
+    "src/analyze.py": "151234b69ac8a272de039a75939f358ee2e67820ca5bf4be16302c624bb3329d",
+    "src/inference.py": "457dfefd373c74e0efb492d48306266fbcf126ff1ccd464b54f6b3d5ff313d10",
+    "src/build_extended.py": "59901c883c1973b63d8163812a59011fe46175330cf80640543cc971e9e9cda9",
+    "src/verify.py": "f8275a196d40da4edf5f56d991ad84166ece5227b5c4accaec431ab1a4cf562a",
+    "src/prepare_review.py": "92fbf02758c4b921bea2d9a6380efe00b039be185ae7088cf829fa3972f295ce",
+    "src/plots.py": "6e2a758325e0e285f14c0cd07b7f168246ae9ed5dde3b1ddf01570e7f4c39491",
+    "src/report.py": "2d25b01d77266d77cd0f98f834acc387697ce4d106fa8d7dc2176b2a52bda969",
+    "src/extended.py": "8b33b6a0368d5ce209e5572155037bc16e1002cbfd5352a99cacbe0413263053"
+  }
+}

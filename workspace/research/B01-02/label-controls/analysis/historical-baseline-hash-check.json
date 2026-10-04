@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "files": 48,
+  "note": "Compared reused raw outputs with hashes in original scale-study analysis manifests, not only newly captured hashes."
+}

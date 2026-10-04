@@ -1,0 +1,142 @@
+{
+  "posthoc": true,
+  "reason": "Original pre-deduplication retains first syntax for each semantic class although compression is lexical; macro actions have variable primitive costs. Check both choices without altering primary results.",
+  "results": {
+    "registered/action": {
+      "base": {
+        "compression": 0.37951447181147924,
+        "search_rate": 0.6748046875
+      },
+      "exhaustive": {
+        "compression": 0.45200539523327526,
+        "search_rate": 0.7236328125
+      },
+      "flat": {
+        "compression": 0.013460632747591416,
+        "search_rate": 0.5162760416666666
+      },
+      "frequency": {
+        "compression": 0.5704290308700246,
+        "search_rate": 0.7626953125
+      },
+      "macro": {
+        "compression": 0.19433007450138737,
+        "search_rate": 0.6077473958333334
+      },
+      "mismatch": {
+        "compression": 0.020497368088167506,
+        "search_rate": 0.5107421875
+      },
+      "no-library": {
+        "compression": 0.0,
+        "search_rate": 0.4912109375
+      },
+      "random": {
+        "compression": 0.11741151794378045,
+        "search_rate": 0.5345052083333334
+      }
+    },
+    "registered/primitive": {
+      "base": {
+        "compression": 0.37951447181147924,
+        "search_rate": 0.5895182291666666
+      },
+      "exhaustive": {
+        "compression": 0.45200539523327526,
+        "search_rate": 0.6455078125
+      },
+      "flat": {
+        "compression": 0.013460632747591416,
+        "search_rate": 0.4947916666666667
+      },
+      "frequency": {
+        "compression": 0.5704290308700246,
+        "search_rate": 0.67578125
+      },
+      "macro": {
+        "compression": 0.19433007450138737,
+        "search_rate": 0.5595703125
+      },
+      "mismatch": {
+        "compression": 0.020497368088167506,
+        "search_rate": 0.4964192708333333
+      },
+      "no-library": {
+        "compression": 0.0,
+        "search_rate": 0.4912109375
+      },
+      "random": {
+        "compression": 0.11741151794378045,
+        "search_rate": 0.4921875
+      }
+    },
+    "lexical-first/action": {
+      "base": {
+        "compression": 0.387916931186013,
+        "search_rate": 0.6748046875
+      },
+      "exhaustive": {
+        "compression": 0.5704290308700246,
+        "search_rate": 0.7626953125
+      },
+      "flat": {
+        "compression": 0.015313813044100264,
+        "search_rate": 0.5198567708333334
+      },
+      "frequency": {
+        "compression": 0.5704290308700246,
+        "search_rate": 0.7626953125
+      },
+      "macro": {
+        "compression": 0.19600391476920181,
+        "search_rate": 0.6123046875
+      },
+      "mismatch": {
+        "compression": 0.02679034923359234,
+        "search_rate": 0.5110677083333334
+      },
+      "no-library": {
+        "compression": 0.0,
+        "search_rate": 0.4912109375
+      },
+      "random": {
+        "compression": 0.11741151794378045,
+        "search_rate": 0.5345052083333334
+      }
+    },
+    "lexical-first/primitive": {
+      "base": {
+        "compression": 0.387916931186013,
+        "search_rate": 0.5895182291666666
+      },
+      "exhaustive": {
+        "compression": 0.5704290308700246,
+        "search_rate": 0.67578125
+      },
+      "flat": {
+        "compression": 0.015313813044100264,
+        "search_rate": 0.498046875
+      },
+      "frequency": {
+        "compression": 0.5704290308700246,
+        "search_rate": 0.67578125
+      },
+      "macro": {
+        "compression": 0.19600391476920181,
+        "search_rate": 0.5641276041666666
+      },
+      "mismatch": {
+        "compression": 0.02679034923359234,
+        "search_rate": 0.494140625
+      },
+      "no-library": {
+        "compression": 0.0,
+        "search_rate": 0.4912109375
+      },
+      "random": {
+        "compression": 0.11741151794378045,
+        "search_rate": 0.4921875
+      }
+    }
+  }
+}

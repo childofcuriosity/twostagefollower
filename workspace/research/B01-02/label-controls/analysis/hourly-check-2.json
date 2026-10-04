@@ -1,0 +1,63 @@
+{
+  "checked_utc": "2026-09-25T19:16:23.804409+00:00",
+  "completed": 14,
+  "active": [
+    {
+      "run": "qwen32b-alias-s11",
+      "training_step": 512,
+      "last_training_loss": 4.609477599615275e-07,
+      "last_log": "independent qwen32b alias 11 0",
+      "log_age_seconds": 76
+    },
+    {
+      "run": "qwen32b-alias-s22",
+      "training_step": 512,
+      "last_training_loss": 8.366204156118329e-07,
+      "last_log": "independent qwen32b alias 22 0",
+      "log_age_seconds": 59
+    },
+    {
+      "run": "qwen32b-alias-s33",
+      "training_step": 512,
+      "last_training_loss": 7.631587095602299e-07,
+      "last_log": "independent qwen32b alias 33 192",
+      "log_age_seconds": 42
+    },
+    {
+      "run": "qwen32b-position-s11",
+      "training_step": 512,
+      "last_training_loss": 7.48339942902021e-07,
+      "last_log": "independent qwen32b position 11 0",
+      "log_age_seconds": 76
+    },
+    {
+      "run": "qwen32b-position-s22",
+      "training_step": 512,
+      "last_training_loss": 2.401143433417019e-06,
+      "last_log": "independent qwen32b position 22 96",
+      "log_age_seconds": 34
+    },
+    {
+      "run": "qwen32b-position-s33",
+      "training_step": 512,
+      "last_training_loss": 1.4857199062134896e-06,
+      "last_log": "eval predictions.jsonl 512 560",
+      "log_age_seconds": 83
+    },
+    {
+      "run": "qwen7b-alias-s11",
+      "training_step": 512,
+      "last_training_loss": 7.10152193050817e-07,
+      "last_log": "eval predictions.jsonl 384 560",
+      "log_age_seconds": 34
+    },
+    {
+      "run": "qwen7b-position-s33",
+      "training_step": 512,
+      "last_training_loss": 2.2293444317256217e-06,
+      "last_log": "eval predictions.jsonl 384 560",
+      "log_age_seconds": 34
+    }
+  ],
+  "next_normal_check_utc": "2026-09-25T20:16:23.804409+00:00"
+}

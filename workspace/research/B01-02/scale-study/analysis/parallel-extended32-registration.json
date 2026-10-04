@@ -1,0 +1,16 @@
+{
+  "utc": "2026-09-24T14:37:40.796105+00:00",
+  "gpus": [
+    0,
+    1,
+    2,
+    3,
+    7
+  ],
+  "wait_for": "six primary32B jobs successful",
+  "reason": "Reuse same-model local GPUs after primary training; avoid sequential seven-pass tail",
+  "evaluation_function_copied_verbatim": true,
+  "source_sha256": "8b33b6a0368d5ce209e5572155037bc16e1002cbfd5352a99cacbe0413263053",
+  "worker_sha256": "4e88da5bc7686a58d63460cd547f065864d584429db3359dc160dd1d172e53a9",
+  "stopped_only_waiting_parent_and_child": true
+}

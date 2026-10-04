@@ -1,0 +1,27 @@
+{
+  "training_runs": 90,
+  "task_distribution": [
+    {
+      "split": "train",
+      "families": 12,
+      "motif_count": 36,
+      "motifs_containing_ends": 15,
+      "programs_containing_ends_fraction": 0.7786458333333334
+    },
+    {
+      "split": "dev",
+      "families": 4,
+      "motif_count": 12,
+      "motifs_containing_ends": 6,
+      "programs_containing_ends_fraction": 0.76171875
+    },
+    {
+      "split": "test",
+      "families": 16,
+      "motif_count": 48,
+      "motifs_containing_ends": 31,
+      "programs_containing_ends_fraction": 0.8310546875
+    }
+  ],
+  "interpretation": "Descriptive post-hoc curriculum statistics; lengths and token costs are mediators of changing the proposal source, not controlled separately."
+}

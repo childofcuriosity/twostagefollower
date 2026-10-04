@@ -1,0 +1,17 @@
+{
+  "utc": "2026-09-24T12:47:56.519337+00:00",
+  "gpus": [
+    4,
+    5,
+    6
+  ],
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "model": "qwen32b",
+  "condition": "macro",
+  "purpose": "Read-only evaluation overlaps ongoing training on GPUs0-2; wait for saved checkpoint and completed dev output. Generation unchanged.",
+  "source_sha256": "a273322bb32ebf0f82eee15cb0ea51e9b5773063682aad8b9d300df3023ff96b"
+}

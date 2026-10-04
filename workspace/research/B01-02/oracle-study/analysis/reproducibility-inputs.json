@@ -1,0 +1,167 @@
+{
+  "datasets": {
+    "workspace/research/B01-02/scale-study/qwen32b/data/train.jsonl": "0644d5b7edc29a186bb28ddda493ae9f53d4e8554f7fba51980f9749c7b8a471",
+    "workspace/research/B01-02/scale-study/qwen32b/data/dev.jsonl": "8a1224310096fcf43e7f110f0cae0323a46381360cd67d8419f7ff38d6897e81",
+    "workspace/research/B01-02/scale-study/qwen32b/data/worlds.json": "260371fdc2757d3dc2c393e82b1223880ecacf294a17c862623c5cc4c79ef352",
+    "workspace/research/B01-02/scale-study/qwen32b/data/test.jsonl": "e63b55df72bd826f956ffdd348e6e387e454a57a9b46e19527ebf535edbf570e",
+    "workspace/research/B01-02/scale-study/extended/qwen32b/macro-s11.jsonl": "e8586ebde3e3fc1a4b6702671eeda47450d8aad91e00f6dfd45563a04ec48415"
+  },
+  "models": {
+    "qwen1.5b": {
+      "path": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/model",
+      "json_hashes": {
+        "config.json": "0e8c8aa86468aba09c9d32157ff4bc2301c7e6c50e4398960425b2ea71e66f77",
+        "hub-metadata.json": "b8b182f058cf4c159437dcfb386934d63ee79552af0c06caf850f79f77296ae1",
+        "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "download-manifest.json": "a4f748be59c59fd849146e12bcd98a9fd302436e52cf8da431a7b86f284e7c9c",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "tokenizer_config.json": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9"
+      },
+      "weight_files": [
+        {
+          "name": "model.safetensors",
+          "bytes": 3087467144
+        }
+      ]
+    },
+    "qwen3b": {
+      "path": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/rsi-study/models/qwen3b",
+      "json_hashes": {
+        "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "config.json": "27467e2fc311a7656c09a43ae9c3d408211e1f212bbddbc93c8596a06423826f",
+        "model.safetensors.index.json": "bc8aaa0c87d4335177e01c765f1de0db81661c67c1a72fbfb0d521b09f5ddc56",
+        "hub-metadata.json": "5ee7b7f7d1543e5c6dd6680799fb735ad38970c009dc83636889dc570ef56ebe",
+        "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "tokenizer_config.json": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "download-manifest.json": "c0fd2548731fb7f7c8089c2e58c9a0734afd39424d3e1078dbbcfef25408a0ac"
+      },
+      "weight_files": [
+        {
+          "name": "model-00001-of-00002.safetensors",
+          "bytes": 3968658944
+        },
+        {
+          "name": "model-00002-of-00002.safetensors",
+          "bytes": 2203268048
+        }
+      ]
+    },
+    "qwen7b": {
+      "path": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/models/qwen7b",
+      "json_hashes": {
+        "hub-metadata.json": "de05b334c9c440abf9e866e4a9ad3fda56703ea265421e93ea7703eb3134fbb7",
+        "download-manifest.json": "a91ac7b18d8d4b4803b85da1e213e4fd1438a2f1adaac1cd36917fdba842171a",
+        "tokenizer_config.json": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+        "config.json": "267ce68584c5f24c3b267d934db2de68dd21d1ca677fb78ed809eb60067f7642",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "weight_files": [
+        {
+          "name": "model-00001-of-00004.safetensors",
+          "bytes": 3945441440
+        },
+        {
+          "name": "model-00003-of-00004.safetensors",
+          "bytes": 3864726424
+        },
+        {
+          "name": "model-00002-of-00004.safetensors",
+          "bytes": 3864726352
+        },
+        {
+          "name": "model-00004-of-00004.safetensors",
+          "bytes": 3556377672
+        }
+      ]
+    },
+    "qwen32b": {
+      "path": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/models/qwen32b",
+      "json_hashes": {
+        "hub-metadata.json": "20ac2fb1823c1eb9d2fecd9a4bb7ba1232a89b41d93fb8cf6076a86890232075",
+        "download-manifest.json": "81228431647ed205fd5d36c7addd2fc6c7f28b91cd0b0890210fda8fa7404458",
+        "config.json": "2c003fe40b13d2d1f372254d77177ed753176150f3d424d1b5ad22ff1d78a987",
+        "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "tokenizer_config.json": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "hub-metadata-blobs.json": "c76c1b9f8bf0dc606b2513c4c38f7cea7d1fc5ebfee33bed9c6950706280fa24",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "model.safetensors.index.json": "487c27978b0bad77946ba1a5093acfc7747a62bd5e256d3a083345d133fc3042"
+      },
+      "weight_files": [
+        {
+          "name": "model-00005-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00010-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00002-of-00017.safetensors",
+          "bytes": 3900847488
+        },
+        {
+          "name": "model-00008-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00009-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00013-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00015-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00012-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00001-of-00017.safetensors",
+          "bytes": 3916519128
+        },
+        {
+          "name": "model-00004-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00014-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00006-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00003-of-00017.safetensors",
+          "bytes": 3900847488
+        },
+        {
+          "name": "model-00011-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00007-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00016-of-00017.safetensors",
+          "bytes": 3900847536
+        },
+        {
+          "name": "model-00017-of-00017.safetensors",
+          "bytes": 3098609680
+        }
+      ]
+    }
+  }
+}

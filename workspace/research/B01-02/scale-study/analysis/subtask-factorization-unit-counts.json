@@ -1,0 +1,34 @@
+[
+  {
+    "model": "qwen1.5b",
+    "A_correct": 3223,
+    "A_total": 4608,
+    "B_correct": 3467,
+    "B_total": 3542,
+    "name_sequence": 0.3263888888888889
+  },
+  {
+    "model": "qwen3b",
+    "A_correct": 4099,
+    "A_total": 4608,
+    "B_correct": 4016,
+    "B_total": 4243,
+    "name_sequence": 0.7317708333333334
+  },
+  {
+    "model": "qwen7b",
+    "A_correct": 4079,
+    "A_total": 4608,
+    "B_correct": 4010,
+    "B_total": 4179,
+    "name_sequence": 0.6953125
+  },
+  {
+    "model": "qwen32b",
+    "A_correct": 4173,
+    "A_total": 4608,
+    "B_correct": 4212,
+    "B_total": 4231,
+    "name_sequence": 0.7465277777777778
+  }
+]

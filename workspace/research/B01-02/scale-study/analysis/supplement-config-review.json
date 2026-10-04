@@ -1,0 +1,21 @@
+{
+  "utc": "2026-09-24T10:30:00.573946+00:00",
+  "method": "Manual source diff of train.py and train_supplement.py plus launch_supplement.py read",
+  "verified_by_source": [
+    "512 optimizer steps for all formal jobs",
+    "microbatch*accum=32 assertion retained",
+    "same optimizer, cosine schedule shape, loss normalization and private seeded data RNG",
+    "3B and32B low-LR launch both pass 1e-4",
+    "same official-template prompt function called by Instruct training and evaluation",
+    "supplement saves intermediate adapters but omits online dev evaluation; no dev-selected stopping"
+  ],
+  "pending": [
+    "actual Instruct tokenizer prompt tokenization audit after files download",
+    "complete training/runtime verification and final paired outputs"
+  ],
+  "source_sha256": {
+    "train.py": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+    "train_supplement.py": "0a4ea1f2134bb8051877830897c76c56b7e23b4262f5d106dae622f36d55930d",
+    "launch_supplement.py": "bfca9185e246fdb6d4378bf5f57acad5581a2a7e68e40628ab392582fb1e4416"
+  }
+}

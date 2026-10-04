@@ -1,0 +1,162 @@
+{
+  "actions": [
+    {
+      "task": "data-n12-s0-v2",
+      "condition": "identity",
+      "turn": 1,
+      "classification": "file_listing"
+    },
+    {
+      "task": "files-n04-s0-v2",
+      "condition": "identity",
+      "turn": 1,
+      "classification": "file_listing"
+    },
+    {
+      "task": "files-n04-s0-v2",
+      "condition": "identity",
+      "turn": 2,
+      "classification": "verification_code"
+    },
+    {
+      "task": "files-n04-s0-v2",
+      "condition": "reminder",
+      "turn": 1,
+      "classification": "file_listing"
+    },
+    {
+      "task": "files-n04-s0-v2",
+      "condition": "reminder",
+      "turn": 2,
+      "classification": "verification_code"
+    },
+    {
+      "task": "files-n04-s1-v2",
+      "condition": "reminder",
+      "turn": 1,
+      "classification": "file_listing"
+    },
+    {
+      "task": "files-n04-s1-v2",
+      "condition": "reminder",
+      "turn": 2,
+      "classification": "verification_code"
+    },
+    {
+      "task": "files-n04-s2-v2",
+      "condition": "reminder",
+      "turn": 1,
+      "classification": "file_listing"
+    },
+    {
+      "task": "files-n04-s2-v2",
+      "condition": "reminder",
+      "turn": 2,
+      "classification": "verification_code"
+    },
+    {
+      "task": "files-n04-s3-v2",
+      "condition": "identity",
+      "turn": 4,
+      "classification": "verification_code"
+    },
+    {
+      "task": "data-n04-s0-v2",
+      "condition": "reminder",
+      "turn": 3,
+      "classification": "repeated_report_computation_and_write"
+    },
+    {
+      "task": "data-n12-s3-v2",
+      "condition": "identity",
+      "turn": 1,
+      "classification": "file_listing"
+    },
+    {
+      "task": "files-n04-s1-v2",
+      "condition": "plan",
+      "turn": 1,
+      "classification": "verification_code"
+    },
+    {
+      "task": "data-n12-s0-v2",
+      "condition": "plan",
+      "turn": 2,
+      "classification": "file_listing"
+    },
+    {
+      "task": "files-n04-s3-v2",
+      "condition": "plan",
+      "turn": 6,
+      "classification": "verification_code"
+    },
+    {
+      "task": "files-n04-s3-v2",
+      "condition": "reminder",
+      "turn": 1,
+      "classification": "verification_code"
+    },
+    {
+      "task": "data-n04-s1-v2",
+      "condition": "reminder",
+      "turn": 2,
+      "classification": "repeated_report_computation_and_write"
+    },
+    {
+      "task": "data-n04-s2-v2",
+      "condition": "reminder",
+      "turn": 2,
+      "classification": "repeated_report_computation_and_write"
+    },
+    {
+      "task": "data-n04-s3-v2",
+      "condition": "reminder",
+      "turn": 3,
+      "classification": "repeated_report_computation_and_write"
+    },
+    {
+      "task": "files-n04-s2-v2",
+      "condition": "identity",
+      "turn": 1,
+      "classification": "file_listing"
+    },
+    {
+      "task": "files-n04-s2-v2",
+      "condition": "identity",
+      "turn": 2,
+      "classification": "verification_code"
+    },
+    {
+      "task": "files-n04-s2-v2",
+      "condition": "identity",
+      "turn": 3,
+      "classification": "repeated_write"
+    },
+    {
+      "task": "files-n04-s2-v2",
+      "condition": "identity",
+      "turn": 4,
+      "classification": "verification_code"
+    },
+    {
+      "task": "files-n04-s2-v2",
+      "condition": "identity",
+      "turn": 5,
+      "classification": "destructive_rewrite_after_incorrect_verification"
+    },
+    {
+      "task": "files-n04-s2-v2",
+      "condition": "identity",
+      "turn": 6,
+      "classification": "verification_code"
+    }
+  ],
+  "counts": {
+    "file_listing": 8,
+    "verification_code": 11,
+    "repeated_report_computation_and_write": 4,
+    "repeated_write": 1,
+    "destructive_rewrite_after_incorrect_verification": 1
+  },
+  "review": "Read all25 post-first-completion actions. File listing and verification are not automatically wasted effort. Repeated writes and a destructive rewrite are reported separately; do not claim general absence of looping from this small sample."
+}

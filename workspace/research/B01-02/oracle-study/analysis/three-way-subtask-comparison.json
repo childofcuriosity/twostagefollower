@@ -1,0 +1,402 @@
+[
+  {
+    "model": "qwen1.5b",
+    "length": 3,
+    "subtask": "顺序",
+    "first_stage": 0.5347222222222222,
+    "joint_training": 0.9340277777777778,
+    "separate_training": 0.8263888888888888,
+    "separate_minus_joint": -0.10763888888888895,
+    "n": 288
+  },
+  {
+    "model": "qwen1.5b",
+    "length": 3,
+    "subtask": "操作",
+    "first_stage": 0.9895833333333334,
+    "joint_training": 0.9826388888888888,
+    "separate_training": 0.9930555555555556,
+    "separate_minus_joint": 0.01041666666666674,
+    "n": 288
+  },
+  {
+    "model": "qwen1.5b",
+    "length": 4,
+    "subtask": "顺序",
+    "first_stage": 0.2708333333333333,
+    "joint_training": 0.6423611111111112,
+    "separate_training": 0.7361111111111112,
+    "separate_minus_joint": 0.09375,
+    "n": 288
+  },
+  {
+    "model": "qwen1.5b",
+    "length": 4,
+    "subtask": "操作",
+    "first_stage": 0.8854166666666666,
+    "joint_training": 0.9583333333333334,
+    "separate_training": 0.90625,
+    "separate_minus_joint": -0.05208333333333337,
+    "n": 288
+  },
+  {
+    "model": "qwen1.5b",
+    "length": 5,
+    "subtask": "顺序",
+    "first_stage": 0.0763888888888889,
+    "joint_training": 0.3645833333333333,
+    "separate_training": 0.40625,
+    "separate_minus_joint": 0.041666666666666685,
+    "n": 288
+  },
+  {
+    "model": "qwen1.5b",
+    "length": 5,
+    "subtask": "操作",
+    "first_stage": 0.8888888888888888,
+    "joint_training": 0.84375,
+    "separate_training": 0.7326388888888888,
+    "separate_minus_joint": -0.11111111111111116,
+    "n": 288
+  },
+  {
+    "model": "qwen1.5b",
+    "length": 6,
+    "subtask": "顺序",
+    "first_stage": 0.024305555555555556,
+    "joint_training": 0.2673611111111111,
+    "separate_training": 0.3541666666666667,
+    "separate_minus_joint": 0.08680555555555558,
+    "n": 288
+  },
+  {
+    "model": "qwen1.5b",
+    "length": 6,
+    "subtask": "操作",
+    "first_stage": 0.7604166666666666,
+    "joint_training": 0.7430555555555556,
+    "separate_training": 0.7534722222222222,
+    "separate_minus_joint": 0.01041666666666663,
+    "n": 288
+  },
+  {
+    "model": "qwen1.5b",
+    "length": 8,
+    "subtask": "顺序",
+    "first_stage": 0.010416666666666666,
+    "joint_training": 0.2847222222222222,
+    "separate_training": 0.3368055555555556,
+    "separate_minus_joint": 0.05208333333333337,
+    "n": 288
+  },
+  {
+    "model": "qwen1.5b",
+    "length": 8,
+    "subtask": "操作",
+    "first_stage": 0.5833333333333334,
+    "joint_training": 0.5347222222222222,
+    "separate_training": 0.4166666666666667,
+    "separate_minus_joint": -0.11805555555555552,
+    "n": 288
+  },
+  {
+    "model": "qwen3b",
+    "length": 3,
+    "subtask": "顺序",
+    "first_stage": 0.8645833333333334,
+    "joint_training": 0.8611111111111112,
+    "separate_training": 0.8472222222222222,
+    "separate_minus_joint": -0.01388888888888895,
+    "n": 288
+  },
+  {
+    "model": "qwen3b",
+    "length": 3,
+    "subtask": "操作",
+    "first_stage": 0.9722222222222222,
+    "joint_training": 0.9965277777777778,
+    "separate_training": 0.9548611111111112,
+    "separate_minus_joint": -0.04166666666666663,
+    "n": 288
+  },
+  {
+    "model": "qwen3b",
+    "length": 4,
+    "subtask": "顺序",
+    "first_stage": 0.7534722222222222,
+    "joint_training": 0.6458333333333334,
+    "separate_training": 0.8229166666666666,
+    "separate_minus_joint": 0.17708333333333326,
+    "n": 288
+  },
+  {
+    "model": "qwen3b",
+    "length": 4,
+    "subtask": "操作",
+    "first_stage": 0.8402777777777778,
+    "joint_training": 0.9583333333333334,
+    "separate_training": 0.9583333333333334,
+    "separate_minus_joint": 0.0,
+    "n": 288
+  },
+  {
+    "model": "qwen3b",
+    "length": 5,
+    "subtask": "顺序",
+    "first_stage": 0.5138888888888888,
+    "joint_training": 0.4305555555555556,
+    "separate_training": 0.7013888888888888,
+    "separate_minus_joint": 0.27083333333333326,
+    "n": 288
+  },
+  {
+    "model": "qwen3b",
+    "length": 5,
+    "subtask": "操作",
+    "first_stage": 0.6944444444444444,
+    "joint_training": 0.78125,
+    "separate_training": 0.8402777777777778,
+    "separate_minus_joint": 0.05902777777777779,
+    "n": 288
+  },
+  {
+    "model": "qwen3b",
+    "length": 6,
+    "subtask": "顺序",
+    "first_stage": 0.3125,
+    "joint_training": 0.2743055555555556,
+    "separate_training": 0.6493055555555556,
+    "separate_minus_joint": 0.375,
+    "n": 288
+  },
+  {
+    "model": "qwen3b",
+    "length": 6,
+    "subtask": "操作",
+    "first_stage": 0.5555555555555556,
+    "joint_training": 0.6284722222222222,
+    "separate_training": 0.7638888888888888,
+    "separate_minus_joint": 0.13541666666666663,
+    "n": 288
+  },
+  {
+    "model": "qwen3b",
+    "length": 8,
+    "subtask": "顺序",
+    "first_stage": 0.10069444444444445,
+    "joint_training": 0.09027777777777778,
+    "separate_training": 0.4131944444444444,
+    "separate_minus_joint": 0.32291666666666663,
+    "n": 288
+  },
+  {
+    "model": "qwen3b",
+    "length": 8,
+    "subtask": "操作",
+    "first_stage": 0.4027777777777778,
+    "joint_training": 0.3541666666666667,
+    "separate_training": 0.4583333333333333,
+    "separate_minus_joint": 0.10416666666666663,
+    "n": 288
+  },
+  {
+    "model": "qwen7b",
+    "length": 3,
+    "subtask": "顺序",
+    "first_stage": 0.9097222222222222,
+    "joint_training": 0.9826388888888888,
+    "separate_training": 1.0,
+    "separate_minus_joint": 0.01736111111111116,
+    "n": 288
+  },
+  {
+    "model": "qwen7b",
+    "length": 3,
+    "subtask": "操作",
+    "first_stage": 0.9583333333333334,
+    "joint_training": 0.9895833333333334,
+    "separate_training": 0.9895833333333334,
+    "separate_minus_joint": 0.0,
+    "n": 288
+  },
+  {
+    "model": "qwen7b",
+    "length": 4,
+    "subtask": "顺序",
+    "first_stage": 0.6770833333333334,
+    "joint_training": 0.8993055555555556,
+    "separate_training": 0.9375,
+    "separate_minus_joint": 0.03819444444444442,
+    "n": 288
+  },
+  {
+    "model": "qwen7b",
+    "length": 4,
+    "subtask": "操作",
+    "first_stage": 0.8194444444444444,
+    "joint_training": 0.9409722222222222,
+    "separate_training": 0.8506944444444444,
+    "separate_minus_joint": -0.09027777777777779,
+    "n": 288
+  },
+  {
+    "model": "qwen7b",
+    "length": 5,
+    "subtask": "顺序",
+    "first_stage": 0.4513888888888889,
+    "joint_training": 0.625,
+    "separate_training": 0.6736111111111112,
+    "separate_minus_joint": 0.04861111111111116,
+    "n": 288
+  },
+  {
+    "model": "qwen7b",
+    "length": 5,
+    "subtask": "操作",
+    "first_stage": 0.7152777777777778,
+    "joint_training": 0.8472222222222222,
+    "separate_training": 0.5763888888888888,
+    "separate_minus_joint": -0.27083333333333337,
+    "n": 288
+  },
+  {
+    "model": "qwen7b",
+    "length": 6,
+    "subtask": "顺序",
+    "first_stage": 0.3611111111111111,
+    "joint_training": 0.4618055555555556,
+    "separate_training": 0.5138888888888888,
+    "separate_minus_joint": 0.05208333333333326,
+    "n": 288
+  },
+  {
+    "model": "qwen7b",
+    "length": 6,
+    "subtask": "操作",
+    "first_stage": 0.7395833333333334,
+    "joint_training": 0.78125,
+    "separate_training": 0.5243055555555556,
+    "separate_minus_joint": -0.2569444444444444,
+    "n": 288
+  },
+  {
+    "model": "qwen7b",
+    "length": 8,
+    "subtask": "顺序",
+    "first_stage": 0.1701388888888889,
+    "joint_training": 0.3333333333333333,
+    "separate_training": 0.2986111111111111,
+    "separate_minus_joint": -0.03472222222222221,
+    "n": 288
+  },
+  {
+    "model": "qwen7b",
+    "length": 8,
+    "subtask": "操作",
+    "first_stage": 0.4027777777777778,
+    "joint_training": 0.4861111111111111,
+    "separate_training": 0.09375,
+    "separate_minus_joint": -0.3923611111111111,
+    "n": 288
+  },
+  {
+    "model": "qwen32b",
+    "length": 3,
+    "subtask": "顺序",
+    "first_stage": 0.9409722222222222,
+    "joint_training": 1.0,
+    "separate_training": 1.0,
+    "separate_minus_joint": 0.0,
+    "n": 288
+  },
+  {
+    "model": "qwen32b",
+    "length": 3,
+    "subtask": "操作",
+    "first_stage": 1.0,
+    "joint_training": 1.0,
+    "separate_training": 1.0,
+    "separate_minus_joint": 0.0,
+    "n": 288
+  },
+  {
+    "model": "qwen32b",
+    "length": 4,
+    "subtask": "顺序",
+    "first_stage": 0.7326388888888888,
+    "joint_training": 1.0,
+    "separate_training": 0.9965277777777778,
+    "separate_minus_joint": -0.00347222222222221,
+    "n": 288
+  },
+  {
+    "model": "qwen32b",
+    "length": 4,
+    "subtask": "操作",
+    "first_stage": 0.9826388888888888,
+    "joint_training": 0.9618055555555556,
+    "separate_training": 0.9791666666666666,
+    "separate_minus_joint": 0.01736111111111105,
+    "n": 288
+  },
+  {
+    "model": "qwen32b",
+    "length": 5,
+    "subtask": "顺序",
+    "first_stage": 0.5902777777777778,
+    "joint_training": 1.0,
+    "separate_training": 0.9618055555555556,
+    "separate_minus_joint": -0.03819444444444442,
+    "n": 288
+  },
+  {
+    "model": "qwen32b",
+    "length": 5,
+    "subtask": "操作",
+    "first_stage": 0.9895833333333334,
+    "joint_training": 0.8576388888888888,
+    "separate_training": 0.9270833333333334,
+    "separate_minus_joint": 0.06944444444444453,
+    "n": 288
+  },
+  {
+    "model": "qwen32b",
+    "length": 6,
+    "subtask": "顺序",
+    "first_stage": 0.3298611111111111,
+    "joint_training": 1.0,
+    "separate_training": 0.9826388888888888,
+    "separate_minus_joint": -0.01736111111111116,
+    "n": 288
+  },
+  {
+    "model": "qwen32b",
+    "length": 6,
+    "subtask": "操作",
+    "first_stage": 0.9652777777777778,
+    "joint_training": 0.8333333333333334,
+    "separate_training": 0.9305555555555556,
+    "separate_minus_joint": 0.09722222222222221,
+    "n": 288
+  },
+  {
+    "model": "qwen32b",
+    "length": 8,
+    "subtask": "顺序",
+    "first_stage": 0.2777777777777778,
+    "joint_training": 0.9201388888888888,
+    "separate_training": 0.9652777777777778,
+    "separate_minus_joint": 0.04513888888888895,
+    "n": 288
+  },
+  {
+    "model": "qwen32b",
+    "length": 8,
+    "subtask": "操作",
+    "first_stage": 0.8923611111111112,
+    "joint_training": 0.6805555555555556,
+    "separate_training": 0.90625,
+    "separate_minus_joint": 0.22569444444444442,
+    "n": 288
+  }
+]

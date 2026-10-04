@@ -1,0 +1,34 @@
+{
+  "utc": "2026-09-24T17:16:22.919234+00:00",
+  "status": "phase1_complete_ready_for_user_review",
+  "total_raw_output_records": 95200,
+  "raw_output_files": 174,
+  "main_and_supplement_adapter_files": 210,
+  "figures_visually_reviewed": 3,
+  "known_protocol_limitations": [
+    "numeric mastery threshold omitted from preregistration; all threshold comparisons explicitly exploratory",
+    "raw final token IDs unavailable; stopping evidence is inferred where documented"
+  ],
+  "artifact_sha256": {
+    "CONCLUSIONS.md": "cf592a2f8f99041dbf75f0a029c9fcbf781171f23d10cb314870c765f95ae68f",
+    "REPORT.md": "ca3073de06791cb05758999562c031ade65b74af03453f572313ec7cfee04ad6",
+    "SUPPLEMENT.md": "58f56b8862af390e5c6d71ab12a90e28ea0b74a6042625f7d12a0a748b5673a0",
+    "STOPPING_DIAGNOSTICS.md": "8ec9d0b6ccbfbb1bd28ebcd0dc3b143ed625b3964dc880c32dee8d429154c8a2",
+    "COMPLETION_AUDIT.md": "6fb575486dba5f347cabbbfaa4aa6ed710244b6ddcadc77202291ba49ccaa7c4",
+    "figures/scale-comparison.svg": "045ac8653c5d95298b6eee6266cb90e2116943fd21b49263fe349b220b3fc3ed",
+    "figures/independent-lengths.pdf": "56c3c5a37e94a799a2ddacb186bfaf9dbdac1dd91fd7c865a9a74ec61c19342b",
+    "figures/scale-comparison.pdf": "855e4946375844eafea5bb7b9c65c891aff393a93cab12df1dc3d80007a9475d",
+    "figures/independent-lengths.svg": "0898b7f4ad3284485dd9a3f27366c032ff074ff747b3b96ce0de53965e306a8c",
+    "figures/learning-curves.png": "bc2c1215389c2fb7f43118b4277a3c11ce8c061d6017309cafda093e3fe602c2",
+    "figures/scale-comparison.png": "b6f4068f48bf26c8a5dbe68df9b4cfa7ee024e5e3cd9ea31d655aad28eb09532",
+    "figures/independent-lengths.png": "c88b7daec3cd9c492a2a38bdf82b867eaca2319b5b52503349c8880a4ceda539",
+    "figures/learning-curves.svg": "32298b0d859ef66a7f12e5ffbdca131d25a8a42e54e07764492c88a2555825b2",
+    "figures/learning-curves.pdf": "07c3ca0ec7b95b0c6e5e27dc8d7c04afa45d711ac9cdcf320d63ba3d597940db",
+    "analysis/verification.json": "c853a0f9431189528a0ba77b9a5a4b2a585da592d8f8b847ac923df97ad786f6",
+    "analysis/supplement-results.json": "ce5b6a6ef599261f6c02b4c818360cb104b3ae5a37fbe8320479e42b14c88f67",
+    "analysis/mastery-diagnostics.json": "c0073d0804c55bdca29b8ff92668c7a2dd3327178c7db32861d80dec2a0d305c",
+    "analysis/outcome-diagnostics.json": "c61132b7909c4aa352d6e66de6176e15d167148dc095c771bffefd13e08c943d",
+    "analysis/cost.json": "84ef1ce9f48b374a56c7fa7b38cf8eac53d27b41350040705e353a4430e0aed6",
+    "analysis/remote-resources.json": "c031bdec8c20b5b138a0a0e314f79f9c2947c8034ce11313b42fe61944b4a406"
+  }
+}

@@ -1,0 +1,7 @@
+# Explicit operational-note follow-up
+
+Motivation observed in the native long development comparison: some identity-conditioned calls have empty assistant content; apparent improvement may reflect changed requirement-to-code mapping, not actual per-action narration. Therefore add the same required string argument `note` to every native tool in all groups. Tools ignore note for execution; it is preserved verbatim in subsequent model context. The native tool envelope and observation-before-final semantics remain unchanged.
+
+Four groups: empty note baseline, generic reminder, current requirement ID/name, updated todo. All use the same schema and tokenizer, budgets, model and tasks. This tests a practical explicit-note interface; it does not by itself match status token length or separate task semantics from added text. Note compliance will be measured from actual tool arguments; malformed/missing notes count as protocol failures rather than being silently filled.
+
+Capability check: both baseline and identity on six existing development instances, all retained. Independent comparison: 12 new twelve-requirement instances (three families × four new seeds 20263001–4). This follows up an exploratory signal, and is distinct from the already frozen native comparison. No test results will be used to select seeds or remove task families. Acceptable baseline calibration: at least 5/6 and no systemic schema failure; if not, repair or replace the runtime before new comparison.

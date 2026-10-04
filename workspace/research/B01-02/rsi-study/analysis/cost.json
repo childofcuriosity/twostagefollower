@@ -1,0 +1,16 @@
+{
+  "reserved_gpu_hours_by_phase": {
+    "replications": 0.9403294917609957,
+    "robust": 0.5000858738687304,
+    "loops": 1.9808332255151537,
+    "branches": 0.2579344889190462,
+    "gradients": 0.045262567202250165,
+    "coverage": 0.22467861374219258,
+    "length": 0.16290332893530526,
+    "legacy": 0.13159942401780023,
+    "timecourse": 0.4053990250163608,
+    "original-gradients": 0.02242940002017551
+  },
+  "total": 4.67145543899801,
+  "note": "Sum of subprocess wall time on one GPU each; includes loading, CPU preparation and evaluation, not kernel busy time; excludes download and waiting for prerequisites."
+}

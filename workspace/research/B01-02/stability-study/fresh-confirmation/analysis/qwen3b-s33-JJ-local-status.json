@@ -1,0 +1,22 @@
+{
+  "job": {
+    "id": "qwen3b-s33-JJ-local",
+    "kind": "confirmation",
+    "model": "qwen3b",
+    "seed": 33,
+    "route": "JJ",
+    "scope": "local"
+  },
+  "pid": 512105,
+  "gpu": 0,
+  "command": [
+    "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+    "-u",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/src/context_run.py",
+    "--job",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/analysis/qwen3b-s33-JJ-local-job.json"
+  ],
+  "start": 1790348239.8873498,
+  "returncode": 0,
+  "end": 1790348440.4036753
+}

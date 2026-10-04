@@ -1,0 +1,16 @@
+{
+  "probes": [
+    {
+      "condition": "flat",
+      "seed": 11,
+      "gpu": 4,
+      "microbatch": 16,
+      "tag": "-probe-m16",
+      "probe": true,
+      "returncode": 0,
+      "wall_seconds": 26.082955837249756,
+      "log": "runs/qwen7b-flat-s11-probe-m16.log"
+    }
+  ],
+  "microbatch": 16
+}

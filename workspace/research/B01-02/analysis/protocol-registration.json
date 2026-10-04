@@ -1,0 +1,11 @@
+{
+  "registered_utc": "2026-09-23T15:56:51Z",
+  "before_any_model_discovery_or_training": true,
+  "files": {
+    "PROTOCOL.md": "1acffff81a80e2f0b65ed243fe4e283d3d57baf10ca1478dbdfb78c2d58542a0",
+    "src/dsl.py": "5df781512122044677af63535178f65ff923bd6df74ccec4b6c6bcf5f70f2006",
+    "src/discover.py": "3234a710451159f1cbedca265d3be1f27cd38f9a75a52f9edc42413cf572bc8d",
+    "src/build_data.py": "67b01f245c5e5d178d437c87cb9a3a7c53fd585d9988c62b4b8f7c53d7e55e1c",
+    "src/run.py": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea"
+  }
+}

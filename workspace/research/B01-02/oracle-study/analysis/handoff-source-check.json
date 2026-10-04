@@ -1,0 +1,6 @@
+{
+  "training_main_ast_unchanged": true,
+  "old_sha256": "36cb9113a65bb00e224e303e4c913abfdbbd49cd06ac7f8a180a12c9f1bc7419",
+  "new_sha256": "7c625db8a8b3f990c5f93b67152d62f8342ca7dc34ed2323b68a31d82223603a",
+  "change": "Only __main__ dispatch adds explicit external-owner adoption for one queued job; training main function unchanged."
+}

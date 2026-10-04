@@ -1,0 +1,16 @@
+{
+  "job": {
+    "model": "qwen3b",
+    "condition": "position",
+    "seed": 104,
+    "steps": 512,
+    "microbatch": 16,
+    "accum": 2,
+    "lr": 0.0003
+  },
+  "gpu": 5,
+  "returncode": 0,
+  "seconds": 505.3721430301666,
+  "finished": 1790418525.3824391,
+  "log": "logs/qwen3b-position-s104.log"
+}

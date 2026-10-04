@@ -1,0 +1,69 @@
+{
+  "results": [
+    {
+      "condition": "flat",
+      "counts": {
+        "n": 1440,
+        "labels_correct": 450,
+        "strict": 369,
+        "labels_and_strict": 369,
+        "labels_correct_but_failed": 81,
+        "wrong_operation": 53,
+        "numeric_step_error": 1,
+        "operation_prefix_only": 27,
+        "format_extra_lines": 0,
+        "missing_or_multiple_answer": 0,
+        "internal_short_any": 33
+      }
+    },
+    {
+      "condition": "macro",
+      "counts": {
+        "n": 1440,
+        "labels_correct": 827,
+        "strict": 809,
+        "labels_and_strict": 809,
+        "labels_correct_but_failed": 18,
+        "wrong_operation": 18,
+        "numeric_step_error": 0,
+        "operation_prefix_only": 0,
+        "format_extra_lines": 0,
+        "missing_or_multiple_answer": 0,
+        "internal_short_any": 1
+      }
+    },
+    {
+      "condition": "position",
+      "counts": {
+        "n": 1440,
+        "labels_correct": 781,
+        "strict": 564,
+        "labels_and_strict": 564,
+        "labels_correct_but_failed": 217,
+        "wrong_operation": 203,
+        "numeric_step_error": 5,
+        "operation_prefix_only": 12,
+        "format_extra_lines": 0,
+        "missing_or_multiple_answer": 0,
+        "internal_short_any": 27
+      }
+    },
+    {
+      "condition": "alias",
+      "counts": {
+        "n": 1440,
+        "labels_correct": 485,
+        "strict": 449,
+        "labels_and_strict": 449,
+        "labels_correct_but_failed": 36,
+        "wrong_operation": 35,
+        "numeric_step_error": 1,
+        "operation_prefix_only": 0,
+        "format_extra_lines": 0,
+        "missing_or_multiple_answer": 0,
+        "internal_short_any": 0
+      }
+    }
+  ],
+  "note": "Descriptive subset based on model outputs, not an unbiased causal estimate. Failure flags overlap. Position semantics can remain unlearned even when the ordinal labels are generated correctly."
+}

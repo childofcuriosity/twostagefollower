@@ -1,0 +1,301 @@
+{
+  "records": [
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "SJ",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "net_gain_all": 128,
+          "attribution_exceptions": 1,
+          "exceptional_net_gain": -1,
+          "exceptional_gains": 0,
+          "exceptional_losses": 1
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "net_gain_all": -25,
+          "attribution_exceptions": 7,
+          "exceptional_net_gain": -1,
+          "exceptional_gains": 0,
+          "exceptional_losses": 1
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "net_gain_all": 67,
+          "attribution_exceptions": 4,
+          "exceptional_net_gain": -2,
+          "exceptional_gains": 0,
+          "exceptional_losses": 2
+        }
+      ],
+      "primary_net_gain": 170,
+      "exceptional_rows": 12,
+      "exceptional_net_gain": -4
+    },
+    {
+      "model": "qwen3b",
+      "step": 256,
+      "mode": "JE",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "net_gain_all": -22,
+          "attribution_exceptions": 9,
+          "exceptional_net_gain": 3,
+          "exceptional_gains": 4,
+          "exceptional_losses": 1
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "net_gain_all": 17,
+          "attribution_exceptions": 7,
+          "exceptional_net_gain": 2,
+          "exceptional_gains": 3,
+          "exceptional_losses": 1
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "net_gain_all": 7,
+          "attribution_exceptions": 10,
+          "exceptional_net_gain": 1,
+          "exceptional_gains": 1,
+          "exceptional_losses": 0
+        }
+      ],
+      "primary_net_gain": 2,
+      "exceptional_rows": 26,
+      "exceptional_net_gain": 6
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "SJ",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "net_gain_all": 125,
+          "attribution_exceptions": 1,
+          "exceptional_net_gain": -1,
+          "exceptional_gains": 0,
+          "exceptional_losses": 1
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "net_gain_all": -3,
+          "attribution_exceptions": 2,
+          "exceptional_net_gain": 1,
+          "exceptional_gains": 1,
+          "exceptional_losses": 0
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "net_gain_all": 71,
+          "attribution_exceptions": 0,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 0,
+          "exceptional_losses": 0
+        }
+      ],
+      "primary_net_gain": 193,
+      "exceptional_rows": 3,
+      "exceptional_net_gain": 0
+    },
+    {
+      "model": "qwen3b",
+      "step": 512,
+      "mode": "JE",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "net_gain_all": -24,
+          "attribution_exceptions": 1,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 0,
+          "exceptional_losses": 0
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "net_gain_all": 12,
+          "attribution_exceptions": 0,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 0,
+          "exceptional_losses": 0
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "net_gain_all": 9,
+          "attribution_exceptions": 2,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 0,
+          "exceptional_losses": 0
+        }
+      ],
+      "primary_net_gain": -3,
+      "exceptional_rows": 3,
+      "exceptional_net_gain": 0
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "SJ",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "net_gain_all": -9,
+          "attribution_exceptions": 9,
+          "exceptional_net_gain": -2,
+          "exceptional_gains": 1,
+          "exceptional_losses": 3
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "net_gain_all": -10,
+          "attribution_exceptions": 4,
+          "exceptional_net_gain": -4,
+          "exceptional_gains": 0,
+          "exceptional_losses": 4
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "net_gain_all": 10,
+          "attribution_exceptions": 2,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 1,
+          "exceptional_losses": 1
+        }
+      ],
+      "primary_net_gain": -9,
+      "exceptional_rows": 15,
+      "exceptional_net_gain": -6
+    },
+    {
+      "model": "qwen32b",
+      "step": 256,
+      "mode": "JE",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "net_gain_all": 86,
+          "attribution_exceptions": 0,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 0,
+          "exceptional_losses": 0
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "net_gain_all": 17,
+          "attribution_exceptions": 1,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 0,
+          "exceptional_losses": 0
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "net_gain_all": 29,
+          "attribution_exceptions": 0,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 0,
+          "exceptional_losses": 0
+        }
+      ],
+      "primary_net_gain": 132,
+      "exceptional_rows": 1,
+      "exceptional_net_gain": 0
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "SJ",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "net_gain_all": -7,
+          "attribution_exceptions": 8,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 1,
+          "exceptional_losses": 1
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "net_gain_all": -8,
+          "attribution_exceptions": 10,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 5,
+          "exceptional_losses": 5
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "net_gain_all": 13,
+          "attribution_exceptions": 2,
+          "exceptional_net_gain": 2,
+          "exceptional_gains": 2,
+          "exceptional_losses": 0
+        }
+      ],
+      "primary_net_gain": -2,
+      "exceptional_rows": 20,
+      "exceptional_net_gain": 2
+    },
+    {
+      "model": "qwen32b",
+      "step": 512,
+      "mode": "JE",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "net_gain_all": 88,
+          "attribution_exceptions": 0,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 0,
+          "exceptional_losses": 0
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "net_gain_all": 0,
+          "attribution_exceptions": 0,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 0,
+          "exceptional_losses": 0
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "net_gain_all": 27,
+          "attribution_exceptions": 0,
+          "exceptional_net_gain": 0,
+          "exceptional_gains": 0,
+          "exceptional_losses": 0
+        }
+      ],
+      "primary_net_gain": 115,
+      "exceptional_rows": 0,
+      "exceptional_net_gain": 0
+    }
+  ],
+  "note": "Primary scores are unchanged and retain all rows. Exceptions are first differing tokens in the unchanged adapter role despite identical within-row textual prefixes. Dynamic batch composition/numerics is a plausible but unproven explanation. This file quantifies their contribution, not corrected accuracy."
+}

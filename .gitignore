@@ -1,0 +1,16 @@
+.env
+.env.*
+.config/
+.venv*/
+__pycache__/
+*.pyc
+*.safetensors
+*.pt
+*.bin
+**/models/
+**/model/
+**/checkpoints/
+**/runs/
+**/runtime/
+**/logs/
+**/infrastructure/

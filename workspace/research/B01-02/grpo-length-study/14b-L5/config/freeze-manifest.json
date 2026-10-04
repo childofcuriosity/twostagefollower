@@ -1,0 +1,18 @@
+{
+  "created": 1790636156.608975,
+  "config_sha256": "7245c246c6f7b79a7f546b69244ded394e725a6def4abb9bd73acffb31476e74",
+  "data_manifest_sha256": "1c9bdfc090a85d7c3d622bfb1d6eb5f3fb874ff2bca3c3c4c2a21895a7c8fd8d",
+  "source": {
+    "evaluate_pool.py": "c3942c878170981878e8e0fed52f3e1780b5ff62f093b0cd8fe89634f0db90ec",
+    "common.py": "23d758794fc7affc8519ad8386c1f68db928ffb370f4d20080e5174f652c8ecf",
+    "build.py": "29d09fd66a4912faa01d42314310e0ffa4f70412049b3398aa3bcc608b421744",
+    "launch.py": "60e564f28b0fc69d7f46b81e12cfddc7f96774895ca2b030a18ebf77af0db962",
+    "validate.py": "49c52f965fb50f3ef904ceccc3cbbe296efd30fe30aff20fc768f563738bd655",
+    "train.py": "aebeae14442847c12827bb5e3dc86f7caf5ea0ece7e067638078d904ec37ae09",
+    "supervise.py": "4a9fe2fe3aff4f43037df0b8928c73c0a27e661b7ee01810e713b781986c0588",
+    "job_runner.py": "dbe98d052edffaa927a13458940713f561a5bbd20c51dc4e879cb92db293c1bf",
+    "remote.py": "7293b13ff98c9bb2abbbbb9d0c011b16e0382331378d7dc3f2151e446e4cca47",
+    "engine.py": "164d7991d22e189673627984e89c30dec754364b6af8ae5f2023db0021192999"
+  },
+  "precheck_sha256": "30b40595a4825c7e70d62a7f82d387b27839daa4dc1fa506508408adc7fc6e6d"
+}

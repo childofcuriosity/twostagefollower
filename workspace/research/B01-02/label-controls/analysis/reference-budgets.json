@@ -1,0 +1,293 @@
+{
+  "records": [
+    {
+      "model": "qwen1.5b",
+      "dataset": "main",
+      "condition": "flat",
+      "n": 560,
+      "max_reference_tokens_including_eos": 172,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen1.5b",
+      "dataset": "main",
+      "condition": "macro",
+      "n": 560,
+      "max_reference_tokens_including_eos": 172,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen1.5b",
+      "dataset": "main",
+      "condition": "position",
+      "n": 560,
+      "max_reference_tokens_including_eos": 177,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen1.5b",
+      "dataset": "main",
+      "condition": "alias",
+      "n": 560,
+      "max_reference_tokens_including_eos": 177,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen1.5b",
+      "dataset": "independent",
+      "condition": "flat",
+      "n": 480,
+      "max_reference_tokens_including_eos": 268,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen1.5b",
+      "dataset": "independent",
+      "condition": "macro",
+      "n": 480,
+      "max_reference_tokens_including_eos": 268,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen1.5b",
+      "dataset": "independent",
+      "condition": "position",
+      "n": 480,
+      "max_reference_tokens_including_eos": 276,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen1.5b",
+      "dataset": "independent",
+      "condition": "alias",
+      "n": 480,
+      "max_reference_tokens_including_eos": 276,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen3b",
+      "dataset": "main",
+      "condition": "flat",
+      "n": 560,
+      "max_reference_tokens_including_eos": 172,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen3b",
+      "dataset": "main",
+      "condition": "macro",
+      "n": 560,
+      "max_reference_tokens_including_eos": 172,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen3b",
+      "dataset": "main",
+      "condition": "position",
+      "n": 560,
+      "max_reference_tokens_including_eos": 177,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen3b",
+      "dataset": "main",
+      "condition": "alias",
+      "n": 560,
+      "max_reference_tokens_including_eos": 177,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen3b",
+      "dataset": "independent",
+      "condition": "flat",
+      "n": 480,
+      "max_reference_tokens_including_eos": 268,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen3b",
+      "dataset": "independent",
+      "condition": "macro",
+      "n": 480,
+      "max_reference_tokens_including_eos": 268,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen3b",
+      "dataset": "independent",
+      "condition": "position",
+      "n": 480,
+      "max_reference_tokens_including_eos": 276,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen3b",
+      "dataset": "independent",
+      "condition": "alias",
+      "n": 480,
+      "max_reference_tokens_including_eos": 276,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen7b",
+      "dataset": "main",
+      "condition": "flat",
+      "n": 560,
+      "max_reference_tokens_including_eos": 172,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen7b",
+      "dataset": "main",
+      "condition": "macro",
+      "n": 560,
+      "max_reference_tokens_including_eos": 172,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen7b",
+      "dataset": "main",
+      "condition": "position",
+      "n": 560,
+      "max_reference_tokens_including_eos": 177,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen7b",
+      "dataset": "main",
+      "condition": "alias",
+      "n": 560,
+      "max_reference_tokens_including_eos": 177,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen7b",
+      "dataset": "independent",
+      "condition": "flat",
+      "n": 480,
+      "max_reference_tokens_including_eos": 268,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen7b",
+      "dataset": "independent",
+      "condition": "macro",
+      "n": 480,
+      "max_reference_tokens_including_eos": 268,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen7b",
+      "dataset": "independent",
+      "condition": "position",
+      "n": 480,
+      "max_reference_tokens_including_eos": 276,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen7b",
+      "dataset": "independent",
+      "condition": "alias",
+      "n": 480,
+      "max_reference_tokens_including_eos": 276,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen32b",
+      "dataset": "main",
+      "condition": "flat",
+      "n": 560,
+      "max_reference_tokens_including_eos": 172,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen32b",
+      "dataset": "main",
+      "condition": "macro",
+      "n": 560,
+      "max_reference_tokens_including_eos": 172,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen32b",
+      "dataset": "main",
+      "condition": "position",
+      "n": 560,
+      "max_reference_tokens_including_eos": 177,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen32b",
+      "dataset": "main",
+      "condition": "alias",
+      "n": 560,
+      "max_reference_tokens_including_eos": 177,
+      "over_budget": 0,
+      "budget": 256
+    },
+    {
+      "model": "qwen32b",
+      "dataset": "independent",
+      "condition": "flat",
+      "n": 480,
+      "max_reference_tokens_including_eos": 268,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen32b",
+      "dataset": "independent",
+      "condition": "macro",
+      "n": 480,
+      "max_reference_tokens_including_eos": 268,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen32b",
+      "dataset": "independent",
+      "condition": "position",
+      "n": 480,
+      "max_reference_tokens_including_eos": 276,
+      "over_budget": 0,
+      "budget": 512
+    },
+    {
+      "model": "qwen32b",
+      "dataset": "independent",
+      "condition": "alias",
+      "n": 480,
+      "max_reference_tokens_including_eos": 276,
+      "over_budget": 0,
+      "budget": 512
+    }
+  ],
+  "note": "Counts include EOS; generation budgets preserved from original. No reference length used to force completion."
+}

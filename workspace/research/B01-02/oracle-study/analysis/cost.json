@@ -1,0 +1,475 @@
+{
+  "runs": [
+    {
+      "run": "qwen1.5b-joint-s11",
+      "training_seconds": 367.22600412368774,
+      "training_total_seconds": 379.7257750034332,
+      "evaluation_seconds": 663.6698367595673,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 1001552
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 6423568896
+    },
+    {
+      "run": "qwen1.5b-joint-s22",
+      "training_seconds": 361.97686290740967,
+      "training_total_seconds": 371.43600845336914,
+      "evaluation_seconds": 607.4975922107697,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 1001552
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 6423570432
+    },
+    {
+      "run": "qwen1.5b-joint-s33",
+      "training_seconds": 357.9881045818329,
+      "training_total_seconds": 362.83302879333496,
+      "evaluation_seconds": 667.8201806545258,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 1001552
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 6423570432
+    },
+    {
+      "run": "qwen1.5b-operation_oracle-s11",
+      "training_seconds": 360.3960373401642,
+      "training_total_seconds": 369.80834674835205,
+      "evaluation_seconds": 44.281025409698486,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 111536
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 6423568896
+    },
+    {
+      "run": "qwen1.5b-operation_oracle-s22",
+      "training_seconds": 358.7146406173706,
+      "training_total_seconds": 368.4133675098419,
+      "evaluation_seconds": 44.858601331710815,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 111536
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 6423570432
+    },
+    {
+      "run": "qwen1.5b-operation_oracle-s33",
+      "training_seconds": 364.05349254608154,
+      "training_total_seconds": 368.8467833995819,
+      "evaluation_seconds": 45.58183169364929,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 111536
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 6423570432
+    },
+    {
+      "run": "qwen1.5b-order_oracle-s11",
+      "training_seconds": 361.69147062301636,
+      "training_total_seconds": 373.8238046169281,
+      "evaluation_seconds": 307.35147762298584,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 890016
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 6423568896
+    },
+    {
+      "run": "qwen1.5b-order_oracle-s22",
+      "training_seconds": 361.7714216709137,
+      "training_total_seconds": 374.09022307395935,
+      "evaluation_seconds": 290.7809112071991,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 890016
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 6423570432
+    },
+    {
+      "run": "qwen1.5b-order_oracle-s33",
+      "training_seconds": 362.9097213745117,
+      "training_total_seconds": 367.7395429611206,
+      "evaluation_seconds": 301.86982131004333,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 890016
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 6423570432
+    },
+    {
+      "run": "qwen32b-joint-s11",
+      "training_seconds": 3290.0254616737366,
+      "training_total_seconds": 3327.3668954372406,
+      "evaluation_seconds": 3751.5312235355377,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 1001552
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 69724478464
+    },
+    {
+      "run": "qwen32b-joint-s22",
+      "training_seconds": 3267.9299178123474,
+      "training_total_seconds": 3304.815943479538,
+      "evaluation_seconds": 3779.3484160900116,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 1001552
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 69721868288
+    },
+    {
+      "run": "qwen32b-joint-s33",
+      "training_seconds": 3281.686726808548,
+      "training_total_seconds": 3318.945389032364,
+      "evaluation_seconds": 3793.0538976192474,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 1001552
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 69721729024
+    },
+    {
+      "run": "qwen32b-operation_oracle-s11",
+      "training_seconds": 3268.6629054546356,
+      "training_total_seconds": 3305.681411743164,
+      "evaluation_seconds": 390.4072120189667,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 111536
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 69724478464
+    },
+    {
+      "run": "qwen32b-operation_oracle-s22",
+      "training_seconds": 3273.9148766994476,
+      "training_total_seconds": 3309.3857333660126,
+      "evaluation_seconds": 388.8467855453491,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 111536
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 69721868288
+    },
+    {
+      "run": "qwen32b-operation_oracle-s33",
+      "training_seconds": 3274.3079130649567,
+      "training_total_seconds": 3330.0593695640564,
+      "evaluation_seconds": 392.2893211841583,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 111536
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 69721729024
+    },
+    {
+      "run": "qwen32b-order_oracle-s11",
+      "training_seconds": 3269.7299230098724,
+      "training_total_seconds": 3307.075713634491,
+      "evaluation_seconds": 1511.883220911026,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 890016
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 69721981440
+    },
+    {
+      "run": "qwen32b-order_oracle-s22",
+      "training_seconds": 3283.259895324707,
+      "training_total_seconds": 3320.421331167221,
+      "evaluation_seconds": 1508.399373292923,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 890016
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 69721884672
+    },
+    {
+      "run": "qwen32b-order_oracle-s33",
+      "training_seconds": 3283.176936864853,
+      "training_total_seconds": 3320.4468648433685,
+      "evaluation_seconds": 1505.781899690628,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 890016
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 69721824256
+    },
+    {
+      "run": "qwen3b-joint-s11",
+      "training_seconds": 683.4472649097443,
+      "training_total_seconds": 695.1041476726532,
+      "evaluation_seconds": 897.3194160461426,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 1001552
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 9904139264
+    },
+    {
+      "run": "qwen3b-joint-s22",
+      "training_seconds": 672.2699642181396,
+      "training_total_seconds": 684.2942743301392,
+      "evaluation_seconds": 857.6151423454285,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 1001552
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 9904139264
+    },
+    {
+      "run": "qwen3b-joint-s33",
+      "training_seconds": 674.4150779247284,
+      "training_total_seconds": 681.2463142871857,
+      "evaluation_seconds": 909.771148443222,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 1001552
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 9904139264
+    },
+    {
+      "run": "qwen3b-operation_oracle-s11",
+      "training_seconds": 675.8900904655457,
+      "training_total_seconds": 686.8127708435059,
+      "evaluation_seconds": 80.30720663070679,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 111536
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 9904139264
+    },
+    {
+      "run": "qwen3b-operation_oracle-s22",
+      "training_seconds": 672.38254570961,
+      "training_total_seconds": 684.0204544067383,
+      "evaluation_seconds": 67.9374508857727,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 111536
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 9904139264
+    },
+    {
+      "run": "qwen3b-operation_oracle-s33",
+      "training_seconds": 673.6221914291382,
+      "training_total_seconds": 680.2878766059875,
+      "evaluation_seconds": 77.39562392234802,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 111536
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 9904139264
+    },
+    {
+      "run": "qwen3b-order_oracle-s11",
+      "training_seconds": 680.7400109767914,
+      "training_total_seconds": 692.4492719173431,
+      "evaluation_seconds": 404.12997603416443,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 890016
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 9904139264
+    },
+    {
+      "run": "qwen3b-order_oracle-s22",
+      "training_seconds": 671.9487385749817,
+      "training_total_seconds": 684.1972332000732,
+      "evaluation_seconds": 378.990371465683,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 890016
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 9904139264
+    },
+    {
+      "run": "qwen3b-order_oracle-s33",
+      "training_seconds": 678.1142148971558,
+      "training_total_seconds": 684.9458949565887,
+      "evaluation_seconds": 404.7479000091553,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 890016
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 9904139264
+    },
+    {
+      "run": "qwen7b-joint-s11",
+      "training_seconds": 1239.7939352989197,
+      "training_total_seconds": 1252.7812991142273,
+      "evaluation_seconds": 1097.7352120876312,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 1001552
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 17596783616
+    },
+    {
+      "run": "qwen7b-joint-s22",
+      "training_seconds": 1254.832677602768,
+      "training_total_seconds": 1267.802410364151,
+      "evaluation_seconds": 1114.03120470047,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 1001552
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 17596495360
+    },
+    {
+      "run": "qwen7b-joint-s33",
+      "training_seconds": 1253.72962641716,
+      "training_total_seconds": 1262.3253412246704,
+      "evaluation_seconds": 1121.1651468276978,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 1001552
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 17596210176
+    },
+    {
+      "run": "qwen7b-operation_oracle-s11",
+      "training_seconds": 1238.2232692241669,
+      "training_total_seconds": 1251.187941789627,
+      "evaluation_seconds": 123.82596969604492,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 111536
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 17596783616
+    },
+    {
+      "run": "qwen7b-operation_oracle-s22",
+      "training_seconds": 1250.845981836319,
+      "training_total_seconds": 1263.827633857727,
+      "evaluation_seconds": 128.6517949104309,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 111536
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 17596495360
+    },
+    {
+      "run": "qwen7b-operation_oracle-s33",
+      "training_seconds": 1234.8684751987457,
+      "training_total_seconds": 1243.8829727172852,
+      "evaluation_seconds": 116.60656380653381,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 111536
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 17596210176
+    },
+    {
+      "run": "qwen7b-order_oracle-s11",
+      "training_seconds": 1238.01992893219,
+      "training_total_seconds": 1250.5772197246552,
+      "evaluation_seconds": 437.79610204696655,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 890016
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 17596783616
+    },
+    {
+      "run": "qwen7b-order_oracle-s22",
+      "training_seconds": 1230.7625019550323,
+      "training_total_seconds": 1243.6976261138916,
+      "evaluation_seconds": 436.679545879364,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 890016
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 17596495360
+    },
+    {
+      "run": "qwen7b-order_oracle-s33",
+      "training_seconds": 1235.1945748329163,
+      "training_total_seconds": 1244.2303040027618,
+      "evaluation_seconds": 429.84722805023193,
+      "counts": {
+        "examples": 16384,
+        "input_tokens": 3031592,
+        "supervised_tokens": 890016
+      },
+      "evaluation_finished": true,
+      "peak_memory_bytes": 17596210176
+    }
+  ],
+  "training_total_gpu_hours": 14.065162922210163,
+  "evaluation_excluding_loading_gpu_hours": 8.07772378663222,
+  "note": "Per-process wall time on one GPU; includes training load/checkpoint overhead, evaluation load excluded. Not GPU-core active time; probe costs separate."
+}

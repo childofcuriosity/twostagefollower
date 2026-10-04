@@ -1,0 +1,11 @@
+{
+  "length": 40,
+  "phase": "formal",
+  "condition": "flat",
+  "seed": 211,
+  "gpu": 7,
+  "exit_code": 0,
+  "seconds": 994.200850725174,
+  "log": "logs/formal-L40-flat-s211.log",
+  "finished": 1790527146.9478266
+}

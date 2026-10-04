@@ -1,0 +1,1727 @@
+{
+  "records": [
+    {
+      "condition": "STEP",
+      "seed": "base",
+      "step": 0,
+      "n": 512,
+      "strict_failures": 512,
+      "reasons": {
+        "operation_sequence": 471,
+        "numeric_step": 16,
+        "unrecognized_extra_lines": 23,
+        "missing_or_multiple_Answer": 2
+      },
+      "titles": {
+        "other_title_noncompliance": 308,
+        "fully_compliant": 204
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 301,
+      "step": 100,
+      "n": 512,
+      "strict_failures": 512,
+      "reasons": {
+        "operation_sequence": 471,
+        "unrecognized_extra_lines": 22,
+        "numeric_step": 17,
+        "missing_or_multiple_Answer": 2
+      },
+      "titles": {
+        "other_title_noncompliance": 302,
+        "fully_compliant": 210
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 302,
+      "step": 100,
+      "n": 512,
+      "strict_failures": 512,
+      "reasons": {
+        "operation_sequence": 474,
+        "numeric_step": 16,
+        "unrecognized_extra_lines": 20,
+        "missing_or_multiple_Answer": 2
+      },
+      "titles": {
+        "other_title_noncompliance": 316,
+        "fully_compliant": 196
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 303,
+      "step": 100,
+      "n": 512,
+      "strict_failures": 512,
+      "reasons": {
+        "operation_sequence": 468,
+        "unrecognized_extra_lines": 24,
+        "numeric_step": 18,
+        "missing_or_multiple_Answer": 2
+      },
+      "titles": {
+        "other_title_noncompliance": 302,
+        "fully_compliant": 210
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": "base",
+      "step": 0,
+      "n": 512,
+      "strict_failures": 507,
+      "reasons": {
+        "numeric_step": 143,
+        "operation_sequence": 336,
+        "missing_or_multiple_Answer": 19,
+        "unrecognized_extra_lines": 9
+      },
+      "titles": {
+        "fully_compliant": 387,
+        "other_title_noncompliance": 125
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 301,
+      "step": 100,
+      "n": 512,
+      "strict_failures": 506,
+      "reasons": {
+        "numeric_step": 155,
+        "operation_sequence": 322,
+        "missing_or_multiple_Answer": 18,
+        "unrecognized_extra_lines": 11
+      },
+      "titles": {
+        "fully_compliant": 398,
+        "other_title_noncompliance": 114
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 302,
+      "step": 100,
+      "n": 512,
+      "strict_failures": 509,
+      "reasons": {
+        "numeric_step": 143,
+        "operation_sequence": 343,
+        "missing_or_multiple_Answer": 15,
+        "unrecognized_extra_lines": 8
+      },
+      "titles": {
+        "fully_compliant": 377,
+        "other_title_noncompliance": 135
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 303,
+      "step": 100,
+      "n": 512,
+      "strict_failures": 508,
+      "reasons": {
+        "numeric_step": 142,
+        "operation_sequence": 337,
+        "missing_or_multiple_Answer": 19,
+        "unrecognized_extra_lines": 10
+      },
+      "titles": {
+        "fully_compliant": 386,
+        "other_title_noncompliance": 126
+      },
+      "endings": {
+        "eos": 512
+      }
+    }
+  ],
+  "cases": [
+    {
+      "condition": "STEP",
+      "seed": 301,
+      "id": "L5-test-00000",
+      "category": "operation_sequence",
+      "input": [
+        1,
+        1,
+        7,
+        7
+      ],
+      "chain": [
+        1,
+        2,
+        1,
+        1,
+        5
+      ],
+      "raw": "step:\nrev 7 7 1 1\nrot 7 1 1 7\ninc 8 2 2 8\nstep:\nrot 2 2 8 9\nrot 2 8 9 2\ninc 3 9 0 3\nstep:\nrot 0 3 9 3\nrot 3 9 3 0\ninc 4 0 4 4\nstep:\nrot 0 4 4 5\nrot 4 4 5 0\ninc 5 5 5 6\nAnswer: 5 5 5 6",
+      "expected": "step:\nrev 7 7 1 1\nrot 7 1 1 7\ninc 8 2 2 8\nstep:\nrot 2 2 8 8\nrot 2 8 8 2\nstep:\nrev 2 8 8 2\nrot 8 8 2 2\ninc 9 9 3 3\nstep:\nrev 3 3 9 9\nrot 3 9 9 3\ninc 4 0 0 4\nstep:\ninc 5 1 1 5\nswap 1 5 1 5\nAnswer: 1 5 1 5\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 5,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00000",
+          "split": "test",
+          "chain": [
+            1,
+            2,
+            1,
+            1,
+            5
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 12,
+          "required_ops": 13,
+          "arithmetic_errors": 5,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 301,
+      "id": "L5-test-00006",
+      "category": "unrecognized_extra_lines",
+      "input": [
+        7,
+        5,
+        0,
+        7
+      ],
+      "chain": [
+        1,
+        5,
+        5,
+        2,
+        0
+      ],
+      "raw": "step:\nrev 7 0 5 7\nrot 0 5 7 7\ninc 1 6 8 8\nstep:\nblack 8 6 8 8\ninc 9 7 9 9\nswap 6 9 8 9\nstep:\nblack 9 9 8 0\ninc 0 0 9 9\nswap 9 0 9 0\nstep:\ngreen 0 9 0 9\nrot 9 0 9 0\nrot 0 9 0 9\ninc 1 0 1 0\nAnswer: 1 0 1 0",
+      "expected": "step:\nrev 7 0 5 7\nrot 0 5 7 7\ninc 1 6 8 8\nstep:\ninc 2 7 9 9\nswap 7 2 9 9\nstep:\ninc 8 3 0 0\nswap 3 8 0 0\nstep:\nrot 8 0 0 3\nrot 0 0 3 8\nstep:\nrot 0 3 8 0\ninc 1 4 9 1\nAnswer: 1 4 9 1\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 9,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00006",
+          "split": "test",
+          "chain": [
+            1,
+            5,
+            5,
+            2,
+            0
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 10,
+          "required_ops": 11,
+          "arithmetic_errors": 5,
+          "unparsed_lines": 3,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 301,
+      "id": "L5-test-00012",
+      "category": "numeric_step",
+      "input": [
+        7,
+        1,
+        6,
+        9
+      ],
+      "chain": [
+        0,
+        7,
+        1,
+        1,
+        1
+      ],
+      "raw": "step:\nrot 1 6 9 7\ninc 2 7 0 8\nstep:\nrot 7 0 8 2\nrot 0 8 2 7\ninc 1 9 3 8\nstep:\nrev 8 3 9 1\nrot 3 9 1 8\ninc 4 0 2 9\nstep:\nrev 9 2 0 4\nrot 2 0 4 9\ninc 3 1 5 0\nstep:\nrev 0 5 1 3\nrot 5 1 3 0\ninc 6 2 4 3\nAnswer: 6 2 4 3",
+      "expected": "step:\nrot 1 6 9 7\ninc 2 7 0 8\nstep:\nrot 7 0 8 2\nrot 0 8 2 7\ninc 1 9 3 8\nstep:\nrev 8 3 9 1\nrot 3 9 1 8\ninc 4 0 2 9\nstep:\nrev 9 2 0 4\nrot 2 0 4 9\ninc 3 1 5 0\nstep:\nrev 0 5 1 3\nrot 5 1 3 0\ninc 6 2 4 1\nAnswer: 6 2 4 1\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00012",
+          "split": "test",
+          "chain": [
+            0,
+            7,
+            1,
+            1,
+            1
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 5,
+          "emitted_ops": 14,
+          "required_ops": 14,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 301,
+      "id": "L5-test-00275",
+      "category": "missing_or_multiple_Answer",
+      "input": [
+        8,
+        2,
+        3,
+        6
+      ],
+      "chain": [
+        1,
+        4,
+        6,
+        6,
+        0
+      ],
+      "raw": "step:\nrev 6 3 2 8\nrot 3 2 8 6\ninc 4 3 9 7\nstep:\nrot 3 9 7 4\nrev 4 7 9 3\nrot 7 9 3 4\ninc 8 0 4 5\nstep:\nrot 0 4 5 8\ninc 1 5 6 9\nswap 5 1 6 9\nstep:\ninc 2 6 7 0\nswap 6 2 7 0\nstep:\nrot 2 7 0 6\ninc 3 8 1 7",
+      "expected": "step:\nrev 6 3 2 8\nrot 3 2 8 6\ninc 4 3 9 7\nstep:\nrot 3 9 7 4\ninc 4 0 8 5\nswap 0 4 8 5\nstep:\ninc 1 5 9 6\nneg 9 5 1 4\ninc 0 6 2 5\nstep:\ninc 1 7 3 6\nneg 9 3 7 4\ninc 0 4 8 5\nstep:\nrot 4 8 5 0\ninc 5 9 6 1\nAnswer: 5 9 6 1\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 4,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 1,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00275",
+          "split": "test",
+          "chain": [
+            1,
+            4,
+            6,
+            6,
+            0
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 5,
+          "emitted_ops": 14,
+          "required_ops": 14,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 0,
+          "answer_present": 0,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 302,
+      "id": "L5-test-00000",
+      "category": "operation_sequence",
+      "input": [
+        1,
+        1,
+        7,
+        7
+      ],
+      "chain": [
+        1,
+        2,
+        1,
+        1,
+        5
+      ],
+      "raw": "step:\nrev 7 7 1 1\nrot 7 1 1 7\ninc 8 2 2 8\nstep:\nrot 2 2 8 9\nrot 2 8 9 2\ninc 3 9 0 3\nstep:\nrot 9 0 3 3\nrot 0 3 3 9\ninc 1 4 4 0\nstep:\nrot 4 4 0 1\nrot 4 0 1 4\ninc 5 1 5 5\nAnswer: 5 1 5 5",
+      "expected": "step:\nrev 7 7 1 1\nrot 7 1 1 7\ninc 8 2 2 8\nstep:\nrot 2 2 8 8\nrot 2 8 8 2\nstep:\nrev 2 8 8 2\nrot 8 8 2 2\ninc 9 9 3 3\nstep:\nrev 3 3 9 9\nrot 3 9 9 3\ninc 4 0 0 4\nstep:\ninc 5 1 1 5\nswap 1 5 1 5\nAnswer: 1 5 1 5\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 5,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00000",
+          "split": "test",
+          "chain": [
+            1,
+            2,
+            1,
+            1,
+            5
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 12,
+          "required_ops": 13,
+          "arithmetic_errors": 2,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 302,
+      "id": "L5-test-00012",
+      "category": "numeric_step",
+      "input": [
+        7,
+        1,
+        6,
+        9
+      ],
+      "chain": [
+        0,
+        7,
+        1,
+        1,
+        1
+      ],
+      "raw": "step:\nrot 1 6 9 7\ninc 2 7 0 8\nstep:\nrot 7 0 8 2\nrot 0 8 2 7\ninc 1 9 3 8\nstep:\nrev 8 3 9 1\nrot 3 9 1 8\ninc 4 0 2 9\nstep:\nrev 9 2 0 4\nrot 2 0 4 9\ninc 3 1 5 0\nstep:\nrev 0 5 1 3\nrot 5 1 3 0\ninc 6 2 4 3\nAnswer: 6 2 4 3",
+      "expected": "step:\nrot 1 6 9 7\ninc 2 7 0 8\nstep:\nrot 7 0 8 2\nrot 0 8 2 7\ninc 1 9 3 8\nstep:\nrev 8 3 9 1\nrot 3 9 1 8\ninc 4 0 2 9\nstep:\nrev 9 2 0 4\nrot 2 0 4 9\ninc 3 1 5 0\nstep:\nrev 0 5 1 3\nrot 5 1 3 0\ninc 6 2 4 1\nAnswer: 6 2 4 1\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00012",
+          "split": "test",
+          "chain": [
+            0,
+            7,
+            1,
+            1,
+            1
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 5,
+          "emitted_ops": 14,
+          "required_ops": 14,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 302,
+      "id": "L5-test-00050",
+      "category": "unrecognized_extra_lines",
+      "input": [
+        9,
+        0,
+        8,
+        0
+      ],
+      "chain": [
+        7,
+        0,
+        7,
+        2,
+        0
+      ],
+      "raw": "step:\nrot 8 0 0 9\nrot 0 0 9 8\ninc 1 1 10 8\nstep:\nrev 8 10 1 1\nrot 10 1 1 8\ninc 0 2 2 9\nstep:\nrot 2 2 9 0\nrot 2 9 0 2\ninc 3 3 1 2\nAnswer: 3 3 1 2",
+      "expected": "step:\nrot 0 8 0 9\nrot 8 0 9 0\ninc 9 1 0 1\nstep:\nrot 1 0 1 9\ninc 2 1 2 0\nstep:\nrot 1 2 0 2\nrot 2 0 2 1\ninc 3 1 3 2\nstep:\nrot 1 3 2 3\nrot 3 2 3 1\nstep:\nrot 2 3 1 3\ninc 3 4 2 4\nAnswer: 3 4 2 4\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 4,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00050",
+          "split": "test",
+          "chain": [
+            7,
+            0,
+            7,
+            2,
+            0
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 3,
+          "emitted_ops": 6,
+          "required_ops": 12,
+          "arithmetic_errors": 3,
+          "unparsed_lines": 3,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 302,
+      "id": "L5-test-00193",
+      "category": "missing_or_multiple_Answer",
+      "input": [
+        5,
+        4,
+        2,
+        7
+      ],
+      "chain": [
+        1,
+        1,
+        3,
+        2,
+        6
+      ],
+      "raw": "step:\nrev 7 2 4 5\nrot 2 4 5 7\ninc 3 5 6 8\nstep:\nrev 8 6 5 3\nrot 6 5 3 8\ninc 7 6 4 9\nstep:\ninc 8 7 5 0\nrev 0 5 7 8\nstep:\nrot 5 7 8 0\nrot 7 8 0 5\ninc 8 9 1 5",
+      "expected": "step:\nrev 7 2 4 5\nrot 2 4 5 7\ninc 3 5 6 8\nstep:\nrev 8 6 5 3\nrot 6 5 3 8\ninc 7 6 4 9\nstep:\ninc 8 7 5 0\nrev 0 5 7 8\nstep:\nrot 5 7 8 0\nrot 7 8 0 5\nstep:\ninc 8 9 1 6\nneg 2 1 9 4\ninc 3 2 0 5\nAnswer: 3 2 0 5\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 1,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 1,
+          "operation_prefix_only": 1,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00193",
+          "split": "test",
+          "chain": [
+            1,
+            1,
+            3,
+            2,
+            6
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 11,
+          "required_ops": 13,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 0,
+          "answer_present": 0,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 303,
+      "id": "L5-test-00000",
+      "category": "operation_sequence",
+      "input": [
+        1,
+        1,
+        7,
+        7
+      ],
+      "chain": [
+        1,
+        2,
+        1,
+        1,
+        5
+      ],
+      "raw": "step:\nrev 7 7 1 1\nrot 7 1 1 7\ninc 8 2 2 8\nstep:\nrot 2 2 8 9\nrot 2 8 9 2\ninc 3 9 0 3\nstep:\nrot 9 0 3 3\nrot 0 3 3 9\ninc 1 4 4 0\nstep:\nrot 4 4 0 1\nrot 4 0 1 4\ninc 5 1 5 5\nAnswer: 5 1 5 5",
+      "expected": "step:\nrev 7 7 1 1\nrot 7 1 1 7\ninc 8 2 2 8\nstep:\nrot 2 2 8 8\nrot 2 8 8 2\nstep:\nrev 2 8 8 2\nrot 8 8 2 2\ninc 9 9 3 3\nstep:\nrev 3 3 9 9\nrot 3 9 9 3\ninc 4 0 0 4\nstep:\ninc 5 1 1 5\nswap 1 5 1 5\nAnswer: 1 5 1 5\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 5,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00000",
+          "split": "test",
+          "chain": [
+            1,
+            2,
+            1,
+            1,
+            5
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 12,
+          "required_ops": 13,
+          "arithmetic_errors": 2,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 303,
+      "id": "L5-test-00006",
+      "category": "unrecognized_extra_lines",
+      "input": [
+        7,
+        5,
+        0,
+        7
+      ],
+      "chain": [
+        1,
+        5,
+        5,
+        2,
+        0
+      ],
+      "raw": "step:\nrev 7 0 5 7\nrot 0 5 7 7\ninc 1 6 8 8\nstep:\nblack 8 6 8 8\ninc 9 7 9 9\nswap 7 9 8 9\nstep:\nblack 9 9 8 9\ninc 0 0 9 9\nswap 0 9 0 9\nstep:\ngreen 0 9 0 9\nrot 9 0 9 0\nrot 0 9 0 9\ninc 1 0 1 0\nAnswer: 1 0 1 0",
+      "expected": "step:\nrev 7 0 5 7\nrot 0 5 7 7\ninc 1 6 8 8\nstep:\ninc 2 7 9 9\nswap 7 2 9 9\nstep:\ninc 8 3 0 0\nswap 3 8 0 0\nstep:\nrot 8 0 0 3\nrot 0 0 3 8\nstep:\nrot 0 3 8 0\ninc 1 4 9 1\nAnswer: 1 4 9 1\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 9,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00006",
+          "split": "test",
+          "chain": [
+            1,
+            5,
+            5,
+            2,
+            0
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 10,
+          "required_ops": 11,
+          "arithmetic_errors": 4,
+          "unparsed_lines": 3,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 303,
+      "id": "L5-test-00012",
+      "category": "numeric_step",
+      "input": [
+        7,
+        1,
+        6,
+        9
+      ],
+      "chain": [
+        0,
+        7,
+        1,
+        1,
+        1
+      ],
+      "raw": "step:\nrot 1 6 9 7\ninc 2 7 0 8\nstep:\nrot 7 0 8 2\nrot 0 8 2 7\ninc 1 9 3 8\nstep:\nrev 8 3 9 1\nrot 3 9 1 8\ninc 4 0 2 9\nstep:\nrev 9 2 0 4\nrot 2 0 4 9\ninc 3 1 5 0\nstep:\nrev 0 5 1 3\nrot 5 1 3 0\ninc 6 2 4 3\nAnswer: 6 2 4 3",
+      "expected": "step:\nrot 1 6 9 7\ninc 2 7 0 8\nstep:\nrot 7 0 8 2\nrot 0 8 2 7\ninc 1 9 3 8\nstep:\nrev 8 3 9 1\nrot 3 9 1 8\ninc 4 0 2 9\nstep:\nrev 9 2 0 4\nrot 2 0 4 9\ninc 3 1 5 0\nstep:\nrev 0 5 1 3\nrot 5 1 3 0\ninc 6 2 4 1\nAnswer: 6 2 4 1\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00012",
+          "split": "test",
+          "chain": [
+            0,
+            7,
+            1,
+            1,
+            1
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 5,
+          "emitted_ops": 14,
+          "required_ops": 14,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 303,
+      "id": "L5-test-00237",
+      "category": "missing_or_multiple_Answer",
+      "input": [
+        1,
+        3,
+        9,
+        9
+      ],
+      "chain": [
+        4,
+        5,
+        6,
+        1,
+        6
+      ],
+      "raw": "step:\nrot 3 9 9 1\ninc 4 0 10 2\nswap 9 4 10 2\nstep:\ninc 0 5 1 3\nswap 5 0 1 3\nstep:\ninc 2 1 3 4\nneg 8 9 6 7\ninc 9 0 7 8\nstep:\nrev 8 7 0 9\nrot 7 0 9 8\ninc 8 1 10 9\nAnswer: 8 1 10 9",
+      "expected": "step:\nrot 3 9 9 1\ninc 4 0 0 2\nswap 0 4 0 2\nstep:\ninc 1 5 1 3\nswap 5 1 1 3\nstep:\ninc 6 2 2 4\nneg 4 8 8 6\ninc 5 9 9 7\nstep:\nrev 7 9 9 5\nrot 9 9 5 7\ninc 0 0 6 8\nstep:\ninc 1 1 7 9\nneg 9 9 3 1\ninc 0 0 4 2\nAnswer: 0 0 4 2\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 4,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 1,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00237",
+          "split": "test",
+          "chain": [
+            4,
+            5,
+            6,
+            1,
+            6
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 8,
+          "required_ops": 14,
+          "arithmetic_errors": 3,
+          "unparsed_lines": 4,
+          "answer_present": 0,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 301,
+      "id": "L5-test-00000",
+      "category": "numeric_step",
+      "input": [
+        1,
+        1,
+        7,
+        7
+      ],
+      "chain": [
+        1,
+        2,
+        1,
+        1,
+        5
+      ],
+      "raw": "blue:\nrev 7 7 1 1\nrot 7 1 1 7\ninc 8 2 2 8\ngreen:\nrot 2 2 8 8\nrot 2 8 8 2\nblue:\nrev 2 8 8 2\nrot 8 8 2 2\ninc 9 9 3 3\nblue:\nrev 3 3 9 9\nrot 3 9 9 3\ninc 4 0 0 4\nblack:\ninc 5 0 0 4\nswap 0 5 0 4\nAnswer: 5 0 0 4",
+      "expected": "blue:\nrev 7 7 1 1\nrot 7 1 1 7\ninc 8 2 2 8\ngreen:\nrot 2 2 8 8\nrot 2 8 8 2\nblue:\nrev 2 8 8 2\nrot 8 8 2 2\ninc 9 9 3 3\nblue:\nrev 3 3 9 9\nrot 3 9 9 3\ninc 4 0 0 4\nblack:\ninc 5 1 1 5\nswap 1 5 1 5\nAnswer: 1 5 1 5\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00000",
+          "split": "test",
+          "chain": [
+            1,
+            2,
+            1,
+            1,
+            5
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 5,
+          "emitted_ops": 13,
+          "required_ops": 13,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 301,
+      "id": "L5-test-00004",
+      "category": "operation_sequence",
+      "input": [
+        5,
+        7,
+        5,
+        6
+      ],
+      "chain": [
+        5,
+        6,
+        8,
+        8,
+        2
+      ],
+      "raw": "black:\ninc 6 7 5 7\nswap 7 5 5 6\nwhite:\ninc 0 8 6 7\nneg 0 9 7 8\ninc 1 0 8 9\nbrown:\ninc 2 1 9 0\ninc 3 2 0 1\ninc 4 3 1 2\nbrown:\ninc 5 4 2 3\ninc 6 5 3 4\ninc 7 6 4 5\ngreen:\nrot 4 2 3 5\nrot 2 3 5 4\ninc 3 4 5 5\nAnswer: 3 4 5 5",
+      "expected": "black:\ninc 6 8 6 7\nswap 8 6 6 7\nwhite:\ninc 9 7 7 8\nneg 1 3 3 2\ninc 2 4 4 3\nbrown:\ninc 3 5 5 4\ninc 4 6 6 5\ninc 5 7 7 6\nbrown:\ninc 6 8 8 7\ninc 7 9 9 8\ninc 8 0 0 9\ngreen:\nrot 0 0 9 8\nrot 0 9 8 0\nAnswer: 0 9 8 0\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 1,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 13,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00004",
+          "split": "test",
+          "chain": [
+            5,
+            6,
+            8,
+            8,
+            2
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 5,
+          "emitted_ops": 14,
+          "required_ops": 13,
+          "arithmetic_errors": 6,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 301,
+      "id": "L5-test-00007",
+      "category": "missing_or_multiple_Answer",
+      "input": [
+        3,
+        4,
+        7,
+        6
+      ],
+      "chain": [
+        5,
+        6,
+        8,
+        2,
+        7
+      ],
+      "raw": "black:\ninc 4 5 7 7\nswap 5 4 7 7\nwhite:\ninc 5 5 7 7\nneg 5 5 7 7\nbrown:\ninc 6 5 7 7\ninc 6 6 7 7\ninc 6 6 7 7\ngreen:\nrot 6 7 7 6\nrot 7 7 6 6\ngray:\nrot 8 7 6 6\nrot 7 6 6 8",
+      "expected": "black:\ninc 4 5 8 7\nswap 5 4 8 7\nwhite:\ninc 6 5 9 8\nneg 4 5 1 2\ninc 5 6 2 3\nbrown:\ninc 6 7 3 4\ninc 7 8 4 5\ninc 8 9 5 6\ngreen:\nrot 9 5 6 8\nrot 5 6 8 9\ngray:\nrot 6 8 9 5\nrot 8 9 5 6\ninc 9 0 6 7\nAnswer: 9 0 6 7\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 7,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 1,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00007",
+          "split": "test",
+          "chain": [
+            5,
+            6,
+            8,
+            2,
+            7
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 5,
+          "emitted_ops": 11,
+          "required_ops": 13,
+          "arithmetic_errors": 7,
+          "unparsed_lines": 0,
+          "answer_present": 0,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 301,
+      "id": "L5-test-00030",
+      "category": "unrecognized_extra_lines",
+      "input": [
+        8,
+        6,
+        2,
+        9
+      ],
+      "chain": [
+        8,
+        2,
+        2,
+        3,
+        7
+      ],
+      "raw": "brown:\ninc 9 6 2 10\ninc 0 7 3 0\ninc 1 8 4 1\ngold:\nrev 1 4 8 1\ngreen:\nrot 4 8 1 1\nrot 8 1 1 4\ngray:\nrot 1 1 4 8\nAnswer: 1 1 4 8",
+      "expected": "brown:\ninc 9 7 3 0\ninc 0 8 4 1\ninc 1 9 5 2\ngreen:\nrot 9 5 2 1\nrot 5 2 1 9\ngreen:\nrot 2 1 9 5\nrot 1 9 5 2\ngold:\ninc 2 0 6 3\nrev 3 6 0 2\ngray:\nrot 6 0 2 3\nrot 0 2 3 6\ninc 1 3 4 7\nAnswer: 1 3 4 7\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 2,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00030",
+          "split": "test",
+          "chain": [
+            8,
+            2,
+            2,
+            3,
+            7
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 6,
+          "required_ops": 12,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 1,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 302,
+      "id": "L5-test-00000",
+      "category": "numeric_step",
+      "input": [
+        1,
+        1,
+        7,
+        7
+      ],
+      "chain": [
+        1,
+        2,
+        1,
+        1,
+        5
+      ],
+      "raw": "blue:\nrev 7 7 1 1\nrot 7 1 1 7\ninc 8 2 2 8\ngreen:\nrot 2 2 8 8\nrot 2 8 8 2\nblue:\nrev 2 8 8 2\nrot 8 8 2 2\ninc 9 9 3 3\nblue:\nrev 3 3 9 9\nrot 3 9 9 3\ninc 4 0 0 4\nblack:\ninc 5 0 0 4\nswap 0 5 0 4\nAnswer: 5 0 0 4",
+      "expected": "blue:\nrev 7 7 1 1\nrot 7 1 1 7\ninc 8 2 2 8\ngreen:\nrot 2 2 8 8\nrot 2 8 8 2\nblue:\nrev 2 8 8 2\nrot 8 8 2 2\ninc 9 9 3 3\nblue:\nrev 3 3 9 9\nrot 3 9 9 3\ninc 4 0 0 4\nblack:\ninc 5 1 1 5\nswap 1 5 1 5\nAnswer: 1 5 1 5\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00000",
+          "split": "test",
+          "chain": [
+            1,
+            2,
+            1,
+            1,
+            5
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 5,
+          "emitted_ops": 13,
+          "required_ops": 13,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 302,
+      "id": "L5-test-00002",
+      "category": "operation_sequence",
+      "input": [
+        3,
+        4,
+        2,
+        9
+      ],
+      "chain": [
+        6,
+        3,
+        0,
+        7,
+        5
+      ],
+      "raw": "white:\ninc 4 5 3 0\nneg 6 4 7 9\ninc 7 5 8 0\ngold:\ninc 8 5 8 0\nrev 0 8 5 8\nred:\nrot 8 5 8 0\ninc 9 6 9 1\ngray:\nrot 6 9 9 1\nrot 9 9 6 2\nblack:\ninc 0 9 6 2\nswap 9 0 6 2\nAnswer: 9 0 6 2",
+      "expected": "white:\ninc 4 5 3 0\nneg 6 5 7 0\ninc 7 6 8 1\ngold:\ninc 8 7 9 2\nrev 2 9 7 8\nred:\nrot 9 7 8 2\ninc 0 8 9 3\ngray:\nrot 8 9 3 0\nrot 9 3 0 8\ninc 0 4 1 9\nblack:\ninc 1 5 2 0\nswap 5 1 2 0\nAnswer: 5 1 2 0\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 10,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00002",
+          "split": "test",
+          "chain": [
+            6,
+            3,
+            0,
+            7,
+            5
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 5,
+          "emitted_ops": 11,
+          "required_ops": 12,
+          "arithmetic_errors": 5,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 302,
+      "id": "L5-test-00004",
+      "category": "missing_or_multiple_Answer",
+      "input": [
+        5,
+        7,
+        5,
+        6
+      ],
+      "chain": [
+        5,
+        6,
+        8,
+        8,
+        2
+      ],
+      "raw": "black:\ninc 6 7 5 7\nswap 7 5 5 6\nwhite:\ninc 0 8 6 7\nneg 0 9 7 8\nbrown:\ninc 1 0 8 9\ninc 2 1 9 0\ninc 3 2 0 1\ngreen:\nrot 2 0 1 3\nrot 0 1 3 2\ninc 1 2 4 3",
+      "expected": "black:\ninc 6 8 6 7\nswap 8 6 6 7\nwhite:\ninc 9 7 7 8\nneg 1 3 3 2\ninc 2 4 4 3\nbrown:\ninc 3 5 5 4\ninc 4 6 6 5\ninc 5 7 7 6\nbrown:\ninc 6 8 8 7\ninc 7 9 9 8\ninc 8 0 0 9\ngreen:\nrot 0 0 9 8\nrot 0 9 8 0\nAnswer: 0 9 8 0\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 7,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 1,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00004",
+          "split": "test",
+          "chain": [
+            5,
+            6,
+            8,
+            8,
+            2
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 10,
+          "required_ops": 13,
+          "arithmetic_errors": 4,
+          "unparsed_lines": 0,
+          "answer_present": 0,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 302,
+      "id": "L5-test-00015",
+      "category": "unrecognized_extra_lines",
+      "input": [
+        9,
+        3,
+        1,
+        6
+      ],
+      "chain": [
+        2,
+        3,
+        5,
+        1,
+        4
+      ],
+      "raw": "green:\nrot 3 1 6 9\nrot 1 6 9 3\ngold 2 7 0 4\nrev 4 0 7 2\ninc 5 1 8 3\nblack 6 1 8 3\nswap 1 6 8 3\nblue:\nrev 3 8 1 6\nrot 8 1 6 3\ninc 9 2 7 4\npink:\nrot 2 7 4 9\ninc 3 8 5 0\nswap 8 3 5 0\nAnswer: 8 3 5 0",
+      "expected": "green:\nrot 3 1 6 9\nrot 1 6 9 3\ngold:\ninc 2 7 0 4\nrev 4 0 7 2\nblack:\ninc 5 1 8 3\nswap 1 5 8 3\nblue:\nrev 3 8 5 1\nrot 8 5 1 3\ninc 9 6 2 4\npink:\nrot 6 2 4 9\ninc 7 3 5 0\nswap 3 7 5 0\nAnswer: 3 7 5 0\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 2,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00015",
+          "split": "test",
+          "chain": [
+            2,
+            3,
+            5,
+            1,
+            4
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 3,
+          "emitted_ops": 11,
+          "required_ops": 12,
+          "arithmetic_errors": 3,
+          "unparsed_lines": 2,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 303,
+      "id": "L5-test-00000",
+      "category": "numeric_step",
+      "input": [
+        1,
+        1,
+        7,
+        7
+      ],
+      "chain": [
+        1,
+        2,
+        1,
+        1,
+        5
+      ],
+      "raw": "blue:\nrev 7 7 1 1\nrot 7 1 1 7\ninc 8 2 2 8\ngreen:\nrot 2 2 8 8\nrot 2 8 8 2\nblue:\nrev 2 8 8 2\nrot 8 8 2 2\ninc 9 9 3 3\nblue:\nrev 3 3 9 9\nrot 3 9 9 3\ninc 4 0 0 4\nblack:\ninc 5 0 0 4\nswap 0 5 0 4\nAnswer: 5 0 0 4",
+      "expected": "blue:\nrev 7 7 1 1\nrot 7 1 1 7\ninc 8 2 2 8\ngreen:\nrot 2 2 8 8\nrot 2 8 8 2\nblue:\nrev 2 8 8 2\nrot 8 8 2 2\ninc 9 9 3 3\nblue:\nrev 3 3 9 9\nrot 3 9 9 3\ninc 4 0 0 4\nblack:\ninc 5 1 1 5\nswap 1 5 1 5\nAnswer: 1 5 1 5\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00000",
+          "split": "test",
+          "chain": [
+            1,
+            2,
+            1,
+            1,
+            5
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 5,
+          "emitted_ops": 13,
+          "required_ops": 13,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 303,
+      "id": "L5-test-00002",
+      "category": "operation_sequence",
+      "input": [
+        3,
+        4,
+        2,
+        9
+      ],
+      "chain": [
+        6,
+        3,
+        0,
+        7,
+        5
+      ],
+      "raw": "white:\ninc 4 5 3 0\nneg 6 4 7 9\ninc 7 5 8 0\ngold:\ninc 8 5 8 0\nrev 0 8 5 8\nred:\nrot 8 5 8 0\ninc 9 6 9 1\ngray:\nrot 6 9 9 1\nrot 9 9 6 2\nblack:\ninc 0 9 6 2\nswap 9 0 6 2\nAnswer: 9 0 6 2",
+      "expected": "white:\ninc 4 5 3 0\nneg 6 5 7 0\ninc 7 6 8 1\ngold:\ninc 8 7 9 2\nrev 2 9 7 8\nred:\nrot 9 7 8 2\ninc 0 8 9 3\ngray:\nrot 8 9 3 0\nrot 9 3 0 8\ninc 0 4 1 9\nblack:\ninc 1 5 2 0\nswap 5 1 2 0\nAnswer: 5 1 2 0\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 10,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00002",
+          "split": "test",
+          "chain": [
+            6,
+            3,
+            0,
+            7,
+            5
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 5,
+          "emitted_ops": 11,
+          "required_ops": 12,
+          "arithmetic_errors": 5,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 303,
+      "id": "L5-test-00007",
+      "category": "missing_or_multiple_Answer",
+      "input": [
+        3,
+        4,
+        7,
+        6
+      ],
+      "chain": [
+        5,
+        6,
+        8,
+        2,
+        7
+      ],
+      "raw": "black:\ninc 4 5 7 7\nswap 5 4 7 7\nwhite:\ninc 5 5 7 7\nneg 5 5 7 7\nbrown:\ninc 6 5 7 7\ninc 6 6 7 7\ninc 6 6 7 7\ngreen:\nrot 6 7 7 6\nrot 7 7 6 6\ngray:\nrot 8 7 6 6\nrot 7 6 6 8",
+      "expected": "black:\ninc 4 5 8 7\nswap 5 4 8 7\nwhite:\ninc 6 5 9 8\nneg 4 5 1 2\ninc 5 6 2 3\nbrown:\ninc 6 7 3 4\ninc 7 8 4 5\ninc 8 9 5 6\ngreen:\nrot 9 5 6 8\nrot 5 6 8 9\ngray:\nrot 6 8 9 5\nrot 8 9 5 6\ninc 9 0 6 7\nAnswer: 9 0 6 7\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 7,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 1,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00007",
+          "split": "test",
+          "chain": [
+            5,
+            6,
+            8,
+            2,
+            7
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 5,
+          "emitted_ops": 11,
+          "required_ops": 13,
+          "arithmetic_errors": 7,
+          "unparsed_lines": 0,
+          "answer_present": 0,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 303,
+      "id": "L5-test-00015",
+      "category": "unrecognized_extra_lines",
+      "input": [
+        9,
+        3,
+        1,
+        6
+      ],
+      "chain": [
+        2,
+        3,
+        5,
+        1,
+        4
+      ],
+      "raw": "green:\nrot 3 1 6 9\nrot 1 6 9 3\ngold 2 7 0 4\nrev 4 0 7 2\ninc 5 1 8 3\nblack 6 2 8 3\nswap 2 9 8 3\nblue:\nrev 3 8 2 6\nrot 8 2 6 3\ninc 9 3 7 4\npink 3 4 7 4\nAnswer: 3 4 7 4",
+      "expected": "green:\nrot 3 1 6 9\nrot 1 6 9 3\ngold:\ninc 2 7 0 4\nrev 4 0 7 2\nblack:\ninc 5 1 8 3\nswap 1 5 8 3\nblue:\nrev 3 8 5 1\nrot 8 5 1 3\ninc 9 6 2 4\npink:\nrot 6 2 4 9\ninc 7 3 5 0\nswap 3 7 5 0\nAnswer: 3 7 5 0\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 2,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L5-test-00015",
+          "split": "test",
+          "chain": [
+            2,
+            3,
+            5,
+            1,
+            4
+          ],
+          "required_calls": 5,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 1,
+          "segments": 2,
+          "emitted_ops": 8,
+          "required_ops": 12,
+          "arithmetic_errors": 3,
+          "unparsed_lines": 3,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    }
+  ],
+  "note": "Exclusive descriptive priority: Answer count, unrecognized lines, operation sequence, local numeric step, final Answer only. Not chronological first-error attribution. Title compliance is separate and cannot be added to strict failures. Cases are the first ID per observed category/condition/seed, not prevalence estimates."
+}

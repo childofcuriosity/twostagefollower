@@ -1,0 +1,34 @@
+{
+  "prompt-only/precheck": {
+    "n": 48,
+    "finish": {
+      "eos": 48
+    }
+  },
+  "prompt-only/explore": {
+    "n": 448,
+    "finish": {
+      "eos": 445,
+      "length": 3
+    }
+  },
+  "fallback14/precheck": {
+    "n": 48,
+    "finish": {
+      "eos": 48
+    }
+  },
+  "fallback14/explore": {
+    "n": 448,
+    "finish": {
+      "eos": 438,
+      "length": 10
+    }
+  },
+  "fallback14/formal": {
+    "n": 2048,
+    "finish": {
+      "eos": 2048
+    }
+  }
+}

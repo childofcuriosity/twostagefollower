@@ -1,0 +1,83 @@
+{
+  "phase": "explore",
+  "length": 10,
+  "results": {
+    "STEP": {
+      "n": 32,
+      "correct": 0,
+      "rate": 0.0,
+      "header_compliance": 0.09375,
+      "first_errors": {
+        "numeric": 22,
+        "format": 2,
+        "tool_or_order": 8
+      },
+      "finish_reasons": {
+        "eos": 32
+      },
+      "mean_output_tokens": 219.15625,
+      "mean_text_tokens": 218.15625,
+      "mean_input_tokens": 481.0,
+      "generate_seconds": 10.04261040687561,
+      "run": {
+        "n": 32,
+        "condition": "STEP",
+        "length": 10,
+        "phase": "explore",
+        "model_load_seconds": 15.772438526153564,
+        "wall_seconds": 10.195781230926514,
+        "generate_seconds_all_records": 10.04261040687561,
+        "generate_seconds_this_process": 10.04261040687561,
+        "continued_records": 0,
+        "prediction_sha256": "98e3a2147729222e13075e367c7374d26e65dbd177aba79f3a7654e6f158d2de",
+        "finished": 1790554800.9938524,
+        "max_gpu_memory_bytes": 18371694080
+      }
+    },
+    "NAME": {
+      "n": 32,
+      "correct": 0,
+      "rate": 0.0,
+      "header_compliance": 0.28125,
+      "first_errors": {
+        "numeric": 23,
+        "tool_or_order": 9
+      },
+      "finish_reasons": {
+        "eos": 32
+      },
+      "mean_output_tokens": 249.6875,
+      "mean_text_tokens": 248.6875,
+      "mean_input_tokens": 485.0,
+      "generate_seconds": 10.628522634506226,
+      "run": {
+        "n": 32,
+        "condition": "NAME",
+        "length": 10,
+        "phase": "explore",
+        "model_load_seconds": 15.90524673461914,
+        "wall_seconds": 10.789041996002197,
+        "generate_seconds_all_records": 10.628522634506226,
+        "generate_seconds_this_process": 10.628522634506226,
+        "continued_records": 0,
+        "prediction_sha256": "aa2e14ef1182ace4171639b4deef5fb46c539d8fdf6be7b9936405abe522c937",
+        "finished": 1790554801.711878,
+        "max_gpu_memory_bytes": 18393161216
+      }
+    }
+  },
+  "paired_vs_STEP": {
+    "NAME": {
+      "difference": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "better": 0,
+      "worse": 0,
+      "both_correct": 0,
+      "method": "10000 paired item percentile bootstrap; fixed analysis seed 740001"
+    }
+  },
+  "legacy_sha256": "de5d7eecf2e3407b1dabf296534cd8d54caa8d9433bc4f10bad12017b2e93f27"
+}

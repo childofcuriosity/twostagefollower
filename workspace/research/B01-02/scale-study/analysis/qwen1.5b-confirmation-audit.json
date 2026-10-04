@@ -1,0 +1,323 @@
+{
+  "utc": "2026-09-24T10:31:57.897369+00:00",
+  "model": "qwen1.5b",
+  "records_checked": 3360,
+  "summary": [
+    {
+      "tag": "frozen-with-library",
+      "depth": 3,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0,
+      "budget_hit": 1
+    },
+    {
+      "tag": "frozen-with-library",
+      "depth": 4,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0,
+      "budget_hit": 0.9895833333333334
+    },
+    {
+      "tag": "frozen-with-library",
+      "depth": 5,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0,
+      "budget_hit": 0.9791666666666666
+    },
+    {
+      "tag": "frozen-with-library",
+      "depth": 6,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0,
+      "budget_hit": 0.96875
+    },
+    {
+      "tag": "frozen-with-library",
+      "depth": 8,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0,
+      "budget_hit": 0.9895833333333334
+    },
+    {
+      "tag": "flat-s11",
+      "depth": 3,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.9583333333333334,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s11",
+      "depth": 4,
+      "n": 96,
+      "accuracy": 0.010416666666666666,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.8333333333333334,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s11",
+      "depth": 5,
+      "n": 96,
+      "accuracy": 0.010416666666666666,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.8020833333333334,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s11",
+      "depth": 6,
+      "n": 96,
+      "accuracy": 0.010416666666666666,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.8958333333333334,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s11",
+      "depth": 8,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.6666666666666666,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s11",
+      "depth": 3,
+      "n": 96,
+      "accuracy": 0.5416666666666666,
+      "strict_trace": 0.5416666666666666,
+      "exact_two_tools_early_answer": 0.375,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s11",
+      "depth": 4,
+      "n": 96,
+      "accuracy": 0.23958333333333334,
+      "strict_trace": 0.23958333333333334,
+      "exact_two_tools_early_answer": 0.17708333333333334,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s11",
+      "depth": 5,
+      "n": 96,
+      "accuracy": 0.041666666666666664,
+      "strict_trace": 0.041666666666666664,
+      "exact_two_tools_early_answer": 0.020833333333333332,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s11",
+      "depth": 6,
+      "n": 96,
+      "accuracy": 0.010416666666666666,
+      "strict_trace": 0.010416666666666666,
+      "exact_two_tools_early_answer": 0.052083333333333336,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s11",
+      "depth": 8,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.0625,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s22",
+      "depth": 3,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.8020833333333334,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s22",
+      "depth": 4,
+      "n": 96,
+      "accuracy": 0.010416666666666666,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.8020833333333334,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s22",
+      "depth": 5,
+      "n": 96,
+      "accuracy": 0.010416666666666666,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.84375,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s22",
+      "depth": 6,
+      "n": 96,
+      "accuracy": 0.010416666666666666,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.8333333333333334,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s22",
+      "depth": 8,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.9166666666666666,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s22",
+      "depth": 3,
+      "n": 96,
+      "accuracy": 0.6354166666666666,
+      "strict_trace": 0.6354166666666666,
+      "exact_two_tools_early_answer": 0.28125,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s22",
+      "depth": 4,
+      "n": 96,
+      "accuracy": 0.2708333333333333,
+      "strict_trace": 0.2708333333333333,
+      "exact_two_tools_early_answer": 0.11458333333333333,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s22",
+      "depth": 5,
+      "n": 96,
+      "accuracy": 0.09375,
+      "strict_trace": 0.09375,
+      "exact_two_tools_early_answer": 0,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s22",
+      "depth": 6,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s22",
+      "depth": 8,
+      "n": 96,
+      "accuracy": 0.03125,
+      "strict_trace": 0.03125,
+      "exact_two_tools_early_answer": 0,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s33",
+      "depth": 3,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.8645833333333334,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s33",
+      "depth": 4,
+      "n": 96,
+      "accuracy": 0.010416666666666666,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.7916666666666666,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s33",
+      "depth": 5,
+      "n": 96,
+      "accuracy": 0.010416666666666666,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.78125,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s33",
+      "depth": 6,
+      "n": 96,
+      "accuracy": 0.010416666666666666,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.7291666666666666,
+      "budget_hit": 0
+    },
+    {
+      "tag": "flat-s33",
+      "depth": 8,
+      "n": 96,
+      "accuracy": 0.010416666666666666,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.6354166666666666,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s33",
+      "depth": 3,
+      "n": 96,
+      "accuracy": 0.3958333333333333,
+      "strict_trace": 0.3958333333333333,
+      "exact_two_tools_early_answer": 0.5208333333333334,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s33",
+      "depth": 4,
+      "n": 96,
+      "accuracy": 0.125,
+      "strict_trace": 0.125,
+      "exact_two_tools_early_answer": 0.34375,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s33",
+      "depth": 5,
+      "n": 96,
+      "accuracy": 0.041666666666666664,
+      "strict_trace": 0.041666666666666664,
+      "exact_two_tools_early_answer": 0.2604166666666667,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s33",
+      "depth": 6,
+      "n": 96,
+      "accuracy": 0.010416666666666666,
+      "strict_trace": 0.010416666666666666,
+      "exact_two_tools_early_answer": 0.2916666666666667,
+      "budget_hit": 0
+    },
+    {
+      "tag": "macro-s33",
+      "depth": 8,
+      "n": 96,
+      "accuracy": 0,
+      "strict_trace": 0,
+      "exact_two_tools_early_answer": 0.125,
+      "budget_hit": 0
+    }
+  ],
+  "notes": "Interim single-model audit; frozen receives definitions, trained conditions do not. No scale-effect inference, no changes to scheduled experiments."
+}

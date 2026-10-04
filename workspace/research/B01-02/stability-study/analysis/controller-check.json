@@ -1,0 +1,13 @@
+{
+  "checks": [
+    "phase_adapter_routing",
+    "batched_reference_correct",
+    "all_tokens_model_owned",
+    "wrong_tool_not_corrected",
+    "wrong_state_preserved_in_next_model_context",
+    "early_done_allowed_and_scored_wrong",
+    "missing_EndTool_fails"
+  ],
+  "passed": true,
+  "mock_only": true
+}

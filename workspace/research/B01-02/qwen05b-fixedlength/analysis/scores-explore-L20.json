@@ -1,0 +1,136 @@
+{
+  "length": 20,
+  "phase": "explore",
+  "manifest_sha256": "2ffd29df57dc6352fb700b63e757b1ca66579377bb74358e6069b7f46856ef11",
+  "old_audit_sha256": "de5d7eecf2e3407b1dabf296534cd8d54caa8d9433bc4f10bad12017b2e93f27",
+  "results": {
+    "flat": {
+      "mean": 0.9889322916666666,
+      "sample_sd": 0.0022552744890219755,
+      "runs": [
+        {
+          "seed": 11,
+          "correct": 505,
+          "n": 512,
+          "rate": 0.986328125,
+          "counts": {
+            "under_ops": 1,
+            "over_ops": 2,
+            "wrong_expansion": 4,
+            "numeric_error": 2,
+            "generation_limit": 0,
+            "correct": 505
+          },
+          "mean_generated_tokens": 563.09375,
+          "gpu_hours": 0.14273649613062542,
+          "predictions_sha256": "acba901ad76b462b565a7e3682bc4315e8d224834ab43e534b03cf60b8e52849"
+        },
+        {
+          "seed": 22,
+          "correct": 507,
+          "n": 512,
+          "rate": 0.990234375,
+          "counts": {
+            "under_ops": 0,
+            "over_ops": 3,
+            "wrong_expansion": 5,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 507
+          },
+          "mean_generated_tokens": 563.34375,
+          "gpu_hours": 0.14385620401965246,
+          "predictions_sha256": "47333ba709f8607132bc434139f52db1029d9e5c7ac52bf9822501a70234aa54"
+        },
+        {
+          "seed": 33,
+          "correct": 507,
+          "n": 512,
+          "rate": 0.990234375,
+          "counts": {
+            "under_ops": 0,
+            "over_ops": 3,
+            "wrong_expansion": 5,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 507
+          },
+          "mean_generated_tokens": 563.17578125,
+          "gpu_hours": 0.14323440379566615,
+          "predictions_sha256": "b7f091fb31fe58c22e6f9fc74f3095a010a5018992ac8c73fac1478508d77094"
+        }
+      ]
+    },
+    "macro": {
+      "mean": 0.9967447916666666,
+      "sample_sd": 0.0011276372445109878,
+      "runs": [
+        {
+          "seed": 11,
+          "correct": 510,
+          "n": 512,
+          "rate": 0.99609375,
+          "counts": {
+            "under_ops": 2,
+            "over_ops": 0,
+            "wrong_expansion": 2,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 510
+          },
+          "mean_generated_tokens": 562.92578125,
+          "gpu_hours": 0.14243044157822926,
+          "predictions_sha256": "7764cb97f02a674cb9c071294b32173177da6216335a457a1884fa5fd40191be"
+        },
+        {
+          "seed": 22,
+          "correct": 511,
+          "n": 512,
+          "rate": 0.998046875,
+          "counts": {
+            "under_ops": 1,
+            "over_ops": 0,
+            "wrong_expansion": 1,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 511
+          },
+          "mean_generated_tokens": 562.80078125,
+          "gpu_hours": 0.14087061438295576,
+          "predictions_sha256": "f1644eed2d393c4dcefefee75ec6fc04e6b2419ad26034f36bd18c4231d6ea4c"
+        },
+        {
+          "seed": 33,
+          "correct": 510,
+          "n": 512,
+          "rate": 0.99609375,
+          "counts": {
+            "under_ops": 2,
+            "over_ops": 0,
+            "wrong_expansion": 2,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 510
+          },
+          "mean_generated_tokens": 562.92578125,
+          "gpu_hours": 0.14317970441447364,
+          "predictions_sha256": "6119b2c24692a22182a00c6dfcb39d8b22b0c10ee0f22c6db1eb8838a2d2074b"
+        }
+      ]
+    }
+  },
+  "paired_vs_flat": {
+    "macro": {
+      "mean": 0.0078125,
+      "sample_sd": 0.001953125,
+      "positive_seeds": 3,
+      "negative_seeds": 0,
+      "per_seed": {
+        "11": 0.009765625,
+        "22": 0.0078125,
+        "33": 0.005859375
+      }
+    }
+  },
+  "scored_utc": "2026-09-27T14:46:25Z"
+}

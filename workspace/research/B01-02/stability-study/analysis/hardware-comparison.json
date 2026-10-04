@@ -1,0 +1,301 @@
+{
+  "weights": [
+    {
+      "condition": "joint",
+      "seed": 11,
+      "final_equals_checkpoint512": true,
+      "sha256": "893621ba9089df0f5481e0110b4fe8474c06918c7d3616965424cc8ef33c81e8"
+    },
+    {
+      "condition": "joint",
+      "seed": 22,
+      "final_equals_checkpoint512": true,
+      "sha256": "9f2288f29c2104496e8119957ecee3dbccf19b568ee85f1e6cbe741bb0acbe25"
+    },
+    {
+      "condition": "joint",
+      "seed": 33,
+      "final_equals_checkpoint512": true,
+      "sha256": "9a980cae911083c20861c9f9ed8f9724057adc59877bdaee2309d9c2d0d9271b"
+    },
+    {
+      "condition": "order_oracle",
+      "seed": 11,
+      "final_equals_checkpoint512": true,
+      "sha256": "18524eeac9b19ad12cbdcdd758e5317e75934bb9dee44389c907b5f3d663f5a9"
+    },
+    {
+      "condition": "order_oracle",
+      "seed": 22,
+      "final_equals_checkpoint512": true,
+      "sha256": "aef489c2b87649dd142ed4e1cc5e1ae78b4ea48a86c1d94e0b079fb99dc97e7a"
+    },
+    {
+      "condition": "order_oracle",
+      "seed": 33,
+      "final_equals_checkpoint512": true,
+      "sha256": "92371be62f3c427876998652eef6d223c61cc295a1193ff2928c2349ca96d719"
+    },
+    {
+      "condition": "operation_oracle",
+      "seed": 11,
+      "final_equals_checkpoint512": true,
+      "sha256": "7558bc939bff17f27183f5bba3363d8b4b3dd95bbac02bad01c14b8732b02c37"
+    },
+    {
+      "condition": "operation_oracle",
+      "seed": 22,
+      "final_equals_checkpoint512": true,
+      "sha256": "45963bf0a2607d6a969f0555ef3e58d013c19c10998dc05f724f294f7c065bb4"
+    },
+    {
+      "condition": "operation_oracle",
+      "seed": 33,
+      "final_equals_checkpoint512": true,
+      "sha256": "5dbf3158b57121c0d3138d9492eb53a52401f802189983883c351c3427165adb"
+    }
+  ],
+  "results": [
+    {
+      "condition": "joint",
+      "seed": 11,
+      "mode": "joint",
+      "n": 480,
+      "exact_records": 460,
+      "same_grades": 460,
+      "old_complete": 216,
+      "new_complete": 211,
+      "old_wrong_new_correct": 4,
+      "old_correct_new_wrong": 9,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/evaluation-joint-independent.jsonl": "2f94fea89e1875e6e49501118faf55c3495522530b9bbee99cc7d2d558475889",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-joint-s11/step512-joint-independent.jsonl": "527a41400365b7967f5c20f3b0f7a87d15706b510baa09e8cbace9250dc511f8"
+      }
+    },
+    {
+      "condition": "joint",
+      "seed": 11,
+      "mode": "order_oracle",
+      "n": 480,
+      "exact_records": 475,
+      "same_grades": 475,
+      "old_complete": 407,
+      "new_complete": 407,
+      "old_wrong_new_correct": 2,
+      "old_correct_new_wrong": 2,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/evaluation-order_oracle-independent.jsonl": "1f425aec1cda4a77b6b63cd983c96047926dfc52d077ba5fb2162ccc06ded676",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-joint-s11/step512-order_oracle-independent.jsonl": "3984141bf7acafdb46c19c6fa6896be166ea4fa1fcd77b61cc7511119e6766e1"
+      }
+    },
+    {
+      "condition": "joint",
+      "seed": 11,
+      "mode": "operation_oracle",
+      "n": 480,
+      "exact_records": 467,
+      "same_grades": 467,
+      "old_complete": 253,
+      "new_complete": 248,
+      "old_wrong_new_correct": 3,
+      "old_correct_new_wrong": 8,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/evaluation-operation_oracle-independent.jsonl": "e9c0762c8c386864855c2898b5f64ff7a19c68093aeb57bb4d537173ee71e13d",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-joint-s11/step512-operation_oracle-independent.jsonl": "3914f0988564096ab3a865e6201027144af3f3e3ffea2b9d9bcfb9b6c89ffc8e"
+      }
+    },
+    {
+      "condition": "joint",
+      "seed": 22,
+      "mode": "joint",
+      "n": 480,
+      "exact_records": 437,
+      "same_grades": 453,
+      "old_complete": 143,
+      "new_complete": 142,
+      "old_wrong_new_correct": 2,
+      "old_correct_new_wrong": 3,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/evaluation-joint-independent.jsonl": "cfba60209418af5e070020fe9f5da6e799e318db140e589675cedfd8998519a3",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-joint-s22/step512-joint-independent.jsonl": "914804bdd9aea7d4216b891bf8dfb855fdaff520cc0e1c593b7bbd3cd84ab4da"
+      }
+    },
+    {
+      "condition": "joint",
+      "seed": 22,
+      "mode": "order_oracle",
+      "n": 480,
+      "exact_records": 460,
+      "same_grades": 463,
+      "old_complete": 307,
+      "new_complete": 304,
+      "old_wrong_new_correct": 1,
+      "old_correct_new_wrong": 4,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/evaluation-order_oracle-independent.jsonl": "7bed0c5d6fe9fc493c38ad36ddd7cfad2c24f31d105c91a0584c0dbecd115e62",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-joint-s22/step512-order_oracle-independent.jsonl": "f836c067bdf9267f22b057c79babfdd16370f1e92074425888b4947dcb2618ff"
+      }
+    },
+    {
+      "condition": "joint",
+      "seed": 22,
+      "mode": "operation_oracle",
+      "n": 480,
+      "exact_records": 463,
+      "same_grades": 463,
+      "old_complete": 159,
+      "new_complete": 159,
+      "old_wrong_new_correct": 3,
+      "old_correct_new_wrong": 3,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/evaluation-operation_oracle-independent.jsonl": "2daa07bab1ec9981be96d65822a829f388e4d724155be544884a1b93dce62215",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-joint-s22/step512-operation_oracle-independent.jsonl": "5e2042905269e1a9cdfcecdf5dd66f1b0188d7016860dc9d968290c5031b73d2"
+      }
+    },
+    {
+      "condition": "joint",
+      "seed": 33,
+      "mode": "joint",
+      "n": 480,
+      "exact_records": 448,
+      "same_grades": 459,
+      "old_complete": 230,
+      "new_complete": 230,
+      "old_wrong_new_correct": 1,
+      "old_correct_new_wrong": 1,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/evaluation-joint-independent.jsonl": "e537ae4042a263c6d16f6e96ca5949655887d4f418cf263cca1445020eb3df91",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-joint-s33/step512-joint-independent.jsonl": "238cae0d9147c9be5820135f210f1ff7197b249369d0415d2bb96bca2e11eabb"
+      }
+    },
+    {
+      "condition": "joint",
+      "seed": 33,
+      "mode": "order_oracle",
+      "n": 480,
+      "exact_records": 455,
+      "same_grades": 464,
+      "old_complete": 357,
+      "new_complete": 360,
+      "old_wrong_new_correct": 6,
+      "old_correct_new_wrong": 3,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/evaluation-order_oracle-independent.jsonl": "1db09fb7ea4c8e0a4f336c676f474353f61e387af7a19a20864cdb879921dc1f",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-joint-s33/step512-order_oracle-independent.jsonl": "968cbe0456c690e79da416e3c85bd2bc3eb3e6d71602bd69a53fe7ed34e8126d"
+      }
+    },
+    {
+      "condition": "joint",
+      "seed": 33,
+      "mode": "operation_oracle",
+      "n": 480,
+      "exact_records": 469,
+      "same_grades": 469,
+      "old_complete": 251,
+      "new_complete": 252,
+      "old_wrong_new_correct": 2,
+      "old_correct_new_wrong": 1,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/evaluation-operation_oracle-independent.jsonl": "0afe4635fc0894cc0c8090659053d127dc554222b719b1334ea964d5576d13b1",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-joint-s33/step512-operation_oracle-independent.jsonl": "23610153e667ff6ae1794c550ff4faf4f14cc641f9fe26be28fdcc93071e2e78"
+      }
+    },
+    {
+      "condition": "order_oracle",
+      "seed": 11,
+      "mode": "order_oracle",
+      "n": 480,
+      "exact_records": 458,
+      "same_grades": 458,
+      "old_complete": 306,
+      "new_complete": 305,
+      "old_wrong_new_correct": 3,
+      "old_correct_new_wrong": 4,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s11/evaluation-order_oracle-independent.jsonl": "790d23798c90e90b079cf8462a8688bdfe2a274dc19bf83800d52ed505fc23a8",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-order_oracle-s11/step512-order_oracle-independent.jsonl": "833e6f444fc4cc74b68db94183712dfd721260971d4bf767d6721a4bc9d1a0a7"
+      }
+    },
+    {
+      "condition": "order_oracle",
+      "seed": 22,
+      "mode": "order_oracle",
+      "n": 480,
+      "exact_records": 468,
+      "same_grades": 475,
+      "old_complete": 412,
+      "new_complete": 415,
+      "old_wrong_new_correct": 3,
+      "old_correct_new_wrong": 0,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s22/evaluation-order_oracle-independent.jsonl": "7e3eea2bc3cf287e0a55751bb8a430947c7188c5becfde461fbaf24ed0d52723",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-order_oracle-s22/step512-order_oracle-independent.jsonl": "d3c1696e8c9b1d5ce405b79910a776e57ef15d4aa20bb6e1d47a0dbb3376f14e"
+      }
+    },
+    {
+      "condition": "order_oracle",
+      "seed": 33,
+      "mode": "order_oracle",
+      "n": 480,
+      "exact_records": 476,
+      "same_grades": 476,
+      "old_complete": 427,
+      "new_complete": 424,
+      "old_wrong_new_correct": 0,
+      "old_correct_new_wrong": 3,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s33/evaluation-order_oracle-independent.jsonl": "6a8a6f2b68a7d672ad07af3605a6cd4f7834bb06092d751c3f88a817a601d7d5",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-order_oracle-s33/step512-order_oracle-independent.jsonl": "4048afafe9ad839f6e4543162797b54b3b104ff2ffc4e78e9b39f2b307222e65"
+      }
+    },
+    {
+      "condition": "operation_oracle",
+      "seed": 11,
+      "mode": "operation_oracle",
+      "n": 480,
+      "exact_records": 465,
+      "same_grades": 465,
+      "old_complete": 403,
+      "new_complete": 400,
+      "old_wrong_new_correct": 2,
+      "old_correct_new_wrong": 5,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl": "d7a6451c0bbb7a8e0b9acb1f1e843f877aa6c43be6ee2efc2c19ebe626de8dbf",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-operation_oracle-s11/step512-operation_oracle-independent.jsonl": "c72b6dabd6a45293e1bb76f7653b5023c6edd8f29ea447b9139778f69b454ee3"
+      }
+    },
+    {
+      "condition": "operation_oracle",
+      "seed": 22,
+      "mode": "operation_oracle",
+      "n": 480,
+      "exact_records": 454,
+      "same_grades": 454,
+      "old_complete": 200,
+      "new_complete": 196,
+      "old_wrong_new_correct": 5,
+      "old_correct_new_wrong": 9,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl": "16b6a5c082f37e8c9be8d81261a5a29ca08bbe8d1dcb28d6b0311f297b418dfd",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-operation_oracle-s22/step512-operation_oracle-independent.jsonl": "2300c4f6197a6ac1bb250c9c42ff109792d00026256c9b9e17433d224bbd48cf"
+      }
+    },
+    {
+      "condition": "operation_oracle",
+      "seed": 33,
+      "mode": "operation_oracle",
+      "n": 480,
+      "exact_records": 475,
+      "same_grades": 475,
+      "old_complete": 386,
+      "new_complete": 387,
+      "old_wrong_new_correct": 3,
+      "old_correct_new_wrong": 2,
+      "sources": {
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl": "45c9ab80012d49ec92b089f4ed02f3a9ec2b5745d014a93cdb1dc763342b5750",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/runs/curve-qwen3b-operation_oracle-s33/step512-operation_oracle-independent.jsonl": "b38e715533e29af33fb3d47e202288f946925729716de095d0bc7dc808420a94"
+      }
+    }
+  ],
+  "note": "Weights and adapter configurations equal. Old 5090 and current PRO6000 executions can differ numerically; this comparison does not isolate the exact kernel or driver cause. All main 3B contrasts use current same-hardware outputs."
+}

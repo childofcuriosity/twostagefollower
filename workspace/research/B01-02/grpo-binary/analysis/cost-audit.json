@@ -1,0 +1,173 @@
+{
+  "finished": 1790607750.836114,
+  "jobs": [
+    {
+      "job": "precheck-resume-NAME.json",
+      "kind": "precheck",
+      "returncode": 0,
+      "seconds": 337.08038663864136,
+      "allocated_gpu_seconds": 674.1607732772827,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "formal-STEP-s302.json",
+      "kind": "formal_training",
+      "returncode": 0,
+      "seconds": 4160.848300695419,
+      "allocated_gpu_seconds": 8321.696601390839,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "precheck-remote65-v2.json",
+      "kind": "precheck",
+      "returncode": 0,
+      "seconds": 432.6883659362793,
+      "allocated_gpu_seconds": 865.3767318725586,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "formal-NAME-s302.json",
+      "kind": "formal_training",
+      "returncode": 0,
+      "seconds": 4216.347338438034,
+      "allocated_gpu_seconds": 8432.694676876068,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "formal-NAME-s301.json",
+      "kind": "formal_training",
+      "returncode": 0,
+      "seconds": 4244.219609737396,
+      "allocated_gpu_seconds": 8488.439219474792,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "precheck-v2-resume-STEP.json",
+      "kind": "precheck",
+      "returncode": 0,
+      "seconds": 353.05693793296814,
+      "allocated_gpu_seconds": 706.1138758659363,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "evaluator-2.json",
+      "kind": "evaluation_worker",
+      "returncode": 0,
+      "seconds": 4505.343147754669,
+      "allocated_gpu_seconds": 4505.343147754669,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "precheck-remote65-retry1.json",
+      "kind": "precheck",
+      "returncode": 0,
+      "seconds": 418.87063241004944,
+      "allocated_gpu_seconds": 837.7412648200989,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "precheck-remote70-retry1.json",
+      "kind": "precheck",
+      "returncode": 0,
+      "seconds": 418.5021164417267,
+      "allocated_gpu_seconds": 837.0042328834534,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "precheck-resume-STEP.json",
+      "kind": "precheck",
+      "returncode": 0,
+      "seconds": 337.2483410835266,
+      "allocated_gpu_seconds": 674.4966821670532,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "evaluator-0.json",
+      "kind": "evaluation_worker",
+      "returncode": 0,
+      "seconds": 4504.091952562332,
+      "allocated_gpu_seconds": 4504.091952562332,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "formal-NAME-s303.json",
+      "kind": "formal_training",
+      "returncode": 0,
+      "seconds": 4227.398788690567,
+      "allocated_gpu_seconds": 8454.797577381134,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "evaluator-1.json",
+      "kind": "evaluation_worker",
+      "returncode": 0,
+      "seconds": 4503.513890504837,
+      "allocated_gpu_seconds": 4503.513890504837,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "precheck-v2-resume-NAME.json",
+      "kind": "precheck",
+      "returncode": 0,
+      "seconds": 349.2566351890564,
+      "allocated_gpu_seconds": 698.5132703781128,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "formal-STEP-s301.json",
+      "kind": "formal_training",
+      "returncode": 0,
+      "seconds": 4180.947309732437,
+      "allocated_gpu_seconds": 8361.894619464874,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "precheck-remote70-v2.json",
+      "kind": "precheck",
+      "returncode": 0,
+      "seconds": 433.4013650417328,
+      "allocated_gpu_seconds": 866.8027300834656,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "evaluator-3.json",
+      "kind": "evaluation_worker",
+      "returncode": 0,
+      "seconds": 4505.136439561844,
+      "allocated_gpu_seconds": 4505.136439561844,
+      "includes_initialization_and_idle": true
+    },
+    {
+      "job": "formal-STEP-s303.json",
+      "kind": "formal_training",
+      "returncode": 0,
+      "seconds": 4175.412576675415,
+      "allocated_gpu_seconds": 8350.82515335083,
+      "includes_initialization_and_idle": true
+    }
+  ],
+  "unmeasured_startup_failures": [
+    {
+      "job": "precheck-remote65.json",
+      "reason": "Initial launcher predates exit recorder; torchrun argument parsing failed before train.py executed; duration not recorded."
+    },
+    {
+      "job": "precheck-remote70.json",
+      "reason": "Initial launcher predates exit recorder; torchrun argument parsing failed before train.py executed; duration not recorded."
+    }
+  ],
+  "gpu_hours": {
+    "precheck": 1.711169322596656,
+    "formal_training": 14.00287440220515,
+    "evaluation_worker": 5.005023730662134,
+    "evaluation_task_wall_gpu_hours": 1.5502996686432096,
+    "evaluation_generate_gpu_hours": 1.5033469923999574
+  },
+  "evaluation_output_tokens": 1321074,
+  "notes": [
+    "Allocated GPU seconds = assigned device count times launcher job wall duration, including initialization, saving, idle waits; not GPU kernel active time.",
+    "Only jobs with measured exit durations are summed; two initial argument-parser failures lack duration and are separately listed.",
+    "Short infrastructure probes, data building and CPU analysis are outside these model-job timings.",
+    "Evaluation worker totals include waiting for checkpoints; task and generate time separately reported."
+  ]
+}

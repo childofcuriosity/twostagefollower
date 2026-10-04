@@ -1,0 +1,11 @@
+{
+  "length": 35,
+  "phase": "explore",
+  "condition": "flat",
+  "seed": 33,
+  "gpu": 2,
+  "exit_code": 0,
+  "seconds": 900.7098190784454,
+  "log": "logs/explore-L35-flat-s33.log",
+  "finished": 1790522879.52845
+}

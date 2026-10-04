@@ -1,0 +1,12 @@
+{
+  "registered_runs": 36,
+  "completed_runs": 36,
+  "expected_trajectories": 62400,
+  "observed_trajectories": 62400,
+  "missing": [],
+  "complete": true,
+  "new_process_exact_replays": 480,
+  "fixed_data_and_model_manifests": true,
+  "all_formal_training_losses_finite": true,
+  "inference_and_protocol_code_unchanged": true
+}

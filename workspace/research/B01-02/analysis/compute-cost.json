@@ -1,0 +1,17 @@
+{
+  "reserved_gpu_hours_by_phase": {
+    "core": 0.7319525866376029,
+    "intervention": 0.3632282552454207,
+    "baseline": 0.044275994035932756,
+    "alignment": 0.38218059175544317,
+    "routing": 0.04403663416703542,
+    "discovery": 0.003594921562406752,
+    "calibration_excluding_load": 0.0030717875560124716,
+    "secondary": 0.32348776631885107
+  },
+  "total": 1.8958285372787052,
+  "not_kernel_busy_time": true,
+  "excludes_install_download_idle_time": true,
+  "baseline_initial_argument_failures_reserved_seconds": 20.11,
+  "note": "Small job startup overhead and calibration model-load time are not fully instrumented. No claim of exact energy consumption."
+}

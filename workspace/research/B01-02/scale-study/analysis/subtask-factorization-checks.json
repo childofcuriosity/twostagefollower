@@ -1,0 +1,5 @@
+{
+  "synthetic_cases": 4,
+  "all_macro_recomposition_matches_strict": 10368,
+  "note": "Same strict grader reused; fixtures independently exercise label, missing, truncation, arithmetic distinction."
+}

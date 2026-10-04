@@ -1,0 +1,74 @@
+{
+  "7b-L3": {
+    "passed": true,
+    "old_unique_excluded": 4582,
+    "sizes": {
+      "train": 4096,
+      "validation": 256,
+      "test": 512,
+      "precheck": 64
+    },
+    "cap": 256,
+    "inherited_hyperparameters_unchanged": true
+  },
+  "7b-L5": {
+    "passed": true,
+    "old_unique_excluded": 4188,
+    "sizes": {
+      "train": 4096,
+      "validation": 256,
+      "test": 512,
+      "precheck": 64
+    },
+    "cap": 512,
+    "inherited_hyperparameters_unchanged": true
+  },
+  "14b-L5": {
+    "passed": true,
+    "old_unique_excluded": 4188,
+    "sizes": {
+      "train": 4096,
+      "validation": 256,
+      "test": 512,
+      "precheck": 64
+    },
+    "cap": 512,
+    "inherited_hyperparameters_unchanged": true
+  },
+  "14b-L6": {
+    "passed": true,
+    "old_unique_excluded": 208,
+    "sizes": {
+      "train": 4096,
+      "validation": 256,
+      "test": 512,
+      "precheck": 64
+    },
+    "cap": 512,
+    "inherited_hyperparameters_unchanged": true
+  },
+  "14b-L7": {
+    "passed": true,
+    "old_unique_excluded": 32,
+    "sizes": {
+      "train": 4096,
+      "validation": 256,
+      "test": 512,
+      "precheck": 64
+    },
+    "cap": 512,
+    "inherited_hyperparameters_unchanged": true
+  },
+  "7b-L4": {
+    "passed": true,
+    "old_unique_excluded": 4540,
+    "sizes": {
+      "train": 4096,
+      "validation": 256,
+      "test": 512,
+      "precheck": 64
+    },
+    "cap": 256,
+    "inherited_hyperparameters_unchanged": true
+  }
+}

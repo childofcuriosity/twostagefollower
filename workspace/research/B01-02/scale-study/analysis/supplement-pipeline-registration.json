@@ -1,0 +1,10 @@
+{
+  "utc": "2026-09-24T10:18:25Z",
+  "hashes": {
+    "src/train_supplement.py": "0a4ea1f2134bb8051877830897c76c56b7e23b4262f5d106dae622f36d55930d",
+    "src/analyze_supplement.py": "50c17dfad159ea02d5ea0f1827c9dec1b6b08b7d60979bd053d4749d16a7a3bc",
+    "src/download_instruct_after_base.py": "072f937d74345b2da00816aa20bbd4cf99279c5fc8a455141c2d4b68e6f3c4d5",
+    "src/token_audit.py": "85d2e77a2e63a4c6991cee285df4d0646a0e483ce6dee440582eb265c2790948",
+    "src/launch_supplement.py": "bfca9185e246fdb6d4378bf5f57acad5581a2a7e68e40628ab392582fb1e4416"
+  }
+}

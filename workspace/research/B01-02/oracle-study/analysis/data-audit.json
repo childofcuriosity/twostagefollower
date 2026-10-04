@@ -1,0 +1,65 @@
+{
+  "train": {
+    "n": 4096,
+    "lengths": {
+      "2": 3702,
+      "1": 394
+    },
+    "splits": {
+      "train": 4096
+    },
+    "programs": 90,
+    "unique_inputs": 4096
+  },
+  "test": {
+    "n": 560,
+    "lengths": {
+      "2": 117,
+      "1": 11,
+      "3": 144,
+      "4": 144,
+      "5": 144
+    },
+    "splits": {
+      "iid": 128,
+      "ood": 384,
+      "pressure": 48
+    },
+    "programs": 172,
+    "unique_inputs": 560,
+    "exact_overlap_train": 0,
+    "program_overlap_train_by_split": {
+      "iid": 128,
+      "ood": 0,
+      "pressure": 0
+    }
+  },
+  "independent": {
+    "n": 480,
+    "lengths": {
+      "3": 96,
+      "4": 96,
+      "5": 96,
+      "6": 96,
+      "8": 96
+    },
+    "splits": {
+      "length3": 96,
+      "length4": 96,
+      "length5": 96,
+      "length6": 96,
+      "length8": 96
+    },
+    "programs": 120,
+    "unique_inputs": 480,
+    "exact_overlap_train": 0,
+    "program_overlap_train_by_split": {
+      "length3": 0,
+      "length4": 0,
+      "length5": 0,
+      "length6": 0,
+      "length8": 0
+    },
+    "exact_overlap_test": 0
+  }
+}

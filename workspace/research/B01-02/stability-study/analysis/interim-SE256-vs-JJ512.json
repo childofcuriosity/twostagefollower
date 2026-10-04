@@ -1,0 +1,38 @@
+{
+  "results": [
+    {
+      "seed": 11,
+      "n": 480,
+      "composition": 430,
+      "baseline": 354,
+      "delta_pp": 15.833333333333334,
+      "sources": {
+        "workspace/research/B01-02/stability-study/runs/compose-qwen32b-s11/step256-SE-independent.jsonl": "7cfc677414cda2d22b1f62c42b799a7dca466cd55a226be20431d34a09304442",
+        "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s11/evaluation-joint-independent.jsonl": "4b7b507fd29af4ed435df38b58ea11ba0728187db09f4f8eb3fb68f2d20903a2"
+      }
+    },
+    {
+      "seed": 22,
+      "n": 480,
+      "composition": 428,
+      "baseline": 437,
+      "delta_pp": -1.875,
+      "sources": {
+        "workspace/research/B01-02/stability-study/runs/compose-qwen32b-s22/step256-SE-independent.jsonl": "29d2ede97c16ff47fca71359e79b943949ea5e8bbdfce8b03768bb66aa509a91",
+        "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s22/evaluation-joint-independent.jsonl": "17d9efe478c715d7e26748781aa656cc59c67277e1912908f562ce745ea81b94"
+      }
+    },
+    {
+      "seed": 33,
+      "n": 480,
+      "composition": 473,
+      "baseline": 438,
+      "delta_pp": 7.291666666666667,
+      "sources": {
+        "workspace/research/B01-02/stability-study/runs/compose-qwen32b-s33/step256-SE-independent.jsonl": "d10fca0eef7fecbb842f96a6d0bb3746740a44544dfd0cce43354dd339d11af2",
+        "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s33/evaluation-joint-independent.jsonl": "2d0e1c0d7c5d7b627c4c1695615c7dbecb190d4bb27ee1c5b96a08243ebbb346"
+      }
+    }
+  ],
+  "note": "Completed files only, registered budget-exposure contrast. Preliminary: full jobs and final audit still pending."
+}

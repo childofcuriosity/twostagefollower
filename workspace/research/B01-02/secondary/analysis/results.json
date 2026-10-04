@@ -1,0 +1,76 @@
+{
+  "seed_differences": [
+    0.3046875,
+    0.16666666666666669,
+    0.2421875
+  ],
+  "mean_difference": 0.23784722222222224,
+  "seed_t_interval_95": [
+    0.06616174313564396,
+    0.4095327013088005
+  ],
+  "verification": "recomputed every answer, exact semantic split, actual target/input tokens matched",
+  "conditions": {
+    "flat": {
+      "iid": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "ood": [
+        0.09114583333333333,
+        0.09114583333333333,
+        0.11197916666666667
+      ],
+      "pressure": [
+        0.0,
+        0.020833333333333332,
+        0.0
+      ]
+    },
+    "macro": {
+      "iid": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "ood": [
+        0.3958333333333333,
+        0.2578125,
+        0.3541666666666667
+      ],
+      "pressure": [
+        0.0625,
+        0.10416666666666667,
+        0.041666666666666664
+      ]
+    }
+  },
+  "program_diagnostics": {
+    "flat-original-s11": {
+      "all_four_inputs_correct_fraction": 0.0,
+      "exact_primitive_sequence_accuracy": 0.0
+    },
+    "macro-original-s11": {
+      "all_four_inputs_correct_fraction": 0.2916666666666667,
+      "exact_primitive_sequence_accuracy": 0.3229166666666667
+    },
+    "flat-original-s22": {
+      "all_four_inputs_correct_fraction": 0.0,
+      "exact_primitive_sequence_accuracy": 0.0
+    },
+    "macro-original-s22": {
+      "all_four_inputs_correct_fraction": 0.13541666666666666,
+      "exact_primitive_sequence_accuracy": 0.16927083333333334
+    },
+    "flat-original-s33": {
+      "all_four_inputs_correct_fraction": 0.0,
+      "exact_primitive_sequence_accuracy": 0.010416666666666666
+    },
+    "macro-original-s33": {
+      "all_four_inputs_correct_fraction": 0.22916666666666666,
+      "exact_primitive_sequence_accuracy": 0.2916666666666667
+    }
+  },
+  "interpretation": "Post-hoc second generator with separately trained adapters; same proposed macro structures, different primitive semantics and input lengths. Not zero-shot transfer. Short binary strings have substantial accidental answer matches; report exact trace and all-four-input program metrics alongside accuracy."
+}

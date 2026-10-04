@@ -1,0 +1,3 @@
+# L2–9 quick pure-prompt supplement
+
+User authorized short tests on 2026-09-29. Original Qwen2.5-7B/14B-Instruct, no adapter, unchanged tool definitions/prompts/chat/greedy/strict scoring. New L=3,4,6,7,8,9:32 questions each, shared between models and STEP/NAME; seed620000+L, original data rule. Existing L2/L5 exploration results reused and labeled as historical. No new GRPO training. New lengths are post-hoc exploratory, not old preregistered formal tests. Target-based budget formula unchanged; common cap within each length across both models/conditions. Retain all raw outputs, EOS/limit evidence and failures.

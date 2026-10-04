@@ -1,0 +1,34 @@
+{
+  "utc": "2026-09-24T10:11:31Z",
+  "stage": "before any new model final scores inspected",
+  "conditions": [
+    "flat",
+    "macro"
+  ],
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "groups": [
+    {
+      "model": "qwen3b",
+      "lr": 0.0001
+    },
+    {
+      "model": "qwen32b",
+      "lr": 0.0001
+    },
+    {
+      "model": "qwen32b-instruct",
+      "lr": 0.0003
+    }
+  ],
+  "steps": 512,
+  "effective_batch": 32,
+  "purpose": "Symmetric low-LR sensitivity 3B/32B and separately reported 32B instruction model bridge; priority primary32B queue remains unchanged",
+  "input_format": "same original text for Base; official apply_chat_template with one user message for Instruct; train/test consistent",
+  "evaluation": "fixed final step old560 with and without definitions; all intermediate adapters retained but no test-selected checkpoints",
+  "source_sha256": "0a4ea1f2134bb8051877830897c76c56b7e23b4262f5d106dae622f36d55930d",
+  "frozen_instruct_baseline": "once, zero-shot official chat template; no hidden-definition fewshot examples"
+}

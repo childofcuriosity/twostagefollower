@@ -1,0 +1,7 @@
+{
+  "correct_trace_cases": 144,
+  "mutations_per_case": 3,
+  "primitive_checks": 60000,
+  "passed": true,
+  "score_sha256": "d503e5ea11aeec220bd494045987da472c9f223b2d48efef043da032e74cf1f7"
+}

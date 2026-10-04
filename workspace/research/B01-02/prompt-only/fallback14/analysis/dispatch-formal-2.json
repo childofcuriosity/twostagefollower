@@ -1,0 +1,102 @@
+{
+  "results": [
+    {
+      "gpu": 0,
+      "length": 2,
+      "condition": "STEP",
+      "shard": 0,
+      "shards": 2,
+      "pid": 2042552,
+      "start": 1790555778.179894,
+      "log": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/prompt-only/fallback14/logs/formal-L2-STEP-shard0-1790555778.log",
+      "returncode": 0,
+      "seconds": 80.20715308189392
+    },
+    {
+      "gpu": 1,
+      "length": 2,
+      "condition": "STEP",
+      "shard": 1,
+      "shards": 2,
+      "pid": 2042553,
+      "start": 1790555778.2073145,
+      "log": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/prompt-only/fallback14/logs/formal-L2-STEP-shard1-1790555778.log",
+      "returncode": 0,
+      "seconds": 90.22438335418701
+    },
+    {
+      "gpu": 2,
+      "length": 2,
+      "condition": "POSITION",
+      "shard": 0,
+      "shards": 2,
+      "pid": 2042554,
+      "start": 1790555778.2359543,
+      "log": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/prompt-only/fallback14/logs/formal-L2-POSITION-shard0-1790555778.log",
+      "returncode": 0,
+      "seconds": 90.2482647895813
+    },
+    {
+      "gpu": 3,
+      "length": 2,
+      "condition": "POSITION",
+      "shard": 1,
+      "shards": 2,
+      "pid": 2042555,
+      "start": 1790555778.2686532,
+      "log": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/prompt-only/fallback14/logs/formal-L2-POSITION-shard1-1790555778.log",
+      "returncode": 0,
+      "seconds": 90.23385405540466
+    },
+    {
+      "gpu": 4,
+      "length": 2,
+      "condition": "ALIAS",
+      "shard": 0,
+      "shards": 2,
+      "pid": 2042556,
+      "start": 1790555778.3136199,
+      "log": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/prompt-only/fallback14/logs/formal-L2-ALIAS-shard0-1790555778.log",
+      "returncode": 0,
+      "seconds": 90.20668268203735
+    },
+    {
+      "gpu": 5,
+      "length": 2,
+      "condition": "ALIAS",
+      "shard": 1,
+      "shards": 2,
+      "pid": 2042557,
+      "start": 1790555778.3295913,
+      "log": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/prompt-only/fallback14/logs/formal-L2-ALIAS-shard1-1790555778.log",
+      "returncode": 0,
+      "seconds": 90.20853662490845
+    },
+    {
+      "gpu": 6,
+      "length": 2,
+      "condition": "NAME",
+      "shard": 0,
+      "shards": 2,
+      "pid": 2042558,
+      "start": 1790555778.364472,
+      "log": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/prompt-only/fallback14/logs/formal-L2-NAME-shard0-1790555778.log",
+      "returncode": 0,
+      "seconds": 90.19115161895752
+    },
+    {
+      "gpu": 7,
+      "length": 2,
+      "condition": "NAME",
+      "shard": 1,
+      "shards": 2,
+      "pid": 2042559,
+      "start": 1790555778.3842103,
+      "log": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/prompt-only/fallback14/logs/formal-L2-NAME-shard1-1790555778.log",
+      "returncode": 0,
+      "seconds": 90.19467401504517
+    }
+  ],
+  "seconds": 90.45835494995117,
+  "allocated_gpu_seconds": 711.7147002220154
+}

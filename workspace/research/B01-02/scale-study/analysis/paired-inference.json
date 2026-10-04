@@ -1,0 +1,1059 @@
+{
+  "direction": "macro minus flat; negative early-answer difference means macro less early stopping",
+  "seed_interval": "3 training seeds, t df2; wide intervals expected",
+  "program_interval": "paired bootstrap over exact program chains, averaging observed seeds; conditional on these seeds",
+  "comparisons": {
+    "qwen1.5b": {
+      "iid": {
+        "accuracy": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "strict_trace": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "correct_prefix_early_answer": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "exact_two_tools_early_answer": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "two_output_segments": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        }
+      },
+      "ood": {
+        "accuracy": {
+          "mean": 0.296875,
+          "seed_differences": [
+            0.3046875,
+            0.3776041666666667,
+            0.20833333333333334
+          ],
+          "seed_t95": [
+            0.08595824752326159,
+            0.5077917524767386
+          ],
+          "program_bootstrap95": [
+            0.2248263888888889,
+            0.3715277777777778
+          ],
+          "program_clusters": 96
+        },
+        "strict_trace": {
+          "mean": 0.2977430555555556,
+          "seed_differences": [
+            0.3072916666666667,
+            0.3776041666666667,
+            0.20833333333333334
+          ],
+          "seed_t95": [
+            0.08649586773212181,
+            0.5089902433789893
+          ],
+          "program_bootstrap95": [
+            0.2248263888888889,
+            0.375
+          ],
+          "program_clusters": 96
+        },
+        "correct_prefix_early_answer": {
+          "mean": -0.4435763888888889,
+          "seed_differences": [
+            -0.5885416666666666,
+            -0.5598958333333334,
+            -0.18229166666666666
+          ],
+          "seed_t95": [
+            -1.0068100411547183,
+            0.11965726337694044
+          ],
+          "program_bootstrap95": [
+            -0.5295138888888888,
+            -0.3550347222222222
+          ],
+          "program_clusters": 96
+        },
+        "exact_two_tools_early_answer": {
+          "mean": -0.6371527777777778,
+          "seed_differences": [
+            -0.8046875,
+            -0.7161458333333334,
+            -0.390625
+          ],
+          "seed_t95": [
+            -1.1787965797370759,
+            -0.09550897581847961
+          ],
+          "program_bootstrap95": [
+            -0.7031467013888889,
+            -0.5685763888888888
+          ],
+          "program_clusters": 96
+        },
+        "two_output_segments": {
+          "mean": -0.7369791666666666,
+          "seed_differences": [
+            -0.8046875,
+            -0.8255208333333334,
+            -0.5807291666666666
+          ],
+          "seed_t95": [
+            -1.0741184244256845,
+            -0.3998399089076487
+          ],
+          "program_bootstrap95": [
+            -0.8020833333333334,
+            -0.6701388888888888
+          ],
+          "program_clusters": 96
+        }
+      },
+      "pressure": {
+        "accuracy": {
+          "mean": 0.3541666666666667,
+          "seed_differences": [
+            0.4166666666666667,
+            0.4166666666666667,
+            0.22916666666666666
+          ],
+          "seed_t95": [
+            0.08525087106065776,
+            0.6230824622726756
+          ],
+          "program_bootstrap95": [
+            0.16666666666666666,
+            0.5625
+          ],
+          "program_clusters": 12
+        },
+        "strict_trace": {
+          "mean": 0.3541666666666667,
+          "seed_differences": [
+            0.4166666666666667,
+            0.4166666666666667,
+            0.22916666666666666
+          ],
+          "seed_t95": [
+            0.08525087106065776,
+            0.6230824622726756
+          ],
+          "program_bootstrap95": [
+            0.15954861111111115,
+            0.5625
+          ],
+          "program_clusters": 12
+        },
+        "correct_prefix_early_answer": {
+          "mean": -0.4791666666666667,
+          "seed_differences": [
+            -0.5416666666666666,
+            -0.6666666666666666,
+            -0.22916666666666666
+          ],
+          "seed_t95": [
+            -1.0389595350990795,
+            0.08062620176574603
+          ],
+          "program_bootstrap95": [
+            -0.6805555555555556,
+            -0.2638888888888889
+          ],
+          "program_clusters": 12
+        },
+        "exact_two_tools_early_answer": {
+          "mean": -0.6736111111111112,
+          "seed_differences": [
+            -0.7708333333333334,
+            -0.75,
+            -0.5
+          ],
+          "seed_t95": [
+            -1.048000584571056,
+            -0.2992216376511663
+          ],
+          "program_bootstrap95": [
+            -0.8333333333333334,
+            -0.4791666666666667
+          ],
+          "program_clusters": 12
+        },
+        "two_output_segments": {
+          "mean": -0.7847222222222222,
+          "seed_differences": [
+            -0.8541666666666666,
+            -0.9166666666666666,
+            -0.5833333333333334
+          ],
+          "seed_t95": [
+            -1.2248752260971734,
+            -0.3445692183472711
+          ],
+          "program_bootstrap95": [
+            -0.9166666666666666,
+            -0.6388888888888888
+          ],
+          "program_clusters": 12
+        }
+      }
+    },
+    "qwen3b": {
+      "iid": {
+        "accuracy": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "strict_trace": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "correct_prefix_early_answer": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "exact_two_tools_early_answer": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "two_output_segments": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        }
+      },
+      "ood": {
+        "accuracy": {
+          "mean": 0.6067708333333334,
+          "seed_differences": [
+            0.5755208333333334,
+            0.6927083333333334,
+            0.5520833333333334
+          ],
+          "seed_t95": [
+            0.419613360411181,
+            0.7939283062554857
+          ],
+          "program_bootstrap95": [
+            0.5338541666666666,
+            0.6788194444444444
+          ],
+          "program_clusters": 96
+        },
+        "strict_trace": {
+          "mean": 0.5972222222222222,
+          "seed_differences": [
+            0.5572916666666666,
+            0.6901041666666666,
+            0.5442708333333334
+          ],
+          "seed_t95": [
+            0.39674942724571305,
+            0.7976950171987314
+          ],
+          "program_bootstrap95": [
+            0.5217013888888888,
+            0.6710069444444444
+          ],
+          "program_clusters": 96
+        },
+        "correct_prefix_early_answer": {
+          "mean": -0.6857638888888888,
+          "seed_differences": [
+            -0.6510416666666666,
+            -0.7239583333333334,
+            -0.6822916666666666
+          ],
+          "seed_t95": [
+            -0.7766389402954204,
+            -0.5948888374823573
+          ],
+          "program_bootstrap95": [
+            -0.75,
+            -0.6180555555555556
+          ],
+          "program_clusters": 96
+        },
+        "exact_two_tools_early_answer": {
+          "mean": -0.8550347222222222,
+          "seed_differences": [
+            -0.8776041666666666,
+            -0.8255208333333334,
+            -0.8619791666666666
+          ],
+          "seed_t95": [
+            -0.9214284964787028,
+            -0.7886409479657416
+          ],
+          "program_bootstrap95": [
+            -0.8958333333333334,
+            -0.8125
+          ],
+          "program_clusters": 96
+        },
+        "two_output_segments": {
+          "mean": -0.9557291666666666,
+          "seed_differences": [
+            -0.9791666666666666,
+            -0.9947916666666666,
+            -0.8932291666666666
+          ],
+          "seed_t95": [
+            -1.0915804477763293,
+            -0.8198778855570039
+          ],
+          "program_bootstrap95": [
+            -0.9791666666666666,
+            -0.9288194444444444
+          ],
+          "program_clusters": 96
+        }
+      },
+      "pressure": {
+        "accuracy": {
+          "mean": 0.625,
+          "seed_differences": [
+            0.5,
+            0.7291666666666666,
+            0.6458333333333334
+          ],
+          "seed_t95": [
+            0.33685222034012074,
+            0.9131477796598793
+          ],
+          "program_bootstrap95": [
+            0.4444444444444444,
+            0.8055555555555556
+          ],
+          "program_clusters": 12
+        },
+        "strict_trace": {
+          "mean": 0.5972222222222222,
+          "seed_differences": [
+            0.4166666666666667,
+            0.7291666666666666,
+            0.6458333333333334
+          ],
+          "seed_t95": [
+            0.19523422062189338,
+            0.9992102238225511
+          ],
+          "program_bootstrap95": [
+            0.4097222222222222,
+            0.7847222222222222
+          ],
+          "program_clusters": 12
+        },
+        "correct_prefix_early_answer": {
+          "mean": -0.6666666666666666,
+          "seed_differences": [
+            -0.6875,
+            -0.5625,
+            -0.75
+          ],
+          "seed_t95": [
+            -0.9038281062635252,
+            -0.4295052270698081
+          ],
+          "program_bootstrap95": [
+            -0.875,
+            -0.4305555555555556
+          ],
+          "program_clusters": 12
+        },
+        "exact_two_tools_early_answer": {
+          "mean": -0.8680555555555556,
+          "seed_differences": [
+            -0.8125,
+            -0.7916666666666666,
+            -1.0
+          ],
+          "seed_t95": [
+            -1.153088132565332,
+            -0.5830229785457791
+          ],
+          "program_bootstrap95": [
+            -0.9583333333333334,
+            -0.7708333333333334
+          ],
+          "program_clusters": 12
+        },
+        "two_output_segments": {
+          "mean": -1.0,
+          "seed_differences": [
+            -1.0,
+            -1.0,
+            -1.0
+          ],
+          "seed_t95": [
+            -1.0,
+            -1.0
+          ],
+          "program_bootstrap95": [
+            -1.0,
+            -1.0
+          ],
+          "program_clusters": 12
+        }
+      }
+    },
+    "qwen7b": {
+      "iid": {
+        "accuracy": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "strict_trace": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "correct_prefix_early_answer": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "exact_two_tools_early_answer": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "two_output_segments": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        }
+      },
+      "ood": {
+        "accuracy": {
+          "mean": 0.4088541666666667,
+          "seed_differences": [
+            0.3567708333333333,
+            0.625,
+            0.24479166666666666
+          ],
+          "seed_t95": [
+            -0.07650145905940359,
+            0.894209792392737
+          ],
+          "program_bootstrap95": [
+            0.3463541666666667,
+            0.4713541666666667
+          ],
+          "program_clusters": 96
+        },
+        "strict_trace": {
+          "mean": 0.3993055555555556,
+          "seed_differences": [
+            0.3515625,
+            0.6171875,
+            0.22916666666666666
+          ],
+          "seed_t95": [
+            -0.09346617009300728,
+            0.8920772812041184
+          ],
+          "program_bootstrap95": [
+            0.3359157986111111,
+            0.4644097222222222
+          ],
+          "program_clusters": 96
+        },
+        "correct_prefix_early_answer": {
+          "mean": -0.3229166666666667,
+          "seed_differences": [
+            -0.052083333333333336,
+            -0.6380208333333334,
+            -0.2786458333333333
+          ],
+          "seed_t95": [
+            -1.056896839131795,
+            0.4110635057984617
+          ],
+          "program_bootstrap95": [
+            -0.3958333333333333,
+            -0.24913194444444445
+          ],
+          "program_clusters": 96
+        },
+        "exact_two_tools_early_answer": {
+          "mean": -0.1831597222222222,
+          "seed_differences": [
+            -0.015625,
+            -0.23958333333333334,
+            -0.2942708333333333
+          ],
+          "seed_t95": [
+            -0.5499264237841468,
+            0.18360697933970235
+          ],
+          "program_bootstrap95": [
+            -0.23697916666666666,
+            -0.13105468750000032
+          ],
+          "program_clusters": 96
+        },
+        "two_output_segments": {
+          "mean": -0.18663194444444445,
+          "seed_differences": [
+            -0.015625,
+            -0.2578125,
+            -0.2864583333333333
+          ],
+          "seed_t95": [
+            -0.5562402258644416,
+            0.1829763369755527
+          ],
+          "program_bootstrap95": [
+            -0.2387152777777778,
+            -0.1345486111111111
+          ],
+          "program_clusters": 96
+        }
+      },
+      "pressure": {
+        "accuracy": {
+          "mean": 0.4444444444444444,
+          "seed_differences": [
+            0.375,
+            0.8125,
+            0.14583333333333334
+          ],
+          "seed_t95": [
+            -0.3969708400925144,
+            1.285859728981403
+          ],
+          "program_bootstrap95": [
+            0.2152777777777778,
+            0.6180555555555556
+          ],
+          "program_clusters": 12
+        },
+        "strict_trace": {
+          "mean": 0.4791666666666667,
+          "seed_differences": [
+            0.4791666666666667,
+            0.7916666666666666,
+            0.16666666666666666
+          ],
+          "seed_t95": [
+            -0.29712636824569144,
+            1.2554597015790248
+          ],
+          "program_bootstrap95": [
+            0.22916666666666666,
+            0.6805555555555556
+          ],
+          "program_clusters": 12
+        },
+        "correct_prefix_early_answer": {
+          "mean": -0.4027777777777778,
+          "seed_differences": [
+            -0.1875,
+            -0.8541666666666666,
+            -0.16666666666666666
+          ],
+          "seed_t95": [
+            -1.374207297905478,
+            0.5686517423499224
+          ],
+          "program_bootstrap95": [
+            -0.6805555555555556,
+            -0.1111111111111111
+          ],
+          "program_clusters": 12
+        },
+        "exact_two_tools_early_answer": {
+          "mean": -0.1111111111111111,
+          "seed_differences": [
+            0.0,
+            -0.3333333333333333,
+            0.0
+          ],
+          "seed_t95": [
+            -0.5891836366329046,
+            0.3669614144106825
+          ],
+          "program_bootstrap95": [
+            -0.2777777777777778,
+            0.04861111111111111
+          ],
+          "program_clusters": 12
+        },
+        "two_output_segments": {
+          "mean": -0.1111111111111111,
+          "seed_differences": [
+            0.0,
+            -0.3333333333333333,
+            0.0
+          ],
+          "seed_t95": [
+            -0.5891836366329046,
+            0.3669614144106825
+          ],
+          "program_bootstrap95": [
+            -0.2708333333333333,
+            0.041666666666666664
+          ],
+          "program_clusters": 12
+        }
+      }
+    },
+    "qwen32b": {
+      "iid": {
+        "accuracy": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "strict_trace": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "correct_prefix_early_answer": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "exact_two_tools_early_answer": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        },
+        "two_output_segments": {
+          "mean": 0.0,
+          "seed_differences": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            0.0,
+            0.0
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "program_clusters": 64
+        }
+      },
+      "ood": {
+        "accuracy": {
+          "mean": 0.2934027777777778,
+          "seed_differences": [
+            0.23177083333333334,
+            0.2604166666666667,
+            0.3880208333333333
+          ],
+          "seed_t95": [
+            0.0867622601892625,
+            0.500043295366293
+          ],
+          "program_bootstrap95": [
+            0.22135416666666666,
+            0.3637152777777778
+          ],
+          "program_clusters": 96
+        },
+        "strict_trace": {
+          "mean": 0.2873263888888889,
+          "seed_differences": [
+            0.22395833333333334,
+            0.25,
+            0.3880208333333333
+          ],
+          "seed_t95": [
+            0.0682982544524264,
+            0.5063545233253514
+          ],
+          "program_bootstrap95": [
+            0.2170138888888889,
+            0.3576388888888889
+          ],
+          "program_clusters": 96
+        },
+        "correct_prefix_early_answer": {
+          "mean": -0.16666666666666666,
+          "seed_differences": [
+            0.044270833333333336,
+            -0.22135416666666666,
+            -0.3229166666666667
+          ],
+          "seed_t95": [
+            -0.6376693112953061,
+            0.30433597796197287
+          ],
+          "program_bootstrap95": [
+            -0.2309027777777778,
+            -0.10590277777777778
+          ],
+          "program_clusters": 96
+        },
+        "exact_two_tools_early_answer": {
+          "mean": 0.024305555555555556,
+          "seed_differences": [
+            0.07291666666666667,
+            0.005208333333333333,
+            -0.005208333333333333
+          ],
+          "seed_t95": [
+            -0.0810701147048823,
+            0.12968122581599342
+          ],
+          "program_bootstrap95": [
+            0.009548611111111112,
+            0.042534722222222224
+          ],
+          "program_clusters": 96
+        },
+        "two_output_segments": {
+          "mean": 0.024305555555555556,
+          "seed_differences": [
+            0.07291666666666667,
+            0.005208333333333333,
+            -0.005208333333333333
+          ],
+          "seed_t95": [
+            -0.0810701147048823,
+            0.12968122581599342
+          ],
+          "program_bootstrap95": [
+            0.008680555555555556,
+            0.04168836805555524
+          ],
+          "program_clusters": 96
+        }
+      },
+      "pressure": {
+        "accuracy": {
+          "mean": 0.3055555555555556,
+          "seed_differences": [
+            0.4375,
+            0.2916666666666667,
+            0.1875
+          ],
+          "seed_t95": [
+            -0.0063959256904748685,
+            0.617507036801586
+          ],
+          "program_bootstrap95": [
+            0.1736111111111111,
+            0.4513888888888889
+          ],
+          "program_clusters": 12
+        },
+        "strict_trace": {
+          "mean": 0.3333333333333333,
+          "seed_differences": [
+            0.4583333333333333,
+            0.2916666666666667,
+            0.25
+          ],
+          "seed_t95": [
+            0.05948289134804252,
+            0.6071837753186241
+          ],
+          "program_bootstrap95": [
+            0.1875,
+            0.4930555555555556
+          ],
+          "program_clusters": 12
+        },
+        "correct_prefix_early_answer": {
+          "mean": -0.125,
+          "seed_differences": [
+            -0.10416666666666667,
+            -0.14583333333333334,
+            -0.125
+          ],
+          "seed_t95": [
+            -0.1767528689941572,
+            -0.07324713100584279
+          ],
+          "program_bootstrap95": [
+            -0.3194444444444444,
+            0.034722222222222224
+          ],
+          "program_clusters": 12
+        },
+        "exact_two_tools_early_answer": {
+          "mean": 0.006944444444444444,
+          "seed_differences": [
+            0.020833333333333332,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            -0.022935088400667655,
+            0.03682397728955654
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.020833333333333332
+          ],
+          "program_clusters": 12
+        },
+        "two_output_segments": {
+          "mean": 0.006944444444444444,
+          "seed_differences": [
+            0.020833333333333332,
+            0.0,
+            0.0
+          ],
+          "seed_t95": [
+            -0.022935088400667655,
+            0.03682397728955654
+          ],
+          "program_bootstrap95": [
+            0.0,
+            0.020833333333333332
+          ],
+          "program_clusters": 12
+        }
+      }
+    }
+  }
+}

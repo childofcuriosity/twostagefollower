@@ -1,0 +1,1932 @@
+{
+  "records": [
+    {
+      "condition": "STEP",
+      "seed": "base",
+      "step": 0,
+      "n": 512,
+      "strict_failures": 508,
+      "reasons": {
+        "operation_sequence": 438,
+        "numeric_step": 55,
+        "unrecognized_extra_lines": 13,
+        "missing_or_multiple_Answer": 2
+      },
+      "titles": {
+        "fully_compliant": 337,
+        "other_title_noncompliance": 175
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 301,
+      "step": 100,
+      "n": 512,
+      "strict_failures": 508,
+      "reasons": {
+        "operation_sequence": 433,
+        "numeric_step": 56,
+        "unrecognized_extra_lines": 18,
+        "missing_or_multiple_Answer": 1
+      },
+      "titles": {
+        "fully_compliant": 349,
+        "other_title_noncompliance": 163
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 302,
+      "step": 100,
+      "n": 512,
+      "strict_failures": 507,
+      "reasons": {
+        "operation_sequence": 441,
+        "unrecognized_extra_lines": 16,
+        "numeric_step": 50
+      },
+      "titles": {
+        "fully_compliant": 351,
+        "other_title_noncompliance": 161
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 303,
+      "step": 100,
+      "n": 512,
+      "strict_failures": 507,
+      "reasons": {
+        "operation_sequence": 435,
+        "unrecognized_extra_lines": 17,
+        "numeric_step": 54,
+        "missing_or_multiple_Answer": 1
+      },
+      "titles": {
+        "other_title_noncompliance": 173,
+        "fully_compliant": 339
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": "base",
+      "step": 0,
+      "n": 512,
+      "strict_failures": 497,
+      "reasons": {
+        "operation_sequence": 275,
+        "numeric_step": 168,
+        "missing_or_multiple_Answer": 37,
+        "unrecognized_extra_lines": 17
+      },
+      "titles": {
+        "fully_compliant": 452,
+        "other_title_noncompliance": 60
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 301,
+      "step": 100,
+      "n": 512,
+      "strict_failures": 492,
+      "reasons": {
+        "operation_sequence": 275,
+        "numeric_step": 166,
+        "missing_or_multiple_Answer": 25,
+        "unrecognized_extra_lines": 25,
+        "final_Answer_only": 1
+      },
+      "titles": {
+        "other_title_noncompliance": 66,
+        "fully_compliant": 446
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 302,
+      "step": 100,
+      "n": 512,
+      "strict_failures": 491,
+      "reasons": {
+        "operation_sequence": 265,
+        "missing_or_multiple_Answer": 30,
+        "numeric_step": 179,
+        "unrecognized_extra_lines": 16,
+        "final_Answer_only": 1
+      },
+      "titles": {
+        "fully_compliant": 449,
+        "other_title_noncompliance": 63
+      },
+      "endings": {
+        "eos": 512
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 303,
+      "step": 100,
+      "n": 512,
+      "strict_failures": 489,
+      "reasons": {
+        "numeric_step": 192,
+        "missing_or_multiple_Answer": 27,
+        "operation_sequence": 250,
+        "unrecognized_extra_lines": 20
+      },
+      "titles": {
+        "fully_compliant": 459,
+        "other_title_noncompliance": 53
+      },
+      "endings": {
+        "eos": 512
+      }
+    }
+  ],
+  "cases": [
+    {
+      "condition": "STEP",
+      "seed": 301,
+      "id": "L4-test-00000",
+      "category": "operation_sequence",
+      "input": [
+        5,
+        2,
+        5,
+        8
+      ],
+      "chain": [
+        3,
+        3,
+        7,
+        3
+      ],
+      "raw": "step:\ninc 6 3 6 9\nrev 9 6 3 6\nrot 6 3 6 9\ninc 7 4 7 0\nstep:\ninc 8 4 7 0\nrev 0 7 4 8\nrot 7 4 8 0\ninc 8 5 9 1\nstep:\nrot 5 9 8 1\nrot 9 8 1 5\ninc 0 9 2 6\nstep:\ninc 1 9 2 6\nswap 9 1 2 6\nAnswer: 1 9 2 6",
+      "expected": "step:\ninc 6 3 6 9\nrev 9 6 3 6\nstep:\ninc 0 7 4 7\nrev 7 4 7 0\nstep:\nrot 4 7 0 7\nrot 7 0 7 4\ninc 8 1 8 5\nstep:\ninc 9 2 9 6\nrev 6 9 2 9\nAnswer: 6 9 2 9\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 1,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 2,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00000",
+          "split": "test",
+          "chain": [
+            3,
+            3,
+            7,
+            3
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 13,
+          "required_ops": 9,
+          "arithmetic_errors": 3,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 301,
+      "id": "L4-test-00013",
+      "category": "numeric_step",
+      "input": [
+        7,
+        2,
+        4,
+        5
+      ],
+      "chain": [
+        8,
+        4,
+        1,
+        8
+      ],
+      "raw": "step:\ninc 8 3 5 6\ninc 9 4 6 7\ninc 0 5 7 8\nstep:\nrot 8 7 5 0\ninc 9 8 6 1\nswap 8 9 6 1\nstep:\nrev 1 6 8 9\nrot 6 8 9 1\ninc 7 9 0 2\nstep:\ninc 8 0 1 3\ninc 9 1 2 4\ninc 0 2 3 5\nAnswer: 0 2 3 5",
+      "expected": "step:\ninc 8 3 5 6\ninc 9 4 6 7\ninc 0 5 7 8\nstep:\nrot 5 7 8 0\ninc 6 8 9 1\nswap 8 6 9 1\nstep:\nrev 1 9 6 8\nrot 9 6 8 1\ninc 0 7 9 2\nstep:\ninc 1 8 0 3\ninc 2 9 1 4\ninc 3 0 2 5\nAnswer: 3 0 2 5\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00013",
+          "split": "test",
+          "chain": [
+            8,
+            4,
+            1,
+            8
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 12,
+          "required_ops": 12,
+          "arithmetic_errors": 2,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 301,
+      "id": "L4-test-00052",
+      "category": "unrecognized_extra_lines",
+      "input": [
+        2,
+        2,
+        9,
+        4
+      ],
+      "chain": [
+        4,
+        7,
+        3,
+        6
+      ],
+      "raw": "step:\nrot 2 9 4 2\ninc 3 10 5 2\nswap 10 3 4 2\nstep:\nrot 3 4 2 10\nrot 4 2 10 3\ninc 5 3 11 3\nstep:\ninc 6 4 0 3\nrev 3 0 4 6\nstep:\ninc 7 1 5 6\nneg 3 0 4 6\ninc 4 1 5 6\nAnswer: 4 1 5 6",
+      "expected": "step:\nrot 2 9 4 2\ninc 3 0 5 3\nswap 0 3 5 3\nstep:\nrot 3 5 3 0\nrot 5 3 0 3\ninc 6 4 1 4\nstep:\ninc 7 5 2 5\nrev 5 2 5 7\nstep:\ninc 6 3 6 8\nneg 4 7 4 2\ninc 5 8 5 3\nAnswer: 5 8 5 3\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 2,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00052",
+          "split": "test",
+          "chain": [
+            4,
+            7,
+            3,
+            6
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 6,
+          "required_ops": 11,
+          "arithmetic_errors": 4,
+          "unparsed_lines": 5,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 301,
+      "id": "L4-test-00227",
+      "category": "other_title_noncompliance",
+      "input": [
+        4,
+        1,
+        8,
+        9
+      ],
+      "chain": [
+        1,
+        3,
+        0,
+        7
+      ],
+      "raw": "step:\nrev 9 8 1 4\nrot 8 1 4 9\ninc 9 2 5 0\nstep:\ninc 0 3 6 1\nrev 1 6 3 0\nrot 6 3 0 1\ninc 7 4 1 2\nstep:\nrot 4 1 2 7\nrot 1 2 7 4\ninc 2 3 8 5\nAnswer: 2 3 8 5",
+      "expected": "step:\nrev 9 8 1 4\nrot 8 1 4 9\ninc 9 2 5 0\nstep:\ninc 0 3 6 1\nrev 1 6 3 0\nstep:\nrot 6 3 0 1\ninc 7 4 1 2\nstep:\nrot 4 1 2 7\nrot 1 2 7 4\ninc 2 3 8 5\nAnswer: 2 3 8 5\n",
+      "grading": {
+        "reward": 1,
+        "strict": 1,
+        "header_compliant": 0,
+        "numeric_error": 0,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 0,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00227",
+          "split": "test",
+          "chain": [
+            1,
+            3,
+            0,
+            7
+          ],
+          "required_calls": 4,
+          "accuracy": 1,
+          "strict_trace": 1,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 3,
+          "emitted_ops": 10,
+          "required_ops": 10,
+          "arithmetic_errors": 0,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 301,
+      "id": "L4-test-00379",
+      "category": "missing_or_multiple_Answer",
+      "input": [
+        9,
+        0,
+        6,
+        8
+      ],
+      "chain": [
+        1,
+        4,
+        0,
+        4
+      ],
+      "raw": "step:\nrev 8 6 0 9\nrot 6 0 9 8\ninc 7 1 10 9\nstep:\nrot 1 10 9 9\ninc 2 11 0 10\nswap 11 2 0 10\nstep:\nrot 2 0 10 11\nrot 0 10 11 2\ninc 1 11 2 12\nstep:\nrot 11 2 12 1\ninc 12 3 3 2\nswap 3 12 3 2\nAnswer: 3 12 3 2",
+      "expected": "step:\nrev 8 6 0 9\nrot 6 0 9 8\ninc 7 1 0 9\nstep:\nrot 1 0 9 7\ninc 2 1 0 8\nswap 1 2 0 8\nstep:\nrot 2 0 8 1\ninc 3 1 9 2\nstep:\nrot 1 9 2 3\ninc 2 0 3 4\nswap 0 2 3 4\nAnswer: 0 2 3 4\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 0,
+        "operation_mismatch": 1,
+        "early_end": 1,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 0,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 1,
+          "operation_prefix_only": 1,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00379",
+          "split": "test",
+          "chain": [
+            1,
+            4,
+            0,
+            4
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 2,
+          "required_ops": 11,
+          "arithmetic_errors": 0,
+          "unparsed_lines": 11,
+          "answer_present": 0,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 302,
+      "id": "L4-test-00000",
+      "category": "operation_sequence",
+      "input": [
+        5,
+        2,
+        5,
+        8
+      ],
+      "chain": [
+        3,
+        3,
+        7,
+        3
+      ],
+      "raw": "step:\ninc 6 3 6 9\nrev 9 6 3 6\nrot 6 3 6 9\ninc 7 4 7 0\nstep:\ninc 8 4 7 0\nrev 0 7 4 8\nrot 7 4 8 0\ninc 8 5 9 1\nstep:\nrot 5 9 8 1\nrot 9 8 1 5\ninc 0 9 2 6\nstep:\ninc 1 9 2 6\nswap 9 1 2 6\nAnswer: 1 9 2 6",
+      "expected": "step:\ninc 6 3 6 9\nrev 9 6 3 6\nstep:\ninc 0 7 4 7\nrev 7 4 7 0\nstep:\nrot 4 7 0 7\nrot 7 0 7 4\ninc 8 1 8 5\nstep:\ninc 9 2 9 6\nrev 6 9 2 9\nAnswer: 6 9 2 9\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 1,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 2,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00000",
+          "split": "test",
+          "chain": [
+            3,
+            3,
+            7,
+            3
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 13,
+          "required_ops": 9,
+          "arithmetic_errors": 3,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 302,
+      "id": "L4-test-00002",
+      "category": "unrecognized_extra_lines",
+      "input": [
+        1,
+        8,
+        9,
+        0
+      ],
+      "chain": [
+        4,
+        1,
+        6,
+        1
+      ],
+      "raw": "step:\nrot 8 9 0 1\ninc 9 0 1 1\nswap 9 0 1 1\nstep:\nrev 1 1 0 9\nrot 1 0 9 1\ninc 2 1 10 2\nstep:\ninc 3 2 11 2\nswap 3 2 11 2\nstep:\nrev 2 11 3 2\nrot 11 3 2 2\ninc 0 4 3 3\nAnswer: 0 4 3 3",
+      "expected": "step:\nrot 8 9 0 1\ninc 9 0 1 2\nswap 0 9 1 2\nstep:\nrev 2 1 9 0\nrot 1 9 0 2\ninc 2 0 1 3\nstep:\ninc 3 1 2 4\nneg 7 9 8 6\ninc 8 0 9 7\nstep:\nrev 7 9 0 8\nrot 9 0 8 7\ninc 0 1 9 8\nAnswer: 0 1 9 8\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 1,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 1,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00002",
+          "split": "test",
+          "chain": [
+            4,
+            1,
+            6,
+            1
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 6,
+          "required_ops": 12,
+          "arithmetic_errors": 3,
+          "unparsed_lines": 5,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 302,
+      "id": "L4-test-00013",
+      "category": "numeric_step",
+      "input": [
+        7,
+        2,
+        4,
+        5
+      ],
+      "chain": [
+        8,
+        4,
+        1,
+        8
+      ],
+      "raw": "step:\ninc 8 3 5 6\ninc 9 4 6 7\ninc 0 5 7 8\nstep:\nrot 8 7 5 0\ninc 9 8 6 1\nswap 8 9 6 1\nstep:\nrev 1 6 8 9\nrot 6 8 9 1\ninc 7 9 0 2\nstep:\ninc 8 0 1 2\ninc 9 1 2 3\ninc 0 2 3 4\nAnswer: 0 2 3 4",
+      "expected": "step:\ninc 8 3 5 6\ninc 9 4 6 7\ninc 0 5 7 8\nstep:\nrot 5 7 8 0\ninc 6 8 9 1\nswap 8 6 9 1\nstep:\nrev 1 9 6 8\nrot 9 6 8 1\ninc 0 7 9 2\nstep:\ninc 1 8 0 3\ninc 2 9 1 4\ninc 3 0 2 5\nAnswer: 3 0 2 5\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00013",
+          "split": "test",
+          "chain": [
+            8,
+            4,
+            1,
+            8
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 12,
+          "required_ops": 12,
+          "arithmetic_errors": 3,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 302,
+      "id": "L4-test-00227",
+      "category": "other_title_noncompliance",
+      "input": [
+        4,
+        1,
+        8,
+        9
+      ],
+      "chain": [
+        1,
+        3,
+        0,
+        7
+      ],
+      "raw": "step:\nrev 9 8 1 4\nrot 8 1 4 9\ninc 9 2 5 0\nstep:\ninc 0 3 6 1\nrev 1 6 3 0\nrot 6 3 0 1\ninc 7 4 1 2\nstep:\nrot 4 1 2 7\nrot 1 2 7 4\ninc 2 3 8 5\nAnswer: 2 3 8 5",
+      "expected": "step:\nrev 9 8 1 4\nrot 8 1 4 9\ninc 9 2 5 0\nstep:\ninc 0 3 6 1\nrev 1 6 3 0\nstep:\nrot 6 3 0 1\ninc 7 4 1 2\nstep:\nrot 4 1 2 7\nrot 1 2 7 4\ninc 2 3 8 5\nAnswer: 2 3 8 5\n",
+      "grading": {
+        "reward": 1,
+        "strict": 1,
+        "header_compliant": 0,
+        "numeric_error": 0,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 0,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00227",
+          "split": "test",
+          "chain": [
+            1,
+            3,
+            0,
+            7
+          ],
+          "required_calls": 4,
+          "accuracy": 1,
+          "strict_trace": 1,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 3,
+          "emitted_ops": 10,
+          "required_ops": 10,
+          "arithmetic_errors": 0,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 303,
+      "id": "L4-test-00000",
+      "category": "operation_sequence",
+      "input": [
+        5,
+        2,
+        5,
+        8
+      ],
+      "chain": [
+        3,
+        3,
+        7,
+        3
+      ],
+      "raw": "step:\ninc 6 3 6 9\nrev 9 6 3 6\nrot 6 3 6 9\ninc 7 4 7 0\nstep:\ninc 0 4 7 0\nrot 4 7 0 0\nrot 7 0 0 4\ninc 8 1 4 5\nAnswer: 8 1 4 5",
+      "expected": "step:\ninc 6 3 6 9\nrev 9 6 3 6\nstep:\ninc 0 7 4 7\nrev 7 4 7 0\nstep:\nrot 4 7 0 7\nrot 7 0 7 4\ninc 8 1 8 5\nstep:\ninc 9 2 9 6\nrev 6 9 2 9\nAnswer: 6 9 2 9\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 2,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00000",
+          "split": "test",
+          "chain": [
+            3,
+            3,
+            7,
+            3
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 1,
+          "segments": 2,
+          "emitted_ops": 8,
+          "required_ops": 9,
+          "arithmetic_errors": 2,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 303,
+      "id": "L4-test-00003",
+      "category": "unrecognized_extra_lines",
+      "input": [
+        8,
+        2,
+        0,
+        0
+      ],
+      "chain": [
+        4,
+        7,
+        8,
+        5
+      ],
+      "raw": "step:\nrot 2 0 0 8\ninc 3 1 0 9\nswap 1 3 0 9\nstep:\nrot 3 0 9 1\nrot 0 9 1 3\ninc 1 10 2 4\nstep:\nrot 10 2 4 3\nrot 2 4 3 10\ninc 3 5 6 4\nstep:\ninc 9 5 6 4\nswap 5 9 6 4\nAnswer: 9 5 6 4",
+      "expected": "step:\nrot 2 0 0 8\ninc 3 1 1 9\nswap 1 3 1 9\nstep:\nrot 3 1 9 1\nrot 1 9 1 3\ninc 2 0 2 4\nstep:\ninc 3 1 3 5\ninc 4 2 4 6\ninc 5 3 5 7\nstep:\ninc 6 4 6 8\nswap 4 6 6 8\nAnswer: 4 6 6 8\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 7,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00003",
+          "split": "test",
+          "chain": [
+            4,
+            7,
+            8,
+            5
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 8,
+          "required_ops": 11,
+          "arithmetic_errors": 3,
+          "unparsed_lines": 3,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 303,
+      "id": "L4-test-00013",
+      "category": "numeric_step",
+      "input": [
+        7,
+        2,
+        4,
+        5
+      ],
+      "chain": [
+        8,
+        4,
+        1,
+        8
+      ],
+      "raw": "step:\ninc 8 3 5 6\ninc 9 4 6 7\ninc 0 5 7 8\nstep:\nrot 8 7 5 0\ninc 9 8 6 1\nswap 8 9 6 1\nstep:\nrev 1 6 8 9\nrot 6 8 9 1\ninc 7 9 0 2\nstep:\ninc 8 0 1 2\ninc 9 1 2 3\ninc 0 2 3 4\nAnswer: 0 2 3 4",
+      "expected": "step:\ninc 8 3 5 6\ninc 9 4 6 7\ninc 0 5 7 8\nstep:\nrot 5 7 8 0\ninc 6 8 9 1\nswap 8 6 9 1\nstep:\nrev 1 9 6 8\nrot 9 6 8 1\ninc 0 7 9 2\nstep:\ninc 1 8 0 3\ninc 2 9 1 4\ninc 3 0 2 5\nAnswer: 3 0 2 5\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00013",
+          "split": "test",
+          "chain": [
+            8,
+            4,
+            1,
+            8
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 12,
+          "required_ops": 12,
+          "arithmetic_errors": 3,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 303,
+      "id": "L4-test-00227",
+      "category": "other_title_noncompliance",
+      "input": [
+        4,
+        1,
+        8,
+        9
+      ],
+      "chain": [
+        1,
+        3,
+        0,
+        7
+      ],
+      "raw": "step:\nrev 9 8 1 4\nrot 8 1 4 9\ninc 9 2 5 0\nstep:\ninc 0 3 6 1\nrev 1 6 3 0\nrot 6 3 0 1\ninc 7 4 1 2\nstep:\nrot 4 1 2 7\nrot 1 2 7 4\ninc 2 3 8 5\nAnswer: 2 3 8 5",
+      "expected": "step:\nrev 9 8 1 4\nrot 8 1 4 9\ninc 9 2 5 0\nstep:\ninc 0 3 6 1\nrev 1 6 3 0\nstep:\nrot 6 3 0 1\ninc 7 4 1 2\nstep:\nrot 4 1 2 7\nrot 1 2 7 4\ninc 2 3 8 5\nAnswer: 2 3 8 5\n",
+      "grading": {
+        "reward": 1,
+        "strict": 1,
+        "header_compliant": 0,
+        "numeric_error": 0,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 0,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00227",
+          "split": "test",
+          "chain": [
+            1,
+            3,
+            0,
+            7
+          ],
+          "required_calls": 4,
+          "accuracy": 1,
+          "strict_trace": 1,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 3,
+          "emitted_ops": 10,
+          "required_ops": 10,
+          "arithmetic_errors": 0,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "STEP",
+      "seed": 303,
+      "id": "L4-test-00379",
+      "category": "missing_or_multiple_Answer",
+      "input": [
+        9,
+        0,
+        6,
+        8
+      ],
+      "chain": [
+        1,
+        4,
+        0,
+        4
+      ],
+      "raw": "step:\nrev 8 6 0 9\nrot 6 0 9 8\ninc 7 1 10 9\nstep:\nrot 1 10 9 7\ninc 2 11 0 8\nswap 11 2 0 8\nstep:\nrot 2 0 8 11\nrot 0 8 11 2\ninc 1 9 12 2\nstep:\nrot 9 12 2 1\ninc 10 3 2 2\nswap 3 10 2 2\nAnswer: 10 3 2 2",
+      "expected": "step:\nrev 8 6 0 9\nrot 6 0 9 8\ninc 7 1 0 9\nstep:\nrot 1 0 9 7\ninc 2 1 0 8\nswap 1 2 0 8\nstep:\nrot 2 0 8 1\ninc 3 1 9 2\nstep:\nrot 1 9 2 3\ninc 2 0 3 4\nswap 0 2 3 4\nAnswer: 0 2 3 4\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 0,
+        "operation_mismatch": 1,
+        "early_end": 1,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 0,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 1,
+          "operation_prefix_only": 1,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00379",
+          "split": "test",
+          "chain": [
+            1,
+            4,
+            0,
+            4
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 2,
+          "required_ops": 11,
+          "arithmetic_errors": 0,
+          "unparsed_lines": 11,
+          "answer_present": 0,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 301,
+      "id": "L4-test-00000",
+      "category": "operation_sequence",
+      "input": [
+        5,
+        2,
+        5,
+        8
+      ],
+      "chain": [
+        3,
+        3,
+        7,
+        3
+      ],
+      "raw": "gold:\ninc 6 3 6 9\nrev 9 6 3 6\ngray:\nrot 6 3 6 9\nrot 3 6 9 6\ngold:\ninc 4 7 0 7\nrev 7 0 7 4\ngold:\ninc 8 1 8 5\nrev 5 8 1 8\nAnswer: 5 8 1 8",
+      "expected": "gold:\ninc 6 3 6 9\nrev 9 6 3 6\ngold:\ninc 0 7 4 7\nrev 7 4 7 0\ngray:\nrot 4 7 0 7\nrot 7 0 7 4\ninc 8 1 8 5\ngold:\ninc 9 2 9 6\nrev 6 9 2 9\nAnswer: 6 9 2 9\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 0,
+        "numeric_error": 0,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 2,
+          "wrong_operation": 1,
+          "numeric_step_error": 0,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00000",
+          "split": "test",
+          "chain": [
+            3,
+            3,
+            7,
+            3
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 8,
+          "required_ops": 9,
+          "arithmetic_errors": 0,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 301,
+      "id": "L4-test-00001",
+      "category": "numeric_step",
+      "input": [
+        8,
+        8,
+        9,
+        5
+      ],
+      "chain": [
+        7,
+        4,
+        8,
+        0
+      ],
+      "raw": "gray:\nrot 9 8 5 8\nrot 8 5 8 9\ninc 9 6 9 0\npink:\nrot 6 9 0 9\ninc 7 0 1 9\nswap 0 7 1 9\nbrown:\ninc 1 8 2 0\ninc 2 9 3 0\ninc 3 0 4 0\nred:\nrot 0 4 3 0\ninc 1 5 4 1\nAnswer: 1 5 4 1",
+      "expected": "gray:\nrot 8 9 5 8\nrot 9 5 8 8\ninc 0 6 9 9\npink:\nrot 6 9 9 0\ninc 7 0 0 1\nswap 0 7 0 1\nbrown:\ninc 1 8 1 2\ninc 2 9 2 3\ninc 3 0 3 4\nred:\nrot 0 3 4 3\ninc 1 4 5 4\nAnswer: 1 4 5 4\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00001",
+          "split": "test",
+          "chain": [
+            7,
+            4,
+            8,
+            0
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 11,
+          "required_ops": 11,
+          "arithmetic_errors": 5,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 301,
+      "id": "L4-test-00005",
+      "category": "missing_or_multiple_Answer",
+      "input": [
+        4,
+        2,
+        2,
+        8
+      ],
+      "chain": [
+        3,
+        6,
+        2,
+        0
+      ],
+      "raw": "gold:\ninc 5 3 3 9\nrev 9 3 3 5\nwhite:\ninc 0 4 4 6\ninc 1 5 5 7\ngreen:\nrot 5 5 7 1\nrot 5 7 1 5\nred:\nrot 1 5 5 7\ninc 2 6 6 8",
+      "expected": "gold:\ninc 5 3 3 9\nrev 9 3 3 5\nwhite:\ninc 0 4 4 6\nneg 0 6 6 4\ninc 1 7 7 5\ngreen:\nrot 7 7 5 1\nrot 7 5 1 7\nred:\nrot 5 1 7 7\ninc 6 2 8 8\nAnswer: 6 2 8 8\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 3,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 1,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00005",
+          "split": "test",
+          "chain": [
+            3,
+            6,
+            2,
+            0
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 8,
+          "required_ops": 9,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 0,
+          "answer_present": 0,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 301,
+      "id": "L4-test-00011",
+      "category": "unrecognized_extra_lines",
+      "input": [
+        1,
+        6,
+        7,
+        8
+      ],
+      "chain": [
+        3,
+        7,
+        0,
+        8
+      ],
+      "raw": "gold:\ninc 2 7 8 9\nrev 9 8 7 2\ngray:\nrot 8 7 2 9\nrot 7 2 9 8\nred:\ninc 8 3 10 0\nrot 3 10 0 8\ninc 4 1 1 9\nbrown:\ninc 5 2 1 0\ninc 6 3 1 0\ninc 7 4 1 0\nAnswer: 7 4 1 0",
+      "expected": "gold:\ninc 2 7 8 9\nrev 9 8 7 2\ngray:\nrot 8 7 2 9\nrot 7 2 9 8\ninc 8 3 0 9\nred:\nrot 3 0 9 8\ninc 4 1 0 9\nbrown:\ninc 5 2 1 0\ninc 6 3 2 1\ninc 7 4 3 2\nAnswer: 7 4 3 2\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 5,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00011",
+          "split": "test",
+          "chain": [
+            3,
+            7,
+            0,
+            8
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 8,
+          "required_ops": 10,
+          "arithmetic_errors": 4,
+          "unparsed_lines": 2,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 301,
+      "id": "L4-test-00172",
+      "category": "final_Answer_only",
+      "input": [
+        9,
+        5,
+        4,
+        0
+      ],
+      "chain": [
+        0,
+        7,
+        7,
+        2
+      ],
+      "raw": "red:\nrot 5 4 0 9\ninc 6 5 1 0\ngray:\nrot 5 1 0 6\nrot 1 0 6 5\ninc 2 1 7 6\ngray:\nrot 1 7 6 2\nrot 7 6 2 1\ninc 8 7 3 2\ngreen:\nrot 7 3 2 8\nrot 3 2 8 7\nAnswer: 8 7 3 2",
+      "expected": "red:\nrot 5 4 0 9\ninc 6 5 1 0\ngray:\nrot 5 1 0 6\nrot 1 0 6 5\ninc 2 1 7 6\ngray:\nrot 1 7 6 2\nrot 7 6 2 1\ninc 8 7 3 2\ngreen:\nrot 7 3 2 8\nrot 3 2 8 7\nAnswer: 3 2 8 7\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 0,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 0,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00172",
+          "split": "test",
+          "chain": [
+            0,
+            7,
+            7,
+            2
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 10,
+          "required_ops": 10,
+          "arithmetic_errors": 0,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 302,
+      "id": "L4-test-00000",
+      "category": "operation_sequence",
+      "input": [
+        5,
+        2,
+        5,
+        8
+      ],
+      "chain": [
+        3,
+        3,
+        7,
+        3
+      ],
+      "raw": "gold:\ninc 6 3 6 9\nrev 9 6 3 6\ngold:\ninc 0 7 4 7\nrot 7 4 7 0\nrot 4 7 0 7\ninc 5 8 1 8\ngray:\nrot 8 1 8 5\nrot 1 8 5 8\ninc 2 9 6 9\ngold:\ninc 3 0 7 9\nrev 9 7 0 3\nAnswer: 9 7 0 3",
+      "expected": "gold:\ninc 6 3 6 9\nrev 9 6 3 6\ngold:\ninc 0 7 4 7\nrev 7 4 7 0\ngray:\nrot 4 7 0 7\nrot 7 0 7 4\ninc 8 1 8 5\ngold:\ninc 9 2 9 6\nrev 6 9 2 9\nAnswer: 6 9 2 9\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 1,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 3,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00000",
+          "split": "test",
+          "chain": [
+            3,
+            3,
+            7,
+            3
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 11,
+          "required_ops": 9,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 302,
+      "id": "L4-test-00001",
+      "category": "missing_or_multiple_Answer",
+      "input": [
+        8,
+        8,
+        9,
+        5
+      ],
+      "chain": [
+        7,
+        4,
+        8,
+        0
+      ],
+      "raw": "gray:\nrot 9 8 5 8\nrot 5 8 8 9\ninc 6 9 9 0\npink:\nrot 9 9 0 6\ninc 0 0 1 7\nswap 0 9 1 7\nbrown:\ninc 1 0 2 7\ninc 2 1 3 7\ninc 3 2 4 7\nred:\nrot 4 7 2 3\ninc 5 8 3 4",
+      "expected": "gray:\nrot 8 9 5 8\nrot 9 5 8 8\ninc 0 6 9 9\npink:\nrot 6 9 9 0\ninc 7 0 0 1\nswap 0 7 0 1\nbrown:\ninc 1 8 1 2\ninc 2 9 2 3\ninc 3 0 3 4\nred:\nrot 0 3 4 3\ninc 1 4 5 4\nAnswer: 1 4 5 4\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 1,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00001",
+          "split": "test",
+          "chain": [
+            7,
+            4,
+            8,
+            0
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 11,
+          "required_ops": 11,
+          "arithmetic_errors": 7,
+          "unparsed_lines": 0,
+          "answer_present": 0,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 302,
+      "id": "L4-test-00002",
+      "category": "numeric_step",
+      "input": [
+        1,
+        8,
+        9,
+        0
+      ],
+      "chain": [
+        4,
+        1,
+        6,
+        1
+      ],
+      "raw": "pink:\nrot 8 9 0 1\ninc 9 0 1 2\nswap 9 0 1 2\nblue:\nrev 2 1 0 9\nrot 1 0 9 2\ninc 2 1 0 3\nwhite:\ninc 3 2 1 4\nneg 7 8 9 6\ninc 8 9 0 7\nblue:\nrev 7 0 9 8\nrot 0 9 8 7\ninc 1 0 9 8\nAnswer: 1 0 9 8",
+      "expected": "pink:\nrot 8 9 0 1\ninc 9 0 1 2\nswap 0 9 1 2\nblue:\nrev 2 1 9 0\nrot 1 9 0 2\ninc 2 0 1 3\nwhite:\ninc 3 1 2 4\nneg 7 9 8 6\ninc 8 0 9 7\nblue:\nrev 7 9 0 8\nrot 9 0 8 7\ninc 0 1 9 8\nAnswer: 0 1 9 8\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00002",
+          "split": "test",
+          "chain": [
+            4,
+            1,
+            6,
+            1
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 12,
+          "required_ops": 12,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 302,
+      "id": "L4-test-00011",
+      "category": "unrecognized_extra_lines",
+      "input": [
+        1,
+        6,
+        7,
+        8
+      ],
+      "chain": [
+        3,
+        7,
+        0,
+        8
+      ],
+      "raw": "gold:\ninc 2 7 8 9\nrev 9 8 7 2\ngray:\nrot 8 7 2 9\nrot 7 2 9 8\nred:\ninc 8 3 10 0\nrot 3 10 0 8\ninc 4 1 1 9\nbrown:\ninc 5 2 1 0\ninc 6 3 1 0\ninc 7 4 1 0\nAnswer: 7 4 1 0",
+      "expected": "gold:\ninc 2 7 8 9\nrev 9 8 7 2\ngray:\nrot 8 7 2 9\nrot 7 2 9 8\ninc 8 3 0 9\nred:\nrot 3 0 9 8\ninc 4 1 0 9\nbrown:\ninc 5 2 1 0\ninc 6 3 2 1\ninc 7 4 3 2\nAnswer: 7 4 3 2\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 5,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00011",
+          "split": "test",
+          "chain": [
+            3,
+            7,
+            0,
+            8
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 8,
+          "required_ops": 10,
+          "arithmetic_errors": 4,
+          "unparsed_lines": 2,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 302,
+      "id": "L4-test-00389",
+      "category": "final_Answer_only",
+      "input": [
+        2,
+        4,
+        0,
+        7
+      ],
+      "chain": [
+        2,
+        8,
+        1,
+        5
+      ],
+      "raw": "green:\nrot 4 0 7 2\nrot 0 7 2 4\nbrown:\ninc 1 8 3 5\ninc 2 9 4 6\ninc 3 0 5 7\nblue:\nrev 7 5 0 3\nrot 5 0 3 7\ninc 6 1 4 8\nblack:\ninc 7 2 5 9\nswap 2 7 5 9\nAnswer: 7 2 5 9",
+      "expected": "green:\nrot 4 0 7 2\nrot 0 7 2 4\nbrown:\ninc 1 8 3 5\ninc 2 9 4 6\ninc 3 0 5 7\nblue:\nrev 7 5 0 3\nrot 5 0 3 7\ninc 6 1 4 8\nblack:\ninc 7 2 5 9\nswap 2 7 5 9\nAnswer: 2 7 5 9\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 0,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 0,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00389",
+          "split": "test",
+          "chain": [
+            2,
+            8,
+            1,
+            5
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 10,
+          "required_ops": 10,
+          "arithmetic_errors": 0,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 303,
+      "id": "L4-test-00000",
+      "category": "numeric_step",
+      "input": [
+        5,
+        2,
+        5,
+        8
+      ],
+      "chain": [
+        3,
+        3,
+        7,
+        3
+      ],
+      "raw": "gold:\ninc 6 3 6 9\nrev 9 6 3 6\ngold:\ninc 0 7 4 7\nrev 7 4 7 0\ngray:\nrot 4 7 0 7\nrot 7 0 7 4\ninc 8 1 8 4\ngold:\ninc 9 2 9 5\nrev 5 9 2 9\nAnswer: 5 9 2 9",
+      "expected": "gold:\ninc 6 3 6 9\nrev 9 6 3 6\ngold:\ninc 0 7 4 7\nrev 7 4 7 0\ngray:\nrot 4 7 0 7\nrot 7 0 7 4\ninc 8 1 8 5\ngold:\ninc 9 2 9 6\nrev 6 9 2 9\nAnswer: 6 9 2 9\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 0,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 0,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00000",
+          "split": "test",
+          "chain": [
+            3,
+            3,
+            7,
+            3
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 9,
+          "required_ops": 9,
+          "arithmetic_errors": 1,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 303,
+      "id": "L4-test-00005",
+      "category": "missing_or_multiple_Answer",
+      "input": [
+        4,
+        2,
+        2,
+        8
+      ],
+      "chain": [
+        3,
+        6,
+        2,
+        0
+      ],
+      "raw": "gold:\ninc 5 3 3 9\nrev 9 3 3 5\nwhite:\ninc 0 4 4 6\ninc 1 5 5 7\ngreen:\nrot 5 5 7 1\nrot 5 7 1 5\nred:\nrot 7 1 5 5\ninc 8 2 6 6",
+      "expected": "gold:\ninc 5 3 3 9\nrev 9 3 3 5\nwhite:\ninc 0 4 4 6\nneg 0 6 6 4\ninc 1 7 7 5\ngreen:\nrot 7 7 5 1\nrot 7 5 1 7\nred:\nrot 5 1 7 7\ninc 6 2 8 8\nAnswer: 6 2 8 8\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 0,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 3,
+          "wrong_operation": 1,
+          "numeric_step_error": 0,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 1,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00005",
+          "split": "test",
+          "chain": [
+            3,
+            6,
+            2,
+            0
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 8,
+          "required_ops": 9,
+          "arithmetic_errors": 0,
+          "unparsed_lines": 0,
+          "answer_present": 0,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 303,
+      "id": "L4-test-00008",
+      "category": "operation_sequence",
+      "input": [
+        8,
+        2,
+        0,
+        1
+      ],
+      "chain": [
+        4,
+        1,
+        0,
+        6
+      ],
+      "raw": "pink:\nrot 2 0 1 8\ninc 3 1 2 9\nswap 1 3 2 9\nblue:\nrev 9 2 1 3\nrot 2 1 3 9\ninc 3 2 4 0\nred:\nrot 2 4 0 3\ninc 3 5 1 4\nwhite:\ninc 4 6 1 4\nneg 6 7 9 4\nAnswer: 6 7 9 4",
+      "expected": "pink:\nrot 2 0 1 8\ninc 3 1 2 9\nswap 1 3 2 9\nblue:\nrev 9 2 3 1\nrot 2 3 1 9\ninc 3 4 2 0\nred:\nrot 4 2 0 3\ninc 5 3 1 4\nwhite:\ninc 6 4 2 5\nneg 4 6 8 5\ninc 5 7 9 6\nAnswer: 5 7 9 6\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 1,
+        "extra_output": 0,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": null,
+          "wrong_operation": 0,
+          "numeric_step_error": 1,
+          "format_extra_lines": 0,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 1,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00008",
+          "split": "test",
+          "chain": [
+            4,
+            1,
+            0,
+            6
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 10,
+          "required_ops": 11,
+          "arithmetic_errors": 3,
+          "unparsed_lines": 0,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    },
+    {
+      "condition": "NAME",
+      "seed": 303,
+      "id": "L4-test-00011",
+      "category": "unrecognized_extra_lines",
+      "input": [
+        1,
+        6,
+        7,
+        8
+      ],
+      "chain": [
+        3,
+        7,
+        0,
+        8
+      ],
+      "raw": "gold:\ninc 2 7 8 9\nrev 9 8 7 2\ngray:\nrot 8 7 2 9\nrot 7 2 9 8\nred:\ninc 8 3 10 0\nrot 3 10 0 8\ninc 4 1 1 9\nbrown:\ninc 5 2 1 0\ninc 6 3 1 0\ninc 7 4 1 0\nAnswer: 7 4 1 0",
+      "expected": "gold:\ninc 2 7 8 9\nrev 9 8 7 2\ngray:\nrot 8 7 2 9\nrot 7 2 9 8\ninc 8 3 0 9\nred:\nrot 3 0 9 8\ninc 4 1 0 9\nbrown:\ninc 5 2 1 0\ninc 6 3 2 1\ninc 7 4 3 2\nAnswer: 7 4 3 2\n",
+      "grading": {
+        "reward": 0,
+        "strict": 0,
+        "header_compliant": 1,
+        "numeric_error": 1,
+        "operation_mismatch": 1,
+        "early_end": 0,
+        "extra_output": 1,
+        "extra_ops": 0,
+        "missing_ops": 1,
+        "finish_reason": "eos",
+        "legacy": {
+          "first_wrong_operation_index": 5,
+          "wrong_operation": 1,
+          "numeric_step_error": 1,
+          "format_extra_lines": 1,
+          "missing_or_multiple_answer": 0,
+          "operation_prefix_only": 0,
+          "stop_evidence": "eos_before_length_limit_inferred",
+          "id": "L4-test-00011",
+          "split": "test",
+          "chain": [
+            3,
+            7,
+            0,
+            8
+          ],
+          "required_calls": 4,
+          "accuracy": 0,
+          "strict_trace": 0,
+          "correct_prefix_early_answer": 0,
+          "exact_two_tools_early_answer": 0,
+          "two_output_segments": 0,
+          "segments": 4,
+          "emitted_ops": 8,
+          "required_ops": 10,
+          "arithmetic_errors": 4,
+          "unparsed_lines": 2,
+          "answer_present": 1,
+          "budget_hit": 0,
+          "loose_parser_false_positive": 0
+        }
+      }
+    }
+  ],
+  "note": "Exclusive descriptive priority: Answer count, unrecognized lines, operation sequence, local numeric step, final Answer only. Not chronological first-error attribution. Title compliance is separate and cannot be added to strict failures. Cases are the first ID per observed category/condition/seed, not prevalence estimates."
+}

@@ -1,0 +1,11 @@
+{
+  "model": "qwen7b",
+  "rows": 4096,
+  "flat_macro_target_tokens_equal_each_row": true,
+  "training_token_ids_identical_to_original_qwen1.5b": true,
+  "one_pass_tokens": {
+    "input": 343670,
+    "flat_target": 263858,
+    "macro_target": 263858
+  }
+}

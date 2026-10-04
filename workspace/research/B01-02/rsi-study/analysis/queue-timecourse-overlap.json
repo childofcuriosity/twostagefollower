@@ -1,0 +1,4 @@
+{
+  "utc": "2026-09-24T05:01:01Z",
+  "reason": "Run read-only-probed training replays on GPU4-6 after all loops finish, overlapping independent gradient/legacy jobs on GPU0-3. No experimental parameters changed."
+}

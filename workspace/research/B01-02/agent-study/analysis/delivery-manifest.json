@@ -1,0 +1,39 @@
+{
+  "utc": "2026-09-24T19:38:29.355468+00:00",
+  "status": "complete_ready_for_user_review",
+  "primary_trajectories": 96,
+  "calibration_trajectories": 15,
+  "compatibility_main_trajectories": 0,
+  "combined_gpu_hours": 2.8006710507472357,
+  "scientific_judgment": "No demonstrated identity advantage; protocol-heavy failures and failed multi-requirement capability gate preclude claimed real-agent early-stop mechanism.",
+  "artifact_sha256": {
+    "agent-study/CONCLUSIONS.md": "1c684b95a3dda1b60810c03e56cc4b8335be9661d414c7c758c9b2dccd119fee",
+    "agent-study/REPORT.md": "668b1f4770ed6eabe7e2dcbdf10e6d6f513370486f1b1c7d715110549df1cfe6",
+    "agent-study/COMPLETION_AUDIT.md": "df8bc3b6f583a92fc66087525cd07a1213aa49275cbb4b11a4f8f8aa440ebcc0",
+    "agent-study/analysis/verification.json": "4db33b2d63c9d4ca806dd0ed94ded59e5cbea5373dc6860e9bc7c0949caba0af",
+    "agent-study/analysis/replay.json": "c799e254970cb90421b57ec78bbad306d1d23eb1386369eef08dff9d32b2cf82",
+    "agent-study/analysis/failure-diagnostics.json": "f9852f8f592089bf1733e367995c7c27991010a79a74cba5c841aa7d605faa29",
+    "agent-study/analysis/post-completion-review.json": "5a0a2ab3e11fe5c227df36adceb1f1b63676bf54503a4c23e93cf29b58868acb",
+    "agent-study/analysis/status-audit.jsonl": "56a7abfc20b70e29b019acd58ef90a3182c0c93684d33a96b8441e03e57ce8c5",
+    "agent-study/figures/agent-smoke.pdf": "43c43d3eec6656d054c07a7aeef62bc57417051587e033569426a6affb95cf59",
+    "agent-study/figures/agent-smoke.svg": "6e21f5eb0fa1fa463e0d47baf14c8ed48eb97d2ebc6de90adc46f2a37f3fc966",
+    "agent-study/figures/agent-smoke.png": "b67055d0183cd91674214b938a36221ece85f9fed5c06424b68ca081e8e3cb69",
+    "agent-study-v3/REPORT.md": "b52d0e0011bd961f44ad9a8cd79887fcf0941f72a858ff9917fccf80a244ab87",
+    "agent-study-v3/analysis/calibration-verification.json": "1842d8e91826cf79e40d22aeb40a068bdd10bb6f771d0e0ad4555797b86e90c3",
+    "agent-study-v3/analysis/CALIBRATION_FAILED.json": "af678b152ea8278179055071d4f839fcd865b2a03c6878f26228865e494f1609",
+    "agent-study-v3/analysis/registration.json": "612f1bb77a9e2fc20a21972d547dc7431d8ed7121882478f82bd00def979b813",
+    "agent-study/analysis/calibration-verification.json": "76989810c004ef634dd714fc3ec32e8704b3c0ae3b6a8c479f8cb93f44bf5766"
+  },
+  "analysis_source_sha256": {
+    "failure_diagnostics.py": "24a89729b35a2194732ca7fb079feb7ea127201f96fb4cf63cb4a5edabfd1132",
+    "replay.py": "dcba82a63f4fbb82c35847a137fce688ece4c418d0ec9465c2d0c7b8e64d2659",
+    "sandbox.py": "89eeef197d9267ea5367b2eecd268f1a763af007aa807218844c7bb26ddeadbc",
+    "agent.py": "918590dbeef13dad055d5f8d4228754538baeff50ed031e66132e8fcda534f45",
+    "plots.py": "883c3e87eb3271e89dd1af3444c297e85bb79667841a99579e471faa96ccf092",
+    "launch.py": "2a2a7248bd49da3acf932728f233eef00092f4bd75815eed3e2d7515469e5129",
+    "analyze.py": "eb11139c14c8a407a6ae6a2d8b623f94f51b97b2932f98382521903eb6f43ac1",
+    "audit.py": "402538b9df54fc8846cd7d5abd497072a483a9b239d8d2c966f9747a30b6b84f",
+    "tasks.py": "438077282c7d10b1fbe8ab56393199b70287d3fcadb001676f1ec6cf1f5dc755"
+  },
+  "resource_state": "Final compute-app query empty; no agent-study model/launcher/audit/replay processes. Returned5090 not accessed."
+}

@@ -1,0 +1,9 @@
+{
+  "condition": "flat",
+  "seed": 101,
+  "gpu": 4,
+  "exit_code": 0,
+  "seconds": 125.47174906730652,
+  "finished": 1790500282.665887,
+  "log": "logs/L3-flat-s101.log"
+}

@@ -1,0 +1,11 @@
+{
+  "length": 40,
+  "phase": "formal",
+  "condition": "macro",
+  "seed": 219,
+  "gpu": 1,
+  "exit_code": 0,
+  "seconds": 992.7463519573212,
+  "log": "logs/formal-L40-macro-s219.log",
+  "finished": 1790535553.9273462
+}

@@ -1,0 +1,136 @@
+{
+  "length": 40,
+  "phase": "explore",
+  "manifest_sha256": "a75269319fe919407689f91d9541cc56b64beab653b4a24447ebf0bc9c40c0ec",
+  "old_audit_sha256": "de5d7eecf2e3407b1dabf296534cd8d54caa8d9433bc4f10bad12017b2e93f27",
+  "results": {
+    "flat": {
+      "mean": 0.740234375,
+      "sample_sd": 0.03553399491925831,
+      "runs": [
+        {
+          "seed": 11,
+          "correct": 389,
+          "n": 512,
+          "rate": 0.759765625,
+          "counts": {
+            "under_ops": 15,
+            "over_ops": 20,
+            "wrong_expansion": 116,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 389
+          },
+          "mean_generated_tokens": 1114.4765625,
+          "gpu_hours": 0.2716810847653283,
+          "predictions_sha256": "0ef9f860dba1a63d5d2a4e19712549985d752cddb5a7e4dd48e21658f0f0c573"
+        },
+        {
+          "seed": 22,
+          "correct": 358,
+          "n": 512,
+          "rate": 0.69921875,
+          "counts": {
+            "under_ops": 19,
+            "over_ops": 16,
+            "wrong_expansion": 153,
+            "numeric_error": 1,
+            "generation_limit": 0,
+            "correct": 358
+          },
+          "mean_generated_tokens": 1114.64453125,
+          "gpu_hours": 0.27855716943740844,
+          "predictions_sha256": "f1acdc03aaf162b67fd0536b75cff88e467f37fd5cb480867e45917b42572f37"
+        },
+        {
+          "seed": 33,
+          "correct": 390,
+          "n": 512,
+          "rate": 0.76171875,
+          "counts": {
+            "under_ops": 12,
+            "over_ops": 13,
+            "wrong_expansion": 120,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 390
+          },
+          "mean_generated_tokens": 1114.59765625,
+          "gpu_hours": 0.27818985091315374,
+          "predictions_sha256": "50e93758ac198b5fb52d61dfed7e89f11ea83aee47ed3000497b8a2111ed6fd5"
+        }
+      ]
+    },
+    "macro": {
+      "mean": 0.9895833333333334,
+      "sample_sd": 0.0029834477180702085,
+      "runs": [
+        {
+          "seed": 11,
+          "correct": 505,
+          "n": 512,
+          "rate": 0.986328125,
+          "counts": {
+            "under_ops": 4,
+            "over_ops": 3,
+            "wrong_expansion": 7,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 505
+          },
+          "mean_generated_tokens": 1114.92578125,
+          "gpu_hours": 0.27309682620896236,
+          "predictions_sha256": "1e0f62cfa26233dff03ef920e42e30f8cbc9f95d4dbc7904a2c6ecf5eac19c28"
+        },
+        {
+          "seed": 22,
+          "correct": 508,
+          "n": 512,
+          "rate": 0.9921875,
+          "counts": {
+            "under_ops": 2,
+            "over_ops": 2,
+            "wrong_expansion": 4,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 508
+          },
+          "mean_generated_tokens": 1114.9453125,
+          "gpu_hours": 0.27964493738280405,
+          "predictions_sha256": "21909bf5329aa696fa0066e2fd5e9ed869ba869775b98473a85098b7e8214f4e"
+        },
+        {
+          "seed": 33,
+          "correct": 507,
+          "n": 512,
+          "rate": 0.990234375,
+          "counts": {
+            "under_ops": 4,
+            "over_ops": 1,
+            "wrong_expansion": 5,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 507
+          },
+          "mean_generated_tokens": 1114.296875,
+          "gpu_hours": 0.2806593938668569,
+          "predictions_sha256": "c9785d1703093e0efef9cbe86d0b99349b74cea2fb07f67c7922a526d11c0546"
+        }
+      ]
+    }
+  },
+  "paired_vs_flat": {
+    "macro": {
+      "mean": 0.24934895833333334,
+      "sample_sd": 0.03778846838784232,
+      "positive_seeds": 3,
+      "negative_seeds": 0,
+      "per_seed": {
+        "11": 0.2265625,
+        "22": 0.29296875,
+        "33": 0.228515625
+      }
+    }
+  },
+  "scored_utc": "2026-09-27T16:04:23Z"
+}

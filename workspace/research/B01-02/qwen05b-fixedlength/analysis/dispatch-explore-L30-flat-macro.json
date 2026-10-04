@@ -1,0 +1,71 @@
+{
+  "results": [
+    {
+      "length": 30,
+      "phase": "explore",
+      "condition": "macro",
+      "seed": 22,
+      "gpu": 4,
+      "exit_code": 0,
+      "seconds": 761.8522136211395,
+      "log": "logs/explore-L30-macro-s22.log",
+      "finished": 1790521907.111495
+    },
+    {
+      "length": 30,
+      "phase": "explore",
+      "condition": "macro",
+      "seed": 33,
+      "gpu": 5,
+      "exit_code": 0,
+      "seconds": 765.1342227458954,
+      "log": "logs/explore-L30-macro-s33.log",
+      "finished": 1790521910.3942008
+    },
+    {
+      "length": 30,
+      "phase": "explore",
+      "condition": "flat",
+      "seed": 11,
+      "gpu": 0,
+      "exit_code": 0,
+      "seconds": 768.8337867259979,
+      "log": "logs/explore-L30-flat-s11.log",
+      "finished": 1790521914.0915287
+    },
+    {
+      "length": 30,
+      "phase": "explore",
+      "condition": "macro",
+      "seed": 11,
+      "gpu": 3,
+      "exit_code": 0,
+      "seconds": 771.2293002605438,
+      "log": "logs/explore-L30-macro-s11.log",
+      "finished": 1790521916.4881155
+    },
+    {
+      "length": 30,
+      "phase": "explore",
+      "condition": "flat",
+      "seed": 22,
+      "gpu": 1,
+      "exit_code": 0,
+      "seconds": 771.3545928001404,
+      "log": "logs/explore-L30-flat-s22.log",
+      "finished": 1790521916.6127064
+    },
+    {
+      "length": 30,
+      "phase": "explore",
+      "condition": "flat",
+      "seed": 33,
+      "gpu": 2,
+      "exit_code": 0,
+      "seconds": 774.2120599746704,
+      "log": "logs/explore-L30-flat-s33.log",
+      "finished": 1790521919.470528
+    }
+  ],
+  "seconds": 774.2442383766174
+}

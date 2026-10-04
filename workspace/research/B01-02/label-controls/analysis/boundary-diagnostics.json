@@ -1,0 +1,984 @@
+{
+  "results": [
+    {
+      "model": "qwen1.5b",
+      "condition": "flat",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 0,
+        "exact_two_tools_correct_then_answer": 399,
+        "strict_correct": 0
+      },
+      "emitted_label_count_histogram": {
+        "2": 480
+      }
+    },
+    {
+      "model": "qwen1.5b",
+      "condition": "flat",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 0,
+        "exact_two_tools_correct_then_answer": 403,
+        "strict_correct": 0
+      },
+      "emitted_label_count_histogram": {
+        "2": 480
+      }
+    },
+    {
+      "model": "qwen1.5b",
+      "condition": "flat",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 0,
+        "exact_two_tools_correct_then_answer": 365,
+        "strict_correct": 0
+      },
+      "emitted_label_count_histogram": {
+        "2": 480
+      }
+    },
+    {
+      "model": "qwen1.5b",
+      "condition": "macro",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 406,
+        "exact_two_tools_correct_then_answer": 66,
+        "strict_correct": 80,
+        "third_label_expected": 269,
+        "label_sequence_correct": 85,
+        "strict_given_labels_correct_numerator": 80
+      },
+      "emitted_label_count_histogram": {
+        "3": 208,
+        "2": 74,
+        "4": 124,
+        "5": 54,
+        "6": 19,
+        "7": 1
+      }
+    },
+    {
+      "model": "qwen1.5b",
+      "condition": "macro",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 437,
+        "exact_two_tools_correct_then_answer": 38,
+        "strict_correct": 99,
+        "third_label_expected": 311,
+        "label_sequence_correct": 117,
+        "strict_given_labels_correct_numerator": 99
+      },
+      "emitted_label_count_histogram": {
+        "3": 161,
+        "2": 43,
+        "4": 133,
+        "5": 86,
+        "6": 30,
+        "8": 3,
+        "7": 24
+      }
+    },
+    {
+      "model": "qwen1.5b",
+      "condition": "macro",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 314,
+        "exact_two_tools_correct_then_answer": 148,
+        "strict_correct": 55,
+        "third_label_expected": 208,
+        "label_sequence_correct": 62,
+        "strict_given_labels_correct_numerator": 55
+      },
+      "emitted_label_count_histogram": {
+        "3": 179,
+        "2": 166,
+        "4": 89,
+        "5": 27,
+        "6": 16,
+        "7": 3
+      }
+    },
+    {
+      "model": "qwen1.5b",
+      "condition": "position",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 1,
+        "exact_two_tools_correct_then_answer": 411,
+        "strict_correct": 0,
+        "third_label_expected": 1
+      },
+      "emitted_label_count_histogram": {
+        "2": 479,
+        "3": 1
+      }
+    },
+    {
+      "model": "qwen1.5b",
+      "condition": "position",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 0,
+        "exact_two_tools_correct_then_answer": 344,
+        "strict_correct": 0
+      },
+      "emitted_label_count_histogram": {
+        "2": 480
+      }
+    },
+    {
+      "model": "qwen1.5b",
+      "condition": "position",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 5,
+        "exact_two_tools_correct_then_answer": 335,
+        "strict_correct": 0,
+        "third_label_expected": 5
+      },
+      "emitted_label_count_histogram": {
+        "2": 475,
+        "3": 5
+      }
+    },
+    {
+      "model": "qwen1.5b",
+      "condition": "alias",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 327,
+        "exact_two_tools_correct_then_answer": 121,
+        "strict_correct": 35,
+        "third_label_expected": 219,
+        "label_sequence_correct": 36,
+        "strict_given_labels_correct_numerator": 35
+      },
+      "emitted_label_count_histogram": {
+        "2": 153,
+        "3": 213,
+        "4": 71,
+        "5": 34,
+        "6": 6,
+        "7": 2,
+        "8": 1
+      }
+    },
+    {
+      "model": "qwen1.5b",
+      "condition": "alias",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 474,
+        "exact_two_tools_correct_then_answer": 4,
+        "strict_correct": 148,
+        "third_label_expected": 399,
+        "label_sequence_correct": 148,
+        "strict_given_labels_correct_numerator": 148
+      },
+      "emitted_label_count_histogram": {
+        "3": 164,
+        "2": 6,
+        "4": 225,
+        "5": 61,
+        "6": 20,
+        "7": 4
+      }
+    },
+    {
+      "model": "qwen1.5b",
+      "condition": "alias",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 403,
+        "exact_two_tools_correct_then_answer": 73,
+        "strict_correct": 59,
+        "third_label_expected": 313,
+        "label_sequence_correct": 59,
+        "strict_given_labels_correct_numerator": 59
+      },
+      "emitted_label_count_histogram": {
+        "3": 231,
+        "2": 77,
+        "4": 129,
+        "5": 29,
+        "6": 14
+      }
+    },
+    {
+      "model": "qwen3b",
+      "condition": "flat",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 0,
+        "exact_two_tools_correct_then_answer": 389,
+        "strict_correct": 0
+      },
+      "emitted_label_count_histogram": {
+        "2": 480
+      }
+    },
+    {
+      "model": "qwen3b",
+      "condition": "flat",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 0,
+        "exact_two_tools_correct_then_answer": 338,
+        "strict_correct": 0
+      },
+      "emitted_label_count_histogram": {
+        "2": 480
+      }
+    },
+    {
+      "model": "qwen3b",
+      "condition": "flat",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 0,
+        "exact_two_tools_correct_then_answer": 429,
+        "strict_correct": 0
+      },
+      "emitted_label_count_histogram": {
+        "2": 480
+      }
+    },
+    {
+      "model": "qwen3b",
+      "condition": "macro",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 464,
+        "exact_two_tools_correct_then_answer": 4,
+        "strict_correct": 173,
+        "third_label_expected": 424,
+        "label_sequence_correct": 293,
+        "strict_given_labels_correct_numerator": 173
+      },
+      "emitted_label_count_histogram": {
+        "3": 105,
+        "2": 16,
+        "4": 135,
+        "5": 87,
+        "6": 66,
+        "7": 38,
+        "8": 32,
+        "10": 1
+      }
+    },
+    {
+      "model": "qwen3b",
+      "condition": "macro",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 468,
+        "exact_two_tools_correct_then_answer": 8,
+        "strict_correct": 193,
+        "third_label_expected": 413,
+        "label_sequence_correct": 240,
+        "strict_given_labels_correct_numerator": 193
+      },
+      "emitted_label_count_histogram": {
+        "3": 117,
+        "2": 12,
+        "5": 81,
+        "4": 133,
+        "6": 75,
+        "7": 46,
+        "8": 14,
+        "9": 2
+      }
+    },
+    {
+      "model": "qwen3b",
+      "condition": "macro",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 435,
+        "exact_two_tools_correct_then_answer": 41,
+        "strict_correct": 165,
+        "third_label_expected": 396,
+        "label_sequence_correct": 200,
+        "strict_given_labels_correct_numerator": 165
+      },
+      "emitted_label_count_histogram": {
+        "3": 184,
+        "2": 45,
+        "4": 129,
+        "5": 75,
+        "6": 39,
+        "7": 8
+      }
+    },
+    {
+      "model": "qwen3b",
+      "condition": "position",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 2,
+        "exact_two_tools_correct_then_answer": 399,
+        "strict_correct": 0,
+        "third_label_expected": 2
+      },
+      "emitted_label_count_histogram": {
+        "2": 478,
+        "3": 2
+      }
+    },
+    {
+      "model": "qwen3b",
+      "condition": "position",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 272,
+        "exact_two_tools_correct_then_answer": 132,
+        "strict_correct": 3,
+        "third_label_expected": 272,
+        "label_sequence_correct": 90,
+        "strict_given_labels_correct_numerator": 3
+      },
+      "emitted_label_count_histogram": {
+        "3": 266,
+        "2": 208,
+        "4": 5,
+        "5": 1
+      }
+    },
+    {
+      "model": "qwen3b",
+      "condition": "position",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 136,
+        "exact_two_tools_correct_then_answer": 199,
+        "strict_correct": 11,
+        "third_label_expected": 136,
+        "label_sequence_correct": 87,
+        "strict_given_labels_correct_numerator": 11
+      },
+      "emitted_label_count_histogram": {
+        "3": 136,
+        "2": 344
+      }
+    },
+    {
+      "model": "qwen3b",
+      "condition": "alias",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 476,
+        "exact_two_tools_correct_then_answer": 0,
+        "strict_correct": 259,
+        "third_label_expected": 456,
+        "label_sequence_correct": 335,
+        "strict_given_labels_correct_numerator": 259
+      },
+      "emitted_label_count_histogram": {
+        "3": 104,
+        "2": 4,
+        "4": 122,
+        "5": 120,
+        "6": 62,
+        "7": 40,
+        "8": 28
+      }
+    },
+    {
+      "model": "qwen3b",
+      "condition": "alias",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 452,
+        "exact_two_tools_correct_then_answer": 16,
+        "strict_correct": 184,
+        "third_label_expected": 393,
+        "label_sequence_correct": 212,
+        "strict_given_labels_correct_numerator": 184
+      },
+      "emitted_label_count_histogram": {
+        "3": 141,
+        "2": 28,
+        "4": 139,
+        "5": 103,
+        "6": 39,
+        "8": 15,
+        "7": 15
+      }
+    },
+    {
+      "model": "qwen3b",
+      "condition": "alias",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 480,
+        "exact_two_tools_correct_then_answer": 0,
+        "strict_correct": 319,
+        "third_label_expected": 453,
+        "label_sequence_correct": 355,
+        "strict_given_labels_correct_numerator": 319
+      },
+      "emitted_label_count_histogram": {
+        "3": 111,
+        "4": 126,
+        "5": 87,
+        "6": 81,
+        "7": 31,
+        "8": 44
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "flat",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 474,
+        "exact_two_tools_correct_then_answer": 6,
+        "strict_correct": 56,
+        "third_label_expected": 474,
+        "label_sequence_correct": 109,
+        "strict_given_labels_correct_numerator": 56
+      },
+      "emitted_label_count_histogram": {
+        "3": 195,
+        "2": 6,
+        "4": 159,
+        "5": 81,
+        "6": 37,
+        "7": 2
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "flat",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 417,
+        "exact_two_tools_correct_then_answer": 63,
+        "strict_correct": 62,
+        "third_label_expected": 417,
+        "label_sequence_correct": 71,
+        "strict_given_labels_correct_numerator": 62
+      },
+      "emitted_label_count_histogram": {
+        "3": 379,
+        "2": 63,
+        "4": 28,
+        "5": 6,
+        "6": 4
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "flat",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 246,
+        "exact_two_tools_correct_then_answer": 232,
+        "strict_correct": 57,
+        "third_label_expected": 246,
+        "label_sequence_correct": 68,
+        "strict_given_labels_correct_numerator": 57
+      },
+      "emitted_label_count_histogram": {
+        "2": 234,
+        "3": 173,
+        "4": 48,
+        "5": 21,
+        "6": 4
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "macro",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 476,
+        "exact_two_tools_correct_then_answer": 0,
+        "strict_correct": 144,
+        "third_label_expected": 442,
+        "label_sequence_correct": 255,
+        "strict_given_labels_correct_numerator": 144
+      },
+      "emitted_label_count_histogram": {
+        "3": 143,
+        "2": 4,
+        "4": 140,
+        "5": 92,
+        "6": 46,
+        "7": 38,
+        "8": 16,
+        "9": 1
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "macro",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 480,
+        "exact_two_tools_correct_then_answer": 0,
+        "strict_correct": 248,
+        "third_label_expected": 447,
+        "label_sequence_correct": 343,
+        "strict_given_labels_correct_numerator": 248
+      },
+      "emitted_label_count_histogram": {
+        "3": 109,
+        "4": 123,
+        "5": 110,
+        "6": 68,
+        "7": 37,
+        "8": 33
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "macro",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 441,
+        "exact_two_tools_correct_then_answer": 29,
+        "strict_correct": 141,
+        "third_label_expected": 366,
+        "label_sequence_correct": 142,
+        "strict_given_labels_correct_numerator": 141
+      },
+      "emitted_label_count_histogram": {
+        "3": 199,
+        "2": 39,
+        "4": 123,
+        "5": 72,
+        "6": 35,
+        "7": 12
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 446,
+        "exact_two_tools_correct_then_answer": 27,
+        "strict_correct": 72,
+        "third_label_expected": 446,
+        "label_sequence_correct": 132,
+        "strict_given_labels_correct_numerator": 72
+      },
+      "emitted_label_count_histogram": {
+        "3": 276,
+        "2": 34,
+        "4": 87,
+        "5": 22,
+        "6": 29,
+        "7": 32
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 370,
+        "exact_two_tools_correct_then_answer": 106,
+        "strict_correct": 44,
+        "third_label_expected": 370,
+        "label_sequence_correct": 44,
+        "strict_given_labels_correct_numerator": 44
+      },
+      "emitted_label_count_histogram": {
+        "3": 366,
+        "2": 110,
+        "5": 3,
+        "4": 1
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "position",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 480,
+        "exact_two_tools_correct_then_answer": 0,
+        "strict_correct": 170,
+        "third_label_expected": 480,
+        "label_sequence_correct": 357,
+        "strict_given_labels_correct_numerator": 170
+      },
+      "emitted_label_count_histogram": {
+        "3": 100,
+        "4": 117,
+        "5": 83,
+        "6": 85,
+        "7": 81,
+        "8": 14
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 477,
+        "exact_two_tools_correct_then_answer": 3,
+        "strict_correct": 301,
+        "third_label_expected": 477,
+        "label_sequence_correct": 419,
+        "strict_given_labels_correct_numerator": 301
+      },
+      "emitted_label_count_histogram": {
+        "3": 102,
+        "2": 3,
+        "4": 105,
+        "5": 103,
+        "6": 73,
+        "8": 76,
+        "7": 18
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 435,
+        "exact_two_tools_correct_then_answer": 45,
+        "strict_correct": 151,
+        "third_label_expected": 423,
+        "label_sequence_correct": 194,
+        "strict_given_labels_correct_numerator": 151
+      },
+      "emitted_label_count_histogram": {
+        "3": 173,
+        "2": 45,
+        "4": 118,
+        "5": 77,
+        "6": 41,
+        "8": 7,
+        "7": 19
+      }
+    },
+    {
+      "model": "qwen7b",
+      "condition": "alias",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 480,
+        "exact_two_tools_correct_then_answer": 0,
+        "strict_correct": 388,
+        "third_label_expected": 476,
+        "label_sequence_correct": 417,
+        "strict_given_labels_correct_numerator": 388
+      },
+      "emitted_label_count_histogram": {
+        "3": 100,
+        "4": 108,
+        "5": 93,
+        "6": 87,
+        "8": 61,
+        "7": 31
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "flat",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 480,
+        "exact_two_tools_correct_then_answer": 0,
+        "strict_correct": 87,
+        "third_label_expected": 480,
+        "label_sequence_correct": 110,
+        "strict_given_labels_correct_numerator": 87
+      },
+      "emitted_label_count_histogram": {
+        "3": 231,
+        "4": 147,
+        "5": 74,
+        "6": 27,
+        "7": 1
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "flat",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 480,
+        "exact_two_tools_correct_then_answer": 0,
+        "strict_correct": 150,
+        "third_label_expected": 480,
+        "label_sequence_correct": 178,
+        "strict_given_labels_correct_numerator": 150
+      },
+      "emitted_label_count_histogram": {
+        "3": 142,
+        "4": 229,
+        "5": 81,
+        "6": 28
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "flat",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 472,
+        "exact_two_tools_correct_then_answer": 8,
+        "strict_correct": 132,
+        "third_label_expected": 472,
+        "label_sequence_correct": 162,
+        "strict_given_labels_correct_numerator": 132
+      },
+      "emitted_label_count_histogram": {
+        "3": 132,
+        "2": 8,
+        "4": 175,
+        "5": 96,
+        "6": 69
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "macro",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 458,
+        "exact_two_tools_correct_then_answer": 22,
+        "strict_correct": 185,
+        "third_label_expected": 415,
+        "label_sequence_correct": 193,
+        "strict_given_labels_correct_numerator": 185
+      },
+      "emitted_label_count_histogram": {
+        "3": 191,
+        "2": 22,
+        "4": 148,
+        "5": 93,
+        "6": 25,
+        "7": 1
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "macro",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 472,
+        "exact_two_tools_correct_then_answer": 8,
+        "strict_correct": 275,
+        "third_label_expected": 443,
+        "label_sequence_correct": 279,
+        "strict_given_labels_correct_numerator": 275
+      },
+      "emitted_label_count_histogram": {
+        "3": 130,
+        "2": 8,
+        "4": 118,
+        "5": 122,
+        "6": 46,
+        "8": 37,
+        "7": 19
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "macro",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 477,
+        "exact_two_tools_correct_then_answer": 3,
+        "strict_correct": 349,
+        "third_label_expected": 470,
+        "label_sequence_correct": 355,
+        "strict_given_labels_correct_numerator": 349
+      },
+      "emitted_label_count_histogram": {
+        "3": 111,
+        "4": 112,
+        "5": 104,
+        "6": 85,
+        "7": 20,
+        "8": 45,
+        "2": 3
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 468,
+        "exact_two_tools_correct_then_answer": 12,
+        "strict_correct": 176,
+        "third_label_expected": 468,
+        "label_sequence_correct": 212,
+        "strict_given_labels_correct_numerator": 176
+      },
+      "emitted_label_count_histogram": {
+        "3": 115,
+        "2": 12,
+        "4": 122,
+        "5": 131,
+        "6": 61,
+        "7": 36,
+        "8": 3
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 463,
+        "exact_two_tools_correct_then_answer": 17,
+        "strict_correct": 147,
+        "third_label_expected": 463,
+        "label_sequence_correct": 153,
+        "strict_given_labels_correct_numerator": 147
+      },
+      "emitted_label_count_histogram": {
+        "3": 181,
+        "2": 17,
+        "4": 164,
+        "5": 82,
+        "6": 35,
+        "7": 1
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "position",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 480,
+        "exact_two_tools_correct_then_answer": 0,
+        "strict_correct": 241,
+        "third_label_expected": 480,
+        "label_sequence_correct": 416,
+        "strict_given_labels_correct_numerator": 241
+      },
+      "emitted_label_count_histogram": {
+        "3": 96,
+        "4": 97,
+        "5": 115,
+        "6": 78,
+        "8": 53,
+        "7": 41
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 11,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 480,
+        "exact_two_tools_correct_then_answer": 0,
+        "strict_correct": 143,
+        "third_label_expected": 468,
+        "label_sequence_correct": 154,
+        "strict_given_labels_correct_numerator": 143
+      },
+      "emitted_label_count_histogram": {
+        "3": 158,
+        "4": 156,
+        "5": 86,
+        "6": 55,
+        "7": 24,
+        "8": 1
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 22,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 480,
+        "exact_two_tools_correct_then_answer": 0,
+        "strict_correct": 222,
+        "third_label_expected": 470,
+        "label_sequence_correct": 247,
+        "strict_given_labels_correct_numerator": 222
+      },
+      "emitted_label_count_histogram": {
+        "3": 156,
+        "4": 138,
+        "5": 102,
+        "6": 51,
+        "7": 29,
+        "8": 4
+      }
+    },
+    {
+      "model": "qwen32b",
+      "condition": "alias",
+      "seed": 33,
+      "counts": {
+        "n": 480,
+        "reaches_third_label": 319,
+        "exact_two_tools_correct_then_answer": 157,
+        "strict_correct": 84,
+        "third_label_expected": 257,
+        "label_sequence_correct": 84,
+        "strict_given_labels_correct_numerator": 84
+      },
+      "emitted_label_count_histogram": {
+        "3": 310,
+        "2": 161,
+        "4": 9
+      }
+    }
+  ],
+  "note": "Descriptive, conditioned-on-output rates not causal. All test tasks require at least three calls. STEP third-label identity is trivial and not comparable to identity binding. No new model inference."
+}

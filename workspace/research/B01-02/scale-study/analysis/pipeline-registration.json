@@ -1,0 +1,14 @@
+{
+  "utc": "2026-09-24T09:57:31Z",
+  "stage": "before any formal new training",
+  "hashes": {
+    "src/download.py": "685050f57bf13b630cb2f713dc06fe2360fd33d9aa91ade723bb92bd47f9f836",
+    "src/analyze.py": "c9ddfc769b06b1b6dc95faf00a46182fa06b04477417e190c386a7a50abb49b6",
+    "src/checkpoints.py": "eb869f6773fe11844d3f45a28b85801743166a935c909b6ee7e690d6ffa5a95b",
+    "src/finish.py": "3c8f11efb2b4ed80f83a99ca713cef2e9afc451695af20535b7452ae01ee8a9f",
+    "src/launch.py": "304f28e3ad594dd6f7dd0860b0ba86461fe159f14178924daabc696f09d34468",
+    "src/check_microbatch.py": "f6c7c50a352bf549c2431e409eadc55f4450e674e7e73447f0faccf1cdcb6bff",
+    "src/train.py": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef"
+  },
+  "manual_review_required": true
+}

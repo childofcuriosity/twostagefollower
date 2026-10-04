@@ -1,0 +1,725 @@
+{
+  "records": [
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "header_condition": "joint",
+      "length": "all",
+      "n": 480,
+      "correct": 253,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "e9c0762c8c386864855c2898b5f64ff7a19c68093aeb57bb4d537173ee71e13d"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "header_condition": "joint",
+      "length": 3,
+      "n": 96,
+      "correct": 92,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "e9c0762c8c386864855c2898b5f64ff7a19c68093aeb57bb4d537173ee71e13d"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "header_condition": "joint",
+      "length": 4,
+      "n": 96,
+      "correct": 54,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "e9c0762c8c386864855c2898b5f64ff7a19c68093aeb57bb4d537173ee71e13d"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "header_condition": "joint",
+      "length": 5,
+      "n": 96,
+      "correct": 47,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "e9c0762c8c386864855c2898b5f64ff7a19c68093aeb57bb4d537173ee71e13d"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "header_condition": "joint",
+      "length": 6,
+      "n": 96,
+      "correct": 36,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "e9c0762c8c386864855c2898b5f64ff7a19c68093aeb57bb4d537173ee71e13d"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "header_condition": "joint",
+      "length": 8,
+      "n": 96,
+      "correct": 24,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "e9c0762c8c386864855c2898b5f64ff7a19c68093aeb57bb4d537173ee71e13d"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "header_condition": "operation_oracle",
+      "length": "all",
+      "n": 480,
+      "correct": 403,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "d7a6451c0bbb7a8e0b9acb1f1e843f877aa6c43be6ee2efc2c19ebe626de8dbf"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "header_condition": "operation_oracle",
+      "length": 3,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "d7a6451c0bbb7a8e0b9acb1f1e843f877aa6c43be6ee2efc2c19ebe626de8dbf"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "header_condition": "operation_oracle",
+      "length": 4,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "d7a6451c0bbb7a8e0b9acb1f1e843f877aa6c43be6ee2efc2c19ebe626de8dbf"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "header_condition": "operation_oracle",
+      "length": 5,
+      "n": 96,
+      "correct": 79,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "d7a6451c0bbb7a8e0b9acb1f1e843f877aa6c43be6ee2efc2c19ebe626de8dbf"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "header_condition": "operation_oracle",
+      "length": 6,
+      "n": 96,
+      "correct": 81,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "d7a6451c0bbb7a8e0b9acb1f1e843f877aa6c43be6ee2efc2c19ebe626de8dbf"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 11,
+      "header_condition": "operation_oracle",
+      "length": 8,
+      "n": 96,
+      "correct": 51,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "d7a6451c0bbb7a8e0b9acb1f1e843f877aa6c43be6ee2efc2c19ebe626de8dbf"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "header_condition": "joint",
+      "length": "all",
+      "n": 480,
+      "correct": 159,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "2daa07bab1ec9981be96d65822a829f388e4d724155be544884a1b93dce62215"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "header_condition": "joint",
+      "length": 3,
+      "n": 96,
+      "correct": 72,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "2daa07bab1ec9981be96d65822a829f388e4d724155be544884a1b93dce62215"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "header_condition": "joint",
+      "length": 4,
+      "n": 96,
+      "correct": 60,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "2daa07bab1ec9981be96d65822a829f388e4d724155be544884a1b93dce62215"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "header_condition": "joint",
+      "length": 5,
+      "n": 96,
+      "correct": 17,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "2daa07bab1ec9981be96d65822a829f388e4d724155be544884a1b93dce62215"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "header_condition": "joint",
+      "length": 6,
+      "n": 96,
+      "correct": 9,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "2daa07bab1ec9981be96d65822a829f388e4d724155be544884a1b93dce62215"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "header_condition": "joint",
+      "length": 8,
+      "n": 96,
+      "correct": 1,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "2daa07bab1ec9981be96d65822a829f388e4d724155be544884a1b93dce62215"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "header_condition": "operation_oracle",
+      "length": "all",
+      "n": 480,
+      "correct": 200,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "16b6a5c082f37e8c9be8d81261a5a29ca08bbe8d1dcb28d6b0311f297b418dfd"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "header_condition": "operation_oracle",
+      "length": 3,
+      "n": 96,
+      "correct": 52,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "16b6a5c082f37e8c9be8d81261a5a29ca08bbe8d1dcb28d6b0311f297b418dfd"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "header_condition": "operation_oracle",
+      "length": 4,
+      "n": 96,
+      "correct": 65,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "16b6a5c082f37e8c9be8d81261a5a29ca08bbe8d1dcb28d6b0311f297b418dfd"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "header_condition": "operation_oracle",
+      "length": 5,
+      "n": 96,
+      "correct": 36,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "16b6a5c082f37e8c9be8d81261a5a29ca08bbe8d1dcb28d6b0311f297b418dfd"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "header_condition": "operation_oracle",
+      "length": 6,
+      "n": 96,
+      "correct": 31,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "16b6a5c082f37e8c9be8d81261a5a29ca08bbe8d1dcb28d6b0311f297b418dfd"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 22,
+      "header_condition": "operation_oracle",
+      "length": 8,
+      "n": 96,
+      "correct": 16,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "16b6a5c082f37e8c9be8d81261a5a29ca08bbe8d1dcb28d6b0311f297b418dfd"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "header_condition": "joint",
+      "length": "all",
+      "n": 480,
+      "correct": 251,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "0afe4635fc0894cc0c8090659053d127dc554222b719b1334ea964d5576d13b1"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "header_condition": "joint",
+      "length": 3,
+      "n": 96,
+      "correct": 84,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "0afe4635fc0894cc0c8090659053d127dc554222b719b1334ea964d5576d13b1"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "header_condition": "joint",
+      "length": 4,
+      "n": 96,
+      "correct": 72,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "0afe4635fc0894cc0c8090659053d127dc554222b719b1334ea964d5576d13b1"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "header_condition": "joint",
+      "length": 5,
+      "n": 96,
+      "correct": 60,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "0afe4635fc0894cc0c8090659053d127dc554222b719b1334ea964d5576d13b1"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "header_condition": "joint",
+      "length": 6,
+      "n": 96,
+      "correct": 34,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "0afe4635fc0894cc0c8090659053d127dc554222b719b1334ea964d5576d13b1"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "header_condition": "joint",
+      "length": 8,
+      "n": 96,
+      "correct": 1,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "0afe4635fc0894cc0c8090659053d127dc554222b719b1334ea964d5576d13b1"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "header_condition": "operation_oracle",
+      "length": "all",
+      "n": 480,
+      "correct": 386,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "45c9ab80012d49ec92b089f4ed02f3a9ec2b5745d014a93cdb1dc763342b5750"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "header_condition": "operation_oracle",
+      "length": 3,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "45c9ab80012d49ec92b089f4ed02f3a9ec2b5745d014a93cdb1dc763342b5750"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "header_condition": "operation_oracle",
+      "length": 4,
+      "n": 96,
+      "correct": 76,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "45c9ab80012d49ec92b089f4ed02f3a9ec2b5745d014a93cdb1dc763342b5750"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "header_condition": "operation_oracle",
+      "length": 5,
+      "n": 96,
+      "correct": 87,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "45c9ab80012d49ec92b089f4ed02f3a9ec2b5745d014a93cdb1dc763342b5750"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "header_condition": "operation_oracle",
+      "length": 6,
+      "n": 96,
+      "correct": 75,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "45c9ab80012d49ec92b089f4ed02f3a9ec2b5745d014a93cdb1dc763342b5750"
+    },
+    {
+      "model": "qwen3b",
+      "seed": 33,
+      "header_condition": "operation_oracle",
+      "length": 8,
+      "n": 96,
+      "correct": 52,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "45c9ab80012d49ec92b089f4ed02f3a9ec2b5745d014a93cdb1dc763342b5750"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "header_condition": "joint",
+      "length": "all",
+      "n": 480,
+      "correct": 476,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "07ef65aca3535b270e0df989bac62118838108c71482db711688fe0b0b9a69ab"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "header_condition": "joint",
+      "length": 3,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "07ef65aca3535b270e0df989bac62118838108c71482db711688fe0b0b9a69ab"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "header_condition": "joint",
+      "length": 4,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "07ef65aca3535b270e0df989bac62118838108c71482db711688fe0b0b9a69ab"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "header_condition": "joint",
+      "length": 5,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "07ef65aca3535b270e0df989bac62118838108c71482db711688fe0b0b9a69ab"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "header_condition": "joint",
+      "length": 6,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "07ef65aca3535b270e0df989bac62118838108c71482db711688fe0b0b9a69ab"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "header_condition": "joint",
+      "length": 8,
+      "n": 96,
+      "correct": 92,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "07ef65aca3535b270e0df989bac62118838108c71482db711688fe0b0b9a69ab"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "header_condition": "operation_oracle",
+      "length": "all",
+      "n": 480,
+      "correct": 469,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "ca194acbdf16c7d6b82fb7dc587b2c81166771f7dcfbbe59d6cee6e7bdd1738c"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "header_condition": "operation_oracle",
+      "length": 3,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "ca194acbdf16c7d6b82fb7dc587b2c81166771f7dcfbbe59d6cee6e7bdd1738c"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "header_condition": "operation_oracle",
+      "length": 4,
+      "n": 96,
+      "correct": 95,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "ca194acbdf16c7d6b82fb7dc587b2c81166771f7dcfbbe59d6cee6e7bdd1738c"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "header_condition": "operation_oracle",
+      "length": 5,
+      "n": 96,
+      "correct": 91,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "ca194acbdf16c7d6b82fb7dc587b2c81166771f7dcfbbe59d6cee6e7bdd1738c"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "header_condition": "operation_oracle",
+      "length": 6,
+      "n": 96,
+      "correct": 95,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "ca194acbdf16c7d6b82fb7dc587b2c81166771f7dcfbbe59d6cee6e7bdd1738c"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 11,
+      "header_condition": "operation_oracle",
+      "length": 8,
+      "n": 96,
+      "correct": 92,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s11/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "ca194acbdf16c7d6b82fb7dc587b2c81166771f7dcfbbe59d6cee6e7bdd1738c"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "header_condition": "joint",
+      "length": "all",
+      "n": 480,
+      "correct": 472,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "84c284580258117b948d137039792d25d0dfa5b8e477b48d4c717e13d470014d"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "header_condition": "joint",
+      "length": 3,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "84c284580258117b948d137039792d25d0dfa5b8e477b48d4c717e13d470014d"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "header_condition": "joint",
+      "length": 4,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "84c284580258117b948d137039792d25d0dfa5b8e477b48d4c717e13d470014d"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "header_condition": "joint",
+      "length": 5,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "84c284580258117b948d137039792d25d0dfa5b8e477b48d4c717e13d470014d"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "header_condition": "joint",
+      "length": 6,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "84c284580258117b948d137039792d25d0dfa5b8e477b48d4c717e13d470014d"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "header_condition": "joint",
+      "length": 8,
+      "n": 96,
+      "correct": 88,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "84c284580258117b948d137039792d25d0dfa5b8e477b48d4c717e13d470014d"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "header_condition": "operation_oracle",
+      "length": "all",
+      "n": 480,
+      "correct": 464,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "35163f836094bb8f335b14df3f89f260b059b94956e5ca42c0a4f8c71e64e4b0"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "header_condition": "operation_oracle",
+      "length": 3,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "35163f836094bb8f335b14df3f89f260b059b94956e5ca42c0a4f8c71e64e4b0"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "header_condition": "operation_oracle",
+      "length": 4,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "35163f836094bb8f335b14df3f89f260b059b94956e5ca42c0a4f8c71e64e4b0"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "header_condition": "operation_oracle",
+      "length": 5,
+      "n": 96,
+      "correct": 90,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "35163f836094bb8f335b14df3f89f260b059b94956e5ca42c0a4f8c71e64e4b0"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "header_condition": "operation_oracle",
+      "length": 6,
+      "n": 96,
+      "correct": 92,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "35163f836094bb8f335b14df3f89f260b059b94956e5ca42c0a4f8c71e64e4b0"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 22,
+      "header_condition": "operation_oracle",
+      "length": 8,
+      "n": 96,
+      "correct": 90,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s22/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "35163f836094bb8f335b14df3f89f260b059b94956e5ca42c0a4f8c71e64e4b0"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "header_condition": "joint",
+      "length": "all",
+      "n": 480,
+      "correct": 469,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "73cb6a5192441da0c373ed50bc32561834f178655f89f3ca23022ac764f09191"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "header_condition": "joint",
+      "length": 3,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "73cb6a5192441da0c373ed50bc32561834f178655f89f3ca23022ac764f09191"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "header_condition": "joint",
+      "length": 4,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "73cb6a5192441da0c373ed50bc32561834f178655f89f3ca23022ac764f09191"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "header_condition": "joint",
+      "length": 5,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "73cb6a5192441da0c373ed50bc32561834f178655f89f3ca23022ac764f09191"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "header_condition": "joint",
+      "length": 6,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "73cb6a5192441da0c373ed50bc32561834f178655f89f3ca23022ac764f09191"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "header_condition": "joint",
+      "length": 8,
+      "n": 96,
+      "correct": 85,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "73cb6a5192441da0c373ed50bc32561834f178655f89f3ca23022ac764f09191"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "header_condition": "operation_oracle",
+      "length": "all",
+      "n": 480,
+      "correct": 480,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "a54e88f13e85b0a4e6504edb436f34a4c235574262e8cae8722bab0f5851bfac"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "header_condition": "operation_oracle",
+      "length": 3,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "a54e88f13e85b0a4e6504edb436f34a4c235574262e8cae8722bab0f5851bfac"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "header_condition": "operation_oracle",
+      "length": 4,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "a54e88f13e85b0a4e6504edb436f34a4c235574262e8cae8722bab0f5851bfac"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "header_condition": "operation_oracle",
+      "length": 5,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "a54e88f13e85b0a4e6504edb436f34a4c235574262e8cae8722bab0f5851bfac"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "header_condition": "operation_oracle",
+      "length": 6,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "a54e88f13e85b0a4e6504edb436f34a4c235574262e8cae8722bab0f5851bfac"
+    },
+    {
+      "model": "qwen32b",
+      "seed": 33,
+      "header_condition": "operation_oracle",
+      "length": 8,
+      "n": 96,
+      "correct": 96,
+      "source": "workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s33/evaluation-operation_oracle-independent.jsonl",
+      "sha256": "a54e88f13e85b0a4e6504edb436f34a4c235574262e8cae8722bab0f5851bfac"
+    }
+  ],
+  "note": "Recorded before any real context-intervention generation. These are existing correct-operation oracle outcomes, not intervention results; 3B old hardware. If local operation predictions become perfect, resulting behavior should approach these rates subject to batching numerical differences."
+}

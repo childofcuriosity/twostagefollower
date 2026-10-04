@@ -1,0 +1,20 @@
+{
+  "seed": 2026092417,
+  "rows": 480,
+  "templates": 120,
+  "depths": [
+    3,
+    4,
+    5,
+    6,
+    8
+  ],
+  "programs_per_depth": 24,
+  "inputs_per_program": 4,
+  "prior_semantic_functions": 194,
+  "new_semantic_functions": 120,
+  "no_overlap_with_prior_train_dev_test": true,
+  "sha256": "7117b1f0fe60a0261da8ac84a4ed0cfc0d3d65c05dba9f5b0405ce5671a165c8",
+  "max_new_tokens": 512,
+  "reason": "Prespecified held-out length extrapolation before new model results; terminal function disjoint across every template"
+}

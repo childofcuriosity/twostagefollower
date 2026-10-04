@@ -1,0 +1,9 @@
+{
+  "utc": "2026-09-24T10:26:13.326785+00:00",
+  "limitation": "Original generated token IDs were not retained. Boundary EOS cannot be disambiguated; no retrospective exact-stop claim. No training or generation configuration changed.",
+  "hashes": {
+    "src/audit.py": "fa618d3499f3969ef7634d601e7e81d02d8ed0c010b6dddaf8cdf5f14490104a",
+    "src/analyze.py": "83a9402299605c7044ced0a58b79622d10cdd85103c93ac9e806e94b0413b574",
+    "src/report.py": "b8dedc660e45fd3e6c5dfebc09714e6e73268065ebd193064cc88eff18009c31"
+  }
+}

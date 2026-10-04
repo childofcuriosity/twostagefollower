@@ -1,0 +1,5621 @@
+{
+  "records": [
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "full",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.5125,
+          "all_emitted_operations": 0.8895833333333333,
+          "product": 0.45591145833333324,
+          "complete": 0.4395833333333333
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.33958333333333335,
+          "all_emitted_operations": 0.8145833333333333,
+          "product": 0.2766189236111111,
+          "complete": 0.29583333333333334
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 0.5229166666666667,
+          "all_emitted_operations": 0.8104166666666667,
+          "product": 0.42378038194444445,
+          "complete": 0.4791666666666667
+        }
+      ],
+      "mean": {
+        "sequence": 0.4583333333333333,
+        "all_emitted_operations": 0.8381944444444445,
+        "product": 0.38543692129629625,
+        "complete": 0.4048611111111111
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "local",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.5229166666666667,
+          "all_emitted_operations": 1.0,
+          "product": 0.5229166666666667,
+          "complete": 0.5229166666666667
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.34375,
+          "all_emitted_operations": 1.0,
+          "product": 0.34375,
+          "complete": 0.34375
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 0.5229166666666667,
+          "all_emitted_operations": 1.0,
+          "product": 0.5229166666666667,
+          "complete": 0.5229166666666667
+        }
+      ],
+      "mean": {
+        "sequence": 0.46319444444444446,
+        "all_emitted_operations": 1.0,
+        "product": 0.46319444444444446,
+        "complete": 0.46319444444444446
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "full",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 0.9895833333333334,
+          "product": 0.9483506944444445,
+          "complete": 0.9479166666666666
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.75,
+          "all_emitted_operations": 1.0,
+          "product": 0.75,
+          "complete": 0.75
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.875,
+          "all_emitted_operations": 1.0,
+          "product": 0.875,
+          "complete": 0.875
+        }
+      ],
+      "mean": {
+        "sequence": 0.8611111111111112,
+        "all_emitted_operations": 0.9965277777777778,
+        "product": 0.8577835648148149,
+        "complete": 0.8576388888888888
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "local",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.75,
+          "all_emitted_operations": 1.0,
+          "product": 0.75,
+          "complete": 0.75
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.875,
+          "all_emitted_operations": 1.0,
+          "product": 0.875,
+          "complete": 0.875
+        }
+      ],
+      "mean": {
+        "sequence": 0.8611111111111112,
+        "all_emitted_operations": 1.0,
+        "product": 0.8611111111111112,
+        "complete": 0.8611111111111112
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "full",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.53125,
+          "all_emitted_operations": 1.0,
+          "product": 0.53125,
+          "complete": 0.53125
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.6458333333333334,
+          "all_emitted_operations": 0.9166666666666666,
+          "product": 0.592013888888889,
+          "complete": 0.5625
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.75,
+          "all_emitted_operations": 0.9895833333333334,
+          "product": 0.7421875,
+          "complete": 0.7395833333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.6423611111111112,
+        "all_emitted_operations": 0.96875,
+        "product": 0.6218171296296297,
+        "complete": 0.6111111111111112
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "local",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.5416666666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.5416666666666666,
+          "complete": 0.5416666666666666
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.65625,
+          "all_emitted_operations": 1.0,
+          "product": 0.65625,
+          "complete": 0.65625
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.75,
+          "all_emitted_operations": 1.0,
+          "product": 0.75,
+          "complete": 0.75
+        }
+      ],
+      "mean": {
+        "sequence": 0.6493055555555555,
+        "all_emitted_operations": 1.0,
+        "product": 0.6493055555555555,
+        "complete": 0.6493055555555555
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "full",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.4895833333333333,
+          "all_emitted_operations": 0.875,
+          "product": 0.42838541666666663,
+          "complete": 0.375
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.1875,
+          "all_emitted_operations": 0.84375,
+          "product": 0.158203125,
+          "complete": 0.08333333333333333
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.6145833333333334,
+          "all_emitted_operations": 0.90625,
+          "product": 0.5569661458333334,
+          "complete": 0.5208333333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.4305555555555556,
+        "all_emitted_operations": 0.875,
+        "product": 0.3811848958333333,
+        "complete": 0.3263888888888889
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "local",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.5,
+          "all_emitted_operations": 1.0,
+          "product": 0.5,
+          "complete": 0.5
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.19791666666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.19791666666666666,
+          "complete": 0.19791666666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.6145833333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.6145833333333334,
+          "complete": 0.6145833333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.4375,
+        "all_emitted_operations": 1.0,
+        "product": 0.4375,
+        "complete": 0.4375
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "full",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.3333333333333333,
+          "all_emitted_operations": 0.8541666666666666,
+          "product": 0.2847222222222222,
+          "complete": 0.25
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.09375,
+          "all_emitted_operations": 0.8541666666666666,
+          "product": 0.080078125,
+          "complete": 0.08333333333333333
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.3541666666666667,
+          "all_emitted_operations": 0.6770833333333334,
+          "product": 0.23980034722222224,
+          "complete": 0.2604166666666667
+        }
+      ],
+      "mean": {
+        "sequence": 0.2604166666666667,
+        "all_emitted_operations": 0.7951388888888888,
+        "product": 0.2015335648148148,
+        "complete": 0.19791666666666666
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "local",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.3541666666666667,
+          "all_emitted_operations": 1.0,
+          "product": 0.3541666666666667,
+          "complete": 0.3541666666666667
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.08333333333333333,
+          "all_emitted_operations": 1.0,
+          "product": 0.08333333333333333,
+          "complete": 0.08333333333333333
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.34375,
+          "all_emitted_operations": 1.0,
+          "product": 0.34375,
+          "complete": 0.34375
+        }
+      ],
+      "mean": {
+        "sequence": 0.2604166666666667,
+        "all_emitted_operations": 1.0,
+        "product": 0.2604166666666667,
+        "complete": 0.2604166666666667
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "full",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.25,
+          "all_emitted_operations": 0.7291666666666666,
+          "product": 0.18229166666666666,
+          "complete": 0.09375
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.020833333333333332,
+          "all_emitted_operations": 0.4583333333333333,
+          "product": 0.00954861111111111,
+          "complete": 0.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.020833333333333332,
+          "all_emitted_operations": 0.4791666666666667,
+          "product": 0.009982638888888888,
+          "complete": 0.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.09722222222222222,
+        "all_emitted_operations": 0.5555555555555555,
+        "product": 0.06727430555555555,
+        "complete": 0.03125
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "local",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.2604166666666667,
+          "all_emitted_operations": 1.0,
+          "product": 0.2604166666666667,
+          "complete": 0.2604166666666667
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.03125,
+          "all_emitted_operations": 1.0,
+          "product": 0.03125,
+          "complete": 0.03125
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.03125,
+          "all_emitted_operations": 1.0,
+          "product": 0.03125,
+          "complete": 0.03125
+        }
+      ],
+      "mean": {
+        "sequence": 0.1076388888888889,
+        "all_emitted_operations": 1.0,
+        "product": 0.1076388888888889,
+        "complete": 0.1076388888888889
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SJ",
+      "context": "full",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.8354166666666667,
+          "all_emitted_operations": 0.8333333333333334,
+          "product": 0.6961805555555556,
+          "complete": 0.7
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.41041666666666665,
+          "all_emitted_operations": 0.7479166666666667,
+          "product": 0.3069574652777778,
+          "complete": 0.28958333333333336
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 0.8041666666666667,
+          "all_emitted_operations": 0.76875,
+          "product": 0.6182031250000001,
+          "complete": 0.6270833333333333
+        }
+      ],
+      "mean": {
+        "sequence": 0.6833333333333332,
+        "all_emitted_operations": 0.7833333333333333,
+        "product": 0.5404470486111111,
+        "complete": 0.5388888888888889
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SJ",
+      "context": "local",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.8333333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.8333333333333334,
+          "complete": 0.8333333333333334
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.4083333333333333,
+          "all_emitted_operations": 1.0,
+          "product": 0.4083333333333333,
+          "complete": 0.4083333333333333
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 0.80625,
+          "all_emitted_operations": 1.0,
+          "product": 0.80625,
+          "complete": 0.80625
+        }
+      ],
+      "mean": {
+        "sequence": 0.6826388888888889,
+        "all_emitted_operations": 1.0,
+        "product": 0.6826388888888889,
+        "complete": 0.6826388888888889
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SJ",
+      "context": "full",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9895833333333334,
+          "product": 0.9895833333333334,
+          "complete": 0.9895833333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.5208333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.5208333333333334,
+          "complete": 0.5208333333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.8402777777777778,
+        "all_emitted_operations": 0.9965277777777778,
+        "product": 0.8368055555555557,
+        "complete": 0.8368055555555557
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SJ",
+      "context": "local",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.5208333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.5208333333333334,
+          "complete": 0.5208333333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.8402777777777778,
+        "all_emitted_operations": 1.0,
+        "product": 0.8402777777777778,
+        "complete": 0.8402777777777778
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SJ",
+      "context": "full",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.6354166666666666,
+          "all_emitted_operations": 0.9166666666666666,
+          "product": 0.5824652777777777,
+          "complete": 0.5520833333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.7916666666666666,
+          "all_emitted_operations": 0.9479166666666666,
+          "product": 0.7504340277777777,
+          "complete": 0.7395833333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.8090277777777777,
+        "all_emitted_operations": 0.954861111111111,
+        "product": 0.7776331018518517,
+        "complete": 0.763888888888889
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SJ",
+      "context": "local",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.6354166666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.6354166666666666,
+          "complete": 0.6354166666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.7916666666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.7916666666666666,
+          "complete": 0.7916666666666666
+        }
+      ],
+      "mean": {
+        "sequence": 0.8090277777777777,
+        "all_emitted_operations": 1.0,
+        "product": 0.8090277777777777,
+        "complete": 0.8090277777777777
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SJ",
+      "context": "full",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.8125,
+          "all_emitted_operations": 0.8229166666666666,
+          "product": 0.6686197916666666,
+          "complete": 0.6458333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.3958333333333333,
+          "all_emitted_operations": 0.8125,
+          "product": 0.3216145833333333,
+          "complete": 0.20833333333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.8958333333333334,
+          "all_emitted_operations": 0.8958333333333334,
+          "product": 0.8025173611111112,
+          "complete": 0.7916666666666666
+        }
+      ],
+      "mean": {
+        "sequence": 0.7013888888888888,
+        "all_emitted_operations": 0.84375,
+        "product": 0.5975839120370371,
+        "complete": 0.548611111111111
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SJ",
+      "context": "local",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.8125,
+          "all_emitted_operations": 1.0,
+          "product": 0.8125,
+          "complete": 0.8125
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.3958333333333333,
+          "all_emitted_operations": 1.0,
+          "product": 0.3958333333333333,
+          "complete": 0.3958333333333333
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.8958333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.8958333333333334,
+          "complete": 0.8958333333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.7013888888888888,
+        "all_emitted_operations": 1.0,
+        "product": 0.7013888888888888,
+        "complete": 0.7013888888888888
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SJ",
+      "context": "full",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.8333333333333334,
+          "all_emitted_operations": 0.6770833333333334,
+          "product": 0.5642361111111112,
+          "complete": 0.5729166666666666
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.3645833333333333,
+          "all_emitted_operations": 0.65625,
+          "product": 0.2392578125,
+          "complete": 0.14583333333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.7708333333333334,
+          "all_emitted_operations": 0.6666666666666666,
+          "product": 0.5138888888888888,
+          "complete": 0.4583333333333333
+        }
+      ],
+      "mean": {
+        "sequence": 0.65625,
+        "all_emitted_operations": 0.6666666666666666,
+        "product": 0.4391276041666667,
+        "complete": 0.3923611111111111
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SJ",
+      "context": "local",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.8333333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.8333333333333334,
+          "complete": 0.8333333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.34375,
+          "all_emitted_operations": 1.0,
+          "product": 0.34375,
+          "complete": 0.34375
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.78125,
+          "all_emitted_operations": 1.0,
+          "product": 0.78125,
+          "complete": 0.78125
+        }
+      ],
+      "mean": {
+        "sequence": 0.6527777777777778,
+        "all_emitted_operations": 1.0,
+        "product": 0.6527777777777778,
+        "complete": 0.6527777777777778
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SJ",
+      "context": "full",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.53125,
+          "all_emitted_operations": 0.6770833333333334,
+          "product": 0.35970052083333337,
+          "complete": 0.2916666666666667
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.13541666666666666,
+          "all_emitted_operations": 0.3541666666666667,
+          "product": 0.04796006944444444,
+          "complete": 0.020833333333333332
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.5625,
+          "all_emitted_operations": 0.3333333333333333,
+          "product": 0.1875,
+          "complete": 0.14583333333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.40972222222222227,
+        "all_emitted_operations": 0.45486111111111116,
+        "product": 0.19838686342592593,
+        "complete": 0.1527777777777778
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SJ",
+      "context": "local",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.5208333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.5208333333333334,
+          "complete": 0.5208333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.14583333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.14583333333333334,
+          "complete": 0.14583333333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.5625,
+          "all_emitted_operations": 1.0,
+          "product": 0.5625,
+          "complete": 0.5625
+        }
+      ],
+      "mean": {
+        "sequence": 0.40972222222222227,
+        "all_emitted_operations": 1.0,
+        "product": 0.40972222222222227,
+        "complete": 0.40972222222222227
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JE",
+      "context": "full",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.51875,
+          "all_emitted_operations": 0.7916666666666666,
+          "product": 0.41067708333333336,
+          "complete": 0.38958333333333334
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.32916666666666666,
+          "all_emitted_operations": 0.9020833333333333,
+          "product": 0.29693576388888887,
+          "complete": 0.32083333333333336
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 0.525,
+          "all_emitted_operations": 0.9291666666666667,
+          "product": 0.48781250000000004,
+          "complete": 0.4979166666666667
+        }
+      ],
+      "mean": {
+        "sequence": 0.45763888888888893,
+        "all_emitted_operations": 0.8743055555555556,
+        "product": 0.39847511574074074,
+        "complete": 0.40277777777777785
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JE",
+      "context": "local",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.5229166666666667,
+          "all_emitted_operations": 1.0,
+          "product": 0.5229166666666667,
+          "complete": 0.5229166666666667
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.34375,
+          "all_emitted_operations": 1.0,
+          "product": 0.34375,
+          "complete": 0.34375
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 0.5229166666666667,
+          "all_emitted_operations": 1.0,
+          "product": 0.5229166666666667,
+          "complete": 0.5229166666666667
+        }
+      ],
+      "mean": {
+        "sequence": 0.46319444444444446,
+        "all_emitted_operations": 1.0,
+        "product": 0.46319444444444446,
+        "complete": 0.46319444444444446
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JE",
+      "context": "full",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 0.96875,
+          "product": 0.9283854166666667,
+          "complete": 0.9270833333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.75,
+          "all_emitted_operations": 0.96875,
+          "product": 0.7265625,
+          "complete": 0.71875
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.875,
+          "all_emitted_operations": 0.9479166666666666,
+          "product": 0.8294270833333333,
+          "complete": 0.8229166666666666
+        }
+      ],
+      "mean": {
+        "sequence": 0.8611111111111112,
+        "all_emitted_operations": 0.9618055555555555,
+        "product": 0.828125,
+        "complete": 0.8229166666666666
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JE",
+      "context": "local",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.75,
+          "all_emitted_operations": 1.0,
+          "product": 0.75,
+          "complete": 0.75
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.875,
+          "all_emitted_operations": 1.0,
+          "product": 0.875,
+          "complete": 0.875
+        }
+      ],
+      "mean": {
+        "sequence": 0.8611111111111112,
+        "all_emitted_operations": 1.0,
+        "product": 0.8611111111111112,
+        "complete": 0.8611111111111112
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JE",
+      "context": "full",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.53125,
+          "all_emitted_operations": 0.9479166666666666,
+          "product": 0.5035807291666666,
+          "complete": 0.4791666666666667
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.6458333333333334,
+          "all_emitted_operations": 0.9791666666666666,
+          "product": 0.6323784722222222,
+          "complete": 0.6458333333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.75,
+          "all_emitted_operations": 1.0,
+          "product": 0.75,
+          "complete": 0.75
+        }
+      ],
+      "mean": {
+        "sequence": 0.6423611111111112,
+        "all_emitted_operations": 0.9756944444444443,
+        "product": 0.6286530671296297,
+        "complete": 0.625
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JE",
+      "context": "local",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.5416666666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.5416666666666666,
+          "complete": 0.5416666666666666
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.65625,
+          "all_emitted_operations": 1.0,
+          "product": 0.65625,
+          "complete": 0.65625
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.75,
+          "all_emitted_operations": 1.0,
+          "product": 0.75,
+          "complete": 0.75
+        }
+      ],
+      "mean": {
+        "sequence": 0.6493055555555555,
+        "all_emitted_operations": 1.0,
+        "product": 0.6493055555555555,
+        "complete": 0.6493055555555555
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JE",
+      "context": "full",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.4895833333333333,
+          "all_emitted_operations": 0.8020833333333334,
+          "product": 0.3926866319444445,
+          "complete": 0.3020833333333333
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.15625,
+          "all_emitted_operations": 1.0,
+          "product": 0.15625,
+          "complete": 0.15625
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.6145833333333334,
+          "all_emitted_operations": 0.9270833333333334,
+          "product": 0.5697699652777778,
+          "complete": 0.5416666666666666
+        }
+      ],
+      "mean": {
+        "sequence": 0.4201388888888889,
+        "all_emitted_operations": 0.9097222222222223,
+        "product": 0.3729021990740741,
+        "complete": 0.3333333333333333
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JE",
+      "context": "local",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.5,
+          "all_emitted_operations": 1.0,
+          "product": 0.5,
+          "complete": 0.5
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.19791666666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.19791666666666666,
+          "complete": 0.19791666666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.6145833333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.6145833333333334,
+          "complete": 0.6145833333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.4375,
+        "all_emitted_operations": 1.0,
+        "product": 0.4375,
+        "complete": 0.4375
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JE",
+      "context": "full",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.3333333333333333,
+          "all_emitted_operations": 0.6770833333333334,
+          "product": 0.22569444444444445,
+          "complete": 0.19791666666666666
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.09375,
+          "all_emitted_operations": 0.9479166666666666,
+          "product": 0.0888671875,
+          "complete": 0.08333333333333333
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.3541666666666667,
+          "all_emitted_operations": 0.96875,
+          "product": 0.34309895833333337,
+          "complete": 0.3541666666666667
+        }
+      ],
+      "mean": {
+        "sequence": 0.2604166666666667,
+        "all_emitted_operations": 0.8645833333333334,
+        "product": 0.21922019675925927,
+        "complete": 0.21180555555555555
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JE",
+      "context": "local",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.3541666666666667,
+          "all_emitted_operations": 1.0,
+          "product": 0.3541666666666667,
+          "complete": 0.3541666666666667
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.08333333333333333,
+          "all_emitted_operations": 1.0,
+          "product": 0.08333333333333333,
+          "complete": 0.08333333333333333
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.34375,
+          "all_emitted_operations": 1.0,
+          "product": 0.34375,
+          "complete": 0.34375
+        }
+      ],
+      "mean": {
+        "sequence": 0.2604166666666667,
+        "all_emitted_operations": 1.0,
+        "product": 0.2604166666666667,
+        "complete": 0.2604166666666667
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JE",
+      "context": "full",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.28125,
+          "all_emitted_operations": 0.5625,
+          "product": 0.158203125,
+          "complete": 0.041666666666666664
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.0,
+          "all_emitted_operations": 0.6145833333333334,
+          "product": 0.0,
+          "complete": 0.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.03125,
+          "all_emitted_operations": 0.8020833333333334,
+          "product": 0.025065104166666668,
+          "complete": 0.020833333333333332
+        }
+      ],
+      "mean": {
+        "sequence": 0.10416666666666667,
+        "all_emitted_operations": 0.6597222222222222,
+        "product": 0.06108940972222222,
+        "complete": 0.020833333333333332
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "JE",
+      "context": "local",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.2604166666666667,
+          "all_emitted_operations": 1.0,
+          "product": 0.2604166666666667,
+          "complete": 0.2604166666666667
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.03125,
+          "all_emitted_operations": 1.0,
+          "product": 0.03125,
+          "complete": 0.03125
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.03125,
+          "all_emitted_operations": 1.0,
+          "product": 0.03125,
+          "complete": 0.03125
+        }
+      ],
+      "mean": {
+        "sequence": 0.1076388888888889,
+        "all_emitted_operations": 1.0,
+        "product": 0.1076388888888889,
+        "complete": 0.1076388888888889
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "full",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.8333333333333334,
+          "all_emitted_operations": 0.6354166666666666,
+          "product": 0.5295138888888888,
+          "complete": 0.5625
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.41041666666666665,
+          "all_emitted_operations": 0.9020833333333333,
+          "product": 0.3702300347222222,
+          "complete": 0.38333333333333336
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 0.8104166666666667,
+          "all_emitted_operations": 0.9020833333333333,
+          "product": 0.7310633680555556,
+          "complete": 0.7291666666666666
+        }
+      ],
+      "mean": {
+        "sequence": 0.6847222222222222,
+        "all_emitted_operations": 0.8131944444444444,
+        "product": 0.5436024305555556,
+        "complete": 0.5583333333333333
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "local",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.8333333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.8333333333333334,
+          "complete": 0.8333333333333334
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.4083333333333333,
+          "all_emitted_operations": 1.0,
+          "product": 0.4083333333333333,
+          "complete": 0.4083333333333333
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 0.80625,
+          "all_emitted_operations": 1.0,
+          "product": 0.80625,
+          "complete": 0.80625
+        }
+      ],
+      "mean": {
+        "sequence": 0.6826388888888889,
+        "all_emitted_operations": 1.0,
+        "product": 0.6826388888888889,
+        "complete": 0.6826388888888889
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "full",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.96875,
+          "product": 0.96875,
+          "complete": 0.96875
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.5208333333333334,
+          "all_emitted_operations": 0.9791666666666666,
+          "product": 0.509982638888889,
+          "complete": 0.5
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9375,
+          "product": 0.9375,
+          "complete": 0.9375
+        }
+      ],
+      "mean": {
+        "sequence": 0.8402777777777778,
+        "all_emitted_operations": 0.9618055555555555,
+        "product": 0.8054108796296297,
+        "complete": 0.8020833333333334
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "local",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.5208333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.5208333333333334,
+          "complete": 0.5208333333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.8402777777777778,
+        "all_emitted_operations": 1.0,
+        "product": 0.8402777777777778,
+        "complete": 0.8402777777777778
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "full",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.90625,
+          "product": 0.90625,
+          "complete": 0.90625
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.6354166666666666,
+          "all_emitted_operations": 0.9791666666666666,
+          "product": 0.6221788194444444,
+          "complete": 0.6354166666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.7916666666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.7916666666666666,
+          "complete": 0.7916666666666666
+        }
+      ],
+      "mean": {
+        "sequence": 0.8090277777777777,
+        "all_emitted_operations": 0.9618055555555555,
+        "product": 0.7733651620370371,
+        "complete": 0.7777777777777777
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "local",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.6354166666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.6354166666666666,
+          "complete": 0.6354166666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.7916666666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.7916666666666666,
+          "complete": 0.7916666666666666
+        }
+      ],
+      "mean": {
+        "sequence": 0.8090277777777777,
+        "all_emitted_operations": 1.0,
+        "product": 0.8090277777777777,
+        "complete": 0.8090277777777777
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "full",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.8125,
+          "all_emitted_operations": 0.5833333333333334,
+          "product": 0.47395833333333337,
+          "complete": 0.4375
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.3958333333333333,
+          "all_emitted_operations": 1.0,
+          "product": 0.3958333333333333,
+          "complete": 0.3958333333333333
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.8958333333333334,
+          "all_emitted_operations": 0.9270833333333334,
+          "product": 0.8305121527777778,
+          "complete": 0.8229166666666666
+        }
+      ],
+      "mean": {
+        "sequence": 0.7013888888888888,
+        "all_emitted_operations": 0.8368055555555557,
+        "product": 0.5667679398148148,
+        "complete": 0.5520833333333334
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "local",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.8125,
+          "all_emitted_operations": 1.0,
+          "product": 0.8125,
+          "complete": 0.8125
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.3958333333333333,
+          "all_emitted_operations": 1.0,
+          "product": 0.3958333333333333,
+          "complete": 0.3958333333333333
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.8958333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.8958333333333334,
+          "complete": 0.8958333333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.7013888888888888,
+        "all_emitted_operations": 1.0,
+        "product": 0.7013888888888888,
+        "complete": 0.7013888888888888
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "full",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.8229166666666666,
+          "all_emitted_operations": 0.3645833333333333,
+          "product": 0.30002170138888884,
+          "complete": 0.3541666666666667
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.3541666666666667,
+          "all_emitted_operations": 0.9375,
+          "product": 0.33203125,
+          "complete": 0.3125
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.78125,
+          "all_emitted_operations": 0.9375,
+          "product": 0.732421875,
+          "complete": 0.71875
+        }
+      ],
+      "mean": {
+        "sequence": 0.6527777777777778,
+        "all_emitted_operations": 0.7465277777777778,
+        "product": 0.4548249421296296,
+        "complete": 0.4618055555555556
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "local",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.8333333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.8333333333333334,
+          "complete": 0.8333333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.34375,
+          "all_emitted_operations": 1.0,
+          "product": 0.34375,
+          "complete": 0.34375
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.78125,
+          "all_emitted_operations": 1.0,
+          "product": 0.78125,
+          "complete": 0.78125
+        }
+      ],
+      "mean": {
+        "sequence": 0.6527777777777778,
+        "all_emitted_operations": 1.0,
+        "product": 0.6527777777777778,
+        "complete": 0.6527777777777778
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "full",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.53125,
+          "all_emitted_operations": 0.3541666666666667,
+          "product": 0.18815104166666669,
+          "complete": 0.14583333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.14583333333333334,
+          "all_emitted_operations": 0.6145833333333334,
+          "product": 0.08962673611111112,
+          "complete": 0.07291666666666667
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.5833333333333334,
+          "all_emitted_operations": 0.7083333333333334,
+          "product": 0.4131944444444445,
+          "complete": 0.375
+        }
+      ],
+      "mean": {
+        "sequence": 0.4201388888888889,
+        "all_emitted_operations": 0.5590277777777778,
+        "product": 0.2303240740740741,
+        "complete": 0.19791666666666666
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "local",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.5208333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.5208333333333334,
+          "complete": 0.5208333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.14583333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.14583333333333334,
+          "complete": 0.14583333333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.5625,
+          "all_emitted_operations": 1.0,
+          "product": 0.5625,
+          "complete": 0.5625
+        }
+      ],
+      "mean": {
+        "sequence": 0.40972222222222227,
+        "all_emitted_operations": 1.0,
+        "product": 0.40972222222222227,
+        "complete": 0.40972222222222227
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "full",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.9916666666666667,
+          "all_emitted_operations": 0.7375,
+          "product": 0.7313541666666667,
+          "complete": 0.7375
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.9229166666666667,
+          "all_emitted_operations": 0.9270833333333334,
+          "product": 0.8556206597222223,
+          "complete": 0.9104166666666667
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 0.9770833333333333,
+          "all_emitted_operations": 0.9354166666666667,
+          "product": 0.9139800347222222,
+          "complete": 0.9125
+        }
+      ],
+      "mean": {
+        "sequence": 0.9638888888888889,
+        "all_emitted_operations": 0.8666666666666667,
+        "product": 0.8336516203703704,
+        "complete": 0.8534722222222223
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "local",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.9916666666666667,
+          "all_emitted_operations": 1.0,
+          "product": 0.9916666666666667,
+          "complete": 0.9916666666666667
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.9833333333333333,
+          "all_emitted_operations": 1.0,
+          "product": 0.9833333333333333,
+          "complete": 0.9833333333333333
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 0.9770833333333333,
+          "all_emitted_operations": 1.0,
+          "product": 0.9770833333333333,
+          "complete": 0.9770833333333333
+        }
+      ],
+      "mean": {
+        "sequence": 0.9840277777777778,
+        "all_emitted_operations": 1.0,
+        "product": 0.9840277777777778,
+        "complete": 0.9840277777777778
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "full",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "local",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "full",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9270833333333334,
+          "product": 0.9270833333333334,
+          "complete": 0.9270833333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9583333333333334,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 0.9618055555555557,
+        "product": 0.9618055555555557,
+        "complete": 0.9618055555555557
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "local",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "full",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.8229166666666666,
+          "product": 0.8229166666666666,
+          "complete": 0.8229166666666666
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.8645833333333334,
+          "all_emitted_operations": 0.8541666666666666,
+          "product": 0.7384982638888888,
+          "complete": 0.8541666666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.8958333333333334,
+          "product": 0.8958333333333334,
+          "complete": 0.8958333333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.9548611111111112,
+        "all_emitted_operations": 0.8576388888888888,
+        "product": 0.8190827546296297,
+        "complete": 0.8576388888888888
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "local",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "full",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.65625,
+          "product": 0.65625,
+          "complete": 0.65625
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9270833333333334,
+          "all_emitted_operations": 0.90625,
+          "product": 0.8401692708333334,
+          "complete": 0.90625
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9375,
+          "product": 0.9375,
+          "complete": 0.9375
+        }
+      ],
+      "mean": {
+        "sequence": 0.9756944444444445,
+        "all_emitted_operations": 0.8333333333333334,
+        "product": 0.8113064236111112,
+        "complete": 0.8333333333333334
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "local",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "full",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 0.28125,
+          "product": 0.26953125,
+          "complete": 0.28125
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.8229166666666666,
+          "all_emitted_operations": 0.875,
+          "product": 0.7200520833333333,
+          "complete": 0.7916666666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.8854166666666666,
+          "all_emitted_operations": 0.8854166666666666,
+          "product": 0.783962673611111,
+          "complete": 0.7708333333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.8888888888888888,
+        "all_emitted_operations": 0.6805555555555555,
+        "product": 0.5911820023148148,
+        "complete": 0.6145833333333334
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "local",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9166666666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.9166666666666666,
+          "complete": 0.9166666666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.8854166666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.8854166666666666,
+          "complete": 0.8854166666666666
+        }
+      ],
+      "mean": {
+        "sequence": 0.9201388888888888,
+        "all_emitted_operations": 1.0,
+        "product": 0.9201388888888888,
+        "complete": 0.9201388888888888
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SJ",
+      "context": "full",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.9791666666666666,
+          "all_emitted_operations": 0.7375,
+          "product": 0.7221354166666667,
+          "complete": 0.7229166666666667
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.9041666666666667,
+          "all_emitted_operations": 0.925,
+          "product": 0.8363541666666667,
+          "complete": 0.89375
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9395833333333333,
+          "product": 0.9395833333333333,
+          "complete": 0.9395833333333333
+        }
+      ],
+      "mean": {
+        "sequence": 0.9611111111111111,
+        "all_emitted_operations": 0.8673611111111111,
+        "product": 0.8326909722222222,
+        "complete": 0.8520833333333333
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SJ",
+      "context": "local",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.9791666666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.9791666666666666,
+          "complete": 0.9791666666666666
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.9666666666666667,
+          "all_emitted_operations": 1.0,
+          "product": 0.9666666666666667,
+          "complete": 0.9666666666666667
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.9819444444444444,
+        "all_emitted_operations": 1.0,
+        "product": 0.9819444444444444,
+        "complete": 0.9819444444444444
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SJ",
+      "context": "full",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SJ",
+      "context": "local",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SJ",
+      "context": "full",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9270833333333334,
+          "product": 0.9270833333333334,
+          "complete": 0.9270833333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9583333333333334,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 0.9618055555555557,
+        "product": 0.9618055555555557,
+        "complete": 0.9618055555555557
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SJ",
+      "context": "local",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SJ",
+      "context": "full",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9479166666666666,
+          "all_emitted_operations": 0.8229166666666666,
+          "product": 0.780056423611111,
+          "complete": 0.7708333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.7916666666666666,
+          "all_emitted_operations": 0.8333333333333334,
+          "product": 0.6597222222222222,
+          "complete": 0.78125
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.8958333333333334,
+          "product": 0.8958333333333334,
+          "complete": 0.8958333333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.9131944444444443,
+        "all_emitted_operations": 0.8506944444444445,
+        "product": 0.7785373263888888,
+        "complete": 0.8159722222222223
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SJ",
+      "context": "local",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9479166666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.9479166666666666,
+          "complete": 0.9479166666666666
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9479166666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.9479166666666666,
+          "complete": 0.9479166666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.9652777777777777,
+        "all_emitted_operations": 1.0,
+        "product": 0.9652777777777777,
+        "complete": 0.9652777777777777
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SJ",
+      "context": "full",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9895833333333334,
+          "all_emitted_operations": 0.65625,
+          "product": 0.6494140625,
+          "complete": 0.6458333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.8958333333333334,
+          "all_emitted_operations": 0.9166666666666666,
+          "product": 0.8211805555555556,
+          "complete": 0.875
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9479166666666666,
+          "product": 0.9479166666666666,
+          "complete": 0.9479166666666666
+        }
+      ],
+      "mean": {
+        "sequence": 0.9618055555555557,
+        "all_emitted_operations": 0.8402777777777777,
+        "product": 0.8061704282407408,
+        "complete": 0.8229166666666666
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SJ",
+      "context": "local",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9895833333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.9895833333333334,
+          "complete": 0.9895833333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.982638888888889,
+        "all_emitted_operations": 1.0,
+        "product": 0.982638888888889,
+        "complete": 0.982638888888889
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SJ",
+      "context": "full",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 0.28125,
+          "product": 0.26953125,
+          "complete": 0.2708333333333333
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.8333333333333334,
+          "all_emitted_operations": 0.875,
+          "product": 0.7291666666666667,
+          "complete": 0.8125
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.8958333333333334,
+          "product": 0.8958333333333334,
+          "complete": 0.8958333333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.9305555555555557,
+        "all_emitted_operations": 0.6840277777777778,
+        "product": 0.6315104166666666,
+        "complete": 0.6597222222222222
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SJ",
+      "context": "local",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9270833333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.9270833333333334,
+          "complete": 0.9270833333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.9618055555555557,
+        "all_emitted_operations": 1.0,
+        "product": 0.9618055555555557,
+        "complete": 0.9618055555555557
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JE",
+      "context": "full",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.9875,
+          "all_emitted_operations": 0.9291666666666667,
+          "product": 0.9175520833333334,
+          "complete": 0.9208333333333333
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.9833333333333333,
+          "all_emitted_operations": 0.9270833333333334,
+          "product": 0.9116319444444444,
+          "complete": 0.9104166666666667
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 0.9770833333333333,
+          "all_emitted_operations": 0.9895833333333334,
+          "product": 0.9669053819444444,
+          "complete": 0.96875
+        }
+      ],
+      "mean": {
+        "sequence": 0.9826388888888888,
+        "all_emitted_operations": 0.9486111111111111,
+        "product": 0.9320298032407407,
+        "complete": 0.9333333333333332
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JE",
+      "context": "local",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.9916666666666667,
+          "all_emitted_operations": 1.0,
+          "product": 0.9916666666666667,
+          "complete": 0.9916666666666667
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.9833333333333333,
+          "all_emitted_operations": 1.0,
+          "product": 0.9833333333333333,
+          "complete": 0.9833333333333333
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 0.9770833333333333,
+          "all_emitted_operations": 1.0,
+          "product": 0.9770833333333333,
+          "complete": 0.9770833333333333
+        }
+      ],
+      "mean": {
+        "sequence": 0.9840277777777778,
+        "all_emitted_operations": 1.0,
+        "product": 0.9840277777777778,
+        "complete": 0.9840277777777778
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JE",
+      "context": "full",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JE",
+      "context": "local",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JE",
+      "context": "full",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9375,
+          "product": 0.9375,
+          "complete": 0.9375
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 0.9791666666666666,
+        "product": 0.9791666666666666,
+        "complete": 0.9791666666666666
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JE",
+      "context": "local",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JE",
+      "context": "full",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9791666666666666,
+          "all_emitted_operations": 0.8645833333333334,
+          "product": 0.8465711805555556,
+          "complete": 0.8645833333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9583333333333334,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9583333333333334,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.9930555555555555,
+        "all_emitted_operations": 0.9270833333333334,
+        "product": 0.9210792824074074,
+        "complete": 0.9270833333333334
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JE",
+      "context": "local",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JE",
+      "context": "full",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.90625,
+          "product": 0.90625,
+          "complete": 0.90625
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.8958333333333334,
+          "product": 0.8958333333333334,
+          "complete": 0.8958333333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 0.9340277777777778,
+        "product": 0.9340277777777778,
+        "complete": 0.9340277777777778
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JE",
+      "context": "local",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JE",
+      "context": "full",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 0.9375,
+          "product": 0.8984375,
+          "complete": 0.8958333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9166666666666666,
+          "all_emitted_operations": 0.78125,
+          "product": 0.7161458333333333,
+          "complete": 0.6979166666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.8854166666666666,
+          "all_emitted_operations": 0.9895833333333334,
+          "product": 0.8761935763888888,
+          "complete": 0.8854166666666666
+        }
+      ],
+      "mean": {
+        "sequence": 0.9201388888888888,
+        "all_emitted_operations": 0.9027777777777778,
+        "product": 0.8302589699074074,
+        "complete": 0.8263888888888888
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "JE",
+      "context": "local",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9166666666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.9166666666666666,
+          "complete": 0.9166666666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 0.8854166666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.8854166666666666,
+          "complete": 0.8854166666666666
+        }
+      ],
+      "mean": {
+        "sequence": 0.9201388888888888,
+        "all_emitted_operations": 1.0,
+        "product": 0.9201388888888888,
+        "complete": 0.9201388888888888
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "full",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.975,
+          "all_emitted_operations": 0.9291666666666667,
+          "product": 0.9059375000000001,
+          "complete": 0.9083333333333333
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.9666666666666667,
+          "all_emitted_operations": 0.9270833333333334,
+          "product": 0.8961805555555556,
+          "complete": 0.8979166666666667
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9895833333333334,
+          "product": 0.9895833333333334,
+          "complete": 0.9895833333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.9805555555555555,
+        "all_emitted_operations": 0.9486111111111111,
+        "product": 0.9305671296296296,
+        "complete": 0.9319444444444445
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "local",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 480,
+          "sequence": 0.9791666666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.9791666666666666,
+          "complete": 0.9791666666666666
+        },
+        {
+          "seed": 22,
+          "n": 480,
+          "sequence": 0.9666666666666667,
+          "all_emitted_operations": 1.0,
+          "product": 0.9666666666666667,
+          "complete": 0.9666666666666667
+        },
+        {
+          "seed": 33,
+          "n": 480,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.9819444444444444,
+        "all_emitted_operations": 1.0,
+        "product": 0.9819444444444444,
+        "complete": 0.9819444444444444
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "full",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "local",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "full",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9375,
+          "product": 0.9375,
+          "complete": 0.9375
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 0.9791666666666666,
+        "product": 0.9791666666666666,
+        "complete": 0.9791666666666666
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "local",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "full",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9270833333333334,
+          "all_emitted_operations": 0.8645833333333334,
+          "product": 0.8015407986111112,
+          "complete": 0.8125
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9479166666666666,
+          "all_emitted_operations": 0.9583333333333334,
+          "product": 0.9084201388888888,
+          "complete": 0.90625
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9583333333333334,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.9583333333333334,
+        "all_emitted_operations": 0.9270833333333334,
+        "product": 0.8894314236111112,
+        "complete": 0.8923611111111112
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "local",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9479166666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.9479166666666666,
+          "complete": 0.9479166666666666
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9479166666666666,
+          "all_emitted_operations": 1.0,
+          "product": 0.9479166666666666,
+          "complete": 0.9479166666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.9652777777777777,
+        "all_emitted_operations": 1.0,
+        "product": 0.9652777777777777,
+        "complete": 0.9652777777777777
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "full",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9895833333333334,
+          "all_emitted_operations": 0.90625,
+          "product": 0.8968098958333334,
+          "complete": 0.8958333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 0.8958333333333334,
+          "product": 0.8585069444444445,
+          "complete": 0.8541666666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.982638888888889,
+        "all_emitted_operations": 0.9340277777777778,
+        "product": 0.9184389467592592,
+        "complete": 0.9166666666666666
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "local",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9895833333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.9895833333333334,
+          "complete": 0.9895833333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.982638888888889,
+        "all_emitted_operations": 1.0,
+        "product": 0.982638888888889,
+        "complete": 0.982638888888889
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "full",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 0.9375,
+          "product": 0.8984375,
+          "complete": 0.8958333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9270833333333334,
+          "all_emitted_operations": 0.78125,
+          "product": 0.7242838541666667,
+          "complete": 0.7291666666666666
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9895833333333334,
+          "product": 0.9895833333333334,
+          "complete": 0.9895833333333334
+        }
+      ],
+      "mean": {
+        "sequence": 0.9618055555555557,
+        "all_emitted_operations": 0.9027777777777778,
+        "product": 0.8707682291666666,
+        "complete": 0.8715277777777778
+      }
+    },
+    {
+      "dataset": "context-intervention",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "local",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 96,
+          "sequence": 0.9583333333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.9583333333333334,
+          "complete": 0.9583333333333334
+        },
+        {
+          "seed": 22,
+          "n": 96,
+          "sequence": 0.9270833333333334,
+          "all_emitted_operations": 1.0,
+          "product": 0.9270833333333334,
+          "complete": 0.9270833333333334
+        },
+        {
+          "seed": 33,
+          "n": 96,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.9618055555555557,
+        "all_emitted_operations": 1.0,
+        "product": 0.9618055555555557,
+        "complete": 0.9618055555555557
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "full",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 400,
+          "sequence": 0.4275,
+          "all_emitted_operations": 0.8975,
+          "product": 0.38368125,
+          "complete": 0.3825
+        },
+        {
+          "seed": 22,
+          "n": 400,
+          "sequence": 0.295,
+          "all_emitted_operations": 0.845,
+          "product": 0.24927499999999997,
+          "complete": 0.255
+        },
+        {
+          "seed": 33,
+          "n": 400,
+          "sequence": 0.485,
+          "all_emitted_operations": 0.8225,
+          "product": 0.3989125,
+          "complete": 0.4325
+        }
+      ],
+      "mean": {
+        "sequence": 0.4025,
+        "all_emitted_operations": 0.855,
+        "product": 0.34395624999999996,
+        "complete": 0.3566666666666667
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "local",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 400,
+          "sequence": 0.4175,
+          "all_emitted_operations": 1.0,
+          "product": 0.4175,
+          "complete": 0.4175
+        },
+        {
+          "seed": 22,
+          "n": 400,
+          "sequence": 0.2925,
+          "all_emitted_operations": 1.0,
+          "product": 0.2925,
+          "complete": 0.2925
+        },
+        {
+          "seed": 33,
+          "n": 400,
+          "sequence": 0.48,
+          "all_emitted_operations": 1.0,
+          "product": 0.48,
+          "complete": 0.48
+        }
+      ],
+      "mean": {
+        "sequence": 0.39666666666666667,
+        "all_emitted_operations": 1.0,
+        "product": 0.39666666666666667,
+        "complete": 0.39666666666666667
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "full",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.9375,
+          "all_emitted_operations": 0.9375,
+          "product": 0.87890625,
+          "complete": 0.875
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.7375,
+          "all_emitted_operations": 1.0,
+          "product": 0.7375,
+          "complete": 0.7375
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.8875,
+          "all_emitted_operations": 1.0,
+          "product": 0.8875,
+          "complete": 0.8875
+        }
+      ],
+      "mean": {
+        "sequence": 0.8541666666666666,
+        "all_emitted_operations": 0.9791666666666666,
+        "product": 0.8346354166666666,
+        "complete": 0.8333333333333334
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "local",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.9375,
+          "all_emitted_operations": 1.0,
+          "product": 0.9375,
+          "complete": 0.9375
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.7375,
+          "all_emitted_operations": 1.0,
+          "product": 0.7375,
+          "complete": 0.7375
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.8875,
+          "all_emitted_operations": 1.0,
+          "product": 0.8875,
+          "complete": 0.8875
+        }
+      ],
+      "mean": {
+        "sequence": 0.8541666666666666,
+        "all_emitted_operations": 1.0,
+        "product": 0.8541666666666666,
+        "complete": 0.8541666666666666
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "full",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.5625,
+          "all_emitted_operations": 0.9375,
+          "product": 0.52734375,
+          "complete": 0.5
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.4875,
+          "all_emitted_operations": 0.9625,
+          "product": 0.46921875,
+          "complete": 0.45
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.6625,
+          "all_emitted_operations": 0.85,
+          "product": 0.563125,
+          "complete": 0.5625
+        }
+      ],
+      "mean": {
+        "sequence": 0.5708333333333333,
+        "all_emitted_operations": 0.9166666666666666,
+        "product": 0.5198958333333333,
+        "complete": 0.5041666666666667
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "local",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.5625,
+          "all_emitted_operations": 1.0,
+          "product": 0.5625,
+          "complete": 0.5625
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.4875,
+          "all_emitted_operations": 1.0,
+          "product": 0.4875,
+          "complete": 0.4875
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.6625,
+          "all_emitted_operations": 1.0,
+          "product": 0.6625,
+          "complete": 0.6625
+        }
+      ],
+      "mean": {
+        "sequence": 0.5708333333333333,
+        "all_emitted_operations": 1.0,
+        "product": 0.5708333333333333,
+        "complete": 0.5708333333333333
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "full",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.25,
+          "all_emitted_operations": 0.9625,
+          "product": 0.240625,
+          "complete": 0.25
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.1375,
+          "all_emitted_operations": 0.8625,
+          "product": 0.11859375000000001,
+          "complete": 0.0875
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.525,
+          "all_emitted_operations": 0.9625,
+          "product": 0.5053125,
+          "complete": 0.4875
+        }
+      ],
+      "mean": {
+        "sequence": 0.3041666666666667,
+        "all_emitted_operations": 0.9291666666666667,
+        "product": 0.28817708333333336,
+        "complete": 0.27499999999999997
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "local",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.25,
+          "all_emitted_operations": 1.0,
+          "product": 0.25,
+          "complete": 0.25
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.125,
+          "all_emitted_operations": 1.0,
+          "product": 0.125,
+          "complete": 0.125
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.525,
+          "all_emitted_operations": 1.0,
+          "product": 0.525,
+          "complete": 0.525
+        }
+      ],
+      "mean": {
+        "sequence": 0.3,
+        "all_emitted_operations": 1.0,
+        "product": 0.3,
+        "complete": 0.3
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "full",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.3,
+          "all_emitted_operations": 0.8375,
+          "product": 0.25125,
+          "complete": 0.2
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.075,
+          "all_emitted_operations": 0.775,
+          "product": 0.058124999999999996,
+          "complete": 0.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.3,
+          "all_emitted_operations": 0.6125,
+          "product": 0.18375,
+          "complete": 0.1875
+        }
+      ],
+      "mean": {
+        "sequence": 0.22499999999999998,
+        "all_emitted_operations": 0.7416666666666667,
+        "product": 0.164375,
+        "complete": 0.12916666666666668
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "local",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.25,
+          "all_emitted_operations": 1.0,
+          "product": 0.25,
+          "complete": 0.25
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.075,
+          "all_emitted_operations": 1.0,
+          "product": 0.075,
+          "complete": 0.075
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.275,
+          "all_emitted_operations": 1.0,
+          "product": 0.275,
+          "complete": 0.275
+        }
+      ],
+      "mean": {
+        "sequence": 0.19999999999999998,
+        "all_emitted_operations": 1.0,
+        "product": 0.19999999999999998,
+        "complete": 0.19999999999999998
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "full",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.0875,
+          "all_emitted_operations": 0.8125,
+          "product": 0.07109375,
+          "complete": 0.0875
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.0375,
+          "all_emitted_operations": 0.625,
+          "product": 0.0234375,
+          "complete": 0.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.05,
+          "all_emitted_operations": 0.6875,
+          "product": 0.034375,
+          "complete": 0.0375
+        }
+      ],
+      "mean": {
+        "sequence": 0.05833333333333333,
+        "all_emitted_operations": 0.7083333333333334,
+        "product": 0.04296875,
+        "complete": 0.041666666666666664
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "JJ",
+      "context": "local",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.0875,
+          "all_emitted_operations": 1.0,
+          "product": 0.0875,
+          "complete": 0.0875
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.0375,
+          "all_emitted_operations": 1.0,
+          "product": 0.0375,
+          "complete": 0.0375
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.05,
+          "all_emitted_operations": 1.0,
+          "product": 0.05,
+          "complete": 0.05
+        }
+      ],
+      "mean": {
+        "sequence": 0.05833333333333333,
+        "all_emitted_operations": 1.0,
+        "product": 0.05833333333333333,
+        "complete": 0.05833333333333333
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "full",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 400,
+          "sequence": 0.8475,
+          "all_emitted_operations": 0.6925,
+          "product": 0.58689375,
+          "complete": 0.6175
+        },
+        {
+          "seed": 22,
+          "n": 400,
+          "sequence": 0.315,
+          "all_emitted_operations": 0.8975,
+          "product": 0.2827125,
+          "complete": 0.28
+        },
+        {
+          "seed": 33,
+          "n": 400,
+          "sequence": 0.72,
+          "all_emitted_operations": 0.8875,
+          "product": 0.6389999999999999,
+          "complete": 0.6375
+        }
+      ],
+      "mean": {
+        "sequence": 0.6275000000000001,
+        "all_emitted_operations": 0.8258333333333333,
+        "product": 0.50286875,
+        "complete": 0.5116666666666667
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "local",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 400,
+          "sequence": 0.85,
+          "all_emitted_operations": 1.0,
+          "product": 0.85,
+          "complete": 0.85
+        },
+        {
+          "seed": 22,
+          "n": 400,
+          "sequence": 0.2925,
+          "all_emitted_operations": 1.0,
+          "product": 0.2925,
+          "complete": 0.2925
+        },
+        {
+          "seed": 33,
+          "n": 400,
+          "sequence": 0.725,
+          "all_emitted_operations": 1.0,
+          "product": 0.725,
+          "complete": 0.725
+        }
+      ],
+      "mean": {
+        "sequence": 0.6224999999999999,
+        "all_emitted_operations": 1.0,
+        "product": 0.6224999999999999,
+        "complete": 0.6224999999999999
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "full",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9625,
+          "product": 0.9625,
+          "complete": 0.9625
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.475,
+          "all_emitted_operations": 1.0,
+          "product": 0.475,
+          "complete": 0.475
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.8250000000000001,
+        "all_emitted_operations": 0.9874999999999999,
+        "product": 0.8125,
+        "complete": 0.8125
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "local",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.475,
+          "all_emitted_operations": 1.0,
+          "product": 0.475,
+          "complete": 0.475
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.8250000000000001,
+        "all_emitted_operations": 1.0,
+        "product": 0.8250000000000001,
+        "complete": 0.8250000000000001
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "full",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9,
+          "product": 0.9,
+          "complete": 0.9
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.45,
+          "all_emitted_operations": 0.9625,
+          "product": 0.43312500000000004,
+          "complete": 0.4125
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.825,
+          "all_emitted_operations": 0.95,
+          "product": 0.78375,
+          "complete": 0.775
+        }
+      ],
+      "mean": {
+        "sequence": 0.7583333333333333,
+        "all_emitted_operations": 0.9375,
+        "product": 0.705625,
+        "complete": 0.6958333333333333
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "local",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.45,
+          "all_emitted_operations": 1.0,
+          "product": 0.45,
+          "complete": 0.45
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.825,
+          "all_emitted_operations": 1.0,
+          "product": 0.825,
+          "complete": 0.825
+        }
+      ],
+      "mean": {
+        "sequence": 0.7583333333333333,
+        "all_emitted_operations": 1.0,
+        "product": 0.7583333333333333,
+        "complete": 0.7583333333333333
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "full",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.9875,
+          "all_emitted_operations": 0.65,
+          "product": 0.6418750000000001,
+          "complete": 0.6375
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.2875,
+          "all_emitted_operations": 0.875,
+          "product": 0.25156249999999997,
+          "complete": 0.225
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.7,
+          "all_emitted_operations": 0.8,
+          "product": 0.5599999999999999,
+          "complete": 0.55
+        }
+      ],
+      "mean": {
+        "sequence": 0.6583333333333333,
+        "all_emitted_operations": 0.775,
+        "product": 0.4844791666666666,
+        "complete": 0.4708333333333334
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "local",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.9875,
+          "all_emitted_operations": 1.0,
+          "product": 0.9875,
+          "complete": 0.9875
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.225,
+          "all_emitted_operations": 1.0,
+          "product": 0.225,
+          "complete": 0.225
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.7,
+          "all_emitted_operations": 1.0,
+          "product": 0.7,
+          "complete": 0.7
+        }
+      ],
+      "mean": {
+        "sequence": 0.6375000000000001,
+        "all_emitted_operations": 1.0,
+        "product": 0.6375000000000001,
+        "complete": 0.6375000000000001
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "full",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.8625,
+          "all_emitted_operations": 0.65,
+          "product": 0.560625,
+          "complete": 0.525
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.3375,
+          "all_emitted_operations": 0.9,
+          "product": 0.30375,
+          "complete": 0.2875
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.7125,
+          "all_emitted_operations": 0.8875,
+          "product": 0.63234375,
+          "complete": 0.625
+        }
+      ],
+      "mean": {
+        "sequence": 0.6375000000000001,
+        "all_emitted_operations": 0.8125,
+        "product": 0.49890625000000005,
+        "complete": 0.4791666666666667
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "local",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.875,
+          "all_emitted_operations": 1.0,
+          "product": 0.875,
+          "complete": 0.875
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.2875,
+          "all_emitted_operations": 1.0,
+          "product": 0.2875,
+          "complete": 0.2875
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.7375,
+          "all_emitted_operations": 1.0,
+          "product": 0.7375,
+          "complete": 0.7375
+        }
+      ],
+      "mean": {
+        "sequence": 0.6333333333333333,
+        "all_emitted_operations": 1.0,
+        "product": 0.6333333333333333,
+        "complete": 0.6333333333333333
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "full",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.3875,
+          "all_emitted_operations": 0.3,
+          "product": 0.11624999999999999,
+          "complete": 0.0625
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.025,
+          "all_emitted_operations": 0.75,
+          "product": 0.018750000000000003,
+          "complete": 0.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.3625,
+          "all_emitted_operations": 0.8,
+          "product": 0.29,
+          "complete": 0.2375
+        }
+      ],
+      "mean": {
+        "sequence": 0.25833333333333336,
+        "all_emitted_operations": 0.6166666666666667,
+        "product": 0.14166666666666666,
+        "complete": 0.09999999999999999
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen3b",
+      "route": "SE",
+      "context": "local",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.3875,
+          "all_emitted_operations": 1.0,
+          "product": 0.3875,
+          "complete": 0.3875
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.025,
+          "all_emitted_operations": 1.0,
+          "product": 0.025,
+          "complete": 0.025
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.3625,
+          "all_emitted_operations": 1.0,
+          "product": 0.3625,
+          "complete": 0.3625
+        }
+      ],
+      "mean": {
+        "sequence": 0.25833333333333336,
+        "all_emitted_operations": 1.0,
+        "product": 0.25833333333333336,
+        "complete": 0.25833333333333336
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "full",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 400,
+          "sequence": 0.9425,
+          "all_emitted_operations": 0.7025,
+          "product": 0.66210625,
+          "complete": 0.6725
+        },
+        {
+          "seed": 22,
+          "n": 400,
+          "sequence": 0.9025,
+          "all_emitted_operations": 0.9275,
+          "product": 0.8370687499999999,
+          "complete": 0.885
+        },
+        {
+          "seed": 33,
+          "n": 400,
+          "sequence": 0.92,
+          "all_emitted_operations": 0.8875,
+          "product": 0.8165,
+          "complete": 0.83
+        }
+      ],
+      "mean": {
+        "sequence": 0.9216666666666667,
+        "all_emitted_operations": 0.8391666666666667,
+        "product": 0.7718916666666665,
+        "complete": 0.7958333333333334
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "local",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 400,
+          "sequence": 0.9425,
+          "all_emitted_operations": 1.0,
+          "product": 0.9425,
+          "complete": 0.9425
+        },
+        {
+          "seed": 22,
+          "n": 400,
+          "sequence": 0.955,
+          "all_emitted_operations": 1.0,
+          "product": 0.955,
+          "complete": 0.955
+        },
+        {
+          "seed": 33,
+          "n": 400,
+          "sequence": 0.92,
+          "all_emitted_operations": 1.0,
+          "product": 0.92,
+          "complete": 0.92
+        }
+      ],
+      "mean": {
+        "sequence": 0.9391666666666666,
+        "all_emitted_operations": 1.0,
+        "product": 0.9391666666666666,
+        "complete": 0.9391666666666666
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "full",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.975,
+          "product": 0.975,
+          "complete": 0.975
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.95,
+          "product": 0.95,
+          "complete": 0.95
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 0.975,
+        "product": 0.975,
+        "complete": 0.975
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "local",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "full",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.8875,
+          "product": 0.8875,
+          "complete": 0.8875
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9875,
+          "product": 0.9875,
+          "complete": 0.9875
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.9875,
+          "product": 0.9875,
+          "complete": 0.9875
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 0.9541666666666666,
+        "product": 0.9541666666666666,
+        "complete": 0.9541666666666666
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "local",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "full",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.9625,
+          "all_emitted_operations": 0.6625,
+          "product": 0.63765625,
+          "complete": 0.625
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.95,
+          "all_emitted_operations": 0.95,
+          "product": 0.9025,
+          "complete": 0.95
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.9875,
+          "all_emitted_operations": 0.95,
+          "product": 0.938125,
+          "complete": 0.9375
+        }
+      ],
+      "mean": {
+        "sequence": 0.9666666666666667,
+        "all_emitted_operations": 0.8541666666666666,
+        "product": 0.8260937500000001,
+        "complete": 0.8375
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "local",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.9625,
+          "all_emitted_operations": 1.0,
+          "product": 0.9625,
+          "complete": 0.9625
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.9875,
+          "all_emitted_operations": 1.0,
+          "product": 0.9875,
+          "complete": 0.9875
+        }
+      ],
+      "mean": {
+        "sequence": 0.9833333333333334,
+        "all_emitted_operations": 1.0,
+        "product": 0.9833333333333334,
+        "complete": 0.9833333333333334
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "full",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.55,
+          "product": 0.55,
+          "complete": 0.55
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.8875,
+          "all_emitted_operations": 0.9125,
+          "product": 0.80984375,
+          "complete": 0.8625
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.95,
+          "all_emitted_operations": 0.85,
+          "product": 0.8075,
+          "complete": 0.8
+        }
+      ],
+      "mean": {
+        "sequence": 0.9458333333333333,
+        "all_emitted_operations": 0.7708333333333334,
+        "product": 0.7224479166666667,
+        "complete": 0.7375000000000002
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "local",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.95,
+          "all_emitted_operations": 1.0,
+          "product": 0.95,
+          "complete": 0.95
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.95,
+          "all_emitted_operations": 1.0,
+          "product": 0.95,
+          "complete": 0.95
+        }
+      ],
+      "mean": {
+        "sequence": 0.9666666666666667,
+        "all_emitted_operations": 1.0,
+        "product": 0.9666666666666667,
+        "complete": 0.9666666666666667
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "full",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.75,
+          "all_emitted_operations": 0.4375,
+          "product": 0.328125,
+          "complete": 0.325
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.675,
+          "all_emitted_operations": 0.7875,
+          "product": 0.5315625,
+          "complete": 0.625
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.6625,
+          "all_emitted_operations": 0.7,
+          "product": 0.46374999999999994,
+          "complete": 0.475
+        }
+      ],
+      "mean": {
+        "sequence": 0.6958333333333333,
+        "all_emitted_operations": 0.6416666666666666,
+        "product": 0.44114583333333335,
+        "complete": 0.47500000000000003
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "JJ",
+      "context": "local",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.75,
+          "all_emitted_operations": 1.0,
+          "product": 0.75,
+          "complete": 0.75
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.825,
+          "all_emitted_operations": 1.0,
+          "product": 0.825,
+          "complete": 0.825
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.6625,
+          "all_emitted_operations": 1.0,
+          "product": 0.6625,
+          "complete": 0.6625
+        }
+      ],
+      "mean": {
+        "sequence": 0.7458333333333332,
+        "all_emitted_operations": 1.0,
+        "product": 0.7458333333333332,
+        "complete": 0.7458333333333332
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "full",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 400,
+          "sequence": 0.8925,
+          "all_emitted_operations": 0.93,
+          "product": 0.830025,
+          "complete": 0.8375
+        },
+        {
+          "seed": 22,
+          "n": 400,
+          "sequence": 0.98,
+          "all_emitted_operations": 0.9175,
+          "product": 0.89915,
+          "complete": 0.8975
+        },
+        {
+          "seed": 33,
+          "n": 400,
+          "sequence": 0.995,
+          "all_emitted_operations": 0.9925,
+          "product": 0.9875375000000001,
+          "complete": 0.9875
+        }
+      ],
+      "mean": {
+        "sequence": 0.9558333333333332,
+        "all_emitted_operations": 0.9466666666666667,
+        "product": 0.9055708333333333,
+        "complete": 0.9075000000000001
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "local",
+      "length": "all",
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 400,
+          "sequence": 0.9075,
+          "all_emitted_operations": 1.0,
+          "product": 0.9075,
+          "complete": 0.9075
+        },
+        {
+          "seed": 22,
+          "n": 400,
+          "sequence": 0.9775,
+          "all_emitted_operations": 1.0,
+          "product": 0.9775,
+          "complete": 0.9775
+        },
+        {
+          "seed": 33,
+          "n": 400,
+          "sequence": 0.995,
+          "all_emitted_operations": 1.0,
+          "product": 0.995,
+          "complete": 0.995
+        }
+      ],
+      "mean": {
+        "sequence": 0.96,
+        "all_emitted_operations": 1.0,
+        "product": 0.96,
+        "complete": 0.96
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "full",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "local",
+      "length": 3,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "full",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "local",
+      "length": 4,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 1.0,
+        "all_emitted_operations": 1.0,
+        "product": 1.0,
+        "complete": 1.0
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "full",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.975,
+          "all_emitted_operations": 0.9,
+          "product": 0.8775,
+          "complete": 0.875
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.8875,
+          "product": 0.8875,
+          "complete": 0.8875
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.9916666666666667,
+        "all_emitted_operations": 0.9291666666666667,
+        "product": 0.9216666666666665,
+        "complete": 0.9208333333333334
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "local",
+      "length": 5,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.975,
+          "all_emitted_operations": 1.0,
+          "product": 0.975,
+          "complete": 0.975
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.9916666666666667,
+        "all_emitted_operations": 1.0,
+        "product": 0.9916666666666667,
+        "complete": 0.9916666666666667
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "full",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.8125,
+          "all_emitted_operations": 0.8625,
+          "product": 0.70078125,
+          "complete": 0.75
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 0.925,
+          "product": 0.925,
+          "complete": 0.925
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.9375,
+        "all_emitted_operations": 0.9291666666666667,
+        "product": 0.8752604166666668,
+        "complete": 0.8916666666666666
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "local",
+      "length": 6,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.8875,
+          "all_emitted_operations": 1.0,
+          "product": 0.8875,
+          "complete": 0.8875
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 1.0,
+          "all_emitted_operations": 1.0,
+          "product": 1.0,
+          "complete": 1.0
+        }
+      ],
+      "mean": {
+        "sequence": 0.9625,
+        "all_emitted_operations": 1.0,
+        "product": 0.9625,
+        "complete": 0.9625
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "full",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.675,
+          "all_emitted_operations": 0.8875,
+          "product": 0.5990625,
+          "complete": 0.5625
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.9,
+          "all_emitted_operations": 0.775,
+          "product": 0.6975,
+          "complete": 0.675
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.975,
+          "all_emitted_operations": 0.9625,
+          "product": 0.9384375,
+          "complete": 0.9375
+        }
+      ],
+      "mean": {
+        "sequence": 0.85,
+        "all_emitted_operations": 0.875,
+        "product": 0.7450000000000001,
+        "complete": 0.725
+      }
+    },
+    {
+      "dataset": "fresh-confirmation",
+      "model": "qwen32b",
+      "route": "SE",
+      "context": "local",
+      "length": 8,
+      "seeds": [
+        {
+          "seed": 11,
+          "n": 80,
+          "sequence": 0.675,
+          "all_emitted_operations": 1.0,
+          "product": 0.675,
+          "complete": 0.675
+        },
+        {
+          "seed": 22,
+          "n": 80,
+          "sequence": 0.8875,
+          "all_emitted_operations": 1.0,
+          "product": 0.8875,
+          "complete": 0.8875
+        },
+        {
+          "seed": 33,
+          "n": 80,
+          "sequence": 0.975,
+          "all_emitted_operations": 1.0,
+          "product": 0.975,
+          "complete": 0.975
+        }
+      ],
+      "mean": {
+        "sequence": 0.8458333333333333,
+        "all_emitted_operations": 1.0,
+        "product": 0.8458333333333333,
+        "complete": 0.8458333333333333
+      }
+    }
+  ],
+  "note": "These two columns are measured on actual no-oracle trajectories, not correct-other-component tests. Missing calls fail sequence; all-emitted-operations does not count ungenerated calls as additional body errors. Products are calculated within seed before averaging."
+}

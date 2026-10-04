@@ -1,0 +1,196 @@
+{
+  "methods": {
+    "base": {
+      "test_compression": 0.3795144718114793,
+      "search_solved_fraction": 0.6748046875,
+      "mean_selected_size": 2.25,
+      "mean_unique_proposed_semantics": 10.083333333333334,
+      "identity_proposals": 0,
+      "old_library_proposals": 57,
+      "mean_primitive_operations": 4567.208333333333
+    },
+    "exhaustive": {
+      "test_compression": 0.45200539523327526,
+      "search_solved_fraction": 0.7236328125,
+      "mean_selected_size": 3.0,
+      "mean_unique_proposed_semantics": 120.0,
+      "identity_proposals": 72,
+      "old_library_proposals": 648,
+      "mean_primitive_operations": 4540.125
+    },
+    "flat": {
+      "test_compression": 0.013460632747591414,
+      "search_solved_fraction": 0.5162760416666666,
+      "mean_selected_size": 0.2916666666666667,
+      "mean_unique_proposed_semantics": 3.0,
+      "identity_proposals": 0,
+      "old_library_proposals": 188,
+      "mean_primitive_operations": 3240.8333333333335
+    },
+    "frequency": {
+      "test_compression": 0.5704290308700246,
+      "search_solved_fraction": 0.7626953125,
+      "mean_selected_size": 3.0,
+      "mean_unique_proposed_semantics": 15.0,
+      "identity_proposals": 9,
+      "old_library_proposals": 45,
+      "mean_primitive_operations": 4831.5
+    },
+    "macro": {
+      "test_compression": 0.1943300745013874,
+      "search_solved_fraction": 0.6077473958333334,
+      "mean_selected_size": 1.125,
+      "mean_unique_proposed_semantics": 5.333333333333333,
+      "identity_proposals": 0,
+      "old_library_proposals": 33,
+      "mean_primitive_operations": 3892.1666666666665
+    },
+    "mismatch": {
+      "test_compression": 0.020497368088167503,
+      "search_solved_fraction": 0.5107421875,
+      "mean_selected_size": 0.25,
+      "mean_unique_proposed_semantics": 5.375,
+      "identity_proposals": 0,
+      "old_library_proposals": 45,
+      "mean_primitive_operations": 3214.0
+    },
+    "no-library": {
+      "test_compression": 0.0,
+      "search_solved_fraction": 0.4912109375,
+      "mean_selected_size": 0.0,
+      "mean_unique_proposed_semantics": 0.0,
+      "identity_proposals": 0,
+      "old_library_proposals": 0,
+      "mean_primitive_operations": 3000.0
+    },
+    "random": {
+      "test_compression": 0.11741151794378046,
+      "search_solved_fraction": 0.5345052083333334,
+      "mean_selected_size": 1.25,
+      "mean_unique_proposed_semantics": 14.5,
+      "identity_proposals": 8,
+      "old_library_proposals": 33,
+      "mean_primitive_operations": 3821.0
+    }
+  },
+  "comparisons": {
+    "macro-vs-flat": {
+      "mean_compression_difference": 0.18086944175379593,
+      "seed_compression_differences": [
+        0.1653777923716555,
+        0.2022130743792705,
+        0.17501745851046185
+      ],
+      "family_compression_differences": [
+        0.2259287338893101,
+        0.285006195786865,
+        0.031085604973696796,
+        0.032362459546925564,
+        0.06638655462184874,
+        0.14809348093480937,
+        0.40450673261885134,
+        0.2535857716580608
+      ],
+      "family_cluster_bootstrap_95": [
+        0.09711707260326503,
+        0.27344025469874406
+      ],
+      "mean_search_difference": 0.09147135416666667
+    },
+    "macro-vs-base": {
+      "mean_compression_difference": -0.18518439731009187,
+      "seed_compression_differences": [
+        -0.17853522117995962,
+        -0.15939205771486736,
+        -0.2176259130354486
+      ],
+      "family_compression_differences": [
+        0.006317917614354314,
+        -0.14275092936802972,
+        -0.39980870396939255,
+        -0.2544187204381379,
+        -0.28207282913165266,
+        -0.21845018450184503,
+        -0.0434185215718604,
+        -0.14687320711417098
+      ],
+      "family_cluster_bootstrap_95": [
+        -0.2675894561923646,
+        -0.10012262180080345
+      ],
+      "mean_search_difference": -0.06705729166666667
+    },
+    "macro-vs-random": {
+      "mean_compression_difference": 0.07691855655760692,
+      "seed_compression_differences": [
+        0.09099079404410015,
+        0.09746907966516186,
+        0.042295795963558744
+      ],
+      "family_compression_differences": [
+        0.17791256002021735,
+        0.3127633209417596,
+        -0.1061692969870875,
+        -0.11326860841423947,
+        -0.09831932773109243,
+        0.05707257072570727,
+        0.22643583402033526,
+        0.1589213998852553
+      ],
+      "family_cluster_bootstrap_95": [
+        -0.03105592814135093,
+        0.18132416623435765
+      ],
+      "mean_search_difference": 0.0732421875
+    },
+    "macro-vs-mismatch": {
+      "mean_compression_difference": 0.17383270641321988,
+      "seed_compression_differences": [
+        0.1623063606246358,
+        0.1799966612196114,
+        0.1791950973954124
+      ],
+      "family_compression_differences": [
+        0.2259287338893101,
+        0.2532837670384139,
+        0.031085604973696796,
+        0.032362459546925564,
+        0.06638655462184874,
+        0.1820418204182042,
+        0.40450673261885134,
+        0.19506597819850832
+      ],
+      "family_cluster_bootstrap_95": [
+        0.09561998972356765,
+        0.26317053704150467
+      ],
+      "mean_search_difference": 0.09700520833333333
+    },
+    "macro-vs-frequency": {
+      "mean_compression_difference": -0.3760989563686372,
+      "seed_compression_differences": [
+        -0.39355862543097453,
+        -0.35081928438276905,
+        -0.3839189592921681
+      ],
+      "family_compression_differences": [
+        -0.36997725549658833,
+        -0.2532837670384138,
+        -0.5772357723577235,
+        -0.5636046801095346,
+        -0.49411764705882355,
+        -0.3033210332103321,
+        -0.1560868370431437,
+        -0.29116465863453816
+      ],
+      "family_cluster_bootstrap_95": [
+        -0.4744979650381914,
+        -0.2745615997727071
+      ],
+      "mean_search_difference": -0.15494791666666666
+    }
+  },
+  "prespecified_screen_passed": true,
+  "seconds": 0.8759477138519287,
+  "interpretation": "Compression is symbolic reuse; search is external BFS, not neural solving. Existing execution-trained checkpoints, not proposal-policy training. Base seeds are sampling repeats."
+}

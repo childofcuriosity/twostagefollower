@@ -1,0 +1,38 @@
+Execute the given tool calls from left to right on a state of four digits. Each tool applies its listed primitive operations in order. Carry the resulting state into the next operation and tool.
+Primitive definitions for state a b c d:
+rev: d c b a
+rot: b c d a
+inc: (a+1) mod 10, (b+1) mod 10, (c+1) mod 10, (d+1) mod 10
+neg: (-a) mod 10, (-b) mod 10, (-c) mod 10, (-d) mod 10 (0 maps to 0)
+swap: b a c d
+ends: (a+1) mod 10, b, c, (d+1) mod 10
+Tool definitions:
+red: rot, inc
+blue: rev, rot, inc
+green: rot, rot
+gold: inc, rev
+pink: rot, inc, swap
+black: inc, swap
+white: inc, neg, inc
+gray: rot, rot, inc
+brown: inc, inc, inc
+Output requirements:
+Before each tool call, write the heading step: on its own line.
+Under each heading, output every primitive operation of that tool and the state AFTER that operation, one line per operation, in the format: operation digit digit digit digit.
+After all calls, output exactly one final line: Answer: digit digit digit digit
+Use single spaces between digits. Output only the trace and final Answer, with no explanation, code fences, or extra lines.
+Format example:
+Input: 9 0 4 7
+Functions: red blue
+Trace:
+step:
+rot 0 4 7 9
+inc 1 5 8 0
+step:
+rev 0 8 5 1
+rot 8 5 1 0
+inc 9 6 2 1
+Answer: 9 6 2 1
+
+Now execute this plan:
+{task}

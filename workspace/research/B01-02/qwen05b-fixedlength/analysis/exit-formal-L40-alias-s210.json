@@ -1,0 +1,11 @@
+{
+  "length": 40,
+  "phase": "formal",
+  "condition": "alias",
+  "seed": 210,
+  "gpu": 4,
+  "exit_code": 0,
+  "seconds": 1056.8942322731018,
+  "log": "logs/formal-L40-alias-s210.log",
+  "finished": 1790532390.1179066
+}

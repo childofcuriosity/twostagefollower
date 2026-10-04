@@ -1,0 +1,11 @@
+{
+  "utc": "2026-09-24T03:17:56Z",
+  "sha256": {
+    "PROTOCOL.md": "fda0f5a74b204ef6e87d7c3ccc3fdeb65bd6ab570a86c2f780e3ab49f822f874",
+    "src/common.py": "7ba24d73d22c1a3a5e0842e90cf7f32179ca7b57d5db626815072bd9d0883f53",
+    "src/launch.py": "bad0ab9df8aba21b8180c91f2a091d18cb987eecaedfb0d44b4da1ae636d8d79",
+    "src/propose.py": "f1ceafd971efee89af5d60d013e96ad01ba6c9aca0ac177e2c66f941ad128541",
+    "data/candidates.json": "f95b74d668bacef17b780c78d6ea8b4ca6591c00956fe44098ff57990bd67c80",
+    "data/tasks.json": "3b2ac6fd2734926c145f00c12e57b04564d436f5220a5a45a99a6e6baf41a1a3"
+  }
+}

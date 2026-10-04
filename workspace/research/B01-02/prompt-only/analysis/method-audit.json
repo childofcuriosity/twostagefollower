@@ -1,0 +1,40 @@
+{
+  "prompt_only_heading_difference_STEP_POSITION_NAME": true,
+  "alias_exact_input_output_renaming": true,
+  "alias_matches_previous_experiment": true,
+  "primitive_implementation_identical": true,
+  "example": {
+    "id": "example",
+    "chain": [
+      0,
+      1
+    ],
+    "x": [
+      9,
+      0,
+      4,
+      7
+    ],
+    "split": "example",
+    "depth": 2
+  },
+  "aliases": {
+    "red": "toolH",
+    "blue": "toolB",
+    "green": "toolA",
+    "gold": "toolI",
+    "pink": "toolF",
+    "black": "toolE",
+    "white": "toolC",
+    "gray": "toolG",
+    "brown": "toolD"
+  },
+  "legacy_sha256": "de5d7eecf2e3407b1dabf296534cd8d54caa8d9433bc4f10bad12017b2e93f27",
+  "dsl_sha256": "59a3eddff9a3144e460954c15f33f3a00cec2fc3642daf2bb87a44af27c49003",
+  "prompt_hashes": {
+    "STEP": "84d2a91bf41bb4cc4585bee04964b38e0bc65a5a6a7dd292a619ea10f9f0f172",
+    "POSITION": "ed26c4ca057ff5576ded0efef200f5b1493e177bc5236d87e921fa220c83de1c",
+    "ALIAS": "a085dccd8f5e62f8e67fb2f78a1c54d53394b215a1c07c2020dc08903bc14282",
+    "NAME": "182089f9b3b05a06ee0d8b22c0344005fd0b220389d98ce7e1cdc77219a5b7f1"
+  }
+}

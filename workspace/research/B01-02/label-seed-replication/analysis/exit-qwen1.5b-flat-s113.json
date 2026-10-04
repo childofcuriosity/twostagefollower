@@ -1,0 +1,16 @@
+{
+  "job": {
+    "model": "qwen1.5b",
+    "condition": "flat",
+    "seed": 113,
+    "steps": 512,
+    "microbatch": 16,
+    "accum": 2,
+    "lr": 0.0003
+  },
+  "gpu": 0,
+  "returncode": 0,
+  "seconds": 338.38247418403625,
+  "finished": 1790422744.7619493,
+  "log": "logs/qwen1.5b-flat-s113.log"
+}

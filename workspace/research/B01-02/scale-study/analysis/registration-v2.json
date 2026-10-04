@@ -1,0 +1,6 @@
+{
+  "utc": "2026-09-24T09:52:07Z",
+  "reason": "Before any model training, enable inference KV cache in checkpoint evaluation; restore use_cache=False for training. No training change.",
+  "supersedes": "registration.json train.py hash",
+  "train_sha256": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef"
+}

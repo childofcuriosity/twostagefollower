@@ -1,0 +1,51 @@
+{
+  "job": {
+    "gpu": 6,
+    "model": "qwen32b",
+    "condition": "joint",
+    "seed": 33,
+    "microbatch": 4
+  },
+  "host": "llm-devbox-4qffwbpp-98dc55c59-n8ptn",
+  "start_utc": "2026-09-25T06:09:23Z",
+  "commands": [
+    {
+      "argv": [
+        "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+        "-u",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/src/train.py",
+        "--model",
+        "qwen32b",
+        "--condition",
+        "joint",
+        "--seed",
+        "33",
+        "--microbatch",
+        "4"
+      ],
+      "pid": 3739306,
+      "log": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/logs/formal-local32-qwen32b-joint-s33-stage0.log",
+      "started": 1790316563.9642274,
+      "returncode": 0,
+      "ended": 1790319894.532236
+    },
+    {
+      "argv": [
+        "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+        "-u",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/src/evaluate.py",
+        "--model",
+        "qwen32b",
+        "--condition",
+        "joint",
+        "--seed",
+        "33"
+      ],
+      "pid": 3849539,
+      "log": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/logs/formal-local32-qwen32b-joint-s33-stage1.log",
+      "started": 1790319894.5486124,
+      "returncode": 0,
+      "ended": 1790323760.7284474
+    }
+  ]
+}

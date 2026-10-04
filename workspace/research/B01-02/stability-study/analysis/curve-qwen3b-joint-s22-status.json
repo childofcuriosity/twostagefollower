@@ -1,0 +1,21 @@
+{
+  "job": {
+    "kind": "curve",
+    "model": "qwen3b",
+    "seed": 22,
+    "id": "curve-qwen3b-joint-s22",
+    "condition": "joint"
+  },
+  "pid": 98146,
+  "gpu": 3,
+  "command": [
+    "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+    "-u",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/src/run.py",
+    "--job",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/analysis/job-configs/curve-qwen3b-joint-s22.json"
+  ],
+  "start": 1790335762.3320134,
+  "returncode": 0,
+  "end": 1790338042.163269
+}

@@ -1,0 +1,85 @@
+{
+  "phase": "explore",
+  "length": 20,
+  "results": {
+    "STEP": {
+      "n": 32,
+      "correct": 0,
+      "rate": 0.0,
+      "header_compliance": 0.03125,
+      "first_errors": {
+        "tool_or_order": 15,
+        "numeric": 15,
+        "format": 1,
+        "omitted_call": 1
+      },
+      "finish_reasons": {
+        "eos": 32
+      },
+      "mean_output_tokens": 439.34375,
+      "mean_text_tokens": 438.34375,
+      "mean_input_tokens": 491.0,
+      "generate_seconds": 75.2397997379303,
+      "run": {
+        "n": 32,
+        "condition": "STEP",
+        "length": 20,
+        "phase": "explore",
+        "model_load_seconds": 19.448110580444336,
+        "wall_seconds": 75.49057006835938,
+        "generate_seconds_all_records": 75.2397997379303,
+        "generate_seconds_this_process": 75.2397997379303,
+        "continued_records": 0,
+        "prediction_sha256": "310ef7993860f998b5357afed769e528487a7e3d0bb77d407754161bd82a3aca",
+        "finished": 1790555618.3991857,
+        "max_gpu_memory_bytes": 38914376704
+      }
+    },
+    "NAME": {
+      "n": 32,
+      "correct": 0,
+      "rate": 0.0,
+      "header_compliance": 0.03125,
+      "first_errors": {
+        "tool_or_order": 4,
+        "numeric": 27,
+        "format": 1
+      },
+      "finish_reasons": {
+        "eos": 32
+      },
+      "mean_output_tokens": 455.15625,
+      "mean_text_tokens": 454.15625,
+      "mean_input_tokens": 495.0,
+      "generate_seconds": 56.07345128059387,
+      "run": {
+        "n": 32,
+        "condition": "NAME",
+        "length": 20,
+        "phase": "explore",
+        "model_load_seconds": 18.763061046600342,
+        "wall_seconds": 56.21403241157532,
+        "generate_seconds_all_records": 56.07345128059387,
+        "generate_seconds_this_process": 56.07345128059387,
+        "continued_records": 0,
+        "prediction_sha256": "17f83800bb33df225eca4039841eb4c9e7e9d8c6584852bdb3e1760732daad72",
+        "finished": 1790555598.363141,
+        "max_gpu_memory_bytes": 37705543680
+      }
+    }
+  },
+  "paired_vs_STEP": {
+    "NAME": {
+      "difference": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "better": 0,
+      "worse": 0,
+      "both_correct": 0,
+      "method": "10000 paired item percentile bootstrap; fixed analysis seed 740001"
+    }
+  },
+  "legacy_sha256": "de5d7eecf2e3407b1dabf296534cd8d54caa8d9433bc4f10bad12017b2e93f27"
+}

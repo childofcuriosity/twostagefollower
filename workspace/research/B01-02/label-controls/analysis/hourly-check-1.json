@@ -1,0 +1,63 @@
+{
+  "checked_utc": "2026-09-25T18:15:29.402906+00:00",
+  "completed": 12,
+  "active": [
+    {
+      "run": "qwen32b-alias-s11",
+      "training_step": 152,
+      "last_training_loss": 8.081488294919836e-05,
+      "last_log": "oss': 9.467100596793898e-07, 'lr': 0.0002531783337987598, 'grad_norm': 3.06588044622913e-05, 'elapsed': 3632.2483661174774, 'input_tokens': 686338, 'target_tokens': 299170, 'examples': 4512}",
+      "log_age_seconds": 55
+    },
+    {
+      "run": "qwen32b-alias-s22",
+      "training_step": 158,
+      "last_training_loss": 4.140816827202798e-06,
+      "last_log": "oss': 3.780270731112978e-06, 'lr': 0.0002531783337987598, 'grad_norm': 8.369859278900549e-05, 'elapsed': 3600.211521625519, 'input_tokens': 686468, 'target_tokens': 299312, 'examples': 4512}",
+      "log_age_seconds": 87
+    },
+    {
+      "run": "qwen32b-alias-s33",
+      "training_step": 160,
+      "last_training_loss": 2.305083171449951e-06,
+      "last_log": "s': 3.1405659228767036e-06, 'lr': 0.0002531783337987598, 'grad_norm': 5.840149970026687e-05, 'elapsed': 3592.6926708221436, 'input_tokens': 686403, 'target_tokens': 299245, 'examples': 4512}",
+      "log_age_seconds": 98
+    },
+    {
+      "run": "qwen32b-position-s11",
+      "training_step": 163,
+      "last_training_loss": 1.950553780716291e-06,
+      "last_log": "ss': 1.6288955180243647e-06, 'lr': 0.0002400019814576463, 'grad_norm': 3.165433008689433e-05, 'elapsed': 3677.702617406845, 'input_tokens': 774258, 'target_tokens': 341974, 'examples': 5152}",
+      "log_age_seconds": 7
+    },
+    {
+      "run": "qwen32b-position-s22",
+      "training_step": 171,
+      "last_training_loss": 1.290076352233882e-05,
+      "last_log": "ss': 2.076034070341848e-05, 'lr': 0.0002400019814576463, 'grad_norm': 0.00040990926208905876, 'elapsed': 3635.747674703598, 'input_tokens': 773682, 'target_tokens': 341422, 'examples': 5152}",
+      "log_age_seconds": 50
+    },
+    {
+      "run": "qwen32b-position-s33",
+      "training_step": 158,
+      "last_training_loss": 5.283815653456259e-06,
+      "last_log": "ss': 8.748622121856897e-06, 'lr': 0.0002531783337987598, 'grad_norm': 0.0003982977941632271, 'elapsed': 3602.2414276599884, 'input_tokens': 677816, 'target_tokens': 299245, 'examples': 4512}",
+      "log_age_seconds": 87
+    },
+    {
+      "run": "qwen7b-position-s11",
+      "training_step": 128,
+      "last_training_loss": 8.61399462337431e-06,
+      "last_log": "eval step0128-dev.jsonl 0 224",
+      "log_age_seconds": 40
+    },
+    {
+      "run": "qwen7b-position-s22",
+      "training_step": 64,
+      "last_training_loss": 6.90947454131674e-05,
+      "last_log": "eval step0064-dev.jsonl 0 224",
+      "log_age_seconds": 7
+    }
+  ],
+  "next_normal_check_utc": "2026-09-25T19:15:29.402906+00:00"
+}

@@ -1,0 +1,413 @@
+{
+  "results": [
+    {
+      "job": {
+        "model": "qwen32b",
+        "condition": "alias",
+        "seed": 33,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen32b/runs/macro-original-s33/config.json",
+        "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 5,
+      "returncode": 0,
+      "seconds": 8931.515963077545,
+      "finished": 1790365276.5108716
+    },
+    {
+      "job": {
+        "model": "qwen32b",
+        "condition": "position",
+        "seed": 22,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen32b/runs/macro-original-s22/config.json",
+        "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 1,
+      "returncode": 0,
+      "seconds": 9400.474446296692,
+      "finished": 1790365745.467909
+    },
+    {
+      "job": {
+        "model": "qwen32b",
+        "condition": "alias",
+        "seed": 11,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen32b/runs/macro-original-s11/config.json",
+        "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 3,
+      "returncode": 0,
+      "seconds": 9649.41502046585,
+      "finished": 1790365994.409114
+    },
+    {
+      "job": {
+        "model": "qwen32b",
+        "condition": "alias",
+        "seed": 22,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen32b/runs/macro-original-s22/config.json",
+        "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 4,
+      "returncode": 0,
+      "seconds": 9674.004110574722,
+      "finished": 1790366018.9986033
+    },
+    {
+      "job": {
+        "model": "qwen32b",
+        "condition": "position",
+        "seed": 11,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen32b/runs/macro-original-s11/config.json",
+        "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 0,
+      "returncode": 0,
+      "seconds": 9684.171448946,
+      "finished": 1790366029.1645927
+    },
+    {
+      "job": {
+        "model": "qwen32b",
+        "condition": "position",
+        "seed": 33,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen32b/runs/macro-original-s33/config.json",
+        "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 2,
+      "returncode": 0,
+      "seconds": 9920.232877254486,
+      "finished": 1790366265.2266514
+    },
+    {
+      "job": {
+        "model": "qwen1.5b",
+        "condition": "position",
+        "seed": 11,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/runs/macro-original-s11/config.json",
+        "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 6,
+      "returncode": 0,
+      "seconds": 357.88990211486816,
+      "finished": 1790356702.885342
+    },
+    {
+      "job": {
+        "model": "qwen1.5b",
+        "condition": "position",
+        "seed": 33,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/runs/macro-original-s33/config.json",
+        "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 6,
+      "returncode": 0,
+      "seconds": 347.58839416503906,
+      "finished": 1790357050.50407
+    },
+    {
+      "job": {
+        "model": "qwen1.5b",
+        "condition": "alias",
+        "seed": 22,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/runs/macro-original-s22/config.json",
+        "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 6,
+      "returncode": 0,
+      "seconds": 462.6082236766815,
+      "finished": 1790357513.479702
+    },
+    {
+      "job": {
+        "model": "qwen3b",
+        "condition": "position",
+        "seed": 11,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/rsi-study/replications/qwen3b/runs/macro-original-s11/config.json",
+        "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 6,
+      "returncode": 0,
+      "seconds": 496.6659801006317,
+      "finished": 1790358010.2084494
+    },
+    {
+      "job": {
+        "model": "qwen3b",
+        "condition": "position",
+        "seed": 33,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/rsi-study/replications/qwen3b/runs/macro-original-s33/config.json",
+        "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 6,
+      "returncode": 0,
+      "seconds": 525.3434000015259,
+      "finished": 1790358535.5825062
+    },
+    {
+      "job": {
+        "model": "qwen3b",
+        "condition": "alias",
+        "seed": 22,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/rsi-study/replications/qwen3b/runs/macro-original-s22/config.json",
+        "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 6,
+      "returncode": 0,
+      "seconds": 658.9231429100037,
+      "finished": 1790359194.5492353
+    },
+    {
+      "job": {
+        "model": "qwen7b",
+        "condition": "position",
+        "seed": 11,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen7b/runs/macro-original-s11/config.json",
+        "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 6,
+      "returncode": 0,
+      "seconds": 2620.653348684311,
+      "finished": 1790361815.2401469
+    },
+    {
+      "job": {
+        "model": "qwen7b",
+        "condition": "position",
+        "seed": 33,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen7b/runs/macro-original-s33/config.json",
+        "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 6,
+      "returncode": 0,
+      "seconds": 2764.1358337402344,
+      "finished": 1790364579.4244263
+    },
+    {
+      "job": {
+        "model": "qwen7b",
+        "condition": "alias",
+        "seed": 22,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen7b/runs/macro-original-s22/config.json",
+        "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 6,
+      "returncode": 0,
+      "seconds": 2581.406074523926,
+      "finished": 1790367160.8658178
+    },
+    {
+      "job": {
+        "model": "qwen1.5b",
+        "condition": "position",
+        "seed": 22,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/runs/macro-original-s22/config.json",
+        "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 7,
+      "returncode": 0,
+      "seconds": 360.1321494579315,
+      "finished": 1790356705.128071
+    },
+    {
+      "job": {
+        "model": "qwen1.5b",
+        "condition": "alias",
+        "seed": 11,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/runs/macro-original-s11/config.json",
+        "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 7,
+      "returncode": 0,
+      "seconds": 403.57357144355774,
+      "finished": 1790357108.7281413
+    },
+    {
+      "job": {
+        "model": "qwen1.5b",
+        "condition": "alias",
+        "seed": 33,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/runs/macro-original-s33/config.json",
+        "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 7,
+      "returncode": 0,
+      "seconds": 419.26163148880005,
+      "finished": 1790357528.0383534
+    },
+    {
+      "job": {
+        "model": "qwen3b",
+        "condition": "position",
+        "seed": 22,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/rsi-study/replications/qwen3b/runs/macro-original-s22/config.json",
+        "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 7,
+      "returncode": 0,
+      "seconds": 552.9649670124054,
+      "finished": 1790358081.032886
+    },
+    {
+      "job": {
+        "model": "qwen3b",
+        "condition": "alias",
+        "seed": 11,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/rsi-study/replications/qwen3b/runs/macro-original-s11/config.json",
+        "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 7,
+      "returncode": 0,
+      "seconds": 689.879725933075,
+      "finished": 1790358770.9517057
+    },
+    {
+      "job": {
+        "model": "qwen3b",
+        "condition": "alias",
+        "seed": 33,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/rsi-study/replications/qwen3b/runs/macro-original-s33/config.json",
+        "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 7,
+      "returncode": 0,
+      "seconds": 698.4861223697662,
+      "finished": 1790359469.4920237
+    },
+    {
+      "job": {
+        "model": "qwen7b",
+        "condition": "position",
+        "seed": 22,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen7b/runs/macro-original-s22/config.json",
+        "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 7,
+      "returncode": 0,
+      "seconds": 2369.029454231262,
+      "finished": 1790361838.5547037
+    },
+    {
+      "job": {
+        "model": "qwen7b",
+        "condition": "alias",
+        "seed": 11,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen7b/runs/macro-original-s11/config.json",
+        "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 7,
+      "returncode": 0,
+      "seconds": 2760.998892068863,
+      "finished": 1790364599.598985
+    },
+    {
+      "job": {
+        "model": "qwen7b",
+        "condition": "alias",
+        "seed": 33,
+        "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen7b/runs/macro-original-s33/config.json",
+        "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+        "microbatch": 16,
+        "accum": 2,
+        "steps": 512,
+        "lr": 0.0003
+      },
+      "gpu": 7,
+      "returncode": 0,
+      "seconds": 2783.345023393631,
+      "finished": 1790367383.1519253
+    }
+  ],
+  "seconds": 11038.192602396011
+}

@@ -1,0 +1,4 @@
+{
+  "traceback": "Traceback (most recent call last):\n  File \"/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/grpo-binary/src/supervise.py\", line 111, in <module>\n    result=subprocess.run(['bash','-lc',command],capture_output=True,text=True) if server=='local' else execute(server,command)\n     ^^^^^\n  File \"/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/grpo-binary/src/supervise.py\", line 59, in run\n    assert [(x['id'],x['output_ids'],x['grading']['reward']) for x in aa]==[(x['id'],x['output_ids'],x['grading']['reward']) for x in bb],(c,step,rank,'resume mismatch')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('STEP', 4, 0, 'resume mismatch')\n",
+  "time": 1790602048.026011
+}

@@ -1,0 +1,10 @@
+{
+  "utc": "2026-09-24T04:22:02Z",
+  "supersedes": [
+    "src/loop.py"
+  ],
+  "reason": "Target-token-length-stratified shuffled replay before any loop run.",
+  "hashes": {
+    "src/loop.py": "a2300a07de7fa509c5e6639dcc5d01d4d958823ca184be045e719ce4705bd9f6"
+  }
+}

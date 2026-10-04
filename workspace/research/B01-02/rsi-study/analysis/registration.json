@@ -1,0 +1,15 @@
+{
+  "utc": "2026-09-24T04:12:17Z",
+  "hashes": {
+    "PROTOCOL.md": "92b4c0fcb5ad637af26d5cf440ff9330b95c8563cd386bc1811a71d0990fd73d",
+    "src/model_utils.py": "c9a3aac83246c238a0214b11e58763d79e84a279eafb3a8aabba2c969edac66b",
+    "src/robust.py": "6e4ad2993bd78c64948bedcfbd9a8d0eb0190cc8c387d18a313d9388066c6040",
+    "src/replicate.py": "d14dc8f317779170c5d2b489ab0e25669ef3ebdb57d736651450aa706c11a2bd",
+    "src/launch_robust.py": "e8a2adb01a91786c456d6911cf3586063ed988e3bbfe8222f5fdd27ff11941ad",
+    "src/common.py": "96236332c8f95b7fe29bb3b72eb8ec9f683899c0717d7116129d0b9759f8de60",
+    "src/launch_replications.py": "2d8050b6be7862731b98f4f98bb4357191da2d77c7b780f73d6d49cadaa3bdfc",
+    "src/download.py": "801a8eca576a1ea814cdf211ec9d36e5df66d02a9425437ece875dfed692beb0",
+    "data/families.json": "93016fb5edc8cd4dd4a07c81fe79569f11ee0988d83fc17136211703966288ef",
+    "data/candidates.json": "f95b74d668bacef17b780c78d6ea8b4ca6591c00956fe44098ff57990bd67c80"
+  }
+}

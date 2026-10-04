@@ -1,0 +1,30 @@
+[
+  {
+    "name": "absolute-zero",
+    "url": "https://arxiv.org/html/2505.03335v1",
+    "returncode": 0,
+    "sha256": "24905665ad585d2432d96fb32cabdf35995068670a1295f6d7498ac569548b76",
+    "error": ""
+  },
+  {
+    "name": "self-play-dynamics",
+    "url": "https://arxiv.org/html/2510.27072v1",
+    "returncode": 0,
+    "sha256": "a9e270cc04a9eb9fe87b85e18892f5578ca488e512400d3e49efc3976ef375e1",
+    "error": ""
+  },
+  {
+    "name": "skill-self-play",
+    "url": "https://arxiv.org/html/2607.22529v1",
+    "returncode": 0,
+    "sha256": "9d20a7d8d2ecb8cea23abf05525586db0a200618c592f240404d5948515ea2d3",
+    "error": ""
+  },
+  {
+    "name": "implicit-inference",
+    "url": "https://arxiv.org/html/2309.10105v2",
+    "returncode": 0,
+    "sha256": "d6c870bf017221679337c66485eb81c2b99374345af27da78189e4bcef579d4a",
+    "error": ""
+  }
+]

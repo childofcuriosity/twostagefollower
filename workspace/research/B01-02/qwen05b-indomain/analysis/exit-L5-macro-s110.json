@@ -1,0 +1,9 @@
+{
+  "condition": "macro",
+  "seed": 110,
+  "gpu": 3,
+  "exit_code": 0,
+  "seconds": 175.2421591281891,
+  "finished": 1790503062.19742,
+  "log": "logs/L5-macro-s110.log"
+}

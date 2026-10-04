@@ -1,0 +1,136 @@
+{
+  "length": 25,
+  "phase": "explore",
+  "manifest_sha256": "cbcab65e87ca33c642d3e6983d8d6b1044348233194a90f2ec5f281674cb488f",
+  "old_audit_sha256": "de5d7eecf2e3407b1dabf296534cd8d54caa8d9433bc4f10bad12017b2e93f27",
+  "results": {
+    "flat": {
+      "mean": 0.990234375,
+      "sample_sd": 0.005859375,
+      "runs": [
+        {
+          "seed": 11,
+          "correct": 507,
+          "n": 512,
+          "rate": 0.990234375,
+          "counts": {
+            "under_ops": 0,
+            "over_ops": 0,
+            "wrong_expansion": 4,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 507
+          },
+          "mean_generated_tokens": 700.8828125,
+          "gpu_hours": 0.17794646859169005,
+          "predictions_sha256": "618fb9166e3d07f6a7073a3fe37ecf8012f31e258578d8c993e740c653852e2d"
+        },
+        {
+          "seed": 22,
+          "correct": 510,
+          "n": 512,
+          "rate": 0.99609375,
+          "counts": {
+            "under_ops": 0,
+            "over_ops": 1,
+            "wrong_expansion": 2,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 510
+          },
+          "mean_generated_tokens": 700.9453125,
+          "gpu_hours": 0.17886291265487672,
+          "predictions_sha256": "34f5ece01ea9dfdf09da9a0e12e8ccb232703a40c9dfff887f83c0279fb7270e"
+        },
+        {
+          "seed": 33,
+          "correct": 504,
+          "n": 512,
+          "rate": 0.984375,
+          "counts": {
+            "under_ops": 0,
+            "over_ops": 3,
+            "wrong_expansion": 8,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 504
+          },
+          "mean_generated_tokens": 700.984375,
+          "gpu_hours": 0.17880850745571983,
+          "predictions_sha256": "82f058290e4e45682e11d2d1e5255c3599f95f3163094fe253c57d2e437bfc09"
+        }
+      ]
+    },
+    "macro": {
+      "mean": 0.9934895833333334,
+      "sample_sd": 0.0011276372445109878,
+      "runs": [
+        {
+          "seed": 11,
+          "correct": 509,
+          "n": 512,
+          "rate": 0.994140625,
+          "counts": {
+            "under_ops": 2,
+            "over_ops": 1,
+            "wrong_expansion": 3,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 509
+          },
+          "mean_generated_tokens": 700.8203125,
+          "gpu_hours": 0.17792696436246236,
+          "predictions_sha256": "648ceded248d366449bae8177435be785e484441b72ac7ee2b3b311bd2bfffe8"
+        },
+        {
+          "seed": 22,
+          "correct": 508,
+          "n": 512,
+          "rate": 0.9921875,
+          "counts": {
+            "under_ops": 3,
+            "over_ops": 1,
+            "wrong_expansion": 4,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 508
+          },
+          "mean_generated_tokens": 700.65234375,
+          "gpu_hours": 0.17645560065905253,
+          "predictions_sha256": "3882ce5ce304eec7f24375362a23552c5341a4d0b938121d52eac743f2db3ea0"
+        },
+        {
+          "seed": 33,
+          "correct": 509,
+          "n": 512,
+          "rate": 0.994140625,
+          "counts": {
+            "under_ops": 2,
+            "over_ops": 1,
+            "wrong_expansion": 3,
+            "numeric_error": 0,
+            "generation_limit": 0,
+            "correct": 509
+          },
+          "mean_generated_tokens": 700.8203125,
+          "gpu_hours": 0.17890052298704784,
+          "predictions_sha256": "423d6173709f9a2e463dbbd00cfee86e504caa00acfb3530578395e3df68bef2"
+        }
+      ]
+    }
+  },
+  "paired_vs_flat": {
+    "macro": {
+      "mean": 0.0032552083333333335,
+      "sample_sd": 0.006859149578680168,
+      "positive_seeds": 2,
+      "negative_seeds": 1,
+      "per_seed": {
+        "11": 0.00390625,
+        "22": -0.00390625,
+        "33": 0.009765625
+      }
+    }
+  },
+  "scored_utc": "2026-09-27T14:58:16Z"
+}

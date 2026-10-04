@@ -1,0 +1,5 @@
+{
+  "utc": "2026-09-24T10:24:08.901359+00:00",
+  "change": "Add finite loss/lr/gradient/time, consecutive steps, and effective-batch verification. Training source and experimental settings unchanged.",
+  "verify_sha256": "fdffc4c32293f70b9aa7071fab4cfe746c7571b8cefe739f1fb2e5be2adf16fa"
+}

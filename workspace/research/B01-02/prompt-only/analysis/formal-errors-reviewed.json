@@ -1,0 +1,92 @@
+{
+  "reason": "Correct initial auxiliary label conflation: extra primitive != extra tool call; early intermediate Answer followed by further operations is format; empty Trace: is not a call.",
+  "strict_scores_unchanged": true,
+  "counts": {
+    "STEP": {
+      "first_errors": {
+        "none": 235,
+        "numeric": 182,
+        "tool_or_order": 93,
+        "format": 2
+      },
+      "changed_labels": 44,
+      "nonempty_segments": {
+        "2": 512
+      }
+    },
+    "POSITION": {
+      "first_errors": {
+        "none": 245,
+        "numeric": 207,
+        "tool_or_order": 37,
+        "format": 9,
+        "omitted_call": 14
+      },
+      "changed_labels": 39,
+      "nonempty_segments": {
+        "2": 497,
+        "1": 15
+      }
+    },
+    "ALIAS": {
+      "first_errors": {
+        "none": 294,
+        "numeric": 214,
+        "tool_or_order": 3,
+        "format": 1
+      },
+      "changed_labels": 1,
+      "nonempty_segments": {
+        "2": 512
+      }
+    },
+    "NAME": {
+      "first_errors": {
+        "none": 231,
+        "numeric": 227,
+        "tool_or_order": 53,
+        "format": 1
+      },
+      "changed_labels": 15,
+      "nonempty_segments": {
+        "2": 512
+      }
+    }
+  },
+  "paired": {
+    "POSITION": {
+      "recovered_by_STEP_error": {
+        "tool_or_order": 38,
+        "numeric": 29
+      },
+      "lost_by_condition_error": {
+        "numeric": 40,
+        "format": 5,
+        "tool_or_order": 3,
+        "omitted_call": 9
+      }
+    },
+    "ALIAS": {
+      "recovered_by_STEP_error": {
+        "tool_or_order": 71,
+        "numeric": 41,
+        "format": 1
+      },
+      "lost_by_condition_error": {
+        "numeric": 54
+      }
+    },
+    "NAME": {
+      "recovered_by_STEP_error": {
+        "tool_or_order": 29,
+        "numeric": 25,
+        "format": 1
+      },
+      "lost_by_condition_error": {
+        "numeric": 53,
+        "tool_or_order": 6
+      }
+    }
+  },
+  "code_sha256": "a3874fc1c8df92e12e0b07cdcdbca2472b5bf1189ca04758f38bff6195ee1944"
+}

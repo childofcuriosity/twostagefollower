@@ -1,0 +1,43 @@
+{
+  "repeat_open_idempotent": true,
+  "future_input_initially_absent": true,
+  "missing_file_does_not_advance": true,
+  "wrong_json_output_accepted_and_advances": true,
+  "independent_grader_rejects_wrong_output": true,
+  "receipt": {
+    "received": "T01",
+    "correctness_checked": false,
+    "delivered": 1,
+    "total": 4,
+    "next_action": "Call next_ticket to continue or confirm queue_empty."
+  },
+  "grade": {
+    "complete": false,
+    "completed_requirements": 0,
+    "total_requirements": 4,
+    "protected_inputs_unchanged": true,
+    "checks": [
+      {
+        "id": "T01",
+        "passed": false,
+        "detail": "incorrect delivered or final report"
+      },
+      {
+        "id": "T02",
+        "passed": false,
+        "detail": "not delivered"
+      },
+      {
+        "id": "T03",
+        "passed": false,
+        "detail": "not delivered"
+      },
+      {
+        "id": "T04",
+        "passed": false,
+        "detail": "not delivered"
+      }
+    ],
+    "delivered": 1
+  }
+}

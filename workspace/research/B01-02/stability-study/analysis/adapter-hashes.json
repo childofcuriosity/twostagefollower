@@ -1,0 +1,293 @@
+{
+  "files": {
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "02d7f253d9c43eee3c399ce814028d3df4027a3422cb3aa55c089e285272ea62",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "9ee4b3da799032eab5bb5d253f141036ca7edeb93d104bf791669829a9982802",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "32d9c42d03d797cd71bc2fffec9d88de9e92291e95ab43670c6b9cb7cf4d2265",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s11/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "893621ba9089df0f5481e0110b4fe8474c06918c7d3616965424cc8ef33c81e8",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "4848f736e1568692b1678a8efb348d42ce425010da27b15c2b8abb2677b280b5",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "73a571bd3525bddf752370e4b8d47b5259439880136403865f8235029355598e",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "e31b2443e8f79ab83109579128780c5f05cc4844a5a1a9c60be6657135c26d46",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s22/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "9f2288f29c2104496e8119957ecee3dbccf19b568ee85f1e6cbe741bb0acbe25",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "a03aac0f68ff1d2249c112b6238ea3ee36bd889826e96068722d30b17b28da88",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "4887b40691bffb3586098f7872279a215efbcdb939f8cfa157892e65e879f92e",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "2e033eaf9b86da0ad83c8b4e6d96078b9572fa4cddc97c89955a38ce428d12ab",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-joint-s33/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "9a980cae911083c20861c9f9ed8f9724057adc59877bdaee2309d9c2d0d9271b",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s11/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "8eca98adc15817a151b82f2dfe176ddcc4fec7f25d9dd23ccc00c87750cbf221",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s11/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "d8d52f208e27f29b48fff7f63a4f14185c64aee422e37ec602bddd70b5b06278",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s11/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "27f77e48be99eadd40fcecd7cce13364bac43c4296919cbd9c72f35b1d9603b3",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s11/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "18524eeac9b19ad12cbdcdd758e5317e75934bb9dee44389c907b5f3d663f5a9",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s22/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "a7222ded9e87d11ba8b7f61fc31b3427d8aa67db6b9d858e88afd33d8a01c318",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s22/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "ad60789e3633af174db699331def8bb4ea2b7d04c15797fd2daa19570e6263e1",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s22/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "dee66c5ef023f527da5be4e931788985e7fce6d5218f3f1de28a87ca167daa5e",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s22/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "aef489c2b87649dd142ed4e1cc5e1ae78b4ea48a86c1d94e0b079fb99dc97e7a",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s33/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "fb1b246ffeb6bd0f5ec6b90907844f9cd702b76191d5c96378e1d2b63381ef8a",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s33/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "471f0981a24e18c71e430a85b62f08be6d1fd4f65bb7cc922f17cd4274085964",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s33/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "bc4ad867007ff6078c0ef41fbc53a060418ebfbb3758f1817589f6294b135729",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-order_oracle-s33/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "92371be62f3c427876998652eef6d223c61cc295a1193ff2928c2349ca96d719",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s11/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "a59e1d746b0049c97848babcb100a7a36c528dd86706cbca5f8a853c6b1420d7",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s11/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "e973b3cd5836df2ad30b67226dc6ea5909f56732544f7b66c0338ce0c171cebd",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s11/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "422cb1694c04ea427de7a2c78b67e458f5f0cecd2b52116ecf01f0034cd6892b",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s11/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "7558bc939bff17f27183f5bba3363d8b4b3dd95bbac02bad01c14b8732b02c37",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s22/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "e6dc16dc22996b9df9886212bfa24f87c01f28449b1ceaf8dadf87297cbe42ea",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s22/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "2134b4a2a7d83b7c9d95d0d3f463f00ae871964a2046d8bb14534a800b85d449",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s22/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "c351afa5979e3ae2db18599e74326919f3e9e1259eaa4f26f11a552da7536be1",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s22/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "45963bf0a2607d6a969f0555ef3e58d013c19c10998dc05f724f294f7c065bb4",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s33/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "7419477672ca851049d5a9990df1b45830ec178871275a3c5e2f1fc1a63d047e",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s33/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "3629c8949b2071806a2262b39f5763e128c30e6d1a77fcda6440f9ee52075138",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s33/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "598a52439a21c990a98c1a4ff1f27eaadfc75053e7eabf8a77282eb7b108fe69",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen3b-operation_oracle-s33/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "5dbf3158b57121c0d3138d9492eb53a52401f802189983883c351c3427165adb",
+      "bytes": 119801528
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s11/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "ea0c1f5611f311654252e091afb66e92353392d48025ad681e80f9eddb8fac45",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s11/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "6f983c8a28161287a089fda457b75f3973042b3b68ce18a787ca939049f472e3",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s11/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "036918a2f388e05839cc86fb5d3bf6fb7191e9c3d6cacdc758ef4bf5f1f270c6",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s11/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "92277ea71decba2a2624666b5974d5eed0c3af01882fe4411acecc8fb9053c43",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s22/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "e784686542b8eb07dcdefc4d616ed54c2fcc3e3c209b02c44515be5c1f86197a",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s22/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "7a222534e2829565664aa4e2a360d950af21da5f4d0d21e69ee0aeec79050af9",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s22/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "6ea952293ab42996eed602b4aeade19e38e9bb65f956b56f98f680b41dc63bd9",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s22/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "4b5136cf7b236f3e31123cd439390f43d1151b11285af5c6210222ef7bb0c55e",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s33/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "62c262fece3be375a67db115b238efef7670ba6968d217d2fec6dc6a23d4cba1",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s33/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "d77570ed3d2e8bbfbf8fcb30d5c7562677f05b6a0b25811083b8821830e846d7",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s33/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "5e4cae0bb1f553e98760a982894023c890109a780da79f249c68c448b7c0f3c5",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-joint-s33/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "fb1b73b73cd989f3e1f3e2905354928cd6f2b1c5f68c11f7c640ab95ccd8bac7",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-order_oracle-s11/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "46cd19fc66ebed9b6f84edab53cb919ea30fa0fb8554a1ec16b2f5d72c93a992",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-order_oracle-s11/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "0cda21f348a3d0c904bec465b91fce2788f618803167c0e465c7bf40f917613f",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-order_oracle-s11/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "de301be7f09046eb0ab5d981dc1cfe570a5208807b3e9cf3efdfb1301325aade",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-order_oracle-s11/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "cdc93b3ebd018ffa739cf85d983530dd80137713f572261df4593ac4276972a3",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-order_oracle-s22/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "9e6ea33b852e97b68987b0771c07641df178b1cfc480a7f935affb55dbc78e6f",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-order_oracle-s22/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "d6f5dcdcb00a89e5753cd4cc1a4157cf263126f6b0b170d6245ca24e9aa11e6b",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-order_oracle-s22/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "2d09e7a52bc8c449c2d72c0d20ebb8f5b87b3277b08f05c66b920811909333a3",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-order_oracle-s22/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "b352abdd5346e3141e4d27f8af701622f79c2a0605649c0174ee223f45a06d15",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-order_oracle-s33/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "e98e5c982f77cd4254bf6107f6ac47883513a5feffaedf64973200149d7bb0d1",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-order_oracle-s33/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "01df8db3cf42708f7ea887991a58aceb31ec915c935c52ca39d996d1c8929d9b",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-order_oracle-s33/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "1b818022100d93da1cb18f1ae4168c4ce056e7ad61df65aaa43e2d2410f485a6",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-order_oracle-s33/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "6faa5b44bb2a9895f83b75466ad1250f1a2294ccd910b5b97def5a2a4a10c697",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s11/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "b9aced08af2eddfd72357cfd7612978415dc28d9a5f4c99b227ac688fb3cc613",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s11/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "ae8a06ee1070aefbb1a731d97ed7d085e44d2994ca046803b84de0642548e6f8",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s11/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "9f7aee98bc6d76a4c6a35dce84a0636885e25f7ae1831767435e037d12443652",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s11/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "6505255d851ab895676b1e7cd5d9e1c79eae799f730c05d34a45076d0f178ec1",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s22/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "158b104fe657444bc49b5416ab5d03fdf9b92f10e9660135344a47d8cf156a60",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s22/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "aeffaa1888e29ec56ff4fa0bf993f11007b1a1488940932f297bee9bac4dba26",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s22/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "af142607357a29049a004e69d8af49ddc9b14c2f578b5c56eb21ab85a753ef3c",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s22/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "a656e0c8dc7cffcfaa4e078c5334821138401860a2fd21ad7cf4dd6903e9d2c0",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s33/checkpoints/step0064/adapter/adapter_model.safetensors": {
+      "sha256": "1f96808e2fa1d9da036036a67564b3d683d6c4a825ff3f5c26810a82a3844038",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s33/checkpoints/step0128/adapter/adapter_model.safetensors": {
+      "sha256": "841b00717b7b581a45f3ce38ae735b5de8fd65db20db3dd7b5891b8d750a1cbf",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s33/checkpoints/step0256/adapter/adapter_model.safetensors": {
+      "sha256": "0cd8f22ceefad8d39c6e5e3e68da92a1652f5a407ee19943b4ca15ad6292a47e",
+      "bytes": 536991984
+    },
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/runs/qwen32b-operation_oracle-s33/checkpoints/step0512/adapter/adapter_model.safetensors": {
+      "sha256": "6963dde9520ab497dcdcc74bf33b76d8db6e0eaa13c386cfac0350fee698ddcc",
+      "bytes": 536991984
+    }
+  },
+  "seconds": 19.589610815048218
+}

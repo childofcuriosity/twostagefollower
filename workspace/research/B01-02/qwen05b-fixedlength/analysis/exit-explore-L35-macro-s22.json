@@ -1,0 +1,11 @@
+{
+  "length": 35,
+  "phase": "explore",
+  "condition": "macro",
+  "seed": 22,
+  "gpu": 4,
+  "exit_code": 0,
+  "seconds": 892.6801257133484,
+  "log": "logs/explore-L35-macro-s22.log",
+  "finished": 1790522871.4995973
+}

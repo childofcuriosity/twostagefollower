@@ -1,0 +1,37 @@
+{
+  "job": {
+    "gpu": 0,
+    "model": "qwen7b",
+    "condition": "joint",
+    "seed": 11,
+    "microbatch": 4,
+    "probe": true
+  },
+  "host": "llm-devbox-vw4n6mz9-69694bd6bf-7z5kg",
+  "start_utc": "2026-09-25T06:07:16Z",
+  "commands": [
+    {
+      "argv": [
+        "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+        "-u",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/src/train.py",
+        "--model",
+        "qwen7b",
+        "--condition",
+        "joint",
+        "--seed",
+        "11",
+        "--microbatch",
+        "4",
+        "--probe",
+        "--steps",
+        "2"
+      ],
+      "pid": 17576,
+      "log": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/logs/probe-qwen7b-qwen7b-joint-s11-stage0.log",
+      "started": 1790316436.1319003,
+      "returncode": 0,
+      "ended": 1790316470.7457793
+    }
+  ]
+}

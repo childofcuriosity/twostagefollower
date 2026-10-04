@@ -1,0 +1,1175 @@
+{
+  "curves": [
+    {
+      "model": "qwen3b",
+      "condition": "joint",
+      "mode": "joint",
+      "seed": 11,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 0.9921875,
+          "long_dev": 0.6979166666666666,
+          "independent": 0.5166666666666667
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.6770833333333334,
+          "independent": 0.42291666666666666
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.7083333333333334,
+          "independent": 0.4395833333333333
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.7083333333333334,
+          "independent": 0.4395833333333333
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": -0.07708333333333339,
+      "long_adjacent_changes": [
+        -0.09375000000000006,
+        0.016666666666666663,
+        0.0
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "joint",
+      "mode": "joint",
+      "seed": 22,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.5,
+          "independent": 0.3020833333333333
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.6145833333333334,
+          "independent": 0.4125
+        },
+        {
+          "step": 256,
+          "short_dev": 0.9921875,
+          "long_dev": 0.5416666666666666,
+          "independent": 0.33125
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.5416666666666666,
+          "independent": 0.29583333333333334
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": -0.006249999999999978,
+      "long_adjacent_changes": [
+        0.11041666666666666,
+        -0.08124999999999999,
+        -0.03541666666666665
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "joint",
+      "mode": "joint",
+      "seed": 33,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 0.953125,
+          "long_dev": 0.4270833333333333,
+          "independent": 0.30833333333333335
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.5833333333333334,
+          "independent": 0.4791666666666667
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.59375,
+          "independent": 0.48125
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.5833333333333334,
+          "independent": 0.4791666666666667
+        }
+      ],
+      "first_observed_short_dev_99": 128,
+      "long_change_64_to_512": 0.17083333333333334,
+      "long_adjacent_changes": [
+        0.17083333333333334,
+        0.002083333333333326,
+        -0.002083333333333326
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "joint",
+      "mode": "order_oracle",
+      "seed": 11,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 0.9921875,
+          "long_dev": 0.8645833333333334,
+          "independent": 0.6270833333333333
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.9583333333333334,
+          "independent": 0.8375
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.96875,
+          "independent": 0.8416666666666667
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.9791666666666666,
+          "independent": 0.8479166666666667
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.22083333333333333,
+      "long_adjacent_changes": [
+        0.2104166666666667,
+        0.004166666666666652,
+        0.006249999999999978
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "joint",
+      "mode": "order_oracle",
+      "seed": 22,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.6458333333333334,
+          "independent": 0.4083333333333333
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.75,
+          "independent": 0.5625
+        },
+        {
+          "step": 256,
+          "short_dev": 0.9921875,
+          "long_dev": 0.7916666666666666,
+          "independent": 0.6375
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.8333333333333334,
+          "independent": 0.6333333333333333
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.22499999999999998,
+      "long_adjacent_changes": [
+        0.15416666666666667,
+        0.07499999999999996,
+        -0.004166666666666652
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "joint",
+      "mode": "order_oracle",
+      "seed": 33,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 0.953125,
+          "long_dev": 0.59375,
+          "independent": 0.4479166666666667
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.8333333333333334,
+          "independent": 0.74375
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.8229166666666666,
+          "independent": 0.7458333333333333
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.8125,
+          "independent": 0.75
+        }
+      ],
+      "first_observed_short_dev_99": 128,
+      "long_change_64_to_512": 0.3020833333333333,
+      "long_adjacent_changes": [
+        0.29583333333333334,
+        0.002083333333333326,
+        0.004166666666666652
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "order_oracle",
+      "mode": "order_oracle",
+      "seed": 11,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 0.9921875,
+          "long_dev": 0.8229166666666666,
+          "independent": 0.60625
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.9583333333333334,
+          "independent": 0.7541666666666667
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.8541666666666666,
+          "independent": 0.63125
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.8645833333333334,
+          "independent": 0.6354166666666666
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.029166666666666674,
+      "long_adjacent_changes": [
+        0.1479166666666667,
+        -0.12291666666666667,
+        0.004166666666666652
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "order_oracle",
+      "mode": "order_oracle",
+      "seed": 22,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 0.96875,
+          "long_dev": 0.6458333333333334,
+          "independent": 0.4875
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.9375,
+          "independent": 0.8895833333333333
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.71875,
+          "independent": 0.84375
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.7291666666666666,
+          "independent": 0.8645833333333334
+        }
+      ],
+      "first_observed_short_dev_99": 128,
+      "long_change_64_to_512": 0.3770833333333334,
+      "long_adjacent_changes": [
+        0.4020833333333333,
+        -0.04583333333333328,
+        0.02083333333333337
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "order_oracle",
+      "mode": "order_oracle",
+      "seed": 33,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 0.9921875,
+          "long_dev": 0.9583333333333334,
+          "independent": 0.8166666666666667
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.90625,
+          "independent": 0.8625
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.9166666666666666,
+          "independent": 0.875
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.9270833333333334,
+          "independent": 0.8833333333333333
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.06666666666666665,
+      "long_adjacent_changes": [
+        0.04583333333333339,
+        0.012499999999999956,
+        0.008333333333333304
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "joint",
+      "mode": "operation_oracle",
+      "seed": 11,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.7604166666666666,
+          "independent": 0.7875
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.71875,
+          "independent": 0.5041666666666667
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.7395833333333334,
+          "independent": 0.5166666666666667
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.7291666666666666,
+          "independent": 0.5166666666666667
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": -0.27083333333333326,
+      "long_adjacent_changes": [
+        -0.2833333333333333,
+        0.012500000000000067,
+        0.0
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "joint",
+      "mode": "operation_oracle",
+      "seed": 22,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.6979166666666666,
+          "independent": 0.5333333333333333
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.75,
+          "independent": 0.5916666666666667
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.625,
+          "independent": 0.3729166666666667
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.625,
+          "independent": 0.33125
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": -0.20208333333333334,
+      "long_adjacent_changes": [
+        0.05833333333333335,
+        -0.21875,
+        -0.041666666666666685
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "joint",
+      "mode": "operation_oracle",
+      "seed": 33,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.7083333333333334,
+          "independent": 0.5104166666666666
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.6770833333333334,
+          "independent": 0.5354166666666667
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.6770833333333334,
+          "independent": 0.525
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.6770833333333334,
+          "independent": 0.525
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.014583333333333393,
+      "long_adjacent_changes": [
+        0.025000000000000022,
+        -0.01041666666666663,
+        0.0
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "operation_oracle",
+      "mode": "operation_oracle",
+      "seed": 11,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.9583333333333334,
+          "independent": 0.8395833333333333
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.9583333333333334,
+          "independent": 0.8395833333333333
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.9583333333333334,
+          "independent": 0.8458333333333333
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.9583333333333334,
+          "independent": 0.8333333333333334
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": -0.006249999999999978,
+      "long_adjacent_changes": [
+        0.0,
+        0.006249999999999978,
+        -0.012499999999999956
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "operation_oracle",
+      "mode": "operation_oracle",
+      "seed": 22,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.5208333333333334,
+          "independent": 0.2791666666666667
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.5729166666666666,
+          "independent": 0.3625
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.625,
+          "independent": 0.39375
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.6354166666666666,
+          "independent": 0.4083333333333333
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.12916666666666665,
+      "long_adjacent_changes": [
+        0.08333333333333331,
+        0.03125,
+        0.014583333333333337
+      ]
+    },
+    {
+      "model": "qwen3b",
+      "condition": "operation_oracle",
+      "mode": "operation_oracle",
+      "seed": 33,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.875,
+          "independent": 0.8041666666666667
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.875,
+          "independent": 0.8083333333333333
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.875,
+          "independent": 0.8145833333333333
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.875,
+          "independent": 0.80625
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.002083333333333326,
+      "long_adjacent_changes": [
+        0.004166666666666652,
+        0.006249999999999978,
+        -0.008333333333333304
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "joint",
+      "mode": "joint",
+      "seed": 11,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.8541666666666666,
+          "independent": 0.7958333333333333
+        },
+        {
+          "step": 128,
+          "short_dev": 0.9921875,
+          "long_dev": 0.875,
+          "independent": 0.73125
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.8958333333333334,
+          "independent": 0.7270833333333333
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.90625,
+          "independent": 0.7375
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": -0.05833333333333324,
+      "long_adjacent_changes": [
+        -0.06458333333333333,
+        -0.004166666666666652,
+        0.01041666666666674
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "joint",
+      "mode": "joint",
+      "seed": 22,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.9270833333333334,
+          "independent": 0.7208333333333333
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.9895833333333334,
+          "independent": 0.8854166666666666
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.9791666666666666,
+          "independent": 0.8645833333333334
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.9895833333333334,
+          "independent": 0.9104166666666667
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.18958333333333333,
+      "long_adjacent_changes": [
+        0.1645833333333333,
+        -0.02083333333333326,
+        0.04583333333333328
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "joint",
+      "mode": "joint",
+      "seed": 33,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.89375
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.9895833333333334,
+          "independent": 0.8979166666666667
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.9895833333333334,
+          "independent": 0.9041666666666667
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.9895833333333334,
+          "independent": 0.9125
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.018749999999999933,
+      "long_adjacent_changes": [
+        0.004166666666666652,
+        0.006249999999999978,
+        0.008333333333333304
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "joint",
+      "mode": "order_oracle",
+      "seed": 11,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.8958333333333334,
+          "independent": 0.8
+        },
+        {
+          "step": 128,
+          "short_dev": 0.9921875,
+          "long_dev": 0.875,
+          "independent": 0.73125
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.8958333333333334,
+          "independent": 0.7270833333333333
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.90625,
+          "independent": 0.7375
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": -0.0625,
+      "long_adjacent_changes": [
+        -0.06875000000000009,
+        -0.004166666666666652,
+        0.01041666666666674
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "joint",
+      "mode": "order_oracle",
+      "seed": 22,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.9270833333333334,
+          "independent": 0.7375
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.9895833333333334,
+          "independent": 0.9104166666666667
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.9791666666666666,
+          "independent": 0.8875
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.9895833333333334,
+          "independent": 0.9270833333333334
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.18958333333333333,
+      "long_adjacent_changes": [
+        0.1729166666666666,
+        -0.022916666666666696,
+        0.039583333333333415
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "joint",
+      "mode": "order_oracle",
+      "seed": 33,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.91875
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.9895833333333334,
+          "independent": 0.91875
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.9895833333333334,
+          "independent": 0.925
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.9895833333333334,
+          "independent": 0.9354166666666667
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.01666666666666672,
+      "long_adjacent_changes": [
+        0.0,
+        0.006250000000000089,
+        0.01041666666666663
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "order_oracle",
+      "mode": "order_oracle",
+      "seed": 11,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.9375,
+          "independent": 0.8854166666666666
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.96875,
+          "independent": 0.98125
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 0.9791666666666666,
+          "independent": 0.9145833333333333
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 0.9895833333333334,
+          "independent": 0.93125
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.04583333333333339,
+      "long_adjacent_changes": [
+        0.09583333333333333,
+        -0.06666666666666665,
+        0.01666666666666672
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "order_oracle",
+      "mode": "order_oracle",
+      "seed": 22,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.8541666666666666,
+          "independent": 0.8020833333333334
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 0.9895833333333334,
+          "independent": 0.9229166666666667
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9229166666666667
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.925
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.12291666666666667,
+      "long_adjacent_changes": [
+        0.12083333333333335,
+        0.0,
+        0.002083333333333326
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "order_oracle",
+      "mode": "order_oracle",
+      "seed": 33,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 0.9921875,
+          "long_dev": 0.9270833333333334,
+          "independent": 0.9020833333333333
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9979166666666667
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9854166666666667
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9895833333333334
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.08750000000000002,
+      "long_adjacent_changes": [
+        0.09583333333333333,
+        -0.012499999999999956,
+        0.004166666666666652
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "joint",
+      "mode": "operation_oracle",
+      "seed": 11,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 0.9583333333333334,
+          "independent": 0.9854166666666667
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9916666666666667
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9916666666666667
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9916666666666667
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.006249999999999978,
+      "long_adjacent_changes": [
+        0.006249999999999978,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "joint",
+      "mode": "operation_oracle",
+      "seed": 22,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.975
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.975
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9770833333333333
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9833333333333333
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.008333333333333304,
+      "long_adjacent_changes": [
+        0.0,
+        0.002083333333333326,
+        0.006249999999999978
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "joint",
+      "mode": "operation_oracle",
+      "seed": 33,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.975
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9770833333333333
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9770833333333333
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9770833333333333
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.002083333333333326,
+      "long_adjacent_changes": [
+        0.002083333333333326,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "operation_oracle",
+      "mode": "operation_oracle",
+      "seed": 11,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.975
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9791666666666666
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9791666666666666
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9770833333333333
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.002083333333333326,
+      "long_adjacent_changes": [
+        0.004166666666666652,
+        0.0,
+        -0.002083333333333326
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "operation_oracle",
+      "mode": "operation_oracle",
+      "seed": 22,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9625
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9583333333333334
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9625
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9666666666666667
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.004166666666666652,
+      "long_adjacent_changes": [
+        -0.004166666666666652,
+        0.004166666666666652,
+        0.004166666666666652
+      ]
+    },
+    {
+      "model": "qwen32b",
+      "condition": "operation_oracle",
+      "mode": "operation_oracle",
+      "seed": 33,
+      "points": [
+        {
+          "step": 64,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 0.9979166666666667
+        },
+        {
+          "step": 128,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 1.0
+        },
+        {
+          "step": 256,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 1.0
+        },
+        {
+          "step": 512,
+          "short_dev": 1.0,
+          "long_dev": 1.0,
+          "independent": 1.0
+        }
+      ],
+      "first_observed_short_dev_99": 64,
+      "long_change_64_to_512": 0.002083333333333326,
+      "long_adjacent_changes": [
+        0.002083333333333326,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "note": "99% short-dev mastery is descriptive first observed checkpoint, not actual crossing time. No checkpoint selected using independent test performance."
+}

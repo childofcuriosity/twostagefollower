@@ -1,0 +1,151 @@
+{
+  "results": [
+    {
+      "condition": "flat",
+      "labels": [
+        {
+          "label": "step",
+          "occurrences": 7798,
+          "last_tool_in_example": 4096,
+          "last_fraction": 0.5252628879199794
+        }
+      ]
+    },
+    {
+      "condition": "macro",
+      "labels": [
+        {
+          "label": "gray",
+          "occurrences": 843,
+          "last_tool_in_example": 455,
+          "last_fraction": 0.5397390272835113
+        },
+        {
+          "label": "brown",
+          "occurrences": 879,
+          "last_tool_in_example": 441,
+          "last_fraction": 0.5017064846416383
+        },
+        {
+          "label": "black",
+          "occurrences": 910,
+          "last_tool_in_example": 474,
+          "last_fraction": 0.5208791208791209
+        },
+        {
+          "label": "green",
+          "occurrences": 847,
+          "last_tool_in_example": 436,
+          "last_fraction": 0.5147579693034239
+        },
+        {
+          "label": "gold",
+          "occurrences": 841,
+          "last_tool_in_example": 444,
+          "last_fraction": 0.5279429250891795
+        },
+        {
+          "label": "red",
+          "occurrences": 885,
+          "last_tool_in_example": 457,
+          "last_fraction": 0.5163841807909605
+        },
+        {
+          "label": "pink",
+          "occurrences": 857,
+          "last_tool_in_example": 462,
+          "last_fraction": 0.5390898483080513
+        },
+        {
+          "label": "white",
+          "occurrences": 853,
+          "last_tool_in_example": 450,
+          "last_fraction": 0.5275498241500586
+        },
+        {
+          "label": "blue",
+          "occurrences": 883,
+          "last_tool_in_example": 477,
+          "last_fraction": 0.5402038505096263
+        }
+      ]
+    },
+    {
+      "condition": "position",
+      "labels": [
+        {
+          "label": "step1",
+          "occurrences": 4096,
+          "last_tool_in_example": 394,
+          "last_fraction": 0.09619140625
+        },
+        {
+          "label": "step2",
+          "occurrences": 3702,
+          "last_tool_in_example": 3702,
+          "last_fraction": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "alias",
+      "labels": [
+        {
+          "label": "toolG",
+          "occurrences": 843,
+          "last_tool_in_example": 455,
+          "last_fraction": 0.5397390272835113
+        },
+        {
+          "label": "toolD",
+          "occurrences": 879,
+          "last_tool_in_example": 441,
+          "last_fraction": 0.5017064846416383
+        },
+        {
+          "label": "toolE",
+          "occurrences": 910,
+          "last_tool_in_example": 474,
+          "last_fraction": 0.5208791208791209
+        },
+        {
+          "label": "toolA",
+          "occurrences": 847,
+          "last_tool_in_example": 436,
+          "last_fraction": 0.5147579693034239
+        },
+        {
+          "label": "toolI",
+          "occurrences": 841,
+          "last_tool_in_example": 444,
+          "last_fraction": 0.5279429250891795
+        },
+        {
+          "label": "toolH",
+          "occurrences": 885,
+          "last_tool_in_example": 457,
+          "last_fraction": 0.5163841807909605
+        },
+        {
+          "label": "toolF",
+          "occurrences": 857,
+          "last_tool_in_example": 462,
+          "last_fraction": 0.5390898483080513
+        },
+        {
+          "label": "toolC",
+          "occurrences": 853,
+          "last_tool_in_example": 450,
+          "last_fraction": 0.5275498241500586
+        },
+        {
+          "label": "toolB",
+          "occurrences": 883,
+          "last_tool_in_example": 477,
+          "last_fraction": 0.5402038505096263
+        }
+      ]
+    }
+  ],
+  "note": "Descriptive data audit added after first 1.5B results, not a newly preregistered causal hypothesis. Counts association of label with last tool, not probability of immediately generating Answer token. No new training."
+}

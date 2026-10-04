@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "data_disjoint": true,
+  "original_prompts_and_scorer_unchanged": true,
+  "formal_frozen_before_start": true,
+  "zero_LoRA_B_at_step0": true,
+  "six_training_jobs_exit_zero": true,
+  "four_eval_workers_exit_zero": true,
+  "formal_checkpoints": 66,
+  "formal_candidates": 76800,
+  "unique_evaluation_outputs": 19968,
+  "resource_clearance_requires_separate_live_check": true
+}

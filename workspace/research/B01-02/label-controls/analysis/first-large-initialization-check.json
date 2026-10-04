@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "model": "qwen7b",
+  "seed": 11,
+  "sha256": "0f41a04d94ac95223796bf562bf98df45fcfac14ea6f7b609bd14f9633e6e781",
+  "note": "Completed-job event audit: new position initial LoRA bytes exactly match original macro initial LoRA. No new model inference."
+}

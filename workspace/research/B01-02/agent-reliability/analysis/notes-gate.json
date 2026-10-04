@@ -1,0 +1,12 @@
+{
+  "plan": {
+    "n": 6,
+    "complete": 5,
+    "protocol_errors": 0
+  },
+  "identity": {
+    "n": 6,
+    "complete": 6,
+    "protocol_errors": 0
+  }
+}

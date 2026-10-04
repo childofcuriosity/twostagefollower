@@ -1,0 +1,9 @@
+{
+  "condition": "alias",
+  "seed": 101,
+  "gpu": 4,
+  "exit_code": 0,
+  "seconds": 181.31577134132385,
+  "finished": 1790502343.9001305,
+  "log": "logs/L5-alias-s101.log"
+}

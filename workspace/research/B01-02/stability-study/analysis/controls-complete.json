@@ -1,0 +1,45 @@
+{
+  "records": [
+    {
+      "job": {
+        "kind": "control",
+        "model": "qwen32b",
+        "seed": 11,
+        "id": "control-qwen32b-s11"
+      },
+      "pid": 4177980,
+      "gpu": 6,
+      "command": [
+        "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+        "-u",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/src/run.py",
+        "--job",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/analysis/job-configs/control-qwen32b-s11.json"
+      ],
+      "start": 1790332063.8529544,
+      "returncode": 0,
+      "end": 1790332281.825485
+    },
+    {
+      "job": {
+        "kind": "control",
+        "model": "qwen3b",
+        "seed": 11,
+        "id": "control-qwen3b-s11"
+      },
+      "pid": 4177981,
+      "gpu": 7,
+      "command": [
+        "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+        "-u",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/src/run.py",
+        "--job",
+        "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/analysis/job-configs/control-qwen3b-s11.json"
+      ],
+      "start": 1790332063.8533463,
+      "returncode": 0,
+      "end": 1790332118.021659
+    }
+  ],
+  "finished": 1790332281.8387446
+}

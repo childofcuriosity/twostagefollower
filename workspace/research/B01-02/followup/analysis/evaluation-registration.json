@@ -1,0 +1,12 @@
+{
+  "utc": "2026-09-24T03:19:49Z",
+  "note": "Evaluation implementation archived before computing or viewing any utility/search results; main protocol registered before proposal generation.",
+  "hashes": {
+    "verify.py": "1e85747da139f2fb205bfa7134346ff2394cd632f0d386f061b35796f0026961",
+    "common.py": "7ba24d73d22c1a3a5e0842e90cf7f32179ca7b57d5db626815072bd9d0883f53",
+    "launch.py": "bad0ab9df8aba21b8180c91f2a091d18cb987eecaedfb0d44b4da1ae636d8d79",
+    "analyze.py": "93234d542daf1e24ab95ad36b2fe6f64a4ee862605e2fad150b16fc93422cf87",
+    "propose.py": "f1ceafd971efee89af5d60d013e96ad01ba6c9aca0ac177e2c66f941ad128541",
+    "finish.py": "4aa28d884cf6f47b78fc6d2f3353106e566e2aefcd8f6108a5e5c538b563110b"
+  }
+}

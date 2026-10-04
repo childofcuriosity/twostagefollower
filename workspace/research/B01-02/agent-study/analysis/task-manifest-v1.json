@@ -1,0 +1,38 @@
+{
+  "main_ids": [
+    "files-n04-s0",
+    "files-n04-s1",
+    "files-n04-s2",
+    "files-n04-s3",
+    "files-n12-s0",
+    "files-n12-s1",
+    "files-n12-s2",
+    "files-n12-s3",
+    "data-n04-s0",
+    "data-n04-s1",
+    "data-n04-s2",
+    "data-n04-s3",
+    "data-n12-s0",
+    "data-n12-s1",
+    "data-n12-s2",
+    "data-n12-s3",
+    "code-n04-s0",
+    "code-n04-s1",
+    "code-n04-s2",
+    "code-n04-s3",
+    "code-n12-s0",
+    "code-n12-s1",
+    "code-n12-s2",
+    "code-n12-s3"
+  ],
+  "main_count": 24,
+  "calibration_ids": [
+    "cal-files-s0",
+    "cal-files-s1",
+    "cal-data-s0",
+    "cal-data-s1",
+    "cal-code-s0",
+    "cal-code-s1"
+  ],
+  "note": "Development smoke only; three generator families, not 24 independent task templates. 4/12 requirements do not force a tool-call count."
+}

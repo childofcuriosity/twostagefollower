@@ -1,0 +1,41 @@
+{
+  "registered_utc": "2026-09-24T09:51:35Z",
+  "models": [
+    "Qwen/Qwen2.5-32B",
+    "Qwen/Qwen2.5-7B"
+  ],
+  "conditions": [
+    "flat",
+    "macro"
+  ],
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "steps": 512,
+  "effective_batch": 32,
+  "logical_microbatch": 16,
+  "gradient_accumulation_logical": 2,
+  "microbatch_subdivision": "token-weighted within original 16-example logical batch to preserve loss normalization",
+  "checkpoint_steps": [
+    0,
+    16,
+    64,
+    128,
+    256,
+    512
+  ],
+  "online_checkpoint_evaluation": "dev only; all checkpoints retained for fixed followup testing",
+  "test_evaluation": "final plus prespecified followup checkpoint evaluation; never test-selected stopping",
+  "model_precision": "BF16, no quantization",
+  "hashes": {
+    "workspace/research/B01-02/scale-study/src/download.py": "685050f57bf13b630cb2f713dc06fe2360fd33d9aa91ade723bb92bd47f9f836",
+    "workspace/research/B01-02/scale-study/src/launch.py": "d5305805e3b9f049d27bcedeb01f1cf62036e8a4ee1070f8a80c13c0d0505290",
+    "workspace/research/B01-02/scale-study/src/train.py": "4bfa25cd844dfd8a71e1357792a8cd7a7362ad0df1703a2377f6914ddc4f9c0c",
+    "workspace/research/B01-02/data/train.jsonl": "0644d5b7edc29a186bb28ddda493ae9f53d4e8554f7fba51980f9749c7b8a471",
+    "workspace/research/B01-02/data/dev.jsonl": "8a1224310096fcf43e7f110f0cae0323a46381360cd67d8419f7ff38d6897e81",
+    "workspace/research/B01-02/data/test.jsonl": "e63b55df72bd826f956ffdd348e6e387e454a57a9b46e19527ebf535edbf570e",
+    "workspace/research/B01-02/data/worlds.json": "260371fdc2757d3dc2c393e82b1223880ecacf294a17c862623c5cc4c79ef352"
+  }
+}

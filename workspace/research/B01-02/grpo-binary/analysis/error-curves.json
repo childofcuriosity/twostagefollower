@@ -1,0 +1,288 @@
+[
+  {
+    "condition": "STEP",
+    "step": 0,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 59,
+      "numeric_error": 84,
+      "early_end": 9,
+      "extra_output": 1,
+      "extra_ops": 49,
+      "missing_ops": 10
+    },
+    "mean_header_rate": 1.0
+  },
+  {
+    "condition": "NAME",
+    "step": 0,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 39,
+      "numeric_error": 112,
+      "early_end": 0,
+      "extra_output": 0,
+      "extra_ops": 37,
+      "missing_ops": 1
+    },
+    "mean_header_rate": 0.97265625
+  },
+  {
+    "condition": "STEP",
+    "step": 10,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 56.333333333333336,
+      "numeric_error": 77.33333333333333,
+      "early_end": 8.666666666666666,
+      "extra_output": 0.6666666666666666,
+      "extra_ops": 47.333333333333336,
+      "missing_ops": 9
+    },
+    "mean_header_rate": 0.9947916666666666
+  },
+  {
+    "condition": "NAME",
+    "step": 10,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 33,
+      "numeric_error": 102.33333333333333,
+      "early_end": 0,
+      "extra_output": 0,
+      "extra_ops": 31,
+      "missing_ops": 0
+    },
+    "mean_header_rate": 0.9713541666666666
+  },
+  {
+    "condition": "STEP",
+    "step": 20,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 46,
+      "numeric_error": 62,
+      "early_end": 7.333333333333333,
+      "extra_output": 1,
+      "extra_ops": 37.666666666666664,
+      "missing_ops": 8.333333333333334
+    },
+    "mean_header_rate": 0.9908854166666666
+  },
+  {
+    "condition": "NAME",
+    "step": 20,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 7,
+      "numeric_error": 68,
+      "early_end": 0,
+      "extra_output": 0,
+      "extra_ops": 5,
+      "missing_ops": 0.6666666666666666
+    },
+    "mean_header_rate": 0.9479166666666666
+  },
+  {
+    "condition": "STEP",
+    "step": 30,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 13.666666666666666,
+      "numeric_error": 39,
+      "early_end": 4.666666666666667,
+      "extra_output": 1,
+      "extra_ops": 8,
+      "missing_ops": 5.666666666666667
+    },
+    "mean_header_rate": 0.9986979166666666
+  },
+  {
+    "condition": "NAME",
+    "step": 30,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 2.6666666666666665,
+      "numeric_error": 35.666666666666664,
+      "early_end": 0,
+      "extra_output": 1,
+      "extra_ops": 1,
+      "missing_ops": 1.3333333333333333
+    },
+    "mean_header_rate": 0.9296875
+  },
+  {
+    "condition": "STEP",
+    "step": 40,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 3.3333333333333335,
+      "numeric_error": 23.666666666666668,
+      "early_end": 1.6666666666666667,
+      "extra_output": 0.6666666666666666,
+      "extra_ops": 1,
+      "missing_ops": 2.3333333333333335
+    },
+    "mean_header_rate": 1.0
+  },
+  {
+    "condition": "NAME",
+    "step": 40,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 2,
+      "numeric_error": 15.666666666666666,
+      "early_end": 0,
+      "extra_output": 1,
+      "extra_ops": 0.3333333333333333,
+      "missing_ops": 1.3333333333333333
+    },
+    "mean_header_rate": 0.9205729166666666
+  },
+  {
+    "condition": "STEP",
+    "step": 50,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 1.6666666666666667,
+      "numeric_error": 13.666666666666666,
+      "early_end": 0.3333333333333333,
+      "extra_output": 1,
+      "extra_ops": 0.3333333333333333,
+      "missing_ops": 1.3333333333333333
+    },
+    "mean_header_rate": 1.0
+  },
+  {
+    "condition": "NAME",
+    "step": 50,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 0.6666666666666666,
+      "numeric_error": 7.333333333333333,
+      "early_end": 0,
+      "extra_output": 0.6666666666666666,
+      "extra_ops": 0,
+      "missing_ops": 0.6666666666666666
+    },
+    "mean_header_rate": 0.9010416666666666
+  },
+  {
+    "condition": "STEP",
+    "step": 60,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 1,
+      "numeric_error": 8.333333333333334,
+      "early_end": 0.3333333333333333,
+      "extra_output": 0.6666666666666666,
+      "extra_ops": 0,
+      "missing_ops": 1
+    },
+    "mean_header_rate": 1.0
+  },
+  {
+    "condition": "NAME",
+    "step": 60,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 0,
+      "numeric_error": 3,
+      "early_end": 0,
+      "extra_output": 0,
+      "extra_ops": 0,
+      "missing_ops": 0
+    },
+    "mean_header_rate": 0.9140625
+  },
+  {
+    "condition": "STEP",
+    "step": 70,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 0.3333333333333333,
+      "numeric_error": 6.333333333333333,
+      "early_end": 0.3333333333333333,
+      "extra_output": 0,
+      "extra_ops": 0,
+      "missing_ops": 0.3333333333333333
+    },
+    "mean_header_rate": 1.0
+  },
+  {
+    "condition": "NAME",
+    "step": 70,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 0,
+      "numeric_error": 3,
+      "early_end": 0,
+      "extra_output": 0,
+      "extra_ops": 0,
+      "missing_ops": 0
+    },
+    "mean_header_rate": 0.9322916666666666
+  },
+  {
+    "condition": "STEP",
+    "step": 80,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 0.3333333333333333,
+      "numeric_error": 4.333333333333333,
+      "early_end": 0.3333333333333333,
+      "extra_output": 0,
+      "extra_ops": 0,
+      "missing_ops": 0.3333333333333333
+    },
+    "mean_header_rate": 1.0
+  },
+  {
+    "condition": "NAME",
+    "step": 80,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 0,
+      "numeric_error": 2.3333333333333335,
+      "early_end": 0,
+      "extra_output": 0,
+      "extra_ops": 0,
+      "missing_ops": 0
+    },
+    "mean_header_rate": 0.9622395833333334
+  },
+  {
+    "condition": "STEP",
+    "step": 90,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 0.3333333333333333,
+      "numeric_error": 4,
+      "early_end": 0.3333333333333333,
+      "extra_output": 0,
+      "extra_ops": 0,
+      "missing_ops": 0.3333333333333333
+    },
+    "mean_header_rate": 1.0
+  },
+  {
+    "condition": "NAME",
+    "step": 90,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 0.3333333333333333,
+      "numeric_error": 2.3333333333333335,
+      "early_end": 0,
+      "extra_output": 0.3333333333333333,
+      "extra_ops": 0,
+      "missing_ops": 0.3333333333333333
+    },
+    "mean_header_rate": 0.95703125
+  },
+  {
+    "condition": "STEP",
+    "step": 100,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 0.6666666666666666,
+      "numeric_error": 2.3333333333333335,
+      "early_end": 0.6666666666666666,
+      "extra_output": 0,
+      "extra_ops": 0,
+      "missing_ops": 0.6666666666666666
+    },
+    "mean_header_rate": 1.0
+  },
+  {
+    "condition": "NAME",
+    "step": 100,
+    "mean_error_counts_per_256": {
+      "operation_mismatch": 0.3333333333333333,
+      "numeric_error": 2.6666666666666665,
+      "early_end": 0,
+      "extra_output": 0.3333333333333333,
+      "extra_ops": 0,
+      "missing_ops": 0.3333333333333333
+    },
+    "mean_header_rate": 0.9791666666666666
+  }
+]

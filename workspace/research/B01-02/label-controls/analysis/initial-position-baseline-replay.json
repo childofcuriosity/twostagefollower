@@ -1,0 +1,53 @@
+{
+  "checks": [
+    {
+      "seed": 11,
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "byte_identical": true,
+      "raw_text_identical": 224,
+      "answer_score_identical": 224
+    },
+    {
+      "seed": 11,
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "byte_identical": true,
+      "raw_text_identical": 224,
+      "answer_score_identical": 224
+    },
+    {
+      "seed": 22,
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "byte_identical": true,
+      "raw_text_identical": 224,
+      "answer_score_identical": 224
+    },
+    {
+      "seed": 22,
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "byte_identical": true,
+      "raw_text_identical": 224,
+      "answer_score_identical": 224
+    },
+    {
+      "seed": 33,
+      "file": "step0000-dev.jsonl",
+      "n": 224,
+      "byte_identical": true,
+      "raw_text_identical": 224,
+      "answer_score_identical": 224
+    },
+    {
+      "seed": 33,
+      "file": "step0000-dev-with-library.jsonl",
+      "n": 224,
+      "byte_identical": true,
+      "raw_text_identical": 224,
+      "answer_score_identical": 224
+    }
+  ],
+  "note": "Uses the already required step0 evaluations, not additional model inference. Position changes only training output, so pre-update inputs and weights match original macro baseline."
+}

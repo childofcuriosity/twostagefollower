@@ -1,0 +1,17 @@
+{
+  "job": {
+    "model": "qwen7b",
+    "condition": "alias",
+    "seed": 33,
+    "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/scale-study/qwen7b/runs/macro-original-s33/config.json",
+    "source_hash": "d2173ad4bac8bdb8ac9d3bb0d53ef126773a14e693a684b0d2863b689835e4ef",
+    "microbatch": 16,
+    "accum": 2,
+    "steps": 512,
+    "lr": 0.0003
+  },
+  "gpu": 7,
+  "returncode": 0,
+  "seconds": 2783.345023393631,
+  "finished": 1790367383.1519253
+}

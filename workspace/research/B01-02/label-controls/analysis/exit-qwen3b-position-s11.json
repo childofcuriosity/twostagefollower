@@ -1,0 +1,17 @@
+{
+  "job": {
+    "model": "qwen3b",
+    "condition": "position",
+    "seed": 11,
+    "baseline_config": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/rsi-study/replications/qwen3b/runs/macro-original-s11/config.json",
+    "source_hash": "703869a8243a4b863ddd8ac7b4dbe5540ee97b29d10fab1a8e0d62011bbd40ea",
+    "microbatch": 16,
+    "accum": 2,
+    "steps": 512,
+    "lr": 0.0003
+  },
+  "gpu": 6,
+  "returncode": 0,
+  "seconds": 496.6659801006317,
+  "finished": 1790358010.2084494
+}

@@ -1,0 +1,42 @@
+{
+  "reason": "Below registered6/6 single-task capability threshold; main96 not started",
+  "summary": {
+    "jobs_requested": 6,
+    "jobs_completed": 6,
+    "seconds": 479.3478660583496,
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "peak_memory_bytes": 67267479552,
+    "results": [
+      {
+        "task": "cal-files-s0",
+        "condition": "plan",
+        "category": "complete"
+      },
+      {
+        "task": "cal-files-s1",
+        "condition": "plan",
+        "category": "complete"
+      },
+      {
+        "task": "cal-data-s0",
+        "condition": "plan",
+        "category": "incomplete_voluntary_finish"
+      },
+      {
+        "task": "cal-data-s1",
+        "condition": "plan",
+        "category": "incomplete_voluntary_finish"
+      },
+      {
+        "task": "cal-code-s0",
+        "condition": "plan",
+        "category": "complete"
+      },
+      {
+        "task": "cal-code-s1",
+        "condition": "plan",
+        "category": "complete"
+      }
+    ]
+  }
+}

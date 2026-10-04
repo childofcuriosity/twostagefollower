@@ -1,0 +1,17 @@
+{
+  "utc": "2026-09-24T10:39:08.705942+00:00",
+  "training_rows": 4096,
+  "train_eval_prompt_tokens_identical": true,
+  "paired_target_lengths_identical": true,
+  "max_training_tokens": 189,
+  "one_pass_prompt_tokens": 462454,
+  "one_pass_target_tokens": {
+    "flat": 263858,
+    "macro": 263858
+  },
+  "eos_token_id": 151645,
+  "eos_token": "<|im_end|>",
+  "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+  "source_sha256": "0a4ea1f2134bb8051877830897c76c56b7e23b4262f5d106dae622f36d55930d",
+  "scope": "Tokenizer and prompt audit only; not evidence of completed Instruct training or model capability"
+}

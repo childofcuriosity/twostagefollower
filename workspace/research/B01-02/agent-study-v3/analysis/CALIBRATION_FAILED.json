@@ -1,0 +1,24 @@
+{
+  "jobs_requested": 3,
+  "jobs_completed": 3,
+  "seconds": 265.31545090675354,
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "peak_memory_bytes": 66123439104,
+  "results": [
+    {
+      "task": "cal-v3-files",
+      "condition": "plan",
+      "category": "complete"
+    },
+    {
+      "task": "cal-v3-data",
+      "condition": "plan",
+      "category": "incomplete_voluntary_finish"
+    },
+    {
+      "task": "cal-v3-code",
+      "condition": "plan",
+      "category": "complete"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "cases": [
+    "correct",
+    "empty Trace title",
+    "intermediate Answer",
+    "whole omitted call",
+    "whole extra call",
+    "extra primitive",
+    "numeric mismatch"
+  ]
+}

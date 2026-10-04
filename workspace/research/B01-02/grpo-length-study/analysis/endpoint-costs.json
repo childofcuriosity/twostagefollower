@@ -1,0 +1,92 @@
+[
+  {
+    "task": "7b-L3",
+    "STEP": {
+      "n": 1536,
+      "mean_output_tokens": 94.630859375,
+      "generation_gpu_hours": 0.07728241165479025
+    },
+    "NAME": {
+      "n": 1536,
+      "mean_output_tokens": 93.62760416666667,
+      "generation_gpu_hours": 0.07594579034381442
+    },
+    "token_change_percent": -1.0601776365124826,
+    "generation_time_change_percent": -1.7295284688401358
+  },
+  {
+    "task": "7b-L4",
+    "STEP": {
+      "n": 1536,
+      "mean_output_tokens": 117.97916666666667,
+      "generation_gpu_hours": 0.1000630921125412
+    },
+    "NAME": {
+      "n": 1536,
+      "mean_output_tokens": 116.91927083333333,
+      "generation_gpu_hours": 0.09758274210823907
+    },
+    "token_change_percent": -0.8983754193890192,
+    "generation_time_change_percent": -2.478786085795226
+  },
+  {
+    "task": "7b-L5",
+    "STEP": {
+      "n": 1536,
+      "mean_output_tokens": 137.921875,
+      "generation_gpu_hours": 0.11639315525690715
+    },
+    "NAME": {
+      "n": 1536,
+      "mean_output_tokens": 140.07682291666666,
+      "generation_gpu_hours": 0.11334317240450117
+    },
+    "token_change_percent": 1.5624409954306806,
+    "generation_time_change_percent": -2.620414272363303
+  },
+  {
+    "task": "14b-L5",
+    "STEP": {
+      "n": 1536,
+      "mean_output_tokens": 151.87239583333334,
+      "generation_gpu_hours": 0.2609375179476208
+    },
+    "NAME": {
+      "n": 1536,
+      "mean_output_tokens": 149.51627604166666,
+      "generation_gpu_hours": 0.24778874761528438
+    },
+    "token_change_percent": -1.5513811965225832,
+    "generation_time_change_percent": -5.039049361608416
+  },
+  {
+    "task": "14b-L6",
+    "STEP": {
+      "n": 1536,
+      "mean_output_tokens": 176.52278645833334,
+      "generation_gpu_hours": 0.30279519372516206
+    },
+    "NAME": {
+      "n": 1536,
+      "mean_output_tokens": 175.70182291666666,
+      "generation_gpu_hours": 0.3057613327768114
+    },
+    "token_change_percent": -0.46507510907690675,
+    "generation_time_change_percent": 0.979585909260372
+  },
+  {
+    "task": "14b-L7",
+    "STEP": {
+      "n": 1536,
+      "mean_output_tokens": 198.810546875,
+      "generation_gpu_hours": 0.34833939055601754
+    },
+    "NAME": {
+      "n": 1536,
+      "mean_output_tokens": 201.54296875,
+      "generation_gpu_hours": 0.3718085915512509
+    },
+    "token_change_percent": 1.3743847687909483,
+    "generation_time_change_percent": 6.737452505090502
+  }
+]

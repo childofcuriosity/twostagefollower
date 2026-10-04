@@ -1,0 +1,33 @@
+{
+  "complete": true,
+  "trajectories": 9600,
+  "events": 99481,
+  "files": {
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen3b-s11-JJ-full/JJ-full.jsonl": "133fac99540bb305dfc88fc0675bccc8b2f4fae8cd1612dd9e042f1d9507b0f8",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen3b-s11-JJ-local/JJ-local.jsonl": "92f8f0019205b0b1b33481e24daa31d6f39e6bf01418d75496df9ab6d8d2bf97",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen3b-s11-SE-full/SE-full.jsonl": "1c8231559a700c6044e0086e801799ec5e5eea24a976dfd26be11839d2cc1dff",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen3b-s11-SE-local/SE-local.jsonl": "a1d67991fe47f4896377f2168b5f4f250d752c88647b193cf338cbde3c74a06f",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen3b-s22-JJ-full/JJ-full.jsonl": "b48470df552504d9971d1b699eea596c8b39ff3a42585c5e0516663d14611c9d",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen3b-s22-JJ-local/JJ-local.jsonl": "9e74097d82376af711752c2d824ea4a9103dde3db1398aa7d96f872e5a516442",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen3b-s22-SE-full/SE-full.jsonl": "f60a155b6e4e67ec9105c224ba8f15398a9d4fdda9498d189ed054b01c5a6770",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen3b-s22-SE-local/SE-local.jsonl": "a7bda006282a725bcdd21a0c6142418c9261122e88658573066b5c06af16e49c",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen3b-s33-JJ-full/JJ-full.jsonl": "81cabae56d7d66cda54d7fdcc4bb719a38b9d8586747a3077e0cafa94f6927bd",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen3b-s33-JJ-local/JJ-local.jsonl": "2f2427726aad8d52d60aedf542d27468ec6262a6055b12fa422644040a866621",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen3b-s33-SE-full/SE-full.jsonl": "dc50bbcc73a47dd4cc39e90c261b625cbad8680674f6991c3de876e5c2d8a4fb",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen3b-s33-SE-local/SE-local.jsonl": "646edd66ace0e45c49870171c8b5914e26452f3480508123ec6d4fa34fadcf48",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen32b-s11-JJ-full/JJ-full.jsonl": "a2a7d3f92f3ee6d9209053145f446d7f34c018a8d25ff57bc06e0fdf11682937",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen32b-s11-JJ-local/JJ-local.jsonl": "67a9c2e789d18efcb1d50975b4d2633f36913b92687d41d87a7c266707353cac",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen32b-s11-SE-full/SE-full.jsonl": "c6661c3e26c17840c5ab646e4c5b6da01851937de039d4afd456ba70acada1ce",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen32b-s11-SE-local/SE-local.jsonl": "e5622d049af30ae9e1fbc68cf11c1a071595ab2e77a4b22b4cfe25da7036b508",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen32b-s22-JJ-full/JJ-full.jsonl": "b40f28df47122fbac4da5243d86d6589fea81f35558765a915ca2449d4e86179",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen32b-s22-JJ-local/JJ-local.jsonl": "8c281fb70f8d71e0c43bffd6fc2a2b49d5ee295b5352ecdbce8c98f2fdf8eef7",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen32b-s22-SE-full/SE-full.jsonl": "b90a2ccc4092df5dd4c1d8d5b2ddb99e14bcec913108d0bd0679297c56d7777f",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen32b-s22-SE-local/SE-local.jsonl": "db4d560c808703bc2ef59648076aa45104bb828d287417e6f4384eb3bec75eb6",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen32b-s33-JJ-full/JJ-full.jsonl": "619997f6582d4b8f1c5b68437fa92b1fd88519dc94df37b8c163ea75f29bbe4f",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen32b-s33-JJ-local/JJ-local.jsonl": "805819319f490539d85974d43579151ebc074addc0f936ab4816316605eeadf9",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen32b-s33-SE-full/SE-full.jsonl": "44ec411d02e4944814af63e6b0e565f31e85d15628101edfb6514ffee1e47f85",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/fresh-confirmation/runs/qwen32b-s33-SE-local/SE-local.jsonl": "4161b4e956f08baa4de71a36b08adce93ff45ac1217128bae148aa844bfbcf42"
+  },
+  "no_oracle_inputs": true,
+  "actual_generation_contexts_reconstructed": true
+}

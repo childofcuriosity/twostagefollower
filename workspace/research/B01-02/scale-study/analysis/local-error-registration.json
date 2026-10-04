@@ -1,0 +1,14 @@
+{
+  "utc": "2026-09-24T10:33:47.343133+00:00",
+  "definitions": {
+    "wrong_operation": "any emitted primitive differs from expected at same index, including extra primitive beyond expected sequence",
+    "numeric_step_error": "primitive numerical result differs from applying emitted primitive to preceding reported state",
+    "format_extra_lines": "at least one line outside allowed syntax",
+    "missing_or_multiple_answer": "not exactly one strict Answer line"
+  },
+  "caution": "Indicators overlap; do not sum as mutually exclusive causal shares. Prefix omission alone is not wrong_operation. Indices are zero-based.",
+  "hashes": {
+    "audit.py": "de5d7eecf2e3407b1dabf296534cd8d54caa8d9433bc4f10bad12017b2e93f27",
+    "analyze.py": "6b4a8cac826f5be747ac34fc522787f8023bea9944f8bd059c8a6f3b79a04086"
+  }
+}

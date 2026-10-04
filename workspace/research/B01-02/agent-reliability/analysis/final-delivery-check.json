@@ -1,0 +1,258 @@
+{
+  "registered_and_completed_runs": 439,
+  "independent_regrades": 439,
+  "controlled_exact_tool_result_replays": 21,
+  "paired_prefix_checks": 9,
+  "deterministic_model_reruns": 1,
+  "all_model_workers_finished": true,
+  "gpu_reserved_hours": 29.64115006453461,
+  "gpu_inventory_at_delivery": [
+    "0, 0 MiB, 0 %",
+    "1, 0 MiB, 0 %",
+    "2, 0 MiB, 0 %",
+    "3, 0 MiB, 0 %",
+    "4, 0 MiB, 0 %",
+    "5, 0 MiB, 0 %",
+    "6, 0 MiB, 0 %",
+    "7, 0 MiB, 0 %"
+  ],
+  "workers": [
+    {
+      "tag": "compact-dev",
+      "jobs": 4,
+      "gpu_reserved_seconds": 680.5196492671967
+    },
+    {
+      "tag": "compact-main-identity",
+      "jobs": 6,
+      "gpu_reserved_seconds": 2807.387648820877
+    },
+    {
+      "tag": "compact-main-plan",
+      "jobs": 6,
+      "gpu_reserved_seconds": 5254.184287309647
+    },
+    {
+      "tag": "compact-main-reminder",
+      "jobs": 6,
+      "gpu_reserved_seconds": 5753.063546895981
+    },
+    {
+      "tag": "compact-main-todo",
+      "jobs": 6,
+      "gpu_reserved_seconds": 4805.300029039383
+    },
+    {
+      "tag": "controlled-dev-compact",
+      "jobs": 2,
+      "gpu_reserved_seconds": 799.0183985233307
+    },
+    {
+      "tag": "controlled-dev-full",
+      "jobs": 2,
+      "gpu_reserved_seconds": 608.5954949855804
+    },
+    {
+      "tag": "controlled-v2-dev-compact",
+      "jobs": 2,
+      "gpu_reserved_seconds": 282.46885919570923
+    },
+    {
+      "tag": "controlled-v2-dev-full",
+      "jobs": 2,
+      "gpu_reserved_seconds": 286.6277244091034
+    },
+    {
+      "tag": "controlled-v2-main-compacted",
+      "jobs": 6,
+      "gpu_reserved_seconds": 3196.5801219940186
+    },
+    {
+      "tag": "controlled-v2-main-full-0",
+      "jobs": 1,
+      "gpu_reserved_seconds": 523.9404721260071
+    },
+    {
+      "tag": "controlled-v2-main-full-1",
+      "jobs": 1,
+      "gpu_reserved_seconds": 618.480272769928
+    },
+    {
+      "tag": "controlled-v2-main-full-2",
+      "jobs": 1,
+      "gpu_reserved_seconds": 1774.6332247257233
+    },
+    {
+      "tag": "controlled-v3-main-0",
+      "jobs": 2,
+      "gpu_reserved_seconds": 2138.4282851219177
+    },
+    {
+      "tag": "controlled-v3-main-1",
+      "jobs": 2,
+      "gpu_reserved_seconds": 1668.3806686401367
+    },
+    {
+      "tag": "dev-fewshot",
+      "jobs": 6,
+      "gpu_reserved_seconds": 377.32367277145386
+    },
+    {
+      "tag": "dev-zero",
+      "jobs": 6,
+      "gpu_reserved_seconds": 433.2180564403534
+    },
+    {
+      "tag": "long-identity",
+      "jobs": 12,
+      "gpu_reserved_seconds": 1169.836890220642
+    },
+    {
+      "tag": "long-plan",
+      "jobs": 12,
+      "gpu_reserved_seconds": 1044.4858934879303
+    },
+    {
+      "tag": "long-reminder",
+      "jobs": 12,
+      "gpu_reserved_seconds": 2153.38401556015
+    },
+    {
+      "tag": "long-todo",
+      "jobs": 12,
+      "gpu_reserved_seconds": 1302.1818068027496
+    },
+    {
+      "tag": "notes-dev-identity",
+      "jobs": 6,
+      "gpu_reserved_seconds": 356.464510679245
+    },
+    {
+      "tag": "notes-dev-plan",
+      "jobs": 6,
+      "gpu_reserved_seconds": 389.77978777885437
+    },
+    {
+      "tag": "notes-main-identity",
+      "jobs": 12,
+      "gpu_reserved_seconds": 977.9383435249329
+    },
+    {
+      "tag": "notes-main-plan",
+      "jobs": 12,
+      "gpu_reserved_seconds": 1787.2997617721558
+    },
+    {
+      "tag": "notes-main-reminder",
+      "jobs": 12,
+      "gpu_reserved_seconds": 2136.151253223419
+    },
+    {
+      "tag": "notes-main-todo",
+      "jobs": 12,
+      "gpu_reserved_seconds": 1458.701595067978
+    },
+    {
+      "tag": "notes-replication-identity",
+      "jobs": 36,
+      "gpu_reserved_seconds": 2747.3261168003082
+    },
+    {
+      "tag": "notes-replication-plan",
+      "jobs": 36,
+      "gpu_reserved_seconds": 2917.0528807640076
+    },
+    {
+      "tag": "notes-replication-reminder",
+      "jobs": 36,
+      "gpu_reserved_seconds": 4957.3071093559265
+    },
+    {
+      "tag": "notes-replication-todo",
+      "jobs": 36,
+      "gpu_reserved_seconds": 2964.528758764267
+    },
+    {
+      "tag": "queue-dev-zero",
+      "jobs": 2,
+      "gpu_reserved_seconds": 663.4960539340973
+    },
+    {
+      "tag": "queue-main-identity",
+      "jobs": 6,
+      "gpu_reserved_seconds": 4876.646161317825
+    },
+    {
+      "tag": "queue-main-plan",
+      "jobs": 6,
+      "gpu_reserved_seconds": 4954.097282171249
+    },
+    {
+      "tag": "queue-main-reminder",
+      "jobs": 6,
+      "gpu_reserved_seconds": 4620.240294456482
+    },
+    {
+      "tag": "queue-main-todo",
+      "jobs": 6,
+      "gpu_reserved_seconds": 1777.27787566185
+    },
+    {
+      "tag": "queue-notes-dev",
+      "jobs": 4,
+      "gpu_reserved_seconds": 1216.475769996643
+    },
+    {
+      "tag": "queue-notes-main-identity",
+      "jobs": 6,
+      "gpu_reserved_seconds": 5786.530635595322
+    },
+    {
+      "tag": "queue-notes-main-plan",
+      "jobs": 6,
+      "gpu_reserved_seconds": 7316.991772174835
+    },
+    {
+      "tag": "queue-notes-main-reminder",
+      "jobs": 6,
+      "gpu_reserved_seconds": 7051.97398352623
+    },
+    {
+      "tag": "queue-notes-main-todo",
+      "jobs": 6,
+      "gpu_reserved_seconds": 5356.6604590415955
+    },
+    {
+      "tag": "regression-fewshot-0",
+      "jobs": 12,
+      "gpu_reserved_seconds": 849.0834743976593
+    },
+    {
+      "tag": "regression-fewshot-1",
+      "jobs": 12,
+      "gpu_reserved_seconds": 749.4714245796204
+    },
+    {
+      "tag": "regression-zero-0",
+      "jobs": 12,
+      "gpu_reserved_seconds": 878.4229047298431
+    },
+    {
+      "tag": "regression-zero-1",
+      "jobs": 12,
+      "gpu_reserved_seconds": 844.0315289497375
+    },
+    {
+      "tag": "validation-short-fewshot",
+      "jobs": 12,
+      "gpu_reserved_seconds": 661.2967412471771
+    },
+    {
+      "tag": "validation-short-zero",
+      "jobs": 12,
+      "gpu_reserved_seconds": 734.8547337055206
+    }
+  ],
+  "checked_at": 1790301560.0887918,
+  "all_assets_in_project": true
+}

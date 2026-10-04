@@ -1,0 +1,8 @@
+{
+  "utc": "2026-09-24T04:19:38Z",
+  "note": "Analysis code archived; partial qwen1.5b robustness inspected, no loop or branch outcomes inspected. Fixed protocol unchanged.",
+  "hashes": {
+    "src/analyze_robust.py": "314604163b4016fa46ade93af4b0ea52fa2a037d21aeb379b42eaad9c20004ae",
+    "src/analyze_loops.py": "ed1e966bd02fd38d65b2166b44db18bfc4bb8a5c2f3affc72724e38e8666ca74"
+  }
+}

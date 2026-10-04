@@ -1,0 +1,21 @@
+{
+  "job": {
+    "id": "qwen3b-s11-SJ",
+    "kind": "formal",
+    "model": "qwen3b",
+    "seed": 11,
+    "route": "SJ"
+  },
+  "pid": 422408,
+  "gpu": 3,
+  "command": [
+    "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+    "-u",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/src/context_run.py",
+    "--job",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/stability-study/context-intervention/analysis/qwen3b-s11-SJ-job.json"
+  ],
+  "start": 1790345544.2565737,
+  "returncode": 0,
+  "end": 1790345888.9318762
+}

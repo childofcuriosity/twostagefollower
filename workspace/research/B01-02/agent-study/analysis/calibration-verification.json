@@ -1,0 +1,86 @@
+[
+  {
+    "tag": "calibration",
+    "task": "cal-code-s0",
+    "complete": true,
+    "summary_sha256": "84330e33081a7a8265327434e1e92e496f7a2e0736ceb3084f9362e86cb796e7",
+    "trajectory_sha256": "9230fc27100c76b9e961c06e17042ec2ef5fc1138bfa87fbea064d504425f34c"
+  },
+  {
+    "tag": "calibration",
+    "task": "cal-code-s1",
+    "complete": true,
+    "summary_sha256": "fe5b924441f55268679bd0fc7e0a2520dbe5294a5bb72a7f053597fbc03de4a5",
+    "trajectory_sha256": "6974ddd00289314bb08823aac6c209483313f968c528e3d9e0985c5bbc4ee179"
+  },
+  {
+    "tag": "calibration",
+    "task": "cal-data-s0",
+    "complete": false,
+    "summary_sha256": "25682d5a6739e0c3c3ba9a820462c385dca3741e4a4c8d2e3081e642863b40c4",
+    "trajectory_sha256": "d59c0fe4f6eee20d13c84614874e6501271c757d9433c875a4813d090c2eb431"
+  },
+  {
+    "tag": "calibration",
+    "task": "cal-data-s1",
+    "complete": false,
+    "summary_sha256": "1408676ee6ee8a08538c65c4ddbf23427b00e9ddfbf8c25a6a5900bb76c63d38",
+    "trajectory_sha256": "fa9a571eaca8032b3431cffc1b595ece14f33f7cad3752a504acce22e7108c90"
+  },
+  {
+    "tag": "calibration",
+    "task": "cal-files-s0",
+    "complete": true,
+    "summary_sha256": "8d476f80d03f845ed5b6293d1d9e6b6604ab4ec242e444968030af4ee7685360",
+    "trajectory_sha256": "3ee86b6558cca72d0dfc29e44bc6ca1fe3e4e82bc79144a80136e7f3591ea574"
+  },
+  {
+    "tag": "calibration",
+    "task": "cal-files-s1",
+    "complete": true,
+    "summary_sha256": "34d0791b36e0763178720708acc2417aab7d18d184b02213d775c8736956f815",
+    "trajectory_sha256": "ea7cdd758ebf384a95f6eba05c34831a577c8d37266e52c8fc140e10f9b485ae"
+  },
+  {
+    "tag": "calibration-v2",
+    "task": "cal-code-s2",
+    "complete": true,
+    "summary_sha256": "34c91306387410fbcd41ff25f8068a462034e8f8eccc7e037bacc708f408ba22",
+    "trajectory_sha256": "eaa4cb084e79bd929b81e31c07972547b82efdab18b02fa2627b6b10e6bf9047"
+  },
+  {
+    "tag": "calibration-v2",
+    "task": "cal-code-s3",
+    "complete": true,
+    "summary_sha256": "a76a1efa183bca91abb9c0067ee0c7dcc915f7dc0ae74460e9ab865d065423f7",
+    "trajectory_sha256": "882e9667bd64d523eea08cc1cfb8390a612822b112b153f3f5052a774e735596"
+  },
+  {
+    "tag": "calibration-v2",
+    "task": "cal-data-s2",
+    "complete": true,
+    "summary_sha256": "c5d3350c9c96ec04cec34a5c29e0304e1c292cec3e1047c52d0b3fbf886345bc",
+    "trajectory_sha256": "b8fa019e343a14edf5aaeb1f2bc4abad7d6e2ab9bc684f12dd0c682646a66b82"
+  },
+  {
+    "tag": "calibration-v2",
+    "task": "cal-data-s3",
+    "complete": true,
+    "summary_sha256": "318391df8fceba6dfa6da6ae20655aef4010cc83123944feac9d8227d4213e39",
+    "trajectory_sha256": "a5317b9d021da88b58690313c41928c2b6b79cfdf2874eae69e4088a13a4f5a4"
+  },
+  {
+    "tag": "calibration-v2",
+    "task": "cal-files-s2",
+    "complete": true,
+    "summary_sha256": "8ed1407bd0a44588d0c2fc023941e23150cedd3797c7fb0f40359d7048fc8615",
+    "trajectory_sha256": "b95759bf88ae4773d07235c02d486f68e5c48d57bdfeea39c55d60a626a55df5"
+  },
+  {
+    "tag": "calibration-v2",
+    "task": "cal-files-s3",
+    "complete": true,
+    "summary_sha256": "7bdd465c00995b6bb05468b27fd1198badea52f5305407887248fa4dfd240109",
+    "trajectory_sha256": "0bd0754bbb552b5695ff0ff17f016576538b35424c0152db2ca7296877de37ef"
+  }
+]

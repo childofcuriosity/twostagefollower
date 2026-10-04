@@ -1,0 +1,11 @@
+{
+  "utc": "2026-09-24T04:15:18Z",
+  "hashes": {
+    "src/loop.py": "b02b2ddc393f29dac74f7e4351c42e1bb48e6a650af9646e7dd854be77436dc0",
+    "src/loop_data.py": "09a30ea4c2e7a776ddd1dfe97bb92d1fe71870208d060f1d7b9bb2cd83f7832d",
+    "src/launch_loops.py": "0be89e83196733a18dce2782a48d27b0b0744015b25a0f71f91decd283243047",
+    "data/loop-eval-digits.json": "e5e9ea2f969905849fd7b12b56e41fbf9737ba457411b0b9ce8252f45f6f47bf",
+    "data/loop-eval-strings.json": "8e3857e2898b9b0ffb68881d8ea36072bd5fed836b597f59c6fd8b44d800f310",
+    "analysis/amendments.md": "eca20881df55375ba1fb164b6c17746c513062bb42213b209b0012b2349b16ec"
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "runs": [
+    {
+      "domain": "original",
+      "run": "flat-original-s11",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "flat-original-s11-calibration",
+      "n": 96,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "flat-original-s22",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "flat-original-s33",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "frozen-original-s11-no-library",
+      "n": 560,
+      "strict_prediction_differences": 2,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 548
+    },
+    {
+      "domain": "original",
+      "run": "frozen-original-s11-with-library",
+      "n": 560,
+      "strict_prediction_differences": 8,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 1
+    },
+    {
+      "domain": "original",
+      "run": "macro-original-s11",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-original-s11-tagged-call",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 2
+    },
+    {
+      "domain": "original",
+      "run": "macro-original-s11-tagged-stable",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-original-s22",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-original-s22-tagged-call",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-original-s22-tagged-stable",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-original-s33",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-original-s33-tagged-call",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-original-s33-tagged-stable",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-renamed-s11",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-renamed-s22",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-renamed-s33",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-semantic-s11",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-semantic-s22",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "macro-semantic-s33",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "natural-original-s11",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "natural-original-s22",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "natural-original-s33",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "shuffled-original-s11",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "shuffled-original-s22",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "original",
+      "run": "shuffled-original-s33",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "secondary",
+      "run": "flat-original-s11",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "secondary",
+      "run": "flat-original-s22",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "secondary",
+      "run": "flat-original-s33",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "secondary",
+      "run": "macro-original-s11",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "secondary",
+      "run": "macro-original-s22",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    },
+    {
+      "domain": "secondary",
+      "run": "macro-original-s33",
+      "n": 560,
+      "strict_prediction_differences": 0,
+      "false_positive_under_loose_parser": 0,
+      "multiple_answer_lines": 0
+    }
+  ],
+  "routing": [
+    {
+      "run": "flat-s11",
+      "n": 96,
+      "chain_inputs_and_truth": "verified"
+    },
+    {
+      "run": "flat-s22",
+      "n": 96,
+      "chain_inputs_and_truth": "verified"
+    },
+    {
+      "run": "flat-s33",
+      "n": 96,
+      "chain_inputs_and_truth": "verified"
+    },
+    {
+      "run": "frozen-s11",
+      "n": 96,
+      "chain_inputs_and_truth": "verified"
+    },
+    {
+      "run": "macro-s11",
+      "n": 96,
+      "chain_inputs_and_truth": "verified"
+    },
+    {
+      "run": "macro-s22",
+      "n": 96,
+      "chain_inputs_and_truth": "verified"
+    },
+    {
+      "run": "macro-s33",
+      "n": 96,
+      "chain_inputs_and_truth": "verified"
+    }
+  ],
+  "false_positive_total": 0,
+  "policy": "Last complete Answer line; historical raw outputs and scores preserved."
+}

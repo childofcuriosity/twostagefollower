@@ -1,0 +1,6 @@
+{
+  "gpu_reserved_hours_approx": 59.6133173993561,
+  "primary_and_confirmation_process_hours": 40.28508940067556,
+  "supplement_process_hours": 19.32822799868054,
+  "note": "single-GPU subprocess wall times for new training, calibration, checkpoint evaluation; extended model loading omitted; pre-launch queue waiting and downloads excluded, but early checkpoint subprocesses may include waiting for saved weights; not GPU kernel busy time; includes completed supplement lane records; excludes unmeasured failed-start overhead and separate sharded smoke probe"
+}

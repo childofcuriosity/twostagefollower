@@ -1,0 +1,15 @@
+# Controlled clock and context-policy ablation
+
+A paired diagnostic on queue-confirm-n24-s20264102 identity found identical initial prompts and model outputs through turn5, but model-generated datetime.now() prints differed across runs. The trajectories diverged BEFORE any compaction. Thus that contrast cannot be attributed to compaction. FileNotFoundError can also contain worker-specific absolute paths. Preserve these runs and explicitly limit causal interpretation.
+
+New shared runtime: fixed Python wall-clock datetime/date/time APIs, seeded common random APIs, canonical /workspace paths in host tool errors, explicit disclosure that Python calls use fresh processes. This controls the observed sources; it is not a guarantee of arbitrary-program determinism (e.g. all filesystem timestamp APIs or explicit Random(None) are not virtualized). Verify actual tool replay and pre-intervention prefixes. All three experimental arms use exactly this same runtime and model. No expected results or hidden verifier feedback enter prompts.
+
+Policies: full history; trim older messages after a delivery but retain original goal and latest assistant/tool exchange; same trim plus observed receipt IDs/count as a user-visible handoff summary. The trim-only arm separates the added summary from history deletion; latest receipt already carries public progress information. Every arm allows voluntary termination.
+
+Calibration: two existing four-ticket cases with full and compact policy (4 runs), baseline empty-note condition, all must pass before main. Fixed new main sample: three24-ticket seeds20267001–3, each run under full/trim/compact (9 trajectories). This is an independent small mechanistic confirmation, not a representative benchmark. Same128 turns/24000 output tokens/30000 context/2400seconds per trajectory. No early stopping of the experiment on a favorable outcome. Standard random source fixing only serves reproducibility; task inputs were generated separately with their registered seeds.
+
+## Calibration repair, before any main inference
+
+Fixed-runtime calibration full2/2, compact1/2. The compact failure delivered all four tickets but only one report was correct. After the first handoff it guessed an object with a `records` field, whereas inputs are JSON arrays; repeated errors were eventually hidden by generating empty outputs. This is loss/guessing of an interface invariant, not successful completion or pure early stopping.
+
+Version2 retains every failed run and adds the true input schema to the shared system prompt for ALL policies: top-level JSON array with id/region/quantity/status fields, directly returned by json.load. No output values or future records are revealed; fixtures and grading stay unchanged. Repeat the four development trajectories with new versioned tags, then run the original nine fixed main trajectories only if calibration passes. Do not attribute differences between calibration versions solely to compaction; main causal comparison uses a shared version2 schema/clock/error interface.

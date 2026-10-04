@@ -1,0 +1,7 @@
+# torch separately installed from official CUDA 12.8 wheel index.
+transformers==4.51.3
+peft==0.15.2
+accelerate==1.6.0
+numpy==2.2.6
+scipy==1.15.3
+torch==2.7.1

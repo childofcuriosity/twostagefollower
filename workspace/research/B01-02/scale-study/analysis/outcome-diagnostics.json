@@ -1,0 +1,4022 @@
+{
+  "records": 48160,
+  "summary": [
+    {
+      "family": "main",
+      "source": "runs/flat-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/flat-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 383,
+        "answer_with_fewer_primitive_steps": 384,
+        "correct_prefix_early_answer": 375,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/flat-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 48,
+        "answer_with_fewer_primitive_steps": 48,
+        "correct_prefix_early_answer": 43
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/macro-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/macro-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 118,
+        "answer_with_fewer_primitive_steps": 262,
+        "correct_prefix_early_answer": 149,
+        "answer_incorrect_or_invalid": 266
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/macro-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 20,
+        "answer_with_fewer_primitive_steps": 28,
+        "correct_prefix_early_answer": 17,
+        "answer_incorrect_or_invalid": 28
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/flat-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/flat-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 384,
+        "answer_with_fewer_primitive_steps": 384,
+        "correct_prefix_early_answer": 330
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/flat-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 48,
+        "answer_with_fewer_primitive_steps": 48,
+        "correct_prefix_early_answer": 40
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/macro-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/macro-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 145,
+        "answer_with_fewer_primitive_steps": 234,
+        "correct_prefix_early_answer": 115,
+        "answer_incorrect_or_invalid": 239
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/macro-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 20,
+        "answer_with_fewer_primitive_steps": 20,
+        "correct_prefix_early_answer": 8,
+        "answer_incorrect_or_invalid": 28
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/flat-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/flat-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 384,
+        "answer_with_fewer_primitive_steps": 384,
+        "correct_prefix_early_answer": 304
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/flat-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 47,
+        "answer_with_fewer_primitive_steps": 48,
+        "correct_prefix_early_answer": 44,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/macro-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/macro-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 304,
+        "answer_with_fewer_primitive_steps": 303,
+        "correct_prefix_early_answer": 234,
+        "exact_trace": 80
+      }
+    },
+    {
+      "family": "main",
+      "source": "runs/macro-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 36,
+        "answer_with_fewer_primitive_steps": 37,
+        "correct_prefix_early_answer": 33,
+        "exact_trace": 11,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/flat-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/flat-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 383,
+        "answer_with_fewer_primitive_steps": 384,
+        "correct_prefix_early_answer": 338,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/flat-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 48,
+        "answer_with_fewer_primitive_steps": 48,
+        "correct_prefix_early_answer": 39
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/macro-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/macro-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 214,
+        "answer_with_fewer_primitive_steps": 152,
+        "correct_prefix_early_answer": 88,
+        "answer_incorrect_or_invalid": 162,
+        "different_trace_globally_equivalent": 8
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/macro-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 24,
+        "answer_with_fewer_primitive_steps": 16,
+        "correct_prefix_early_answer": 6,
+        "exact_trace": 20,
+        "different_trace_correct_only_on_this_input": 4
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/flat-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/flat-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 384,
+        "answer_with_fewer_primitive_steps": 384,
+        "correct_prefix_early_answer": 319
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/flat-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 48,
+        "answer_with_fewer_primitive_steps": 48,
+        "correct_prefix_early_answer": 38
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/macro-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/macro-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 265,
+        "answer_with_fewer_primitive_steps": 107,
+        "correct_prefix_early_answer": 41,
+        "answer_incorrect_or_invalid": 118,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/macro-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 35,
+        "answer_with_fewer_primitive_steps": 12,
+        "correct_prefix_early_answer": 11,
+        "answer_incorrect_or_invalid": 13
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/flat-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/flat-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 384,
+        "answer_with_fewer_primitive_steps": 384,
+        "correct_prefix_early_answer": 370
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/flat-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 48,
+        "answer_with_fewer_primitive_steps": 48,
+        "correct_prefix_early_answer": 48
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/macro-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/macro-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 209,
+        "answer_with_fewer_primitive_steps": 173,
+        "correct_prefix_early_answer": 108,
+        "answer_incorrect_or_invalid": 172,
+        "different_trace_globally_equivalent": 3
+      }
+    },
+    {
+      "family": "main",
+      "source": "rsi-study/replications/qwen3b/runs/macro-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 31,
+        "answer_with_fewer_primitive_steps": 13,
+        "correct_prefix_early_answer": 12,
+        "answer_incorrect_or_invalid": 17
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/flat-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/flat-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 72,
+        "answer_with_fewer_primitive_steps": 266,
+        "correct_prefix_early_answer": 111,
+        "different_trace_correct_only_on_this_input": 1,
+        "answer_incorrect_or_invalid": 311
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/flat-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 39,
+        "answer_with_fewer_primitive_steps": 32,
+        "correct_prefix_early_answer": 20,
+        "different_trace_correct_only_on_this_input": 5,
+        "exact_trace": 4
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/macro-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/macro-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 207,
+        "answer_with_fewer_primitive_steps": 170,
+        "correct_prefix_early_answer": 91,
+        "answer_incorrect_or_invalid": 174,
+        "different_trace_correct_only_on_this_input": 3
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/macro-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 27,
+        "answer_with_fewer_primitive_steps": 21,
+        "correct_prefix_early_answer": 11,
+        "answer_incorrect_or_invalid": 21
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/flat-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/flat-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 69,
+        "answer_with_fewer_primitive_steps": 311,
+        "correct_prefix_early_answer": 282,
+        "answer_incorrect_or_invalid": 315
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/flat-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 41,
+        "answer_with_fewer_primitive_steps": 42,
+        "correct_prefix_early_answer": 42,
+        "exact_trace": 6,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/macro-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/macro-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 306,
+        "answer_with_fewer_primitive_steps": 70,
+        "correct_prefix_early_answer": 37,
+        "answer_incorrect_or_invalid": 75,
+        "different_trace_correct_only_on_this_input": 3
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/macro-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 44,
+        "answer_with_fewer_primitive_steps": 4,
+        "correct_prefix_early_answer": 1,
+        "different_trace_correct_only_on_this_input": 2,
+        "answer_incorrect_or_invalid": 2
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/flat-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/flat-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 66,
+        "answer_with_fewer_primitive_steps": 312,
+        "correct_prefix_early_answer": 283,
+        "answer_incorrect_or_invalid": 318
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/flat-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 16,
+        "answer_with_fewer_primitive_steps": 32,
+        "correct_prefix_early_answer": 28,
+        "answer_incorrect_or_invalid": 31,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/macro-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/macro-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 154,
+        "answer_with_fewer_primitive_steps": 230,
+        "correct_prefix_early_answer": 176,
+        "answer_incorrect_or_invalid": 224,
+        "different_trace_correct_only_on_this_input": 2,
+        "different_trace_globally_equivalent": 4
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen7b/runs/macro-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 24,
+        "answer_with_fewer_primitive_steps": 24,
+        "correct_prefix_early_answer": 20,
+        "answer_incorrect_or_invalid": 24
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/flat-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/flat-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 267,
+        "answer_with_fewer_primitive_steps": 253,
+        "correct_prefix_early_answer": 142,
+        "exact_trace": 116,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/flat-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 10,
+        "answer_with_fewer_primitive_steps": 31,
+        "correct_prefix_early_answer": 20,
+        "answer_incorrect_or_invalid": 37,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/macro-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/macro-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 202,
+        "answer_with_fewer_primitive_steps": 178,
+        "correct_prefix_early_answer": 159,
+        "answer_incorrect_or_invalid": 178,
+        "different_trace_globally_equivalent": 4
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/macro-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 32,
+        "answer_with_fewer_primitive_steps": 16,
+        "correct_prefix_early_answer": 15,
+        "answer_incorrect_or_invalid": 16
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/flat-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/flat-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 198,
+        "answer_with_fewer_primitive_steps": 165,
+        "correct_prefix_early_answer": 152,
+        "answer_incorrect_or_invalid": 186
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/flat-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 29,
+        "answer_with_fewer_primitive_steps": 12,
+        "correct_prefix_early_answer": 11,
+        "answer_incorrect_or_invalid": 19
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/macro-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/macro-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 294,
+        "answer_with_fewer_primitive_steps": 90,
+        "correct_prefix_early_answer": 67,
+        "answer_incorrect_or_invalid": 86,
+        "different_trace_globally_equivalent": 4
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/macro-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 43,
+        "answer_with_fewer_primitive_steps": 4,
+        "correct_prefix_early_answer": 4,
+        "answer_incorrect_or_invalid": 5
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/flat-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/flat-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 196,
+        "answer_with_fewer_primitive_steps": 186,
+        "correct_prefix_early_answer": 148,
+        "answer_incorrect_or_invalid": 188
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/flat-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 30,
+        "answer_with_fewer_primitive_steps": 17,
+        "correct_prefix_early_answer": 7,
+        "answer_incorrect_or_invalid": 15,
+        "different_trace_correct_only_on_this_input": 3
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/macro-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/macro-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 345,
+        "answer_with_fewer_primitive_steps": 31,
+        "correct_prefix_early_answer": 24,
+        "answer_incorrect_or_invalid": 39
+      }
+    },
+    {
+      "family": "main",
+      "source": "scale-study/qwen32b/runs/macro-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 42,
+        "answer_with_fewer_primitive_steps": 4,
+        "correct_prefix_early_answer": 1,
+        "answer_incorrect_or_invalid": 6
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s33.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 83
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s33.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 81,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s33.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 75,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s33.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 95,
+        "correct_prefix_early_answer": 74,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s33.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 95,
+        "correct_prefix_early_answer": 70,
+        "correct_answer_without_valid_supporting_trace": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s22.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 77
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s22.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 81,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s22.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 81,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s22.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 82,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s22.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 88
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s22.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 61,
+        "answer_with_fewer_primitive_steps": 32,
+        "correct_prefix_early_answer": 27,
+        "answer_incorrect_or_invalid": 35
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s22.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 70,
+        "answer_with_fewer_primitive_steps": 66,
+        "correct_prefix_early_answer": 42,
+        "exact_trace": 26
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s22.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 87,
+        "answer_with_fewer_primitive_steps": 82,
+        "correct_prefix_early_answer": 9,
+        "exact_trace": 9
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s22.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 11
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s22.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 93,
+        "answer_with_fewer_primitive_steps": 93,
+        "correct_prefix_early_answer": 9,
+        "exact_trace": 3
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s11.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 52,
+        "answer_with_fewer_primitive_steps": 44,
+        "correct_prefix_early_answer": 36,
+        "answer_incorrect_or_invalid": 44
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s11.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 73,
+        "answer_with_fewer_primitive_steps": 73,
+        "correct_prefix_early_answer": 45,
+        "exact_trace": 23
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s11.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "exact_trace": 4,
+        "answer_with_fewer_primitive_steps": 89,
+        "correct_prefix_early_answer": 31,
+        "answer_incorrect_or_invalid": 92
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s11.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 95,
+        "correct_prefix_early_answer": 31,
+        "exact_trace": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s11.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 26
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s11.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 92
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s11.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 90,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s11.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 77,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s11.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 95,
+        "correct_prefix_early_answer": 90,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/flat-s11.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 72
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s33.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 38,
+        "answer_with_fewer_primitive_steps": 58,
+        "correct_prefix_early_answer": 50,
+        "answer_incorrect_or_invalid": 58
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s33.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 84,
+        "answer_with_fewer_primitive_steps": 82,
+        "correct_prefix_early_answer": 66,
+        "exact_trace": 12
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s33.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "exact_trace": 4,
+        "answer_with_fewer_primitive_steps": 92,
+        "correct_prefix_early_answer": 49,
+        "answer_incorrect_or_invalid": 92
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s33.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 92,
+        "correct_prefix_early_answer": 46,
+        "exact_trace": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/macro-s33.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 32
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/frozen-with-library.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/frozen-with-library.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/frozen-with-library.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/frozen-with-library.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen1.5b/frozen-with-library.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s33.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 93
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s33.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 92,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s33.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 92,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s33.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 88,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s33.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 83
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s22.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 85
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s22.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 70
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s22.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 69,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s22.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 59
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s22.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 59
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/frozen-with-library.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/frozen-with-library.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/frozen-with-library.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/frozen-with-library.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/frozen-with-library.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s11.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 84,
+        "answer_with_fewer_primitive_steps": 12,
+        "correct_prefix_early_answer": 4,
+        "answer_incorrect_or_invalid": 12
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s11.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 49,
+        "answer_with_fewer_primitive_steps": 44,
+        "correct_prefix_early_answer": 25,
+        "exact_trace": 47
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s11.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "exact_trace": 30,
+        "answer_with_fewer_primitive_steps": 54,
+        "correct_prefix_early_answer": 22,
+        "answer_incorrect_or_invalid": 65,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s11.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 88,
+        "answer_with_fewer_primitive_steps": 84,
+        "correct_prefix_early_answer": 23,
+        "exact_trace": 6,
+        "different_trace_correct_only_on_this_input": 1,
+        "different_trace_globally_equivalent": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s11.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 89,
+        "answer_with_fewer_primitive_steps": 86,
+        "correct_prefix_early_answer": 5,
+        "exact_trace": 6,
+        "different_trace_globally_equivalent": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s33.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 77,
+        "answer_with_fewer_primitive_steps": 19,
+        "correct_prefix_early_answer": 15,
+        "answer_incorrect_or_invalid": 19
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s33.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 35,
+        "answer_with_fewer_primitive_steps": 35,
+        "correct_prefix_early_answer": 31,
+        "exact_trace": 61
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s33.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 77,
+        "answer_with_fewer_primitive_steps": 76,
+        "correct_prefix_early_answer": 35,
+        "exact_trace": 19
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s33.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 88,
+        "answer_with_fewer_primitive_steps": 86,
+        "correct_prefix_early_answer": 42,
+        "exact_trace": 8
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s33.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 51
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s11.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 89
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s11.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 89,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s11.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 81,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s11.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 78
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/flat-s11.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 72
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s22.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 80,
+        "answer_with_fewer_primitive_steps": 16,
+        "correct_prefix_early_answer": 12,
+        "answer_incorrect_or_invalid": 16
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s22.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 29,
+        "answer_with_fewer_primitive_steps": 29,
+        "correct_prefix_early_answer": 20,
+        "exact_trace": 67
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s22.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "exact_trace": 33,
+        "answer_with_fewer_primitive_steps": 54,
+        "correct_prefix_early_answer": 20,
+        "answer_incorrect_or_invalid": 63
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s22.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 83,
+        "answer_with_fewer_primitive_steps": 72,
+        "correct_prefix_early_answer": 14,
+        "exact_trace": 13
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen3b/macro-s22.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 92,
+        "correct_prefix_early_answer": 3
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s11.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 56,
+        "answer_with_fewer_primitive_steps": 8,
+        "correct_prefix_early_answer": 8,
+        "answer_incorrect_or_invalid": 40
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s11.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 93,
+        "correct_prefix_early_answer": 47
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s11.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 93,
+        "correct_prefix_early_answer": 27
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s11.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 94,
+        "correct_prefix_early_answer": 6
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s11.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 3
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s22.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 62,
+        "answer_with_fewer_primitive_steps": 26,
+        "correct_prefix_early_answer": 25,
+        "answer_incorrect_or_invalid": 34
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s22.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 93
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s22.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 90
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s22.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 79,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s22.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 54
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/frozen-with-library.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 5,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/frozen-with-library.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 2,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/frozen-with-library.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 4,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/frozen-with-library.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 2,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/frozen-with-library.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 6,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s33.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 74,
+        "answer_with_fewer_primitive_steps": 22,
+        "correct_prefix_early_answer": 14,
+        "answer_incorrect_or_invalid": 22
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s33.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "exact_trace": 39,
+        "answer_with_fewer_primitive_steps": 57,
+        "correct_prefix_early_answer": 53,
+        "answer_incorrect_or_invalid": 57
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s33.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "exact_trace": 15,
+        "answer_with_fewer_primitive_steps": 81,
+        "correct_prefix_early_answer": 40,
+        "answer_incorrect_or_invalid": 81
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s33.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "exact_trace": 13,
+        "answer_with_fewer_primitive_steps": 83,
+        "correct_prefix_early_answer": 43,
+        "answer_incorrect_or_invalid": 83
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s33.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 33
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s11.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 80,
+        "answer_with_fewer_primitive_steps": 16,
+        "correct_prefix_early_answer": 12,
+        "answer_incorrect_or_invalid": 16
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s11.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 55,
+        "answer_with_fewer_primitive_steps": 52,
+        "correct_prefix_early_answer": 32,
+        "exact_trace": 41
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s11.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "exact_trace": 8,
+        "answer_with_fewer_primitive_steps": 85,
+        "correct_prefix_early_answer": 38,
+        "answer_incorrect_or_invalid": 88
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s11.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 81,
+        "answer_with_fewer_primitive_steps": 81,
+        "correct_prefix_early_answer": 25,
+        "exact_trace": 15
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s11.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 18
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s33.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 39,
+        "answer_with_fewer_primitive_steps": 32,
+        "correct_prefix_early_answer": 31,
+        "exact_trace": 57
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s33.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 92,
+        "correct_prefix_early_answer": 79,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s33.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 74
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s33.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 78,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/flat-s33.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 77
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s22.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 96,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s22.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "exact_trace": 70,
+        "answer_with_fewer_primitive_steps": 22,
+        "correct_prefix_early_answer": 9,
+        "answer_incorrect_or_invalid": 26
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s22.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 51,
+        "answer_with_fewer_primitive_steps": 47,
+        "correct_prefix_early_answer": 14,
+        "exact_trace": 45
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s22.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "exact_trace": 37,
+        "answer_with_fewer_primitive_steps": 54,
+        "correct_prefix_early_answer": 12,
+        "answer_incorrect_or_invalid": 59
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen7b/macro-s22.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 95,
+        "correct_prefix_early_answer": 14
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s33.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 87,
+        "answer_with_fewer_primitive_steps": 8,
+        "correct_prefix_early_answer": 8,
+        "answer_incorrect_or_invalid": 9
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s33.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "exact_trace": 41,
+        "answer_with_fewer_primitive_steps": 54,
+        "correct_prefix_early_answer": 45,
+        "answer_incorrect_or_invalid": 55
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s33.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 92,
+        "answer_with_fewer_primitive_steps": 91,
+        "correct_prefix_early_answer": 83,
+        "exact_trace": 4
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s33.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 48
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s33.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 14
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/frozen-with-library.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 55,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/frozen-with-library.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 35,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/frozen-with-library.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 14,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/frozen-with-library.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 7,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/frozen-with-library.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 3,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s33.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 96,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s33.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "exact_trace": 85,
+        "answer_with_fewer_primitive_steps": 11,
+        "correct_prefix_early_answer": 8,
+        "answer_incorrect_or_invalid": 11
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s33.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "exact_trace": 70,
+        "answer_with_fewer_primitive_steps": 20,
+        "correct_prefix_early_answer": 4,
+        "answer_incorrect_or_invalid": 26
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s33.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 37,
+        "answer_with_fewer_primitive_steps": 37,
+        "correct_prefix_early_answer": 16,
+        "exact_trace": 59
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s33.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 57,
+        "answer_with_fewer_primitive_steps": 56,
+        "correct_prefix_early_answer": 29,
+        "exact_trace": 39
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s11.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 87,
+        "answer_with_fewer_primitive_steps": 9,
+        "correct_prefix_early_answer": 9,
+        "answer_incorrect_or_invalid": 9
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s11.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "exact_trace": 52,
+        "answer_with_fewer_primitive_steps": 40,
+        "correct_prefix_early_answer": 36,
+        "answer_incorrect_or_invalid": 44
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s11.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "exact_trace": 31,
+        "answer_with_fewer_primitive_steps": 62,
+        "correct_prefix_early_answer": 51,
+        "answer_incorrect_or_invalid": 65
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s11.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 81,
+        "answer_with_fewer_primitive_steps": 80,
+        "correct_prefix_early_answer": 50,
+        "exact_trace": 15
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s11.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 58
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s22.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 11,
+        "answer_with_fewer_primitive_steps": 3,
+        "correct_prefix_early_answer": 3,
+        "exact_trace": 85
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s22.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "exact_trace": 55,
+        "answer_with_fewer_primitive_steps": 29,
+        "correct_prefix_early_answer": 28,
+        "answer_incorrect_or_invalid": 37,
+        "different_trace_globally_equivalent": 4
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s22.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 88,
+        "answer_with_fewer_primitive_steps": 85,
+        "correct_prefix_early_answer": 65,
+        "exact_trace": 8
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s22.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 94,
+        "answer_with_fewer_primitive_steps": 94,
+        "correct_prefix_early_answer": 60,
+        "exact_trace": 2
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s22.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 96,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 31
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s22.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 88,
+        "answer_with_fewer_primitive_steps": 8,
+        "correct_prefix_early_answer": 8,
+        "answer_incorrect_or_invalid": 8
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s22.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "exact_trace": 69,
+        "answer_with_fewer_primitive_steps": 27,
+        "correct_prefix_early_answer": 23,
+        "answer_incorrect_or_invalid": 27
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s22.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "exact_trace": 66,
+        "answer_with_fewer_primitive_steps": 30,
+        "correct_prefix_early_answer": 12,
+        "answer_incorrect_or_invalid": 30
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s22.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 76,
+        "answer_with_fewer_primitive_steps": 76,
+        "correct_prefix_early_answer": 36,
+        "exact_trace": 20
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/macro-s22.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 64,
+        "answer_with_fewer_primitive_steps": 59,
+        "correct_prefix_early_answer": 32,
+        "exact_trace": 32
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s11.jsonl",
+      "split": "length3",
+      "counts": {
+        "n": 96,
+        "exact_trace": 81,
+        "answer_with_fewer_primitive_steps": 1,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 15
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s11.jsonl",
+      "split": "length4",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 90,
+        "answer_with_fewer_primitive_steps": 82,
+        "correct_prefix_early_answer": 51,
+        "exact_trace": 6
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s11.jsonl",
+      "split": "length5",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 42,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s11.jsonl",
+      "split": "length6",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 32,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "independent",
+      "source": "scale-study/extended/qwen32b/flat-s11.jsonl",
+      "split": "length8",
+      "counts": {
+        "n": 96,
+        "answer_incorrect_or_invalid": 95,
+        "answer_with_fewer_primitive_steps": 96,
+        "correct_prefix_early_answer": 6,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 384,
+        "answer_with_fewer_primitive_steps": 379,
+        "correct_prefix_early_answer": 280
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 48,
+        "answer_with_fewer_primitive_steps": 48,
+        "correct_prefix_early_answer": 39
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s11/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "answer_incorrect_or_invalid": 121,
+        "answer_with_fewer_primitive_steps": 23,
+        "correct_prefix_early_answer": 0,
+        "exact_trace": 5,
+        "different_trace_correct_only_on_this_input": 1,
+        "different_trace_globally_equivalent": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s11/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 379,
+        "answer_with_fewer_primitive_steps": 382,
+        "correct_prefix_early_answer": 6,
+        "different_trace_correct_only_on_this_input": 1,
+        "different_trace_globally_equivalent": 4
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s11/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 44,
+        "answer_with_fewer_primitive_steps": 46,
+        "correct_prefix_early_answer": 0,
+        "different_trace_correct_only_on_this_input": 2,
+        "correct_answer_without_valid_supporting_trace": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 320,
+        "answer_with_fewer_primitive_steps": 300,
+        "correct_prefix_early_answer": 11,
+        "exact_trace": 56,
+        "different_trace_correct_only_on_this_input": 3,
+        "different_trace_globally_equivalent": 5
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 31,
+        "answer_with_fewer_primitive_steps": 43,
+        "correct_prefix_early_answer": 1,
+        "different_trace_correct_only_on_this_input": 15,
+        "exact_trace": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s11/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 59,
+        "answer_with_fewer_primitive_steps": 18,
+        "correct_prefix_early_answer": 6,
+        "answer_incorrect_or_invalid": 68,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s11/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 24,
+        "answer_with_fewer_primitive_steps": 275,
+        "correct_prefix_early_answer": 79,
+        "answer_incorrect_or_invalid": 354,
+        "correct_answer_without_valid_supporting_trace": 2,
+        "different_trace_globally_equivalent": 3,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s11/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 40,
+        "answer_with_fewer_primitive_steps": 39,
+        "correct_prefix_early_answer": 3,
+        "different_trace_correct_only_on_this_input": 4,
+        "exact_trace": 4
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 384,
+        "answer_with_fewer_primitive_steps": 384,
+        "correct_prefix_early_answer": 299
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 47,
+        "answer_with_fewer_primitive_steps": 48,
+        "correct_prefix_early_answer": 40,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s22/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "answer_incorrect_or_invalid": 109,
+        "answer_with_fewer_primitive_steps": 16,
+        "correct_prefix_early_answer": 2,
+        "exact_trace": 15,
+        "different_trace_correct_only_on_this_input": 2,
+        "different_trace_globally_equivalent": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s22/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 376,
+        "answer_with_fewer_primitive_steps": 383,
+        "correct_prefix_early_answer": 23,
+        "different_trace_globally_equivalent": 8
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s22/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 46,
+        "answer_with_fewer_primitive_steps": 48,
+        "correct_prefix_early_answer": 0,
+        "different_trace_correct_only_on_this_input": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 339,
+        "answer_with_fewer_primitive_steps": 309,
+        "correct_prefix_early_answer": 26,
+        "exact_trace": 40,
+        "different_trace_correct_only_on_this_input": 1,
+        "different_trace_globally_equivalent": 4
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 32,
+        "answer_with_fewer_primitive_steps": 39,
+        "correct_prefix_early_answer": 3,
+        "exact_trace": 5,
+        "different_trace_correct_only_on_this_input": 11
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s22/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "answer_incorrect_or_invalid": 63,
+        "answer_with_fewer_primitive_steps": 46,
+        "correct_prefix_early_answer": 14,
+        "different_trace_globally_equivalent": 2,
+        "exact_trace": 61,
+        "different_trace_correct_only_on_this_input": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s22/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 33,
+        "answer_with_fewer_primitive_steps": 322,
+        "correct_prefix_early_answer": 71,
+        "answer_incorrect_or_invalid": 350,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s22/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 43,
+        "answer_with_fewer_primitive_steps": 43,
+        "correct_prefix_early_answer": 0,
+        "exact_trace": 5
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 383,
+        "answer_with_fewer_primitive_steps": 378,
+        "correct_prefix_early_answer": 277,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 48,
+        "answer_with_fewer_primitive_steps": 48,
+        "correct_prefix_early_answer": 38
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s33/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "answer_incorrect_or_invalid": 99,
+        "answer_with_fewer_primitive_steps": 11,
+        "correct_prefix_early_answer": 2,
+        "exact_trace": 27,
+        "different_trace_correct_only_on_this_input": 1,
+        "different_trace_globally_equivalent": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s33/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 384,
+        "answer_with_fewer_primitive_steps": 379,
+        "correct_prefix_early_answer": 41
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/flat-original-s33/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 43,
+        "answer_with_fewer_primitive_steps": 48,
+        "correct_prefix_early_answer": 3,
+        "different_trace_correct_only_on_this_input": 5
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 335,
+        "answer_with_fewer_primitive_steps": 313,
+        "correct_prefix_early_answer": 11,
+        "exact_trace": 46,
+        "different_trace_correct_only_on_this_input": 1,
+        "different_trace_globally_equivalent": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 31,
+        "answer_with_fewer_primitive_steps": 47,
+        "correct_prefix_early_answer": 1,
+        "different_trace_correct_only_on_this_input": 13,
+        "exact_trace": 1,
+        "different_trace_globally_equivalent": 3
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s33/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 86,
+        "answer_with_fewer_primitive_steps": 17,
+        "correct_prefix_early_answer": 7,
+        "answer_incorrect_or_invalid": 41,
+        "correct_answer_without_valid_supporting_trace": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s33/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 24,
+        "answer_with_fewer_primitive_steps": 313,
+        "correct_prefix_early_answer": 73,
+        "answer_incorrect_or_invalid": 354,
+        "correct_answer_without_valid_supporting_trace": 6
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen3b/runs/macro-original-s33/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "different_trace_correct_only_on_this_input": 4,
+        "answer_with_fewer_primitive_steps": 42,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 40,
+        "exact_trace": 4
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 126,
+        "answer_with_fewer_primitive_steps": 130,
+        "correct_prefix_early_answer": 18,
+        "answer_incorrect_or_invalid": 258
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 20,
+        "answer_with_fewer_primitive_steps": 11,
+        "correct_prefix_early_answer": 1,
+        "answer_incorrect_or_invalid": 27,
+        "correct_answer_without_valid_supporting_trace": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s11/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 124,
+        "answer_with_fewer_primitive_steps": 2,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 4
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s11/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 334,
+        "answer_with_fewer_primitive_steps": 20,
+        "correct_prefix_early_answer": 2,
+        "answer_incorrect_or_invalid": 49,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s11/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 40,
+        "answer_with_fewer_primitive_steps": 3,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 8
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 227,
+        "answer_with_fewer_primitive_steps": 126,
+        "correct_prefix_early_answer": 17,
+        "answer_incorrect_or_invalid": 152,
+        "different_trace_correct_only_on_this_input": 1,
+        "different_trace_globally_equivalent": 4
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 31,
+        "answer_with_fewer_primitive_steps": 10,
+        "correct_prefix_early_answer": 2,
+        "different_trace_correct_only_on_this_input": 2,
+        "answer_incorrect_or_invalid": 15
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s11/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 112,
+        "answer_with_fewer_primitive_steps": 2,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 15,
+        "correct_answer_without_valid_supporting_trace": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s11/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 275,
+        "answer_with_fewer_primitive_steps": 30,
+        "correct_prefix_early_answer": 10,
+        "answer_incorrect_or_invalid": 103,
+        "correct_answer_without_valid_supporting_trace": 3,
+        "different_trace_correct_only_on_this_input": 3
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s11/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 39,
+        "answer_with_fewer_primitive_steps": 2,
+        "correct_prefix_early_answer": 0,
+        "different_trace_correct_only_on_this_input": 3,
+        "answer_incorrect_or_invalid": 6
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 288,
+        "answer_with_fewer_primitive_steps": 203,
+        "correct_prefix_early_answer": 54,
+        "exact_trace": 94,
+        "different_trace_correct_only_on_this_input": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 14,
+        "answer_with_fewer_primitive_steps": 21,
+        "correct_prefix_early_answer": 4,
+        "answer_incorrect_or_invalid": 25,
+        "different_trace_correct_only_on_this_input": 7,
+        "different_trace_globally_equivalent": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s22/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 123,
+        "answer_with_fewer_primitive_steps": 2,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 5
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s22/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 318,
+        "answer_with_fewer_primitive_steps": 35,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 65,
+        "different_trace_globally_equivalent": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s22/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 42,
+        "answer_with_fewer_primitive_steps": 6,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 6
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 196,
+        "answer_with_fewer_primitive_steps": 161,
+        "correct_prefix_early_answer": 17,
+        "answer_incorrect_or_invalid": 180,
+        "different_trace_correct_only_on_this_input": 3,
+        "different_trace_globally_equivalent": 5
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "different_trace_correct_only_on_this_input": 9,
+        "answer_with_fewer_primitive_steps": 27,
+        "correct_prefix_early_answer": 0,
+        "exact_trace": 19,
+        "answer_incorrect_or_invalid": 19,
+        "different_trace_globally_equivalent": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s22/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 111,
+        "answer_with_fewer_primitive_steps": 2,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 15,
+        "correct_answer_without_valid_supporting_trace": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s22/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 291,
+        "answer_with_fewer_primitive_steps": 39,
+        "correct_prefix_early_answer": 11,
+        "answer_incorrect_or_invalid": 91,
+        "different_trace_correct_only_on_this_input": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s22/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 38,
+        "answer_with_fewer_primitive_steps": 3,
+        "correct_prefix_early_answer": 0,
+        "different_trace_correct_only_on_this_input": 4,
+        "answer_incorrect_or_invalid": 6
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 126,
+        "answer_with_fewer_primitive_steps": 176,
+        "correct_prefix_early_answer": 51,
+        "answer_incorrect_or_invalid": 256,
+        "different_trace_correct_only_on_this_input": 1,
+        "different_trace_globally_equivalent": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 16,
+        "answer_with_fewer_primitive_steps": 21,
+        "correct_prefix_early_answer": 9,
+        "answer_incorrect_or_invalid": 22,
+        "different_trace_correct_only_on_this_input": 10
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s33/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 127,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s33/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 352,
+        "answer_with_fewer_primitive_steps": 14,
+        "correct_prefix_early_answer": 5,
+        "answer_incorrect_or_invalid": 30,
+        "different_trace_correct_only_on_this_input": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/flat-original-s33/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 47,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 195,
+        "answer_with_fewer_primitive_steps": 172,
+        "correct_prefix_early_answer": 26,
+        "answer_incorrect_or_invalid": 180,
+        "different_trace_correct_only_on_this_input": 4,
+        "different_trace_globally_equivalent": 5
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 21,
+        "answer_with_fewer_primitive_steps": 26,
+        "correct_prefix_early_answer": 4,
+        "different_trace_correct_only_on_this_input": 6,
+        "answer_incorrect_or_invalid": 19,
+        "correct_answer_without_valid_supporting_trace": 1,
+        "different_trace_globally_equivalent": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s33/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 127,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s33/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 338,
+        "answer_with_fewer_primitive_steps": 32,
+        "correct_prefix_early_answer": 7,
+        "answer_incorrect_or_invalid": 46
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b/runs/macro-original-s33/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 40,
+        "answer_with_fewer_primitive_steps": 3,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 7,
+        "correct_answer_without_valid_supporting_trace": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 289,
+        "answer_with_fewer_primitive_steps": 279,
+        "correct_prefix_early_answer": 255,
+        "exact_trace": 94,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 13,
+        "answer_with_fewer_primitive_steps": 35,
+        "correct_prefix_early_answer": 33,
+        "answer_incorrect_or_invalid": 34,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s11/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 127,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s11/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 226,
+        "answer_with_fewer_primitive_steps": 218,
+        "correct_prefix_early_answer": 207,
+        "exact_trace": 158
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s11/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 34,
+        "answer_with_fewer_primitive_steps": 13,
+        "correct_prefix_early_answer": 13,
+        "answer_incorrect_or_invalid": 13,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 215,
+        "answer_with_fewer_primitive_steps": 165,
+        "correct_prefix_early_answer": 85,
+        "answer_incorrect_or_invalid": 166,
+        "different_trace_correct_only_on_this_input": 1,
+        "different_trace_globally_equivalent": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 23,
+        "answer_with_fewer_primitive_steps": 25,
+        "correct_prefix_early_answer": 13,
+        "answer_incorrect_or_invalid": 23,
+        "different_trace_correct_only_on_this_input": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s11/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 120,
+        "answer_with_fewer_primitive_steps": 8,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 8
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s11/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 173,
+        "answer_with_fewer_primitive_steps": 211,
+        "correct_prefix_early_answer": 107,
+        "answer_incorrect_or_invalid": 206,
+        "different_trace_globally_equivalent": 5
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s11/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 33,
+        "answer_with_fewer_primitive_steps": 15,
+        "correct_prefix_early_answer": 4,
+        "answer_incorrect_or_invalid": 11,
+        "different_trace_correct_only_on_this_input": 4
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 148,
+        "answer_with_fewer_primitive_steps": 212,
+        "correct_prefix_early_answer": 124,
+        "answer_incorrect_or_invalid": 236
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 20,
+        "answer_with_fewer_primitive_steps": 28,
+        "correct_prefix_early_answer": 24,
+        "answer_incorrect_or_invalid": 27,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s22/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 115,
+        "answer_with_fewer_primitive_steps": 2,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 12,
+        "correct_answer_without_valid_supporting_trace": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s22/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 305,
+        "answer_with_fewer_primitive_steps": 37,
+        "correct_prefix_early_answer": 20,
+        "answer_incorrect_or_invalid": 78,
+        "different_trace_globally_equivalent": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s22/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 41,
+        "answer_with_fewer_primitive_steps": 3,
+        "correct_prefix_early_answer": 3,
+        "answer_incorrect_or_invalid": 7
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s22/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s22/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 282,
+        "answer_with_fewer_primitive_steps": 100,
+        "correct_prefix_early_answer": 54,
+        "answer_incorrect_or_invalid": 100,
+        "different_trace_correct_only_on_this_input": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s22/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 37,
+        "answer_with_fewer_primitive_steps": 11,
+        "correct_prefix_early_answer": 7,
+        "answer_incorrect_or_invalid": 9,
+        "different_trace_correct_only_on_this_input": 2
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s22/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 123,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 5
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s22/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 196,
+        "answer_with_fewer_primitive_steps": 150,
+        "correct_prefix_early_answer": 86,
+        "answer_incorrect_or_invalid": 188
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s22/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 22,
+        "answer_with_fewer_primitive_steps": 10,
+        "correct_prefix_early_answer": 4,
+        "answer_incorrect_or_invalid": 25,
+        "correct_answer_without_valid_supporting_trace": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 156,
+        "answer_with_fewer_primitive_steps": 205,
+        "correct_prefix_early_answer": 139,
+        "answer_incorrect_or_invalid": 228
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 27,
+        "answer_with_fewer_primitive_steps": 14,
+        "correct_prefix_early_answer": 9,
+        "answer_incorrect_or_invalid": 17,
+        "different_trace_correct_only_on_this_input": 4
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s33/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 111,
+        "answer_with_fewer_primitive_steps": 15,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 17
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s33/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 198,
+        "answer_with_fewer_primitive_steps": 179,
+        "correct_prefix_early_answer": 95,
+        "answer_incorrect_or_invalid": 186
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/flat-original-s33/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 15,
+        "answer_with_fewer_primitive_steps": 14,
+        "correct_prefix_early_answer": 4,
+        "exact_trace": 32,
+        "different_trace_correct_only_on_this_input": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s33/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s33/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 249,
+        "answer_with_fewer_primitive_steps": 131,
+        "correct_prefix_early_answer": 73,
+        "answer_incorrect_or_invalid": 135
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s33/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 30,
+        "answer_with_fewer_primitive_steps": 18,
+        "correct_prefix_early_answer": 5,
+        "answer_incorrect_or_invalid": 14,
+        "different_trace_correct_only_on_this_input": 4
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s33/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "exact_trace": 125,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 3
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s33/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "exact_trace": 306,
+        "answer_with_fewer_primitive_steps": 45,
+        "correct_prefix_early_answer": 13,
+        "answer_incorrect_or_invalid": 77,
+        "correct_answer_without_valid_supporting_trace": 1
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/macro-original-s33/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "exact_trace": 34,
+        "answer_with_fewer_primitive_steps": 2,
+        "correct_prefix_early_answer": 0,
+        "answer_incorrect_or_invalid": 14
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/frozen-original-s11/predictions.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "answer_incorrect_or_invalid": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/frozen-original-s11/predictions.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 384,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/frozen-original-s11/predictions.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 48,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/frozen-original-s11/predictions-with-library.jsonl",
+      "split": "iid",
+      "counts": {
+        "n": 128,
+        "answer_incorrect_or_invalid": 128,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/frozen-original-s11/predictions-with-library.jsonl",
+      "split": "ood",
+      "counts": {
+        "n": 384,
+        "answer_incorrect_or_invalid": 384,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    },
+    {
+      "family": "supplement",
+      "source": "scale-study/supplement/qwen32b-instruct/runs/frozen-original-s11/predictions-with-library.jsonl",
+      "split": "pressure",
+      "counts": {
+        "n": 48,
+        "answer_incorrect_or_invalid": 48,
+        "answer_with_fewer_primitive_steps": 0,
+        "correct_prefix_early_answer": 0
+      }
+    }
+  ],
+  "source_sha256": {
+    "runs/flat-original-s11/predictions.jsonl": "5654372d6848aa58868086f13db776c4bf3161655aaf20778f90db8216442c4a",
+    "runs/macro-original-s11/predictions.jsonl": "6e70ebe69c6654baaba9cb554748b820239c1f07c9b11c207a36162b675d46cc",
+    "runs/flat-original-s22/predictions.jsonl": "fbcc050f5a7082bc85f1e05491f7f75da285ee763c00b9fa84594715caada2f7",
+    "runs/macro-original-s22/predictions.jsonl": "4cca7c720bfe8ddad8c2c8a3b0a26e35a65a7a65818442f2f7d9d86ab90b44e5",
+    "runs/flat-original-s33/predictions.jsonl": "def8a480fc06567a7a81b4a4fe426c80b53fe67526b37bf2a5b8c8b8699c2099",
+    "runs/macro-original-s33/predictions.jsonl": "80dfbefd0921511843d202c59276d96d3f79a19bb8e118749ee874f16d8df468",
+    "rsi-study/replications/qwen3b/runs/flat-original-s11/predictions.jsonl": "1bf5cc49bd7ba5204125ed6b2a11f48e32547ea345a3159743c5c3c7f74ccdc3",
+    "rsi-study/replications/qwen3b/runs/macro-original-s11/predictions.jsonl": "0444aac73ddae5271a8cd9943336673891102a8eeead7f58a6e2b9663411a1a9",
+    "rsi-study/replications/qwen3b/runs/flat-original-s22/predictions.jsonl": "4c779e4484559f5ff85968b5e8a098d64561f2bdaf7c27fc2c046ea93aa768b2",
+    "rsi-study/replications/qwen3b/runs/macro-original-s22/predictions.jsonl": "d8bbae177142b0639cbbb674182b15063bbe0117d7f5312cf826c85aab967f07",
+    "rsi-study/replications/qwen3b/runs/flat-original-s33/predictions.jsonl": "518832cab3b856c2271e284b1641bba5bec9b73287b3450131cec994b8d6e8a2",
+    "rsi-study/replications/qwen3b/runs/macro-original-s33/predictions.jsonl": "ea091dd32a53f59dcc62a6a361d5ad3239ccff7cea2f0282939ca24f0c9bcbe2",
+    "scale-study/qwen7b/runs/flat-original-s11/predictions.jsonl": "07b57532b5484d83ba80489da3109b09ffa5e633a7c5e5cb1756f2af1cefe8a1",
+    "scale-study/qwen7b/runs/macro-original-s11/predictions.jsonl": "8ffc0096b451b0594766e224ec63cd7f04315e287c853c1f5384db8fded660a9",
+    "scale-study/qwen7b/runs/flat-original-s22/predictions.jsonl": "48f8cf2c00c1866c0e030fd2c21b8ef62a846bc3387fb35061e9af5106600406",
+    "scale-study/qwen7b/runs/macro-original-s22/predictions.jsonl": "93d1fc0382d8c7e3ecee580f6205acbf01a2325669e44e4c94b4c0cb8adc9feb",
+    "scale-study/qwen7b/runs/flat-original-s33/predictions.jsonl": "abd2e8f047fa7b8554e5f437058700e32b226eecbeefa1f1ea1dadce45ea2c30",
+    "scale-study/qwen7b/runs/macro-original-s33/predictions.jsonl": "2694fa16b3ec98797d3d060e61e1df8ecae796db897c21c2b1292c8c816e918a",
+    "scale-study/qwen32b/runs/flat-original-s11/predictions.jsonl": "fd57a0158e7d1f9ef2369cd89cc050babd07ca15726b96f5caf3dd6a0fed26a1",
+    "scale-study/qwen32b/runs/macro-original-s11/predictions.jsonl": "e9908cd4e60af13d0f26013cbe7167f9c4f0caad4621ae3e8df11847c04055db",
+    "scale-study/qwen32b/runs/flat-original-s22/predictions.jsonl": "fcf7deeeed0fe6cad88dc0d74a6398bcd120c0668653acbdcea7d288a0bd2545",
+    "scale-study/qwen32b/runs/macro-original-s22/predictions.jsonl": "0d8a28cfa878d4f996871f0914624848f8830cecad2a85c5c3355d8569a2247b",
+    "scale-study/qwen32b/runs/flat-original-s33/predictions.jsonl": "de2943906ced0d5a7e5f8c1632d6e6e8f867a4b6460c78a1f8449b71c544ecd6",
+    "scale-study/qwen32b/runs/macro-original-s33/predictions.jsonl": "70d71cd6b5784c35cc7aaaeb4c18e8cfeb8fc9b423458d150a546d3ce77abf60",
+    "scale-study/extended/qwen1.5b/flat-s33.jsonl": "18db42d86be635e6d07de022ec384dff4b9fb4bd7f8cf253c583e71ad095b861",
+    "scale-study/extended/qwen1.5b/flat-s22.jsonl": "98f1414eedffb7022f362bb1115ac23734c89e6f4d9dc9508953a269f5aaf0b6",
+    "scale-study/extended/qwen1.5b/macro-s22.jsonl": "c0a0dd75a945159f909d0f469b013d3fed579e52201119d4514187f28bf608c0",
+    "scale-study/extended/qwen1.5b/macro-s11.jsonl": "dba25c99bb50c1808d13dd52b70308ee622de9fe0986a7d05d8edbdc5590fef8",
+    "scale-study/extended/qwen1.5b/flat-s11.jsonl": "c3901acc9a6adc044a4c66d15271cdee57598e75f71529ccee9ce5c9d6aed785",
+    "scale-study/extended/qwen1.5b/macro-s33.jsonl": "ceb5e58050e8cef433a4460de467b16ccf5170fc9f1be8da90fcf784440431f7",
+    "scale-study/extended/qwen1.5b/frozen-with-library.jsonl": "b4fb7f5d20127f7b63e6c78030148c935aa3798a003dc12210e9bc19fc906148",
+    "scale-study/extended/qwen3b/flat-s33.jsonl": "8ebeea771b977ac253b626487b2cb7772a264db4c0e924c86374ae4f026d74e2",
+    "scale-study/extended/qwen3b/flat-s22.jsonl": "f278c4ae1d13e604438221023c2a59f35cd7d73dd82c42836ef0ef825c93ad78",
+    "scale-study/extended/qwen3b/frozen-with-library.jsonl": "3224ab691ccfe7156bff8403ce688086fc20f00b9eca2444907bfa65af01b4f6",
+    "scale-study/extended/qwen3b/macro-s11.jsonl": "2510298e795295e212b191d7c799dfa0ed0b8b268d391bd882b180b3da10e780",
+    "scale-study/extended/qwen3b/macro-s33.jsonl": "b28de0060fec1c98adfa70ab06bb75746a4ecab8a515454caae400f28bbc6d86",
+    "scale-study/extended/qwen3b/flat-s11.jsonl": "05acfef1e8420e1123e53b30a7415cd555edacd691d7699ac86d0beb7b4eea70",
+    "scale-study/extended/qwen3b/macro-s22.jsonl": "de315b382778eba8e61e3ddf0f5dc6cdacaee854fe8f23220dfdde6ebb8a2bca",
+    "scale-study/extended/qwen7b/flat-s11.jsonl": "ac681f980a99d4ae319b85a53545adc0a1aea03e979a5ac18014f5c07ea35ea3",
+    "scale-study/extended/qwen7b/flat-s22.jsonl": "3ccc0e86e278c5f2f07b1fa17eb023b63cb79b4a2b6879a2e211494c2cf01f11",
+    "scale-study/extended/qwen7b/frozen-with-library.jsonl": "5d2849c61942c010d0d1e7e01dc5bb330ddc3ba4dea79cbb9c0ebbe70b5313ac",
+    "scale-study/extended/qwen7b/macro-s33.jsonl": "27ac7ff6657422ea964ab0de5e7fb79afe066278199b0b1de9d59ff2713ccedf",
+    "scale-study/extended/qwen7b/macro-s11.jsonl": "d64e72f4ec259e9d8a7210240a8cbaf1f3bf99f71b4fa806f7192ab0ca9fc69e",
+    "scale-study/extended/qwen7b/flat-s33.jsonl": "5faf9edd3f735610ba345bb3c9fe6d33e390a9b4cf306bb71a13810914fc0a0d",
+    "scale-study/extended/qwen7b/macro-s22.jsonl": "cf1800c51cac5de2487ba46119cd64bdabd73f3e8c0e9339fed494d47851c9a9",
+    "scale-study/extended/qwen32b/flat-s33.jsonl": "6021c155f50de8d819cb45a7d0088d228fde1ab4fbe78df3ba6191f00b5db0da",
+    "scale-study/extended/qwen32b/frozen-with-library.jsonl": "5683347bb8f18eb455e2da76ba1f30147c81586eb0b938835aedca403488a81f",
+    "scale-study/extended/qwen32b/macro-s33.jsonl": "4a04b25954a85741b86006374e775b27c8c106f5b68fd01fc390e72b33dd6555",
+    "scale-study/extended/qwen32b/macro-s11.jsonl": "e8586ebde3e3fc1a4b6702671eeda47450d8aad91e00f6dfd45563a04ec48415",
+    "scale-study/extended/qwen32b/flat-s22.jsonl": "f336db833291051d92acb4115bedd955a0fcb716c02c374fa735df9bc544c27a",
+    "scale-study/extended/qwen32b/macro-s22.jsonl": "70939505a92ad6394039cee8198c5a82c5a47f240d49baca6f3a76a1722b3e2a",
+    "scale-study/extended/qwen32b/flat-s11.jsonl": "ba11e1f39e4554c9d3c1bee4bc699dcce8eaa1d0d8efe75a2c2693e9bd30903d",
+    "scale-study/supplement/qwen3b/runs/flat-original-s11/predictions.jsonl": "53c0577fd0ba1d86d8d4d9fc6dd7679b2ff8543c75243821641ffed2566cce0b",
+    "scale-study/supplement/qwen3b/runs/flat-original-s11/predictions-with-library.jsonl": "8c89843ea5e86ffc7e6c500024a3fed7c22b2f7936d687b0d6af7ad608735c17",
+    "scale-study/supplement/qwen3b/runs/macro-original-s11/predictions.jsonl": "66a3430dcbc863b59fd0b630b33f5d53db894c295c66a35b7e7c67769b080225",
+    "scale-study/supplement/qwen3b/runs/macro-original-s11/predictions-with-library.jsonl": "b091a999a8fd786d0cdadfcefa40041d7069e1b4249ce8acbf752c04ceabf1d3",
+    "scale-study/supplement/qwen3b/runs/flat-original-s22/predictions.jsonl": "c55a568c671337524058d894ceff32e7f1a7933a3b6903851b4645964ee5e4f7",
+    "scale-study/supplement/qwen3b/runs/flat-original-s22/predictions-with-library.jsonl": "5245c59286acfd798626e002b4d31645d86093ce7e81c956e1354ee78a0cbbc1",
+    "scale-study/supplement/qwen3b/runs/macro-original-s22/predictions.jsonl": "7fceafc64fad128bbd59d4032c6d543b7c6c052910513edd7ef4ad6d582f10c4",
+    "scale-study/supplement/qwen3b/runs/macro-original-s22/predictions-with-library.jsonl": "883297530c3b66bad15f7e42890ecf00a9d5dc51cdbf10b35a8f4dccdd7968a4",
+    "scale-study/supplement/qwen3b/runs/flat-original-s33/predictions.jsonl": "5d14912899218c30d57bbd0be44c84f2f771e0f00554816fd6395c117ce8ed3e",
+    "scale-study/supplement/qwen3b/runs/flat-original-s33/predictions-with-library.jsonl": "7843fec3074a051d3584f0cad56f7c87c09326a5615d7790c225248aa8e1eadf",
+    "scale-study/supplement/qwen3b/runs/macro-original-s33/predictions.jsonl": "7d8095713463f4f90db6525e8119ea976e1c9c932ebb3e520a16f0b071552abd",
+    "scale-study/supplement/qwen3b/runs/macro-original-s33/predictions-with-library.jsonl": "876ad2d43daa46162ff2e33390fc709ef0f1e0cb9e111da3345c47f6ebbda517",
+    "scale-study/supplement/qwen32b/runs/flat-original-s11/predictions.jsonl": "26d2b565a09384969243f6465ea5d127b9d5cad456f786fb038004bb10322840",
+    "scale-study/supplement/qwen32b/runs/flat-original-s11/predictions-with-library.jsonl": "891bcc053ea4c771970de469fa803c53c9ead89d8fede7802e5e73d784af2d04",
+    "scale-study/supplement/qwen32b/runs/macro-original-s11/predictions.jsonl": "55e1e737792e9f209667a707422af53c8f63354e4e10540c7b609d22fc6aca5e",
+    "scale-study/supplement/qwen32b/runs/macro-original-s11/predictions-with-library.jsonl": "d6a90d2f60491758fab17e64142f0889e2c3f514fb0a585d731c01cf4552b1fd",
+    "scale-study/supplement/qwen32b/runs/flat-original-s22/predictions.jsonl": "9a1699d3f46995c981454f9f5241b666a6999b08f0ebf149a80bea0dca104d5c",
+    "scale-study/supplement/qwen32b/runs/flat-original-s22/predictions-with-library.jsonl": "cef5256f35a9df609fede327b74091f7de986cabd3003c8df1587acb7f4b06ec",
+    "scale-study/supplement/qwen32b/runs/macro-original-s22/predictions.jsonl": "aaa62fad9bcfb65d74e0f5f328e5a17320b8eb96236f2853e44475f631ddecfa",
+    "scale-study/supplement/qwen32b/runs/macro-original-s22/predictions-with-library.jsonl": "2b6b2fb160669d4d313094dd7e945e9e71f2563045fcf389750206338f0fd2af",
+    "scale-study/supplement/qwen32b/runs/flat-original-s33/predictions.jsonl": "904b2ca84e097a07f7269c5f71df4f6ae849c6a496aea0325d57dc832219827c",
+    "scale-study/supplement/qwen32b/runs/flat-original-s33/predictions-with-library.jsonl": "163338489e81c53aee262adf7927c2e0cac657ae1992d2a040e4b5c63bf25d45",
+    "scale-study/supplement/qwen32b/runs/macro-original-s33/predictions.jsonl": "743179cc7146ae7b7c6048d570592a3e56bd78baa4f3a5ed523e35f433d2ef6b",
+    "scale-study/supplement/qwen32b/runs/macro-original-s33/predictions-with-library.jsonl": "2d7374c6d64723cdaf8f209868da6c6c37d1824730c12f4194b614f4818e33f8",
+    "scale-study/supplement/qwen32b-instruct/runs/flat-original-s11/predictions.jsonl": "71b651b8579e99f6ce08cdc3d230d84cb747a9274367e58e78dca95b1ceca55c",
+    "scale-study/supplement/qwen32b-instruct/runs/flat-original-s11/predictions-with-library.jsonl": "8edb4a2f1fa5b4e3fa4f3c4dc5cd49256d274ac9e3956afa20d72849ac659607",
+    "scale-study/supplement/qwen32b-instruct/runs/macro-original-s11/predictions.jsonl": "a93f491047ccdb90324f0f8cbab24809223fa094f2a6441af375c53811b013dc",
+    "scale-study/supplement/qwen32b-instruct/runs/macro-original-s11/predictions-with-library.jsonl": "262e36a50734e9f34303116a7752f341499847945418db4d9734e6c8599de10a",
+    "scale-study/supplement/qwen32b-instruct/runs/flat-original-s22/predictions.jsonl": "a6d9c7ae7a2ae9aae4ccf4116aafedddaa23e6538cec2399f24bec953782559a",
+    "scale-study/supplement/qwen32b-instruct/runs/flat-original-s22/predictions-with-library.jsonl": "4f80535160c614d9b8e0966cb59354d759eae2ed24c6a3af76b24c03c7eabcba",
+    "scale-study/supplement/qwen32b-instruct/runs/macro-original-s22/predictions.jsonl": "95ec43d4a9dea1b394cac67418e7d5ac352c3100a2b46e63270fefa5e9786afc",
+    "scale-study/supplement/qwen32b-instruct/runs/macro-original-s22/predictions-with-library.jsonl": "f0651fdf896593f582f6bca68d6f685b9580375341c980527a765d2674a04b98",
+    "scale-study/supplement/qwen32b-instruct/runs/flat-original-s33/predictions.jsonl": "a85593d52c8225c5e27c5bb8b6fc19fc376050990a992c2414b8c3699448e4eb",
+    "scale-study/supplement/qwen32b-instruct/runs/flat-original-s33/predictions-with-library.jsonl": "14edf18efed1e70f5a8c3aefc49a09c41c5c0306dfabd595aeee11b09fafdbf7",
+    "scale-study/supplement/qwen32b-instruct/runs/macro-original-s33/predictions.jsonl": "c95e735432b31b7ea926b4bce1b9648365afd4c279ba817ccd153def944ba4c2",
+    "scale-study/supplement/qwen32b-instruct/runs/macro-original-s33/predictions-with-library.jsonl": "6b262ad1ce9ba622a1b9ce35822b1fb04375df2a38ba47443e22509b630b64e0",
+    "scale-study/supplement/qwen32b-instruct/runs/frozen-original-s11/predictions.jsonl": "799058cec7d1ce41ad23a55b9c3e582fc10226c340ae2552435423e103cc3b9d",
+    "scale-study/supplement/qwen32b-instruct/runs/frozen-original-s11/predictions-with-library.jsonl": "37781153ce94e434dc137e0082aca8a30223b6b45c14e13ad8a0fb19b4209778"
+  },
+  "parameter_counts": [
+    {
+      "model": "qwen1.5b",
+      "trainable": 18464768,
+      "total_including_adapters": 1562179072,
+      "frozen_base": 1543714304,
+      "trainable_fraction": 0.011819879251333359
+    },
+    {
+      "model": "qwen3b",
+      "trainable": 29933568,
+      "total_including_adapters": 3115872256,
+      "frozen_base": 3085938688,
+      "trainable_fraction": 0.009606802057548793
+    },
+    {
+      "model": "qwen7b",
+      "trainable": 40370176,
+      "total_including_adapters": 7655986688,
+      "frozen_base": 7615616512,
+      "trainable_fraction": 0.005273020662807088
+    },
+    {
+      "model": "qwen32b",
+      "trainable": 134217728,
+      "total_including_adapters": 32898094080,
+      "frozen_base": 32763876352,
+      "trainable_fraction": 0.004079802546421559
+    }
+  ],
+  "notes": "Post-hoc descriptive audit. Categories partition all rows. Affine signatures prove equivalence on all 10^4 inputs. Fewer primitive steps plus an Answer is broader than the conservative correct-prefix early-answer subset and can include parsing/format failures; neither alone identifies causal mechanism."
+}

@@ -1,0 +1,244 @@
+{
+  "completed_runs": 26,
+  "runs": [
+    "flat-original-s33",
+    "shuffled-original-s11",
+    "macro-renamed-s22",
+    "macro-original-s33-tagged-stable",
+    "natural-original-s33",
+    "natural-original-s22",
+    "macro-original-s11",
+    "shuffled-original-s22",
+    "macro-original-s11-tagged-call",
+    "macro-original-s22-tagged-stable",
+    "macro-renamed-s11",
+    "macro-semantic-s33",
+    "shuffled-original-s33",
+    "macro-original-s33-tagged-call",
+    "frozen-original-s11-no-library",
+    "natural-original-s11",
+    "flat-original-s22",
+    "macro-original-s22",
+    "macro-original-s22-tagged-call",
+    "macro-semantic-s22",
+    "macro-renamed-s33",
+    "frozen-original-s11-with-library",
+    "macro-original-s11-tagged-stable",
+    "macro-semantic-s11",
+    "flat-original-s11",
+    "macro-original-s33"
+  ],
+  "primary_comparisons": {
+    "macro-vs-flat": {
+      "seed_differences": [
+        0.3046875,
+        0.3776041666666667,
+        0.20833333333333334
+      ],
+      "mean_difference": 0.29687500000000006,
+      "seed_t_interval_95": [
+        0.08595824752326159,
+        0.5077917524767386
+      ],
+      "descriptive_ast_bootstrap_95": [
+        0.22133246527777778,
+        0.37152777777777773
+      ],
+      "n_seeds": 3,
+      "passes_screen": true,
+      "warning": "n=3; AST interval conditional on trained checkpoints; zero-variance t interval omitted."
+    },
+    "shuffled-vs-flat": {
+      "seed_differences": [
+        0.0078125,
+        0.010416666666666666,
+        0.0
+      ],
+      "mean_difference": 0.006076388888888888,
+      "seed_t_interval_95": [
+        -0.007390134581106371,
+        0.019542912358884147
+      ],
+      "descriptive_ast_bootstrap_95": [
+        -0.0026041666666666665,
+        0.020833333333333332
+      ],
+      "n_seeds": 3,
+      "passes_screen": false,
+      "warning": "n=3; AST interval conditional on trained checkpoints; zero-variance t interval omitted."
+    },
+    "natural-vs-flat": {
+      "seed_differences": [
+        -0.0026041666666666665,
+        0.0,
+        0.0026041666666666665
+      ],
+      "mean_difference": 0.0,
+      "seed_t_interval_95": [
+        -0.00646910862426965,
+        0.00646910862426965
+      ],
+      "descriptive_ast_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "n_seeds": 3,
+      "passes_screen": false,
+      "warning": "n=3; AST interval conditional on trained checkpoints; zero-variance t interval omitted."
+    }
+  },
+  "semantic_interventions": {
+    "macro-semantic-s33": {
+      "changed_targets": 550,
+      "new_semantics_accuracy": 0.5927272727272728,
+      "old_semantics_match": 0.0
+    },
+    "macro-semantic-s22": {
+      "changed_targets": 550,
+      "new_semantics_accuracy": 0.4509090909090909,
+      "old_semantics_match": 0.0
+    },
+    "macro-semantic-s11": {
+      "changed_targets": 550,
+      "new_semantics_accuracy": 0.7,
+      "old_semantics_match": 0.0
+    }
+  },
+  "name_interventions": {
+    "iid": {
+      "paired_seed_differences": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean": 0.0
+    },
+    "ood": {
+      "paired_seed_differences": [
+        0.0026041666666666665,
+        0.06510416666666667,
+        0.3072916666666667
+      ],
+      "mean": 0.125
+    },
+    "pressure": {
+      "paired_seed_differences": [
+        0.125,
+        0.16666666666666666,
+        0.5
+      ],
+      "mean": 0.2638888888888889
+    }
+  },
+  "ood_failure_categories": {
+    "flat-original-s33": {
+      "correct_prefix_but_stopped_early": 304,
+      "wrong_or_extra_primitive_sequence": 80
+    },
+    "shuffled-original-s11": {
+      "correct_prefix_but_stopped_early": 205,
+      "wrong_or_extra_primitive_sequence": 175
+    },
+    "macro-renamed-s22": {
+      "correct_prefix_but_stopped_early": 112,
+      "wrong_or_extra_primitive_sequence": 102
+    },
+    "macro-original-s33-tagged-stable": {
+      "correct_prefix_but_stopped_early": 285,
+      "wrong_or_extra_primitive_sequence": 69,
+      "missing_final_answer": 1
+    },
+    "natural-original-s33": {
+      "correct_prefix_but_stopped_early": 346,
+      "wrong_or_extra_primitive_sequence": 37
+    },
+    "natural-original-s22": {
+      "correct_prefix_but_stopped_early": 373,
+      "wrong_or_extra_primitive_sequence": 11
+    },
+    "macro-original-s11": {
+      "correct_prefix_but_stopped_early": 149,
+      "wrong_or_extra_primitive_sequence": 117
+    },
+    "shuffled-original-s22": {
+      "correct_prefix_but_stopped_early": 178,
+      "wrong_or_extra_primitive_sequence": 202
+    },
+    "macro-original-s11-tagged-call": {
+      "correct_prefix_but_stopped_early": 175,
+      "wrong_or_extra_primitive_sequence": 166
+    },
+    "macro-original-s22-tagged-stable": {
+      "correct_prefix_but_stopped_early": 66,
+      "wrong_or_extra_primitive_sequence": 143
+    },
+    "macro-renamed-s11": {
+      "correct_prefix_but_stopped_early": 123,
+      "wrong_or_extra_primitive_sequence": 142
+    },
+    "macro-semantic-s33": {
+      "correct_prefix_but_stopped_early": 131,
+      "wrong_or_extra_primitive_sequence": 79
+    },
+    "shuffled-original-s33": {
+      "correct_prefix_but_stopped_early": 325,
+      "wrong_or_extra_primitive_sequence": 59
+    },
+    "macro-original-s33-tagged-call": {
+      "wrong_or_extra_primitive_sequence": 268,
+      "correct_prefix_but_stopped_early": 32
+    },
+    "frozen-original-s11-no-library": {
+      "wrong_or_extra_primitive_sequence": 366,
+      "missing_final_answer": 17,
+      "correct_prefix_but_stopped_early": 1
+    },
+    "natural-original-s11": {
+      "wrong_or_extra_primitive_sequence": 48,
+      "correct_prefix_but_stopped_early": 336
+    },
+    "flat-original-s22": {
+      "correct_prefix_but_stopped_early": 331,
+      "wrong_or_extra_primitive_sequence": 53
+    },
+    "macro-original-s22": {
+      "correct_prefix_but_stopped_early": 115,
+      "wrong_or_extra_primitive_sequence": 124
+    },
+    "macro-original-s22-tagged-call": {
+      "wrong_or_extra_primitive_sequence": 296,
+      "correct_prefix_but_stopped_early": 8
+    },
+    "macro-semantic-s22": {
+      "correct_prefix_but_stopped_early": 223,
+      "wrong_or_extra_primitive_sequence": 50
+    },
+    "macro-renamed-s33": {
+      "correct_prefix_but_stopped_early": 99,
+      "wrong_or_extra_primitive_sequence": 87
+    },
+    "frozen-original-s11-with-library": {
+      "wrong_or_extra_primitive_sequence": 284,
+      "missing_final_answer": 99,
+      "correct_prefix_but_stopped_early": 1
+    },
+    "macro-original-s11-tagged-stable": {
+      "wrong_or_extra_primitive_sequence": 128,
+      "correct_prefix_but_stopped_early": 136
+    },
+    "macro-semantic-s11": {
+      "correct_prefix_but_stopped_early": 55,
+      "wrong_or_extra_primitive_sequence": 97
+    },
+    "flat-original-s11": {
+      "correct_prefix_but_stopped_early": 375,
+      "wrong_or_extra_primitive_sequence": 8
+    },
+    "macro-original-s33": {
+      "correct_prefix_but_stopped_early": 234,
+      "wrong_or_extra_primitive_sequence": 70
+    }
+  },
+  "measured_run_gpu_hours": 1.4108556054035823,
+  "note": "Run GPU hours include run walltime after model load; installation, downloads, discovery and model-load time reported separately, not silently equated with all experiment costs."
+}

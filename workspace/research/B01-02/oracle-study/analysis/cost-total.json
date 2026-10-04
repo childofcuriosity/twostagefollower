@@ -1,0 +1,26 @@
+{
+  "formal_training_process_hours": 14.175781686438455,
+  "formal_evaluation_process_hours": 8.398830909000504,
+  "probe_process_hours": 0.040636357400152416,
+  "reproduction_elapsed_approx_hours": 0.14296728471914927,
+  "reproduction": [
+    {
+      "model": "qwen1.5b",
+      "seconds_approx": 75.83653044700623
+    },
+    {
+      "model": "qwen3b",
+      "seconds_approx": 88.39252877235413
+    },
+    {
+      "model": "qwen7b",
+      "seconds_approx": 105.09948348999023
+    },
+    {
+      "model": "qwen32b",
+      "seconds_approx": 245.3536822795868
+    }
+  ],
+  "total_approx_process_gpu_hours": 22.75821623755826,
+  "note": "One GPU per process. Command wall time includes import/load/IO/exit; external s33 uses its actual training timer instead of CPU-only adopter wait. Reproduction uses shared-file completion mtime minus launcher timestamp, approximate. This is reserved-process wall time, not active GPU kernel time. CPU audits excluded."
+}

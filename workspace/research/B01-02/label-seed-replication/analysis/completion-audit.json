@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "new_training_jobs": 204,
+  "total_model_condition_seed": 240,
+  "main_and_independent_score_records": 249600,
+  "new_score_records": 212160,
+  "baseline_hashes_unchanged": true,
+  "initial_7b_s100_identical": true
+}

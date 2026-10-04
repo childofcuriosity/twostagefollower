@@ -1,0 +1,410 @@
+[
+  {
+    "id": "cal-code-s2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "jobs/task_01.py"
+    ]
+  },
+  {
+    "id": "cal-code-s3",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "jobs/task_01.py"
+    ]
+  },
+  {
+    "id": "cal-data-s2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "reports/report_01.json"
+    ]
+  },
+  {
+    "id": "cal-data-s3",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "reports/report_01.json"
+    ]
+  },
+  {
+    "id": "cal-files-s2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "configs/service_01.json"
+    ]
+  },
+  {
+    "id": "cal-files-s3",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "configs/service_01.json"
+    ]
+  },
+  {
+    "id": "code-n04-s0-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "jobs/task_01.py",
+      "jobs/task_02.py",
+      "jobs/task_03.py",
+      "jobs/task_04.py"
+    ]
+  },
+  {
+    "id": "code-n04-s1-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "jobs/task_01.py",
+      "jobs/task_02.py",
+      "jobs/task_03.py",
+      "jobs/task_04.py"
+    ]
+  },
+  {
+    "id": "code-n04-s2-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "jobs/task_01.py",
+      "jobs/task_02.py",
+      "jobs/task_03.py",
+      "jobs/task_04.py"
+    ]
+  },
+  {
+    "id": "code-n04-s3-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "jobs/task_01.py",
+      "jobs/task_02.py",
+      "jobs/task_03.py",
+      "jobs/task_04.py"
+    ]
+  },
+  {
+    "id": "code-n12-s0-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "jobs/task_01.py",
+      "jobs/task_02.py",
+      "jobs/task_03.py",
+      "jobs/task_04.py",
+      "jobs/task_05.py",
+      "jobs/task_06.py",
+      "jobs/task_07.py",
+      "jobs/task_08.py",
+      "jobs/task_09.py",
+      "jobs/task_10.py",
+      "jobs/task_11.py",
+      "jobs/task_12.py"
+    ]
+  },
+  {
+    "id": "code-n12-s1-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "jobs/task_01.py",
+      "jobs/task_02.py",
+      "jobs/task_03.py",
+      "jobs/task_04.py",
+      "jobs/task_05.py",
+      "jobs/task_06.py",
+      "jobs/task_07.py",
+      "jobs/task_08.py",
+      "jobs/task_09.py",
+      "jobs/task_10.py",
+      "jobs/task_11.py",
+      "jobs/task_12.py"
+    ]
+  },
+  {
+    "id": "code-n12-s2-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "jobs/task_01.py",
+      "jobs/task_02.py",
+      "jobs/task_03.py",
+      "jobs/task_04.py",
+      "jobs/task_05.py",
+      "jobs/task_06.py",
+      "jobs/task_07.py",
+      "jobs/task_08.py",
+      "jobs/task_09.py",
+      "jobs/task_10.py",
+      "jobs/task_11.py",
+      "jobs/task_12.py"
+    ]
+  },
+  {
+    "id": "code-n12-s3-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "jobs/task_01.py",
+      "jobs/task_02.py",
+      "jobs/task_03.py",
+      "jobs/task_04.py",
+      "jobs/task_05.py",
+      "jobs/task_06.py",
+      "jobs/task_07.py",
+      "jobs/task_08.py",
+      "jobs/task_09.py",
+      "jobs/task_10.py",
+      "jobs/task_11.py",
+      "jobs/task_12.py"
+    ]
+  },
+  {
+    "id": "data-n04-s0-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "reports/report_01.json",
+      "reports/report_02.json",
+      "reports/report_03.json",
+      "reports/report_04.json"
+    ]
+  },
+  {
+    "id": "data-n04-s1-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "reports/report_01.json",
+      "reports/report_02.json",
+      "reports/report_03.json",
+      "reports/report_04.json"
+    ]
+  },
+  {
+    "id": "data-n04-s2-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "reports/report_01.json",
+      "reports/report_02.json",
+      "reports/report_03.json",
+      "reports/report_04.json"
+    ]
+  },
+  {
+    "id": "data-n04-s3-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "reports/report_01.json",
+      "reports/report_02.json",
+      "reports/report_03.json",
+      "reports/report_04.json"
+    ]
+  },
+  {
+    "id": "data-n12-s0-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "reports/report_01.json",
+      "reports/report_02.json",
+      "reports/report_03.json",
+      "reports/report_04.json",
+      "reports/report_05.json",
+      "reports/report_06.json",
+      "reports/report_07.json",
+      "reports/report_08.json",
+      "reports/report_09.json",
+      "reports/report_10.json",
+      "reports/report_11.json",
+      "reports/report_12.json"
+    ]
+  },
+  {
+    "id": "data-n12-s1-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "reports/report_01.json",
+      "reports/report_02.json",
+      "reports/report_03.json",
+      "reports/report_04.json",
+      "reports/report_05.json",
+      "reports/report_06.json",
+      "reports/report_07.json",
+      "reports/report_08.json",
+      "reports/report_09.json",
+      "reports/report_10.json",
+      "reports/report_11.json",
+      "reports/report_12.json"
+    ]
+  },
+  {
+    "id": "data-n12-s2-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "reports/report_01.json",
+      "reports/report_02.json",
+      "reports/report_03.json",
+      "reports/report_04.json",
+      "reports/report_05.json",
+      "reports/report_06.json",
+      "reports/report_07.json",
+      "reports/report_08.json",
+      "reports/report_09.json",
+      "reports/report_10.json",
+      "reports/report_11.json",
+      "reports/report_12.json"
+    ]
+  },
+  {
+    "id": "data-n12-s3-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "reports/report_01.json",
+      "reports/report_02.json",
+      "reports/report_03.json",
+      "reports/report_04.json",
+      "reports/report_05.json",
+      "reports/report_06.json",
+      "reports/report_07.json",
+      "reports/report_08.json",
+      "reports/report_09.json",
+      "reports/report_10.json",
+      "reports/report_11.json",
+      "reports/report_12.json"
+    ]
+  },
+  {
+    "id": "files-n04-s0-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "configs/service_01.json",
+      "configs/service_02.json",
+      "configs/service_03.json",
+      "configs/service_04.json"
+    ]
+  },
+  {
+    "id": "files-n04-s1-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "configs/service_01.json",
+      "configs/service_02.json",
+      "configs/service_03.json",
+      "configs/service_04.json"
+    ]
+  },
+  {
+    "id": "files-n04-s2-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "configs/service_01.json",
+      "configs/service_02.json",
+      "configs/service_03.json",
+      "configs/service_04.json"
+    ]
+  },
+  {
+    "id": "files-n04-s3-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "configs/service_01.json",
+      "configs/service_02.json",
+      "configs/service_03.json",
+      "configs/service_04.json"
+    ]
+  },
+  {
+    "id": "files-n12-s0-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "configs/service_01.json",
+      "configs/service_02.json",
+      "configs/service_03.json",
+      "configs/service_04.json",
+      "configs/service_05.json",
+      "configs/service_06.json",
+      "configs/service_07.json",
+      "configs/service_08.json",
+      "configs/service_09.json",
+      "configs/service_10.json",
+      "configs/service_11.json",
+      "configs/service_12.json"
+    ]
+  },
+  {
+    "id": "files-n12-s1-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "configs/service_01.json",
+      "configs/service_02.json",
+      "configs/service_03.json",
+      "configs/service_04.json",
+      "configs/service_05.json",
+      "configs/service_06.json",
+      "configs/service_07.json",
+      "configs/service_08.json",
+      "configs/service_09.json",
+      "configs/service_10.json",
+      "configs/service_11.json",
+      "configs/service_12.json"
+    ]
+  },
+  {
+    "id": "files-n12-s2-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "configs/service_01.json",
+      "configs/service_02.json",
+      "configs/service_03.json",
+      "configs/service_04.json",
+      "configs/service_05.json",
+      "configs/service_06.json",
+      "configs/service_07.json",
+      "configs/service_08.json",
+      "configs/service_09.json",
+      "configs/service_10.json",
+      "configs/service_11.json",
+      "configs/service_12.json"
+    ]
+  },
+  {
+    "id": "files-n12-s3-v2",
+    "reference_pass": true,
+    "unsolved_fails": true,
+    "omissions_detected": [
+      "configs/service_01.json",
+      "configs/service_02.json",
+      "configs/service_03.json",
+      "configs/service_04.json",
+      "configs/service_05.json",
+      "configs/service_06.json",
+      "configs/service_07.json",
+      "configs/service_08.json",
+      "configs/service_09.json",
+      "configs/service_10.json",
+      "configs/service_11.json",
+      "configs/service_12.json"
+    ]
+  }
+]

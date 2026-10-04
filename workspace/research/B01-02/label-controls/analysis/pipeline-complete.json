@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "finished_utc": "2026-09-25T20:23:39.203938+00:00",
+  "recovered_postprocessing": true,
+  "initial_failure": "failures/initial-plot.json",
+  "fix": "Plot selection tuple missing condition; fixed and plots/boundary/auxiliary rerun successfully. No training or scoring change.",
+  "scientific_review": "../CONCLUSIONS.md",
+  "gpu_compute_processes_final": 0
+}

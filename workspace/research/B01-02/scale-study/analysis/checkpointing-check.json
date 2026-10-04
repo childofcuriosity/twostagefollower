@@ -1,0 +1,8 @@
+{
+  "original_loss": 1.282341182231903,
+  "subdivided_loss": 1.282341182231903,
+  "gradient_cosine": 0.9999999999997868,
+  "gradient_relative_l2": 0.0,
+  "passed": true,
+  "notes": "Actual Qwen1.5B BF16/LoRA first 32 examples; microbatch16 accum2 vs same microbatch16 with gradient checkpointing; no optimizer step"
+}

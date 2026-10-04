@@ -1,0 +1,177 @@
+[
+  {
+    "run": "flat-original-s33",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "shuffled-original-s11",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "macro-renamed-s22",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "natural-original-s33",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "flat-original-s11-calibration",
+    "n": 96,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "natural-original-s22",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "macro-original-s11",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "shuffled-original-s22",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "macro-original-s11-tagged-call",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 2
+  },
+  {
+    "run": "macro-original-s22-tagged-stable",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "macro-renamed-s11",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "macro-semantic-s33",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "shuffled-original-s33",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "frozen-original-s11-no-library",
+    "n": 560,
+    "strict_prediction_differences": 2,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 452
+  },
+  {
+    "run": "natural-original-s11",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "flat-original-s22",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "macro-original-s22",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "macro-original-s22-tagged-call",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "macro-semantic-s22",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "macro-renamed-s33",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "frozen-original-s11-with-library",
+    "n": 560,
+    "strict_prediction_differences": 8,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 1
+  },
+  {
+    "run": "macro-original-s11-tagged-stable",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "macro-semantic-s11",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "flat-original-s11",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  },
+  {
+    "run": "macro-original-s33",
+    "n": 560,
+    "strict_prediction_differences": 0,
+    "false_positive_under_loose_parser": 0,
+    "multiple_answer_lines": 0
+  }
+]

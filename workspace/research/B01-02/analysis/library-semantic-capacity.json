@@ -1,0 +1,12 @@
+{
+  "reachable_function_count": 480,
+  "minimal_macro_depth_counts": {
+    "0": 1,
+    "1": 9,
+    "2": 52,
+    "3": 166,
+    "4": 198,
+    "5": 54
+  },
+  "reason": "Selected proposals omit ends. All transformations are coordinate permutations with uniform sign and uniform modulo-10 offset, at most 24*2*10=480 maps. Closure is exact under affine signature, not Monte Carlo."
+}

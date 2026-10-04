@@ -1,0 +1,297 @@
+{
+  "checked": 1790343491.9521902,
+  "pipeline": {
+    "pid": 4177976,
+    "phase": "formal",
+    "started": 1790332281.8761454
+  },
+  "jobs": [
+    {
+      "job": "compose-qwen32b-s11",
+      "gpu": 6,
+      "pid": 24137,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 8199.197734355927,
+      "last_log": [
+        "COMPLETE compose-qwen32b-s11"
+      ]
+    },
+    {
+      "job": "compose-qwen32b-s22",
+      "gpu": 7,
+      "pid": 50776,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 8152.734920740128,
+      "last_log": [
+        "COMPLETE compose-qwen32b-s22"
+      ]
+    },
+    {
+      "job": "compose-qwen32b-s33",
+      "gpu": 5,
+      "pid": 98010,
+      "alive": true,
+      "returncode": null,
+      "elapsed_seconds": 7734.294881343842,
+      "last_log": [
+        "{\"file\": \"step512-JE-independent.jsonl\", \"completed\": 328, \"total\": 480, \"seconds\": 586.5795991420746}"
+      ]
+    },
+    {
+      "job": "compose-qwen3b-s11",
+      "gpu": 0,
+      "pid": 266771,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 1918.988727092743,
+      "last_log": [
+        "COMPLETE compose-qwen3b-s11"
+      ]
+    },
+    {
+      "job": "compose-qwen3b-s22",
+      "gpu": 1,
+      "pid": 268395,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 1665.5826065540314,
+      "last_log": [
+        "COMPLETE compose-qwen3b-s22"
+      ]
+    },
+    {
+      "job": "compose-qwen3b-s33",
+      "gpu": 2,
+      "pid": 268789,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 1915.9717416763306,
+      "last_log": [
+        "COMPLETE compose-qwen3b-s33"
+      ]
+    },
+    {
+      "job": "control-qwen32b-s11",
+      "gpu": 6,
+      "pid": 4177980,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 217.9725306034088,
+      "last_log": [
+        "COMPLETE control-qwen32b-s11"
+      ]
+    },
+    {
+      "job": "control-qwen3b-s11",
+      "gpu": 7,
+      "pid": 4177981,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 54.168312549591064,
+      "last_log": [
+        "COMPLETE control-qwen3b-s11"
+      ]
+    },
+    {
+      "job": "curve-qwen32b-joint-s11",
+      "gpu": 0,
+      "pid": 4185322,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 8558.178322553635,
+      "last_log": [
+        "COMPLETE curve-qwen32b-joint-s11"
+      ]
+    },
+    {
+      "job": "curve-qwen32b-joint-s22",
+      "gpu": 1,
+      "pid": 4185324,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 8606.679997682571,
+      "last_log": [
+        "COMPLETE curve-qwen32b-joint-s22"
+      ]
+    },
+    {
+      "job": "curve-qwen32b-joint-s33",
+      "gpu": 2,
+      "pid": 4185326,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 8620.43521475792,
+      "last_log": [
+        "COMPLETE curve-qwen32b-joint-s33"
+      ]
+    },
+    {
+      "job": "curve-qwen32b-operation_oracle-s11",
+      "gpu": 6,
+      "pid": 4185332,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 977.6912708282471,
+      "last_log": [
+        "COMPLETE curve-qwen32b-operation_oracle-s11"
+      ]
+    },
+    {
+      "job": "curve-qwen32b-operation_oracle-s22",
+      "gpu": 7,
+      "pid": 4185333,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 971.8306629657745,
+      "last_log": [
+        "COMPLETE curve-qwen32b-operation_oracle-s22"
+      ]
+    },
+    {
+      "job": "curve-qwen32b-operation_oracle-s33",
+      "gpu": 7,
+      "pid": 23974,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 970.370635509491,
+      "last_log": [
+        "COMPLETE curve-qwen32b-operation_oracle-s33"
+      ]
+    },
+    {
+      "job": "curve-qwen32b-order_oracle-s11",
+      "gpu": 3,
+      "pid": 4185330,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 3480.234963655472,
+      "last_log": [
+        "COMPLETE curve-qwen32b-order_oracle-s11"
+      ]
+    },
+    {
+      "job": "curve-qwen32b-order_oracle-s22",
+      "gpu": 4,
+      "pid": 4185329,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 3477.3931925296783,
+      "last_log": [
+        "COMPLETE curve-qwen32b-order_oracle-s22"
+      ]
+    },
+    {
+      "job": "curve-qwen32b-order_oracle-s33",
+      "gpu": 5,
+      "pid": 4185331,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 3475.2896139621735,
+      "last_log": [
+        "COMPLETE curve-qwen32b-order_oracle-s33"
+      ]
+    },
+    {
+      "job": "curve-qwen3b-joint-s11",
+      "gpu": 4,
+      "pid": 98100,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 2378.8992948532104,
+      "last_log": [
+        "COMPLETE curve-qwen3b-joint-s11"
+      ]
+    },
+    {
+      "job": "curve-qwen3b-joint-s22",
+      "gpu": 3,
+      "pid": 98146,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 2279.831255674362,
+      "last_log": [
+        "COMPLETE curve-qwen3b-joint-s22"
+      ]
+    },
+    {
+      "job": "curve-qwen3b-joint-s33",
+      "gpu": 3,
+      "pid": 174528,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 2395.2929077148438,
+      "last_log": [
+        "COMPLETE curve-qwen3b-joint-s33"
+      ]
+    },
+    {
+      "job": "curve-qwen3b-operation_oracle-s11",
+      "gpu": 3,
+      "pid": 253565,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 205.27263116836548,
+      "last_log": [
+        "COMPLETE curve-qwen3b-operation_oracle-s11"
+      ]
+    },
+    {
+      "job": "curve-qwen3b-operation_oracle-s22",
+      "gpu": 3,
+      "pid": 260259,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 173.9214949607849,
+      "last_log": [
+        "COMPLETE curve-qwen3b-operation_oracle-s22"
+      ]
+    },
+    {
+      "job": "curve-qwen3b-operation_oracle-s33",
+      "gpu": 3,
+      "pid": 265999,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 199.6238567829132,
+      "last_log": [
+        "COMPLETE curve-qwen3b-operation_oracle-s33"
+      ]
+    },
+    {
+      "job": "curve-qwen3b-order_oracle-s11",
+      "gpu": 4,
+      "pid": 177708,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 1071.8268308639526,
+      "last_log": [
+        "COMPLETE curve-qwen3b-order_oracle-s11"
+      ]
+    },
+    {
+      "job": "curve-qwen3b-order_oracle-s22",
+      "gpu": 4,
+      "pid": 213155,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 1073.8265752792358,
+      "last_log": [
+        "COMPLETE curve-qwen3b-order_oracle-s22"
+      ]
+    },
+    {
+      "job": "curve-qwen3b-order_oracle-s33",
+      "gpu": 4,
+      "pid": 248575,
+      "alive": false,
+      "returncode": 0,
+      "elapsed_seconds": 1092.5983662605286,
+      "last_log": [
+        "COMPLETE curve-qwen3b-order_oracle-s33"
+      ]
+    }
+  ],
+  "gpu": "0, 0 MiB, 0 %\n1, 0 MiB, 0 %\n2, 0 MiB, 0 %\n3, 0 MiB, 0 %\n4, 0 MiB, 0 %\n5, 75671 MiB, 93 %\n6, 0 MiB, 0 %\n7, 0 MiB, 0 %\n"
+}

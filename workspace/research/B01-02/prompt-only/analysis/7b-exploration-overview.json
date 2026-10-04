@@ -1,0 +1,211 @@
+[
+  {
+    "length": 2,
+    "condition": "STEP",
+    "n": 32,
+    "correct": 3,
+    "first_errors": {
+      "numeric": 22,
+      "tool_or_order": 6,
+      "none": 3,
+      "omitted_call": 1
+    },
+    "endings": {
+      "eos": 32
+    },
+    "mean_output_tokens": 61.15625
+  },
+  {
+    "length": 2,
+    "condition": "NAME",
+    "n": 32,
+    "correct": 7,
+    "first_errors": {
+      "numeric": 23,
+      "none": 7,
+      "tool_or_order": 2
+    },
+    "endings": {
+      "eos": 32
+    },
+    "mean_output_tokens": 64.625
+  },
+  {
+    "length": 5,
+    "condition": "STEP",
+    "n": 32,
+    "correct": 0,
+    "first_errors": {
+      "numeric": 15,
+      "tool_or_order": 16,
+      "format": 1
+    },
+    "endings": {
+      "eos": 32
+    },
+    "mean_output_tokens": 140.5
+  },
+  {
+    "length": 5,
+    "condition": "NAME",
+    "n": 32,
+    "correct": 0,
+    "first_errors": {
+      "numeric": 25,
+      "tool_or_order": 6,
+      "omitted_call": 1
+    },
+    "endings": {
+      "eos": 32
+    },
+    "mean_output_tokens": 139.84375
+  },
+  {
+    "length": 10,
+    "condition": "STEP",
+    "n": 32,
+    "correct": 0,
+    "first_errors": {
+      "numeric": 22,
+      "format": 2,
+      "tool_or_order": 8
+    },
+    "endings": {
+      "eos": 32
+    },
+    "mean_output_tokens": 219.15625
+  },
+  {
+    "length": 10,
+    "condition": "NAME",
+    "n": 32,
+    "correct": 0,
+    "first_errors": {
+      "numeric": 23,
+      "tool_or_order": 9
+    },
+    "endings": {
+      "eos": 32
+    },
+    "mean_output_tokens": 249.6875
+  },
+  {
+    "length": 15,
+    "condition": "STEP",
+    "n": 32,
+    "correct": 0,
+    "first_errors": {
+      "numeric": 23,
+      "tool_or_order": 8,
+      "format": 1
+    },
+    "endings": {
+      "eos": 32
+    },
+    "mean_output_tokens": 303.6875
+  },
+  {
+    "length": 15,
+    "condition": "NAME",
+    "n": 32,
+    "correct": 0,
+    "first_errors": {
+      "numeric": 22,
+      "tool_or_order": 9,
+      "format": 1
+    },
+    "endings": {
+      "eos": 32
+    },
+    "mean_output_tokens": 325.84375
+  },
+  {
+    "length": 20,
+    "condition": "STEP",
+    "n": 32,
+    "correct": 0,
+    "first_errors": {
+      "tool_or_order": 11,
+      "numeric": 21
+    },
+    "endings": {
+      "eos": 32
+    },
+    "mean_output_tokens": 341.1875
+  },
+  {
+    "length": 20,
+    "condition": "NAME",
+    "n": 32,
+    "correct": 0,
+    "first_errors": {
+      "numeric": 20,
+      "tool_or_order": 11,
+      "format": 1
+    },
+    "endings": {
+      "eos": 32
+    },
+    "mean_output_tokens": 383.5625
+  },
+  {
+    "length": 30,
+    "condition": "STEP",
+    "n": 32,
+    "correct": 0,
+    "first_errors": {
+      "tool_or_order": 13,
+      "numeric": 19
+    },
+    "endings": {
+      "eos": 32
+    },
+    "mean_output_tokens": 439.65625
+  },
+  {
+    "length": 30,
+    "condition": "NAME",
+    "n": 32,
+    "correct": 0,
+    "first_errors": {
+      "tool_or_order": 15,
+      "numeric": 16,
+      "format": 1
+    },
+    "endings": {
+      "eos": 31,
+      "length": 1
+    },
+    "mean_output_tokens": 514.0
+  },
+  {
+    "length": 40,
+    "condition": "STEP",
+    "n": 32,
+    "correct": 0,
+    "first_errors": {
+      "numeric": 20,
+      "tool_or_order": 12
+    },
+    "endings": {
+      "eos": 31,
+      "length": 1
+    },
+    "mean_output_tokens": 587.125
+  },
+  {
+    "length": 40,
+    "condition": "NAME",
+    "n": 32,
+    "correct": 0,
+    "first_errors": {
+      "numeric": 21,
+      "tool_or_order": 11
+    },
+    "endings": {
+      "eos": 31,
+      "length": 1
+    },
+    "mean_output_tokens": 673.96875
+  }
+]

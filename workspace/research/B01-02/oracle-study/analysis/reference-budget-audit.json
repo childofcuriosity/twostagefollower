@@ -1,0 +1,38 @@
+{
+  "qwen1.5b": {
+    "reference_trajectories": 5136,
+    "maxima": {
+      "header": 2,
+      "body": 33,
+      "generated": 282,
+      "context": 412
+    }
+  },
+  "qwen3b": {
+    "reference_trajectories": 5136,
+    "maxima": {
+      "header": 2,
+      "body": 33,
+      "generated": 282,
+      "context": 412
+    }
+  },
+  "qwen7b": {
+    "reference_trajectories": 5136,
+    "maxima": {
+      "header": 2,
+      "body": 33,
+      "generated": 282,
+      "context": 412
+    }
+  },
+  "qwen32b": {
+    "reference_trajectories": 5136,
+    "maxima": {
+      "header": 2,
+      "body": 33,
+      "generated": 282,
+      "context": 412
+    }
+  }
+}

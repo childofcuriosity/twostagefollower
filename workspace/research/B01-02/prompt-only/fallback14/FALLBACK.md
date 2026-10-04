@@ -1,0 +1,1 @@
+User-authorized fallback from 7B due to short-task floor. Prompt unchanged. Data generation rules and seeds unchanged; 14B repeats the same flow. 7B evidence remains in parent directory. This is model selection, not an independent cross-model confirmation.

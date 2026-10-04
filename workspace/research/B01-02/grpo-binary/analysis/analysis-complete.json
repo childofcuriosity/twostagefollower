@@ -1,0 +1,11 @@
+{
+  "finished": 1790608195.130452,
+  "all_scheduled_computation_complete": true,
+  "artifact_audit_passed": true,
+  "resources_cleared": true,
+  "report": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/grpo-binary/REPORT.md",
+  "conclusions": "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/grpo-binary/CONCLUSIONS.md",
+  "final_interpretation_and_resource_audit_pending": false,
+  "plotting_environment": ".analysis-venv matplotlib 3.10.1",
+  "retained_postprocessing_failure": "infrastructure/analysis-after-compute.json.exit.json"
+}

@@ -1,0 +1,9 @@
+{
+  "condition": "macro",
+  "seed": 11,
+  "returncode": 0,
+  "wall_seconds": 8816.990060091019,
+  "hostname": "llm-devbox-4qffwbpp-98dc55c59-n8ptn",
+  "gpu": 4,
+  "note": "Includes any wait for checkpoint readiness; not pure evaluation compute time"
+}

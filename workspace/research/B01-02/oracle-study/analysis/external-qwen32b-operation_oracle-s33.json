@@ -1,0 +1,19 @@
+{
+  "pid": 3901044,
+  "gpu": 2,
+  "argv": [
+    "/WillRawData2/llm/will_datasets/toutiao/research/.training-venv/bin/python",
+    "-u",
+    "/WillRawData2/llm/will_datasets/toutiao/research/workspace/research/B01-02/oracle-study/src/train.py",
+    "--model",
+    "qwen32b",
+    "--condition",
+    "operation_oracle",
+    "--seed",
+    "33",
+    "--microbatch",
+    "4"
+  ],
+  "started": 1790321458.961687,
+  "reason": "GPU2 idle; original GPU0 queue will adopt completed training and perform evaluation. All hyperparameters unchanged."
+}

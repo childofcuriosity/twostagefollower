@@ -1,0 +1,26 @@
+{
+  "created": 1790608195.130452,
+  "files": {
+    "CONCLUSIONS.md": "8c8f3b4ec5e81da2a499f2ffedc4e4f8428a8cbbb2e000b17025e1276509b3c9",
+    "REPORT.md": "3178840748d73106886ef3e253d32f3ffb372d79bafe4f52b128e1f764ec1668",
+    "COMPLETION_AUDIT.md": "a589427cd966d401da0321d514bb90fad97e3273dcdc3cc953acf85265ef9e6e",
+    "CASE_REVIEW.md": "a7b83b20a69e0d58b14dd094b96aaa6e268138522dd15f348ca726be151a368c",
+    "METHOD.md": "c174c2f60d5f069fc7a936639aab31720feebfc5b283b658d4a3ac5f6ffb5b82",
+    "postanalysis/cost_audit.py": "05aea2b414a619bad20e0f63634524be1a0879ba9ac43e2c6903476a9d3f94ec",
+    "postanalysis/report.py": "f9a177e61636ed5341a8352b14aa2b8c0eabe74adf0d7715ecb93c52bf0a5864",
+    "postanalysis/analyze.py": "56c77640332ff05dcb0514412bb930996e5eff09cac9899d249b6be8eedcce45",
+    "postanalysis/audit.py": "44b33618e3bc250201f242fba221cb0cebdef56d072df104cc0fb5846182549a",
+    "postanalysis/await_and_analyze.py": "218dbcc9926987b86bafd4fea86c14c1ab398670abb0126995cd72f47d6c4ba5",
+    "postanalysis/error_curve.py": "2967937f42172366104c37589a7fcb8da5cdc3a3881fc7de7a975f0abda16ce6",
+    "postanalysis/supplement.py": "7cf3f3b7a47795e0584cc352481ad89628c23706e9f9effb0376e1bfdd51ed79",
+    "figures/validation-vs-updates.svg": "5699b56ccb048c3a8f55ebab62ef057d86e4b1e66873c2e396612aa937083948",
+    "figures/validation-vs-compute.svg": "e0e0c005afd3cd08ee00cfec3582f7ef86767d64b5c64dee576c7f50dd4caf02",
+    "figures/validation-vs-compute.pdf": "6fc61a60d9a12873f2657a1adc34d6e25b86068e08a02b44032510b45fbc236f",
+    "figures/validation-vs-updates.png": "f485bbdda4020bf6ae68737b3301ceb22bab46bf80c22c14a2c3390877bc75e1",
+    "figures/validation-error-curves.svg": "407b935daec99793bd27cc95aa8c27ad69ee1e40ad1223565d61161fe699ce1e",
+    "figures/validation-error-curves.png": "f52880a329cb667b4a0dee2c42ad2cfef6ff3cc6919c74795a84c25c2e298b7e",
+    "figures/validation-vs-compute.png": "9230c45d597a1f419b07ca83d919de66e6f67d01b7e5ac32350097377c0510fa",
+    "figures/validation-vs-updates.pdf": "55465cc64e94f8c5d9f6a6e3a7fdce92d606836fed4a9d96299be24b7f02d19b",
+    "figures/validation-error-curves.pdf": "67c3b7067efabdc57dfb790a69abc7089619dbb14c8a045a0740444ab5822b30"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "utc": "2026-09-24T10:25:18.625175+00:00",
+  "purpose": "Matched frozen/final prompt-information analysis, no new model runs or test selection",
+  "hashes": {
+    "src/verify.py": "94ebb0efe274675d10a3b7834cd04042667f135e588d7397d1b16ef8450d9fc4",
+    "src/matched_context.py": "2a917ac36cf0aad82a51d2049d60aa18ea6ab7345b2e82ced5501d75bf740bc8"
+  }
+}

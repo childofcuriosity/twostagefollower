@@ -1,0 +1,6 @@
+{
+  "stopped_wait_only_pid": 3076153,
+  "no_inference_interrupted": true,
+  "reason": "Use released GPUs4,3,6,7 without waiting for unrelated slow reminder worker onGPU5",
+  "timestamp": 1790292922.7929485
+}

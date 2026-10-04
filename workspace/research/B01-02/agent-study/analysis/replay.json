@@ -1,0 +1,2239 @@
+[
+  {
+    "task": "code-n04-s0-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s1-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 3,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 4,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 5,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s2-v2",
+    "condition": "reminder",
+    "first_complete_turn": null,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s3-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s0-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s1-v2",
+    "condition": "reminder",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s1-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s3-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s3-v2",
+    "condition": "reminder",
+    "first_complete_turn": null,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 3,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 4,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 5,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 6,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 7,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 9,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 10,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 12,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 13,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 14,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s3-v2",
+    "condition": "todo",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s0-v2",
+    "condition": "identity",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 1,
+        "tool": "list_files",
+        "args": {},
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s0-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s1-v2",
+    "condition": "reminder",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s2-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s2-v2",
+    "condition": "reminder",
+    "first_complete_turn": null,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 2,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s2-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s3-v2",
+    "condition": "reminder",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s0-v2",
+    "condition": "identity",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 1,
+        "tool": "list_files",
+        "args": {},
+        "after_first_completion": true
+      },
+      {
+        "turn": 2,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nexpected_configs = [\n    {'file': 'configs/service_01.json', 'retries': 3, 'timeout_seconds': 79},\n    {'file': 'configs/service_02.json', 'retries': 6, 'timeout_seconds': 77},\n    {'file': 'configs/service_03.json', 'retries': 5, 'timeout_seconds': 35},\n    {'file': 'configs/service_04.json', 'retries': 4, 'timeout_seconds': 83}\n]\nall_correct = True\nfor config in expected_configs:\n    with open(config['file'], 'r') as file:\n        data = json.load(file)\n    if data['retries'] != config['retries'] or data['timeout_seconds'] != config['timeout_seconds']:\n        all_correct = False\n        break\nif all_correct:\n    print('All configurations are correct.')\nelse:\n    print('Some configurations are incorrect.')"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s0-v2",
+    "condition": "reminder",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 1,
+        "tool": "list_files",
+        "args": {},
+        "after_first_completion": true
+      },
+      {
+        "turn": 2,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nconfig_paths = ['configs/service_01.json', 'configs/service_02.json', 'configs/service_03.json', 'configs/service_04.json']\nexpected_values = [\n    {'enabled': True, 'environment': 'stage', 'retries': 3, 'timeout_seconds': 79},\n    {'enabled': True, 'environment': 'stage', 'retries': 6, 'timeout_seconds': 77},\n    {'enabled': True, 'environment': 'stage', 'retries': 5, 'timeout_seconds': 35},\n    {'enabled': True, 'environment': 'prod', 'retries': 4, 'timeout_seconds': 83}\n]\nall_correct = True\nfor path, expected in zip(config_paths, expected_values):\n    with open(path, 'r') as file:\n        config = json.load(file)\n    if not all(config.get(key) == value for key, value in expected.items()):\n        print(f'Error: {path} does not match expected values.')\n        all_correct = False\nif all_correct:\n    print('All configuration files have been correctly updated.')"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s1-v2",
+    "condition": "reminder",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 1,
+        "tool": "list_files",
+        "args": {},
+        "after_first_completion": true
+      },
+      {
+        "turn": 2,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nconfigs = ['service_01.json', 'service_02.json', 'service_03.json', 'service_04.json']\nexpected_updates = [\n    {'enabled': True, 'environment': 'prod', 'retries': 2, 'timeout_seconds': 31},\n    {'enabled': True, 'environment': 'prod', 'retries': 2, 'timeout_seconds': 37},\n    {'enabled': True, 'environment': 'stage', 'retries': 3, 'timeout_seconds': 84},\n    {'enabled': True, 'environment': 'prod', 'retries': 5, 'timeout_seconds': 74}\n]\nall_correct = True\nfor config, expected in zip(configs, expected_updates):\n    path = f'configs/{config}'\n    with open(path, 'r') as file:\n        data = json.load(file)\n    if not all(data.get(key) == value for key, value in expected.items()):\n        print(f'{config} does not match expected values.')\n        all_correct = False\nif all_correct:\n    print('All configurations are correct.')"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s2-v2",
+    "condition": "reminder",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 1,
+        "tool": "list_files",
+        "args": {},
+        "after_first_completion": true
+      },
+      {
+        "turn": 2,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nconfigs = ['service_01', 'service_02', 'service_03', 'service_04']\nexpected_updates = [\n    {'enabled': True, 'environment': 'prod', 'retries': 5, 'timeout_seconds': 50},\n    {'enabled': True, 'environment': 'prod', 'retries': 2, 'timeout_seconds': 61},\n    {'enabled': True, 'environment': 'stage', 'retries': 2, 'timeout_seconds': 49},\n    {'enabled': True, 'environment': 'prod', 'retries': 5, 'timeout_seconds': 48}\n]\nall_correct = True\nfor config, expected in zip(configs, expected_updates):\n    path = f'configs/{config}.json'\n    with open(path, 'r') as file:\n        data = json.load(file)\n    if not all(data.get(key) == value for key, value in expected.items()):\n        all_correct = False\n        break\nif all_correct:\n    print('All configurations are correct.')\nelse:\n    print('Some configurations are incorrect.')"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s3-v2",
+    "condition": "identity",
+    "first_complete_turn": 3,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 3,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 3,
+        "total_requirements": 4
+      },
+      {
+        "turn": 3,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 4,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 4,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nexpected_values = [\n    {'enabled': True, 'environment': 'stage', 'retries': 2, 'timeout_seconds': 43},\n    {'enabled': True, 'environment': 'stage', 'retries': 4, 'timeout_seconds': 88},\n    {'enabled': True, 'environment': 'stage', 'retries': 6, 'timeout_seconds': 82},\n    {'enabled': True, 'environment': 'stage', 'retries': 2, 'timeout_seconds': 46}\n]\nfor i in range(1, 5):\n    file_path = f'configs/service_0{i}.json'\n    with open(file_path, 'r') as file:\n        config = json.load(file)\n    assert all(config[key] == expected_values[i-1][key] for key in expected_values[i-1]), f'Configuration {file_path} does not match expected values.'"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s3-v2",
+    "condition": "todo",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s1-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s0-v2",
+    "condition": "reminder",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s1-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s2-v2",
+    "condition": "identity",
+    "first_complete_turn": 2,
+    "progress": [
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s3-v2",
+    "condition": "reminder",
+    "first_complete_turn": null,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 3,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 4,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 5,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 6,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 7,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 8,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 9,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s3-v2",
+    "condition": "todo",
+    "first_complete_turn": 3,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 1,
+        "total_requirements": 4
+      },
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 2,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 3,
+        "total_requirements": 4
+      },
+      {
+        "turn": 3,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s1-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s3-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s3-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s0-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s0-v2",
+    "condition": "reminder",
+    "first_complete_turn": 2,
+    "progress": [
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 3,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 3,
+        "tool": "run_python",
+        "args": {
+          "code": "import csv\nfrom collections import defaultdict\nimport json\nimport os\n\n# Ensure the reports directory exists\nos.makedirs('reports', exist_ok=True)\n\n# Load orders and prices\ndef load_data():\n    orders = list(csv.DictReader(open('orders.csv')))\n    prices = {row['product']: float(row['unit_price']) for row in csv.DictReader(open('prices.csv'))}\n    return orders, prices\n\norders, prices = load_data()\n\n# Process orders for each region and criteria\ndef process_orders(orders, prices, region, min_quantity):\n    filtered_orders = [\n        order for order in orders\n        if order['region'] == region and int(order['quantity']) >= min_quantity and order['status'] == 'paid'\n    ]\n    total_quantity = sum(int(order['quantity']) for order in filtered_orders)\n    total_value = sum(int(order['quantity']) * prices[order['product']] for order in filtered_orders)\n    row_ids = [int(order['id']) for order in filtered_orders]\n    return {'row_ids': sorted(row_ids), 'total_quantity': total_quantity, 'total_value': round(total_value, 2)}\n\n# Generate reports\nreports = {\n    'report_01.json': process_orders(orders, prices, 'north', 2),\n    'report_02.json': process_orders(orders, prices, 'south', 1),\n    'report_03.json': process_orders(orders, prices, 'east', 1),\n    'report_04.json': process_orders(orders, prices, 'west', 1)\n}\n\n# Write reports\nfor name, data in reports.items():\n    path = f'reports/{name}'\n    with open(path, 'w') as f:\n        json.dump(data, f)"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s2-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 3,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s3-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s3-v2",
+    "condition": "identity",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 1,
+        "tool": "list_files",
+        "args": {},
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s0-v2",
+    "condition": "plan",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s0-v2",
+    "condition": "todo",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s1-v2",
+    "condition": "identity",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s1-v2",
+    "condition": "plan",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 1,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nconfigs = [\n    ('configs/service_01.json', {'enabled': True, 'environment': 'prod', 'retries': 2, 'timeout_seconds': 31}),\n    ('configs/service_02.json', {'enabled': True, 'environment': 'prod', 'retries': 2, 'timeout_seconds': 37}),\n    ('configs/service_03.json', {'enabled': True, 'environment': 'stage', 'retries': 3, 'timeout_seconds': 84}),\n    ('configs/service_04.json', {'enabled': True, 'environment': 'prod', 'retries': 5, 'timeout_seconds': 74})\n]\nall_correct = True\nfor path, expected in configs:\n    with open(path, 'r') as file:\n        config = json.load(file)\n    if not all(config.get(key) == value for key, value in expected.items()):\n        print(f'Error: {path} does not match expected values.')\n        all_correct = False\nif all_correct:\n    print('All configurations are correct.')"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s1-v2",
+    "condition": "todo",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s2-v2",
+    "condition": "plan",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s0-v2",
+    "condition": "reminder",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s0-v2",
+    "condition": "todo",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s2-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s3-v2",
+    "condition": "reminder",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s3-v2",
+    "condition": "todo",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s0-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s0-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s1-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s2-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s0-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s0-v2",
+    "condition": "reminder",
+    "first_complete_turn": null,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s2-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s2-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s0-v2",
+    "condition": "todo",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s1-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 3,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s3-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s0-v2",
+    "condition": "plan",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 2,
+        "tool": "list_files",
+        "args": {},
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s1-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s2-v2",
+    "condition": "identity",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s3-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s2-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s3-v2",
+    "condition": "plan",
+    "first_complete_turn": 5,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 3,
+        "total_requirements": 4
+      },
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 3,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 3,
+        "total_requirements": 4
+      },
+      {
+        "turn": 3,
+        "complete": false,
+        "completed_requirements": 3,
+        "total_requirements": 4
+      },
+      {
+        "turn": 4,
+        "complete": false,
+        "completed_requirements": 3,
+        "total_requirements": 4
+      },
+      {
+        "turn": 5,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 6,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 6,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nexpected_configs = [\n    {'retries': 2, 'timeout_seconds': 43},\n    {'retries': 4, 'timeout_seconds': 88},\n    {'retries': 6, 'timeout_seconds': 82},\n    {'retries': 2, 'timeout_seconds': 46}\n]\nall_correct = True\nfor i in range(1, 5):\n    file_path = f'configs/service_0{i}.json'\n    with open(file_path, 'r') as file:\n        config = json.load(file)\n    if not (config['enabled'] == True and config['environment'] == 'stage' and config['retries'] == expected_configs[i-1]['retries'] and config['timeout_seconds'] == expected_configs[i-1]['timeout_seconds']):\n        all_correct = False\n        break\nif all_correct:\n    print('All configurations are correct.')\nelse:\n    print('Some configurations are incorrect.')"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s3-v2",
+    "condition": "reminder",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 1,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nconfigs = ['service_01', 'service_02', 'service_03', 'service_04']\nexpected_updates = [\n    {'retries': 2, 'timeout_seconds': 43},\n    {'retries': 4, 'timeout_seconds': 88},\n    {'retries': 6, 'timeout_seconds': 82},\n    {'retries': 2, 'timeout_seconds': 46}\n]\nall_correct = True\nfor config, expected_update in zip(configs, expected_updates):\n    path = f'configs/{config}.json'\n    with open(path, 'r') as file:\n        data = json.load(file)\n    if not (data['enabled'] == True and data['environment'] == 'stage' and data['retries'] == expected_update['retries'] and data['timeout_seconds'] == expected_update['timeout_seconds']):\n        all_correct = False\n        break\nif all_correct:\n    print('All configurations are correctly updated.')\nelse:\n    print('Some configurations are not correctly updated.')"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s0-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s0-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s1-v2",
+    "condition": "plan",
+    "first_complete_turn": 2,
+    "progress": [
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s1-v2",
+    "condition": "reminder",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s1-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s2-v2",
+    "condition": "reminder",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s1-v2",
+    "condition": "reminder",
+    "first_complete_turn": 4,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 1,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 2,
+        "total_requirements": 4
+      },
+      {
+        "turn": 3,
+        "complete": false,
+        "completed_requirements": 3,
+        "total_requirements": 4
+      },
+      {
+        "turn": 4,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s2-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n04-s3-v2",
+    "condition": "plan",
+    "first_complete_turn": 5,
+    "progress": [
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 1,
+        "total_requirements": 4
+      },
+      {
+        "turn": 3,
+        "complete": false,
+        "completed_requirements": 2,
+        "total_requirements": 4
+      },
+      {
+        "turn": 4,
+        "complete": false,
+        "completed_requirements": 3,
+        "total_requirements": 4
+      },
+      {
+        "turn": 5,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s0-v2",
+    "condition": "identity",
+    "first_complete_turn": 13,
+    "progress": [
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 1,
+        "total_requirements": 12
+      },
+      {
+        "turn": 3,
+        "complete": false,
+        "completed_requirements": 2,
+        "total_requirements": 12
+      },
+      {
+        "turn": 4,
+        "complete": false,
+        "completed_requirements": 3,
+        "total_requirements": 12
+      },
+      {
+        "turn": 5,
+        "complete": false,
+        "completed_requirements": 4,
+        "total_requirements": 12
+      },
+      {
+        "turn": 6,
+        "complete": false,
+        "completed_requirements": 5,
+        "total_requirements": 12
+      },
+      {
+        "turn": 7,
+        "complete": false,
+        "completed_requirements": 6,
+        "total_requirements": 12
+      },
+      {
+        "turn": 8,
+        "complete": false,
+        "completed_requirements": 7,
+        "total_requirements": 12
+      },
+      {
+        "turn": 9,
+        "complete": false,
+        "completed_requirements": 8,
+        "total_requirements": 12
+      },
+      {
+        "turn": 10,
+        "complete": false,
+        "completed_requirements": 9,
+        "total_requirements": 12
+      },
+      {
+        "turn": 11,
+        "complete": false,
+        "completed_requirements": 10,
+        "total_requirements": 12
+      },
+      {
+        "turn": 12,
+        "complete": false,
+        "completed_requirements": 11,
+        "total_requirements": 12
+      },
+      {
+        "turn": 13,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s1-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s2-v2",
+    "condition": "reminder",
+    "first_complete_turn": 11,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 1,
+        "total_requirements": 12
+      },
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 2,
+        "total_requirements": 12
+      },
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 3,
+        "total_requirements": 12
+      },
+      {
+        "turn": 3,
+        "complete": false,
+        "completed_requirements": 4,
+        "total_requirements": 12
+      },
+      {
+        "turn": 4,
+        "complete": false,
+        "completed_requirements": 5,
+        "total_requirements": 12
+      },
+      {
+        "turn": 5,
+        "complete": false,
+        "completed_requirements": 6,
+        "total_requirements": 12
+      },
+      {
+        "turn": 6,
+        "complete": false,
+        "completed_requirements": 7,
+        "total_requirements": 12
+      },
+      {
+        "turn": 7,
+        "complete": false,
+        "completed_requirements": 8,
+        "total_requirements": 12
+      },
+      {
+        "turn": 8,
+        "complete": false,
+        "completed_requirements": 9,
+        "total_requirements": 12
+      },
+      {
+        "turn": 9,
+        "complete": false,
+        "completed_requirements": 10,
+        "total_requirements": 12
+      },
+      {
+        "turn": 10,
+        "complete": false,
+        "completed_requirements": 11,
+        "total_requirements": 12
+      },
+      {
+        "turn": 11,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "code-n12-s2-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s0-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s1-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s1-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s1-v2",
+    "condition": "reminder",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 2,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nimport csv\nfrom collections import defaultdict\n\n# Load orders and prices\ndef load_data():\n    orders = list(csv.DictReader(open('orders.csv')))\n    prices = {row['product']: float(row['unit_price']) for row in csv.DictReader(open('prices.csv'))}\n    return orders, prices\n\norders, prices = load_data()\n\n# Process orders by region\ndef process_orders(orders, prices, region):\n    filtered_orders = [\n        order for order in orders\n        if order['region'] == region and order['status'] == 'paid' and int(order['quantity']) >= 1\n    ]\n    total_quantity = sum(int(order['quantity']) for order in filtered_orders)\n    total_value = sum(\n        int(order['quantity']) * prices[order['product']] for order in filtered_orders\n    )\n    row_ids = [int(order['id']) for order in filtered_orders]\n    return {'row_ids': sorted(row_ids), 'total_quantity': total_quantity, 'total_value': total_value}\n\n# Generate reports\nreports = {\n    'report_01.json': process_orders(orders, prices, 'north'),\n    'report_02.json': process_orders(orders, prices, 'south'),\n    'report_03.json': process_orders(orders, prices, 'east'),\n    'report_04.json': process_orders(orders, prices, 'west')\n}\n\n# Ensure directory exists\nimport os\nos.makedirs('reports', exist_ok=True)\n\n# Write reports\nfor name, data in reports.items():\n    with open(f'reports/{name}', 'w') as f:\n        json.dump(data, f)"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s2-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s2-v2",
+    "condition": "plan",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s2-v2",
+    "condition": "reminder",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 2,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nimport csv\nfrom collections import defaultdict\n\n# Load orders and prices\ndef load_data():\n    orders = list(csv.DictReader(open('orders.csv')))\n    prices = {row['product']: float(row['unit_price']) for row in csv.DictReader(open('prices.csv'))}\n    return orders, prices\n\norders, prices = load_data()\n\n# Process orders by region\ndef process_orders(orders, prices, region):\n    filtered_orders = [\n        order for order in orders\n        if order['region'] == region and order['status'] == 'paid' and int(order['quantity']) >= 1\n    ]\n    total_quantity = sum(int(order['quantity']) for order in filtered_orders)\n    total_value = sum(\n        int(order['quantity']) * prices[order['product']] for order in filtered_orders\n    )\n    row_ids = [int(order['id']) for order in filtered_orders]\n    return {'row_ids': sorted(row_ids), 'total_quantity': total_quantity, 'total_value': total_value}\n\n# Generate reports\nreports = {\n    'report_01.json': process_orders(orders, prices, 'north'),\n    'report_02.json': process_orders(orders, prices, 'south'),\n    'report_03.json': process_orders(orders, prices, 'east'),\n    'report_04.json': process_orders(orders, prices, 'west')\n}\n\n# Ensure directory exists\nimport os\nos.makedirs('reports', exist_ok=True)\n\n# Write reports\nfor name, data in reports.items():\n    with open(f'reports/{name}', 'w') as f:\n        json.dump(data, f)"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n04-s3-v2",
+    "condition": "reminder",
+    "first_complete_turn": 2,
+    "progress": [
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 3,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 3,
+        "tool": "run_python",
+        "args": {
+          "code": "import csv\nfrom collections import defaultdict\nimport json\nimport os\n\n# Load orders and prices\ndef load_data():\n    orders = list(csv.DictReader(open('orders.csv')))\n    prices = {row['product']: float(row['unit_price']) for row in csv.DictReader(open('prices.csv'))}\n    return orders, prices\n\norders, prices = load_data()\n\n# Process orders for each region and criteria\ndef process_orders(orders, prices, region, min_quantity):\n    filtered_orders = [\n        order for order in orders\n        if order['region'] == region and int(order['quantity']) >= min_quantity and order['status'] == 'paid'\n    ]\n    row_ids = [int(order['id']) for order in filtered_orders]\n    total_quantity = sum(int(order['quantity']) for order in filtered_orders)\n    total_value = sum(int(order['quantity']) * prices[order['product']] for order in filtered_orders)\n    return {'row_ids': sorted(row_ids), 'total_quantity': total_quantity, 'total_value': round(total_value, 2)}\n\n# Generate reports\nreports = {\n    'report_01.json': process_orders(orders, prices, 'north', 1),\n    'report_02.json': process_orders(orders, prices, 'south', 2),\n    'report_03.json': process_orders(orders, prices, 'east', 2),\n    'report_04.json': process_orders(orders, prices, 'west', 2)\n}\n\n# Ensure the reports directory exists\nos.makedirs('reports', exist_ok=True)\n\n# Write reports\nfor report_name, data in reports.items():\n    with open(f'reports/{report_name}', 'w') as f:\n        json.dump(data, f)\n\n# Directory creation should now work without errors"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s0-v2",
+    "condition": "reminder",
+    "first_complete_turn": 2,
+    "progress": [
+      {
+        "turn": 1,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s1-v2",
+    "condition": "identity",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s1-v2",
+    "condition": "todo",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "data-n12-s3-v2",
+    "condition": "todo",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 12
+      },
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n04-s2-v2",
+    "condition": "identity",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 3,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 4,
+        "complete": true,
+        "completed_requirements": 4,
+        "total_requirements": 4
+      },
+      {
+        "turn": 5,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      },
+      {
+        "turn": 6,
+        "complete": false,
+        "completed_requirements": 0,
+        "total_requirements": 4
+      }
+    ],
+    "post_completion_actions": [
+      {
+        "turn": 1,
+        "tool": "list_files",
+        "args": {},
+        "after_first_completion": true
+      },
+      {
+        "turn": 2,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nexpected_configs = [\n    {'enabled': True, 'environment': 'prod', 'retries': 5, 'timeout_seconds': 50},\n    {'enabled': True, 'environment': 'prod', 'retries': 2, 'timeout_seconds': 61},\n    {'enabled': True, 'environment': 'stage', 'retries': 2, 'timeout_seconds': 49},\n    {'enabled': True, 'environment': 'prod', 'retries': 5, 'timeout_seconds': 48}\n]\nall_correct = True\nfor i in range(1, 5):\n    config_path = f'configs/service_0{i}.json'\n    with open(config_path, 'r') as file:\n        config = json.load(file)\n    if config != expected_configs[i-1]:\n        all_correct = False\n        print(f'Config {i} does not match expected values.')\nif all_correct:\n    print('All configurations match expected values.')"
+        },
+        "after_first_completion": true
+      },
+      {
+        "turn": 3,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nfor i in range(1, 5):\n    config_path = f'configs/service_0{i}.json'\n    with open(config_path, 'r') as file:\n        config = json.load(file)\n    config['enabled'] = True\n    if i == 3:\n        config['environment'] = 'stage'\n    else:\n        config['environment'] = 'prod'\n    config['retries'] = [5, 2, 2, 5][i-1]\n    config['timeout_seconds'] = [50, 61, 49, 48][i-1]\n    with open(config_path, 'w') as file:\n        json.dump(config, file, indent=2)"
+        },
+        "after_first_completion": true
+      },
+      {
+        "turn": 4,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nexpected_configs = [\n    {'enabled': True, 'environment': 'prod', 'retries': 5, 'timeout_seconds': 50},\n    {'enabled': True, 'environment': 'prod', 'retries': 2, 'timeout_seconds': 61},\n    {'enabled': True, 'environment': 'stage', 'retries': 2, 'timeout_seconds': 49},\n    {'enabled': True, 'environment': 'prod', 'retries': 5, 'timeout_seconds': 48}\n]\nall_correct = True\nfor i in range(1, 5):\n    config_path = f'configs/service_0{i}.json'\n    with open(config_path, 'r') as file:\n        config = json.load(file)\n    if config != expected_configs[i-1]:\n        all_correct = False\n        print(f'Config {i} does not match expected values.')\nif all_correct:\n    print('All configurations match expected values.')"
+        },
+        "after_first_completion": true
+      },
+      {
+        "turn": 5,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nexpected_configs = [\n    {'enabled': True, 'environment': 'prod', 'retries': 5, 'timeout_seconds': 50},\n    {'enabled': True, 'environment': 'prod', 'retries': 2, 'timeout_seconds': 61},\n    {'enabled': True, 'environment': 'stage', 'retries': 2, 'timeout_seconds': 49},\n    {'enabled': True, 'environment': 'prod', 'retries': 5, 'timeout_seconds': 48}\n]\nfor i in range(1, 5):\n    config_path = f'configs/service_0{i}.json'\n    with open(config_path, 'w') as file:\n        json.dump(expected_configs[i-1], file, indent=2)"
+        },
+        "after_first_completion": true
+      },
+      {
+        "turn": 6,
+        "tool": "run_python",
+        "args": {
+          "code": "import json\nexpected_configs = [\n    {'enabled': True, 'environment': 'prod', 'retries': 5, 'timeout_seconds': 50},\n    {'enabled': True, 'environment': 'prod', 'retries': 2, 'timeout_seconds': 61},\n    {'enabled': True, 'environment': 'stage', 'retries': 2, 'timeout_seconds': 49},\n    {'enabled': True, 'environment': 'prod', 'retries': 5, 'timeout_seconds': 48}\n]\nall_correct = True\nfor i in range(1, 5):\n    config_path = f'configs/service_0{i}.json'\n    with open(config_path, 'r') as file:\n        config = json.load(file)\n    if config != expected_configs[i-1]:\n        all_correct = False\n        print(f'Config {i} does not match expected values.')\nif all_correct:\n    print('All configurations match expected values.')"
+        },
+        "after_first_completion": true
+      }
+    ],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s2-v2",
+    "condition": "plan",
+    "first_complete_turn": 2,
+    "progress": [
+      {
+        "turn": 2,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s2-v2",
+    "condition": "todo",
+    "first_complete_turn": 0,
+    "progress": [
+      {
+        "turn": 0,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s3-v2",
+    "condition": "identity",
+    "first_complete_turn": null,
+    "progress": [],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  },
+  {
+    "task": "files-n12-s3-v2",
+    "condition": "plan",
+    "first_complete_turn": 1,
+    "progress": [
+      {
+        "turn": 1,
+        "complete": true,
+        "completed_requirements": 12,
+        "total_requirements": 12
+      }
+    ],
+    "post_completion_actions": [],
+    "replay_error_status_mismatches": [],
+    "grader_side_effect_turns": [],
+    "final_workspace_matches": true,
+    "notes": "Post-completion actions can be legitimate verification, not automatically idle looping. Completion inferred by independent tests; actions replayed without model/oracle feedback."
+  }
+]
